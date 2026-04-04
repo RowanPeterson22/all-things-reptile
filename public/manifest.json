@@ -1,25 +1,18 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "All Things Reptile",
+  "name": "All Things Reptile — An Amphibian Pty Ltd Company",
+  "description": "Australia's reptile and amphibian reference app. Species guides, care information, licencing, and more.",
   "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
+    { "src": "favicon.ico", "sizes": "32x32", "type": "image/x-icon" },
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
+  "apple-touch-icon": "icon-180.png",
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait",
+  "theme_color": "#1e3a2f",
+  "background_color": "#faf8f4",
+  "categories": ["lifestyle", "education", "reference"]
 }

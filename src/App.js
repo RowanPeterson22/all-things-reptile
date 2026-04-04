@@ -939,6 +939,96 @@ const IdentifyScreen = () => {
   );
 };
 
+
+// ─── Glossary screen ─────────────────────────────────────────────
+const GlossaryScreen = () => {
+  const [search, setSearch] = useState("");
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "Behaviour", "Biology", "Breeding", "Health", "Husbandry", "Legal", "Nutrition"];
+  const CAT_COLOURS = {
+    Behaviour: { bg: C.greenPale,  color: C.green },
+    Biology:   { bg: C.bluePale,   color: C.blue  },
+    Breeding:  { bg: C.goldLight,  color: "#7a5a1e" },
+    Health:    { bg: C.redPale,    color: C.red   },
+    Husbandry: { bg: "#f0e8f8",    color: "#4a1a6b" },
+    Legal:     { bg: "#e8f0f8",    color: "#1a3a6b" },
+    Nutrition: { bg: "#fff3e0",    color: "#8b5e00" },
+  };
+
+  const filtered = GLOSSARY_TERMS.filter(t => {
+    const matchSearch = t.term.toLowerCase().includes(search.toLowerCase()) ||
+                        t.def.toLowerCase().includes(search.toLowerCase());
+    const matchCat = activeCategory === "All" || t.cat === activeCategory;
+    return matchSearch && matchCat;
+  });
+
+  const grouped = filtered.reduce((acc, t) => {
+    const letter = t.term[0].toUpperCase();
+    acc[letter] = acc[letter] || [];
+    acc[letter].push(t);
+    return acc;
+  }, {});
+
+  return (
+    <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ background: C.green, padding: "16px 18px 0" }}>
+        <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Reference</div>
+        <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 14, lineHeight: 1.2 }}>Reptile Glossary</div>
+        <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 10, padding: "9px 12px", display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+          <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>
+          <input
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search terms..."
+            style={{ background: "none", border: "none", outline: "none", color: "white", fontSize: 13, width: "100%", fontFamily: "inherit" }}
+          />
+          {search && <button onClick={() => setSearch("")} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.5)", cursor: "pointer", fontSize: 16, fontFamily: "inherit" }}>×</button>}
+        </div>
+        <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 12, scrollbarWidth: "none" }}>
+          {categories.map(cat => (
+            <button key={cat} onClick={() => setActiveCategory(cat)} style={{
+              padding: "4px 12px", borderRadius: 20, fontSize: 11, fontWeight: 700, whiteSpace: "nowrap",
+              cursor: "pointer", fontFamily: "inherit", border: "none",
+              background: activeCategory === cat ? C.gold : "rgba(255,255,255,0.15)",
+              color: activeCategory === cat ? C.green : "rgba(255,255,255,0.7)",
+            }}>{cat}</button>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ background: "white", padding: "8px 0 24px" }}>
+        {filtered.length === 0 ? (
+          <div style={{ padding: "32px 18px", textAlign: "center", color: "#aaa", fontSize: 14 }}>
+            No terms found for "{search}"
+          </div>
+        ) : (
+          Object.keys(grouped).sort().map(letter => (
+            <div key={letter}>
+              <div style={{ padding: "10px 18px 4px", fontSize: 12, fontWeight: 700, color: C.gold, background: C.cream, borderBottom: `0.5px solid #eee` }}>{letter}</div>
+              {grouped[letter].map((t, i) => {
+                const cs = CAT_COLOURS[t.cat] || { bg: C.greenPale, color: C.green };
+                return (
+                  <div key={t.term} style={{ padding: "12px 18px", borderBottom: "0.5px solid #f5f5f0", background: i % 2 === 0 ? "white" : C.cream }}>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 5 }}>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: C.green }}>{t.term}</div>
+                      <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 8, background: cs.bg, color: cs.color, whiteSpace: "nowrap" }}>{t.cat}</span>
+                    </div>
+                    <div style={{ fontSize: 13, color: "#555", lineHeight: 1.6 }}>{t.def}</div>
+                  </div>
+                );
+              })}
+            </div>
+          ))
+        )}
+        <div style={{ padding: "16px 18px", fontSize: 12, color: "#aaa", textAlign: "center" }}>
+          {filtered.length} term{filtered.length !== 1 ? "s" : ""} {activeCategory !== "All" ? `in ${activeCategory}` : "in glossary"}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -961,10 +1051,11 @@ export default function App() {
   const [page, setPage] = useState(null);
 
   const tabs = [
-    { id: "browse",   icon: "🔍", label: "Browse"    },
-    { id: "care",     icon: "📖", label: "Care"      },
-    { id: "licencing",    icon: "⚖️", label: "Licencing"     },
-    { id: "identify", icon: "📷", label: "ID Reptile"},
+    { id: "browse",    icon: "🔍", label: "Browse"    },
+    { id: "care",      icon: "📖", label: "Care"      },
+    { id: "licencing", icon: "⚖️", label: "Licencing" },
+    { id: "identify",  icon: "📷", label: "ID Reptile"},
+    { id: "glossary",  icon: "📚", label: "Glossary"  },
   ];
 
   const handleBack = () => setPage(null);
@@ -1001,6 +1092,7 @@ export default function App() {
           {!page && activeTab === "care"     && <CareScreen     onGuide={setPage}   />}
           {!page && activeTab === "licencing" && <LegalScreen />}
           {!page && activeTab === "identify" && <IdentifyScreen />}
+          {!page && activeTab === "glossary" && <GlossaryScreen />}
         </div>
 
         {!page && (
@@ -1017,3 +1109,64 @@ export default function App() {
     </div>
   );
 }
+
+// ─── Glossary data ────────────────────────────────────────────────
+const GLOSSARY_TERMS = [
+  { term: "Aestivation", def: "A period of dormancy triggered by heat and drought. Some reptiles and frogs slow down during very hot or dry periods to conserve energy and water.", cat: "Behaviour" },
+  { term: "Ambient temperature", def: "The general air temperature in an area of the enclosure, as opposed to the basking spot. Reptiles need a range of ambient temperatures to thermoregulate.", cat: "Husbandry" },
+  { term: "Arboreal", def: "Describes an animal that lives primarily in trees or climbs regularly. Arboreal reptiles need tall enclosures with branches and vertical space.", cat: "Biology" },
+  { term: "Autotomy", def: "The ability of some lizards to voluntarily shed their tail as a defence mechanism. The tail regrows over time, though it may look different to the original.", cat: "Biology" },
+  { term: "Basking", def: "The behaviour where reptiles position themselves under a heat source to warm their body. Reptiles are ectothermic and rely on external heat to regulate body temperature.", cat: "Behaviour" },
+  { term: "Basking spot", def: "The warmest area in an enclosure, usually directly under a heat lamp. The basking spot allows reptiles to reach their preferred body temperature quickly.", cat: "Husbandry" },
+  { term: "Bioactive enclosure", def: "An enclosure using live plants, natural substrate, and a cleanup crew of invertebrates like isopods and springtails to break down waste naturally.", cat: "Husbandry" },
+  { term: "Brumation", def: "A period of reduced activity in reptiles during cooler months, similar to hibernation in mammals. Reptiles may sleep for extended periods and refuse food. Completely normal — not a sign of illness.", cat: "Behaviour" },
+  { term: "Calcium supplementation", def: "Adding calcium powder to a reptile's food to support healthy bone development. Insufficient calcium can lead to Metabolic Bone Disease (MBD).", cat: "Nutrition" },
+  { term: "CITES", def: "Convention on International Trade in Endangered Species. An international agreement regulating trade in wild animals. Many reptile species are protected under CITES.", cat: "Legal" },
+  { term: "Cloaca", def: "The single posterior opening in reptiles used for both excretion and reproduction. A healthy cloaca should be clean and free of swelling or discharge.", cat: "Biology" },
+  { term: "Clutch", def: "A group of eggs laid at one time by a female reptile. Clutch sizes vary — from 2 eggs in small pythons to 30+ in larger species.", cat: "Breeding" },
+  { term: "Constriction", def: "The method used by pythons to subdue prey by coiling around it and applying pressure. All Australian pythons are non-venomous and rely on constriction.", cat: "Biology" },
+  { term: "Crepuscular", def: "Describes animals most active at dawn and dusk. Some reptiles and frogs are crepuscular rather than strictly diurnal or nocturnal.", cat: "Behaviour" },
+  { term: "Cryptosporidiosis", def: "A serious parasitic infection affecting reptiles, particularly pythons. Symptoms include chronic regurgitation and weight loss. No reliable cure — strict quarantine of new animals is essential.", cat: "Health" },
+  { term: "Diurnal", def: "Describes animals active during the day and sleeping at night. Bearded Dragons and Blue-tongue Skinks are diurnal and typically require UVB lighting to synthesise Vitamin D3.", cat: "Behaviour" },
+  { term: "Dysecdysis", def: "Incomplete or abnormal shedding, also called a stuck shed. Can occur due to low humidity or dehydration. Retained shed around toes or eye caps can cause serious problems.", cat: "Health" },
+  { term: "Ecdysis", def: "The scientific term for shedding skin. Reptiles shed as they grow — younger animals more frequently than adults. A healthy shed should come off in one complete piece.", cat: "Biology" },
+  { term: "Ectotherm", def: "An animal that relies on external heat to regulate body temperature, commonly called cold-blooded. All reptiles and amphibians are ectotherms — this is why heating and thermal gradients are so important.", cat: "Biology" },
+  { term: "Enclosure", def: "The housing unit for a captive reptile or amphibian. Also called a vivarium, terrarium, or tank depending on the style.", cat: "Husbandry" },
+  { term: "Feeding response", def: "The instinctive reaction of a snake or lizard to the presence of food or food smells. A strong feeding response means accidental bites can occur if hands smell like prey.", cat: "Behaviour" },
+  { term: "Fossorial", def: "Describes animals that burrow or live underground. Woma Pythons and some skinks are fossorial and need deep substrate for natural burrowing behaviour.", cat: "Biology" },
+  { term: "Gravid", def: "The reptile equivalent of pregnant. A gravid female is carrying eggs or developing young. Gravid females may refuse food and require a suitable egg-laying site.", cat: "Breeding" },
+  { term: "Gut loading", def: "Feeding nutritious food to feeder insects before offering them to a reptile. Gut-loaded insects pass on more nutrients to the animal eating them.", cat: "Nutrition" },
+  { term: "Hook training", def: "Using a snake hook to touch a snake before picking it up, signalling handling rather than feeding time. Essential for reducing feeding response bites in pythons.", cat: "Husbandry" },
+  { term: "Humidity", def: "The amount of moisture in the air. Different species require different humidity levels. Too low causes shedding problems; too high causes respiratory infections.", cat: "Husbandry" },
+  { term: "IBD", def: "Inclusion Body Disease. A serious fatal viral disease affecting pythons. Symptoms include regurgitation, loss of coordination, and stargazing. No treatment — strict quarantine is critical.", cat: "Health" },
+  { term: "Impaction", def: "A potentially fatal condition where a reptile cannot pass material through its digestive system. Often caused by ingesting substrate or oversized prey. Symptoms include lethargy and a swollen abdomen.", cat: "Health" },
+  { term: "Incubation", def: "Keeping reptile eggs at the correct temperature and humidity to ensure successful hatching. Most Australian python eggs are incubated at 30–32°C for 55–65 days.", cat: "Breeding" },
+  { term: "Licence", def: "A legal permit required to keep native Australian reptiles and amphibians in captivity. Categories vary by species and state. All reptiles must be purchased from a licensed breeder.", cat: "Legal" },
+  { term: "Live food", def: "Prey items that are alive when offered. Generally not recommended — live prey can injure the reptile. Pre-killed or frozen/thawed prey is safer for both animal and owner.", cat: "Nutrition" },
+  { term: "MBD", def: "Metabolic Bone Disease. A serious preventable condition caused by insufficient calcium and/or Vitamin D3 (often from inadequate UVB). Symptoms include soft bones, tremors, and difficulty moving.", cat: "Health" },
+  { term: "Mites", def: "Tiny external parasites appearing as moving dots on a reptile's skin. Require treatment of both the animal and complete disinfection of the enclosure.", cat: "Health" },
+  { term: "Morph", def: "A genetic variation resulting in different colouration or pattern from the wild type. Common in Bearded Dragons and Leopard Geckos. Morphs are selectively bred in captivity.", cat: "Breeding" },
+  { term: "Nocturnal", def: "Describes animals active at night and sleeping during the day. Children's Pythons, geckos, and many frogs are nocturnal and generally don't require strong UVB lighting.", cat: "Behaviour" },
+  { term: "Oviparous", def: "Describes species that reproduce by laying eggs. Most Australian pythons and many lizards are oviparous.", cat: "Breeding" },
+  { term: "Ovoviviparous", def: "Describes species where eggs develop and hatch inside the mother's body and young are born live. Some skinks and lizards are ovoviviparous.", cat: "Breeding" },
+  { term: "Palpation", def: "Gently feeling a reptile's body to check for eggs, health issues, or abnormalities. Should only be done by experienced keepers or vets.", cat: "Health" },
+  { term: "Pre-killed prey", def: "Prey humanely killed before being offered to a reptile. Safer than live prey as it cannot injure the snake. Frozen/thawed is the most convenient and safest option.", cat: "Nutrition" },
+  { term: "Quarantine", def: "Keeping a newly acquired reptile separate from existing animals for 60–90 days to monitor for illness and prevent disease transmission. Essential for all collections.", cat: "Health" },
+  { term: "Regurgitation", def: "When a reptile brings up recently eaten food. Common causes include handling too soon after feeding, low temperatures, or prey too large. Fast for 2 weeks after regurgitation before feeding again.", cat: "Health" },
+  { term: "Semi-aquatic", def: "Describes animals living both in and out of water. Eastern Long-necked Turtles and Water Dragons are semi-aquatic and require water access in their enclosures.", cat: "Biology" },
+  { term: "Shed", def: "The process of a reptile shedding its outer skin as it grows. Also called ecdysis. Blue eyes and dull skin signal a shed is coming. A healthy shed comes off in one piece.", cat: "Biology" },
+  { term: "Spectacles", def: "The transparent scale covering a snake's eyes, shed with the skin during ecdysis. Retained spectacles (eye caps) are a common shedding problem requiring careful attention.", cat: "Biology" },
+  { term: "Stomatitis", def: "Inflammation or infection of the mouth, commonly called mouth rot. Signs include redness, swelling, and cheesy discharge around the gums. Requires veterinary treatment.", cat: "Health" },
+  { term: "Substrate", def: "The material lining the floor of a reptile's enclosure. Common substrates include coconut coir, topsoil, cypress mulch, and paper. The right choice depends on the species' humidity requirements.", cat: "Husbandry" },
+  { term: "Terrestrial", def: "Describes animals living primarily on the ground. Blue-tongue Skinks and Woma Pythons are terrestrial — they need floor space rather than height in their enclosures.", cat: "Biology" },
+  { term: "Thermal gradient", def: "The range of temperatures across an enclosure from the warm basking end to the cool end. Allows reptiles to move between temperatures to regulate their body heat naturally.", cat: "Husbandry" },
+  { term: "Thermoregulation", def: "How reptiles regulate body temperature by moving between warmer and cooler areas. Unlike mammals, reptiles cannot generate their own heat and rely entirely on external sources.", cat: "Biology" },
+  { term: "Thermostat", def: "A device controlling heat sources to maintain correct temperature. Never run heat lamps without a thermostat — it is a fire hazard and can fatally overheat an animal.", cat: "Husbandry" },
+  { term: "UVA", def: "Ultraviolet A light. Affects reptile behaviour, appetite, and activity levels. Present in natural sunlight and full-spectrum reptile bulbs.", cat: "Husbandry" },
+  { term: "UVB", def: "Ultraviolet B light. Essential for diurnal reptiles to synthesise Vitamin D3, enabling calcium absorption. Without UVB, reptiles develop MBD. Use a T5 HO tube rated for reptiles.", cat: "Husbandry" },
+  { term: "UVI", def: "UV Index. A measure of ultraviolet radiation intensity. Different species require different UVI levels — Bearded Dragons need a higher UVI than shade-dwelling species.", cat: "Husbandry" },
+  { term: "Ventral", def: "Relating to the underside or belly of an animal. Ventral scales in snakes are the large scales on the underside used for movement.", cat: "Biology" },
+  { term: "Viviparous", def: "Describes species that give birth to live young rather than laying eggs. Some skinks and lizards are viviparous.", cat: "Breeding" },
+  { term: "Vivarium", def: "Another term for a reptile enclosure or terrarium. Can refer to any enclosed habitat for keeping reptiles or amphibians.", cat: "Husbandry" },
+  { term: "Wild type", def: "The natural colouration and pattern of a species as it appears in the wild, before selective breeding for different morphs or colour variations.", cat: "Breeding" },
+];

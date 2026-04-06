@@ -93,7 +93,7 @@ const STATES = [
   },
   {
     abbr: "WA", name: "Western Australia",
-    licence: "Fauna Possessing (Pet Keeper's) Licence",
+    licence: "Fauna Possessing (Pet Keepers) Licence",
     categories: "Standard → Advanced",
     minage: "No minimum stated",
     cost: "Fee applies",

@@ -70,7 +70,7 @@ const STATES = [
     categories: "Basic (Schedule 2) → Advanced (Schedule 3)",
     minage: "10+ years",
     cost: "Pro-rata monthly — varies by licence type",
-    authority: "Conservation Regulator, DEECA",
+    authority: "Dept of Energy, Environment & Climate Action (DEECA)",
     phone: "136 186",
     email: "wildlifelicensing@deeca.vic.gov.au",
     website: "vic.gov.au/private-wildlife-licences",

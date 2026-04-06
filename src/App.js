@@ -1002,6 +1002,7 @@ const CATEGORIES = [
   { id: "gecko",  label: "Geckos",            emoji: "🦎", desc: "Knob-tailed, Thick-tailed, Velvet, Leaf-tailed & more",       bg: "#fdf5e8", count: SPECIES.filter(s => s.type === "gecko").length },
   { id: "turtle", label: "Turtles",           emoji: "🐢", desc: "Long-necked, Murray River, Broad-shelled & more",   bg: "#e8f0f5", count: SPECIES.filter(s => s.type === "turtle").length },
   { id: "frog",   label: "Frogs",             emoji: "🐸", desc: "Green Tree Frog, Marsh Frog & more",               bg: "#e8f5ec", count: SPECIES.filter(s => s.type === "frog").length },
+  { id: "monitor", label: "Monitors",          emoji: "🦎", desc: "Lace Monitor, Sand Monitor & more",                bg: "#e8ece0", count: SPECIES.filter(s => s.type === "monitor").length },
 ];
 
 const BrowseScreen = ({ onSpecies }) => {
@@ -1058,7 +1059,8 @@ const BrowseScreen = ({ onSpecies }) => {
             style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", cursor: "pointer" }}>
             <div style={{ height: 90, background: cat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 42 }}>{cat.emoji}</div>
             <div style={{ padding: "10px 12px 12px" }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 3 }}>{cat.label}</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 4 }}>{cat.label}</div>
+              <div style={{ fontSize: 10, color: "#888", lineHeight: 1.4, marginBottom: 5 }}>{cat.desc}</div>
               <div style={{ fontSize: 10, fontWeight: 700, color: C.green }}>{cat.count} species →</div>
             </div>
           </div>

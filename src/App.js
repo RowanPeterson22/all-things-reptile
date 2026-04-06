@@ -159,6 +159,18 @@ const STATES = [
   },
 ];
 
+
+const STATE_COLOURS = {
+  NSW: { colour: "#1A3A5C", pale: "#E8EEF8" },
+  VIC: { colour: "#1E3A2F", pale: "#E8F5EC" },
+  QLD: { colour: "#7A3B00", pale: "#F5E8D0" },
+  SA:  { colour: "#4A1A6B", pale: "#F0E8F8" },
+  WA:  { colour: "#0A4A4A", pale: "#E0F0F0" },
+  TAS: { colour: "#6B1A1A", pale: "#F8E8E8" },
+  ACT: { colour: "#3A3A00", pale: "#F5F5D0" },
+  NT:  { colour: "#2A4A00", pale: "#E8F0D8" },
+};
+
 // ─── Shared UI components ─────────────────────────────────────────
 const LevelBadge = ({ level }) => {
   const s = { Beginner: { bg: C.greenPale, color: C.green }, Intermediate: { bg: C.goldLight, color: "#7a5a1e" }, Advanced: { bg: C.redPale, color: C.red } }[level] || { bg: C.greenPale, color: C.green };
@@ -254,12 +266,15 @@ const LegalTab = ({ note, states }) => {
       </p>
       <SectionLabel mt={0}>Availability by state</SectionLabel>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 10 }}>
-        {stateData.map(s => (
-          <div key={s.abbr} style={{ background: s.ok ? C.cream : "#fce8e8", borderRadius: 10, padding: "10px 12px", border: s.ok ? "0.5px solid #e8e8e4" : "0.5px solid #8b202033" }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: s.ok ? "#111" : C.red, marginBottom: 3 }}>{s.abbr}</div>
-            <div style={{ fontSize: 11, fontWeight: 600, color: s.ok ? C.green : C.red, lineHeight: 1.4 }}>{s.cat}</div>
-          </div>
-        ))}
+        {stateData.map(s => {
+          const sc = STATE_COLOURS[s.abbr] || { colour: C.green, pale: C.greenPale };
+          return (
+            <div key={s.abbr} style={{ background: s.ok ? sc.pale : "#fce8e8", borderRadius: 10, padding: "10px 12px", border: s.ok ? `0.5px solid ${sc.colour}44` : "0.5px solid #8b202033" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: s.ok ? sc.colour : C.red, marginBottom: 3 }}>{s.abbr}</div>
+              <div style={{ fontSize: 11, fontWeight: 600, color: s.ok ? sc.colour : C.red, lineHeight: 1.4 }}>{s.cat}</div>
+            </div>
+          );
+        })}
       </div>
       <div style={{ background: "#fff8e8", borderRadius: 10, padding: "10px 12px", marginBottom: 12, border: "0.5px solid #c8963c44" }}>
         <div style={{ fontSize: 11, fontWeight: 700, color: "#7a5a1e", marginBottom: 4 }}>⚠️ ALWAYS VERIFY BEFORE PURCHASING</div>

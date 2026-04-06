@@ -58,6 +58,9 @@ const STATES = [
     minage: "16+ years",
     cost: "~$50 for 5 years (basic)",
     authority: "Dept of Climate Change, Energy, Environment & Water (NPWS)",
+    phone: "13 77 88",
+    email: "wildlife@environment.nsw.gov.au",
+    website: "environment.nsw.gov.au",
     notes: "Most common reptiles fall under R1 Basic or Companion Animal category. R2 requires 2 years experience at R1. Venomous snakes require R5.",
     colour: "#1A3A5C", pale: "#E8EEF8",
   },
@@ -67,7 +70,10 @@ const STATES = [
     categories: "Basic (Schedule 2) → Advanced (Schedule 3)",
     minage: "10+ years",
     cost: "Pro-rata monthly — varies by licence type",
-    authority: "Conservation Regulator, Dept of Energy, Environment & Climate Action (DEECA)",
+    authority: "Conservation Regulator, DEECA",
+    phone: "136 186",
+    email: "wildlifelicensing@deeca.vic.gov.au",
+    website: "vic.gov.au/private-wildlife-licences",
     notes: "Eastern Blue-tongue Lizards can be kept WITHOUT a licence in Victoria. Advanced licence required after 2 years for harder-to-keep species.",
     colour: "#1E3A2F", pale: "#E8F5EC",
   },
@@ -78,6 +84,9 @@ const STATES = [
     minage: "No minimum stated",
     cost: "Annual fee applies",
     authority: "Dept of Environment & Science (DES)",
+    phone: "1300 130 372",
+    email: "palm@des.qld.gov.au",
+    website: "des.qld.gov.au",
     notes: "Class 1 covers most commonly kept species. Class 2 required for less common or larger species. Strict conditions on breeding and selling under recreational licence.",
     colour: "#7A3B00", pale: "#F5E8D0",
   },
@@ -88,6 +97,9 @@ const STATES = [
     minage: "No minimum stated",
     cost: "Fee applies",
     authority: "Dept for Environment & Water (DEW)",
+    phone: "(08) 8124 4972",
+    email: "DEWFaunaPermitsUnit@sa.gov.au",
+    website: "environment.sa.gov.au",
     notes: "SA has relatively liberal wildlife keeping laws. A wide range of native species available. Check the approved species list before purchasing.",
     colour: "#4A1A6B", pale: "#F0E8F8",
   },
@@ -98,6 +110,9 @@ const STATES = [
     minage: "No minimum stated",
     cost: "Fee applies",
     authority: "Dept of Biodiversity, Conservation & Attractions (DBCA)",
+    phone: "(08) 9219 9831",
+    email: "wildlifelicensing@dbca.wa.gov.au",
+    website: "dbca.wa.gov.au",
     notes: "WA has a more restrictive approved species list than eastern states. The species list is under review — always check current approved species at dbca.wa.gov.au before purchasing.",
     colour: "#0A4A4A", pale: "#E0F0F0",
   },
@@ -108,6 +123,9 @@ const STATES = [
     minage: "No minimum stated",
     cost: "Free permit",
     authority: "Dept of Natural Resources & Environment Tasmania (NRE Tas)",
+    phone: "1300 368 550",
+    email: "wildlife.services@nre.tas.gov.au",
+    website: "nre.tas.gov.au",
     notes: "⚠️ MOST RESTRICTIVE STATE: Only Tasmanian native species may be kept. No imported reptiles permitted — even other Australian species cannot be brought into Tasmania. Bearded dragons, carpet pythons, and most mainland species CANNOT be kept in TAS.",
     colour: "#6B1A1A", pale: "#F8E8E8",
   },
@@ -118,6 +136,9 @@ const STATES = [
     minage: "No minimum stated",
     cost: "Fee applies",
     authority: "ACT Parks & Conservation Service",
+    phone: "13 22 81",
+    email: "environment@act.gov.au",
+    website: "environment.act.gov.au",
     notes: "Similar range of species to NSW. Check the ACT approved species list with ACT Parks and Conservation Service before purchasing.",
     colour: "#3A3A00", pale: "#F5F5D0",
   },
@@ -128,6 +149,9 @@ const STATES = [
     minage: "N/A",
     cost: "No fee for common species",
     authority: "NT Dept of Environment, Parks & Water Security",
+    phone: "1300 246 445",
+    email: "wildlife@nt.gov.au",
+    website: "nt.gov.au/environment",
     notes: "The NT has the most relaxed reptile keeping laws in Australia. Many common species including Central Bearded Dragons and Blue-tongue Skinks can be kept without any permit if obtained lawfully.",
     colour: "#2A4A00", pale: "#E8F0D8",
   },
@@ -1051,8 +1075,17 @@ const LegalScreen = () => {
                   {s.notes}
                 </div>
 
-                <div style={{ marginTop: 10, padding: "8px 12px", background: s.pale, borderRadius: 8, fontSize: 11, color: s.colour, fontWeight: 700 }}>
-                  🌐 {s.authority}
+                <div style={{ marginTop: 10, borderRadius: 8, overflow: "hidden", border: `0.5px solid ${s.colour}22` }}>
+                  {[
+                    s.phone && ["📞", s.phone],
+                    s.email && ["✉️", s.email],
+                    s.website && ["🌐", s.website],
+                  ].filter(Boolean).map(([icon, val]) => (
+                    <div key={val} style={{ padding: "8px 12px", background: s.pale, borderBottom: `0.5px solid ${s.colour}22`, fontSize: 11, color: s.colour, display: "flex", gap: 8, alignItems: "center" }}>
+                      <span>{icon}</span>
+                      <span style={{ fontWeight: 600 }}>{val}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}

@@ -1165,7 +1165,7 @@ const LegalScreen = () => {
           "All reptiles must be purchased from a licensed breeder or dealer",
           "Wild collection is illegal in all states and territories",
           "Keep all purchase records including seller details and date",
-          "No exotic (non-Australian native) reptiles may be kept — Leopard Geckos are the only approved exception in most states",
+          "No exotic (non-Australian native) reptiles may be kept in Australia",
           "It is illegal to release reptiles into the wild",
           "Licence holders must report annually in most states",
         ].map((rule, i) => (

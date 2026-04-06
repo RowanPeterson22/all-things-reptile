@@ -689,7 +689,7 @@ const BlueTonguePage = ({ onBack }) => {
           <WarnBox type="green" title="Find a reptile vet">Always use a vet with exotic / reptile experience.</WarnBox>
           <ShopBtn secondary>Ask about finding a vet ↗</ShopBtn>
         </>}
-        {tab === "licencing" && <LegalTab note="Blue-tongue Skinks are native wildlife. A keeper licence is required in all Australian states. They must be purchased from a licensed breeder — wild collection is illegal." />}
+        {t === "licencing" && <LegalTab note="Blue-tongue Skinks are native wildlife. A keeper licence is required in all Australian states. In Victoria, Eastern Blue-tongue Skinks can be kept without a licence. All other states require a Category 1/Class 1 keeper licence. Must be purchased from a licensed breeder — wild collection is illegal." />}
       </>}
     />
   );

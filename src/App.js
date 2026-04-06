@@ -1052,17 +1052,18 @@ const BrowseScreen = ({ onSpecies }) => {
         </div>
       </div>
       <div style={{ fontSize: 11, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 12 }}>Browse by category</div>
-      {CATEGORIES.map(cat => (
-        <div key={cat.id} onClick={() => setCategory(cat.id)}
-          style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", marginBottom: 10, overflow: "hidden", cursor: "pointer", display: "flex", alignItems: "center" }}>
-          <div style={{ width: 80, height: 80, background: cat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 38, flexShrink: 0 }}>{cat.emoji}</div>
-          <div style={{ flex: 1, padding: "0 14px" }}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: "#111", marginBottom: 3 }}>{cat.label}</div>
-            <div style={{ fontSize: 11, color: "#888", lineHeight: 1.4, marginBottom: 5 }}>{cat.desc}</div>
-            <div style={{ fontSize: 10, fontWeight: 700, color: C.green }}>{cat.count} species →</div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+        {CATEGORIES.map(cat => (
+          <div key={cat.id} onClick={() => setCategory(cat.id)}
+            style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", cursor: "pointer" }}>
+            <div style={{ height: 90, background: cat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 42 }}>{cat.emoji}</div>
+            <div style={{ padding: "10px 12px 12px" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 3 }}>{cat.label}</div>
+              <div style={{ fontSize: 10, fontWeight: 700, color: C.green }}>{cat.count} species →</div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

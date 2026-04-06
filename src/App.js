@@ -22,7 +22,7 @@ const SPECIES = [
   { id: "turtle",      name: "Eastern Long-necked Turtle",  latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: "turtle" },
   { id: "broadshell",   name: "Broad-shelled Turtle",          latin: "Chelodina expansa",          type: "turtle", emoji: "🐢", bg: "#e0ecf0", level: "Intermediate", page: "broadshell" },
   { id: "murray",       name: "Murray River Turtle",           latin: "Emydura macquarii",          type: "turtle", emoji: "🐢", bg: "#e8f5f0", level: "Intermediate", page: "murray" },
-  { id: "sawshell",     name: "Saw-shelled Turtle",            latin: "Myuchelys latisternum",      type: "turtle", emoji: "🐢", bg: "#f0f5e8", level: "Intermediate", page: "sawshell" },,
+  { id: "sawshell",     name: "Saw-shelled Turtle",            latin: "Myuchelys latisternum",      type: "turtle", emoji: "🐢", bg: "#f0f5e8", level: "Intermediate", page: "sawshell" },
   { id: "childrens",   name: "Children's Python",           latin: "Antaresia childreni",       type: "snake",  emoji: "🐍", bg: "#f0e8f5", level: "Beginner",     page: "childrens" },
   { id: "stimsons",    name: "Stimson's Python",            latin: "Antaresia stimsoni",        type: "snake",  emoji: "🐍", bg: "#ede8f5", level: "Beginner",     page: "stimsons" },
   { id: "spotted",     name: "Spotted Python",              latin: "Antaresia maculosa",        type: "snake",  emoji: "🐍", bg: "#f5edf0", level: "Beginner",     page: "spotted" },

@@ -335,7 +335,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
       <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to browse</button>
         <div style={{ textAlign: "center", fontSize: 90, lineHeight: 1, marginBottom: -8 }}>{emoji}</div>
-        <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "18px 18px 0" }}>
+        <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "18px 18px 0", margin: "0 -20px" }}>
           <div style={{ fontSize: 20, fontWeight: 700, color: "#111", marginBottom: 2 }}>{name}</div>
           <div style={{ fontSize: 12, color: "#888", fontStyle: "italic", marginBottom: 10 }}>{latin}</div>
           <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>

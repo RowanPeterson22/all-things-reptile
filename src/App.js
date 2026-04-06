@@ -3455,7 +3455,7 @@ export default function App() {
               </button>
             ))}
           </div>
-          <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "4px 0 calc(8px + env(safe-area-inset-bottom, 0px))" }}>© 2026 Amphibian Pty Ltd</div>
+          <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "10px 0 calc(env(safe-area-inset-bottom, 0px) - 15px)" }}>© 2026 Amphibian Pty Ltd</div>
         </div>
         <div style={{ height: "calc(60px + env(safe-area-inset-bottom, 0px))" }} />
     </div>

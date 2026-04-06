@@ -904,7 +904,7 @@ const EnclosurePage = ({ onBack }) => {
   const [tab, setTab] = useState("types");
   const tabs = ["types", "sizing", "substrate", "setup"];
   const tabLabels = { types: "Enclosure types", sizing: "Sizing", substrate: "Substrate", setup: "Setup tips" };
-  const sizes = [["Bearded Dragon", "Min: 120 × 60 × 60 cm", "150 × 60 × 60 cm"], ["Blue-tongue Skink", "Min: 120 × 60 × 45 cm", "150 × 60 × 60 cm"], ["Carpet Python (adult)", "Min: 180 × 60 × 60 cm", "210 × 60 × 90 cm"], ["Leopard Gecko", "Min: 90 × 45 × 45 cm", "120 × 60 × 45 cm"], ["Woma Python (adult)", "Min: 150 × 60 × 60 cm", "180 × 60 × 60 cm"], ["Children's Python", "Min: 90 × 45 × 45 cm", "120 × 60 × 45 cm"], ["Olive Python (adult)", "Min: 240 × 90 × 90 cm", "300 × 90 × 90 cm"], ["Long-necked Turtle", "Min: 150 × 60 cm aquatic", "Pond setup"]];
+  const sizes = [["Bearded Dragon", "Min: 120 × 60 × 60 cm", "150 × 60 × 60 cm"], ["Blue-tongue Skink", "Min: 120 × 60 × 45 cm", "150 × 60 × 60 cm"], ["Carpet Python (adult)", "Min: 180 × 60 × 60 cm", "210 × 60 × 90 cm"], ["Knob-tailed Gecko", "Min: 60 × 45 × 30 cm", "90 × 45 × 45 cm"], ["Woma Python (adult)", "Min: 150 × 60 × 60 cm", "180 × 60 × 60 cm"], ["Children's Python", "Min: 90 × 45 × 45 cm", "120 × 60 × 45 cm"], ["Olive Python (adult)", "Min: 240 × 90 × 90 cm", "300 × 90 × 90 cm"], ["Long-necked Turtle", "Min: 150 × 60 cm aquatic", "Pond setup"]];
   const TypeCard = ({ icon, name, detail, badge, bs }) => (
     <div style={{ background: C.cream, borderRadius: 14, border: "0.5px solid #e8e8e4", padding: "13px 14px", marginBottom: 8, display: "flex", gap: 12 }}>
       <div style={{ width: 40, height: 40, borderRadius: 10, background: C.greenPale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{icon}</div>
@@ -996,7 +996,7 @@ const EnclosurePage = ({ onBack }) => {
 const CATEGORIES = [
   { id: "lizard", label: "Lizards & Dragons", emoji: "🦎", desc: "Bearded Dragons, Blue-tongues, Water Dragons & more", bg: "#f5ece0", count: SPECIES.filter(s => s.type === "lizard").length },
   { id: "snake",  label: "Pythons & Snakes",  emoji: "🐍", desc: "Children's, Carpet, Woma, Green Tree & more",       bg: "#f0e8f5", count: SPECIES.filter(s => s.type === "snake").length },
-  { id: "gecko",  label: "Geckos",            emoji: "🦎", desc: "Leopard, Knob-tailed, Velvet & Thick-tailed",       bg: "#fdf5e8", count: SPECIES.filter(s => s.type === "gecko").length },
+  { id: "gecko",  label: "Geckos",            emoji: "🦎", desc: "Knob-tailed, Thick-tailed, Velvet, Leaf-tailed & more",       bg: "#fdf5e8", count: SPECIES.filter(s => s.type === "gecko").length },
   { id: "turtle", label: "Turtles",           emoji: "🐢", desc: "Long-necked, Murray River, Broad-shelled & more",   bg: "#e8f0f5", count: SPECIES.filter(s => s.type === "turtle").length },
   { id: "frog",   label: "Frogs",             emoji: "🐸", desc: "Green Tree Frog, Marsh Frog & more",               bg: "#e8f5ec", count: SPECIES.filter(s => s.type === "frog").length },
 ];
@@ -1925,7 +1925,7 @@ const MarbledVelvetGeckoPage = ({ onBack }) => (
     tabs={["overview","feeding","health & shedding","handling","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A beautifully patterned gecko found across inland Australia. Their marbled purple-grey and cream pattern is stunning and varies between individuals. Hardy, long-lived, and relatively easy to care for — an excellent choice for gecko enthusiasts looking beyond Leopard Geckos. Semi-arboreal, enjoying both ground hides and climbing.</p>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A beautifully patterned gecko found across inland Australia. Their marbled purple-grey and cream pattern is stunning and varies between individuals. Hardy, long-lived, and relatively easy to care for — an excellent choice for gecko enthusiasts looking for a uniquely Australian species. Semi-arboreal, enjoying both ground hides and climbing.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","12–17 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","30–45%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
@@ -1957,7 +1957,7 @@ const MarbledVelvetGeckoPage = ({ onBack }) => (
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
           <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW</div>
-          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Marbled Velvet Geckos are calm and handleable for their size. Faster than Leopard Geckos but manageable with gentle consistent handling. Handle at night when active for best results.</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Marbled Velvet Geckos are calm and handleable for their size. Faster than Knob-tailed Geckos but manageable with gentle consistent handling. Handle at night when active for best results.</div>
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support full body. Short sessions initially. They are more confident in low light — dim the room for handling sessions. Never grab the tail.</div>
       </>}
@@ -2083,7 +2083,7 @@ const FeederGuidePage = ({ onBack }) => {
             calcium="Poor — dust every feed"
             availability="⭐⭐⭐⭐⭐ Available everywhere"
             best="Occasional treat for most reptiles. Not suitable as a staple."
-            notes="High fat content makes them unsuitable as a main feeder — use as treats only. High in chitin which is difficult to digest, particularly for younger animals. Giant mealworms (superworms) have similar issues. Leopard Geckos and Blue-tongue Skinks particularly enjoy them as occasional treats."
+            notes="High fat content makes them unsuitable as a main feeder — use as treats only. High in chitin which is difficult to digest, particularly for younger animals. Giant mealworms (superworms) have similar issues. Knob-tailed Geckos and Blue-tongue Skinks particularly enjoy them as occasional treats."
             tag="Treat Only"
             tagColor={C.red}
           />
@@ -2822,7 +2822,7 @@ const GLOSSARY_TERMS = [
   { term: "Live food", def: "Prey items that are alive when offered. Generally not recommended — live prey can injure the reptile. Pre-killed or frozen/thawed prey is safer for both animal and owner.", cat: "Nutrition" },
   { term: "MBD", def: "Metabolic Bone Disease. A serious preventable condition caused by insufficient calcium and/or Vitamin D3 (often from inadequate UVB). Symptoms include soft bones, tremors, and difficulty moving.", cat: "Health" },
   { term: "Mites", def: "Tiny external parasites appearing as moving dots on a reptile's skin. Require treatment of both the animal and complete disinfection of the enclosure.", cat: "Health" },
-  { term: "Morph", def: "A genetic variation resulting in different colouration or pattern from the wild type. Common in Bearded Dragons and Leopard Geckos. Morphs are selectively bred in captivity.", cat: "Breeding" },
+  { term: "Morph", def: "A genetic variation resulting in different colouration or pattern from the wild type. Common in Bearded Dragons and carpet pythons. Morphs are selectively bred in captivity.", cat: "Breeding" },
   { term: "Nocturnal", def: "Describes animals active at night and sleeping during the day. Children's Pythons, geckos, and many frogs are nocturnal and generally don't require strong UVB lighting.", cat: "Behaviour" },
   { term: "Oviparous", def: "Describes species that reproduce by laying eggs. Most Australian pythons and many lizards are oviparous.", cat: "Breeding" },
   { term: "Ovoviviparous", def: "Describes species where eggs develop and hatch inside the mother's body and young are born live. Some skinks and lizards are ovoviviparous.", cat: "Breeding" },

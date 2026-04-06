@@ -11,10 +11,12 @@ const C = {
 const SPECIES = [
   { id: "bluetongue",  name: "Blue-tongue Skink",          latin: "Tiliqua scincoides",       type: "lizard", emoji: "🦎", bg: "#f5f0e8", level: "Beginner",     page: "bluetongue" },
   { id: "beardie",     name: "Bearded Dragon",              latin: "Pogona vitticeps",          type: "lizard", emoji: "🦎", bg: "#f0ece0", level: "Beginner",     page: "beardie" },
-  { id: "leopard",      name: "Leopard Gecko",              latin: "Eublepharis macularius",    type: "gecko",  emoji: "🦎", bg: "#fdf5e8", level: "Beginner",     page: "leopard" },
   { id: "knobtail",     name: "Knob-tailed Gecko",           latin: "Nephrurus spp.",            type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Intermediate", page: "knobtail" },
   { id: "thicktail",    name: "Thick-tailed Gecko",          latin: "Underwoodisaurus milii",    type: "gecko",  emoji: "🦎", bg: "#f0ece8", level: "Beginner",     page: "thicktail" },
   { id: "marbled",      name: "Marbled Velvet Gecko",        latin: "Oedura marmorata",          type: "gecko",  emoji: "🦎", bg: "#f5f0f8", level: "Beginner",     page: "marbled" },
+  { id: "leaftail",    name: "Southern Leaf-tailed Gecko",   latin: "Phyllurus platurus",        type: "gecko",  emoji: "🦎", bg: "#f0ece8", level: "Intermediate", page: "leaftail" },
+  { id: "spinytail",   name: "Northern Spiny-tailed Gecko",  latin: "Strophurus ciliaris",       type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "spinytail" },
+  { id: "goldentail",  name: "Golden-tailed Gecko",          latin: "Strophurus taenicauda",     type: "gecko",  emoji: "🦎", bg: "#fff8e0", level: "Beginner",     page: "goldentail" },
   { id: "eastbeardie",  name: "Eastern Bearded Dragon",      latin: "Pogona barbata",            type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "eastbeardie" },
   { id: "rankins",      name: "Rankins Dragon",              latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
   { id: "frilled",      name: "Frilled Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
@@ -2540,6 +2542,167 @@ const SawShellTurtlePage = ({ onBack }) => (
   />
 );
 
+
+// ─── Southern Leaf-tailed Gecko page ─────────────────────────────
+const LeafTailGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Southern Leaf-tailed Gecko" latin="Phyllurus platurus" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most extraordinary native geckos. Found in the sandstone habitats of the Sydney Basin and surrounds, including urban areas where they enter garages and homes. Their flattened body, incredible bark-mimicking camouflage, and distinctive leaf-shaped tail make them unmistakable. A fascinating display animal that rewards patient observation.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","14–18 cm"],["⏳","Lifespan","15–20+ yrs"],["🏠","Min. enclosure","45 × 45 × 60 cm"],["💧","Humidity","50–70%"]]} />
+        <WarnBox type="gold" title="Display animal — not for handling">Southern Leaf-tailed Geckos are stressed by frequent handling. They are best kept as a display species to observe their remarkable camouflage and nocturnal behaviour. Their welfare depends on minimal disturbance.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side" value="24–28°C" width="50%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="18–22°C" width="30%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="15–18°C" width="20%" color="#2b7ec0"/>
+        <WarnBox type="red" title="Cool temperatures essential">Leaf-tailed Geckos are sensitive to heat. Never allow temperatures to exceed 30°C anywhere in the enclosure. They come from cool sandstone environments and will suffer in overheated setups.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A tall enclosure with plenty of vertical surface area — they spend most of their time pressed flat against bark or rock surfaces. Cork bark sheets and flat pieces of sandstone or slate leaning against the walls are ideal. Low UVB lighting recommended. Coconut coir or sandy substrate. Mist one side of the enclosure lightly 2–3 times per week — they drink from droplets. A shallow water bowl. Good ventilation is essential to prevent respiratory issues.</div>
+        <ShopBtn>🛒 Shop gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Feed at night when naturally active. Ambush hunters — they wait motionless for prey to come within range rather than actively chasing it.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — appropriately sized" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Woodies (Wood Roaches)" detail="Excellent Australian native feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Occasional treat — high fat" freq="Weekly"/>
+          <FoodItem icon="🐛" name="Silkworms" detail="High moisture — good for hydration" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Feed at night only">These geckos are strictly nocturnal. Offer food after lights out. They will ignore prey during the day and uneaten insects left in the enclosure can stress or injure the gecko.</WarnBox>
+        <WarnBox type="blue" title="Calcium supplementation">Dust all insects with calcium + D3 at every feed for juveniles, every other feed for adults. Low UVB lighting should be supplemented with D3 powder.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Overheating" detail="The most common cause of decline in captivity. Always monitor temperatures closely. Install a reliable thermometer at enclosure height where the gecko rests."/>
+        <HealthItem title="Respiratory infection" detail="Caused by insufficient ventilation or temperatures too cold combined with high humidity. Signs include wheezing or mucus. Ensure excellent airflow."/>
+        <HealthItem title="Stress" detail="These geckos are sensitive to disturbance. A stressed gecko will be inactive, refuse food, and lose weight. Minimise handling and unnecessary disturbance during the day."/>
+        <HealthItem title="Retained shed" detail="Usually caused by low humidity. A light misting 24 hours before a shed helps. Check carefully around toes after shedding."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Flat against a surface during the day (normal resting position), active and hunting at night, excellent camouflage colouration, plump body condition."/>
+        <SectionLabel>Shedding</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Leaf-tailed Geckos shed every 6–8 weeks. Unlike many geckos, they typically eat their shed. A light mist the day before a shed helps. Do not disturb during or immediately after shedding.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — KEEP TO ABSOLUTE MINIMUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Southern Leaf-tailed Geckos are not handling animals. They are fragile, stress easily, and can drop their tail or suffer injury if mishandled. Handle only for health checks and keep sessions under 2 minutes. This species is best enjoyed through observation.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>If handling is necessary, support the full body from below. Never grab from above or restrain forcefully. Work at night when they are naturally active and more responsive. Their remarkable camouflage can make them very hard to find in the enclosure during the day — resist the urge to disturb them.</div>
+        <WarnBox type="red" title="Tail drop risk">Like many geckos, Leaf-tails can drop their tail under extreme stress. The tail regrows but never matches the original leaf shape — the species' most distinctive feature is permanently altered. Minimise stress at all times.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Southern Leaf-tailed Geckos require a Category 1/Class 1 keeper licence in NSW where they are most commonly available. They are less commonly available in other states. Must be purchased from a licensed breeder only — wild collection is illegal and these animals do not adapt well to captivity if wild-caught." />}
+    </>}
+  />
+);
+
+// ─── Spiny-tailed Gecko page ──────────────────────────────────────
+const SpinyTailGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Northern Spiny-tailed Gecko" latin="Strophurus ciliaris" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Arboreal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most spectacular geckos. Found across northern and central Australia in dry woodlands and spinifex grasslands. Their signature feature is a tail lined with prominent spines — and a remarkable defence mechanism: when threatened they can squirt a harmless but foul-smelling sticky fluid from glands in their tail. Arboreal and highly visible at night, making them fascinating display animals.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","12–16 cm"],["⏳","Lifespan","10–15 yrs"],["🏠","Min. enclosure","45 × 45 × 60 cm"],["💧","Humidity","30–50%"]]} />
+        <WarnBox type="gold" title="Unique defence — tail fluid">Spiny-tailed Geckos can squirt a sticky, foul-smelling fluid from glands in their tail when threatened. This is harmless but can irritate eyes. Avoid sudden movements when handling and never approach them from directly above.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side / basking" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="19–22°C" width="30%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A tall enclosure with plenty of thin branches at varying heights — they are highly arboreal and spend most of their time on branches and twigs. Cork bark and textured back wall. Sandy substrate. Low UVB lighting recommended. Mist lightly 2–3 times per week — they prefer to drink from droplets rather than a bowl. Excellent ventilation is essential — avoid stagnant humid air.</div>
+        <ShopBtn>🛒 Shop gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Despite their slender build they have surprisingly large mouths and can take relatively large prey items. Feed at night when naturally active.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Woodies" detail="Excellent Australian feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Small mealworms" detail="Occasional treat" freq="Weekly"/>
+          <FoodItem icon="🐛" name="Waxworms" detail="High-fat treat — very sparingly" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Feed 3–4 insects per session">These geckos have big appetites but overfeeding causes obesity. Offer 3–4 appropriately sized prey items every 2–3 nights for adults. Juveniles can be fed daily.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="Caused by high humidity combined with poor ventilation. Keep humidity moderate and ensure excellent airflow. Signs include wheezing or mucus."/>
+        <HealthItem title="Obesity" detail="Enthusiastic feeders that can overeat. Monitor body condition — a healthy gecko should have a firm, not swollen, body with no fat deposits behind the eyes."/>
+        <HealthItem title="Egg binding (females)" detail="Gravid females need a suitable laying site — a container of moist sand or coconut coir with an access hole. If a female appears distended and restless, seek vet advice promptly."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert and active at night on branches, feeding readily, bright eyes, good body condition, clean spines on tail."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>HANDLING — LOW RISK BUT USE CAUTION</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Northern Spiny-tailed Geckos are relatively calm but their primary defence (squirting tail fluid) can be activated by sudden movements or being grabbed from above. Handle gently and slowly, from below. Their small size means they are best enjoyed as display animals rather than handling pets.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Avoid holding near the tail — this is where the defensive glands are located. If the gecko raises its tail in a curved position it is warning you. Short sessions only. Wash hands after handling.</div>
+        <WarnBox type="gold" title="Tail fluid warning">If the gecko squirts fluid, avoid touching your eyes and wash the affected area immediately. The fluid is harmless but has an extremely unpleasant smell that can linger. Handle with care to avoid triggering this response.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Northern Spiny-tailed Geckos require a Category 1/Class 1 keeper licence in most states. Available from licensed breeders across Australia. Note: availability varies by state and some Strophurus species have specific state restrictions — confirm availability in your state before purchasing." />}
+    </>}
+  />
+);
+
+// ─── Golden-tailed Gecko page ─────────────────────────────────────
+const GoldenTailGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Golden-tailed Gecko" latin="Strophurus taenicauda" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Arboreal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most beautiful geckos — their striking golden-orange tail with black markings is instantly recognisable and makes them highly sought after in the hobby. Found in dry woodlands and brigalow scrub of southern Queensland. Like all Strophurus, they possess the remarkable ability to squirt a defensive fluid from their tail. Arboreal, nocturnal, and endlessly fascinating to observe.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","10–12 cm"],["⏳","Lifespan","8–12 yrs"],["🏠","Min. enclosure","45 × 45 × 45 cm"],["💧","Humidity","30–45%"]]} />
+        <WarnBox type="red" title="NOT available in Victoria">Golden-tailed Geckos are prohibited in Victoria. They are available in QLD (restricted licence), NSW, SA, WA, and NT. Always check your state before purchasing.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side" value="26–30°C" width="58%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="20–24°C" width="36%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–20°C" width="26%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 45×45×45cm or taller enclosure works well for 1–3 animals (one male with females). Fine sand substrate. A network of thin climbing branches — they are highly arboreal and sleep on exposed branches during the day, relying on camouflage. Low UVB lighting beneficial. Mist the enclosure 1–2 times per week — they drink from droplets. Provide a small moist hide or egg-laying container for breeding females.</div>
+        <ShopBtn>🛒 Shop gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Despite their small size they have impressive appetites and will take surprisingly large prey. Feed at night when naturally active.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Woodies" detail="Excellent Australian feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Small mealworms" detail="Occasional treat" freq="Weekly"/>
+          <FoodItem icon="🐛" name="Waxworms" detail="High-fat treat — very sparingly" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Productive breeders — feed females well">Breeding females are prolific egg-layers, producing 4–6+ clutches per season. Gravid and breeding females need increased calcium supplementation and more frequent feeding to maintain body condition.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Egg binding" detail="Breeding females can become egg-bound if not provided a suitable laying site or if calcium deficient. Always provide a small container of moist substrate for egg laying."/>
+        <HealthItem title="Male aggression" detail="Males are territorial — never house two males together. One male can be kept with 2–4 females successfully."/>
+        <HealthItem title="Respiratory infection" detail="From excessive humidity or poor ventilation. Keep humidity moderate and ensure good airflow."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Vivid golden-orange tail colouration, active at night on branches, feeding readily, alert bright eyes, firm body condition."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>HANDLING — CALM BUT FRAGILE</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Golden-tailed Geckos are calm and generally tolerate brief handling well. Their small size makes them delicate — handle carefully and always over a soft surface. Like all Strophurus, they can squirt defensive fluid from the tail if stressed. Handle gently and avoid sudden movements.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Short sessions only. Their remarkable golden tail is their most striking feature — never grab by the tail. Wash hands before and after handling.</div>
+        <WarnBox type="gold" title="Tail fluid warning">Like all Strophurus, can squirt foul-smelling defensive fluid from the tail if threatened. Avoid eye contact with the fluid and wash immediately if it makes contact.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Golden-tailed Geckos are PROHIBITED in Victoria. In Queensland a restricted/specialist licence is required. Available in NSW, SA, WA, and NT with a standard Category 1/Class 1 keeper licence. Always verify your state requirements before purchasing — this is one of the most state-restricted commonly kept gecko species in Australia." />}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -2558,7 +2721,6 @@ const PAGE_MAP = {
   water:       WaterPythonPage,
   amethystine: AmethystinePage,
   roughscaled: RoughScaledPythonPage,
-  leopard:     LeopardGeckoPage,
   knobtail:    KnobTailedGeckoPage,
   thicktail:   ThickTailedGeckoPage,
   marbled:     MarbledVelvetGeckoPage,
@@ -2571,6 +2733,9 @@ const PAGE_MAP = {
   broadshell:  BroadShellTurtlePage,
   murray:      MurrayRiverTurtlePage,
   sawshell:    SawShellTurtlePage,
+  leaftail:    LeafTailGeckoPage,
+  spinytail:   SpinyTailGeckoPage,
+  goldentail:  GoldenTailGeckoPage,
   enclosure:   EnclosurePage,
   feeders:     FeederGuidePage,
 };

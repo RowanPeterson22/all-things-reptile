@@ -3432,11 +3432,7 @@ export default function App() {
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>
               <input placeholder="Search species, care guides..." style={{ background: "none", border: "none", outline: "none", color: "white", fontSize: 14, width: "100%", fontFamily: "inherit" }} />
             </div>
-            <div style={{ display: "flex", marginTop: 12, borderBottom: "2px solid rgba(255,255,255,0.1)", gap: 4 }}>
-              {tabs.map(t => (
-                <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ flex: 1, background: "none", border: "none", borderBottom: activeTab === t.id ? `2px solid ${C.gold}` : "2px solid transparent", color: activeTab === t.id ? C.gold : "rgba(255,255,255,0.55)", fontSize: 11, fontWeight: 700, padding: "10px 4px", cursor: "pointer", fontFamily: "inherit", marginBottom: -2, whiteSpace: "nowrap" }}>{t.label}</button>
-              ))}
-            </div>
+
           </div>
         )}
 

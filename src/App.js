@@ -18,7 +18,7 @@ const SPECIES = [
   { id: "spinytail",   name: "Northern Spiny-tailed Gecko",  latin: "Strophurus ciliaris",       type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "spinytail" },
   { id: "goldentail",  name: "Golden-tailed Gecko",          latin: "Strophurus taenicauda",     type: "gecko",  emoji: "🦎", bg: "#fff8e0", level: "Beginner",     page: "goldentail" },
   { id: "eastbeardie",  name: "Eastern Bearded Dragon",      latin: "Pogona barbata",            type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "eastbeardie" },
-  { id: "rankins",      name: "Rankins Dragon",              latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
+  { id: "rankins",      name: "Pygmy Bearded Dragon",         latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
   { id: "frilled",      name: "Frilled-neck Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
   { id: "waterdragon",  name: "Eastern Water Dragon",        latin: "Intellagama lesueurii",     type: "lizard", emoji: "🦎", bg: "#e8f5f0", level: "Intermediate", page: "waterdragon" },
   { id: "turtle",      name: "Eastern Long-necked Turtle",  latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: "turtle" },
@@ -1661,12 +1661,12 @@ const EasternBeardedDragonPage = ({ onBack }) => (
 
 // ─── Rankins Dragon page ──────────────────────────────────────────
 const RankinsDragonPage = ({ onBack }) => (
-  <SpeciesPage onBack={onBack} name="Rankins Dragon" latin="Pogona henrylawsoni" emoji="🦎"
+  <SpeciesPage onBack={onBack} name="Pygmy Bearded Dragon" latin="Pogona henrylawsoni" emoji="🦎"
     badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Compact size", C.goldLight, "#7a5a1e"]]}
     tabs={["overview","feeding","health & shedding","handling","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Also known as the Lawson's Dragon or Black-soil Beardie, Rankins Dragons are a smaller, more compact alternative to the Central Bearded Dragon. Found in Queensland's black-soil plains. They share the friendly temperament of their bearded dragon cousins but require less space — perfect for keepers with limited room.</p>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A smaller, more compact alternative to the Central Bearded Dragon. Found in Queensland's black-soil plains. Also known as Rankins Dragon, Lawson's Dragon, and the Black-soil Beardie. They share the friendly temperament of their bearded dragon cousins but require less space — perfect for keepers with limited room.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","25–30 cm"],["⏳","Lifespan","8–12 yrs"],["🏠","Min. enclosure","90 × 45 cm"],["💧","Humidity","30–40%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>

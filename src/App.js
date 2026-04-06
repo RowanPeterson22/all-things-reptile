@@ -19,7 +19,7 @@ const SPECIES = [
   { id: "goldentail",  name: "Golden-tailed Gecko",          latin: "Strophurus taenicauda",     type: "gecko",  emoji: "🦎", bg: "#fff8e0", level: "Beginner",     page: "goldentail" },
   { id: "eastbeardie",  name: "Eastern Bearded Dragon",      latin: "Pogona barbata",            type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "eastbeardie" },
   { id: "rankins",      name: "Rankins Dragon",              latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
-  { id: "frilled",      name: "Frilled Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
+  { id: "frilled",      name: "Frilled-neck Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
   { id: "waterdragon",  name: "Eastern Water Dragon",        latin: "Intellagama lesueurii",     type: "lizard", emoji: "🦎", bg: "#e8f5f0", level: "Intermediate", page: "waterdragon" },
   { id: "turtle",      name: "Eastern Long-necked Turtle",  latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: "turtle" },
   { id: "broadshell",   name: "Broad-shelled Turtle",          latin: "Chelodina expansa",          type: "turtle", emoji: "🐢", bg: "#e0ecf0", level: "Intermediate", page: "broadshell" },
@@ -1694,9 +1694,9 @@ const RankinsDragonPage = ({ onBack }) => (
   />
 );
 
-// ─── Frilled Lizard page ──────────────────────────────────────────
+// ─── Frilled-neck Lizard page ──────────────────────────────────────────
 const FrilledLizardPage = ({ onBack }) => (
-  <SpeciesPage onBack={onBack} name="Frilled Lizard" latin="Chlamydosaurus kingii" emoji="🦎"
+  <SpeciesPage onBack={onBack} name="Frilled-neck Lizard" latin="Chlamydosaurus kingii" emoji="🦎"
     badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Arboreal", C.greenPale, C.green]]}
     tabs={["overview","feeding","health & shedding","handling","licencing"]}
     tabContent={(tab) => <>
@@ -1741,7 +1741,7 @@ const FrilledLizardPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Allow 3–4 weeks to settle before regular handling. Approach slowly and from the side, not from above. Let them walk onto your hand rather than grabbing them. Their frill display is spectacular to see but means they are stressed — end the session if they display persistently.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Frilled Lizards have restricted availability — not available in VIC, SA, TAS, or ACT." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Not available", ok: false }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Not available", ok: false }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Not available", ok: false }, { abbr: "NT", cat: "No licence", ok: true }]} />}
+      {tab === "licencing" && <LegalTab note="Frilled Lizards have restricted availability — not available in VIC, SA, TAS, or ACT." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced (Sch 3)", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2621,7 +2621,7 @@ const GoldenTailGeckoPage = ({ onBack }) => (
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most beautiful geckos — their striking golden-orange tail with black markings is instantly recognisable and makes them highly sought after in the hobby. Found in dry woodlands and brigalow scrub of southern Queensland. Like all Strophurus, they possess the remarkable ability to squirt a defensive fluid from their tail. Arboreal, nocturnal, and endlessly fascinating to observe.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","10–12 cm"],["⏳","Lifespan","8–12 yrs"],["🏠","Min. enclosure","45 × 45 × 45 cm"],["💧","Humidity","30–45%"]]} />
-        <WarnBox type="red" title="NOT available in Victoria">Golden-tailed Geckos are prohibited in Victoria. They are available in QLD (restricted licence), NSW, SA, WA, and NT. Always check your state before purchasing.</WarnBox>
+        <WarnBox type="gold" title="State restrictions apply">Golden-tailed Geckos require an Advanced (Schedule 3) licence in Victoria, and a restricted licence in Queensland. Always verify your state requirements before purchasing.</WarnBox>
         <SectionLabel>Temperature requirements</SectionLabel>
         <TempBar label="Warm side" value="26–30°C" width="58%" color="#e05a2b"/>
         <TempBar label="Cool side" value="20–24°C" width="36%" color="#4a9e6b"/>
@@ -2658,7 +2658,7 @@ const GoldenTailGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Short sessions only. Their remarkable golden tail is their most striking feature — never grab by the tail. Wash hands before and after handling.</div>
         <WarnBox type="gold" title="Tail fluid warning">Like all Strophurus, can squirt foul-smelling defensive fluid from the tail if threatened. Avoid eye contact with the fluid and wash immediately if it makes contact.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Golden-tailed Geckos are PROHIBITED in Victoria. Restricted licence required in QLD." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Prohibited", ok: false }, { abbr: "QLD", cat: "Restricted", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
+      {tab === "licencing" && <LegalTab note="Golden-tailed Geckos require an Advanced (Schedule 3) licence in Victoria and a restricted licence in QLD." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Advanced (Sch 3)", ok: true }, { abbr: "QLD", cat: "Restricted", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );

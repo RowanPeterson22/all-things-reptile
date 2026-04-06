@@ -3446,16 +3446,15 @@ export default function App() {
           {!page && activeTab === "glossary" && <GlossaryScreen />}
         </div>
 
-        {!page && (
-          <div style={{ background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", padding: "10px 0 4px" }}>
-            {tabs.map(t => (
-              <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, cursor: "pointer", padding: "4px 0", fontFamily: "inherit" }}>
-                <span style={{ fontSize: 20 }}>{t.icon}</span>
-                <span style={{ fontSize: 10, color: activeTab === t.id ? C.green : "#aaa", fontWeight: activeTab === t.id ? 700 : 400 }}>{t.label}</span>
-              </button>
-            ))}
-          </div>
-        )}
+        <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", padding: "10px 0", paddingBottom: "calc(10px + env(safe-area-inset-bottom, 0px))", zIndex: 100 }}>
+          {tabs.map(t => (
+            <button key={t.id} onClick={() => setActiveTab(t.id)} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, cursor: "pointer", padding: "4px 0", fontFamily: "inherit" }}>
+              <span style={{ fontSize: 20 }}>{t.icon}</span>
+              <span style={{ fontSize: 10, color: activeTab === t.id ? C.green : "#aaa", fontWeight: activeTab === t.id ? 700 : 400 }}>{t.label}</span>
+            </button>
+          ))}
+        </div>
+        <div style={{ height: "calc(60px + env(safe-area-inset-bottom, 0px))" }} />
     </div>
   );
 }

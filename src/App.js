@@ -2032,7 +2032,7 @@ const FeederGuidePage = ({ onBack }) => {
           </div>
 
           <InsectCard
-            name="Woodies (Wood Roaches)"
+            name="Wood Roaches"
             protein="High (~22%)"
             fat="Moderate (~8%)"
             calcium="Poor — dust every feed"
@@ -2044,7 +2044,7 @@ const FeederGuidePage = ({ onBack }) => {
           />
 
           <InsectCard
-            name="Wood roaches (Woodies)"
+            name="Dubia Roaches"
             protein="Very high (~23%)"
             fat="Low (~7%)"
             calcium="Poor — dust every feed"
@@ -2548,7 +2548,7 @@ const LeafTailGeckoPage = ({ onBack }) => (
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Feed at night when naturally active. Ambush hunters — they wait motionless for prey to come within range rather than actively chasing it.</p>
         <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
           <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — appropriately sized" freq="Every 2–3 nights"/>
-          <FoodItem icon="🦟" name="Woodies (Wood Roaches)" detail="Excellent Australian native feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood Roaches" detail="Excellent Australian native feeder" freq="Every 2–3 nights"/>
           <FoodItem icon="🪲" name="Mealworms" detail="Occasional treat — high fat" freq="Weekly"/>
           <FoodItem icon="🐛" name="Silkworms" detail="High moisture — good for hydration" freq="Occasionally"/>
         </div>

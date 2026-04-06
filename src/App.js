@@ -22,6 +22,11 @@ const SPECIES = [
   { id: "woma",        name: "Woma Python",                 latin: "Aspidites ramsayi",         type: "snake",  emoji: "🐍", bg: "#e8f5ec", level: "Intermediate", page: "woma" },
   { id: "blackheaded", name: "Black-headed Python",         latin: "Aspidites melanocephalus",  type: "snake",  emoji: "🐍", bg: "#e8eef0", level: "Intermediate", page: "blackheaded" },
   { id: "olive",       name: "Olive Python",                latin: "Liasis olivaceus",          type: "snake",  emoji: "🐍", bg: "#ecf0e8", level: "Advanced",     page: "olive" },
+  { id: "pygmy",       name: "Pygmy Python",                latin: "Antaresia perthensis",      type: "snake",  emoji: "🐍", bg: "#f5ece8", level: "Beginner",     page: "pygmy" },
+  { id: "jungle",      name: "Jungle Carpet Python",        latin: "Morelia spilota cheynei",   type: "snake",  emoji: "🐍", bg: "#f5f0e0", level: "Intermediate", page: "jungle" },
+  { id: "water",       name: "Water Python",                latin: "Liasis fuscus",             type: "snake",  emoji: "🐍", bg: "#e0ecf5", level: "Intermediate", page: "water" },
+  { id: "amethystine", name: "Amethystine Python",          latin: "Simalia amethistina",       type: "snake",  emoji: "🐍", bg: "#f0e8f8", level: "Advanced",     page: "amethystine" },
+  { id: "roughscaled", name: "Rough-scaled Python",         latin: "Morelia carinata",          type: "snake",  emoji: "🐍", bg: "#f8f0e8", level: "Advanced",     page: "roughscaled" },
   { id: "greentree",   name: "Green Tree Python",           latin: "Morelia viridis",           type: "snake",  emoji: "🐍", bg: "#e8f5ee", level: "Advanced",     page: null },
 ];
 
@@ -1098,6 +1103,254 @@ const SplashScreen = ({ onComplete }) => {
   );
 };
 
+
+// ─── Pygmy Python page ────────────────────────────────────────────
+const PygmyPythonPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Pygmy Python" latin="Antaresia perthensis" emoji="🐍"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling & breeding","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Australia's smallest python and one of the world's smallest python species. Found in the Pilbara region of Western Australia. Despite their tiny size they make fascinating and rewarding pets — perfect for keepers with limited space.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","40–60 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","40–55%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="32–34°C" width="75%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="27–30°C" width="60%" color="#e0922b"/>
+        <TempBar label="Cool side" value="22–25°C" width="42%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–20°C" width="26%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Small timber or PVC enclosure. Snug hides are essential — Pygmy Pythons feel most secure in very tight spaces. Newspaper or paper towel substrate. A small water bowl. Despite their small size they are active and curious at night.</div>
+        <WarnBox type="gold" title="WA restricted species">Pygmy Pythons originate from WA. Check current availability in your state as interstate movement of some Antaresia species may require additional permits.</WarnBox>
+        <ShopBtn>🛒 Shop Pygmy Python supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Due to their small size, Pygmy Pythons eat pinky mice for most of their lives. Always use tongs and pre-killed or frozen/thawed prey.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Pinky mice" detail="Main prey item — appropriately sized" freq="Every 5–7 days"/>
+          <FoodItem icon="🐭" name="Fuzzy mice" detail="Large adults only" freq="Every 7–10 days"/>
+        </div>
+        <WarnBox type="gold" title="Size matters">Never feed prey wider than the widest part of the snake's body. For Pygmy Pythons this usually means pinky mice throughout their lives.</WarnBox>
+        <WarnBox type="red" title="Feeding response">Despite their small size, Pygmy Pythons can have a strong feeding response. Always use tongs and hook-train.</WarnBox>
+        <ShopBtn>🛒 Shop feeders</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="Watch for wheezing or mucus. Keep temperatures appropriate and humidity not too high."/>
+        <HealthItem title="Mites" detail="Check regularly — even small pythons can carry mites. Full enclosure treatment required."/>
+        <HealthItem title="Regurgitation" detail="Common if prey is too large or handling occurs too soon after feeding. Fast for 2 weeks after regurgitation."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, alert, strong feeding response, regular shedding, clean vent."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling & breeding" && <>
+        <SnakeHandling biteRisk="low" notes="Pygmy Pythons are generally calm for their size. Hatchlings can be nippy — handle carefully given they are very small and delicate. Regular gentle handling builds confidence. Their small size means they can move quickly." />
+        <SnakeBreeding clutchSize="2–5 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="2–3 years" notes="One of the smallest clutch sizes of any python — typically just 2–5 eggs. Requires a winter cooling period. Eggs are relatively large compared to the female's body size. A rewarding breeding project given their rarity in captivity." />
+      </>}
+      {tab === "licencing" && <LegalTab note="Pygmy Pythons are Category 1/Class 1 in most states. As a WA endemic species, check current interstate availability and any additional requirements before purchasing." />}
+    </>}
+  />
+);
+
+// ─── Jungle Carpet Python page ───────────────────────────────────
+const JungleCarpetPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Jungle Carpet Python" latin="Morelia spilota cheynei" emoji="🐍"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Semi-arboreal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling & breeding","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>The most visually striking of all carpet python subspecies — a vibrant yellow and black pattern that intensifies with age. Found in the rainforests of north Queensland. One of the most sought-after pythons in Australian collections. Requires higher humidity and temperatures than other carpet subspecies.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","1.5–2.5 m"],["⏳","Lifespan","20–30 yrs"],["🏠","Min. enclosure","180 × 60 cm"],["💧","Humidity","60–80%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="34–37°C" width="84%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="20–24°C" width="34%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Higher humidity than other carpets">Jungle Carpets come from tropical rainforest. They require significantly higher humidity (60–80%) than inland carpet subspecies. Regular misting or a fogger is beneficial.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Tall timber or PVC enclosure — Jungles are highly arboreal. Sturdy horizontal branches are essential. Cypress mulch or coir substrate. Excellent ventilation is critical despite the higher humidity. Large water bowl. The colouration improves dramatically in proper conditions.</div>
+        <ShopBtn>🛒 Shop Jungle Carpet supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Generally good feeders once established. Feed pre-killed or frozen/thawed prey. Always use long tongs.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Fuzzy / hopper mice" detail="Hatchlings and small juveniles" freq="Every 5–7 days"/>
+          <FoodItem icon="🐭" name="Adult mice" detail="Juveniles" freq="Every 7–10 days"/>
+          <FoodItem icon="🐀" name="Small to medium rats" detail="Sub-adults and adults" freq="Every 10–14 days"/>
+        </div>
+        <WarnBox type="red" title="Defensive feeders">Jungle Carpets can be feistier feeders than other carpet subspecies. Always hook-train and use long tongs. Juveniles in particular can be defensive.</WarnBox>
+        <WarnBox type="gold" title="Colour and feeding">Good nutrition and proper temperatures directly affect the quality of their yellow and black colouration. Well-fed, properly kept animals have dramatically better colour.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="Despite needing high humidity, poor ventilation causes respiratory issues. Ensure airflow is excellent."/>
+        <HealthItem title="Scale rot" detail="High humidity without good ventilation causes bacterial skin infections. Keep substrate dry on top even if humidity is high."/>
+        <HealthItem title="Mites" detail="Very common with all carpet pythons. Check regularly, especially around heat source areas."/>
+        <HealthItem title="Dull colouration" detail="Poor colour is often a husbandry issue — check temperatures, humidity, nutrition, and UVB levels."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Vivid yellow and black pattern, alert and arboreal behaviour, strong feeding response, regular shedding."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling & breeding" && <>
+        <SnakeHandling biteRisk="medium" notes="Jungle Carpets have a reputation as the feistiest carpet subspecies. Many individuals are defensive especially as juveniles, and some remain so throughout their lives. Consistent handling from an early age is essential. Always hook-train. Adults generally become much calmer with regular interaction." />
+        <SnakeBreeding clutchSize="10–25 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="3–4 years" notes="Requires a significant winter cooling period with reduced temperatures and lighting. Females are dedicated egg-guarders and will shiver to generate heat. Their stunning colouration makes them a popular and rewarding breeding project. High-colour individuals command premium prices." />
+      </>}
+      {tab === "licencing" && <LegalTab note="Jungle Carpet Pythons are Category 2/Class 2 in most states due to their larger size. A keeper licence at the appropriate level is required." />}
+    </>}
+  />
+);
+
+// ─── Water Python page ────────────────────────────────────────────
+const WaterPythonPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Water Python" latin="Liasis fuscus" emoji="🐍"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Semi-aquatic", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling & breeding","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A sleek, iridescent python from the tropical north of Australia. Found near rivers, lakes, and wetlands across northern Australia and New Guinea. Their dark brown scales with a beautiful blue-purple iridescent sheen make them a striking display animal. Active, alert, and fast-moving.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","1.5–2.5 m"],["⏳","Lifespan","20–25 yrs"],["🏠","Min. enclosure","180 × 60 cm"],["💧","Humidity","60–80%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="33–36°C" width="82%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="22–24°C" width="36%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Water access is essential">Water Pythons are semi-aquatic and should have access to a large water feature or soaking tub. They frequently soak and swim — this is natural behaviour, not a sign of mites or illness.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Large PVC or timber enclosure with a significant water feature — at minimum a tub large enough for the snake to fully submerge. High humidity. Sturdy branches for climbing. Cork bark hides at warm and cool ends. Ensure excellent ventilation to prevent respiratory issues despite the high humidity.</div>
+        <ShopBtn>🛒 Shop Water Python supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. In the wild, Water Pythons feed heavily on rats, birds, and aquatic prey. In captivity they adapt well to rodents. Can be enthusiastic but sometimes defensive feeders.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Mice (various sizes)" detail="Hatchlings through juveniles" freq="Every 5–7 days"/>
+          <FoodItem icon="🐀" name="Small to medium rats" detail="Sub-adults and adults" freq="Every 10–14 days"/>
+        </div>
+        <WarnBox type="red" title="Active feeding response">Water Pythons can be enthusiastic and fast-striking feeders. Always use long tongs and hook-train before every interaction.</WarnBox>
+        <WarnBox type="gold" title="Feeding near water">Some Water Pythons prefer to be fed near their water feature — this mimics their natural feeding environment and can improve feeding response in reluctant individuals.</WarnBox>
+        <ShopBtn>🛒 Shop feeders</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="High humidity environments require excellent ventilation. Wheezing or mucus needs prompt vet attention."/>
+        <HealthItem title="Scale rot" detail="Caused by sitting in stagnant water or wet substrate for extended periods. Change water regularly and keep substrate clean."/>
+        <HealthItem title="Mites" detail="Check around the water bowl and heat source regularly. Water Pythons frequently soak, which can actually help dislodge mites."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Iridescent sheen on scales, alert and active, uses water feature regularly, strong feeding response."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling & breeding" && <>
+        <SnakeHandling biteRisk="medium" notes="Water Pythons are fast and alert — they can be defensive, particularly when young. They move quickly and can be unpredictable. Regular consistent handling from an early age significantly improves temperament. Always hook-train. Adults can become quite calm with regular interaction." />
+        <SnakeBreeding clutchSize="8–16 eggs" incubationTemp="30–32°C" incubationDays="58–65 days" maturityAge="3–4 years" notes="Requires a winter cooling period. Females are good egg-guarders. A less commonly bred species in Australian collections — captive-bred animals are more tractable than wild-caught individuals. Their iridescent colouration makes them a unique and attractive breeding project." />
+      </>}
+      {tab === "licencing" && <LegalTab note="Water Pythons are Category 2/Class 2 in most states. A keeper licence at the appropriate level is required." />}
+    </>}
+  />
+);
+
+// ─── Amethystine Python page ──────────────────────────────────────
+const AmethystinePage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Amethystine Python" latin="Simalia amethistina" emoji="🐍"
+    badges={[["Advanced", C.redPale, C.red], ["Australian native", C.bluePale, C.blue], ["Largest Australian python", C.redPale, C.red]]}
+    tabs={["overview","feeding","health & shedding","handling & breeding","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Australia's largest python and one of the longest snakes in the world. Found in the tropical rainforests of far north Queensland. Their scales have a beautiful amethyst iridescence in sunlight. An impressive and long-lived species suited only to experienced keepers with significant space and resources.</p>
+        <WarnBox type="red" title="Advanced species — significant commitment">Amethystine Pythons grow very large and live for 25+ years. Housing, feeding costs, and handling requirements are substantial. Two-person handling is essential for large adults. Not suitable for beginners or intermediate keepers.</WarnBox>
+        <SectionLabel>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","3.0–5.0 m"],["⏳","Lifespan","25–30+ yrs"],["🏠","Min. enclosure","300 × 90 cm"],["💧","Humidity","60–80%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="34–37°C" width="84%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="22–24°C" width="36%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>An extremely large, custom-built enclosure is non-negotiable. Solid timber construction with reinforced security locks. Very large water feature — they love to soak. Sturdy climbing branches. High humidity with excellent ventilation. The enclosure must be escape-proof — a large escaped Amethystine Python is a serious situation.</div>
+        <ShopBtn>🛒 Shop Amethystine Python supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Adults require very large prey items — the feeding cost of an Amethystine Python is significant. Always use extra-long tongs and never free-hand feed.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Mice / small rats" detail="Hatchlings and juveniles" freq="Every 7 days"/>
+          <FoodItem icon="🐀" name="Large rats" detail="Sub-adults" freq="Every 10–14 days"/>
+          <FoodItem icon="🐇" name="Rabbits / large rats" detail="Adults" freq="Every 14–21 days"/>
+        </div>
+        <WarnBox type="red" title="Feeding safety critical">Amethystine Pythons are powerful constrictors. Two-person presence during feeding interaction is strongly recommended for large adults. Have an emergency plan for a constriction incident.</WarnBox>
+        <WarnBox type="gold" title="Feeding cost">Budget carefully — feeding a large adult Amethystine Python is a significant ongoing expense. Factor this into your decision before acquiring this species.</WarnBox>
+        <ShopBtn>🛒 Shop feeders</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="Their size makes treatment complex and expensive. Prevention through proper temperatures and ventilation is critical."/>
+        <HealthItem title="Obesity" detail="Large pythons can become obese if overfed. Keep portions appropriate — an obese Amethystine Python is a serious health risk."/>
+        <HealthItem title="Handling injuries" detail="Their size and strength means improper handling can injure both snake and keeper. Always handle with a second person for large adults."/>
+        <HealthItem title="Enclosure security" detail="Check all locks and enclosure integrity regularly. A large escaped python requires immediate professional assistance."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Amethyst iridescence in sunlight, alert and responsive, firm muscle tone, regular feeding and shedding."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling & breeding" && <>
+        <SnakeHandling biteRisk="medium" notes="Amethystine Pythons vary in temperament but their size makes any defensive behaviour extremely significant. Always hook-train. Two-person handling is mandatory for adults over 2.5m. Their power means they can be difficult to control if startled. Never handle alone when the snake is large. Despite their size, well-socialised adults can be manageable." />
+        <SnakeBreeding clutchSize="8–20 eggs" incubationTemp="30–32°C" incubationDays="65–75 days" maturityAge="4–6 years" notes="A breeding project only for very experienced keepers with appropriate space and facilities. Requires a winter cooling period. Females are dedicated egg-guarders. Hatchlings are large and should feed readily from the start. A prestigious and rewarding project given their status as Australia's largest python." />
+      </>}
+      {tab === "licencing" && <LegalTab note="Amethystine Pythons require a Category 2/Class 2 keeper licence in most states. Their large size and the significant commitment required means thorough research and preparation before acquiring this species is essential." />}
+    </>}
+  />
+);
+
+// ─── Rough-scaled Python page ─────────────────────────────────────
+const RoughScaledPythonPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Rough-scaled Python" latin="Morelia carinata" emoji="🐍"
+    badges={[["Advanced", C.redPale, C.red], ["Australian native", C.bluePale, C.blue], ["Extremely rare", C.redPale, C.red]]}
+    tabs={["overview","feeding","health & shedding","handling & breeding","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's rarest and most unique pythons. Found only in the remote rocky gorges of the Kimberley region in Western Australia. Distinguished by their strongly keeled (ridged) scales — unique among Australian pythons. Exceptionally rarely available in captivity and found in very few collections worldwide.</p>
+        <WarnBox type="red" title="Extremely rare — specialist only">Rough-scaled Pythons are almost never available in Australian captivity. If you encounter one for sale, verify the legitimacy of the seller and all documentation carefully. This is a species for specialist collectors with advanced experience only.</WarnBox>
+        <SectionLabel>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","1.2–2.0 m"],["⏳","Lifespan","20–25 yrs"],["🏠","Min. enclosure","150 × 60 cm"],["💧","Humidity","50–70%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="33–36°C" width="82%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–30°C" width="62%" color="#e0922b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <WarnBox type="gold" title="Limited husbandry data">Due to the extreme rarity of this species in captivity, published husbandry data is limited. The care requirements above are based on their natural habitat in rocky Kimberley gorges and comparison with related species. Experienced mentorship is strongly recommended.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Rocky gorge-style setup. Cork bark and rock hides. Moderate humidity with good ventilation. Sturdy climbing opportunities — they are semi-arboreal in the wild. A water bowl large enough to soak in. The enclosure should reflect their natural rocky habitat as closely as possible.</div>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Expected to feed on small mammals and possibly lizards in the wild. In captivity, rodents are the standard prey item. Feeding data from captive specimens is very limited.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Mice (various sizes)" detail="Juveniles and adults" freq="Every 7–10 days"/>
+          <FoodItem icon="🐀" name="Small rats" detail="Large adults" freq="Every 10–14 days"/>
+        </div>
+        <WarnBox type="gold" title="Scenting may be needed">Some captive specimens have required scenting of prey with lizard to initiate feeding. Purchase only animals with a confirmed established feeding record.</WarnBox>
+        <WarnBox type="red" title="Feeding response">Always use tongs and hook-train. Given the extreme rarity of this species, the risk of injury to the animal during feeding must be minimised.</WarnBox>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Limited data available" detail="Due to the rarity of this species in captivity, comprehensive health data is not available. A reptile vet experienced with pythons should be identified before acquiring this species."/>
+        <HealthItem title="Feeding refusal" detail="Some captive specimens are reluctant feeders. Purchase only animals with a confirmed, established feeding record from reputable sources."/>
+        <HealthItem title="Stress" detail="This species is so rarely kept that stress from improper husbandry is a significant risk. Thorough research and experienced mentorship is essential."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert behaviour, keeled scales in good condition, accepting regular feeds, active at night."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling & breeding" && <>
+        <SnakeHandling biteRisk="medium" notes="Temperament data is very limited given the rarity of this species in captivity. Approach with the same respect as any wild-type python. Hook-train consistently. Given the extreme value and rarity of this species, minimising handling stress is a priority." />
+        <SnakeBreeding clutchSize="Unknown" incubationTemp="30–32°C" incubationDays="Unknown" maturityAge="Unknown" notes="Breeding data for this species in captivity is essentially non-existent. Any successful breeding would be a significant achievement and contribution to the captive population. Collaboration with other specialist keepers and herpetological societies is strongly encouraged." />
+      </>}
+      {tab === "licencing" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Rough-scaled Pythons are found only in WA and may have been recorded in QLD. Licence requirements and availability vary significantly by state. Verify all documentation extremely carefully before any transaction involving this species.</p>
+        <WarnBox type="red" title="Due diligence critical">Given the extreme rarity and value of this species, thoroughly verify the legitimacy of any seller, the legality of the animal, and all documentation. Consult your state wildlife authority before acquiring.</WarnBox>
+        <LegalTab note="Rough-scaled Pythons require Category 2 licencing in states where they are available. They are effectively not available in most states. QLD and WA are the only states where captive specimens have been recorded." />
+      </>}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -1111,6 +1364,11 @@ const PAGE_MAP = {
   woma:        WomaPythonPage,
   blackheaded: BlackHeadedPythonPage,
   olive:       OlivePythonPage,
+  pygmy:       PygmyPythonPage,
+  jungle:      JungleCarpetPage,
+  water:       WaterPythonPage,
+  amethystine: AmethystinePage,
+  roughscaled: RoughScaledPythonPage,
   enclosure:   EnclosurePage,
 };
 

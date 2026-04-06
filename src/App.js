@@ -19,7 +19,10 @@ const SPECIES = [
   { id: "rankins",      name: "Rankins Dragon",              latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
   { id: "frilled",      name: "Frilled Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
   { id: "waterdragon",  name: "Eastern Water Dragon",        latin: "Intellagama lesueurii",     type: "lizard", emoji: "🦎", bg: "#e8f5f0", level: "Intermediate", page: "waterdragon" },
-  { id: "turtle",      name: "Long-necked Turtle",          latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: null },
+  { id: "turtle",      name: "Eastern Long-necked Turtle",  latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: "turtle" },
+  { id: "broadshell",   name: "Broad-shelled Turtle",          latin: "Chelodina expansa",          type: "turtle", emoji: "🐢", bg: "#e0ecf0", level: "Intermediate", page: "broadshell" },
+  { id: "murray",       name: "Murray River Turtle",           latin: "Emydura macquarii",          type: "turtle", emoji: "🐢", bg: "#e8f5f0", level: "Intermediate", page: "murray" },
+  { id: "sawshell",     name: "Saw-shelled Turtle",            latin: "Myuchelys latisternum",      type: "turtle", emoji: "🐢", bg: "#f0f5e8", level: "Intermediate", page: "sawshell" },,
   { id: "childrens",   name: "Children's Python",           latin: "Antaresia childreni",       type: "snake",  emoji: "🐍", bg: "#f0e8f5", level: "Beginner",     page: "childrens" },
   { id: "stimsons",    name: "Stimson's Python",            latin: "Antaresia stimsoni",        type: "snake",  emoji: "🐍", bg: "#ede8f5", level: "Beginner",     page: "stimsons" },
   { id: "spotted",     name: "Spotted Python",              latin: "Antaresia maculosa",        type: "snake",  emoji: "🐍", bg: "#f5edf0", level: "Beginner",     page: "spotted" },
@@ -2119,6 +2122,217 @@ const GreenTreePythonPage = ({ onBack }) => (
   />
 );
 
+
+// ─── Eastern Long-necked Turtle page ─────────────────────────────
+const EasternLongNeckPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Eastern Long-necked Turtle" latin="Chelodina longicollis" emoji="🐢"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Aquatic", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & setup","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Australia's most commonly kept freshwater turtle. Found across south-eastern Australia in rivers, lakes, and wetlands. Their extraordinarily long neck — sometimes as long as their shell — is used to strike at prey with lightning speed. Fascinating to watch, long-lived, and rewarding to keep with the right setup.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Shell length","20–28 cm"],["⏳","Lifespan","30–50+ yrs"],["🏠","Min. tank","200L+"],["💧","Water temp","18–24°C"]]} />
+        <WarnBox type="red" title="Long term commitment">Eastern Long-necked Turtles can live for 30–50+ years in captivity. This is a multi-decade commitment. Plan accordingly before purchasing.</WarnBox>
+        <SectionLabel>Tank setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A large aquatic setup is essential — minimum 200 litres for one adult. A basking platform above the waterline where the turtle can fully dry out under a heat lamp is critical. UVB lighting over the basking area. Water depth should allow the turtle to fully submerge but also stand on the bottom and breathe. A high-quality canister filter — turtles are extremely messy and produce a lot of waste. Regular partial water changes (25–30% weekly) regardless of filtration.</div>
+        <WarnBox type="gold" title="Filtration is critical">Turtles produce significantly more waste than fish of equivalent size. Under-filtration leads to rapid water quality decline, shell rot, and respiratory infections. Invest in a filter rated for at least 3–4 times your tank volume.</WarnBox>
+        <SectionLabel>Temperature & lighting</SectionLabel>
+        <TempBar label="Basking spot (air temp)" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Water temperature" value="18–24°C" width="36%" color="#2b7ec0"/>
+        <ShopBtn>🛒 Shop turtle supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Feed in the water — turtles cannot swallow food on land as they need water to help them swallow. A varied diet promotes good health and enrichment.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐟" name="Feeder fish / whitebait" detail="Whole fish provide bones for calcium" freq="2–3x per week"/>
+          <FoodItem icon="🦐" name="Prawns / shrimp" detail="Shell-on for calcium content" freq="2–3x per week"/>
+          <FoodItem icon="🪱" name="Earthworms" detail="Excellent nutrition — eagerly taken" freq="2–3x per week"/>
+          <FoodItem icon="🦗" name="Crickets / woodies" detail="Good variety item — drop into water" freq="Weekly"/>
+          <FoodItem icon="🐌" name="Snails" detail="Shell provides calcium — a favourite" freq="Weekly"/>
+          <FoodItem icon="🐢" name="Turtle pellets" detail="Quality commercial pellets as supplement" freq="2–3x per week"/>
+        </div>
+        <WarnBox type="gold" title="Feed in water only">Long-necked Turtles cannot eat on land — they need water to swallow. Always feed in the tank or in a separate feeding container to keep the main tank cleaner.</WarnBox>
+        <WarnBox type="red" title="Remove uneaten food promptly">Uneaten food rapidly degrades water quality. Remove any uneaten food within 30 minutes of feeding.</WarnBox>
+        <ShopBtn>🛒 Shop turtle food</ShopBtn>
+      </>}
+      {tab === "health & setup" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Shell rot" detail="Bacterial or fungal infection of the shell — usually caused by poor water quality or insufficient basking time. Signs include soft or pitting areas on the shell, discolouration, or odour. Requires veterinary treatment and improved husbandry."/>
+        <HealthItem title="Respiratory infection" detail="Turtles with respiratory infections often list to one side or float unevenly. Caused by cold water temperatures or poor water quality. Prompt vet attention required."/>
+        <HealthItem title="Vitamin A deficiency" detail="Causes swollen eyelids and lethargy. Prevented by feeding a varied diet including whole prey items."/>
+        <HealthItem title="Salmonella" detail="All turtles can carry Salmonella. Always wash hands thoroughly after handling turtles or aquarium water. Keep children supervised during interactions."/>
+        <HealthItem title="Hibernation (aestivation)" detail="In cooler months some turtles become less active. This is normal. Maintain water temperature and ensure basking is available."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active swimming, basking regularly, eating well, clear eyes, hard smooth shell, alert when approached."/>
+        <SectionLabel>Water quality guide</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Test water weekly — ammonia and nitrite should always be zero. Nitrates should be kept below 20ppm with regular water changes. pH 6.5–7.5 is ideal. Dechlorinate all tap water before adding to the tank. A reliable test kit is an essential purchase.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — KEEP MINIMAL</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Eastern Long-necked Turtles are aquatic animals — they are not handling pets. Excessive handling causes significant stress. Keep handling to a minimum and for health checks only.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>When handling is necessary, hold the turtle at the sides of the shell — never by the neck or limbs. Their long neck can reach around to bite surprisingly easily. Always wash hands immediately after handling. Keep sessions brief and return to water promptly.</div>
+        <WarnBox type="red" title="Musk gland warning">When stressed, Long-necked Turtles release a foul-smelling musk from glands near their legs. This is a defence mechanism — if your turtle musks frequently during handling, reduce handling sessions significantly.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Eastern Long-necked Turtles require a Category 1/Class 1 keeper licence in most states. They are not available in Tasmania. Must be purchased from a licensed breeder. Note that turtles are long-lived animals — ensure you are prepared for a 30–50 year commitment before purchasing." />}
+    </>}
+  />
+);
+
+// ─── Broad-shelled Turtle page ────────────────────────────────────
+const BroadShellTurtlePage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Broad-shelled Turtle" latin="Chelodina expansa" emoji="🐢"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Large species", C.redPale, C.red]]}
+    tabs={["overview","feeding","health & setup","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Australia's largest freshwater turtle and one of the largest side-necked turtles in the world. Found in the Murray-Darling river system and coastal rivers of eastern Australia. An impressive animal requiring a very large aquatic setup — not suitable for small spaces. Their broad, flattened shell and enormous neck make them unmistakable.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Shell length","35–48 cm"],["⏳","Lifespan","50+ yrs"],["🏠","Min. tank","500L+"],["💧","Water temp","18–24°C"]]} />
+        <WarnBox type="red" title="Very large species — significant space required">Broad-shelled Turtles are one of Australia's largest reptiles. A 500L+ tank is the minimum for an adult — many keepers use custom-built pond systems. Do not underestimate the space and filtration requirements of this species.</WarnBox>
+        <SectionLabel>Tank setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A very large tank or custom pond setup is essential. Industrial-grade canister filtration — they produce enormous amounts of waste. Large basking platform with heat lamp and UVB above. Water depth sufficient for full submersion. Weekly 30–40% water changes are the minimum. Many keepers of large Broad-shells transition to outdoor pond systems as the animal grows.</div>
+        <TempBar label="Basking spot (air temp)" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Water temperature" value="18–24°C" width="36%" color="#2b7ec0"/>
+        <ShopBtn>🛒 Shop turtle supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Primarily carnivorous. Adults are powerful predators capable of taking surprisingly large prey. Their long neck strikes with remarkable speed — use tongs when feeding.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐟" name="Whole fish" detail="Large whitebait, smelt, small fish" freq="2–3x per week"/>
+          <FoodItem icon="🦐" name="Prawns / yabbies" detail="Shell-on for calcium" freq="2–3x per week"/>
+          <FoodItem icon="🪱" name="Large earthworms" detail="Excellent protein source" freq="Weekly"/>
+          <FoodItem icon="🐢" name="Quality turtle pellets" detail="Large pellets for adult turtles" freq="2–3x per week"/>
+        </div>
+        <WarnBox type="red" title="Powerful strike — use tongs">Broad-shelled Turtles have a very fast and powerful neck strike when feeding. Always use long tongs to offer food — never fingers near the water surface during feeding time.</WarnBox>
+        <ShopBtn>🛒 Shop turtle food</ShopBtn>
+      </>}
+      {tab === "health & setup" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Shell rot" detail="Serious risk with insufficient basking or poor water quality. Their large shell size means infections can become extensive before being noticed. Inspect the shell regularly."/>
+        <HealthItem title="Water quality issues" detail="Their large size and appetite means they produce a lot of waste. Poor filtration rapidly leads to health problems. Invest in the best filtration available."/>
+        <HealthItem title="Respiratory infection" detail="Uneven floating or listing to one side indicates respiratory issues. Prompt veterinary attention required."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active and alert in water, basking regularly, eating well, hard smooth broad shell, bright eyes."/>
+        <SectionLabel>Water quality</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Weekly water testing is essential. Ammonia and nitrite must be zero. Nitrates below 20ppm. For large setups, consider a sump filter or multiple canister filters running in series. An outdoor pond with a biological filter is ideal for large adults.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.redPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.red}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:6}}>HANDLING — EXPERIENCED KEEPERS ONLY</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Large Broad-shelled Turtles require two people to handle safely. Their powerful neck can reach all the way to the back of their shell — hold at the very back of the shell on each side. They can inflict painful bites and their claws are sharp. Minimise handling to health checks only.</div>
+        </div>
+        <WarnBox type="red" title="Musk gland warning">Like all long-necked turtles, Broad-shells release a very pungent musk when stressed. Handle over a sink or outdoors.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Broad-shelled Turtles require a Category 1/Class 1 keeper licence in most states. Not available in Tasmania. Given their very large adult size, ensure you have adequate space and filtration before purchasing. A 50+ year commitment." />}
+    </>}
+  />
+);
+
+// ─── Murray River Turtle page ─────────────────────────────────────
+const MurrayRiverTurtlePage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Murray River Turtle" latin="Emydura macquarii" emoji="🐢"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Aquatic", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & setup","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A robust, active turtle from the Murray-Darling river system. Unlike the Long-necked Turtle, the Murray River Turtle has a shorter, more typical neck — they are a side-necked turtle (Pleurodire) that folds their neck sideways rather than retracting it back. Active swimmers and entertaining to watch. More tolerant of cooler water temperatures than many turtle species.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Shell length","22–30 cm"],["⏳","Lifespan","30–40+ yrs"],["🏠","Min. tank","300L+"],["💧","Water temp","16–22°C"]]} />
+        <WarnBox type="blue" title="Cooler water preferred">Murray River Turtles are from a cooler climate river system. They prefer cooler water temperatures (16–22°C) than tropical species. A water heater may not be needed in most Australian homes — avoid overheating their water.</WarnBox>
+        <SectionLabel>Tank setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 300L+ tank for one adult. Large basking platform above waterline with heat lamp and UVB. High-quality canister filtration. Regular weekly water changes. They are active swimmers so depth and open swimming space is important. Can tolerate cooler winter temperatures — this is natural and good for their long-term health.</div>
+        <TempBar label="Basking spot (air temp)" value="26–30°C" width="58%" color="#e05a2b"/>
+        <TempBar label="Water temperature" value="16–22°C" width="32%" color="#2b7ec0"/>
+        <ShopBtn>🛒 Shop turtle supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivorous — more plant material in their diet than Long-necked Turtles. A varied diet of animal protein and aquatic plants promotes good health.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐟" name="Feeder fish / whitebait" detail="Whole fish for calcium" freq="2–3x per week"/>
+          <FoodItem icon="🦐" name="Prawns / shrimp" detail="Shell-on preferred" freq="2–3x per week"/>
+          <FoodItem icon="🪱" name="Earthworms" detail="Excellent natural food" freq="Weekly"/>
+          <FoodItem icon="🌿" name="Aquatic plants" detail="Water hyacinth, duckweed — eat naturally" freq="Can be left in tank"/>
+          <FoodItem icon="🐢" name="Turtle pellets" detail="Quality commercial pellets" freq="2–3x per week"/>
+        </div>
+        <WarnBox type="gold" title="Live plants add enrichment">Murray River Turtles naturally graze on aquatic plants. Adding live aquatic plants to the tank provides both nutrition and enrichment — and helps with water quality.</WarnBox>
+        <ShopBtn>🛒 Shop turtle food</ShopBtn>
+      </>}
+      {tab === "health & setup" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Shell rot" detail="Caused by poor water quality or insufficient basking. Inspect shell regularly for soft spots, discolouration, or unusual odour."/>
+        <HealthItem title="Eye infections" detail="Cloudy or swollen eyes indicate poor water quality or vitamin A deficiency. Improve water quality and vary diet."/>
+        <HealthItem title="Respiratory infection" detail="Uneven floating indicates respiratory problems. Ensure water is not too warm and quality is maintained."/>
+        <HealthItem title="Overheating" detail="Murray River Turtles prefer cooler water. A tank that is too warm causes chronic stress. Keep water at 16–22°C."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active swimming, basking daily, eating well, smooth hard shell, clear eyes, alert and responsive."/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — KEEP MINIMAL</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Murray River Turtles are aquatic animals and handling should be kept to health checks only. They are generally less defensive than Long-necked Turtles but can still scratch with their claws. Hold at the sides of the shell, wash hands thoroughly after handling.</div>
+        </div>
+        <WarnBox type="gold" title="Salmonella risk">Like all turtles, Murray River Turtles can carry Salmonella. Always wash hands after handling or working with the aquarium water. Supervise children carefully.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Murray River Turtles require a Category 1/Class 1 keeper licence in most states. Not available in Tasmania. Must be purchased from a licensed breeder." />}
+    </>}
+  />
+);
+
+// ─── Saw-shelled Turtle page ──────────────────────────────────────
+const SawShellTurtlePage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Saw-shelled Turtle" latin="Myuchelys latisternum" emoji="🐢"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["QLD/NSW only", C.redPale, C.red]]}
+    tabs={["overview","feeding","health & setup","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A distinctive turtle found in the rivers and streams of coastal Queensland and New South Wales. Named for the serrated, saw-like edges on the rear of their shell — particularly prominent in juveniles. A shorter-necked side-necked turtle like the Murray River Turtle. Active and alert, with an aggressive feeding response that makes feeding time entertaining.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Shell length","22–28 cm"],["⏳","Lifespan","25–35+ yrs"],["🏠","Min. tank","300L+"],["💧","Water temp","20–26°C"]]} />
+        <WarnBox type="gold" title="QLD and NSW only">Saw-shelled Turtles are only available to keepers in Queensland and New South Wales. They are not available in other states. Check current availability with your state wildlife authority.</WarnBox>
+        <SectionLabel>Tank setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 300L+ tank for one adult. Large basking platform with heat lamp and UVB above. High-quality canister filtration — they are messy feeders. Regular weekly 25–30% water changes. They prefer slightly warmer water than Murray River Turtles, reflecting their more tropical habitat. Provide plenty of open swimming space.</div>
+        <TempBar label="Basking spot (air temp)" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Water temperature" value="20–26°C" width="44%" color="#2b7ec0"/>
+        <ShopBtn>🛒 Shop turtle supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Primarily carnivorous with an aggressive feeding response. One of the most enthusiastic feeders of all Australian turtles — use tongs to avoid accidental bites.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐟" name="Feeder fish / whitebait" detail="Eagerly taken — whole fish for calcium" freq="2–3x per week"/>
+          <FoodItem icon="🦐" name="Prawns / yabbies" detail="Shell-on preferred" freq="2–3x per week"/>
+          <FoodItem icon="🪱" name="Earthworms" detail="Natural prey — taken enthusiastically" freq="Weekly"/>
+          <FoodItem icon="🦗" name="Crickets / woodies" detail="Drop into water — provides enrichment" freq="Weekly"/>
+          <FoodItem icon="🐢" name="Turtle pellets" detail="Quality commercial pellets" freq="2–3x per week"/>
+        </div>
+        <WarnBox type="red" title="Aggressive feeder — use tongs always">Saw-shelled Turtles have an extremely fast and enthusiastic feeding strike. Always use long tongs. Never put fingers near the water surface during feeding — even experienced keepers get caught out by their speed.</WarnBox>
+        <ShopBtn>🛒 Shop turtle food</ShopBtn>
+      </>}
+      {tab === "health & setup" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Shell rot" detail="Monitor the serrated shell edges carefully — these irregular areas can trap debris and develop infections. Regular visual checks are important."/>
+        <HealthItem title="Water quality" detail="Their aggressive feeding style means they are very messy eaters. Feed in a separate container or remove uneaten food within 20 minutes."/>
+        <HealthItem title="Respiratory infection" detail="Listing to one side or bubbles from the nose indicate respiratory problems. Prompt vet attention required."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active and alert, enthusiastic feeder, basking regularly, clear bright eyes, hard smooth shell with intact serrations."/>
+        <SectionLabel>Feeding tip</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Many keepers of Saw-shelled Turtles feed them in a separate container (a bucket or tub) to keep the main tank cleaner. Move the turtle to the feeding container, offer food with tongs, then return to the main tank after 20–30 minutes.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — EXPERIENCED KEEPERS</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Saw-shelled Turtles can be defensive and their bites are fast and painful. Hold firmly at the sides of the shell — their neck can reach further back than you might expect. Keep handling minimal and always wash hands thoroughly after.</div>
+        </div>
+        <WarnBox type="red" title="Fast biter">The Saw-shelled Turtle has one of the fastest feeding strikes of any Australian turtle. Even outside of feeding time they can be defensive biters. Hold at the very back of the shell and keep fingers away from the neck area.</WarnBox>
+        <WarnBox type="gold" title="Salmonella risk">All turtles can carry Salmonella. Always wash hands after handling or working with aquarium water.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Saw-shelled Turtles are only available in Queensland and New South Wales — they cannot be legally kept in other states. A Category 1/Class 1 keeper licence is required in both states. Must be purchased from a licensed breeder." />}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -2146,6 +2360,10 @@ const PAGE_MAP = {
   frilled:     FrilledLizardPage,
   waterdragon: WaterDragonPage,
   greentree:   GreenTreePythonPage,
+  turtle:      EasternLongNeckPage,
+  broadshell:  BroadShellTurtlePage,
+  murray:      MurrayRiverTurtlePage,
+  sawshell:    SawShellTurtlePage,
   enclosure:   EnclosurePage,
   feeders:     FeederGuidePage,
 };

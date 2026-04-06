@@ -3418,8 +3418,7 @@ export default function App() {
   }
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", padding: "1rem 0", fontFamily: "'DM Sans', system-ui, sans-serif" }}>
-      <div style={{ width: 390, background: C.cream, minHeight: 700, borderRadius: 24, overflow: "hidden", border: "0.5px solid #e0e0dc", display: "flex", flexDirection: "column", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}>
+    <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
 
         {!page && (
           <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>

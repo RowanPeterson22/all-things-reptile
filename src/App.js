@@ -332,7 +332,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
   const [tab, setTab] = useState(tabs[0]);
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to browse</button>
         <div style={{ textAlign: "center", fontSize: 90, lineHeight: 1, marginBottom: -8 }}>{emoji}</div>
         <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "18px 18px 0" }}>
@@ -920,7 +920,7 @@ const EnclosurePage = ({ onBack }) => {
   );
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🏠</div>
@@ -1012,7 +1012,7 @@ const BrowseScreen = ({ onSpecies }) => {
     const cat = CATEGORIES.find(c => c.id === category);
     return (
       <div style={{ flex: 1, overflowY: "auto" }}>
-        <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 14px) 18px 0" }}>
+        <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 8px) 18px 0" }}>
           <button onClick={() => setCategory(null)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 12, fontFamily: "inherit" }}>‹ All categories</button>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
             <div style={{ fontSize: 36 }}>{cat.emoji}</div>
@@ -1088,7 +1088,7 @@ const LegalScreen = () => {
   const [expanded, setExpanded] = useState(null);
   return (
   <div style={{ flex: 1, overflowY: "auto" }}>
-    <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 14px) 18px 0" }}>
+    <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 8px) 18px 0" }}>
       <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.07em", marginBottom: 4 }}>LEGAL</div>
       <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 8 }}>Reptile Licencing</div>
       <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginBottom: 16, lineHeight: 1.5 }}>Tap any state for full details. All reptiles must be purchased from a licensed breeder — wild collection is illegal in every state.</div>
@@ -2859,7 +2859,7 @@ const TempPage = ({ onBack }) => {
   const tabs = ["basics", "heat sources", "UVB", "night & winter"];
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🌡️</div>
@@ -2959,7 +2959,7 @@ const FeedingNutritionPage = ({ onBack }) => {
   const tabs = ["basics", "by species", "supplements", "problems"];
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🦗</div>
@@ -3062,7 +3062,7 @@ const HandlingPage = ({ onBack }) => {
   const tabs = ["getting started", "technique", "reading behaviour", "safety"];
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🤲</div>
@@ -3156,7 +3156,7 @@ const HealthPage = ({ onBack }) => {
   const tabs = ["warning signs", "common illness", "finding a vet", "quarantine"];
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🩺</div>
@@ -3263,7 +3263,7 @@ const SheddingPage = ({ onBack }) => {
   const tabs = ["how shedding works", "helping a shed", "problems", "skin care"];
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>✨</div>
@@ -3421,7 +3421,7 @@ export default function App() {
     <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
 
         {!page && (
-          <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+          <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
               <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { setActiveTab("browse"); setPage(null); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>

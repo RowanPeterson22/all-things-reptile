@@ -47,11 +47,11 @@ const SPECIES = [
 
 const CARE_GUIDES = [
   { id: "enclosure", icon: "🏠", title: "Enclosure setup",        sub: "Size, substrate, hides & layout",    page: "enclosure" },
-  { id: "temp",      icon: "🌡️", title: "Temperature & heating",  sub: "Basking zones, gradients & UVB",    page: null },
-  { id: "feeding",   icon: "🦗", title: "Feeding & nutrition",    sub: "Diet, supplements & frequency",     page: null },
-  { id: "handling",  icon: "🤲", title: "Handling & socialising", sub: "Building trust & safe interaction", page: null },
-  { id: "health",    icon: "🩺", title: "Health & illness signs", sub: "Common issues & when to see a vet", page: null },
-  { id: "shedding",  icon: "✨", title: "Shedding & skin care",   sub: "Helping with a healthy shed",       page: null },
+  { id: "temp",      icon: "🌡️", title: "Temperature & heating",  sub: "Basking zones, gradients & UVB",    page: "temp" },
+  { id: "feeding",   icon: "🦗", title: "Feeding & nutrition",    sub: "Diet, supplements & frequency",     page: "feedingnutrition" },
+  { id: "handling",  icon: "🤲", title: "Handling & socialising", sub: "Building trust & safe interaction", page: "handling" },
+  { id: "health",    icon: "🩺", title: "Health & illness signs", sub: "Common issues & when to see a vet", page: "health" },
+  { id: "shedding",  icon: "✨", title: "Shedding & skin care",   sub: "Helping with a healthy shed",       page: "shedding" },
   { id: "feeders",   icon: "🦗", title: "Feeder guide",           sub: "Insects, rodents & what to feed",   page: "feeders" },
 ];
 
@@ -2852,6 +2852,505 @@ const ShinglebackPage = ({ onBack }) => (
   />
 );
 
+
+// ─── Temperature & Heating page ───────────────────────────────────
+const TempPage = ({ onBack }) => {
+  const [tab, setTab] = useState("basics");
+  const tabs = ["basics", "heat sources", "UVB", "night & winter"];
+  return (
+    <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
+          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🌡️</div>
+          <div style={{ paddingBottom: 18 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Temperature & Heating</div>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>Basking zones, gradients & UVB</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", borderBottom: "0.5px solid rgba(255,255,255,0.2)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+          {tabs.map(t => <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? "2px solid #fff" : "2px solid transparent", color: tab === t ? "white" : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "8px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>)}
+        </div>
+      </div>
+      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+        {tab === "basics" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Reptiles are ectothermic — they rely on external heat sources to regulate their body temperature. Getting temperatures right is the single most important factor in keeping reptiles healthy. Too cold and they cannot digest food, fight disease, or behave normally. Too hot and they suffer heat stress or death.</p>
+          <SectionLabel mt={0}>The thermal gradient — essential concept</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", marginBottom: 12, fontSize: 13, color: "#666", lineHeight: 1.7 }}>Every reptile enclosure must have a temperature gradient — a warm end and a cool end. Your reptile moves between these zones to regulate its own body temperature naturally. Never heat the entire enclosure to one temperature — this removes the reptile's ability to thermoregulate and causes chronic stress.</div>
+          <TempBar label="Hot spot / basking zone" value="35–45°C (species dependent)" width="90%" color="#e05a2b"/>
+          <TempBar label="Warm side ambient" value="28–32°C" width="66%" color="#e0922b"/>
+          <TempBar label="Cool side ambient" value="22–26°C" width="44%" color="#4a9e6b"/>
+          <TempBar label="Overnight low" value="16–22°C (species dependent)" width="28%" color="#2b7ec0"/>
+          <WarnBox type="red" title="Always use a thermostat">Any heat source — heat mat, heat lamp, ceramic emitter — must be connected to a thermostat. Uncontrolled heat sources are a leading cause of reptile deaths. This is non-negotiable.</WarnBox>
+          <SectionLabel>How to measure temperature</SectionLabel>
+          {[
+            ["Digital thermometer with probe", "Most accurate. Place the probe at reptile body height at the basking spot and cool end. Essential."],
+            ["Infrared temperature gun", "Excellent for quickly checking surface temperatures. Point and shoot at basking rocks, branches, substrate. Great for spot-checking."],
+            ["Stick-on dial thermometers", "The least accurate option. Often misread and placed incorrectly. Avoid relying on these alone."],
+          ].map(([name, desc]) => (
+            <div key={name} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 3 }}>{name}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{desc}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "heat sources" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Different heat sources suit different species and setups. Most keepers use a combination. Always connect to a thermostat.</p>
+          {[
+            ["☀️", "Basking lamp (incandescent/halogen)", "The most natural heat source — mimics sunlight. Creates a focused hot spot above a basking rock or branch. Best for diurnal species like bearded dragons, blue-tongues, and water dragons. Available in various wattages — choose based on enclosure size and required temperature.", "Best for: Lizards & dragons"],
+            ["🔥", "Ceramic Heat Emitter (CHE)", "Produces heat without light — useful for supplemental overnight heat or species that don't need bright basking spots. Does not provide UVB. Often used with a dimmer thermostat.", "Best for: Nocturnal species, overnight heat"],
+            ["🟫", "Under-tank heat mat (UTH)", "Provides belly heat — important for geckos and snakes that thermoregulate from below. Must be used with a thermostat. Never cover with thick substrate — insulation causes overheating. Place on one side only.", "Best for: Geckos, hatchling snakes"],
+            ["💡", "Deep heat projector (DHP)", "A newer technology that penetrates deeper into tissue than standard heat lamps, more closely mimicking solar radiation. Excellent for larger pythons and monitors. Requires a dimmer thermostat.", "Best for: Large pythons, monitors"],
+            ["🌿", "Radiant heat panel", "Mounts to the ceiling of the enclosure. Provides ambient warmth from above without a focused hot spot. Good for tropical species needing warm ambient temperatures.", "Best for: Tropical species, rainforest setups"],
+          ].map(([icon, name, desc, best]) => (
+            <div key={name} style={{ background: C.cream, borderRadius: 12, padding: "13px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                <span style={{ fontSize: 24 }}>{icon}</span>
+                <div style={{ fontSize: 14, fontWeight: 700 }}>{name}</div>
+              </div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.6, marginBottom: 6 }}>{desc}</div>
+              <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 8, background: C.greenPale, color: C.green }}>{best}</span>
+            </div>
+          ))}
+          <WarnBox type="red" title="Thermostat types matter">Use a ON/OFF thermostat for heat mats. Use a DIMMING thermostat for basking lamps and DHPs. Using the wrong type can damage equipment and create temperature spikes.</WarnBox>
+        </>}
+        {tab === "UVB" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>UVB radiation allows reptiles to synthesise Vitamin D3 in their skin, which is essential for calcium absorption. Without adequate UVB, diurnal reptiles develop Metabolic Bone Disease (MBD) — a serious, often fatal condition.</p>
+          <SectionLabel mt={0}>Do all reptiles need UVB?</SectionLabel>
+          {[
+            ["Diurnal lizards & dragons", "YES — essential", "Bearded Dragons, Blue-tongues, Water Dragons, Frilled-neck Lizards. These species bask in direct sunlight in the wild. T5 HO 10.0 or 12% UVB tube required.", C.greenPale, C.green],
+            ["Diurnal pythons", "STRONGLY RECOMMENDED", "Carpet Pythons, Green Tree Pythons, Womas bask in dappled sunlight. Low-level UVB (T5 HO 6.0) strongly benefits long-term health.", C.goldLight, "#7a5a1e"],
+            ["Nocturnal geckos", "BENEFICIAL", "Despite being nocturnal, research shows geckos benefit from low-level UVB. A T5 HO 2.0 or 6.0 at the top of the enclosure is recommended.", C.goldLight, "#7a5a1e"],
+            ["Turtles", "YES — essential", "Turtles require UVB over their basking platform. T5 HO 10.0 recommended.", C.greenPale, C.green],
+          ].map(([species, req, detail, bg, col]) => (
+            <div key={species} style={{ background: bg, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: `0.5px solid ${col}33` }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                <div style={{ fontSize: 13, fontWeight: 700 }}>{species}</div>
+                <span style={{ fontSize: 10, fontWeight: 700, color: col }}>{req}</span>
+              </div>
+              <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>{detail}</div>
+            </div>
+          ))}
+          <WarnBox type="red" title="Replace UVB tubes every 12 months">UVB output degrades significantly before the tube stops producing visible light. Replace every 6–12 months even if it still glows. Mount inside the enclosure, not on top of mesh — glass and mesh filter UVB significantly.</WarnBox>
+          <WarnBox type="gold" title="Ferguson zones">Different species need different UVB intensities based on their natural habitat. Reptiles from open desert environments need higher UVI than forest species. Always research the specific UVI requirements for your species.</WarnBox>
+        </>}
+        {tab === "night & winter" && <>
+          <SectionLabel mt={0}>Overnight temperatures</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 12 }}>Most Australian reptiles tolerate and benefit from a natural temperature drop at night. Turn off basking lamps at night — a ceramic heat emitter or panel heater on a thermostat can maintain a minimum overnight temperature if your home gets cold. Tropical species need warmer nights than cool-climate species.</div>
+          {[["Tropical species (northern Australia)", "Min 22–24°C overnight"], ["Temperate species (eastern Australia)", "Min 16–20°C overnight"], ["Cool-climate species (alpine/southern)", "Min 10–15°C overnight — natural cooling beneficial"]].map(([sp, temp]) => (
+            <div key={sp} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: 12, color: "#555", flex: 1 }}>{sp}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.green }}>{temp}</div>
+            </div>
+          ))}
+          <SectionLabel>Winter & brumation</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 12 }}>Many Australian reptiles naturally brumate (a reptile form of hibernation) during winter. Reduced temperatures, shorter light cycles, and decreased feeding are all normal seasonal behaviours. Do not force-feed brumating reptiles. Allow them to follow their natural seasonal rhythm — this is important for long-term health and breeding success.</div>
+          <WarnBox type="gold" title="Vet check before brumation">A health check before brumation is recommended — a sick or underweight reptile should not brumate. Ensure the animal has had a final bowel movement before temperatures drop significantly.</WarnBox>
+        </>}
+      </div>
+    </div>
+  );
+};
+
+// ─── Feeding & Nutrition page ─────────────────────────────────────
+const FeedingNutritionPage = ({ onBack }) => {
+  const [tab, setTab] = useState("basics");
+  const tabs = ["basics", "by species", "supplements", "problems"];
+  return (
+    <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
+          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🦗</div>
+          <div style={{ paddingBottom: 18 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Feeding & Nutrition</div>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>Diet, supplements & frequency</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", borderBottom: "0.5px solid rgba(255,255,255,0.2)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+          {tabs.map(t => <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? "2px solid #fff" : "2px solid transparent", color: tab === t ? "white" : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "8px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>)}
+        </div>
+      </div>
+      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+        {tab === "basics" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Getting nutrition right is critical for long-term health. Australian reptiles fall into three broad dietary categories — insectivores, carnivores, and omnivores. Understanding which category your reptile belongs to and how that changes with age is fundamental to keeping them healthy.</p>
+          {[
+            ["🦗", "Insectivores", "Feed exclusively on insects. Geckos and most small lizards. Require a variety of live insects gut-loaded and dusted with supplements. Variety is key — no single feeder insect provides complete nutrition.", C.greenPale],
+            ["🐭", "Carnivores", "Feed on vertebrate prey. All pythons and large snakes. Rodents form the basis of the captive diet. Always feed pre-killed or frozen/thawed — never live prey.", C.redPale],
+            ["🥗", "Omnivores", "Eat both animal protein and plant matter. Blue-tongue skinks, bearded dragons, and many other lizards. Diet varies significantly with age — juveniles need more protein, adults more vegetables.", C.goldLight],
+          ].map(([icon, name, desc, bg]) => (
+            <div key={name} style={{ background: bg, borderRadius: 12, padding: "13px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                <span style={{ fontSize: 26 }}>{icon}</span>
+                <div style={{ fontSize: 14, fontWeight: 700 }}>{name}</div>
+              </div>
+              <div style={{ fontSize: 12, color: "#555", lineHeight: 1.6 }}>{desc}</div>
+            </div>
+          ))}
+          <SectionLabel>Feeding frequency by age</SectionLabel>
+          {[
+            ["Hatchlings (0–3 months)", "Daily or every second day"],
+            ["Juveniles (3–12 months)", "Every 1–2 days"],
+            ["Sub-adults (1–2 years)", "Every 2–3 days"],
+            ["Adults (2+ years)", "Every 3–7 days depending on species"],
+          ].map(([age, freq]) => (
+            <div key={age} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: 12, color: "#555" }}>{age}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.green }}>{freq}</div>
+            </div>
+          ))}
+          <WarnBox type="gold" title="Never feed immediately after handling">Wait at least 24 hours after handling before feeding. Feeding stressed reptiles causes regurgitation. Similarly, do not handle for 48 hours after a feed.</WarnBox>
+        </>}
+        {tab === "by species" && <>
+          {[
+            ["🦎 Bearded Dragons / Blue-tongue Skinks", "Omnivores", [["Juveniles","70% insects, 30% vegetables — high protein for growth"], ["Adults","30% insects, 70% vegetables — more plant-based as they mature"], ["Avoid","Spinach, avocado, citrus, wild-caught insects, iceberg lettuce"]]],
+            ["🐍 Pythons & large snakes", "Carnivores", [["Prey size","No wider than the widest point of the snake's body"], ["Prey type","Mice and rats — appropriately sized for the snake. See Feeder Guide for stage details"], ["Frequency","Every 5–14 days depending on species and age — less often for large adults"]]],
+            ["🦎 Geckos", "Insectivores", [["Feeder variety","Wood roaches (Woodies), crickets, BSFL — rotate regularly for best nutrition"], ["Feeding time","Always at night when naturally active — never during daylight hours"], ["Prey size","No larger than the space between the gecko's eyes"]]],
+            ["🐢 Turtles", "Carnivores / Omnivores", [["Feed in water","Turtles cannot swallow without water — always feed in the tank"], ["Diet","Whole feeder fish, prawns, earthworms, quality turtle pellets"], ["Remove uneaten food","Within 30 minutes — uneaten food degrades water quality rapidly"]]],
+          ].map(([title, type, items]) => (
+            <div key={title} style={{ background: C.cream, borderRadius: 12, padding: "13px 14px", marginBottom: 12, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{title}</div>
+              <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 8, background: C.greenPale, color: C.green, marginBottom: 10, display: "inline-block" }}>{type}</span>
+              {items.map(([label, detail]) => (
+                <div key={label} style={{ marginTop: 8, paddingTop: 8, borderTop: "0.5px solid #eee" }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: C.green, marginBottom: 2 }}>{label}</div>
+                  <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{detail}</div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </>}
+        {tab === "supplements" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Feeder insects alone are nutritionally incomplete. Supplementation bridges the gap. See the Feeder Guide for full details — this is a quick reference summary.</p>
+          {[
+            ["Calcium + D3", "Critical", "Dust all insects before every feed for juveniles. Every other feed for adults. D3 aids calcium absorption. Essential for bone health and preventing MBD.", C.redPale, C.red],
+            ["Calcium without D3", "For UVB keepers", "Use this if your reptile has strong UVB lighting — they synthesise D3 naturally from UV. Alternate with D3 version once or twice per month.", C.bluePale, C.blue],
+            ["Multivitamin powder", "Weekly", "Provides vitamins A, E and other micronutrients. Use 1–2 times per week — not every feed. Over-supplementation of vitamins can be harmful.", C.goldLight, "#7a5a1e"],
+            ["Gut loading feeders", "Always", "Feed feeder insects nutritious food 24–48 hours before feeding them to your reptile. See Feeder Guide for best gut-loading foods.", C.greenPale, C.green],
+          ].map(([name, freq, desc, bg, col]) => (
+            <div key={name} style={{ background: bg, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: `0.5px solid ${col}33` }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                <div style={{ fontSize: 13, fontWeight: 700 }}>{name}</div>
+                <span style={{ fontSize: 10, fontWeight: 700, color: col }}>{freq}</span>
+              </div>
+              <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>{desc}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "problems" && <>
+          <SectionLabel mt={0}>Common feeding problems</SectionLabel>
+          {[
+            ["Refusing food", "Most common cause is husbandry — check temperatures first. Also consider: shedding cycle, breeding season, illness, stress from handling or enclosure changes. A healthy reptile not eating for 1–2 weeks is usually not an emergency. A reptile losing weight while refusing food needs a vet."],
+            ["Regurgitation", "Caused by handling too soon after feeding, temperatures too low, prey too large, or illness. Fast for 2–3 weeks before attempting to re-feed. Offer a smaller prey item at a warmer temperature."],
+            ["Obesity", "Very common in captivity. Captive reptiles move less and are fed more than wild animals. Reduce feeding frequency and prey size. Ensure adequate enclosure size for movement. Obesity causes serious long-term health problems."],
+            ["Prey too large", "The single most common husbandry mistake. Prey wider than the reptile's body causes regurgitation, impaction, and can be fatal. When in doubt, go smaller."],
+            ["Only eating one food", "Common with snakes that fixate on one prey type. Offer variety from a young age. Scenting new prey with familiar prey can help transition fussy feeders."],
+          ].map(([title, detail]) => (
+            <HealthItem key={title} title={title} detail={detail} />
+          ))}
+        </>}
+      </div>
+    </div>
+  );
+};
+
+// ─── Handling & Socialising page ──────────────────────────────────
+const HandlingPage = ({ onBack }) => {
+  const [tab, setTab] = useState("getting started");
+  const tabs = ["getting started", "technique", "reading behaviour", "safety"];
+  return (
+    <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
+          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🤲</div>
+          <div style={{ paddingBottom: 18 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Handling & Socialising</div>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>Building trust & safe interaction</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", borderBottom: "0.5px solid rgba(255,255,255,0.2)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+          {tabs.map(t => <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? "2px solid #fff" : "2px solid transparent", color: tab === t ? "white" : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "8px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>)}
+        </div>
+      </div>
+      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+        {tab === "getting started" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Handling builds trust over time. Patience and consistency are far more effective than rushing the process. A reptile that is handled correctly from a young age will be calmer and more confident throughout its life.</p>
+          <WarnBox type="red" title="Allow settling time first">Every new reptile needs time to adjust to its new home before handling begins. Give your reptile at least 1–2 weeks (longer for shy or wild-caught species) with no handling — just food, water, and peace.</WarnBox>
+          <SectionLabel>Building up gradually</SectionLabel>
+          {[
+            ["Week 1–2", "No handling. Allow the reptile to adjust to sights, sounds, and smells of its new environment. Just observe."],
+            ["Week 3–4", "Begin very short sessions — 2–5 minutes. Let the reptile walk onto your hand rather than being grabbed. End on a calm note."],
+            ["Month 2", "Gradually extend sessions to 10–15 minutes. Handle in a calm environment away from other pets and loud noises."],
+            ["Month 3+", "Regular daily or every-other-day handling. Sessions can extend to 20–30 minutes for most species. Always watch for stress signals."],
+          ].map(([time, detail]) => (
+            <div key={time} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: C.green, marginBottom: 3 }}>{time}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{detail}</div>
+            </div>
+          ))}
+          <WarnBox type="gold" title="Never handle these times">Never handle within 48 hours of feeding. Never handle during shedding. Never handle a sick reptile. Never handle when the reptile is in threat display. Never handle when temperatures are too cold — reptiles are sluggish and unable to regulate stress responses.</WarnBox>
+        </>}
+        {tab === "technique" && <>
+          <SectionLabel mt={0}>General technique</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 12 }}>Always approach slowly and from the side — never from directly above, which mimics a predator attack. Support the full body at all times. Let the reptile walk onto your hand rather than grabbing. Move slowly and deliberately. If the animal tries to escape, guide it gently — don't grip tightly.</div>
+          {[
+            ["🦎 Lizards & dragons", "Support the full body including the tail. Place one hand under the chest, the other supporting the hindquarters and tail. Never pick up by the tail — many species can drop their tail as a stress response."],
+            ["🐍 Snakes", "Support multiple points along the body. Never restrain the head unless medically necessary. Let the snake move between your hands in a flowing figure-8 motion. Do not dangle from one point."],
+            ["🐢 Turtles", "Hold at the sides of the shell — not the legs or neck. Be aware of the reach of the neck, especially Long-necked Turtles which can bite. Keep sessions brief and return to water promptly."],
+            ["🦎 Geckos", "Handle at night when active. Support the full body — never grab. Handle close to a surface in case they jump. Very short sessions only for delicate species."],
+          ].map(([title, detail]) => (
+            <div key={title} style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 6 }}>{title}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.6 }}>{detail}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "reading behaviour" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Learning to read your reptile's body language is one of the most important handling skills. Respecting stress signals prevents bites and builds trust faster.</p>
+          <SectionLabel mt={0}>Signs of stress — end the session</SectionLabel>
+          {[
+            ["Trying to escape constantly", "The animal wants to return to its enclosure. End the session."],
+            ["Hissing or puffing up", "Clear warning — the animal feels threatened."],
+            ["Gaping mouth / open mouth breathing", "Defensive warning display — particularly in lizards and pythons."],
+            ["Beard darkening (Bearded Dragons)", "Stress or irritability. Give the animal a break."],
+            ["Musking (turtles, snakes)", "Releasing foul-smelling fluid — a stress response. Return to enclosure."],
+            ["Tail wagging rapidly (lizards)", "An agitation or warning signal in many species."],
+          ].map(([sign, detail]) => (
+            <div key={sign} style={{ background: "#fce8e8", borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #8b202033" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.red, marginBottom: 2 }}>{sign}</div>
+              <div style={{ fontSize: 12, color: "#555" }}>{detail}</div>
+            </div>
+          ))}
+          <SectionLabel>Signs of comfort — continue</SectionLabel>
+          {[
+            ["Resting calmly on hand", "Relaxed and comfortable."],
+            ["Tongue flicking (lizards/snakes)", "Normal exploratory behaviour — they are curious, not stressed."],
+            ["Eyes open, alert but not darting", "Calm and aware."],
+            ["Moving slowly and deliberately", "Confident and relaxed movement."],
+          ].map(([sign, detail]) => (
+            <div key={sign} style={{ background: C.greenPale, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: `0.5px solid ${C.green}33` }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginBottom: 2 }}>{sign}</div>
+              <div style={{ fontSize: 12, color: "#555" }}>{detail}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "safety" && <>
+          <SectionLabel mt={0}>Hygiene — always</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 12 }}>Always wash hands with soap and water before and after handling any reptile. All reptiles can carry Salmonella — this is manageable with good hygiene but should never be ignored. Supervise children carefully and ensure they wash hands immediately after handling.</div>
+          <WarnBox type="red" title="If you are bitten">Most reptile bites are minor. Wash the wound thoroughly with soap and water. Apply antiseptic. Seek medical advice if the wound is deep, if you are bitten by a large python (bites from large pythons require proper wound care), or if any signs of infection develop. Do NOT jerk away when bitten — this causes more tissue damage. Stay calm and gently support the animal until it releases.</WarnBox>
+          <SectionLabel>Children and reptiles</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>Children can have wonderful interactions with reptiles under proper adult supervision. Beginner species like Central Bearded Dragons, Eastern Blue-tongue Skinks, and Children's Pythons are ideal for families. Always supervise. Ensure hand washing after every interaction. Teach children to be calm and gentle — sudden movements stress reptiles and increase bite risk.</div>
+        </>}
+      </div>
+    </div>
+  );
+};
+
+// ─── Health & Illness page ────────────────────────────────────────
+const HealthPage = ({ onBack }) => {
+  const [tab, setTab] = useState("warning signs");
+  const tabs = ["warning signs", "common illness", "finding a vet", "quarantine"];
+  return (
+    <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
+          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🩺</div>
+          <div style={{ paddingBottom: 18 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Health & Illness</div>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>Warning signs & when to see a vet</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", borderBottom: "0.5px solid rgba(255,255,255,0.2)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+          {tabs.map(t => <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? "2px solid #fff" : "2px solid transparent", color: tab === t ? "white" : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "8px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>)}
+        </div>
+      </div>
+      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+        {tab === "warning signs" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Reptiles are prey animals and instinctively hide illness. By the time signs are obvious, a reptile is often seriously ill. Daily observation is key — know what is normal for your animal so you notice changes early.</p>
+          <SectionLabel mt={0}>Signs requiring immediate vet attention</SectionLabel>
+          {[
+            ["Open-mouth breathing / wheezing", "Indicates respiratory infection or serious distress. Urgent."],
+            ["Rapid unexplained weight loss", "Many serious conditions cause weight loss. Weigh regularly and track."],
+            ["Discharge from eyes, nose or mouth", "Bacterial infection — requires treatment."],
+            ["Paralysis or inability to move normally", "Neurological issue — can indicate ADV, IBD, or other serious conditions."],
+            ["Bloating or unusual lumps", "May indicate infection, abscess, retained eggs, or tumour."],
+            ["Bleeding from any orifice", "Urgent — seek vet care immediately."],
+            ["Prolapse (tissue protruding from vent)", "Urgent emergency — keep moist with clean damp cloth and get to vet immediately."],
+          ].map(([sign, detail]) => (
+            <div key={sign} style={{ background: "#fce8e8", borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #8b202033" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.red, marginBottom: 2 }}>{sign}</div>
+              <div style={{ fontSize: 12, color: "#555" }}>{detail}</div>
+            </div>
+          ))}
+          <SectionLabel>Signs to monitor — vet consult recommended</SectionLabel>
+          {[
+            ["Refusing food for extended period", "Normal for 1–2 weeks. Concerning if accompanied by weight loss."],
+            ["Abnormal shedding", "Retained shed or unusually frequent shedding."],
+            ["Lethargy outside of brumation", "Reduced activity when temperatures are correct."],
+            ["Soft or misshapen bones / jaw", "Classic MBD sign — dietary and lighting review needed urgently."],
+          ].map(([sign, detail]) => (
+            <div key={sign} style={{ background: C.goldLight, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #c8963c44" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: "#7a5a1e", marginBottom: 2 }}>{sign}</div>
+              <div style={{ fontSize: 12, color: "#555" }}>{detail}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "common illness" && <>
+          {[
+            ["Metabolic Bone Disease (MBD)", "The most common preventable reptile illness. Caused by insufficient calcium, D3, or UVB. Signs: soft bones, tremors, curved spine, swollen limbs. Treatment: corrected diet, D3 supplementation, proper UVB. Prevention is everything — correct setup from day one.", "orange"],
+            ["Respiratory Infection (RI)", "Caused by incorrect temperatures, high humidity combined with poor ventilation, or bacterial infection. Signs: wheezing, open-mouth breathing, mucus, lethargy. Requires veterinary antibiotics. Correct husbandry prevents most cases.", "red"],
+            ["Mouth Rot (Stomatitis)", "Bacterial infection of the mouth. Signs: redness, swelling, cheesy discharge from gums. Caused by trauma, stress, or poor immune function. Requires veterinary treatment including antibiotics and cleaning.", "red"],
+            ["Parasites (internal)", "Common especially in wild-caught animals. Signs: weight loss, diarrhoea, lethargy, pot-belly appearance. Diagnosed via faecal test at a vet. Annual faecal tests recommended for all reptiles.", "orange"],
+            ["Scale Rot", "Bacterial infection of the skin — usually caused by excessive moisture or abrasive substrate. Signs: discoloured, soft, or weeping scales. Correct husbandry and veterinary treatment required.", "red"],
+            ["Dystocia (egg binding)", "Female unable to lay eggs. Signs: straining, restlessness, lethargy, visible eggs. Veterinary emergency. Provide a suitable nesting site to help prevent.", "red"],
+          ].map(([name, desc, severity]) => (
+            <div key={name} style={{ background: severity === "red" ? "#fce8e8" : C.goldLight, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: severity === "red" ? "0.5px solid #8b202033" : "0.5px solid #c8963c44" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: severity === "red" ? C.red : "#7a5a1e", marginBottom: 6 }}>{name}</div>
+              <div style={{ fontSize: 12, color: "#555", lineHeight: 1.6 }}>{desc}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "finding a vet" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Not all vets have reptile experience. Finding a reptile-experienced vet before you need one is essential — do not wait until your animal is sick to search.</p>
+          <WarnBox type="red" title="Find a reptile vet NOW — before you need one">Ask your local reptile community for recommendations. Call ahead to confirm the vet has reptile experience. A general small-animal vet without reptile experience can cause more harm than good.</WarnBox>
+          <SectionLabel>What to look for in a reptile vet</SectionLabel>
+          {[
+            ["Exotic animal experience", "Ask specifically about reptile experience — not just 'exotic pets'."],
+            ["Reptile-specific equipment", "Proper anaesthesia equipment, endoscopy, reptile blood panels."],
+            ["Willingness to discuss husbandry", "A good reptile vet will review your setup, not just treat the animal."],
+            ["Community reputation", "Ask local reptile keepers and breeders for personal recommendations."],
+          ].map(([name, detail]) => (
+            <div key={name} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 2 }}>{name}</div>
+              <div style={{ fontSize: 12, color: "#666" }}>{detail}</div>
+            </div>
+          ))}
+          <SectionLabel>Annual health checks</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>Annual vet checks are recommended for all reptiles, even those appearing healthy. Weight tracking, faecal parasite testing, and a physical examination can catch problems early. Long-lived species (turtles, large pythons) particularly benefit from regular checks.</div>
+        </>}
+        {tab === "quarantine" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Quarantine is one of the most important practices in reptile keeping. Always quarantine new animals before introducing them to your existing collection.</p>
+          <WarnBox type="red" title="Always quarantine new animals — minimum 90 days">Never introduce a new reptile directly to your existing collection. Many serious diseases (Cryptosporidiosis, Inclusion Body Disease, Adenovirus) show no signs for months before the animal becomes visibly sick. One infected animal can wipe out an entire collection.</WarnBox>
+          <SectionLabel>Quarantine protocol</SectionLabel>
+          {[
+            ["Separate room ideally", "Quarantine animals in a completely separate room from your existing collection if possible."],
+            ["Separate equipment", "Use completely separate feeding tongs, hides, water bowls, and tools. Never cross-contaminate."],
+            ["Handle last", "Always handle quarantine animals last — after all your established animals."],
+            ["Faecal test early", "Take a faecal sample to a reptile vet within the first few weeks to test for parasites."],
+            ["Minimum 90 days", "3 months minimum. Some keepers quarantine for 6 months for high-value or delicate collections."],
+            ["Observe closely", "Daily observation. Note feeding response, body condition, and behaviour. Any changes warrant vet attention."],
+          ].map(([name, detail]) => (
+            <div key={name} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 2 }}>{name}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{detail}</div>
+            </div>
+          ))}
+        </>}
+      </div>
+    </div>
+  );
+};
+
+// ─── Shedding & Skin Care page ────────────────────────────────────
+const SheddingPage = ({ onBack }) => {
+  const [tab, setTab] = useState("how shedding works");
+  const tabs = ["how shedding works", "helping a shed", "problems", "skin care"];
+  return (
+    <div style={{ flex: 1, overflowY: "auto" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
+        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
+        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
+          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>✨</div>
+          <div style={{ paddingBottom: 18 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
+            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Shedding & Skin Care</div>
+            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>Helping with a healthy shed</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", borderBottom: "0.5px solid rgba(255,255,255,0.2)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+          {tabs.map(t => <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? "2px solid #fff" : "2px solid transparent", color: tab === t ? "white" : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "8px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>)}
+        </div>
+      </div>
+      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+        {tab === "how shedding works" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>All reptiles shed their outer layer of skin (ecdysis) as they grow. It is a completely normal and essential process. Understanding the stages helps you provide the right support at the right time.</p>
+          <SectionLabel mt={0}>The shedding cycle</SectionLabel>
+          {[
+            ["Normal phase", "Skin is clear and vibrant. Eyes clear. Normal feeding and behaviour."],
+            ["Pre-shed (blue/dull phase)", "Skin becomes dull and milky. Eyes turn blue or opaque — a fluid layer separates the old skin from the new. The reptile may become less active, refuse food, and be more irritable. Lasts 5–14 days."],
+            ["Clear phase", "Eyes clear again but skin still dull. Shedding is imminent — usually within 24–72 hours."],
+            ["Shedding", "The reptile rubs against rough surfaces to break the old skin and crawls out. Do not disturb. Snakes shed in one piece; lizards typically shed in patches."],
+            ["Post-shed", "Vibrant new colours and clear eyes. Resume normal feeding 24–48 hours after a complete shed."],
+          ].map(([phase, detail], i) => (
+            <div key={phase} style={{ background: i === 1 || i === 2 ? C.goldLight : i === 3 ? C.greenPale : C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 2, color: i === 3 ? C.green : "#333" }}>{phase}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{detail}</div>
+            </div>
+          ))}
+          <SectionLabel>Shedding frequency</SectionLabel>
+          {[["Hatchlings & juveniles", "Every 3–4 weeks — growing rapidly"], ["Sub-adults", "Every 4–8 weeks"], ["Adults", "Every 6–12 weeks — slower growth"]].map(([age, freq]) => (
+            <div key={age} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4", display: "flex", justifyContent: "space-between" }}>
+              <div style={{ fontSize: 12, color: "#555" }}>{age}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.green }}>{freq}</div>
+            </div>
+          ))}
+        </>}
+        {tab === "helping a shed" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Most healthy reptiles in correct conditions shed without any help. Your job is to ensure the right conditions are in place. Intervene only when there is a problem.</p>
+          <SectionLabel mt={0}>Optimal shedding conditions</SectionLabel>
+          {[
+            ["Correct humidity", "The most important factor. Increase humidity slightly during the pre-shed phase. A humid hide (a container with moist sphagnum moss) is essential for most species."],
+            ["Rough surfaces", "Provide rocks, cork bark, branches — the reptile uses these to grip and pull the old skin off. Smooth enclosures make shedding harder."],
+            ["Fresh water", "Always have clean water available. Many reptiles soak themselves before a shed. Shallow water dish they can fully submerge in."],
+            ["Leave them alone", "Do not handle during the blue/pre-shed phase. They have reduced vision and are more stressed and irritable."],
+          ].map(([name, detail]) => (
+            <div key={name} style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 4 }}>{name}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.6 }}>{detail}</div>
+            </div>
+          ))}
+          <SectionLabel>Assisting a stuck shed</SectionLabel>
+          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 10 }}>If shed is retained 48+ hours after it began, assist gently. Soak the reptile in shallow warm water (28–30°C) for 20–30 minutes. The retained skin will soften. Use a damp cloth or your fingers to very gently roll the skin off. Never pull dried, stuck skin — soak first. Check toes, tail tip, and eye caps (spectacles) carefully — these areas retain shed most commonly.</div>
+          <WarnBox type="red" title="Retained eye caps — see a vet">Retained spectacles (eye caps in snakes and some geckos) are delicate. Do not attempt to remove them yourself — you risk serious eye damage. Soak, then take to a reptile vet if they don't come off naturally.</WarnBox>
+        </>}
+        {tab === "problems" && <>
+          <SectionLabel mt={0}>Common shedding problems</SectionLabel>
+          {[
+            ["Dysecdysis (incomplete / retained shed)", "Most common shedding problem. Usually caused by low humidity or dehydration. Retained shed on toes can cut off circulation and cause toe loss. Retained eye caps affect vision. Soak and gently remove if possible — vet if eye caps retained."],
+            ["Too frequent shedding", "May indicate a skin irritation, mite infestation, or infection. Check for mites carefully and consult a vet."],
+            ["Dull colouration after shed", "If colours do not return to full vibrancy within 48 hours of shedding, consider nutritional deficiency or underlying illness."],
+            ["Blistering or weeping under shed", "Indicates scale rot or bacterial infection under the old skin. Vet attention required."],
+            ["Refusing food during shed", "Normal — do not be alarmed. Resume feeding 24–48 hours after a complete shed."],
+          ].map(([title, detail]) => (
+            <HealthItem key={title} title={title} detail={detail} />
+          ))}
+        </>}
+        {tab === "skin care" && <>
+          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Between sheds, healthy reptile skin requires very little intervention. Correct husbandry does most of the work.</p>
+          {[
+            ["Regular health checks", "Inspect your reptile during handling. Look for mites (tiny moving dots, often seen around eyes and in skin folds), unusual lumps, cuts, or discolouration. Early detection makes treatment easier."],
+            ["Mite prevention & treatment", "Mites are small but serious. Check new animals carefully. If found, treat the reptile (reptile-safe mite treatment) and thoroughly clean and treat the entire enclosure. Remove all hides and decor. Treat again in 7–10 days to break the life cycle."],
+            ["Burns from heat sources", "Unregulated heat sources cause burns — always use thermostats. Burns appear as discoloured, blistered, or weeping scales. Veterinary treatment required. Prevent by always using properly controlled heat."],
+            ["Wounds and abrasions", "Minor cuts from enclosure furniture or handling can occur. Clean gently with diluted betadine. Monitor closely — reptile wounds can become infected quickly. Any wound that does not heal within one shed cycle should be seen by a vet."],
+            ["Cleaning the animal", "Reptiles generally keep themselves clean. A warm water soak for 20–30 minutes is beneficial occasionally — it aids hydration, can help loosen pre-shed skin, and allows you to inspect the animal closely. Never use soap or chemical cleaners on a reptile."],
+          ].map(([name, detail]) => (
+            <div key={name} style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+              <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 6 }}>{name}</div>
+              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.6 }}>{detail}</div>
+            </div>
+          ))}
+        </>}
+      </div>
+    </div>
+  );
+};
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -2889,6 +3388,11 @@ const PAGE_MAP = {
   blotchedbt:  BlotchedBlueTonguePage,
   shingleback: ShinglebackPage,
   enclosure:   EnclosurePage,
+  temp:         TempPage,
+  feedingnutrition: FeedingNutritionPage,
+  handling:     HandlingPage,
+  health:       HealthPage,
+  shedding:     SheddingPage,
   feeders:     FeederGuidePage,
 };
 

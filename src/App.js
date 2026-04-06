@@ -1572,62 +1572,6 @@ const RoughScaledPythonPage = ({ onBack }) => (
 );
 
 
-// ─── Leopard Gecko page ───────────────────────────────────────────
-const LeopardGeckoPage = ({ onBack }) => (
-  <SpeciesPage onBack={onBack} name="Leopard Gecko" latin="Eublepharis macularius" emoji="🦎"
-    badges={[["Beginner friendly", C.greenPale, C.green], ["Ground dwelling", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
-    tabs={["overview","feeding","health & shedding","handling","licencing"]}
-    tabContent={(tab) => <>
-      {tab === "overview" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Originally from Pakistan and Afghanistan, Leopard Geckos are one of the world's most popular pet reptiles — and for good reason. Hardy, docile, and easy to care for, they are an excellent choice for first-time reptile keepers. Unlike most geckos, they have moveable eyelids and lack adhesive toe pads, making them entirely ground-dwelling.</p>
-        <SectionLabel mt={0}>Quick stats</SectionLabel>
-        <StatGrid stats={[["📏","Adult size","18–25 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","30–40%"]]} />
-        <SectionLabel>Temperature requirements</SectionLabel>
-        <TempBar label="Warm side / hot spot" value="30–32°C" width="68%" color="#e05a2b"/>
-        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
-        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
-        <WarnBox type="gold" title="Under-tank heating preferred">Leopard Geckos thermoregulate from below. An under-tank heat mat on one side, controlled by a thermostat, is the most natural heating method. A low-wattage overhead heat source can supplement but is not essential.</WarnBox>
-        <SectionLabel>Enclosure setup</SectionLabel>
-        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 60×45cm glass or PVC enclosure is sufficient for one adult. Paper towel, reptile carpet, or tile substrate — avoid loose sand or substrate that can be ingested. Multiple hides are essential: a warm hide, a cool hide, and a moist hide for shedding. A shallow water bowl. Avoid UVB lighting — they are nocturnal and manage without it, though low-level UVB is beneficial.</div>
-        <ShopBtn>🛒 Shop Leopard Gecko supplies</ShopBtn>
-        <ShopBtn secondary>Ask a question ↗</ShopBtn>
-      </>}
-      {tab === "feeding" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed a variety of live insects, always gut-loaded and dusted with calcium and vitamin supplements. Never feed wild-caught insects.</p>
-        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
-          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 days"/>
-          <FoodItem icon="🪲" name="Mealworms" detail="Good treat — high fat, feed sparingly" freq="1–2 times per week"/>
-          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition, easy to keep" freq="Every 2–3 days"/>
-          <FoodItem icon="🐛" name="Waxworms" detail="High fat treat only — sparingly" freq="Occasionally"/>
-        </div>
-        <WarnBox type="gold" title="Calcium supplementation critical">Dust all insects with calcium powder (with D3) at every feed for juveniles, every other feed for adults. Metabolic Bone Disease is common in under-supplemented geckos.</WarnBox>
-        <WarnBox type="red" title="No loose substrate">Never keep on loose substrate like sand — impaction from ingesting substrate during feeding is a serious risk.</WarnBox>
-        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
-      </>}
-      {tab === "health & shedding" && <>
-        <SectionLabel mt={0}>Common health issues</SectionLabel>
-        <HealthItem title="Metabolic Bone Disease (MBD)" detail="Caused by calcium/D3 deficiency. Signs include tremors, soft jaw, difficulty moving. Prevent with consistent calcium supplementation."/>
-        <HealthItem title="Cryptosporidiosis" detail="A serious parasitic infection causing chronic weight loss and regurgitation. Quarantine all new animals strictly."/>
-        <HealthItem title="Retained shed" detail="Usually caused by insufficient humidity in the moist hide. A stuck shed around toes can cut off circulation — soak in warm water and gently remove."/>
-        <HealthItem title="Impaction" detail="From ingesting loose substrate. Always use paper towel, tile, or reptile carpet."/>
-        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Plump tail (fat storage), clear eyes, alert and active at night, regular feeding and shedding."/>
-        <SectionLabel>Shedding</SectionLabel>
-        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Leopard Geckos shed every 4–8 weeks. Unlike snakes, they typically eat their shed skin — this is normal. A moist hide (damp paper towel inside a hide) is essential to ensure complete sheds. Signs a shed is coming include dull, whitish skin. Do not handle during a shed.</div>
-      </>}
-      {tab === "handling" && <>
-        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
-          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW</div>
-          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Leopard Geckos are one of the most handleable reptiles available. They rarely bite and when they do it causes minimal pain. They are slow-moving and calm — perfect for children and beginners. Allow 2 weeks to settle in before handling.</div>
-        </div>
-        <SectionLabel>Handling tips</SectionLabel>
-        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support their full body — never grab by the tail. Leopard Geckos can drop their tail as a defence mechanism (autotomy) — the tail will regrow but will look different. Start with short 5–10 minute sessions and gradually increase. Wash hands before and after handling. Do not handle within 24 hours of feeding.</div>
-        <WarnBox type="gold" title="Never grab the tail">Tail drop (autotomy) is a stress response. While the tail regrows, it takes energy and looks different to the original. Always scoop from underneath.</WarnBox>
-      </>}
-      {tab === "licencing" && <LegalTab note="Leopard Geckos are non-native but are approved for keeping in most Australian states as they are well-established in captivity. A standard keeper licence is required in most states. Check your state's current approved species list." />}
-    </>}
-  />
-);
-
 // ─── Eastern Bearded Dragon page ──────────────────────────────────
 const EasternBeardedDragonPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Eastern Bearded Dragon" latin="Pogona barbata" emoji="🦎"

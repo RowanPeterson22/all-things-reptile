@@ -2680,6 +2680,175 @@ const GoldenTailGeckoPage = ({ onBack }) => (
   />
 );
 
+
+// ─── Northern Blue-tongue Skink page ─────────────────────────────
+const NorthernBlueTonguePage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Northern Blue-tongue Skink" latin="Tiliqua scincoides intermedia" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Diurnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>The largest of Australia's blue-tongue skinks. Found across northern Australia from Queensland through the NT to WA. Larger, faster, and often more defensive than the Eastern Blue-tongue — but equally rewarding when well socialised. Their paler colouration, longer limbs, and more slender build distinguish them from the Eastern subspecies. A stunning and impressive species.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","55–70 cm"],["⏳","Lifespan","15–25+ yrs"],["🏠","Min. enclosure","150 × 60 cm"],["💧","Humidity","40–60%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="38–42°C" width="88%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="UVB lighting strongly recommended">Northern Blue-tongues come from tropical and subtropical Australia where UVB exposure is intense. A T5 HO 10.0 UVB tube is strongly recommended for long-term health.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 150×60cm enclosure minimum for an adult — they are larger and more active than Eastern Blue-tongues and benefit from more space. Prioritise floor space over height. Coconut coir, topsoil mix, or reptile carpet substrate. Hides at both warm and cool ends. Fresh vegetables and protein offered in bowls. UVB tube running the full length of the enclosure.</div>
+        <ShopBtn>🛒 Shop Blue-tongue supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivores with hearty appetites. The Northern Blue-tongue tends to be a more enthusiastic feeder than other subspecies. Rotate proteins, vegetables, and occasional fruit.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🍗" name="Lean chicken / turkey mince" detail="Low fat — avoid fatty cuts" freq="2–3× week"/>
+          <FoodItem icon="🥚" name="Boiled or scrambled egg" detail="Excellent protein source" freq="1× week"/>
+          <FoodItem icon="🐌" name="Snails / wood roaches (Woodies)" detail="Natural prey — eagerly taken" freq="Occasional"/>
+          <FoodItem icon="🥬" name="Leafy greens" detail="Collard greens, endive, bok choy, kale" freq="Daily"/>
+          <FoodItem icon="🥕" name="Root vegetables" detail="Carrot, pumpkin, sweet potato" freq="Several× week"/>
+          <FoodItem icon="🍓" name="Fruit" detail="Small amounts as treats only" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Feeding schedule">Juveniles: feed daily. Adults: every 2–3 days. Remove uneaten food within a few hours. Northern Blue-tongues can be prone to obesity — keep protein lean and portions appropriate.</WarnBox>
+        <ShopBtn>🛒 Shop supplements & feeders</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="Caused by temperatures too low or humidity imbalance. Signs include wheezing, mucus, open-mouth breathing. Seek vet attention promptly."/>
+        <HealthItem title="Obesity" detail="Very common in captivity. Northern Blue-tongues are enthusiastic feeders. Keep protein lean and ensure adequate space for movement."/>
+        <HealthItem title="Mouth rot (stomatitis)" detail="Redness, swelling, or cheesy discharge around the gums. Check regularly during handling."/>
+        <HealthItem title="Retained shed" detail="Particularly around toes and eyes. Soak in shallow warm water and gently assist if retained shed is present."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert and active during the day, regular feeding, smooth complete sheds, clear eyes, firm body condition, active tongue-flicking."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — LOW TO MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Northern Blue-tongues can be more defensive than Eastern Blue-tongues, particularly as juveniles or unsocialised adults. Their bite is painless but can leave a bruise due to their strong jaw. With regular gentle handling they become very tame. Their large size makes them impressive and satisfying to handle.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support the full body when handling — they are heavy animals. Allow 2 weeks to settle before regular handling. Start with short 5–10 minute sessions and build gradually. Once tame they are calm and enjoy sitting on a warm lap. Wash hands before and after handling.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Northern Blue-tongue Skinks require a standard keeper licence in most states. Must be purchased from a licensed breeder — wild collection is illegal." states={[{ abbr: "NSW", cat: "Standard keeper licence", ok: true }, { abbr: "VIC", cat: "Basic wildlife licence", ok: true }, { abbr: "QLD", cat: "Standard keeper licence", ok: true }, { abbr: "SA", cat: "Basic permit", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Blotched Blue-tongue Skink page ─────────────────────────────
+const BlotchedBlueTonguePage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Blotched Blue-tongue Skink" latin="Tiliqua nigrolutea" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Cool climate", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A beautifully patterned blue-tongue found in the cool, high-altitude regions of south-eastern Australia — Victoria, NSW highlands, South Australia, and Tasmania. Their bold dark blotches on a pale background make them one of the most visually striking blue-tongues. Adapted to cooler conditions, they are robust, hardy, and surprisingly active for a cool-climate species.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","40–55 cm"],["⏳","Lifespan","15–20+ yrs"],["🏠","Min. enclosure","120 × 60 cm"],["💧","Humidity","40–60%"]]} />
+        <WarnBox type="blue" title="Cool climate species — lower temperatures required">Blotched Blue-tongues are from alpine and sub-alpine environments. They require significantly cooler temperatures than other blue-tongue subspecies. Overheating is a serious risk — never allow temperatures to exceed 35°C.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="32–35°C" width="72%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="24–28°C" width="50%" color="#e0922b"/>
+        <TempBar label="Cool side" value="18–22°C" width="28%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="10–15°C" width="15%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 120×60cm enclosure for one adult. Ground-dwelling — prioritise floor space. Coconut coir, soil mix, or reptile carpet. Multiple hides at warm and cool ends. A robust basking spot but a large cool retreat. They naturally experience very cold winters and brumation is natural and healthy — allow temperatures to drop in winter. UVB lighting recommended.</div>
+        <WarnBox type="gold" title="Brumation is natural">Blotched Blue-tongues naturally brumate (hibernate) during winter. Allow temperatures to cool down in autumn — they will reduce feeding and become less active. This is completely normal and important for their long-term health.</WarnBox>
+        <ShopBtn>🛒 Shop Blue-tongue supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivores. Same broad diet as other blue-tongues, though they may have reduced appetite in cooler months — this is normal. Do not force-feed during winter slowdown.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🍗" name="Lean chicken / turkey mince" detail="Low fat protein staple" freq="2–3× week"/>
+          <FoodItem icon="🥚" name="Boiled or scrambled egg" detail="Excellent protein source" freq="1× week"/>
+          <FoodItem icon="🐌" name="Snails / wood roaches (Woodies)" detail="Natural prey items" freq="Occasional"/>
+          <FoodItem icon="🥬" name="Leafy greens" detail="Collard greens, endive, bok choy" freq="Daily"/>
+          <FoodItem icon="🥕" name="Root vegetables" detail="Carrot, pumpkin, sweet potato" freq="Several× week"/>
+        </div>
+        <WarnBox type="blue" title="Reduced feeding in winter is normal">Blotched Blue-tongues naturally eat less or stop eating entirely during cooler months. Do not be alarmed — maintain access to fresh water and allow them to follow their natural seasonal cycle.</WarnBox>
+        <ShopBtn>🛒 Shop supplements & feeders</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Overheating" detail="The most serious risk for this cool-climate species. Never allow temperatures to exceed 35°C anywhere in the enclosure. Always provide a large, cool retreat area."/>
+        <HealthItem title="Respiratory infection" detail="Paradoxically, despite being a cool-climate species, sudden temperature drops or cold draughts can cause respiratory issues. Gradual seasonal cooling is fine; abrupt cold spells are not."/>
+        <HealthItem title="Obesity" detail="They have hearty appetites but their slower cool-climate metabolism means they need less food than tropical blue-tongue subspecies. Feed conservatively."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active during warmer parts of the day, alert tongue-flicking, regular feeding, smooth complete sheds, clear eyes, brumation in winter."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Blotched Blue-tongues are generally calm and handleable, similar in temperament to Eastern Blue-tongues. Their cool-climate origin means they may be slower and less active than northern subspecies — they are often very easy to handle as a result. Regular gentle handling from a young age produces very tame adults.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support the full body. Allow 2 weeks to settle before regular handling. Do not handle during brumation — they need rest during this period. Handle during the warmest part of the day when they are most active.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Blotched Blue-tongue Skinks require a standard keeper licence in most states. Commonly available from licensed breeders in VIC, NSW, SA, and TAS. Must be purchased from a licensed breeder." states={[{ abbr: "NSW", cat: "Standard keeper licence", ok: true }, { abbr: "VIC", cat: "Basic wildlife licence", ok: true }, { abbr: "QLD", cat: "Standard keeper licence", ok: true }, { abbr: "SA", cat: "Basic permit", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "Standard licence", ok: true }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Shingleback Lizard page ──────────────────────────────────────
+const ShinglebackPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Shingleback Lizard" latin="Tiliqua rugosa" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Monogamous", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most unique and beloved reptiles. Also known as the Bobtail, Stumpy-tail, Pinecone Lizard, and Two-headed Skink (their fat tail resembles their head as a defensive adaptation). Found across southern Australia from WA through SA to NSW. Famous for forming lifelong monogamous pair bonds — the same two individuals reunite each breeding season for decades. An extraordinary animal with genuine personality.</p>
+        <WarnBox type="gold" title="Monogamous pair bonds">Shinglebacks are one of very few reptiles known to form long-term monogamous pair bonds. Partners return to each other year after year and have been documented together for over 20 years. If keeping a pair, they should stay together for life.</WarnBox>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","30–45 cm"],["⏳","Lifespan","20–50+ yrs"],["🏠","Min. enclosure","120 × 60 cm"],["💧","Humidity","30–45%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="35–40°C" width="84%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="26–30°C" width="58%" color="#e0922b"/>
+        <TempBar label="Cool side" value="18–22°C" width="28%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="10–15°C" width="15%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Brumation is natural and important">Shinglebacks naturally brumate in winter. This seasonal cycling is essential for their long-term health and reproductive success. Allow temperatures to cool and do not disturb during brumation periods.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 120×60cm enclosure minimum. Ground-dwelling — prioritise floor space. Sandy or rocky substrate to match their natural arid habitat. Multiple flat rock hides and bark pieces for shelter. Robust basking rock or branch directly under a heat lamp. UVB tube strongly recommended. A shallow water bowl — they drink regularly. Many keepers of Shinglebacks maintain outdoor enclosures in warmer months.</div>
+        <ShopBtn>🛒 Shop lizard supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivores with a diet heavier in plant material than other blue-tongues. They naturally consume a wide variety of fruits, flowers, and vegetation alongside invertebrates. Variety is key.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🥬" name="Leafy greens & flowers" detail="Dandelion flowers, clover, leafy greens — they love flowers" freq="Daily"/>
+          <FoodItem icon="🍓" name="Fruit" detail="Strawberries, apple, pear — more fruit than other blue-tongues" freq="Several× week"/>
+          <FoodItem icon="🥕" name="Root vegetables" detail="Carrot, pumpkin, sweet potato" freq="Several× week"/>
+          <FoodItem icon="🐌" name="Snails" detail="A natural favourite — shell provides calcium" freq="Weekly"/>
+          <FoodItem icon="🍗" name="Lean chicken mince" detail="Small amounts of protein" freq="1–2× week"/>
+          <FoodItem icon="🪱" name="Earthworms" detail="Natural prey — good calcium source" freq="Weekly"/>
+        </div>
+        <WarnBox type="gold" title="More plant-based than other blue-tongues">In the wild, Shinglebacks eat a diet that is predominantly plant material including flowers, fruits, and berries. Offer a wider variety of fruits and flowers than you would for Eastern or Northern Blue-tongues.</WarnBox>
+        <WarnBox type="red" title="Avoid high-protein diets">Excessive animal protein causes kidney disease in Shinglebacks over time. Keep protein portions small and infrequent compared to their plant-based diet.</WarnBox>
+        <ShopBtn>🛒 Shop supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Kidney disease" detail="Often caused by excessive dietary protein over many years. Feed a predominantly plant-based diet with small amounts of protein. Annual vet checks recommended for long-term health monitoring."/>
+        <HealthItem title="Tick infestation" detail="Wild-caught Shinglebacks often carry ticks. Inspect any newly acquired animal thoroughly. Never collect from the wild."/>
+        <HealthItem title="Respiratory infection" detail="From temperature extremes or sudden cold snaps. Maintain stable temperatures and allow gradual seasonal cooling."/>
+        <HealthItem title="Metabolic Bone Disease" detail="From insufficient calcium or UVB. Dust food with calcium powder and provide UVB lighting."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert and active on warm days, regular feeding, complete sheds, clear bright eyes, firm body condition, active tongue-flicking, natural brumation in winter."/>
+        <SectionLabel>Shedding</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Shinglebacks shed in large pieces rather than one complete shed like snakes. Their thick, rough scales mean shedding is less uniform. This is normal. Increase humidity slightly during shedding periods and provide rough surfaces to assist.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW TO MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Shinglebacks are generally calm but can be defensive when first encountered — they will open their vivid blue mouth wide and hiss as a threat display. This is bluffing behaviour. With regular gentle handling they become extremely tame and many develop genuine recognition of their keeper. Long-lived animals that build real bonds over time.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support the full body — their heavy build means they need full support. Their slow movement makes them easy to handle. Allow 2–3 weeks to settle before regular handling. Do not handle during brumation. Their blue tongue and gaping mouth display is impressive — enjoy it as part of their character.</div>
+        <WarnBox type="gold" title="Long-term relationships">Shinglebacks kept for many years often become remarkably tame and will recognise their keeper. Their exceptional lifespan (20–50+ years) means a Shingleback you acquire today could be with you for the rest of your life.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Shinglebacks require a standard keeper licence in most states. They are a WA native species and widely available in SA. Check availability carefully in your state before purchasing." states={[{ abbr: "NSW", cat: "Standard keeper licence", ok: true }, { abbr: "VIC", cat: "Basic wildlife licence", ok: true }, { abbr: "QLD", cat: "Standard keeper licence", ok: true }, { abbr: "SA", cat: "Basic permit", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -2713,6 +2882,9 @@ const PAGE_MAP = {
   leaftail:    LeafTailGeckoPage,
   spinytail:   SpinyTailGeckoPage,
   goldentail:  GoldenTailGeckoPage,
+  northernbt:  NorthernBlueTonguePage,
+  blotchedbt:  BlotchedBlueTonguePage,
+  shingleback: ShinglebackPage,
   enclosure:   EnclosurePage,
   feeders:     FeederGuidePage,
 };

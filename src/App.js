@@ -9,8 +9,11 @@ const C = {
 
 // ─── Species data ─────────────────────────────────────────────────
 const SPECIES = [
-  { id: "bluetongue",  name: "Blue-tongue Skink",          latin: "Tiliqua scincoides",       type: "lizard", emoji: "🦎", bg: "#f5f0e8", level: "Beginner",     page: "bluetongue" },
-  { id: "beardie",     name: "Bearded Dragon",              latin: "Pogona vitticeps",          type: "lizard", emoji: "🦎", bg: "#f0ece0", level: "Beginner",     page: "beardie" },
+  { id: "bluetongue",  name: "Eastern Blue-tongue Skink",  latin: "Tiliqua scincoides",       type: "lizard", emoji: "🦎", bg: "#f5f0e8", level: "Beginner",     page: "bluetongue" },
+  { id: "northernbt",  name: "Northern Blue-tongue Skink",  latin: "Tiliqua scincoides intermedia", type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "northernbt" },
+  { id: "blotchedbt",  name: "Blotched Blue-tongue Skink",  latin: "Tiliqua nigrolutea",           type: "lizard", emoji: "🦎", bg: "#f0eee8", level: "Beginner",     page: "blotchedbt" },
+  { id: "shingleback", name: "Shingleback Lizard",           latin: "Tiliqua rugosa",               type: "lizard", emoji: "🦎", bg: "#f5f0e0", level: "Intermediate", page: "shingleback" },
+  { id: "beardie",     name: "Central Bearded Dragon",      latin: "Pogona vitticeps",          type: "lizard", emoji: "🦎", bg: "#f0ece0", level: "Beginner",     page: "beardie" },
   { id: "knobtail",     name: "Knob-tailed Gecko",           latin: "Nephrurus spp.",            type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Intermediate", page: "knobtail" },
   { id: "thicktail",    name: "Thick-tailed Gecko",          latin: "Underwoodisaurus milii",    type: "gecko",  emoji: "🦎", bg: "#f0ece8", level: "Beginner",     page: "thicktail" },
   { id: "marbled",      name: "Marbled Velvet Gecko",        latin: "Oedura marmorata",          type: "gecko",  emoji: "🦎", bg: "#f5f0f8", level: "Beginner",     page: "marbled" },

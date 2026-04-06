@@ -187,7 +187,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
   const [tab, setTab] = useState(tabs[0]);
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "20px 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to browse</button>
         <div style={{ textAlign: "center", fontSize: 90, lineHeight: 1, marginBottom: -8 }}>{emoji}</div>
         <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "18px 18px 0" }}>
@@ -775,7 +775,7 @@ const EnclosurePage = ({ onBack }) => {
   );
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "20px 20px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
         <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
           <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🏠</div>
@@ -1063,7 +1063,7 @@ const SplashScreen = ({ onComplete }) => {
 
   return (
     <div style={{
-      position: "fixed", inset: 0,
+      position: "fixed", inset: 0, paddingTop: "env(safe-area-inset-top, 0px)",
       background: "#ffffff",
       display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
@@ -1398,7 +1398,7 @@ export default function App() {
       <div style={{ width: 390, background: C.cream, minHeight: 700, borderRadius: 24, overflow: "hidden", border: "0.5px solid #e0e0dc", display: "flex", flexDirection: "column", boxShadow: "0 8px 40px rgba(0,0,0,0.12)" }}>
 
         {!page && (
-          <div style={{ background: C.green, padding: "20px 20px 0" }}>
+          <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
               <div style={{ width: 32, height: 32, background: C.gold, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>🦎</div>
               <div>

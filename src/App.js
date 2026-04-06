@@ -235,22 +235,38 @@ const StatGrid = ({ stats }) => (
   </div>
 );
 
-const LegalTab = ({ note }) => (
-  <>
-    <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 12 }}>
-      {note || "A keeper licence is required in all Australian states. Must be purchased from a licensed breeder — wild collection is illegal."}
-    </p>
-    <SectionLabel mt={0}>Licence by state</SectionLabel>
-    {[["Victoria (VIC)", "Wildlife Basic Licence", "Category 1"], ["New South Wales (NSW)", "Reptile Keeper Licence", "Class 1"], ["Queensland (QLD)", "Recreational Wildlife Licence", "Category 1"], ["South Australia (SA)", "Controlled Species Permit", "Basic permit"], ["Western Australia (WA)", "Wildlife Licence", "Basic keeper"], ["Tasmania (TAS)", "Wildlife Keeper Licence", "Category 1"]].map(([state, lic, cat]) => (
-      <div key={state} style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", marginBottom: 8, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <div><div style={{ fontSize: 14, fontWeight: 600 }}>{state}</div><div style={{ fontSize: 12, color: "#888", marginTop: 2 }}>{lic}</div></div>
-        <div style={{ fontSize: 11, padding: "3px 9px", borderRadius: 10, background: C.greenPale, color: C.green, fontWeight: 700 }}>{cat}</div>
+const LegalTab = ({ note, states }) => {
+  // Default state data - most common reptiles (Cat 1/Class 1 everywhere except TAS)
+  const defaultStates = [
+    { abbr: "NSW", cat: "Class 1",    ok: true  },
+    { abbr: "VIC", cat: "Basic",      ok: true  },
+    { abbr: "QLD", cat: "Class 1",    ok: true  },
+    { abbr: "SA",  cat: "Basic",      ok: true  },
+    { abbr: "WA",  cat: "Standard",   ok: true  },
+    { abbr: "TAS", cat: "TAS native only", ok: false },
+    { abbr: "ACT", cat: "Class A",    ok: true  },
+    { abbr: "NT",  cat: "No licence", ok: true  },
+  ];
+  const stateData = states || defaultStates;
+  return (
+    <>
+      <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 12 }}>
+        {note || "A keeper licence is required in all Australian states. Must be purchased from a licensed breeder — wild collection is illegal."}
+      </p>
+      <SectionLabel mt={0}>Licence by state</SectionLabel>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginBottom: 14 }}>
+        {stateData.map(s => (
+          <div key={s.abbr} style={{ background: s.ok ? C.cream : "#fce8e8", borderRadius: 10, padding: "10px 12px", border: s.ok ? "0.5px solid #e8e8e4" : "0.5px solid #8b202033" }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: s.ok ? "#111" : C.red, marginBottom: 3 }}>{s.abbr}</div>
+            <div style={{ fontSize: 11, fontWeight: 600, color: s.ok ? C.green : C.red, lineHeight: 1.4 }}>{s.cat}</div>
+          </div>
+        ))}
       </div>
-    ))}
-    <WarnBox type="gold" title="Always verify with your local authority">Licence categories and rules can change. Check with your state's wildlife authority before purchasing.</WarnBox>
-    <ShopBtn secondary>How to apply for a licence ↗</ShopBtn>
-  </>
-);
+      <WarnBox type="gold" title="Always verify with your local authority">Licence categories and rules can change. Check with your state wildlife authority before purchasing.</WarnBox>
+      <ShopBtn secondary>How to apply for a licence ↗</ShopBtn>
+    </>
+  );
+};
 
 const SnakeShedding = ({ animal = "reptile" }) => (
   <>
@@ -365,7 +381,7 @@ const ChildrensPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="low" notes="Children's Pythons are generally very calm and reluctant to bite once settled. Hatchlings can be nippy — handle regularly from an early age to build confidence. Bites are small and superficial." />
         <SnakeBreeding clutchSize="8–15 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="2–3 years" notes="Cooling in winter (dropping temps to 18–20°C overnight for 6–8 weeks) triggers breeding behaviour. Females lay eggs approximately 30–40 days after mating. Eggs should be incubated in a moist vermiculite medium." />
       </>}
-      {tab === "licencing" && <LegalTab note="Children's Pythons are Category 1 / Class 1 in most Australian states — one of the easiest snakes to keep legally. A basic keeper licence is required." />}
+      {tab === "licencing" && <LegalTab note="Children's Pythons are one of the easiest snakes to licence in Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -410,7 +426,7 @@ const StimsonsPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Stimson's Pythons can be more defensive than Children's Pythons, especially as hatchlings. Regular handling from a young age makes a significant difference. Most adults become quite calm. Bites are small but can startle." />
         <SnakeBreeding clutchSize="5–12 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="2–3 years" notes="Requires a cooling period in winter. Drop overnight temps to 15–17°C for 6–8 weeks. Females coil around their eggs and should not be disturbed once laid. Remove eggs carefully to an incubator." />
       </>}
-      {tab === "licencing" && <LegalTab note="Stimson's Pythons are Category 1 / Class 1 in most Australian states. Basic keeper licence required." />}
+      {tab === "licencing" && <LegalTab note="Stimson's Pythons are Category 1 / Class 1 in all states where available." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -455,7 +471,7 @@ const SpottedPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="low" notes="Spotted Pythons are generally calm and tolerate handling well once settled. Hatchlings can be more defensive. Regular gentle handling builds confidence quickly. Adults are typically very relaxed." />
         <SnakeBreeding clutchSize="8–20 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="2–3 years" notes="One of the easier Antaresia to breed. Requires a winter cooling period. Females are good egg-guarders and will coil around the clutch. Incubate eggs in a moist substrate at stable temperature for best hatch rates." />
       </>}
-      {tab === "licencing" && <LegalTab note="Spotted Pythons are Category 1 / Class 1 in most Australian states. A basic keeper licence is required." />}
+      {tab === "licencing" && <LegalTab note="Spotted Pythons are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -503,7 +519,7 @@ const CarpetPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Carpet Python temperament varies widely by subspecies and individual. Jungle Carpets are notoriously feistier; Coastal Carpets tend to be calmer. Juveniles can be defensive. With consistent handling most become tractable adults — but they always retain a personality. Always hook-train." />
         <SnakeBreeding clutchSize="10–30 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="3–4 years" notes="Requires a significant winter cooling period (drop to 18–20°C overnight for 8–10 weeks). Females are dedicated egg-guarders and will shiver to generate heat for the clutch — a fascinating behaviour. Remove eggs to an incubator for best results." />
       </>}
-      {tab === "licencing" && <LegalTab note="Carpet Pythons are listed in Category 2 / Class 2 in most states due to their larger size. A keeper licence at the appropriate level is required." />}
+      {tab === "licencing" && <LegalTab note="Carpet Pythons require a Category 2/Class 2 licence due to their size." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -548,7 +564,7 @@ const BredliPage = ({ onBack }) => (
         <SnakeHandling biteRisk="low" notes="Bredlis have a reputation as one of the calmer large pythons. Most adults are quite relaxed and tolerate handling well. Juveniles can be nippy — regular handling from an early age is key. Hook-training is still important given their size." />
         <SnakeBreeding clutchSize="12–25 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="3–4 years" notes="Winter cooling is essential for successful breeding. Drop overnight temps to 15–18°C for 8–10 weeks. Females are protective egg-guarders. Bredlis are a popular breeding project due to their beautiful colouration." />
       </>}
-      {tab === "licencing" && <LegalTab note="Bredli Pythons require a Category 2 / Class 2 keeper licence in most states due to their size." />}
+      {tab === "licencing" && <LegalTab note="Bredli Pythons require a Category 2/Class 2 licence." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -595,7 +611,7 @@ const DiamondPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Diamond Pythons can be more defensive than other carpet subspecies. Individual temperaments vary widely. Some are handleable from an early age; others remain defensive. They can be nippy especially in summer. Never rush handling — build trust slowly." />
         <SnakeBreeding clutchSize="10–25 eggs" incubationTemp="27–29°C" incubationDays="55–70 days" maturityAge="3–5 years" notes="Diamonds require a genuine winter cooling period — drop to 12–16°C overnight for 10–14 weeks. Lower incubation temps than most pythons. A challenging but rewarding breeding project. Captive-bred animals are far easier to keep and feed than wild-caught." />
       </>}
-      {tab === "licencing" && <LegalTab note="Diamond Pythons require a Category 2 / Class 2 licence in most states. In Victoria and NSW where they are native, check for any additional local requirements." />}
+      {tab === "licencing" && <LegalTab note="Diamond Pythons require a Category 2/Class 2 licence. Check local requirements in VIC and NSW." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -641,7 +657,7 @@ const WomaPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="low" notes="Womas are generally very calm and smooth to handle. They rarely bite defensively — but have a strong feeding response. Hook-train religiously and always ensure your hands don't smell of food. Once hook-trained, adults are a pleasure to handle." />
         <SnakeBreeding clutchSize="5–20 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="3–4 years" notes="Requires a good winter cooling period. Drop to 15–18°C overnight for 8–10 weeks. Womas are a popular breeding project — their beautiful banding and calm nature make them highly sought after. Females guard their eggs and should be disturbed as little as possible." />
       </>}
-      {tab === "licencing" && <LegalTab note="Woma Pythons are listed in higher licence categories in some states due to conservation status. Check current requirements carefully before purchase." />}
+      {tab === "licencing" && <LegalTab note="Woma Pythons may require a higher licence category in some states due to their conservation status." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -689,7 +705,7 @@ const BlackHeadedPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Black-headed Pythons vary in temperament. Some are calm and handleable; others remain defensive throughout their lives. Their size and feeding history with other reptiles means respect is important. Always hook-train. Juveniles can be particularly defensive — patience and consistency is key." />
         <SnakeBreeding clutchSize="5–12 eggs" incubationTemp="30–32°C" incubationDays="60–70 days" maturityAge="4–5 years" notes="A challenging but rewarding breeding project. Requires a significant cooling period. Clutches are relatively small. Getting hatchlings established on rodents is often the biggest challenge — purchase from proven breeders with established feeding animals where possible." />
       </>}
-      {tab === "licencing" && <LegalTab note="Black-headed Pythons may require a higher keeper licence category in some states. Check your state's current requirements carefully — categories vary and can change." />}
+      {tab === "licencing" && <LegalTab note="Black-headed Pythons may require a higher licence category in some states." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -737,7 +753,7 @@ const OlivePythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Olive Pythons are generally not aggressive but their size makes any defensive behaviour significant. Always use a hook to signal handling intent. Two-person handling is recommended for adults over 2.5 m. Their strength means they can be difficult to control if they decide to move quickly. Never handle alone when the snake is large." />
         <SnakeBreeding clutchSize="10–20 eggs" incubationTemp="30–32°C" incubationDays="60–70 days" maturityAge="4–6 years" notes="A breeding project only for very experienced keepers with appropriate space and resources. Requires a cooling period. Females are dedicated egg-guarders. Hatchlings are large and should readily accept mice from the start." />
       </>}
-      {tab === "licencing" && <LegalTab note="Olive Pythons require a higher-level keeper licence (Category 2 or 3 depending on state) due to their size. A licence upgrade from a basic keeper licence is required in most states." />}
+      {tab === "licencing" && <LegalTab note="Olive Pythons require an advanced keeper licence due to their large size." states={[{ abbr: "NSW", cat: "Class 3+", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -790,7 +806,7 @@ const BlueTonguePage = ({ onBack }) => {
           <WarnBox type="green" title="Find a reptile vet">Always use a vet with exotic / reptile experience.</WarnBox>
           <ShopBtn secondary>Ask about finding a vet ↗</ShopBtn>
         </>}
-        {t === "licencing" && <LegalTab note="Blue-tongue Skinks are native wildlife. A keeper licence is required in all Australian states. In Victoria, Eastern Blue-tongue Skinks can be kept without a licence. All other states require a Category 1/Class 1 keeper licence. Must be purchased from a licensed breeder — wild collection is illegal." />}
+        {t === "licencing" && <LegalTab note="Blue-tongue Skinks are a popular beginner species. Victoria does not require a licence for Eastern Blue-tongues." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "No licence (eastern BTL)", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
       </>}
     />
   );
@@ -860,7 +876,7 @@ const BeardiePage = ({ onBack }) => {
           ))}
           <ShopBtn secondary>Ask about a health concern ↗</ShopBtn>
         </>}
-        {t === "licencing" && <LegalTab note="Bearded Dragons are listed in the lowest keeper category in most Australian states — one of the easiest native reptiles to keep legally. A basic keeper licence is required." />}
+        {t === "licencing" && <LegalTab note="Bearded Dragons are one of the most commonly kept reptiles in Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
       </>}
     />
   );
@@ -1367,7 +1383,7 @@ const PygmyPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="low" notes="Pygmy Pythons are generally calm for their size. Hatchlings can be nippy — handle carefully given they are very small and delicate. Regular gentle handling builds confidence. Their small size means they can move quickly." />
         <SnakeBreeding clutchSize="2–5 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="2–3 years" notes="One of the smallest clutch sizes of any python — typically just 2–5 eggs. Requires a winter cooling period. Eggs are relatively large compared to the female's body size. A rewarding breeding project given their rarity in captivity." />
       </>}
-      {tab === "licencing" && <LegalTab note="Pygmy Pythons are Category 1/Class 1 in most states. As a WA endemic species, check current interstate availability and any additional requirements before purchasing." />}
+      {tab === "licencing" && <LegalTab note="Pygmy Pythons are Category 1/Class 1 where available. WA endemic — check interstate availability." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1417,7 +1433,7 @@ const JungleCarpetPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Jungle Carpets have a reputation as the feistiest carpet subspecies. Many individuals are defensive especially as juveniles, and some remain so throughout their lives. Consistent handling from an early age is essential. Always hook-train. Adults generally become much calmer with regular interaction." />
         <SnakeBreeding clutchSize="10–25 eggs" incubationTemp="30–32°C" incubationDays="55–65 days" maturityAge="3–4 years" notes="Requires a significant winter cooling period with reduced temperatures and lighting. Females are dedicated egg-guarders and will shiver to generate heat. Their stunning colouration makes them a popular and rewarding breeding project. High-colour individuals command premium prices." />
       </>}
-      {tab === "licencing" && <LegalTab note="Jungle Carpet Pythons are Category 2/Class 2 in most states due to their larger size. A keeper licence at the appropriate level is required." />}
+      {tab === "licencing" && <LegalTab note="Jungle Carpet Pythons require a Category 2/Class 2 licence." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1465,7 +1481,7 @@ const WaterPythonPage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Water Pythons are fast and alert — they can be defensive, particularly when young. They move quickly and can be unpredictable. Regular consistent handling from an early age significantly improves temperament. Always hook-train. Adults can become quite calm with regular interaction." />
         <SnakeBreeding clutchSize="8–16 eggs" incubationTemp="30–32°C" incubationDays="58–65 days" maturityAge="3–4 years" notes="Requires a winter cooling period. Females are good egg-guarders. A less commonly bred species in Australian collections — captive-bred animals are more tractable than wild-caught individuals. Their iridescent colouration makes them a unique and attractive breeding project." />
       </>}
-      {tab === "licencing" && <LegalTab note="Water Pythons are Category 2/Class 2 in most states. A keeper licence at the appropriate level is required." />}
+      {tab === "licencing" && <LegalTab note="Water Pythons require a Category 2/Class 2 licence." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1515,7 +1531,7 @@ const AmethystinePage = ({ onBack }) => (
         <SnakeHandling biteRisk="medium" notes="Amethystine Pythons vary in temperament but their size makes any defensive behaviour extremely significant. Always hook-train. Two-person handling is mandatory for adults over 2.5m. Their power means they can be difficult to control if startled. Never handle alone when the snake is large. Despite their size, well-socialised adults can be manageable." />
         <SnakeBreeding clutchSize="8–20 eggs" incubationTemp="30–32°C" incubationDays="65–75 days" maturityAge="4–6 years" notes="A breeding project only for very experienced keepers with appropriate space and facilities. Requires a winter cooling period. Females are dedicated egg-guarders. Hatchlings are large and should feed readily from the start. A prestigious and rewarding project given their status as Australia's largest python." />
       </>}
-      {tab === "licencing" && <LegalTab note="Amethystine Pythons require a Category 2/Class 2 keeper licence in most states. Their large size and the significant commitment required means thorough research and preparation before acquiring this species is essential." />}
+      {tab === "licencing" && <LegalTab note="Amethystine Pythons require a Category 2/Class 2 licence. A significant commitment." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1565,7 +1581,7 @@ const RoughScaledPythonPage = ({ onBack }) => (
       {tab === "licencing" && <>
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Rough-scaled Pythons are found only in WA and may have been recorded in QLD. Licence requirements and availability vary significantly by state. Verify all documentation extremely carefully before any transaction involving this species.</p>
         <WarnBox type="red" title="Due diligence critical">Given the extreme rarity and value of this species, thoroughly verify the legitimacy of any seller, the legality of the animal, and all documentation. Consult your state wildlife authority before acquiring.</WarnBox>
-        <LegalTab note="Rough-scaled Pythons require Category 2 licencing in states where they are available. They are effectively not available in most states. QLD and WA are the only states where captive specimens have been recorded." />
+        <LegalTab note="Rough-scaled Pythons are only available in QLD and WA." states={[{ abbr: "NSW", cat: "Not available", ok: false }, { abbr: "VIC", cat: "Not available", ok: false }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Not available", ok: false }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Not available", ok: false }, { abbr: "NT", cat: "Not available", ok: false }]} />
       </>}
     </>}
   />
@@ -1621,7 +1637,7 @@ const EasternBeardedDragonPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support the full body when handling. Allow 2 weeks to settle before regular handling. Short sessions initially, building to longer periods. They enjoy supervised free-roaming time and will often seek warmth from their keeper's hands and body.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Eastern Bearded Dragons require a Category 1/Class 1 keeper licence in most states. They are commonly available from licensed breeders across Australia." />}
+      {tab === "licencing" && <LegalTab note="Eastern Bearded Dragons are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1673,7 +1689,7 @@ const RankinsDragonPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Same handling approach as Bearded Dragons. Support the full body, start with short sessions, build gradually. Their small size means they move quickly — handle over a soft surface initially.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Rankins Dragons require a Category 1/Class 1 keeper licence in most states. They are available from licensed breeders across Australia." />}
+      {tab === "licencing" && <LegalTab note="Rankins Dragons are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1725,7 +1741,7 @@ const FrilledLizardPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Allow 3–4 weeks to settle before regular handling. Approach slowly and from the side, not from above. Let them walk onto your hand rather than grabbing them. Their frill display is spectacular to see but means they are stressed — end the session if they display persistently.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Frilled Lizards require a Category 2 licence in NSW, and are available in QLD and WA. They are not available in VIC, SA, TAS, or ACT. Check current availability in your state before purchasing." />}
+      {tab === "licencing" && <LegalTab note="Frilled Lizards have restricted availability — not available in VIC, SA, TAS, or ACT." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Not available", ok: false }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Not available", ok: false }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Not available", ok: false }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1778,7 +1794,7 @@ const WaterDragonPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Allow 3–4 weeks to settle. Approach slowly, support the full body. Once settled they can become very tame and will often voluntarily approach their keeper. Well-handled adults are impressive and engaging animals to interact with.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Eastern Water Dragons require a Category 1/Class 1 keeper licence in most states. They are available across eastern Australia from licensed breeders." />}
+      {tab === "licencing" && <LegalTab note="Eastern Water Dragons are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1830,7 +1846,7 @@ const KnobTailedGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Short handling sessions only — these are primarily display animals. Never grab the tail. Support the full body. Handle after they have warmed up for the evening. Frequent, brief, calm interactions build confidence over time.</div>
         <WarnBox type="red" title="Never grab the tail">Like many geckos, Knob-tails can drop their tail under stress. The tail regrows but the knob does not reform properly — it is a permanent loss of their most distinctive feature.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Knob-tailed Geckos require a Category 1/Class 1 keeper licence in most states. Multiple species are available from licensed breeders across Australia." />}
+      {tab === "licencing" && <LegalTab note="Knob-tailed Geckos are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1880,7 +1896,7 @@ const ThickTailedGeckoPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Start with short 5–10 minute sessions. Their vocalisation (a soft barking sound) is part of their charm — enjoy it! Never grab the tail.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Thick-tailed Geckos require a Category 1/Class 1 keeper licence in most states. Widely available from licensed breeders across Australia." />}
+      {tab === "licencing" && <LegalTab note="Thick-tailed Geckos are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -1928,7 +1944,7 @@ const MarbledVelvetGeckoPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support full body. Short sessions initially. They are more confident in low light — dim the room for handling sessions. Never grab the tail.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Marbled Velvet Geckos require a Category 1/Class 1 keeper licence in most states. Available from licensed breeders across Australia." />}
+      {tab === "licencing" && <LegalTab note="Marbled Velvet Geckos are a Category 1/Class 1 species across most of Australia." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2268,7 +2284,7 @@ const GreenTreePythonPage = ({ onBack }) => (
         <WarnBox type="gold" title="Juvenile colour transition">Hatchlings are bright yellow or red — not green! The transition to adult green colouration occurs gradually over 6–12 months and is one of the most spectacular transformations in the reptile world. During this period feeding can become irregular — this is normal.</WarnBox>
       </>}
       {tab === "licencing" && <>
-        <LegalTab note="Green Tree Pythons require a Category 2/Class 2 keeper licence in most states. They are available from specialist captive breeders in Australia though supply is limited and prices reflect their status as a premium display animal." />
+        <LegalTab note="Green Tree Pythons require a Category 2/Class 2 licence. Limited availability from specialist breeders." states={[{ abbr: "NSW", cat: "Class 2", ok: true }, { abbr: "VIC", cat: "Advanced", ok: true }, { abbr: "QLD", cat: "Class 2", ok: true }, { abbr: "SA", cat: "Restricted", ok: true }, { abbr: "WA", cat: "Advanced", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class B", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />
         <WarnBox type="blue" title="Cape York population">Australian GTPs are sourced from the Cape York Peninsula population. New Guinea populations are not available for private keeping in Australia. Always ensure any animal you purchase is legally captive-bred from documented Australian stock.</WarnBox>
       </>}
     </>}
@@ -2329,7 +2345,7 @@ const EasternLongNeckPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>When handling is necessary, hold the turtle at the sides of the shell — never by the neck or limbs. Their long neck can reach around to bite surprisingly easily. Always wash hands immediately after handling. Keep sessions brief and return to water promptly.</div>
         <WarnBox type="red" title="Musk gland warning">When stressed, Long-necked Turtles release a foul-smelling musk from glands near their legs. This is a defence mechanism — if your turtle musks frequently during handling, reduce handling sessions significantly.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Eastern Long-necked Turtles require a Category 1/Class 1 keeper licence in most states. They are not available in Tasmania. Must be purchased from a licensed breeder. Note that turtles are long-lived animals — ensure you are prepared for a 30–50 year commitment before purchasing." />}
+      {tab === "licencing" && <LegalTab note="Eastern Long-necked Turtles are a Category 1/Class 1 species. Not available in Tasmania." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2379,7 +2395,7 @@ const BroadShellTurtlePage = ({ onBack }) => (
         </div>
         <WarnBox type="red" title="Musk gland warning">Like all long-necked turtles, Broad-shells release a very pungent musk when stressed. Handle over a sink or outdoors.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Broad-shelled Turtles require a Category 1/Class 1 keeper licence in most states. Not available in Tasmania. Given their very large adult size, ensure you have adequate space and filtration before purchasing. A 50+ year commitment." />}
+      {tab === "licencing" && <LegalTab note="Broad-shelled Turtles require a Category 1/Class 1 licence. Not available in Tasmania." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2429,7 +2445,7 @@ const MurrayRiverTurtlePage = ({ onBack }) => (
         </div>
         <WarnBox type="gold" title="Salmonella risk">Like all turtles, Murray River Turtles can carry Salmonella. Always wash hands after handling or working with the aquarium water. Supervise children carefully.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Murray River Turtles require a Category 1/Class 1 keeper licence in most states. Not available in Tasmania. Must be purchased from a licensed breeder." />}
+      {tab === "licencing" && <LegalTab note="Murray River Turtles are a Category 1/Class 1 species. Not available in Tasmania." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2481,7 +2497,7 @@ const SawShellTurtlePage = ({ onBack }) => (
         <WarnBox type="red" title="Fast biter">The Saw-shelled Turtle has one of the fastest feeding strikes of any Australian turtle. Even outside of feeding time they can be defensive biters. Hold at the very back of the shell and keep fingers away from the neck area.</WarnBox>
         <WarnBox type="gold" title="Salmonella risk">All turtles can carry Salmonella. Always wash hands after handling or working with aquarium water.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Saw-shelled Turtles are only available in Queensland and New South Wales — they cannot be legally kept in other states. A Category 1/Class 1 keeper licence is required in both states. Must be purchased from a licensed breeder." />}
+      {tab === "licencing" && <LegalTab note="Saw-shelled Turtles are only available in QLD and NSW." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Not available", ok: false }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Not available", ok: false }, { abbr: "WA", cat: "Not available", ok: false }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Not available", ok: false }, { abbr: "NT", cat: "Not available", ok: false }]} />}
     </>}
   />
 );
@@ -2538,7 +2554,7 @@ const LeafTailGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>If handling is necessary, support the full body from below. Never grab from above or restrain forcefully. Work at night when they are naturally active and more responsive. Their remarkable camouflage can make them very hard to find in the enclosure during the day — resist the urge to disturb them.</div>
         <WarnBox type="red" title="Tail drop risk">Like many geckos, Leaf-tails can drop their tail under extreme stress. The tail regrows but never matches the original leaf shape — the species' most distinctive feature is permanently altered. Minimise stress at all times.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Southern Leaf-tailed Geckos require a Category 1/Class 1 keeper licence in NSW where they are most commonly available. They are less commonly available in other states. Must be purchased from a licensed breeder only — wild collection is illegal and these animals do not adapt well to captivity if wild-caught." />}
+      {tab === "licencing" && <LegalTab note="Southern Leaf-tailed Geckos are primarily available in NSW. Confirm availability in your state." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Check availability", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2590,7 +2606,7 @@ const SpinyTailGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Avoid holding near the tail — this is where the defensive glands are located. If the gecko raises its tail in a curved position it is warning you. Short sessions only. Wash hands after handling.</div>
         <WarnBox type="gold" title="Tail fluid warning">If the gecko squirts fluid, avoid touching your eyes and wash the affected area immediately. The fluid is harmless but has an extremely unpleasant smell that can linger. Handle with care to avoid triggering this response.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Northern Spiny-tailed Geckos require a Category 1/Class 1 keeper licence in most states. Available from licensed breeders across Australia. Note: availability varies by state and some Strophurus species have specific state restrictions — confirm availability in your state before purchasing." />}
+      {tab === "licencing" && <LegalTab note="Northern Spiny-tailed Geckos are a Category 1/Class 1 species. Confirm Strophurus availability in your state." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Basic", ok: true }, { abbr: "QLD", cat: "Class 1", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );
@@ -2642,7 +2658,7 @@ const GoldenTailGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Short sessions only. Their remarkable golden tail is their most striking feature — never grab by the tail. Wash hands before and after handling.</div>
         <WarnBox type="gold" title="Tail fluid warning">Like all Strophurus, can squirt foul-smelling defensive fluid from the tail if threatened. Avoid eye contact with the fluid and wash immediately if it makes contact.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Golden-tailed Geckos are PROHIBITED in Victoria. In Queensland a restricted/specialist licence is required. Available in NSW, SA, WA, and NT with a standard Category 1/Class 1 keeper licence. Always verify your state requirements before purchasing — this is one of the most state-restricted commonly kept gecko species in Australia." />}
+      {tab === "licencing" && <LegalTab note="Golden-tailed Geckos are PROHIBITED in Victoria. Restricted licence required in QLD." states={[{ abbr: "NSW", cat: "Class 1", ok: true }, { abbr: "VIC", cat: "Prohibited", ok: false }, { abbr: "QLD", cat: "Restricted", ok: true }, { abbr: "SA", cat: "Basic", ok: true }, { abbr: "WA", cat: "Standard", ok: true }, { abbr: "TAS", cat: "Not permitted", ok: false }, { abbr: "ACT", cat: "Class A", ok: true }, { abbr: "NT", cat: "No licence", ok: true }]} />}
     </>}
   />
 );

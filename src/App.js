@@ -252,14 +252,14 @@ const LegalTab = ({ note }) => (
   </>
 );
 
-const SnakeShedding = () => (
+const SnakeShedding = ({ animal = "reptile" }) => (
   <>
     <SectionLabel mt={0}>Shedding basics</SectionLabel>
     <WarnBox type="blue" title="Signs a shed is coming">Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days.</WarnBox>
     <HealthItem dot="#4a9e6b" title="Good shed conditions" detail="Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck." />
     <HealthItem title="Stuck shed (dysecdysis)" detail="Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully." />
     <HealthItem title="Retained eye caps" detail="If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage." />
-    <WarnBox type="green" title="Never handle during a shed">Leave your snake alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete.</WarnBox>
+    <WarnBox type="green" title='Never handle during a shed'>Leave your {animal} alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete.</WarnBox>
   </>
 );
 
@@ -1612,7 +1612,7 @@ const EasternBeardedDragonPage = ({ onBack }) => (
         <HealthItem title="Parasites" detail="Internal parasites are common. Annual faecal tests recommended. Signs include weight loss and loose stools."/>
         <HealthItem title="Brumation" detail="Eastern Bearded Dragons brumate more reliably than Centrals. Reduced appetite and activity in winter is normal."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Bright eyes, firm body condition, alert basking behaviour, regular feeding, beard display when stimulated."/>
-        <SnakeShedding />
+        <SnakeShedding animal="lizard" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
@@ -1664,7 +1664,7 @@ const RankinsDragonPage = ({ onBack }) => (
         <HealthItem title="Cohabitation stress" detail="If housing together, watch for one animal bullying or outcompeting the other at feeding time. Separate if one animal loses weight."/>
         <HealthItem title="Parasites" detail="Annual faecal tests recommended. Common in wild-caught animals."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert and active during the day, basking regularly, eating well, firm body condition, clear eyes."/>
-        <SnakeShedding />
+        <SnakeShedding animal="lizard" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
@@ -1716,7 +1716,7 @@ const FrilledLizardPage = ({ onBack }) => (
         <HealthItem title="MBD" detail="Proper UVB at height is critical — they bask high up in trees naturally and receive intense UV radiation. Ensure UVB reaches their main basking position."/>
         <HealthItem title="Stress" detail="Frilled Lizards can be shy when new. Avoid excessive disturbance. A stressed frill display at every interaction means the animal needs more settling time."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active climbing, alert frill display when stimulated, feeding well, full frill with no tears or damage."/>
-        <SnakeShedding />
+        <SnakeShedding animal="lizard" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
@@ -1769,7 +1769,7 @@ const WaterDragonPage = ({ onBack }) => (
         <HealthItem title="MBD" detail="Proper UVB is essential. Ensure the UVB tube reaches all areas the dragon uses regularly."/>
         <HealthItem title="Stress" detail="Water Dragons can be flighty and nervous. A well-planted, naturalistic enclosure significantly reduces stress."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Bright colouration (especially males), active climbing and swimming, feeding well, alert and responsive."/>
-        <SnakeShedding />
+        <SnakeShedding animal="lizard" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
@@ -1820,7 +1820,7 @@ const KnobTailedGeckoPage = ({ onBack }) => (
         <HealthItem title="Retained shed" detail="Usually around the knob tail or toes. A slightly moist hide during shedding helps. Soak in warm water if retained shed is present."/>
         <HealthItem title="Dehydration" detail="Despite preferring low humidity, fresh water must always be available. Mist one side of the enclosure lightly once a week."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, feeding well, plump tail knob (fat storage indicator), clear eyes, firm body condition."/>
-        <SnakeShedding />
+        <SnakeShedding animal="gecko" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
@@ -1871,7 +1871,7 @@ const ThickTailedGeckoPage = ({ onBack }) => (
         <HealthItem title="Tail loss" detail="Can drop their tail when very stressed. Unlike the Knob-tail, the Thick-tail's regrown tail looks reasonably similar to the original."/>
         <HealthItem title="Overheating" detail="They prefer cooler conditions. Never allow temperatures to exceed 33°C anywhere in the enclosure."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Plump tail, active at night, vocalising (normal!), feeding well, clean bright pattern."/>
-        <SnakeShedding />
+        <SnakeShedding animal="gecko" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
@@ -1919,7 +1919,7 @@ const MarbledVelvetGeckoPage = ({ onBack }) => (
         <HealthItem title="Retained shed" detail="Moist hide prevents most issues. Check between toes and around eyes after shedding."/>
         <HealthItem title="Tail loss" detail="Can drop tail under severe stress. Regrows but imperfectly. Minimise stress during handling."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, beautiful marbled pattern, plump tail base, feeding well, clean eyes."/>
-        <SnakeShedding />
+        <SnakeShedding animal="gecko" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
@@ -2580,7 +2580,7 @@ const SpinyTailGeckoPage = ({ onBack }) => (
         <HealthItem title="Obesity" detail="Enthusiastic feeders that can overeat. Monitor body condition — a healthy gecko should have a firm, not swollen, body with no fat deposits behind the eyes."/>
         <HealthItem title="Egg binding (females)" detail="Gravid females need a suitable laying site — a container of moist sand or coconut coir with an access hole. If a female appears distended and restless, seek vet advice promptly."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert and active at night on branches, feeding readily, bright eyes, good body condition, clean spines on tail."/>
-        <SnakeShedding />
+        <SnakeShedding animal="gecko" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
@@ -2632,7 +2632,7 @@ const GoldenTailGeckoPage = ({ onBack }) => (
         <HealthItem title="Male aggression" detail="Males are territorial — never house two males together. One male can be kept with 2–4 females successfully."/>
         <HealthItem title="Respiratory infection" detail="From excessive humidity or poor ventilation. Keep humidity moderate and ensure good airflow."/>
         <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Vivid golden-orange tail colouration, active at night on branches, feeding readily, alert bright eyes, firm body condition."/>
-        <SnakeShedding />
+        <SnakeShedding animal="gecko" />
       </>}
       {tab === "handling" && <>
         <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>

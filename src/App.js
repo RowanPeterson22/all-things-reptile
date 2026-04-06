@@ -11,7 +11,14 @@ const C = {
 const SPECIES = [
   { id: "bluetongue",  name: "Blue-tongue Skink",          latin: "Tiliqua scincoides",       type: "lizard", emoji: "🦎", bg: "#f5f0e8", level: "Beginner",     page: "bluetongue" },
   { id: "beardie",     name: "Bearded Dragon",              latin: "Pogona vitticeps",          type: "lizard", emoji: "🦎", bg: "#f0ece0", level: "Beginner",     page: "beardie" },
-  { id: "leopard",     name: "Leopard Gecko",               latin: "Eublepharis macularius",    type: "gecko",  emoji: "🦎", bg: "#fdf5e8", level: "Beginner",     page: null },
+  { id: "leopard",      name: "Leopard Gecko",              latin: "Eublepharis macularius",    type: "gecko",  emoji: "🦎", bg: "#fdf5e8", level: "Beginner",     page: "leopard" },
+  { id: "knobtail",     name: "Knob-tailed Gecko",           latin: "Nephrurus spp.",            type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Intermediate", page: "knobtail" },
+  { id: "thicktail",    name: "Thick-tailed Gecko",          latin: "Underwoodisaurus milii",    type: "gecko",  emoji: "🦎", bg: "#f0ece8", level: "Beginner",     page: "thicktail" },
+  { id: "marbled",      name: "Marbled Velvet Gecko",        latin: "Oedura marmorata",          type: "gecko",  emoji: "🦎", bg: "#f5f0f8", level: "Beginner",     page: "marbled" },
+  { id: "eastbeardie",  name: "Eastern Bearded Dragon",      latin: "Pogona barbata",            type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "eastbeardie" },
+  { id: "rankins",      name: "Rankins Dragon",              latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
+  { id: "frilled",      name: "Frilled Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
+  { id: "waterdragon",  name: "Eastern Water Dragon",        latin: "Intellagama lesueurii",     type: "lizard", emoji: "🦎", bg: "#e8f5f0", level: "Intermediate", page: "waterdragon" },
   { id: "turtle",      name: "Long-necked Turtle",          latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: null },
   { id: "childrens",   name: "Children's Python",           latin: "Antaresia childreni",       type: "snake",  emoji: "🐍", bg: "#f0e8f5", level: "Beginner",     page: "childrens" },
   { id: "stimsons",    name: "Stimson's Python",            latin: "Antaresia stimsoni",        type: "snake",  emoji: "🐍", bg: "#ede8f5", level: "Beginner",     page: "stimsons" },
@@ -1351,6 +1358,424 @@ const RoughScaledPythonPage = ({ onBack }) => (
   />
 );
 
+
+// ─── Leopard Gecko page ───────────────────────────────────────────
+const LeopardGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Leopard Gecko" latin="Eublepharis macularius" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Ground dwelling", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Originally from Pakistan and Afghanistan, Leopard Geckos are one of the world's most popular pet reptiles — and for good reason. Hardy, docile, and easy to care for, they are an excellent choice for first-time reptile keepers. Unlike most geckos, they have moveable eyelids and lack adhesive toe pads, making them entirely ground-dwelling.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","18–25 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","30–40%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side / hot spot" value="30–32°C" width="68%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <WarnBox type="gold" title="Under-tank heating preferred">Leopard Geckos thermoregulate from below. An under-tank heat mat on one side, controlled by a thermostat, is the most natural heating method. A low-wattage overhead heat source can supplement but is not essential.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 60×45cm glass or PVC enclosure is sufficient for one adult. Paper towel, reptile carpet, or tile substrate — avoid loose sand or substrate that can be ingested. Multiple hides are essential: a warm hide, a cool hide, and a moist hide for shedding. A shallow water bowl. Avoid UVB lighting — they are nocturnal and manage without it, though low-level UVB is beneficial.</div>
+        <ShopBtn>🛒 Shop Leopard Gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed a variety of live insects, always gut-loaded and dusted with calcium and vitamin supplements. Never feed wild-caught insects.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 days"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Good treat — high fat, feed sparingly" freq="1–2 times per week"/>
+          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition, easy to keep" freq="Every 2–3 days"/>
+          <FoodItem icon="🐛" name="Waxworms" detail="High fat treat only — sparingly" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Calcium supplementation critical">Dust all insects with calcium powder (with D3) at every feed for juveniles, every other feed for adults. Metabolic Bone Disease is common in under-supplemented geckos.</WarnBox>
+        <WarnBox type="red" title="No loose substrate">Never keep on loose substrate like sand — impaction from ingesting substrate during feeding is a serious risk.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Metabolic Bone Disease (MBD)" detail="Caused by calcium/D3 deficiency. Signs include tremors, soft jaw, difficulty moving. Prevent with consistent calcium supplementation."/>
+        <HealthItem title="Cryptosporidiosis" detail="A serious parasitic infection causing chronic weight loss and regurgitation. Quarantine all new animals strictly."/>
+        <HealthItem title="Retained shed" detail="Usually caused by insufficient humidity in the moist hide. A stuck shed around toes can cut off circulation — soak in warm water and gently remove."/>
+        <HealthItem title="Impaction" detail="From ingesting loose substrate. Always use paper towel, tile, or reptile carpet."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Plump tail (fat storage), clear eyes, alert and active at night, regular feeding and shedding."/>
+        <SectionLabel>Shedding</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Leopard Geckos shed every 4–8 weeks. Unlike snakes, they typically eat their shed skin — this is normal. A moist hide (damp paper towel inside a hide) is essential to ensure complete sheds. Signs a shed is coming include dull, whitish skin. Do not handle during a shed.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Leopard Geckos are one of the most handleable reptiles available. They rarely bite and when they do it causes minimal pain. They are slow-moving and calm — perfect for children and beginners. Allow 2 weeks to settle in before handling.</div>
+        </div>
+        <SectionLabel>Handling tips</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support their full body — never grab by the tail. Leopard Geckos can drop their tail as a defence mechanism (autotomy) — the tail will regrow but will look different. Start with short 5–10 minute sessions and gradually increase. Wash hands before and after handling. Do not handle within 24 hours of feeding.</div>
+        <WarnBox type="gold" title="Never grab the tail">Tail drop (autotomy) is a stress response. While the tail regrows, it takes energy and looks different to the original. Always scoop from underneath.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Leopard Geckos are non-native but are approved for keeping in most Australian states as they are well-established in captivity. A standard keeper licence is required in most states. Check your state's current approved species list." />}
+    </>}
+  />
+);
+
+// ─── Eastern Bearded Dragon page ──────────────────────────────────
+const EasternBeardedDragonPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Eastern Bearded Dragon" latin="Pogona barbata" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Diurnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>The Eastern Bearded Dragon is the larger, darker cousin of the Central Bearded Dragon. Found along the eastern coast of Australia in woodland and scrubland. Slightly more defensive than the Central Beardie but still an excellent pet with proper socialisation. Their dark beard display is more dramatic than other species.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","50–60 cm"],["⏳","Lifespan","10–15 yrs"],["🏠","Min. enclosure","120 × 60 cm"],["💧","Humidity","30–40%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="40–45°C" width="92%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="UVB lighting essential">Eastern Bearded Dragons require high UVB output. Use a T5 HO 10.0 or 12% UVB tube. Replace every 6–12 months even if still producing visible light — UVB output degrades before the bulb stops glowing.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>120×60cm minimum for an adult. Larger is always better. Timber or PVC enclosure. Reptile carpet, tiles, or bioactive substrate. A sturdy basking branch or rock directly under the heat lamp. Hide at the cool end. Fresh vegetables daily in a bowl. UVB tube running the length of the enclosure.</div>
+        <ShopBtn>🛒 Shop Bearded Dragon supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivores. Diet varies significantly with age — juveniles need more protein, adults need more vegetables. A varied diet is key to good health.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets / roaches" detail="Protein staple — gut load well" freq="Daily (juveniles), 3x week (adults)"/>
+          <FoodItem icon="🥬" name="Leafy greens" detail="Collard greens, kale, endive, rocket" freq="Daily"/>
+          <FoodItem icon="🫑" name="Vegetables" detail="Capsicum, squash, sweet potato (cooked)" freq="Daily"/>
+          <FoodItem icon="🍓" name="Fruit" detail="Small amounts as treats only" freq="Occasionally"/>
+        </div>
+        <WarnBox type="red" title="Avoid spinach, lettuce, avocado">Spinach and beet greens bind calcium. Iceberg lettuce has no nutritional value. Avocado is toxic to bearded dragons.</WarnBox>
+        <WarnBox type="gold" title="Calcium & UVB work together">Calcium supplementation AND proper UVB are both required to prevent MBD. Neither alone is sufficient.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="MBD (Metabolic Bone Disease)" detail="Very common without proper UVB and calcium. Soft bones, tremors, swollen limbs. Preventable with correct setup."/>
+        <HealthItem title="Adenovirus (ADV)" detail="Also called Stargazing disease. Neurological symptoms — head tilting, spinning. No cure. Quarantine new animals strictly."/>
+        <HealthItem title="Parasites" detail="Internal parasites are common. Annual faecal tests recommended. Signs include weight loss and loose stools."/>
+        <HealthItem title="Brumation" detail="Eastern Bearded Dragons brumate more reliably than Centrals. Reduced appetite and activity in winter is normal."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Bright eyes, firm body condition, alert basking behaviour, regular feeding, beard display when stimulated."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW TO MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Eastern Bearded Dragons can be slightly more defensive than Central Beardies, particularly unsocialised adults. Their beard blackening and gaping is a warning display. With regular handling from a young age they become very tame and personable.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support the full body when handling. Allow 2 weeks to settle before regular handling. Short sessions initially, building to longer periods. They enjoy supervised free-roaming time and will often seek warmth from their keeper's hands and body.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Eastern Bearded Dragons require a Category 1/Class 1 keeper licence in most states. They are commonly available from licensed breeders across Australia." />}
+    </>}
+  />
+);
+
+// ─── Rankins Dragon page ──────────────────────────────────────────
+const RankinsDragonPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Rankins Dragon" latin="Pogona henrylawsoni" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Compact size", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Also known as the Lawson's Dragon or Black-soil Beardie, Rankins Dragons are a smaller, more compact alternative to the Central Bearded Dragon. Found in Queensland's black-soil plains. They share the friendly temperament of their bearded dragon cousins but require less space — perfect for keepers with limited room.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","25–30 cm"],["⏳","Lifespan","8–12 yrs"],["🏠","Min. enclosure","90 × 45 cm"],["💧","Humidity","30–40%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="38–42°C" width="88%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="UVB lighting essential">Like all bearded dragons, Rankins require high-output UVB. T5 HO 10.0 or 12% tube. They are more heat-tolerant than Central Beardies but still need proper UVB.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 90×45cm enclosure suits one adult comfortably. Rankins Dragons can be kept in pairs or small groups more successfully than Central Beardies — but monitor carefully for competition at feeding time. Same setup as Central Bearded Dragon — basking rock or branch, cool hide, fresh vegetables daily.</div>
+        <WarnBox type="gold" title="Can be housed in pairs">Unlike most reptiles, Rankins Dragons tolerate cohabitation reasonably well. Always provide multiple basking spots and feeding stations. Separate if aggression is observed.</WarnBox>
+        <ShopBtn>🛒 Shop Rankins Dragon supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivores with the same dietary requirements as Central Bearded Dragons. Diet varies with age.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets / roaches" detail="Protein staple — appropriately sized" freq="Daily (juveniles), 3x week (adults)"/>
+          <FoodItem icon="🥬" name="Leafy greens" detail="Collard greens, kale, endive, rocket" freq="Daily"/>
+          <FoodItem icon="🫑" name="Vegetables" detail="Capsicum, squash, beans" freq="Daily"/>
+        </div>
+        <WarnBox type="gold" title="Smaller prey for smaller dragon">Rankins Dragons are smaller than Bearded Dragons — ensure all prey items are appropriately sized. Maximum prey size should be no wider than the space between the dragon's eyes.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="MBD" detail="Same risk as all bearded dragons. Proper UVB and calcium supplementation prevents this entirely."/>
+        <HealthItem title="Cohabitation stress" detail="If housing together, watch for one animal bullying or outcompeting the other at feeding time. Separate if one animal loses weight."/>
+        <HealthItem title="Parasites" detail="Annual faecal tests recommended. Common in wild-caught animals."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Alert and active during the day, basking regularly, eating well, firm body condition, clear eyes."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — VERY LOW</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Rankins Dragons are exceptionally calm and handleable — arguably even more docile than Central Bearded Dragons. Their small size makes them easy to manage and a great choice for children. They rarely show defensive behaviour.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Same handling approach as Bearded Dragons. Support the full body, start with short sessions, build gradually. Their small size means they move quickly — handle over a soft surface initially.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Rankins Dragons require a Category 1/Class 1 keeper licence in most states. They are available from licensed breeders across Australia." />}
+    </>}
+  />
+);
+
+// ─── Frilled Lizard page ──────────────────────────────────────────
+const FrilledLizardPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Frilled Lizard" latin="Chlamydosaurus kingii" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Arboreal", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most iconic reptiles — the dramatic frill display and bipedal running are instantly recognisable worldwide. Found across northern Australia and southern New Guinea in tropical and dry woodland. An impressive display animal that becomes surprisingly personable with regular handling.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","60–90 cm"],["⏳","Lifespan","10–15 yrs"],["🏠","Min. enclosure","120 × 60 × 120 cm"],["💧","Humidity","50–70%"]]} />
+        <WarnBox type="red" title="Tall enclosure essential">Frilled Lizards are highly arboreal — they spend most of their time off the ground. A minimum height of 120cm is required. Width and length are secondary to height.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="38–42°C" width="88%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="20–24°C" width="34%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A very tall custom enclosure is essential. Multiple vertical branches and perches at varying heights. Misting system or regular hand misting for humidity. UVB tube running vertically or at height. Cork bark at the top of the enclosure for hiding. Coconut coir or bioactive substrate.</div>
+        <ShopBtn>🛒 Shop Frilled Lizard supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Primarily insectivorous with some small vertebrate prey. In captivity, insects form the bulk of the diet supplemented with occasional pinky mice for adults.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — large size for adults" freq="Every 2 days"/>
+          <FoodItem icon="🪲" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2 days"/>
+          <FoodItem icon="🐛" name="Silkworms / hornworms" detail="High moisture, good supplement" freq="Weekly"/>
+          <FoodItem icon="🐭" name="Pinky mice" detail="Adults only — occasional protein boost" freq="Monthly"/>
+        </div>
+        <WarnBox type="gold" title="Feed at height">Frilled Lizards feel most secure feeding off the ground. Place food in a bowl partway up the enclosure or use feeding tongs at height.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Respiratory infection" detail="Often caused by insufficient temperature or humidity inconsistency. Watch for gaping, wheezing, or mucus."/>
+        <HealthItem title="MBD" detail="Proper UVB at height is critical — they bask high up in trees naturally and receive intense UV radiation. Ensure UVB reaches their main basking position."/>
+        <HealthItem title="Stress" detail="Frilled Lizards can be shy when new. Avoid excessive disturbance. A stressed frill display at every interaction means the animal needs more settling time."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active climbing, alert frill display when stimulated, feeding well, full frill with no tears or damage."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Frilled Lizards can be defensive, especially when new. The frill display and gaping mouth are warnings — respect them. With consistent gentle handling they become significantly calmer. Their claws are sharp — wear long sleeves when handling nervous individuals.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Allow 3–4 weeks to settle before regular handling. Approach slowly and from the side, not from above. Let them walk onto your hand rather than grabbing them. Their frill display is spectacular to see but means they are stressed — end the session if they display persistently.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Frilled Lizards require a Category 2 licence in NSW, and are available in QLD and WA. They are not available in VIC, SA, TAS, or ACT. Check current availability in your state before purchasing." />}
+    </>}
+  />
+);
+
+// ─── Eastern Water Dragon page ────────────────────────────────────
+const WaterDragonPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Eastern Water Dragon" latin="Intellagama lesueurii" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Semi-aquatic", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A large, impressive lizard found along waterways of eastern Australia. Males develop striking red and green colouration on the chest and are visually stunning. They are semi-aquatic — excellent swimmers that can remain submerged for extended periods. An active and engaging species that requires a large, well-designed enclosure.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","80–100 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","180 × 90 cm"],["💧","Humidity","60–80%"]]} />
+        <WarnBox type="red" title="Large water feature essential">Eastern Water Dragons require a significant water feature — large enough to fully submerge in. A built-in pond section or large tub is non-negotiable. They will not thrive without regular access to water.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking spot" value="35–40°C" width="84%" color="#e05a2b"/>
+        <TempBar label="Warm side" value="26–30°C" width="58%" color="#e0922b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A very large custom enclosure — minimum 180×90cm footprint with height of at least 90cm. Built-in water section with filtration. Branches for climbing at varying heights. UVB tube at the top. Coconut coir or bioactive substrate in the land section. Cork bark hides. Good filtration in the water section is critical.</div>
+        <ShopBtn>🛒 Shop Water Dragon supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Omnivores. A varied diet of insects, small vertebrates, and some plant matter. Adults can be fed less frequently than juveniles.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets / roaches" detail="Protein staple" freq="Every 2 days (juv), 3x week (adult)"/>
+          <FoodItem icon="🐭" name="Pinky mice" detail="Adults — occasional protein boost" freq="Monthly"/>
+          <FoodItem icon="🥬" name="Leafy greens" detail="Supplement to insect diet" freq="Weekly"/>
+          <FoodItem icon="🐟" name="Small fish / shrimp" detail="Can be fed in their water section" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="They may feed in water">Water Dragons sometimes prefer to eat in or near water. Offering some prey items near the water section can improve feeding response.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Snout rubbing" detail="Very common in newly acquired Water Dragons. They run into glass repeatedly causing snout injuries. Cover lower portions of glass with a visual barrier until settled."/>
+        <HealthItem title="Water quality issues" detail="Poor water filtration leads to bacterial infections and skin problems. Invest in quality filtration and change water regularly."/>
+        <HealthItem title="MBD" detail="Proper UVB is essential. Ensure the UVB tube reaches all areas the dragon uses regularly."/>
+        <HealthItem title="Stress" detail="Water Dragons can be flighty and nervous. A well-planted, naturalistic enclosure significantly reduces stress."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Bright colouration (especially males), active climbing and swimming, feeding well, alert and responsive."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Eastern Water Dragons are alert and fast-moving. Juveniles can be quite flighty. Adults tame down significantly with regular gentle handling. Their tail is powerful and can whip if they feel threatened. Sharp claws.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Allow 3–4 weeks to settle. Approach slowly, support the full body. Once settled they can become very tame and will often voluntarily approach their keeper. Well-handled adults are impressive and engaging animals to interact with.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Eastern Water Dragons require a Category 1/Class 1 keeper licence in most states. They are available across eastern Australia from licensed breeders." />}
+    </>}
+  />
+);
+
+// ─── Knob-tailed Gecko page ───────────────────────────────────────
+const KnobTailedGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Knob-tailed Gecko" latin="Nephrurus spp." emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A fascinating group of uniquely Australian geckos — instantly recognisable by their distinctive bulbous knob at the end of a short, stubby tail. Multiple species are kept in captivity including the Smooth Knob-tail (N. levis), Rough Knob-tail (N. amyae), and Common Knob-tail (N. milii). Arid-adapted, nocturnal, and full of personality.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","10–20 cm"],["⏳","Lifespan","12–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","20–35%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="20–24°C" width="36%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="16–20°C" width="24%" color="#2b7ec0"/>
+        <WarnBox type="gold" title="Cooler temps than most reptiles">Knob-tailed Geckos are from arid Australia and prefer cooler temperatures than many tropical species. Overheating is a significant risk — never exceed 35°C anywhere in the enclosure.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 60×45cm enclosure suits one adult. Low, wide enclosure preferred — they are ground-dwelling and do not climb. Sandy or red clay-based substrate to mimic their natural habitat. Multiple cork bark hides. A small shallow water bowl. Under-tank heat mat on one side controlled by thermostat. Low humidity is critical — good ventilation essential.</div>
+        <ShopBtn>🛒 Shop Knob-tailed Gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed a variety of live insects at night when they are naturally active. Always gut-load and dust prey with supplements.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — appropriate size" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Good treat — moderate fat content" freq="Weekly"/>
+          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2–3 nights"/>
+          <FoodItem icon="🐛" name="Waxworms" detail="High-fat treat only" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Feed at night">Knob-tailed Geckos are nocturnal — feed after lights out. Offering food during the day causes stress and prey items may go uneaten.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Overheating" detail="Their arid habitat has cool nights. Ensure temperatures drop at night and the cool side never exceeds 26°C. Overheating is fatal."/>
+        <HealthItem title="Retained shed" detail="Usually around the knob tail or toes. A slightly moist hide during shedding helps. Soak in warm water if retained shed is present."/>
+        <HealthItem title="Dehydration" detail="Despite preferring low humidity, fresh water must always be available. Mist one side of the enclosure lightly once a week."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, feeding well, plump tail knob (fat storage indicator), clear eyes, firm body condition."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — LOW TO MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Knob-tailed Geckos vary in temperament by species. Some individuals are calm, others defensive. They are fast-moving and can vocalise loudly when stressed. Handle at night when they are naturally active. Never handle during the day — this causes significant stress.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Short handling sessions only — these are primarily display animals. Never grab the tail. Support the full body. Handle after they have warmed up for the evening. Frequent, brief, calm interactions build confidence over time.</div>
+        <WarnBox type="red" title="Never grab the tail">Like many geckos, Knob-tails can drop their tail under stress. The tail regrows but the knob does not reform properly — it is a permanent loss of their most distinctive feature.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Knob-tailed Geckos require a Category 1/Class 1 keeper licence in most states. Multiple species are available from licensed breeders across Australia." />}
+    </>}
+  />
+);
+
+// ─── Thick-tailed Gecko page ──────────────────────────────────────
+const ThickTailedGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Thick-tailed Gecko" latin="Underwoodisaurus milii" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Also known as the Barking Gecko — named for the loud barking vocalisations they produce when threatened. A robust, hardy gecko found across much of southern Australia. Their striking yellow and black banded pattern and manageable temperament make them an excellent beginner gecko. More forgiving of handling than Knob-tailed Geckos.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","14–20 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","30–45%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="20–24°C" width="36%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="15–18°C" width="20%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Cool overnight temps important">Thick-tailed Geckos naturally experience significant temperature drops at night. This thermal cycling is important for their health and natural behaviour. Do not maintain constant warm temperatures overnight.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 60×45cm enclosure works well for one adult. Low, wide footprint preferred. Cork bark hides at both warm and cool ends. Rocky substrate or red clay mix. A moist hide for shedding. Small water bowl. Under-tank heat mat on one side, thermostat controlled. They can vocalise loudly at night — an endearing trait!</div>
+        <ShopBtn>🛒 Shop Thick-tailed Gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed a variety of live insects, always gut-loaded and supplemented. Feed at night when naturally active.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Moderate fat — good supplement" freq="Weekly"/>
+        </div>
+        <WarnBox type="gold" title="Calcium dust every feed">Dust all insects with calcium + D3 at every feeding for juveniles, every other feeding for adults. Essential for long-term bone health.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Retained shed" detail="A moist hide prevents most shed issues. Check toes carefully after each shed — retained shed on toes can constrict circulation."/>
+        <HealthItem title="Tail loss" detail="Can drop their tail when very stressed. Unlike the Knob-tail, the Thick-tail's regrown tail looks reasonably similar to the original."/>
+        <HealthItem title="Overheating" detail="They prefer cooler conditions. Never allow temperatures to exceed 33°C anywhere in the enclosure."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Plump tail, active at night, vocalising (normal!), feeding well, clean bright pattern."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Thick-tailed Geckos are calmer and more handleable than Knob-tailed Geckos. They may vocalise when first picked up — this is normal and not a sign of serious distress. With regular gentle handling they become quite tame. A good gecko for someone wanting to handle their pet regularly.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Start with short 5–10 minute sessions. Their vocalisation (a soft barking sound) is part of their charm — enjoy it! Never grab the tail.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Thick-tailed Geckos require a Category 1/Class 1 keeper licence in most states. Widely available from licensed breeders across Australia." />}
+    </>}
+  />
+);
+
+// ─── Marbled Velvet Gecko page ────────────────────────────────────
+const MarbledVelvetGeckoPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Marbled Velvet Gecko" latin="Oedura marmorata" emoji="🦎"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A beautifully patterned gecko found across inland Australia. Their marbled purple-grey and cream pattern is stunning and varies between individuals. Hardy, long-lived, and relatively easy to care for — an excellent choice for gecko enthusiasts looking beyond Leopard Geckos. Semi-arboreal, enjoying both ground hides and climbing.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","12–17 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 cm"],["💧","Humidity","30–45%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="20–24°C" width="36%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="15–18°C" width="20%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A 60×45cm enclosure with some height for climbing. Cork bark flats leaning against the wall and cork bark hides on the ground. Rocky substrate or reptile carpet. A moist hide. Small water bowl. Under-tank heat mat one side, thermostat controlled. They love to squeeze behind cork bark flats — mimic this in captivity.</div>
+        <ShopBtn>🛒 Shop Marbled Velvet Gecko supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed at night when naturally active. Variety of insects gut-loaded and dusted with supplements.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple — appropriate size" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Treat — moderate fat" freq="Weekly"/>
+        </div>
+        <WarnBox type="gold" title="Dust every feed">Calcium with D3 at every feed for juveniles, every other feed for adults. These geckos are long-lived — consistent supplementation pays off over their lifetime.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Retained shed" detail="Moist hide prevents most issues. Check between toes and around eyes after shedding."/>
+        <HealthItem title="Tail loss" detail="Can drop tail under severe stress. Regrows but imperfectly. Minimise stress during handling."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, beautiful marbled pattern, plump tail base, feeding well, clean eyes."/>
+        <SnakeShedding />
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.greenPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.green}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.green,marginBottom:6}}>BITE RISK — LOW</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Marbled Velvet Geckos are calm and handleable for their size. Faster than Leopard Geckos but manageable with gentle consistent handling. Handle at night when active for best results.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support full body. Short sessions initially. They are more confident in low light — dim the room for handling sessions. Never grab the tail.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Marbled Velvet Geckos require a Category 1/Class 1 keeper licence in most states. Available from licensed breeders across Australia." />}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -1369,6 +1794,14 @@ const PAGE_MAP = {
   water:       WaterPythonPage,
   amethystine: AmethystinePage,
   roughscaled: RoughScaledPythonPage,
+  leopard:     LeopardGeckoPage,
+  knobtail:    KnobTailedGeckoPage,
+  thicktail:   ThickTailedGeckoPage,
+  marbled:     MarbledVelvetGeckoPage,
+  eastbeardie: EasternBeardedDragonPage,
+  rankins:     RankinsDragonPage,
+  frilled:     FrilledLizardPage,
+  waterdragon: WaterDragonPage,
   enclosure:   EnclosurePage,
 };
 

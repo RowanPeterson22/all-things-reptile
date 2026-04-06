@@ -780,7 +780,7 @@ const BlueTonguePage = ({ onBack }) => {
   const [tab, setTab] = useState("overview"); // eslint-disable-line no-unused-vars
   const tabs = ["overview", "feeding", "health", "licencing"];
   return (
-    <SpeciesPage onBack={onBack} name="Blue-tongue Skink" latin="Tiliqua scincoides" emoji="🦎"
+    <SpeciesPage onBack={onBack} name="Eastern Blue-tongue Skink" latin="Tiliqua scincoides" emoji="🦎"
       badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Diurnal", C.goldLight, "#7a5a1e"]]}
       tabs={tabs}
       tabContent={(t) => <>
@@ -834,7 +834,7 @@ const BeardiePage = ({ onBack }) => {
   const [ageTab, setAgeTab] = useState("juv");
   const tabs = ["overview", "feeding", "health", "licencing"];
   return (
-    <SpeciesPage onBack={onBack} name="Bearded Dragon" latin="Pogona vitticeps" emoji="🦎"
+    <SpeciesPage onBack={onBack} name="Central Bearded Dragon" latin="Pogona vitticeps" emoji="🦎"
       badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Diurnal", C.goldLight, "#7a5a1e"]]}
       tabs={tabs}
       tabContent={(t) => <>

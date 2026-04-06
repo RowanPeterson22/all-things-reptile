@@ -51,14 +51,86 @@ const CARE_GUIDES = [
 ];
 
 const STATES = [
-  { name: "Victoria (VIC)",          licence: "Wildlife Basic Licence",          badge: "Category 1",    easy: true  },
-  { name: "New South Wales (NSW)",   licence: "Reptile Keeper Licence",          badge: "Class 1",       easy: true  },
-  { name: "Queensland (QLD)",        licence: "Recreational Wildlife Licence",   badge: "Category 1",    easy: true  },
-  { name: "South Australia (SA)",    licence: "Controlled Species Permit",       badge: "Basic permit",  easy: true  },
-  { name: "Western Australia (WA)",  licence: "Wildlife Licence",                badge: "Basic keeper",  easy: false },
-  { name: "Tasmania (TAS)",          licence: "Wildlife Keeper Licence",         badge: "Category 1",    easy: true  },
-  { name: "ACT",                     licence: "Wildlife Licence",                badge: "Class A",       easy: false },
-  { name: "Northern Territory (NT)", licence: "Wildlife Controller Licence",     badge: "Requires permit", easy: false },
+  {
+    abbr: "NSW", name: "New South Wales",
+    licence: "Biodiversity Conservation Licence",
+    categories: "R1 (basic companion) → R5 (advanced/venomous)",
+    minage: "16+ years",
+    cost: "~$50 for 5 years (basic)",
+    authority: "environment.nsw.gov.au",
+    notes: "Most common reptiles fall under R1 Basic or Companion Animal category. R2 requires 2 years experience at R1. Venomous snakes require R5.",
+    colour: "#1A3A5C", pale: "#E8EEF8",
+  },
+  {
+    abbr: "VIC", name: "Victoria",
+    licence: "Wildlife Basic / Advanced Licence",
+    categories: "Basic (Schedule 2) → Advanced (Schedule 3)",
+    minage: "10+ years",
+    cost: "Pro-rata monthly — varies by licence type",
+    authority: "vic.gov.au/private-wildlife-licences",
+    notes: "Eastern Blue-tongue Lizards can be kept WITHOUT a licence in Victoria. Advanced licence required after 2 years for harder-to-keep species.",
+    colour: "#1E3A2F", pale: "#E8F5EC",
+  },
+  {
+    abbr: "QLD", name: "Queensland",
+    licence: "Recreational Wildlife Licence",
+    categories: "Class 1 (common) → Class 2 (uncommon/advanced)",
+    minage: "No minimum stated",
+    cost: "Annual fee applies",
+    authority: "des.qld.gov.au",
+    notes: "Class 1 covers most commonly kept species. Class 2 required for less common or larger species. Strict conditions on breeding and selling under recreational licence.",
+    colour: "#7A3B00", pale: "#F5E8D0",
+  },
+  {
+    abbr: "SA", name: "South Australia",
+    licence: "Controlled Species Permit",
+    categories: "Basic → Restricted",
+    minage: "No minimum stated",
+    cost: "Fee applies",
+    authority: "environment.sa.gov.au",
+    notes: "SA has relatively liberal wildlife keeping laws. A wide range of native species available. Check the approved species list before purchasing.",
+    colour: "#4A1A6B", pale: "#F0E8F8",
+  },
+  {
+    abbr: "WA", name: "Western Australia",
+    licence: "Fauna Possessing (Pet Keeper's) Licence",
+    categories: "Standard → Advanced",
+    minage: "No minimum stated",
+    cost: "Fee applies",
+    authority: "dbca.wa.gov.au",
+    notes: "WA has a more restrictive approved species list than eastern states. The species list is under review — always check current approved species at dbca.wa.gov.au before purchasing.",
+    colour: "#0A4A4A", pale: "#E0F0F0",
+  },
+  {
+    abbr: "TAS", name: "Tasmania",
+    licence: "Herpetofauna Permit",
+    categories: "Single category — Tasmanian native species ONLY",
+    minage: "No minimum stated",
+    cost: "Free permit",
+    authority: "nre.tas.gov.au",
+    notes: "⚠️ MOST RESTRICTIVE STATE: Only Tasmanian native species may be kept. No imported reptiles permitted — even other Australian species cannot be brought into Tasmania. Bearded dragons, carpet pythons, and most mainland species CANNOT be kept in TAS.",
+    colour: "#6B1A1A", pale: "#F8E8E8",
+  },
+  {
+    abbr: "ACT", name: "Australian Capital Territory",
+    licence: "Wildlife Licence",
+    categories: "Class A / B / C",
+    minage: "No minimum stated",
+    cost: "Fee applies",
+    authority: "environment.act.gov.au",
+    notes: "Similar range of species to NSW. Check the ACT approved species list with ACT Parks and Conservation Service before purchasing.",
+    colour: "#3A3A00", pale: "#F5F5D0",
+  },
+  {
+    abbr: "NT", name: "Northern Territory",
+    licence: "No licence required (most common species)",
+    categories: "Many common species kept without permit",
+    minage: "N/A",
+    cost: "No fee for common species",
+    authority: "nt.gov.au/environment",
+    notes: "The NT has the most relaxed reptile keeping laws in Australia. Many common species including Central Bearded Dragons and Blue-tongue Skinks can be kept without any permit if obtained lawfully.",
+    colour: "#2A4A00", pale: "#E8F0D8",
+  },
 ];
 
 // ─── Shared UI components ─────────────────────────────────────────
@@ -919,21 +991,92 @@ const CareScreen = ({ onGuide }) => (
   </div>
 );
 
-const LegalScreen = () => (
-  <div style={{ flex: 1, overflowY: "auto", padding: 16 }}>
-    <WarnBox type="gold" title="Important note">Reptile licence categories vary by state. Always verify with your local wildlife authority before purchasing.</WarnBox>
-    <div style={{ fontSize: 11, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 10 }}>Licence info by state</div>
-    {STATES.map(s => (
-      <div key={s.name} style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", padding: 14, marginBottom: 8 }}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
-          <div style={{ fontSize: 14, fontWeight: 700 }}>{s.name}</div>
-          <div style={{ fontSize: 11, padding: "3px 8px", borderRadius: 10, fontWeight: 700, background: s.easy ? C.greenPale : C.goldLight, color: s.easy ? C.green : "#7a5a1e" }}>{s.badge}</div>
-        </div>
-        <div style={{ fontSize: 12, color: "#777" }}>{s.licence}</div>
+const LegalScreen = () => {
+  const [expanded, setExpanded] = useState(null);
+  return (
+  <div style={{ flex: 1, overflowY: "auto" }}>
+    <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 14px) 18px 0" }}>
+      <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.07em", marginBottom: 4 }}>LEGAL</div>
+      <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 8 }}>Reptile Licencing</div>
+      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginBottom: 16, lineHeight: 1.5 }}>Tap any state for full details. All reptiles must be purchased from a licensed breeder — wild collection is illegal in every state.</div>
+    </div>
+
+    <div style={{ padding: "12px 16px" }}>
+      <div style={{ background: "#fff8e8", borderRadius: 12, padding: "12px 14px", marginBottom: 12, border: "0.5px solid #c8963c44" }}>
+        <div style={{ fontSize: 12, fontWeight: 700, color: "#7a5a1e", marginBottom: 4 }}>⚖️ IMPORTANT</div>
+        <div style={{ fontSize: 12, color: "#555", lineHeight: 1.6 }}>Licence requirements change. Always verify with your state wildlife authority before purchasing. This guide is a reference only — not legal advice.</div>
       </div>
-    ))}
+
+      {STATES.map((s, i) => {
+        const isOpen = expanded === s.abbr;
+        const isTas = s.abbr === "TAS";
+        return (
+          <div key={s.abbr} style={{ background: "white", borderRadius: 14, border: `0.5px solid ${s.colour}33`, marginBottom: 10, overflow: "hidden" }}>
+            <div onClick={() => setExpanded(isOpen ? null : s.abbr)}
+              style={{ padding: "14px 16px", cursor: "pointer", display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ width: 44, height: 44, borderRadius: 10, background: s.pale, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: s.colour }}>{s.abbr}</div>
+              </div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 14, fontWeight: 700, color: "#111", marginBottom: 2 }}>{s.name}</div>
+                <div style={{ fontSize: 11, color: "#888" }}>{s.licence}</div>
+              </div>
+              <div style={{ fontSize: 18, color: "#ccc", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s" }}>›</div>
+            </div>
+
+            {isOpen && (
+              <div style={{ padding: "0 16px 16px", borderTop: `0.5px solid ${s.colour}22` }}>
+                {isTas && (
+                  <div style={{ background: "#fce8e8", borderRadius: 10, padding: "10px 12px", margin: "12px 0 8px", border: "0.5px solid #8b202033" }}>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: "#8b2020", marginBottom: 4 }}>⚠️ MOST RESTRICTIVE STATE</div>
+                    <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>Only Tasmanian native species may be kept. Bearded Dragons, Carpet Pythons, and most mainland species CANNOT be kept in Tasmania.</div>
+                  </div>
+                )}
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, margin: "12px 0" }}>
+                  {[
+                    ["Categories", s.categories],
+                    ["Min. age", s.minage],
+                    ["Cost guide", s.cost],
+                    ["Authority", s.authority],
+                  ].map(([label, val]) => (
+                    <div key={label} style={{ background: s.pale, borderRadius: 8, padding: "8px 10px" }}>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: s.colour, marginBottom: 3 }}>{label}</div>
+                      <div style={{ fontSize: 11, color: "#333", lineHeight: 1.4 }}>{val}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ background: "#f8f8f6", borderRadius: 8, padding: "10px 12px", fontSize: 12, color: "#555", lineHeight: 1.6 }}>
+                  {s.notes}
+                </div>
+
+                <div style={{ marginTop: 10, padding: "8px 12px", background: s.pale, borderRadius: 8, fontSize: 11, color: s.colour, fontWeight: 700 }}>
+                  🌐 {s.authority}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+
+      <div style={{ background: C.greenPale, borderRadius: 12, padding: "14px 16px", marginTop: 4, border: `0.5px solid ${C.green}22` }}>
+        <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginBottom: 8 }}>✅ UNIVERSAL RULES — ALL STATES</div>
+        {[
+          "All reptiles must be purchased from a licensed breeder or dealer",
+          "Wild collection is illegal in all states and territories",
+          "Keep all purchase records including seller details and date",
+          "No exotic (non-Australian native) reptiles may be kept — Leopard Geckos are the only approved exception in most states",
+          "It is illegal to release reptiles into the wild",
+          "Licence holders must report annually in most states",
+        ].map((rule, i) => (
+          <div key={i} style={{ fontSize: 12, color: "#444", marginBottom: 6, paddingLeft: 12, borderLeft: `2px solid ${C.green}`, lineHeight: 1.5 }}>{rule}</div>
+        ))}
+      </div>
+    </div>
   </div>
-);
+  );
+};
 
 const IdentifyScreen = () => {
   const [desc, setDesc] = useState("");

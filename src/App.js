@@ -3428,7 +3428,7 @@ export default function App() {
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
               <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { setActiveTab("browse"); setPage(null); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>
-            <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8 }}>
+            <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>
               <input placeholder="Search species, care guides..." style={{ background: "none", border: "none", outline: "none", color: "white", fontSize: 14, width: "100%", fontFamily: "inherit" }} />
             </div>

@@ -3423,12 +3423,8 @@ export default function App() {
 
         {!page && (
           <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 20px) 20px 0" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 16 }}>
-              <div style={{ width: 32, height: 32, background: C.gold, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16 }}>🦎</div>
-              <div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: "white", lineHeight: 1.2 }}>All Things Reptile</div>
-                <div style={{ fontSize: 10, color: "rgba(255,255,255,0.6)" }}>An Amphibian Pty Ltd Company</div>
-              </div>
+            <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
+              <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" style={{ height: 38, objectFit: "contain" }} />
             </div>
             <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>

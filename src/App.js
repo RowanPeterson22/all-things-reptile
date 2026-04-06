@@ -803,7 +803,7 @@ const BlueTonguePage = ({ onBack }) => {
           <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
             <FoodItem icon="🍗" name="Lean chicken / turkey mince" detail="Low fat — avoid fatty meats" freq="2–3× week" />
             <FoodItem icon="🥚" name="Boiled or scrambled egg" detail="Great protein source" freq="1× week" />
-            <FoodItem icon="🐌" name="Snails / insects" detail="Dubia roaches, crickets, snails" freq="Occasional" />
+            <FoodItem icon="🐌" name="Snails / insects" detail="Wood roaches (Woodies), crickets, snails" freq="Occasional" />
           </div>
           <SectionLabel>Vegetables</SectionLabel>
           <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
@@ -863,7 +863,7 @@ const BeardiePage = ({ onBack }) => {
             <WarnBox type="gold" title="70% protein / 30% greens">Young beardies need high protein to grow. Feed insects as the main staple with greens offered daily.</WarnBox>
             <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
               <FoodItem icon="🦗" name="Crickets / black crickets" detail="Main staple — gut load before feeding" freq="2× daily" />
-              <FoodItem icon="🪲" name="Dubia roaches" detail="Excellent nutrition" freq="Daily" />
+              <FoodItem icon="🪲" name="Wood roaches (Woodies)" detail="Excellent nutrition" freq="Daily" />
               <FoodItem icon="🥬" name="Collard / mustard greens" detail="Always available alongside insects" freq="Daily" />
             </div>
             <WarnBox type="red" title="Avoid for juveniles">No spinach, avocado, citrus, or fireflies. No wild-caught insects.</WarnBox>
@@ -872,7 +872,7 @@ const BeardiePage = ({ onBack }) => {
             <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
               <FoodItem icon="🥬" name="Collard / mustard greens" detail="Main daily staple" freq="Daily" />
               <FoodItem icon="🥕" name="Butternut squash / pumpkin" detail="Great vitamins" freq="Several× week" />
-              <FoodItem icon="🦗" name="Dubia roaches / crickets" detail="Occasional protein top-up" freq="2–3× week" />
+              <FoodItem icon="🦗" name="Wood roaches (Woodies) / crickets" detail="Occasional protein top-up" freq="2–3× week" />
             </div>
           </>}
           <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
@@ -1736,7 +1736,7 @@ const FrilledLizardPage = ({ onBack }) => (
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Primarily insectivorous with some small vertebrate prey. In captivity, insects form the bulk of the diet supplemented with occasional pinky mice for adults.</p>
         <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
           <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — large size for adults" freq="Every 2 days"/>
-          <FoodItem icon="🪲" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2 days"/>
+          <FoodItem icon="🪲" name="Wood roaches (Woodies)" detail="Excellent nutrition" freq="Every 2 days"/>
           <FoodItem icon="🐛" name="Silkworms / hornworms" detail="High moisture, good supplement" freq="Weekly"/>
           <FoodItem icon="🐭" name="Pinky mice" detail="Adults only — occasional protein boost" freq="Monthly"/>
         </div>
@@ -1841,7 +1841,7 @@ const KnobTailedGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
           <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — appropriate size" freq="Every 2–3 nights"/>
           <FoodItem icon="🪲" name="Mealworms" detail="Good treat — moderate fat content" freq="Weekly"/>
-          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood roaches (Woodies)" detail="Excellent nutrition" freq="Every 2–3 nights"/>
           <FoodItem icon="🐛" name="Waxworms" detail="High-fat treat only" freq="Occasionally"/>
         </div>
         <WarnBox type="gold" title="Feed at night">Knob-tailed Geckos are nocturnal — feed after lights out. Offering food during the day causes stress and prey items may go uneaten.</WarnBox>
@@ -1892,7 +1892,7 @@ const ThickTailedGeckoPage = ({ onBack }) => (
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed a variety of live insects, always gut-loaded and supplemented. Feed at night when naturally active.</p>
         <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
           <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
-          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood roaches (Woodies)" detail="Excellent nutrition" freq="Every 2–3 nights"/>
           <FoodItem icon="🪲" name="Mealworms" detail="Moderate fat — good supplement" freq="Weekly"/>
         </div>
         <WarnBox type="gold" title="Calcium dust every feed">Dust all insects with calcium + D3 at every feeding for juveniles, every other feeding for adults. Essential for long-term bone health.</WarnBox>
@@ -1941,7 +1941,7 @@ const MarbledVelvetGeckoPage = ({ onBack }) => (
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivores. Feed at night when naturally active. Variety of insects gut-loaded and dusted with supplements.</p>
         <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
           <FoodItem icon="🦗" name="Crickets" detail="Staple — appropriate size" freq="Every 2–3 nights"/>
-          <FoodItem icon="🦟" name="Dubia roaches" detail="Excellent nutrition" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood roaches (Woodies)" detail="Excellent nutrition" freq="Every 2–3 nights"/>
           <FoodItem icon="🪲" name="Mealworms" detail="Treat — moderate fat" freq="Weekly"/>
         </div>
         <WarnBox type="gold" title="Dust every feed">Calcium with D3 at every feed for juveniles, every other feed for adults. These geckos are long-lived — consistent supplementation pays off over their lifetime.</WarnBox>
@@ -2041,7 +2041,7 @@ const FeederGuidePage = ({ onBack }) => {
           />
 
           <InsectCard
-            name="Dubia Roaches"
+            name="Wood roaches (Woodies)"
             protein="Very high (~23%)"
             fat="Low (~7%)"
             calcium="Poor — dust every feed"

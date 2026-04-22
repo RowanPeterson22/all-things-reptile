@@ -42,6 +42,12 @@ const SPECIES = [
   { id: "water",       name: "Water Python",                latin: "Liasis fuscus",             type: "snake",  emoji: "🐍", bg: "#e0ecf5", level: "Intermediate", page: "water" },
   { id: "amethystine", name: "Amethystine Python",          latin: "Simalia amethistina",       type: "snake",  emoji: "🐍", bg: "#f0e8f8", level: "Advanced",     page: "amethystine" },
   { id: "roughscaled", name: "Rough-scaled Python",         latin: "Morelia carinata",          type: "snake",  emoji: "🐍", bg: "#f8f0e8", level: "Advanced",     page: "roughscaled" },
+  { id: "greentreefrog",  name: "Green Tree Frog",             latin: "Litoria caerulea",             type: "frog",   emoji: "🐸", bg: "#e8f5e8", level: "Beginner",     page: "greentreefrog" },
+  { id: "whitelipped",    name: "White-lipped Tree Frog",      latin: "Litoria infrafrenata",         type: "frog",   emoji: "🐸", bg: "#e0f0e8", level: "Intermediate", page: "whitelipped" },
+  { id: "stripedmarsh",   name: "Striped Marsh Frog",          latin: "Limnodynastes peronii",        type: "frog",   emoji: "🐸", bg: "#f0f5e8", level: "Beginner",     page: "stripedmarsh" },
+  { id: "dwarftree",      name: "Eastern Dwarf Tree Frog",     latin: "Litoria fallax",               type: "frog",   emoji: "🐸", bg: "#e8f8e8", level: "Beginner",     page: "dwarftree" },
+  { id: "perons",         name: "Peron's Tree Frog",           latin: "Litoria peronii",              type: "frog",   emoji: "🐸", bg: "#ecf5e8", level: "Beginner",     page: "perons" },
+  { id: "magnificent",    name: "Magnificent Tree Frog",       latin: "Litoria splendida",            type: "frog",   emoji: "🐸", bg: "#e8f2e0", level: "Intermediate", page: "magnificent" },
   { id: "greentree",   name: "Green Tree Python",           latin: "Morelia viridis",           type: "snake",  emoji: "🐍", bg: "#e8f5ee", level: "Advanced",     page: "greentree" },
 ];
 
@@ -3354,6 +3360,308 @@ const SheddingPage = ({ onBack }) => {
   );
 };
 
+
+// ─── Green Tree Frog page ─────────────────────────────────────────
+const GreenTreeFrogPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Green Tree Frog" latin="Litoria caerulea" emoji="🐸"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Australia's most iconic frog and one of the most popular amphibian pets in the world. Found across northern and eastern Australia in tropical and subtropical regions. Their bright green colouration, large toe pads, and gentle temperament make them irresistible. Hardy, long-lived, and forgiving of beginner mistakes — an excellent first frog.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","6–11 cm"],["⏳","Lifespan","15–20+ yrs"],["🏠","Min. enclosure","45 × 45 × 60 cm"],["💧","Humidity","50–70%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Daytime ambient" value="24–28°C" width="52%" color="#e05a2b"/>
+        <TempBar label="Nighttime low" value="18–22°C" width="30%" color="#2b7ec0"/>
+        <WarnBox type="red" title="No chlorine or chloramine in water">Frogs absorb water through their skin. Tap water must be dechlorinated before use — either let it sit for 24 hours or use a reptile-safe dechlorinator. Never use tap water directly.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A tall glass or PVC enclosure — height is important as they are semi-arboreal. Coconut coir or bioactive substrate. Live or artificial plants for cover and climbing. A large shallow water bowl they can fully submerge in. Cork bark and branches for perching. Mist one side of the enclosure every evening. Ventilation is critical — avoid stagnant air.</div>
+        <ShopBtn>🛒 Shop frog supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous — enthusiastic and sometimes greedy feeders. Feed at night when naturally active. Obesity is a common problem — resist the urge to overfeed.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood Roaches (Woodies)" detail="Excellent Australian feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🐛" name="Silkworms" detail="High moisture — great for hydration" freq="Occasionally"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Treat only — high fat" freq="Occasionally"/>
+        </div>
+        <WarnBox type="red" title="Obesity is very common">Green Tree Frogs will eat as much as offered. Adults should be fed 3–4 appropriately sized insects every 2–3 nights — not every night. An obese frog develops fat deposits over the eyes ("fat pads") and has a significantly reduced lifespan.</WarnBox>
+        <WarnBox type="gold" title="Prey sizing">Prey should be no larger than the width of the frog's head. Large prey causes choking and regurgitation.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Chytridiomycosis (Chytrid fungus)" detail="A devastating amphibian disease caused by the fungus Batrachochytrium dendrobatidis. Symptoms include lethargy, skin shedding, and loss of righting reflex. Strict hygiene between enclosures. Never release captive frogs into the wild."/>
+        <HealthItem title="Red Leg Syndrome" detail="Bacterial infection causing reddening of the legs and abdomen. Usually caused by poor water quality or stress. Requires veterinary treatment with antibiotics."/>
+        <HealthItem title="Obesity" detail="Extremely common. Fat deposits visible over the eyes indicate an obese frog. Reduce feeding frequency and prey size immediately."/>
+        <HealthItem title="Toxic out syndrome" detail="Caused by contact with cleaning products, insecticides, or other chemicals. Frogs absorb through skin — keep all chemicals away from the enclosure and always wash hands before handling."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Bright green colouration, active at night, feeding well, moist skin, strong grip on surfaces, regular shedding."/>
+        <SectionLabel>Shedding</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Green Tree Frogs shed their skin regularly — every 1–2 weeks. They typically eat the shed skin immediately, which is normal. A frog that appears dull or is rubbing against surfaces is likely about to shed. Ensure adequate humidity during shedding.</div>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — KEEP MINIMAL & HANDS CLEAN</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Green Tree Frogs tolerate handling better than most frogs but handling should still be kept to a minimum. Their skin is permeable — chemicals, oils, and salt from hands can cause irritation or toxicity. Always wet hands with dechlorinated water before handling.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Always wash hands thoroughly and rinse with dechlorinated water before handling. Never handle after using hand cream, insect repellent, or cleaning products. Keep sessions brief. Their large toe pads allow them to cling to surfaces — never pull them off forcefully.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Green Tree Frogs require a standard keeper licence in most states. One of the most commonly kept frogs in Australia. Must be purchased from a licensed breeder — never collected from the wild." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Standard licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Standard licence", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── White-lipped Tree Frog page ──────────────────────────────────
+const WhiteLippedFrogPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="White-lipped Tree Frog" latin="Litoria infrafrenata" emoji="🐸"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Large species", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>The largest tree frog in Australia and one of the largest in the world. Found in tropical north Queensland and New Guinea. Distinguished from the Green Tree Frog by their white lower lip stripe and larger size. An impressive display animal — adults are truly spectacular. Requires a large enclosure and warm tropical conditions.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","10–14 cm"],["⏳","Lifespan","10–15 yrs"],["🏠","Min. enclosure","60 × 45 × 90 cm"],["💧","Humidity","60–80%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Daytime ambient" value="26–30°C" width="60%" color="#e05a2b"/>
+        <TempBar label="Nighttime low" value="20–24°C" width="36%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Tropical species — warmth essential">White-lipped Tree Frogs come from tropical north Queensland and require warmer temperatures than Green Tree Frogs. They do not tolerate cool conditions well.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A large tall enclosure — adults are big frogs and need space. Height is important. Live plants strongly recommended for humidity and cover. Large shallow water bowl. Dense branching for perching and climbing. Mist heavily each evening. Excellent ventilation essential. Bioactive setups work very well for this species.</div>
+        <ShopBtn>🛒 Shop frog supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Voracious insectivores. Their large size means they can take larger prey than most frogs. Feed at night. Like Green Tree Frogs, obesity is a real risk.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Large crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood Roaches (Woodies)" detail="Large adults — excellent feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🐛" name="Silkworms / hornworms" detail="High moisture feeders" freq="Occasionally"/>
+          <FoodItem icon="🐭" name="Pinky mice (adults only)" detail="Occasional protein boost for very large adults" freq="Rarely"/>
+        </div>
+        <WarnBox type="red" title="Monitor weight carefully">White-lipped Tree Frogs grow very large and can become seriously obese. Monitor body condition — a healthy frog should have a firm, not rounded, body with no fat deposits over the eyes.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Chytridiomycosis" detail="Same risk as all frogs. Strict hygiene essential. Never release captive frogs into the wild."/>
+        <HealthItem title="Respiratory infection" detail="Caused by temperatures too low or excessive humidity without adequate ventilation. Signs include wheezing or lethargy. Veterinary attention required."/>
+        <HealthItem title="Obesity" detail="Very common — these frogs are enthusiastic feeders. Reduce feeding frequency if fat pads develop over the eyes."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Vivid green colouration with clear white lip stripe, active and alert at night, feeding well, strong toe pad grip, regular shedding."/>
+        <SnakeShedding animal="frog"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — MINIMAL, CLEAN HANDS ESSENTIAL</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>White-lipped Tree Frogs can be more flighty than Green Tree Frogs. Their large size makes them impressive to hold but they may jump unexpectedly. Always handle over a safe surface. Wet hands with dechlorinated water before every interaction.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Wash and rinse hands with dechlorinated water before handling. Keep sessions brief. Their powerful legs mean they can jump considerable distances — be prepared. Never handle after using any chemical products on your hands.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="White-lipped Tree Frogs require a standard keeper licence in most states. Primarily available in QLD where they are native. Check availability in your state before purchasing." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Check with authority", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Check with authority", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Check with authority", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Striped Marsh Frog page ──────────────────────────────────────
+const StripedMarshFrogPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Striped Marsh Frog" latin="Limnodynastes peronii" emoji="🐸"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Ground dwelling", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most common and recognisable frogs — found in backyards and gardens across eastern Australia. Their distinctive brown striped pattern and loud "tok" call are familiar to anyone who lives near water. Unlike tree frogs, Striped Marsh Frogs are ground-dwelling and semi-aquatic. Hardy, adaptable, and easy to keep — a great beginner frog that is often overlooked in favour of tree frogs.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","4–7 cm"],["⏳","Lifespan","5–10 yrs"],["🏠","Min. enclosure","60 × 45 × 30 cm"],["💧","Humidity","60–80%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Daytime ambient" value="20–26°C" width="44%" color="#e05a2b"/>
+        <TempBar label="Nighttime low" value="14–18°C" width="22%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Cooler temperatures preferred">Striped Marsh Frogs are from temperate eastern Australia and prefer cooler conditions than tropical tree frogs. They tolerate a wide temperature range but do not thrive in warm tropical setups.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A wider rather than taller enclosure — they are ground-dwelling, not climbers. Coconut coir substrate. A large water section is important — they are semi-aquatic and spend significant time in water. Cork bark and leaf litter hides. Low plants for cover. Mist regularly to maintain humidity. Good ventilation essential.</div>
+        <ShopBtn>🛒 Shop frog supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Will feed both on land and at the water's edge. Active feeders that respond well to moving prey.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — appropriately sized" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood Roaches (Woodies)" detail="Excellent Australian feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪱" name="Earthworms" detail="Natural prey — eagerly taken" freq="Weekly"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Treat only" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Feed near water">Striped Marsh Frogs often prefer to feed at the water's edge. Placing prey items near or at the water section can improve feeding response.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Chytridiomycosis" detail="All frogs are susceptible. Strict hygiene and never releasing captive frogs into the wild is essential."/>
+        <HealthItem title="Water quality" detail="As semi-aquatic frogs they are particularly sensitive to water quality. Change water frequently and dechlorinate all water used."/>
+        <HealthItem title="Dehydration" detail="Despite tolerating cooler conditions, they still need adequate access to water. Ensure the water section is always clean and accessible."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, feeding well, using both land and water areas, clear eyes, moist skin, calling (males)."/>
+        <SnakeShedding animal="frog"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — KEEP MINIMAL</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Striped Marsh Frogs are more of an observation species than a handling species. They are fast-moving and jumpy when disturbed. Handling should be kept to a minimum and only for health checks. Always wet hands with dechlorinated water first.</div>
+        </div>
+        <WarnBox type="gold" title="Loud call">Males produce a loud repetitive "tok" call, particularly at night and before rain. This is a sign of a healthy, content frog — but worth considering if you are a light sleeper!</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Striped Marsh Frogs require a standard keeper licence across eastern Australia. Widely available from licensed breeders in NSW, VIC, and QLD." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Standard licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Not available", ok: false }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Not available", ok: false }]} />}
+    </>}
+  />
+);
+
+// ─── Eastern Dwarf Tree Frog page ─────────────────────────────────
+const EasternDwarfFrogPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Eastern Dwarf Tree Frog" latin="Litoria fallax" emoji="🐸"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Tiny species", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's smallest and most charming frogs. Found in eastern Australia from Queensland to Victoria in vegetation near water. Their tiny size — adults reach just 2.5 cm — and bright green colouration make them a delightful species to keep. Best kept in groups and observed rather than handled. A popular choice for naturalistic bioactive enclosures.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","2–2.5 cm"],["⏳","Lifespan","3–5 yrs"],["🏠","Min. enclosure","45 × 45 × 45 cm"],["💧","Humidity","60–75%"]]} />
+        <WarnBox type="red" title="Very small — escape risk">Eastern Dwarf Tree Frogs are tiny and can escape through very small gaps. Ensure the enclosure is completely escape-proof with fine mesh or sealed joins. They can fit through gaps smaller than you'd expect.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Daytime ambient" value="22–26°C" width="46%" color="#e05a2b"/>
+        <TempBar label="Nighttime low" value="16–20°C" width="28%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A bioactive enclosure with live plants works beautifully for this species. They love dense vegetation to hide in. A small water area. Fine-mesh ventilation — they can escape through large gaps. Keep in groups of 3+ as they are social. Cork bark and leaf litter on the substrate. Mist every evening.</div>
+        <ShopBtn>🛒 Shop frog supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Their tiny size means prey must be very small — pinhead or small crickets only. Feeding can be tricky due to their size.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Pinhead / small crickets" detail="Only appropriately tiny prey" freq="Every 2 nights"/>
+          <FoodItem icon="🦟" name="Woodies nymphs (baby roaches)" detail="Small nymphs only — excellent nutrition" freq="Every 2 nights"/>
+          <FoodItem icon="🪲" name="Fruit flies (Drosophila)" detail="Good for very small juveniles" freq="Occasional supplement"/>
+        </div>
+        <WarnBox type="red" title="Prey size is critical">Prey must be no larger than the width of the frog's head — for Eastern Dwarf Tree Frogs that means very small insects. Oversized prey causes choking. Never offer adult crickets or large woodies to this species.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Chytridiomycosis" detail="All frogs are susceptible. Strict hygiene essential."/>
+        <HealthItem title="Escape and dehydration" detail="Escaped frogs dehydrate rapidly. Ensure the enclosure is escape-proof and check the enclosure thoroughly if you suspect an escape."/>
+        <HealthItem title="Overfeeding" detail="Despite their small size they can overeat. Feed small amounts every 2 nights rather than large amounts infrequently."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Bright green colouration, active at night, calling (males), feeding well, using all levels of the enclosure."/>
+        <SnakeShedding animal="frog"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.redPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.red}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:6}}>HANDLING — NOT RECOMMENDED</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Eastern Dwarf Tree Frogs are observation animals — their tiny size makes handling very difficult and stressful for the frog. They are fragile and fast-moving. Handling is not recommended except for essential health checks. Enjoy them through the glass.</div>
+        </div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Eastern Dwarf Tree Frogs require a standard keeper licence in eastern Australian states. Available from licensed breeders in NSW, VIC, and QLD." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Standard licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Not available", ok: false }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Not available", ok: false }]} />}
+    </>}
+  />
+);
+
+// ─── Peron's Tree Frog page ──────────────────────────────────────
+const PeronsFrogPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Peron's Tree Frog" latin="Litoria peronii" emoji="🐸"
+    badges={[["Beginner friendly", C.greenPale, C.green], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A beautiful and distinctive tree frog found across south-eastern Australia. Their grey-brown cryptic colouration with bright yellow and black inner thighs — revealed as a flash of colour when they jump — makes them unmistakable. Known for their loud, distinctive cackling call. An active and engaging species that adapts well to captivity.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","4–6.5 cm"],["⏳","Lifespan","8–12 yrs"],["🏠","Min. enclosure","45 × 45 × 60 cm"],["💧","Humidity","50–70%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Daytime ambient" value="20–26°C" width="44%" color="#e05a2b"/>
+        <TempBar label="Nighttime low" value="14–18°C" width="22%" color="#2b7ec0"/>
+        <WarnBox type="blue" title="Cooler temperate species">Peron's Tree Frogs are from temperate south-eastern Australia. They prefer cooler conditions than tropical species and tolerate a wide seasonal temperature variation — this is natural and healthy.</WarnBox>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A tall enclosure with branches and plants for climbing and hiding. Cork bark and leaf litter at ground level. A shallow water bowl. Mist one side of the enclosure each evening. Good ventilation is essential. They are excellent climbers and will use all vertical space available.</div>
+        <ShopBtn>🛒 Shop frog supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous. Active hunters that respond well to moving prey. Feed at night when naturally active.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood Roaches (Woodies)" detail="Excellent Australian feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🪲" name="Mealworms" detail="Treat only — high fat" freq="Occasionally"/>
+          <FoodItem icon="🐛" name="Silkworms" detail="Good hydration source" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Flash colour display when feeding">When Peron's Tree Frogs jump or are startled, they reveal their vivid yellow and black inner thighs — a deimatic (startle) display to confuse predators. Completely normal and spectacular to observe!</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Chytridiomycosis" detail="All frogs are susceptible. Strict hygiene essential. Never release captive frogs into the wild."/>
+        <HealthItem title="Dehydration" detail="Ensure fresh dechlorinated water is always available. Mist the enclosure every evening."/>
+        <HealthItem title="Stress from overhandling" detail="Peron's Tree Frogs can be more stress-prone than Green Tree Frogs. Keep handling to a minimum."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active at night, calling (males), feeding well, good body condition, moist skin, using climbing structures."/>
+        <SnakeShedding animal="frog"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — MINIMAL, CLEAN HANDS</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Peron's Tree Frogs tolerate brief handling but are best kept as observation animals. They are more flighty than Green Tree Frogs. Always wet hands with dechlorinated water before any contact. Keep sessions very brief.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Their flash colour display when disturbed is a highlight of keeping this species — enjoy it during brief, calm handling sessions. Never handle after using any chemical products on hands.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Peron's Tree Frogs require a standard keeper licence in south-eastern Australian states. Available from licensed breeders in NSW, VIC, and QLD." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Standard licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Not available", ok: false }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Not available", ok: false }]} />}
+    </>}
+  />
+);
+
+// ─── Magnificent Tree Frog page ───────────────────────────────────
+const MagnificentFrogPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Magnificent Tree Frog" latin="Litoria splendida" emoji="🐸"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["WA/NT endemic", C.redPale, C.red]]}
+    tabs={["overview","feeding","health & shedding","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Arguably Australia's most stunning tree frog. Found only in the Kimberley region of Western Australia and adjacent Northern Territory. Similar in appearance to the Green Tree Frog but distinguished by large glands on the head and behind the eyes that give them a more dramatic appearance. Larger, rarer, and more challenging to source than Green Tree Frogs — but a truly spectacular species for experienced frog keepers.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","8–13 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 × 90 cm"],["💧","Humidity","60–80%"]]} />
+        <WarnBox type="red" title="Limited availability — WA/NT endemic">Magnificent Tree Frogs are endemic to the Kimberley and NT. They are less commonly available than Green Tree Frogs and command higher prices. Only available from specialist breeders. Confirm availability and licencing requirements carefully before purchasing.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Daytime ambient" value="26–30°C" width="60%" color="#e05a2b"/>
+        <TempBar label="Nighttime low" value="20–24°C" width="36%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A large tall enclosure with dense branching and live plants. Higher temperatures than Green Tree Frogs — they are from tropical north-western Australia. Large shallow water bowl. Heavy evening misting. Bioactive setups work excellently. The large parotoid glands on the head are a distinguishing feature — these are not a health concern.</div>
+        <ShopBtn>🛒 Shop frog supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous with a strong feeding response. Similar feeding requirements to Green Tree Frogs but their larger size means bigger prey items are appropriate for adults.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Large crickets" detail="Staple feeder — gut load well" freq="Every 2–3 nights"/>
+          <FoodItem icon="🦟" name="Wood Roaches (Woodies)" detail="Excellent Australian feeder" freq="Every 2–3 nights"/>
+          <FoodItem icon="🐛" name="Silkworms / hornworms" detail="High moisture feeders" freq="Occasionally"/>
+          <FoodItem icon="🐭" name="Pinky mice (large adults only)" detail="Very occasional protein boost" freq="Rarely"/>
+        </div>
+        <WarnBox type="red" title="Monitor weight carefully">Like all large tree frogs, obesity is a real risk. Fat deposits over the eyes indicate overfeeding. Feed 4–5 insects every 2–3 nights for adults — not every night.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health & shedding" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Chytridiomycosis" detail="All frogs are susceptible. Strict hygiene essential. Never release captive frogs into the wild."/>
+        <HealthItem title="Obesity" detail="Common in all large tree frogs. Monitor body condition and reduce feeding if fat pads develop."/>
+        <HealthItem title="Respiratory infection" detail="From temperatures too low or poor ventilation. Maintain warm tropical temperatures with excellent airflow."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Vivid green colouration, prominent head glands, active at night, feeding well, strong toe pad grip."/>
+        <SnakeShedding animal="frog"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>HANDLING — MINIMAL, CLEAN HANDS ESSENTIAL</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Magnificent Tree Frogs tolerate brief handling similarly to Green Tree Frogs. Their larger size makes them impressive to hold. Always wet hands with dechlorinated water before handling. Keep sessions brief and infrequent — these are primarily display animals.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Wash and rinse hands with dechlorinated water before handling. Never handle after using any chemical products. Their large size and calm temperament make them one of the more handleable frog species — but handling should still be kept minimal.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Magnificent Tree Frogs are primarily available in WA and NT where they are endemic. Check availability in your state carefully — they are less commonly available than other tree frogs." states={[{ abbr: "NSW", cat: "Check with authority", ok: true }, { abbr: "VIC", cat: "Check with authority", ok: true }, { abbr: "QLD", cat: "Check with authority", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Check with authority", ok: true }, { abbr: "NT", cat: "Standard licence", ok: true }]} />}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -3390,6 +3698,12 @@ const PAGE_MAP = {
   northernbt:  NorthernBlueTonguePage,
   blotchedbt:  BlotchedBlueTonguePage,
   shingleback: ShinglebackPage,
+  greentreefrog: GreenTreeFrogPage,
+  whitelipped:  WhiteLippedFrogPage,
+  stripedmarsh: StripedMarshFrogPage,
+  dwarftree:    EasternDwarfFrogPage,
+  perons:       PeronsFrogPage,
+  magnificent:  MagnificentFrogPage,
   enclosure:   EnclosurePage,
   temp:         TempPage,
   feedingnutrition: FeedingNutritionPage,

@@ -24,6 +24,12 @@ const SPECIES = [
   { id: "rankins",      name: "Pygmy Bearded Dragon",         latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins" },
   { id: "frilled",      name: "Frilled-neck Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled" },
   { id: "waterdragon",  name: "Eastern Water Dragon",        latin: "Intellagama lesueurii",     type: "lizard", emoji: "🦎", bg: "#e8f5f0", level: "Intermediate", page: "waterdragon" },
+  { id: "ackie",        name: "Ackie Monitor",                 latin: "Varanus acanthurus",           type: "monitor", emoji: "🦎", bg: "#f5ece0", level: "Intermediate", page: "ackie" },
+  { id: "pygmymulga",   name: "Pygmy Mulga Monitor",           latin: "Varanus gilleni",              type: "monitor", emoji: "🦎", bg: "#f0ece8", level: "Intermediate", page: "pygmymulga" },
+  { id: "blackheaded",  name: "Black-headed Monitor",          latin: "Varanus tristis",              type: "monitor", emoji: "🦎", bg: "#e8ecee", level: "Intermediate", page: "blackheadedmonitor" },
+  { id: "ridgetailed",  name: "Ridge-tailed Monitor",          latin: "Varanus baritji",              type: "monitor", emoji: "🦎", bg: "#f5eee8", level: "Intermediate", page: "ridgetailed" },
+  { id: "sandmonitor",  name: "Sand Monitor",                  latin: "Varanus gouldii",              type: "monitor", emoji: "🦎", bg: "#f5f0e0", level: "Advanced",     page: "sandmonitor" },
+  { id: "lacemonitor",  name: "Lace Monitor",                  latin: "Varanus varius",               type: "monitor", emoji: "🦎", bg: "#eef0e8", level: "Advanced",     page: "lacemonitor" },
   { id: "turtle",      name: "Eastern Long-necked Turtle",  latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: "turtle" },
   { id: "broadshell",   name: "Broad-shelled Turtle",          latin: "Chelodina expansa",          type: "turtle", emoji: "🐢", bg: "#e0ecf0", level: "Intermediate", page: "broadshell" },
   { id: "murray",       name: "Murray River Turtle",           latin: "Emydura macquarii",          type: "turtle", emoji: "🐢", bg: "#e8f5f0", level: "Intermediate", page: "murray" },
@@ -3662,6 +3668,324 @@ const MagnificentFrogPage = ({ onBack }) => (
   />
 );
 
+
+// ─── Ackie Monitor page ───────────────────────────────────────────
+const AckieMonitorPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Ackie Monitor" latin="Varanus acanthurus" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Beginner monitor", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Also known as the Spiny-tailed Monitor, the Ackie is widely considered the best beginner monitor lizard in the world. Native to arid and semi-arid north-western Australia. Their manageable size, bold personality, intelligence, and relative tolerance of handling set them apart from larger monitor species. Highly active and inquisitive — they are endlessly entertaining to observe and interact with.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","60–70 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","120 × 60 × 60 cm"],["💧","Humidity","30–40%"]]} />
+        <WarnBox type="red" title="Very hot basking spot essential">Ackie Monitors require an extremely hot basking spot — 50–60°C surface temperature is required for proper digestion and metabolic function. This is significantly hotter than most other reptiles. A high-wattage basking lamp with a thermostat is essential. Without adequate basking heat, Ackies decline rapidly.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking surface temp" value="50–60°C" width="100%" color="#cc2200"/>
+        <TempBar label="Warm side ambient" value="32–36°C" width="74%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="26–28°C" width="52%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="20–22°C" width="30%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A minimum 120×60×60cm enclosure for one adult — bigger is always better. Deep sandy substrate (20–30cm) for burrowing — this is important for thermoregulation and natural behaviour. A large flat rock or slate directly under the basking lamp as a basking platform. Multiple hides at both warm and cool ends. Cork bark and branches for enrichment. A damp sand box (one corner of the enclosure kept slightly moist) helps with shedding and egg laying.</div>
+        <ShopBtn>🛒 Shop monitor supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. A varied diet of insects, small vertebrates, and eggs is ideal. Their intelligence means they can be trained to eat from tongs and even target-trained for handling.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Large crickets / Wood Roaches" detail="Staple insect feeders — gut load well" freq="Every 2 days (juveniles), 3x week (adults)"/>
+          <FoodItem icon="🥚" name="Quail eggs / small eggs" detail="Highly nutritious — eagerly taken" freq="Weekly"/>
+          <FoodItem icon="🐭" name="Pinky / fuzzy mice" detail="Adults only — occasional protein boost" freq="Monthly"/>
+          <FoodItem icon="🪲" name="Superworms / mealworms" detail="Good variety item" freq="Weekly"/>
+          <FoodItem icon="🦎" name="Small lizards (skinks)" detail="Rare occasional treat for adults" freq="Rarely"/>
+        </div>
+        <WarnBox type="gold" title="Variety is essential">Ackies fed on a single prey type develop nutritional deficiencies. Rotate between at least 3–4 different feeders. Gut-load all insects 24 hours before feeding. Dust with calcium and multivitamin supplements.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Metabolic Bone Disease (MBD)" detail="From insufficient basking heat, UVB, or calcium. Ackies need very hot basking spots AND high-output UVB. Calcium supplementation at every feed for juveniles."/>
+        <HealthItem title="Dysecdysis (retained shed)" detail="Usually caused by low humidity. The damp sand box in the enclosure helps prevent this. Check between toes after shedding."/>
+        <HealthItem title="Obesity" detail="Surprisingly common when fed too many fatty foods (superworms, mice). Keep diet varied and lean."/>
+        <HealthItem title="Respiratory infection" detail="From temperatures that are too low. Ackies need consistently warm conditions — ensure heat is maintained overnight in winter."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active and alert during the day, basking regularly, feeding enthusiastically, eyes clear and bright, good body condition, regularly shedding."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — MEDIUM (juveniles) / LOW (tame adults)</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Juvenile Ackies can be nippy and fast. With consistent gentle handling from a young age they become remarkably tame — often described as having dog-like personalities. Target training (teaching them to touch a target stick for food rewards) significantly speeds up taming. Patient, consistent handling pays dividends with this species.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Hook-train before every handling session — tap gently with a snake hook before picking up to signal handling rather than feeding time. Support the full body. Start with short sessions and build gradually. Well-socialised adults can be extremely tame and interactive — one of the most rewarding monitors to work with.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Ackie Monitors require a standard keeper licence in most states. One of the most commonly kept monitors in Australia and widely available from licensed breeders." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Standard licence", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Pygmy Mulga Monitor page ─────────────────────────────────────
+const PygmyMulgaPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Pygmy Mulga Monitor" latin="Varanus gilleni" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Small species", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>The smallest commonly kept monitor in Australia — adults reach just 40cm. Found in the spinifex sandplains and mulga woodlands of central and north-western Australia. Arboreal with a semi-prehensile tail used for gripping branches. Hardy, active, and fascinating to observe. An excellent choice for keepers who want a monitor but have limited space.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","35–42 cm"],["⏳","Lifespan","10–15 yrs"],["🏠","Min. enclosure","60 × 45 × 60 cm"],["💧","Humidity","20–35%"]]} />
+        <WarnBox type="red" title="Very hot basking spot essential">Like all monitors, Pygmy Mulgas require a very hot basking spot — at least 45–60°C surface temperature. This is non-negotiable for their health and digestion.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking surface temp" value="45–60°C" width="96%" color="#cc2200"/>
+        <TempBar label="Warm side ambient" value="30–35°C" width="70%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A taller enclosure than other arid monitors — they are arboreal and need vertical space with branches to climb. Cork bark tubes and flats for hiding. Sandy substrate. A flat rock under the basking lamp. Multiple climbing branches at varying heights. Despite being small, they are very active and appreciate enrichment. A bioactive setup with live plants works very well for this species.</div>
+        <ShopBtn>🛒 Shop monitor supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Insectivorous with some small vertebrate prey. Their small size means prey must be appropriately sized. Enthusiastic feeders.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Crickets / Wood Roaches" detail="Staple feeders — appropriately sized" freq="Every 2 days"/>
+          <FoodItem icon="🥚" name="Small quail eggs" detail="Nutritious treat — occasionally" freq="Weekly"/>
+          <FoodItem icon="🪲" name="Mealworms / small superworms" detail="Good variety item" freq="Weekly"/>
+          <FoodItem icon="🐭" name="Pinky mice (adults)" detail="Very occasional — high fat" freq="Rarely"/>
+        </div>
+        <WarnBox type="gold" title="Small prey for small monitors">Prey must be appropriately sized — no wider than the monitor's head. Pygmy Mulgas are small animals and oversized prey is a real risk.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Insufficient basking heat" detail="The most common husbandry mistake. Without a hot basking spot, Pygmy Mulgas cannot digest food properly and decline quickly. Always verify surface temperature with an infrared thermometer."/>
+        <HealthItem title="Parasites" detail="Annual faecal tests recommended. Newly acquired animals should be tested before joining an existing collection."/>
+        <HealthItem title="Dehydration" detail="Despite coming from arid environments they still need access to fresh water. A small shallow water bowl and occasional light misting."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active climber, basking regularly, alert and curious, feeding well, regular shedding, good body condition."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — LOW TO MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Pygmy Mulgas are generally calmer than Ackies or Black-headed Monitors. They can be flighty when young but tame down well with regular gentle handling. Their small size makes them easy to manage. Hook-train before every session.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Support the full body. Handle at a comfortable temperature when the animal is warm and active. Short sessions initially, building gradually. Their prehensile tail will grip your hand and fingers — this is normal and not a sign of stress.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Pygmy Mulga Monitors require a standard keeper licence in most states. The smallest commonly kept monitor — widely available from licensed breeders." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Standard licence", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Sand Monitor page ────────────────────────────────────────────
+const SandMonitorPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Sand Monitor" latin="Varanus gouldii" emoji="🦎"
+    badges={[["Advanced", C.redPale, C.red], ["Australian native", C.bluePale, C.blue], ["Large species", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Also known as Gould's Monitor or the Racehorse Goanna — named for their extraordinary speed. One of Australia's most widespread monitor lizards, found across most of the continent except the far north. A large, powerful, and highly intelligent species suited only to experienced keepers with the space and commitment required. Their bold personality and striking appearance make them impressive animals — but they demand respect and a serious commitment.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","100–160 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","240 × 90 × 90 cm"],["💧","Humidity","30–50%"]]} />
+        <WarnBox type="red" title="Large, powerful species — experienced keepers only">Sand Monitors are fast, strong, and can inflict serious bites and scratches. Adults require very large enclosures. This is not a beginner species. Significant experience with reptiles is required before keeping this species.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking surface temp" value="50–65°C" width="100%" color="#cc2200"/>
+        <TempBar label="Warm side ambient" value="32–38°C" width="78%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="26–28°C" width="52%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="20–22°C" width="30%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A very large custom enclosure — minimum 240×90×90cm for one adult. Many experienced keepers house adults in outdoor enclosures. Deep substrate (30+ cm) for burrowing — they spend significant time underground. Very large flat rock or slate basking platform. Robust hides. Heavy-duty construction — these are powerful animals that will test any weak points in an enclosure.</div>
+        <ShopBtn>🛒 Shop monitor supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Active hunters that eat a wide variety of prey. Their large size means they can take substantial prey items as adults.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Rats / mice" detail="Staple prey for adults" freq="Weekly"/>
+          <FoodItem icon="🥚" name="Eggs" detail="Quail, chicken — eagerly taken" freq="Weekly"/>
+          <FoodItem icon="🦗" name="Large insects" detail="Good supplement and enrichment" freq="2–3x week"/>
+          <FoodItem icon="🐟" name="Whole fish" detail="Good protein and calcium source" freq="Occasionally"/>
+          <FoodItem icon="🐔" name="Lean chicken pieces" detail="On the bone for enrichment" freq="Occasionally"/>
+        </div>
+        <WarnBox type="gold" title="Always use feeding tongs">Sand Monitors have a strong feeding response and can bite hard. Always use long feeding tongs. Never hand-feed. Hook-train before every feeding session.</WarnBox>
+        <ShopBtn>🛒 Shop feeders</ShopBtn>
+      </>}
+      {tab === "health" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Injuries from inadequate enclosure" detail="Sand Monitors are fast and powerful. Sharp enclosure edges, inadequate height, or insufficient burrowing depth cause injuries. Enclosure construction must be robust and well-finished."/>
+        <HealthItem title="Obesity" detail="Common when fed too many rodents. Vary the diet and include insects and eggs alongside mammals."/>
+        <HealthItem title="Parasites" detail="Annual faecal tests strongly recommended. These monitors have large home ranges in the wild and encounter many parasite sources."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active and alert, strong muscular build, regular feeding, complete sheds, bright eyes, using full enclosure."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.redPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.red}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:6}}>BITE RISK — HIGH — EXPERIENCED KEEPERS ONLY</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Sand Monitors can inflict serious bites and lacerations from their claws. Even well-tamed adults can bite hard if startled or in feeding mode. Hook-train before every interaction without exception. Wear thick gloves when working with unsettled animals. Two-person handling recommended for large adults.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>With significant patient work, Sand Monitors can become manageable — but they will never be as relaxed as an Ackie. Always hook-train. Support the full body. Respect their power and speed. Never rush handling sessions.</div>
+        <WarnBox type="red" title="Seek medical attention for bites">Monitor bites carry a high bacterial load and risk of infection. Clean any bite wound thoroughly and seek medical advice. Monitor bites can be serious injuries.</WarnBox>
+      </>}
+      {tab === "licencing" && <LegalTab note="Sand Monitors require an advanced keeper licence in most states due to their large size. A significant commitment — outdoor or very large enclosures required for adults." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Advanced licence", ok: true }, { abbr: "SA", cat: "Advanced licence", ok: true }, { abbr: "WA", cat: "Advanced licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Advanced licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Lace Monitor page ────────────────────────────────────────────
+const LaceMonitorPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Lace Monitor" latin="Varanus varius" emoji="🦎"
+    badges={[["Advanced", C.redPale, C.red], ["Australian native", C.bluePale, C.blue], ["Arboreal", C.goldLight, "#7a5a1e"]]}
+    tabs={["overview","feeding","health","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Australia's second largest lizard and arguably its most spectacular monitor. Found across eastern Australia from Cape York to Victoria in forests, woodlands, and suburban bushland. Their intricate lace-like pattern is unmistakable. Semi-arboreal — excellent climbers that spend significant time in trees. An impressive, intelligent, and long-lived species for serious, experienced keepers only.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","120–200 cm"],["⏳","Lifespan","20–30+ yrs"],["🏠","Min. enclosure","300 × 200 × 200 cm"],["💧","Humidity","50–70%"]]} />
+        <WarnBox type="red" title="Requires very large outdoor or indoor-outdoor setup">Adult Lace Monitors require enormous enclosures — a minimum 3×2×2m for a single adult. Most experienced keepers use outdoor setups or dedicated reptile rooms. This is a serious commitment for advanced keepers only.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking surface temp" value="50–60°C" width="100%" color="#cc2200"/>
+        <TempBar label="Warm side ambient" value="28–35°C" width="68%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="16–20°C" width="24%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>An outdoor or large indoor-outdoor enclosure is ideal. Robust construction — these are very strong animals. Large trees or substantial vertical climbing structures — they are arboreal and need to climb. Deep substrate for burrowing. Multiple large hides. A large water feature — they enjoy soaking and swimming. UVB lighting essential for indoor setups. Many keepers use a naturally planted outdoor enclosure in warmer months.</div>
+        <ShopBtn>🛒 Shop monitor supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous opportunists — in the wild they eat anything they can catch including birds, mammals, reptiles, eggs, and carrion. In captivity a varied diet is important.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🐭" name="Rats / rabbits (adults)" detail="Staple prey for adults" freq="Weekly"/>
+          <FoodItem icon="🥚" name="Eggs" detail="Quail, chicken — a natural favourite" freq="Weekly"/>
+          <FoodItem icon="🐔" name="Whole chicken pieces" detail="On the bone for jaw exercise" freq="Occasionally"/>
+          <FoodItem icon="🐟" name="Whole fish" detail="Good variety and calcium" freq="Occasionally"/>
+          <FoodItem icon="🦗" name="Large insects" detail="Good supplement especially juveniles" freq="Several× week (juveniles)"/>
+        </div>
+        <WarnBox type="red" title="Always use long feeding tongs">Lace Monitors have an extremely powerful bite and strong feeding response. Long tongs are essential for every feed. Never hand-feed under any circumstances.</WarnBox>
+        <ShopBtn>🛒 Shop feeders</ShopBtn>
+      </>}
+      {tab === "health" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Injuries from inadequate space" detail="Lace Monitors confined in undersized enclosures suffer chronic stress and physical injury. Enclosure size is the single most important factor in keeping this species successfully."/>
+        <HealthItem title="Respiratory infection" detail="Common in cold, damp conditions without adequate heating. Ensure basking heat is always available."/>
+        <HealthItem title="Bite wounds (from conspecifics)" detail="Males are highly territorial — never house two males together. Fights cause serious injuries."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active and alert, regular basking, feeding well, using full enclosure including climbing structures, regular shedding, good body weight."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.redPale,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid ${C.red}22`}}>
+          <div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:6}}>BITE RISK — VERY HIGH — ADVANCED KEEPERS ONLY</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Lace Monitors are powerful animals capable of inflicting serious injuries with their bite, claws, and tail. Even well-habituated animals can bite unexpectedly. Two-person handling is strongly recommended for large adults. Hook-train before every interaction without exception. Wear thick protective gloves.</div>
+        </div>
+        <WarnBox type="red" title="Lace Monitor bites are serious injuries">Their serrated teeth cause deep lacerations with high infection risk. Seek medical attention immediately after any bite. Lace Monitor mouths carry significant bacterial load.</WarnBox>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>With significant time and patient work from a young age, Lace Monitors can become manageable display and interaction animals. Many long-term keepers report very tame adults. But this takes years of consistent work and respect for the animal.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Lace Monitors require an advanced keeper licence in most states due to their large size and advanced care requirements. One of the most demanding monitors to keep." states={[{ abbr: "NSW", cat: "Advanced licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Advanced licence", ok: true }, { abbr: "SA", cat: "Advanced licence", ok: true }, { abbr: "WA", cat: "Advanced licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Advanced licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Black-headed Monitor page ────────────────────────────────────
+const BlackHeadedMonitorPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Black-headed Monitor" latin="Varanus tristis" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Arboreal", C.greenPale, C.green]]}
+    tabs={["overview","feeding","health","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Also known as the Freckled Monitor. Found across most of Australia except the south-east and Tasmania. Their striking black head and neck contrasting with a pale spotted body makes them distinctive. Semi-arboreal and highly active. A popular monitor for intermediate keepers — more manageable than Lace or Sand Monitors but still requiring significant commitment and appropriate experience.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","60–100 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","150 × 60 × 90 cm"],["💧","Humidity","30–50%"]]} />
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking surface temp" value="50–60°C" width="100%" color="#cc2200"/>
+        <TempBar label="Warm side ambient" value="32–36°C" width="74%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="26–28°C" width="52%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>A tall enclosure with ample vertical space — they are semi-arboreal and need to climb. Minimum 150×60×90cm for one adult. Sandy substrate for burrowing. Large flat basking rock under the heat lamp. Multiple cork bark hides and climbing branches at varying heights. A shallow water bowl. UVB lighting essential.</div>
+        <ShopBtn>🛒 Shop monitor supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. In the wild they eat insects, small lizards, eggs, and small mammals. A varied diet is important in captivity.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Large crickets / Wood Roaches" detail="Excellent staple insect feeders" freq="Every 2 days (juveniles), 3x week (adults)"/>
+          <FoodItem icon="🥚" name="Quail / small eggs" detail="Natural prey — eagerly taken" freq="Weekly"/>
+          <FoodItem icon="🐭" name="Mice (adults)" detail="Occasional protein boost" freq="Monthly"/>
+          <FoodItem icon="🪲" name="Superworms" detail="Good variety item" freq="Weekly"/>
+        </div>
+        <WarnBox type="gold" title="Feeding tongs always">Black-headed Monitors have a fast feeding strike. Always use tongs — never hand-feed. Hook-train before every feeding session.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Insufficient basking temperature" detail="Like all monitors, an extremely hot basking spot is essential. Verify surface temperature with an infrared thermometer — not just air temperature."/>
+        <HealthItem title="Respiratory infection" detail="From temperatures too cold or damp conditions without ventilation. Maintain warm arid conditions."/>
+        <HealthItem title="Parasites" detail="Annual faecal tests recommended. Quarantine all new animals strictly."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active and alert, climbing regularly, basking daily, feeding well, bright alert eyes, good body condition."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — MEDIUM TO HIGH</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Black-headed Monitors are more flighty and defensive than Ackies. Juveniles in particular can be quite nippy and fast. With consistent patient handling from a young age they tame down reasonably well. Hook-train before every session. Respect their speed and agility.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Always hook-train before picking up. Support the full body including the tail — their tail whip can sting. Wear long sleeves for new or unsettled animals. Short sessions initially, building gradually with patience.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Black-headed Monitors require a standard to advanced keeper licence depending on the state. Widely available from licensed breeders across Australia." states={[{ abbr: "NSW", cat: "Standard licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Standard licence", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+    </>}
+  />
+);
+
+// ─── Ridge-tailed Monitor page ────────────────────────────────────
+const RidgeTailedMonitorPage = ({ onBack }) => (
+  <SpeciesPage onBack={onBack} name="Ridge-tailed Monitor" latin="Varanus baritji" emoji="🦎"
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["NT/WA endemic", C.redPale, C.red]]}
+    tabs={["overview","feeding","health","handling","licencing"]}
+    tabContent={(tab) => <>
+      {tab === "overview" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Similar in appearance to the Ackie Monitor but from a different part of Australia — found in the rocky outcrops and escarpments of the Northern Territory and north-western Western Australia. Their strongly keeled, spiny tail scales give them their name. Hardy and active, with care requirements almost identical to the Ackie Monitor. A less commonly available but equally impressive alternative to the Ackie.</p>
+        <SectionLabel mt={0}>Quick stats</SectionLabel>
+        <StatGrid stats={[["📏","Adult size","55–75 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","120 × 60 × 60 cm"],["💧","Humidity","25–40%"]]} />
+        <WarnBox type="red" title="Very hot basking spot essential">Like the Ackie Monitor, Ridge-tailed Monitors require a very hot basking spot — 50–60°C surface temperature. This is essential for digestion and health.</WarnBox>
+        <SectionLabel>Temperature requirements</SectionLabel>
+        <TempBar label="Basking surface temp" value="50–60°C" width="100%" color="#cc2200"/>
+        <TempBar label="Warm side ambient" value="32–36°C" width="74%" color="#e05a2b"/>
+        <TempBar label="Cool side" value="26–28°C" width="52%" color="#4a9e6b"/>
+        <TempBar label="Overnight low" value="20–22°C" width="30%" color="#2b7ec0"/>
+        <SectionLabel>Enclosure setup</SectionLabel>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Almost identical to Ackie Monitor setup. 120×60×60cm minimum for one adult. Deep sandy substrate (20–30cm) for burrowing. Large flat rock under basking lamp. Multiple hides at both ends. Branches and cork bark for enrichment. A damp sand corner for shedding assistance. These monitors are from rocky escarpment habitat so rock piles and crevice hides are particularly appreciated.</div>
+        <ShopBtn>🛒 Shop monitor supplies</ShopBtn>
+        <ShopBtn secondary>Ask a question ↗</ShopBtn>
+      </>}
+      {tab === "feeding" && <>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. Almost identical feeding requirements to the Ackie Monitor. A varied diet of insects and occasional small vertebrates.</p>
+        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+          <FoodItem icon="🦗" name="Large crickets / Wood Roaches" detail="Staple feeders — gut load well" freq="Every 2 days (juveniles), 3x week (adults)"/>
+          <FoodItem icon="🥚" name="Quail eggs" detail="Natural prey — nutritious treat" freq="Weekly"/>
+          <FoodItem icon="🐭" name="Pinky / fuzzy mice (adults)" detail="Occasional protein boost" freq="Monthly"/>
+          <FoodItem icon="🪲" name="Superworms" detail="Good variety item" freq="Weekly"/>
+        </div>
+        <WarnBox type="gold" title="Similar to Ackie Monitor">Feeding requirements and frequency are almost identical to the Ackie Monitor. Refer to general monitor feeding guidance — variety and gut-loading are key.</WarnBox>
+        <ShopBtn>🛒 Shop feeders & supplements</ShopBtn>
+      </>}
+      {tab === "health" && <>
+        <SectionLabel mt={0}>Common health issues</SectionLabel>
+        <HealthItem title="Insufficient basking heat" detail="The most critical requirement. Without adequate basking heat (50–60°C surface), these monitors cannot thrive. Always verify with an infrared thermometer."/>
+        <HealthItem title="Parasites" detail="Annual faecal tests recommended. Quarantine all new animals."/>
+        <HealthItem title="MBD" detail="From insufficient UVB or calcium. High-output UVB and calcium supplementation at every feed for juveniles."/>
+        <HealthItem dot="#4a9e6b" title="Signs of good health" detail="Active during the day, regular basking, feeding well, complete sheds, good body condition, bright alert eyes."/>
+        <SnakeShedding animal="lizard"/>
+      </>}
+      {tab === "handling" && <>
+        <div style={{background:C.goldLight,borderRadius:12,padding:"12px 14px",marginBottom:12,border:`0.5px solid #c8963c44`}}>
+          <div style={{fontSize:12,fontWeight:700,color:"#7a5a1e",marginBottom:6}}>BITE RISK — MEDIUM</div>
+          <div style={{fontSize:13,color:"#555",lineHeight:1.6}}>Ridge-tailed Monitors are generally considered more defensive than Ackies. They can be fast and nippy as juveniles. With patient consistent handling they tame down well. Hook-train before every session. Their spiny tail can scratch — be aware.</div>
+        </div>
+        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Same approach as Ackie Monitors. Hook-train, support full body, start short and build gradually. Less commonly kept than Ackies so community experience is somewhat limited — connect with experienced Ridge-tail keepers for species-specific advice.</div>
+      </>}
+      {tab === "licencing" && <LegalTab note="Ridge-tailed Monitors are primarily available in NT and WA where they are endemic. Check availability in your state before purchasing — less commonly available than Ackie Monitors." states={[{ abbr: "NSW", cat: "Check with authority", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Check with authority", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Check with authority", ok: true }, { abbr: "NT", cat: "Standard licence", ok: true }]} />}
+    </>}
+  />
+);
+
 // ─── Page router map ──────────────────────────────────────────────
 const PAGE_MAP = {
   bluetongue:  BlueTonguePage,
@@ -3704,6 +4028,12 @@ const PAGE_MAP = {
   dwarftree:    EasternDwarfFrogPage,
   perons:       PeronsFrogPage,
   magnificent:  MagnificentFrogPage,
+  ackie:            AckieMonitorPage,
+  pygmymulga:       PygmyMulgaPage,
+  blackheadedmonitor: BlackHeadedMonitorPage,
+  ridgetailed:      RidgeTailedMonitorPage,
+  sandmonitor:      SandMonitorPage,
+  lacemonitor:      LaceMonitorPage,
   enclosure:   EnclosurePage,
   temp:         TempPage,
   feedingnutrition: FeedingNutritionPage,

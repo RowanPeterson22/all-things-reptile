@@ -21,6 +21,7 @@ const BlackHeadedMonitorPage = ({ onBack }) => (
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","60–100 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","150 × 60 × 90 cm"],["💧","Humidity","30–50%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
+        <WarnBox type="red" title="Very hot basking spot essential">Like all monitors, Black-headed Monitors need a very hot basking spot — 50–60°C surface temperature. This is essential for digestion and health. Measure the surface with an infrared thermometer, not the air temperature.</WarnBox>
         <TempBar label="Basking surface temp" value="50–60°C" width="100%" color="#cc2200"/>
         <TempBar label="Warm side ambient" value="32–36°C" width="74%" color="#e05a2b"/>
         <TempBar label="Cool side" value="26–28°C" width="52%" color="#4a9e6b"/>

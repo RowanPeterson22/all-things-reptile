@@ -22,6 +22,7 @@ const LaceMonitorPage = ({ onBack }) => (
         <StatGrid stats={[["📏","Adult size","120–200 cm"],["⏳","Lifespan","20–30+ yrs"],["🏠","Min. enclosure","300 × 200 × 200 cm"],["💧","Humidity","50–70%"]]} />
         <WarnBox type="red" title="Requires very large outdoor or indoor-outdoor setup">Adult Lace Monitors require enormous enclosures — a minimum 3×2×2m for a single adult. Most experienced keepers use outdoor setups or dedicated reptile rooms. This is a serious commitment for advanced keepers only.</WarnBox>
         <SectionLabel>Temperature requirements</SectionLabel>
+        <WarnBox type="red" title="Very hot basking spot essential">Like all monitors, Lace Monitors need a very hot basking spot — 50–60°C surface temperature. This is essential for digestion and health. Measure the surface with an infrared thermometer, not the air temperature.</WarnBox>
         <TempBar label="Basking surface temp" value="50–60°C" width="100%" color="#cc2200"/>
         <TempBar label="Warm side ambient" value="28–35°C" width="68%" color="#e05a2b"/>
         <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b"/>

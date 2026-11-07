@@ -10,9 +10,9 @@ import LegalTab from "../../../components/LegalTab";
 import SpeciesPage from "../../../components/SpeciesPage";
 import SnakeShedding from "../../../components/SnakeShedding";
 
-// ─── Ridge-tailed Monitor page ────────────────────────────────────
+// ─── Black-spotted Ridge-tailed Monitor page ────────────────────────────────────
 const RidgeTailedMonitorPage = ({ onBack }) => (
-  <SpeciesPage onBack={onBack} name="Ridge-tailed Monitor" latin="Varanus baritji" emoji="🦎"
+  <SpeciesPage onBack={onBack} name="Black-spotted Ridge-tailed Monitor" latin="Varanus baritji" emoji="🦎"
     badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["NT/WA endemic", C.redPale, C.red]]}
     tabs={["overview","feeding","health","handling","licencing"]}
     tabContent={(tab) => <>
@@ -57,7 +57,7 @@ const RidgeTailedMonitorPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Same approach as Ackie Monitors. Hook-train, support full body, start short and build gradually. Less commonly kept than Ackies so community experience is somewhat limited — connect with experienced Ridge-tail keepers for species-specific advice.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Ridge-tailed Monitors are primarily available in NT and WA where they are endemic. Check availability in your state before purchasing — less commonly available than Ackie Monitors." states={[{ abbr: "NSW", cat: "Check with authority", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Check with authority", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Check with authority", ok: true }, { abbr: "NT", cat: "Standard licence", ok: true }]} />}
+      {tab === "licencing" && <LegalTab note="Ridge-tailed Monitors are endemic to the NT and are primarily available there. Check availability in your state before purchasing — less commonly available than Ackie Monitors." states={[{ abbr: "NSW", cat: "Check with authority", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Check with authority", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Check with authority", ok: true }, { abbr: "NT", cat: "Standard licence", ok: true }]} />}
     </>}
   />
 );

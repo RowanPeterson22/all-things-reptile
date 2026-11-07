@@ -1,6 +1,8 @@
 {
   "functions": {
-    "api/identify.js": { "maxDuration": 30 }
+    "api/identify.js": { "maxDuration": 30 },
+    "api/feedback.js": { "maxDuration": 15 },
+    "api/beta-check.js": { "maxDuration": 10 }
   },
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }

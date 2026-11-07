@@ -8,6 +8,8 @@ import { SPECIES as APP_SPECIES } from "../data/species";
 
 const lib = require("../../lib/identify");
 const handler = require("../../api/identify");
+const { clearTesterCache } = require("../../lib/beta");
+const { MORPHS, TRAIT_IDS } = require("../../lib/morphs");
 
 const { identify, validateRequest, parseAnthropicResponse, buildAnthropicRequest, MAX_BASE64_CHARS, OTHER } = lib;
 
@@ -87,7 +89,7 @@ describe("parseAnthropicResponse", () => {
     });
     expect(out.subject).toBe("reptile");
     expect(out.suggestions).toHaveLength(3);
-    expect(out.suggestions[0]).toEqual({ slug: "carpet-python", inApp: true, name: "Carpet Python", latin: "Morelia spilota", confidence: "likely", reason: "Blotched pattern." });
+    expect(out.suggestions[0]).toEqual({ slug: "carpet-python", inApp: true, name: "Carpet Python", latin: "Morelia spilota", confidence: "likely", reason: "Blotched pattern.", traits: [] });
     expect(out.suggestions[1]).toMatchObject({ slug: null, inApp: false, name: "Eastern Brown Snake", latin: "Pseudonaja textilis" });
     expect(out.suggestions[2]).toMatchObject({ slug: null, inApp: false, confidence: "possible" });
   });
@@ -108,6 +110,60 @@ describe("parseAnthropicResponse", () => {
   });
 });
 
+describe("traits", () => {
+  const parse = (obj) => parseAnthropicResponse({ content: [{ type: "text", text: JSON.stringify(obj) }] });
+  const sugg = (slug, traits) => ({ slug, common_name: "", latin_name: "", confidence: "likely", reason: "", traits });
+
+  test("morph list keys are real app slugs, ids are consistent and every entry has a cue", () => {
+    const slugs = new Set(lib.SPECIES.map(s => s.slug));
+    const names = {};
+    for (const [slug, list] of Object.entries(MORPHS)) {
+      expect(slugs.has(slug)).toBe(true);
+      for (const t of list) {
+        expect(t.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+        expect(t.cue.length).toBeGreaterThan(10);
+        expect(["established", "check"]).toContain(t.au);
+        if (names[t.id]) expect(t.name).toBe(names[t.id]);
+        names[t.id] = t.name;
+      }
+    }
+    expect(MORPHS["central-bearded-dragon"].map(t => t.id)).toEqual(expect.arrayContaining(["translucent", "hypomelanistic", "leatherback", "silkback", "zero", "witblits", "dunner", "paradox", "red", "citrus", "yellow"]));
+  });
+  test("schema and prompt carry the trait list", () => {
+    const item = lib.OUTPUT_SCHEMA.properties.suggestions.items;
+    expect(item.required).toContain("traits");
+    expect(item.properties.traits.items.properties.id.enum).toEqual(TRAIT_IDS);
+    const sys = buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" }).system;
+    expect(sys).toContain("central-bearded-dragon:");
+    expect(sys).toContain("translucent (Translucent):");
+  });
+  test("returns combined traits (translucent + leatherback), likely first", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [sugg("central-bearded-dragon", [
+      { id: "leatherback", confidence: "possible" }, { id: "Translucent", confidence: "LIKELY" }, { id: "hypomelanistic", confidence: "likely" },
+    ])] });
+    expect(out.suggestions[0].traits).toEqual([
+      { id: "translucent", name: "Translucent", confidence: "likely" },
+      { id: "hypomelanistic", name: "Hypomelanistic", confidence: "likely" },
+      { id: "leatherback", name: "Leatherback", confidence: "possible" },
+    ]);
+  });
+  test("drops traits not listed for that species, duplicates and junk", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [
+      sugg("central-bearded-dragon", [{ id: "jaguar", confidence: "likely" }, { id: "zero", confidence: "odd" }, { id: "zero", confidence: "likely" }, null, "red", { id: 4 }]),
+      sugg("lace-monitor", [{ id: "albino", confidence: "likely" }]),
+      sugg(OTHER, [{ id: "albino", confidence: "likely" }]),
+    ] });
+    expect(out.suggestions[0].traits).toEqual([{ id: "zero", name: "Zero", confidence: "possible" }]);
+    expect(out.suggestions[1].traits).toEqual([]);
+    expect(out.suggestions[2].traits).toEqual([]);
+  });
+  test("missing traits field is fine, and the list is capped", () => {
+    expect(parse({ subject: "reptile", note: "", suggestions: [sugg("carpet-python")] }).suggestions[0].traits).toEqual([]);
+    const all = MORPHS["central-bearded-dragon"].map(t => ({ id: t.id, confidence: "likely" }));
+    expect(parse({ subject: "reptile", note: "", suggestions: [sugg("central-bearded-dragon", all)] }).suggestions[0].traits).toHaveLength(lib.MAX_TRAITS);
+  });
+});
+
 describe("identify (mocked fetch)", () => {
   test("503 without an API key, and never calls fetch", async () => {
     const fetchImpl = jest.fn();
@@ -123,7 +179,8 @@ describe("identify (mocked fetch)", () => {
     const fetchImpl = jest.fn(async () => apiReply({ subject: "frog", note: "", suggestions: [{ slug: "green-tree-frog", common_name: "", latin_name: "", confidence: "likely", reason: "Green, large toe pads." }] }));
     const out = await identify({ image: JPEG }, { apiKey: "test-key", model: "claude-haiku-5-5", fetchImpl });
     expect(out.status).toBe(200);
-    expect(out.body.suggestions[0]).toMatchObject({ slug: "green-tree-frog", inApp: true, name: "Green Tree Frog" });
+    expect(out.body.suggestions[0]).toMatchObject({ slug: "green-tree-frog", inApp: true, name: "Green Tree Frog", traits: [] });
+    expect(out.body.model).toBe("claude-haiku-5-5");
     const [url, init] = fetchImpl.mock.calls[0];
     expect(url).toBe("https://api.anthropic.com/v1/messages");
     expect(init.headers).toMatchObject({ "x-api-key": "test-key", "anthropic-version": "2023-06-01" });
@@ -142,6 +199,7 @@ describe("identify (mocked fetch)", () => {
 });
 
 describe("api/identify handler", () => {
+  const CODE = "A".repeat(43);
   const mockRes = () => {
     const res = { headers: {}, statusCode: 200, body: undefined };
     res.setHeader = (k, v) => { res.headers[k] = v; };
@@ -149,9 +207,26 @@ describe("api/identify handler", () => {
     res.json = (b) => { res.body = b; return res; };
     return res;
   };
-  const req = (over = {}) => ({ method: "POST", headers: { "content-type": "application/json", "x-forwarded-for": `10.0.0.${Math.random()}` }, body: { image: JPEG }, ...over });
-  const saved = process.env.ANTHROPIC_API_KEY;
-  afterEach(() => { if (saved === undefined) delete process.env.ANTHROPIC_API_KEY; else process.env.ANTHROPIC_API_KEY = saved; });
+  const req = (over = {}) => {
+    const headers = { "content-type": "application/json", "x-atr-beta": CODE, "x-forwarded-for": `10.0.0.${Math.random()}`, ...(over.headers || {}) };
+    return { method: "POST", body: { image: JPEG }, ...over, headers };
+  };
+  const ENV = ["ANTHROPIC_API_KEY", "SUPABASE_URL", "SUPABASE_SECRET_KEY"];
+  const saved = Object.fromEntries(ENV.map(k => [k, process.env[k]]));
+  const savedFetch = global.fetch;
+  // Supabase says the tester exists; Anthropic isn't configured.
+  const testerFetch = (rows = [{ id: "t1", name: "Tester" }]) => jest.fn(async () => ({ ok: true, status: 200, json: async () => rows }));
+  beforeEach(() => {
+    clearTesterCache();
+    process.env.SUPABASE_URL = "https://ledcvbyiqkygcdleucqo.supabase.co";
+    process.env.SUPABASE_SECRET_KEY = "sb_secret_test";
+    delete process.env.ANTHROPIC_API_KEY;
+    global.fetch = testerFetch();
+  });
+  afterEach(() => {
+    for (const k of ENV) { if (saved[k] === undefined) delete process.env[k]; else process.env[k] = saved[k]; }
+    global.fetch = savedFetch;
+  });
 
   test("405 for non-POST", async () => {
     const res = mockRes();
@@ -159,9 +234,41 @@ describe("api/identify handler", () => {
     expect(res.statusCode).toBe(405);
     expect(res.headers.Allow).toBe("POST");
   });
-  test("415 for non-JSON", async () => {
+  test("503 when Supabase isn't configured, before anything else", async () => {
+    delete process.env.SUPABASE_SECRET_KEY;
     const res = mockRes();
-    await handler(req({ headers: { "content-type": "text/plain" } }), res);
+    await handler(req(), res);
+    expect(res.statusCode).toBe(503);
+    expect(res.body.error).toBe("The AI ID beta isn't set up yet.");
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+  test("403 without an invite code, with a malformed one, or an unknown one", async () => {
+    for (const code of [undefined, "short", "x".repeat(40) + "!"]) {
+      const res = mockRes();
+      await handler(req({ headers: { "content-type": "application/json", "x-atr-beta": code } }), res);
+      expect(res.statusCode).toBe(403);
+      expect(res.body.error).toBe("This feature isn't available.");
+    }
+    expect(global.fetch).not.toHaveBeenCalled();
+    global.fetch = testerFetch([]);
+    const res = mockRes();
+    await handler(req(), res);
+    expect(res.statusCode).toBe(403);
+  });
+  test("checks the code with the secret key against active testers only", async () => {
+    const res = mockRes();
+    await handler(req(), res);
+    const [url, init] = global.fetch.mock.calls[0];
+    expect(url).toBe(`https://ledcvbyiqkygcdleucqo.supabase.co/rest/v1/beta_testers?select=id,name&invite_code=eq.${CODE}&active=is.true&limit=1`);
+    expect(init.headers).toMatchObject({ apikey: "sb_secret_test", Authorization: "Bearer sb_secret_test" });
+    // Gate passed; Anthropic key missing → the identify 503.
+    expect(res.statusCode).toBe(503);
+    expect(res.body.error).toBe("AI ID isn't set up yet.");
+    expect(res.headers["Cache-Control"]).toBe("no-store");
+  });
+  test("415 for non-JSON once the gate passes", async () => {
+    const res = mockRes();
+    await handler(req({ headers: { "content-type": "text/plain", "x-atr-beta": CODE } }), res);
     expect(res.statusCode).toBe(415);
   });
   test("400 when the body getter throws on malformed JSON", async () => {
@@ -171,19 +278,19 @@ describe("api/identify handler", () => {
     await handler(r, res);
     expect(res.statusCode).toBe(400);
   });
-  test("503 when ANTHROPIC_API_KEY is unset", async () => {
-    delete process.env.ANTHROPIC_API_KEY;
+  test("502 when Supabase is down", async () => {
+    const err = jest.spyOn(console, "error").mockImplementation(() => {});
+    global.fetch = jest.fn(async () => ({ ok: false, status: 500 }));
     const res = mockRes();
     await handler(req(), res);
-    expect(res.statusCode).toBe(503);
-    expect(res.body.error).toBe("AI ID isn't set up yet.");
-    expect(res.headers["Cache-Control"]).toBe("no-store");
+    expect(res.statusCode).toBe(502);
+    for (const call of err.mock.calls) expect(call.join(" ")).not.toMatch(/sb_secret_test|AAAAAAAAAA/);
+    err.mockRestore();
   });
   test("429 after too many requests from one IP", async () => {
-    delete process.env.ANTHROPIC_API_KEY;
-    const ip = { "content-type": "application/json", "x-forwarded-for": "203.0.113.9" };
+    const ip = { "content-type": "application/json", "x-atr-beta": CODE, "x-forwarded-for": "203.0.113.9" };
     let last;
-    for (let i = 0; i < 9; i++) { last = mockRes(); await handler(req({ headers: ip }), last); }
+    for (let i = 0; i < 9; i++) { last = mockRes(); await handler({ method: "POST", headers: ip, body: { image: JPEG } }, last); }
     expect(last.statusCode).toBe(429);
   });
 });

@@ -370,5 +370,29 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "australian-small-headed-blind-snake": {
+    "scientific": "Anilios affinis",
+    "taxonId": 539262,
+    "taxonName": "Anilios affinis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-short-nosed-blind-snake": {
+    "scientific": "Anilios ammodytes",
+    "taxonId": 539263,
+    "taxonName": "Anilios ammodytes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "round-tailed-blind-snake": {
+    "scientific": "Anilios aspinus",
+    "taxonId": 539264,
+    "taxonName": "Anilios aspina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

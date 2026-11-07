@@ -756,5 +756,13 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "anilios-zonula": {
+    "scientific": "Anilios zonula",
+    "taxonId": 539307,
+    "taxonName": "Anilios zonula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

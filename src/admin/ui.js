@@ -45,7 +45,7 @@ export const badge = (tone = "grey") => {
   return { display: "inline-block", background: t.bg, color: t.fg, borderRadius: 6, padding: "2px 7px", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em" };
 };
 
-export const LICENCE_LABEL = { "cc0": "CC0", "cc-by": "CC BY", "cc-by-sa": "CC BY-SA", "permission": "Permission", "tester_consent": "Tester consent" };
+export const LICENCE_LABEL = { "cc0": "CC0", "cc-by": "CC BY", "cc-by-sa": "CC BY-SA", "permission": "Permission", "tester_consent": "Tester consent", "royalty_free": "Royalty-free stock" };
 export const STATUS_TONE = { active: "orange", hidden: "gold", rejected: "red" };
 
 export const fmtDate = (iso) => {

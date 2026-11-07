@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useCallback, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { C } from "./constants/colours";
 import SplashScreen from "./components/SplashScreen";
@@ -8,6 +8,7 @@ import LegalScreen from "./screens/LegalScreen";
 import GlossaryScreen from "./screens/GlossaryScreen";
 import SearchResults from "./screens/SearchResults";
 import { useBetaAccess } from "./beta/betaAccess";
+import { useAdminAccess } from "./beta/adminAccess";
 import ChildrensPythonPage from "./pages/species/snakes/ChildrensPythonPage";
 import StimsonsPythonPage from "./pages/species/snakes/StimsonsPythonPage";
 import SpottedPythonPage from "./pages/species/snakes/SpottedPythonPage";
@@ -67,6 +68,9 @@ import { CARE_GUIDES } from "./data/careGuides";
 // Closed beta (D9): the ID screen and feedback card load as a separate chunk,
 // fetched only once an invite code is verified, so the public bundle carries none of it.
 const IdentifyScreen = lazy(() => import("./screens/IdentifyScreen"));
+// Admin (interim, until D7): its own chunk, loaded only after /api/admin-check
+// confirms an is_admin code. No tab points to it; it lives at /admin.
+const AdminApp = lazy(() => import("./admin/AdminApp"));
 
 
 // ─── Page router map ──────────────────────────────────────────────
@@ -158,13 +162,17 @@ const DetailRoute = ({ table, onBack }) => {
   return <PageComponent onBack={onBack} />;
 };
 
+const AdminWait = () => <div style={{ padding: 24, fontSize: 13, color: "#888", fontFamily: "'DM Sans', system-ui, sans-serif" }}>Checking access…</div>;
+
 // ─── App shell (layout + routes) ──────────────────────────────────
 export function AppShell() {
-  const [showSplash, setShowSplash] = useState(true);
-  const [searchQuery, setSearchQuery] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname.replace(/\/+$/, "") || "/";
+  const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
+  // The admin tool skips the splash; the public app is unchanged.
+  const [showSplash, setShowSplash] = useState(() => !isAdminPath);
+  const [searchQuery, setSearchQuery] = useState("");
   // Taking ?invite= off the URL keeps the code out of history and screenshots.
   const beta = useBetaAccess(location.search, () => navigate("/id", { replace: true }));
   const betaOk = beta.status === "ok";
@@ -174,6 +182,14 @@ export function AppShell() {
   const idElement = betaOk
     ? <Suspense fallback={null}><IdentifyScreen inviteCode={beta.code} traitsBySpecies={beta.traits} onRevoked={() => { beta.revoke(); navigate("/", { replace: true }); }} /></Suspense>
     : beta.status === "checking" ? null : <Navigate to="/" replace />;
+
+  // /admin: only for a verified beta code whose tester is an admin; anyone else goes home.
+  const admin = useAdminAccess(beta.code, isAdminPath && betaOk);
+  const denyAdmin = admin.deny;
+  const leaveAdmin = useCallback(() => { denyAdmin(); navigate("/", { replace: true }); }, [denyAdmin, navigate]);
+  const adminElement = betaOk && admin.status === "ok"
+    ? <Suspense fallback={<AdminWait />}><AdminApp inviteCode={beta.code} adminId={admin.id} adminName={admin.name} onForbidden={leaveAdmin} /></Suspense>
+    : beta.status === "checking" || (betaOk && (admin.status === "checking" || admin.status === "idle")) ? <AdminWait /> : <Navigate to="/" replace />;
 
   // A detail page is any route that isn't one of the tab screens.
   const isTabPath = pathname in TAB_FOR_PATH;
@@ -200,6 +216,15 @@ export function AppShell() {
 
   if (showSplash) {
     return <SplashScreen onComplete={() => setShowSplash(false)} />;
+  }
+
+  // The admin tool has its own header and no tab bar.
+  if (isAdminPath) {
+    return (
+      <Routes>
+        <Route path="/admin/*" element={adminElement} />
+      </Routes>
+    );
   }
 
   return (

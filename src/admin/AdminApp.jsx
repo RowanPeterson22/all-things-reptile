@@ -1,0 +1,91 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { NavLink, Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { C } from "../constants/colours";
+import { makeApi } from "./api";
+import { searchText } from "./species";
+import { N } from "./ui";
+import LibraryScreen from "./LibraryScreen";
+import SpeciesPhotosScreen from "./SpeciesPhotosScreen";
+import AddPhotoScreen from "./AddPhotoScreen";
+import FeedbackScreen from "./FeedbackScreen";
+import TestersScreen from "./TestersScreen";
+import IndexScreen from "./IndexScreen";
+
+// ─── ATR admin (interim access: an is_admin beta tester, until D7) ─
+// Loaded as its own chunk, only after /api/admin-check says yes, so the public
+// bundle carries none of it. No tab points here: Rowan bookmarks /admin.
+// Every read and write goes through an api/admin-* route that re-checks access.
+
+const NAV = [
+  { to: "/admin", label: "Photos", end: true },
+  { to: "/admin/add", label: "Add photo" },
+  { to: "/admin/feedback", label: "Feedback" },
+  { to: "/admin/testers", label: "Testers" },
+  { to: "/admin/index", label: "Species index" },
+];
+
+const navStyle = ({ isActive }) => ({
+  color: isActive ? "white" : "rgba(255,255,255,0.7)", fontWeight: isActive ? 700 : 500, fontSize: 13,
+  textDecoration: "none", padding: "8px 2px 10px", borderBottom: `2px solid ${isActive ? "white" : "transparent"}`, whiteSpace: "nowrap",
+});
+
+const AdminApp = ({ inviteCode, adminId, adminName, onForbidden }) => {
+  const navigate = useNavigate();
+  // A ref keeps the client stable across renders, so screens don't reload when the parent re-renders.
+  const forbiddenRef = useRef(onForbidden);
+  forbiddenRef.current = onForbidden;
+  const api = useMemo(() => makeApi(inviteCode, () => forbiddenRef.current && forbiddenRef.current()), [inviteCode]);
+  const [data, setData] = useState(null); // { species, counts, morphs }
+  const [err, setErr] = useState("");
+
+  useEffect(() => {
+    let live = true;
+    api("admin-species")
+      .then(d => { if (live) setData({ ...d, species: d.species.map(r => ({ ...r, _q: searchText(r) })) }); })
+      .catch(e => { if (live) setErr(e.message); });
+    return () => { live = false; };
+  }, [api]);
+
+  const refreshCounts = useCallback(() => {
+    api("admin-species", { query: { only: "counts" } })
+      .then(d => setData(cur => (cur ? { ...cur, counts: d.counts } : cur)))
+      .catch(() => { /* counts refresh on the next load */ });
+  }, [api]);
+
+  const bySlug = useMemo(() => (data ? Object.fromEntries(data.species.map(r => [r.slug, r])) : {}), [data]);
+  const shared = data ? { api, species: data.species, bySlug, counts: data.counts, morphs: data.morphs, refreshCounts } : null;
+
+  return (
+    <div style={{ minHeight: "100vh", background: C.cream, fontFamily: "'DM Sans', system-ui, sans-serif", color: N.ink }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 16px 0", position: "sticky", top: 0, zIndex: 10 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, maxWidth: 960, margin: "0 auto" }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: 17, fontWeight: 700, color: "white" }}>ATR Admin</div>
+            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)" }}>{adminName ? `Signed in as ${adminName}` : "Private"}</div>
+          </div>
+          <button type="button" onClick={() => navigate("/")} style={{ background: "rgba(255,255,255,0.15)", border: "none", color: "white", borderRadius: 8, padding: "6px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Back to app</button>
+        </div>
+        <nav style={{ display: "flex", gap: 18, overflowX: "auto", maxWidth: 960, margin: "6px auto 0", WebkitOverflowScrolling: "touch" }}>
+          {NAV.map(n => <NavLink key={n.to} to={n.to} end={n.end} style={navStyle}>{n.label}</NavLink>)}
+        </nav>
+      </div>
+
+      {err && <div style={{ padding: 16, color: C.red, fontSize: 13 }}>{err}</div>}
+      {!shared && !err && <div style={{ padding: 16, color: N.muted, fontSize: 13 }}>Loading the species index…</div>}
+      {shared && (
+        <Routes>
+          <Route index element={<LibraryScreen {...shared} />} />
+          <Route path="species/:slug" element={<SpeciesPhotosScreen {...shared} />} />
+          <Route path="add" element={<AddPhotoScreen {...shared} />} />
+          <Route path="feedback" element={<FeedbackScreen {...shared} />} />
+          <Route path="testers" element={<TestersScreen api={api} adminId={adminId} />} />
+          <Route path="index" element={<IndexScreen {...shared} />} />
+          <Route path="index/:slug" element={<IndexScreen {...shared} />} />
+          <Route path="*" element={<Navigate to="/admin" replace />} />
+        </Routes>
+      )}
+    </div>
+  );
+};
+
+export default AdminApp;

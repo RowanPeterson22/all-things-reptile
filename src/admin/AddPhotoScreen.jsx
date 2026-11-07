@@ -1,0 +1,161 @@
+import { useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import SpeciesPicker from "./SpeciesPicker";
+import WarnBox from "../components/WarnBox";
+import { toLibraryJpeg, MAX_EDGE } from "./image";
+import { N, page, btn, chip, input, label, hint, errorText, LICENCE_LABEL } from "./ui";
+
+export const LICENCES = ["cc0", "cc-by", "cc-by-sa", "permission", "tester_consent"];
+const isWebUrl = (u) => { try { const x = new URL(u); return x.protocol === "https:" || x.protocol === "http:"; } catch (e) { return false; } };
+
+// Mirrors validateUpload() in lib/adminPhotos.js (the server is the real check).
+// → { field: message } for every problem; empty when it can be saved.
+export const validateAddForm = (f) => {
+  const e = {};
+  if (!f.speciesSlug) e.speciesSlug = "Choose the species.";
+  if (!f.photo) e.photo = "Choose a photo.";
+  if (!String(f.photographer || "").trim()) e.photographer = "Photographer is required.";
+  if (!f.licence) e.licence = "Choose a licence.";
+  else if (!LICENCES.includes(f.licence)) e.licence = "Choose a licence from the list.";
+  const url = String(f.sourceUrl || "").trim();
+  const note = String(f.permissionNote || "").trim();
+  if (url && !isWebUrl(url)) e.sourceUrl = "Use a full web address (https://…).";
+  if (!url && !note) e.source = "Add the source URL or a note on the permission.";
+  if (f.licence === "permission" && !note) e.permissionNote = "Note who gave permission, and how.";
+  return e;
+};
+
+const EMPTY = { photographer: "", licence: "", sourceUrl: "", permissionNote: "", notes: "", traits: [] };
+
+// ─── Add a photo to a species ─────────────────────────────────────
+const AddPhotoScreen = ({ api, species, bySlug, morphs, refreshCounts }) => {
+  const [params] = useSearchParams();
+  const navigate = useNavigate();
+  const initial = params.get("species");
+  const [speciesSlug, setSpeciesSlug] = useState(initial && bySlug[initial] ? initial : null);
+  const [form, setForm] = useState(EMPTY);
+  const [photo, setPhoto] = useState(null); // { dataUrl, width, height, bytes }
+  const [prepErr, setPrepErr] = useState("");
+  const [tried, setTried] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [saveErr, setSaveErr] = useState("");
+  const [saved, setSaved] = useState(null);
+
+  const set = (patch) => setForm(f => ({ ...f, ...patch }));
+  const sp = speciesSlug && bySlug[speciesSlug];
+  const traitOptions = (sp && sp.appSlug && morphs[sp.appSlug]) || [];
+  const errors = validateAddForm({ ...form, speciesSlug, photo: photo && photo.dataUrl });
+  const ok = Object.keys(errors).length === 0;
+  const show = (k) => tried && errors[k] ? <div style={errorText}>{errors[k]}</div> : null;
+
+  const pick = async (file) => {
+    setPrepErr(""); setPhoto(null);
+    if (!file) return;
+    try { setPhoto(await toLibraryJpeg(file)); }
+    catch (e) { setPrepErr(e.message === "too-large" ? "That photo is still over 2 MB after resizing." : "That file couldn't be read as a photo."); }
+  };
+
+  const save = async () => {
+    setTried(true); setSaveErr("");
+    if (!ok) return;
+    setSaving(true);
+    try {
+      const { photo: row } = await api("admin-photos", { method: "POST", body: {
+        speciesSlug, photo: photo.dataUrl, photographer: form.photographer, licence: form.licence,
+        sourceUrl: form.sourceUrl, permissionNote: form.permissionNote, notes: form.notes, traits: form.traits,
+      } });
+      setSaved(row); refreshCounts();
+    } catch (e) { setSaveErr(e.message); } finally { setSaving(false); }
+  };
+
+  if (saved) {
+    return (
+      <div style={page}>
+        <WarnBox type="green" title="Saved to the library">{bySlug[saved.species_slug] ? bySlug[saved.species_slug].common : saved.species_slug} · {saved.photographer} · {LICENCE_LABEL[saved.licence]}</WarnBox>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <button type="button" onClick={() => { setSaved(null); setPhoto(null); setForm(f => ({ ...EMPTY, photographer: f.photographer, licence: f.licence })); setTried(false); }} style={btn("primary")}>Add another</button>
+          <button type="button" onClick={() => navigate(`/admin/species/${saved.species_slug}`)} style={btn("ghost")}>View species</button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ ...page, maxWidth: 560 }}>
+      <div style={{ fontSize: 18, fontWeight: 700, color: N.ink, marginBottom: 12 }}>Add a photo</div>
+
+      <div style={{ marginBottom: 14 }}>
+        <span style={label}>Species</span>
+        <SpeciesPicker species={species} value={speciesSlug} onChange={setSpeciesSlug} />
+        {show("speciesSlug")}
+      </div>
+
+      <div style={{ marginBottom: 14 }}>
+        <span style={label}>Photo</span>
+        <input type="file" accept="image/jpeg,image/*" onChange={e => pick(e.target.files && e.target.files[0])} aria-label="Photo file" style={{ fontSize: 14 }} />
+        <div style={hint}>Resized to {MAX_EDGE} px on the long edge and saved as a JPEG with the location and camera data removed.</div>
+        {prepErr && <div style={errorText}>{prepErr}</div>}
+        {photo && (
+          <div style={{ marginTop: 8 }}>
+            <img src={photo.dataUrl} alt="Preview" style={{ maxWidth: "100%", maxHeight: 260, borderRadius: 10, display: "block" }} />
+            <div style={hint}>{photo.width}×{photo.height} · {(photo.bytes / 1024).toFixed(0)} KB</div>
+          </div>
+        )}
+        {show("photo")}
+      </div>
+
+      <div style={{ marginBottom: 14 }}>
+        <label style={label} htmlFor="adm-photographer">Photographer *</label>
+        <input id="adm-photographer" value={form.photographer} onChange={e => set({ photographer: e.target.value })} maxLength={300} style={input} />
+        {show("photographer")}
+      </div>
+
+      <div style={{ marginBottom: 14 }}>
+        <span style={label}>Licence *</span>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          {LICENCES.map(l => <button key={l} type="button" onClick={() => set({ licence: l })} style={chip(form.licence === l)}>{LICENCE_LABEL[l]}</button>)}
+        </div>
+        <div style={hint}>Never use NC, ND or all-rights-reserved photos. “Permission” means the photographer agreed directly.</div>
+        {show("licence")}
+      </div>
+
+      <div style={{ marginBottom: 14 }}>
+        <label style={label} htmlFor="adm-source">Source URL</label>
+        <input id="adm-source" type="url" inputMode="url" value={form.sourceUrl} onChange={e => set({ sourceUrl: e.target.value })} placeholder="https://…" maxLength={1000} style={input} />
+        {show("sourceUrl")}
+      </div>
+
+      <div style={{ marginBottom: 14 }}>
+        <label style={label} htmlFor="adm-permission">Permission note{form.licence === "permission" ? " *" : ""}</label>
+        <textarea id="adm-permission" value={form.permissionNote} onChange={e => set({ permissionNote: e.target.value })} rows={2} maxLength={1000} placeholder="Who agreed, how and when (e.g. email from J. Smith, 6 Nov 2026)" style={{ ...input, resize: "vertical" }} />
+        {show("permissionNote")}
+        {show("source")}
+      </div>
+
+      {traitOptions.length > 0 && (
+        <div style={{ marginBottom: 14 }}>
+          <span style={label}>Traits</span>
+          <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+            {traitOptions.map(t => {
+              const on = form.traits.includes(t.id);
+              return <button key={t.id} type="button" title={t.cue} onClick={() => set({ traits: on ? form.traits.filter(x => x !== t.id) : [...form.traits, t.id] })} style={{ ...chip(on), padding: "4px 9px", fontSize: 11 }}>{t.name}</button>;
+            })}
+          </div>
+        </div>
+      )}
+
+      <div style={{ marginBottom: 16 }}>
+        <label style={label} htmlFor="adm-notes">Notes</label>
+        <textarea id="adm-notes" value={form.notes} onChange={e => set({ notes: e.target.value })} rows={2} maxLength={1500} style={{ ...input, resize: "vertical" }} />
+      </div>
+
+      {saveErr && <div style={{ ...errorText, marginBottom: 8 }}>{saveErr}</div>}
+      <button type="button" onClick={save} disabled={saving} style={{ ...btn("primary", saving || (tried && !ok)), width: "100%", minHeight: 44 }}>
+        {saving ? "Saving…" : "Save to library"}
+      </button>
+      {!tried && !ok && <div style={{ ...hint, textAlign: "center" }}>Photographer, licence and a source URL or permission note are required.</div>}
+    </div>
+  );
+};
+
+export default AddPhotoScreen;

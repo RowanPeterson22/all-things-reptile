@@ -5,6 +5,7 @@ import { MemoryRouter } from "react-router-dom";
 import { AppShell } from "../App";
 import { checkCode, inviteFromSearch, readCode, STORAGE_KEY } from "../beta/betaAccess";
 import IdFeedbackCard, { CONSENT_LABEL, CONSENT_TEXT } from "../components/IdFeedbackCard";
+import { clearSession } from "../beta/idSession";
 
 const CODE = "b".repeat(43);
 const okRes = (body) => ({ ok: true, status: 200, json: async () => body });
@@ -20,7 +21,7 @@ const renderAt = async (path) => {
   return utils;
 };
 
-beforeEach(() => { window.localStorage.clear(); global.fetch = jest.fn(); });
+beforeEach(() => { window.localStorage.clear(); clearSession(); global.fetch = jest.fn(); });
 afterEach(() => { delete global.fetch; });
 
 describe("betaAccess helpers", () => {
@@ -113,5 +114,35 @@ describe("IdFeedbackCard", () => {
     expect(screen.getByText("Send feedback").closest("button")).toBeDisabled();
     fireEvent.change(screen.getByLabelText("Notes"), { target: { value: "Juvenile Eastern Beardie" } });
     expect(screen.getByText("Send feedback").closest("button")).not.toBeDisabled();
+  });
+});
+
+describe("ID results survive a trip to a care guide", () => {
+  test("care guide Back returns to the filled-in results and feedback", async () => {
+    const result = { suggestions: [{ name: "Central Bearded Dragon", latin: "Pogona vitticeps", slug: "central-bearded-dragon", inApp: true, confidence: "likely", traits: [] }], note: "" };
+    window.localStorage.setItem(STORAGE_KEY, CODE);
+    global.fetch = jest.fn(async (url) => (String(url).includes("identify") ? okRes(result) : okRes({ ok: true, name: "Rowan", traits: TRAITS })));
+    const { container } = await renderAt("/id");
+
+    // Pick a photo (decode stubbed) and identify.
+    const OrigImage = global.Image;
+    global.Image = class { set src(_) { this.naturalWidth = 10; this.naturalHeight = 10; setTimeout(() => this.onload(), 0); } };
+    global.URL.createObjectURL = () => "blob:x"; global.URL.revokeObjectURL = () => {};
+    HTMLCanvasElement.prototype.getContext = () => ({ drawImage: () => {} });
+    HTMLCanvasElement.prototype.toDataURL = () => "data:image/jpeg;base64,AAAA";
+    const input = container.querySelector('input[type="file"]');
+    await act(async () => { fireEvent.change(input, { target: { files: [new File(["x"], "d.jpg", { type: "image/jpeg" })] } }); await new Promise(r => setTimeout(r, 5)); });
+    global.Image = OrigImage;
+    await act(async () => { fireEvent.click(screen.getByText(/^Identify/)); await Promise.resolve(); await Promise.resolve(); });
+    await act(async () => { fireEvent.click(screen.getByText("Partly")); });
+
+    // Open the care guide, then come back.
+    await act(async () => { fireEvent.click(screen.getByText(/View care guide/)); });
+    const back = screen.getByText("‹ Back to ID results");
+    await act(async () => { fireEvent.click(back); });
+
+    expect(screen.getByText(/View care guide/)).toBeInTheDocument();
+    expect(screen.getByText("Partly").style.background).not.toBe("white");
+    expect(screen.queryByText(/Identify a reptile or frog/)).toBeNull();
   });
 });

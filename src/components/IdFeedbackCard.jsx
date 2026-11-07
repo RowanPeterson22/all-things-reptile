@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { C } from "../constants/colours";
 import WarnBox from "./WarnBox";
 import { SPECIES } from "../data/species";
 import { BETA_HEADER } from "../beta/betaAccess";
+import { useSessionState } from "../beta/idSession";
 
 // ─── AI ID beta feedback card ─────────────────────────────────────
 // "Was this right?" → verdict, correct species, traits, notes, and an opt-in
@@ -31,16 +32,21 @@ const chip = (on) => ({
   borderRadius: 8, padding: "5px 9px", fontSize: 12, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit",
 });
 
-const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRevoked }) => {
+const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRevoked, runId = 0 }) => {
   const top = (result && result.suggestions && result.suggestions[0]) || null;
-  const [verdict, setVerdict] = useState("");
-  const [species, setSpecies] = useState(top && top.inApp && top.slug ? top.slug : "");
-  const [otherName, setOtherName] = useState("");
-  const [traits, setTraits] = useState(() => (top && top.traits ? top.traits.map(t => t.id) : []));
-  const [notes, setNotes] = useState("");
-  const [consent, setConsent] = useState(false);
-  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
-  const [error, setError] = useState("");
+  // Kept per result in memory, so a half-filled (or sent) card survives a trip
+  // to a care guide and back.
+  const k = (name) => `fb:${runId}:${name}`;
+  const [verdict, setVerdict] = useSessionState(k("verdict"), "");
+  const [species, setSpecies] = useSessionState(k("species"), top && top.inApp && top.slug ? top.slug : "");
+  const [otherName, setOtherName] = useSessionState(k("otherName"), "");
+  const [traits, setTraits] = useSessionState(k("traits"), () => (top && top.traits ? top.traits.map(t => t.id) : []));
+  const [notes, setNotes] = useSessionState(k("notes"), "");
+  const [consent, setConsent] = useSessionState(k("consent"), false);
+  const [status, setStatus] = useSessionState(k("status"), "idle"); // idle | sending | sent | error
+  const [error, setError] = useSessionState(k("error"), "");
+  // A send interrupted by leaving the screen didn't finish; let them send again.
+  useEffect(() => { if (status === "sending") setStatus("idle"); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const traitOptions = useMemo(() => traitsBySpecies[species] || [], [traitsBySpecies, species]);
 

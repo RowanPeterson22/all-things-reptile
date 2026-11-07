@@ -218,7 +218,7 @@ describe("admin gate", () => {
   });
 
   test("admin-check names the admin; 503 when Supabase isn't configured", async () => {
-    expect((await call(checkHandler, { method: "POST", body: {} })).body).toEqual({ ok: true, name: "Rowan Peterson" });
+    expect((await call(checkHandler, { method: "POST", body: {} })).body).toEqual({ ok: true, id: ADMIN_ID, name: "Rowan Peterson" });
     delete process.env.SUPABASE_SECRET_KEY;
     expect((await call(checkHandler, { method: "POST", body: {} })).statusCode).toBe(503);
   });
@@ -235,6 +235,8 @@ describe("admin gate", () => {
     expect(r.body.species.length).toBeGreaterThan(1300);
     expect(r.body.counts["central-bearded-dragon"]).toEqual({ active: 1, hidden: 0, rejected: 0, best: 1 });
     expect(r.body.morphs["central-bearded-dragon"].length).toBeGreaterThan(0);
+    const counts = await call(speciesHandler, { query: { only: "counts" } });
+    expect(Object.keys(counts.body)).toEqual(["counts"]);
   });
 });
 

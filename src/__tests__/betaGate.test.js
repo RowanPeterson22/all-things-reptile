@@ -146,3 +146,20 @@ describe("ID results survive a trip to a care guide", () => {
     expect(screen.queryByText(/Identify a reptile or frog/)).toBeNull();
   });
 });
+
+describe("Feedback species list", () => {
+  test("a suggestion that isn't an app species fills in Other with its name", () => {
+    const result = { suggestions: [
+      { name: "Eastern Water Dragon", latin: "Intellagama lesueurii", slug: "eastern-water-dragon", inApp: true, confidence: "likely", traits: [] },
+      { name: "Jacky Dragon", latin: "Amphibolurus muricatus", inApp: false, confidence: "unlikely", traits: [] },
+    ] };
+    render(<IdFeedbackCard result={result} photo={null} inviteCode={CODE} traitsBySpecies={{}} />);
+    fireEvent.click(screen.getByText("Wrong"));
+    const select = screen.getByLabelText("What is it actually?");
+    expect(screen.getByText("Jacky Dragon (not in the app)")).toBeInTheDocument();
+    fireEvent.change(select, { target: { value: "ai:1" } });
+    expect(select.value).toBe("other");
+    expect(screen.getByLabelText("Species name").value).toBe("Jacky Dragon (Amphibolurus muricatus)");
+    expect(screen.getByText("Send feedback").disabled).toBe(false);
+  });
+});

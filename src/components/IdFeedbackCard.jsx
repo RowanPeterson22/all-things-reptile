@@ -50,7 +50,16 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
 
   const traitOptions = useMemo(() => traitsBySpecies[species] || [], [traitsBySpecies, species]);
 
-  const chooseSpecies = (slug) => {
+  // The AI's own suggestions go at the top of the list. One that isn't an app
+  // species (e.g. Jacky Dragon) fills in "Other" with its name in one tap.
+  const suggested = (result && result.suggestions) || [];
+  const chooseSpecies = (value) => {
+    if (value.startsWith("ai:")) {
+      const s = suggested[Number(value.slice(3))];
+      if (s) setOtherName(s.latin ? `${s.name} (${s.latin})` : s.name);
+      value = "other";
+    }
+    const slug = value;
     setSpecies(slug);
     // Keep only traits that exist for the new species.
     const allowed = new Set((traitsBySpecies[slug] || []).map(t => t.id));
@@ -117,8 +126,19 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
           <label htmlFor="fb-species" style={{ ...label, display: "block" }}>{verdict === "correct" ? "Species" : "What is it actually?"}</label>
           <select id="fb-species" value={species} onChange={e => chooseSpecies(e.target.value)} style={field}>
             <option value="">Not sure</option>
-            {SPECIES_OPTIONS.map(s => <option key={s.slug} value={s.slug}>{s.name}</option>)}
-            <option value="other">Other (not in the app)</option>
+            {suggested.length > 0 && (
+              <optgroup label="From the suggestions">
+                {suggested.map((s, i) => (s.inApp && s.slug
+                  ? <option key={`s${i}`} value={s.slug}>{s.name}</option>
+                  : <option key={`s${i}`} value={`ai:${i}`}>{s.name} (not in the app)</option>))}
+              </optgroup>
+            )}
+            <optgroup label="Not listed">
+              <option value="other">Other — type the name</option>
+            </optgroup>
+            <optgroup label="All app species">
+              {SPECIES_OPTIONS.map(s => <option key={s.slug} value={s.slug}>{s.name}</option>)}
+            </optgroup>
           </select>
           {species === "other" && (
             <input aria-label="Species name" placeholder="Common or latin name" value={otherName} maxLength={120} onChange={e => setOtherName(e.target.value)} style={{ ...field, marginTop: 8 }} />

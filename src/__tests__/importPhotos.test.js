@@ -61,6 +61,15 @@ describe("licence filter", () => {
     expect(rejected).toEqual({ "licence-cc-by-nc": 2, "licence-cc-by-nd": 1, "licence-cc-by-nc-sa": 1, "licence-unknown": 2 });
   });
 
+  test("skips non-JPEG photos (iNaturalist serves some as PNG) before they take a slot", () => {
+    const png = photo(52, "cc-by", { url: "https://inaturalist-open-data.s3.amazonaws.com/photos/52/square.png" });
+    const jpegExt = photo(53, "cc0", { url: "https://inaturalist-open-data.s3.amazonaws.com/photos/53/square.jpeg" });
+    const { candidates, rejected } = extractCandidates([obs(5, [photo(51, "cc-by"), png, jpegExt])]);
+    expect(candidates.map((c) => c.photoId)).toEqual(["51", "53"]);
+    expect(candidates[1].url).toBe("https://inaturalist-open-data.s3.amazonaws.com/photos/53/medium.jpeg");
+    expect(rejected).toEqual({ "not-jpeg": 1 });
+  });
+
   test("isAllowedLicence rejects everything else", () => {
     for (const ok of ["cc0", "cc-by", "cc-by-sa", "CC-BY"]) expect(isAllowedLicence(ok)).toBe(true);
     for (const no of ["cc-by-nc", "cc-by-nd", "cc-by-nc-nd", "cc-by-nc-sa", "", null, undefined, "c", "all rights reserved", "pd"]) {

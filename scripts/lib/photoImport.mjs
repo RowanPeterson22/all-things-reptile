@@ -217,6 +217,9 @@ export const extractCandidates = (observations) => {
       if (!ALLOWED_LICENCES.includes(licence)) return reject(`licence-${licence}`);
       const url = mediumUrl(p.url);
       if (!url) return reject("no-url");
+      // The bucket is JPEG only. iNaturalist also serves some photos as PNG
+      // (".../square.png"); drop them here so another photo takes the slot.
+      if (!/\.jpe?g(\?.*)?$/i.test(url)) return reject("not-jpeg");
       const photographer = photographerFrom(p, user);
       if (!photographer) return reject("no-photographer");
       candidates.push({

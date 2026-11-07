@@ -128,28 +128,55 @@ export const taxaUrl = (name) =>
 const lc = (s) => String(s || "").trim().toLowerCase();
 const OK_ICONIC = new Set(["Reptilia", "Amphibia"]);
 
+// Rank levels as iNaturalist uses them (species 10, subspecies 5, genus 20).
+const RANK_LEVELS = { genus: 20, subgenus: 15, complex: 11, species: 10, hybrid: 10, subspecies: 5, variety: 5, form: 5 };
+const rankLevel = (r) => (Number.isFinite(r.rank_level) ? r.rank_level : RANK_LEVELS[lc(r.rank)]);
+
+// "Nephrurus spp." / "Nephrurus sp." name a whole genus.
+export const genusQuery = (name) => {
+  const m = String(name || "").trim().match(/^([A-Z][a-z]+)\s+spp?\.?$/);
+  return m ? m[1] : null;
+};
+
 // Picks the taxon whose name (or the term iNaturalist matched, which covers
-// synonyms) is exactly this name, and that is a reptile or amphibian.
+// synonyms) is exactly this name, and that is a reptile or amphibian at the
+// right rank: a genus for "Genus spp.", otherwise species or below. Without
+// the rank check, "Litoria fallax" matched the family Pelodryadidae, whose
+// matched_term is that name.
 export const pickTaxon = (results, name) => {
-  const want = lc(name);
-  const ok = (r) => r && r.id && (!r.iconic_taxon_name || OK_ICONIC.has(r.iconic_taxon_name));
+  const genus = genusQuery(name);
+  const want = lc(genus || name);
+  const rankOk = (r) => {
+    const lvl = rankLevel(r);
+    if (lvl === undefined) return !genus; // tests and old payloads: no rank given
+    return genus ? lvl === 20 : lvl <= 10;
+  };
+  const ok = (r) => r && r.id && (!r.iconic_taxon_name || OK_ICONIC.has(r.iconic_taxon_name)) && rankOk(r);
   return (results || []).find((r) => ok(r) && lc(r.name) === want)
     || (results || []).find((r) => ok(r) && lc(r.matched_term) === want)
     || null;
 };
 
-export const resolveTaxon = async (client, species, cache, { refresh = false } = {}) => {
+// otherNames: scientific names of the OTHER species in the list. A synonym
+// match that lands on one of them means iNaturalist has lumped this species
+// into that one (e.g. Antaresia stimsoni → A. childreni). Its photos would be
+// the other species', so it counts as no taxon, with the reason recorded.
+export const resolveTaxon = async (client, species, cache, { refresh = false, otherNames = new Set() } = {}) => {
   const hit = cache[species.slug];
   if (!refresh && hit && hit.scientific === species.scientific) return hit;
   const names = [species.scientific, ...(species.synonyms || [])].filter(Boolean);
   let entry = { scientific: species.scientific, taxonId: null, taxonName: null, rank: null, via: null, resolvedAt: new Date().toISOString().slice(0, 10) };
   for (const name of names) {
-    const data = await client.getJson(taxaUrl(name));
+    const data = await client.getJson(taxaUrl(genusQuery(name) || name));
     const t = pickTaxon(data && data.results, name);
-    if (t) {
-      entry = { ...entry, taxonId: t.id, taxonName: t.name, rank: t.rank || null, via: name === species.scientific ? "scientific" : `synonym:${name}` };
-      break;
+    if (!t) continue;
+    if (lc(t.name) !== lc(species.scientific) && otherNames.has(lc(t.name))) {
+      entry = { ...entry, lumpedInto: t.name, lumpedTaxonId: t.id };
+      continue;
     }
+    entry = { ...entry, taxonId: t.id, taxonName: t.name, rank: t.rank || null, via: name === species.scientific ? "scientific" : `synonym:${name}` };
+    delete entry.lumpedInto; delete entry.lumpedTaxonId;
+    break;
   }
   cache[species.slug] = entry;
   return entry;
@@ -385,10 +412,16 @@ export const importSpecies = async (ctx, species) => {
 
   if (target === 0) { rep.skipped = `already has ${have}`; return rep; }
 
-  const taxon = await resolveTaxon(client, species, taxaCache, { refresh: opts.refreshTaxa });
+  const otherNames = new Set([...(ctx.allScientific || [])].filter((n) => n !== lc(species.scientific)));
+  const taxon = await resolveTaxon(client, species, taxaCache, { refresh: opts.refreshTaxa, otherNames });
   rep.taxonId = taxon.taxonId;
   rep.resolvedVia = taxon.via;
-  if (!taxon.taxonId) { rep.errors.push("no iNaturalist taxon for scientific name or synonyms"); return rep; }
+  if (!taxon.taxonId) {
+    rep.errors.push(taxon.lumpedInto
+      ? `iNaturalist lumps this species into ${taxon.lumpedInto} (another species in the list); not imported`
+      : "no iNaturalist taxon for scientific name or synonyms");
+    return rep;
+  }
 
   const perPage = Math.min(200, Math.max(50, target * 4));
   let candidates = [];
@@ -541,7 +574,8 @@ export const run = async (opts, {
   }
 
   const report = { startedAt: new Date().toISOString(), dryRun: !!opts.dryRun, options: opts, stoppedEarly: null, species: [] };
-  const ctx = { client, cfg, fetchImpl, existing, taxaCache, opts };
+  const allScientific = new Set(all.map((sp) => lc(sp.scientific)).filter(Boolean));
+  const ctx = { client, cfg, fetchImpl, existing, taxaCache, opts, allScientific };
   log(`${opts.dryRun ? "Dry run: " : ""}${list.length} species, up to ${opts.perSpecies} photos each.`);
 
   for (const [i, sp] of list.entries()) {

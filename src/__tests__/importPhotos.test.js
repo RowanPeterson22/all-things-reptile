@@ -135,6 +135,40 @@ describe("taxon resolution", () => {
     expect(fetchImpl).toHaveBeenCalledTimes(4); // name changed → re-resolved
   });
 
+  test("needs species rank or below for a binomial (Litoria fallax matched a family)", () => {
+    const results = [
+      { id: 554973, name: "Pelodryadidae", rank: "family", rank_level: 30, matched_term: "Litoria fallax", iconic_taxon_name: "Amphibia" },
+      { id: 1632579, name: "Drymomantis fallax", rank: "species", rank_level: 10, matched_term: "Litoria fallax", iconic_taxon_name: "Amphibia" },
+    ];
+    expect(pickTaxon(results, "Litoria fallax").id).toBe(1632579);
+    expect(pickTaxon(results.slice(0, 1), "Litoria fallax")).toBeNull();
+  });
+
+  test("'Genus spp.' resolves to the genus, not a species that once sat in it", async () => {
+    const results = [
+      { id: 33535, name: "Underwoodisaurus milii", rank: "species", rank_level: 10, matched_term: "Nephrurus milii", iconic_taxon_name: "Reptilia" },
+      { id: 34188, name: "Nephrurus", rank: "genus", rank_level: 20, matched_term: "Nephrurus", iconic_taxon_name: "Reptilia" },
+    ];
+    expect(pickTaxon(results, "Nephrurus spp.").id).toBe(34188);
+    const fetchImpl = jest.fn(async () => res(200, { results }));
+    const t = await resolveTaxon(createInatClient({ fetchImpl, sleep: noSleep }), { slug: "knob-tailed-gecko", scientific: "Nephrurus spp." }, {});
+    expect(new URL(fetchImpl.mock.calls[0][0]).searchParams.get("q")).toBe("Nephrurus");
+    expect(t).toMatchObject({ taxonId: 34188, rank: "genus", via: "scientific" });
+  });
+
+  test("a synonym match that lands on another listed species counts as lumped, not a match", async () => {
+    const fetchImpl = jest.fn(async () => res(200, { results: [
+      { id: 94205, name: "Antaresia childreni", rank: "species", rank_level: 10, matched_term: "Antaresia stimsoni stimsoni", iconic_taxon_name: "Reptilia" },
+    ] }));
+    const client = createInatClient({ fetchImpl, sleep: noSleep });
+    const sp = { slug: "stimsons-python", scientific: "Antaresia stimsoni", synonyms: ["Antaresia stimsoni stimsoni"] };
+    const t = await resolveTaxon(client, sp, {}, { otherNames: new Set(["antaresia childreni"]) });
+    expect(t).toMatchObject({ taxonId: null, lumpedInto: "Antaresia childreni" });
+    // Without that other species in the list, iNaturalist's synonym stands.
+    const t2 = await resolveTaxon(client, sp, {}, { otherNames: new Set() });
+    expect(t2).toMatchObject({ taxonId: 94205, via: "synonym:Antaresia stimsoni stimsoni" });
+  });
+
   test("ignores a same-named non-reptile and partial matches", () => {
     expect(pickTaxon([{ id: 1, name: "Morelia spilota", iconic_taxon_name: "Plantae" }], "Morelia spilota")).toBeNull();
     expect(pickTaxon([{ id: 2, name: "Morelia spilota variegata", iconic_taxon_name: "Reptilia" }], "Morelia spilota")).toBeNull();

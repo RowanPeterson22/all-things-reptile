@@ -764,5 +764,1241 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "brown-tree-snake": {
+    "scientific": "Boiga irregularis",
+    "taxonId": 27686,
+    "taxonName": "Boiga irregularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-tree-snake": {
+    "scientific": "Dendrelaphis calligaster",
+    "taxonId": 539607,
+    "taxonName": "Dendrelaphis calligaster",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-tree-snake": {
+    "scientific": "Dendrelaphis punctulatus",
+    "taxonId": 26638,
+    "taxonName": "Dendrelaphis punctulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slaty-grey-snake": {
+    "scientific": "Stegonotus australis",
+    "taxonId": 797762,
+    "taxonName": "Stegonotus australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "keelback": {
+    "scientific": "Tropidonophis mairii",
+    "taxonId": 114571,
+    "taxonName": "Tropidonophis mairii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "australian-bockadam": {
+    "scientific": "Cerberus australis",
+    "taxonId": 97040,
+    "taxonName": "Cerberus australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-bellied-mangrove-snake": {
+    "scientific": "Fordonia leucobalia",
+    "taxonId": 30089,
+    "taxonName": "Fordonia leucobalia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "broome-mangrove-snake": {
+    "scientific": "Myron resetari",
+    "taxonId": 146298,
+    "taxonName": "Myron resetari",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "richardsons-mangrove-snake": {
+    "scientific": "Myron richardsonii",
+    "taxonId": 29361,
+    "taxonName": "Myron richardsonii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "macleays-water-snake": {
+    "scientific": "Pseudoferania polylepis",
+    "taxonId": 146390,
+    "taxonName": "Pseudoferania polylepis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "freshwater-crocodile": {
+    "scientific": "Crocodylus johnstoni",
+    "taxonId": 26079,
+    "taxonName": "Crocodylus johnstoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saltwater-crocodile": {
+    "scientific": "Crocodylus porosus",
+    "taxonId": 26068,
+    "taxonName": "Crocodylus porosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arafura-file-snake": {
+    "scientific": "Acrochordus arafurae",
+    "taxonId": 26184,
+    "taxonName": "Acrochordus arafurae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "little-file-snake": {
+    "scientific": "Acrochordus granulatus",
+    "taxonId": 26182,
+    "taxonName": "Acrochordus granulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eared-worm-lizard": {
+    "scientific": "Aprasia aurita",
+    "taxonId": 36960,
+    "taxonName": "Aprasia aurita",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "batavia-coast-worm-lizard": {
+    "scientific": "Aprasia clairae",
+    "taxonId": 539361,
+    "taxonName": "Aprasia clairae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shark-bay-worm-lizard": {
+    "scientific": "Aprasia haroldi",
+    "taxonId": 36959,
+    "taxonName": "Aprasia haroldi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-tailed-worm-lizard": {
+    "scientific": "Aprasia inaurita",
+    "taxonId": 36958,
+    "taxonName": "Aprasia inaurita",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gnaraloo-worm-lizard": {
+    "scientific": "Aprasia litorea",
+    "taxonId": 539362,
+    "taxonName": "Aprasia litorea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pink-tailed-worm-lizard": {
+    "scientific": "Aprasia parapulchella",
+    "taxonId": 36957,
+    "taxonName": "Aprasia parapulchella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-headed-worm-lizard": {
+    "scientific": "Aprasia picturata",
+    "taxonId": 36956,
+    "taxonName": "Aprasia picturata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "flinders-ranges-worm-lizard": {
+    "scientific": "Aprasia pseudopulchella",
+    "taxonId": 36955,
+    "taxonName": "Aprasia pseudopulchella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-granite-worm-lizard": {
+    "scientific": "Aprasia pulchella",
+    "taxonId": 36954,
+    "taxonName": "Aprasia pulchella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southwestern-sandplain-worm-lizard": {
+    "scientific": "Aprasia repens",
+    "taxonId": 36953,
+    "taxonName": "Aprasia repens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ningaloo-worm-lizard": {
+    "scientific": "Aprasia rostrata",
+    "taxonId": 36952,
+    "taxonName": "Aprasia rostrata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "zuytdorp-worm-lizard": {
+    "scientific": "Aprasia smithi",
+    "taxonId": 36951,
+    "taxonName": "Aprasia smithi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "striated-worm-lizard": {
+    "scientific": "Aprasia striolata",
+    "taxonId": 36950,
+    "taxonName": "Aprasia striolata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wicherina-worm-lizard": {
+    "scientific": "Aprasia wicherina",
+    "taxonId": 539363,
+    "taxonName": "Aprasia wicherina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "marble-headed-snake-lizard": {
+    "scientific": "Delma australis",
+    "taxonId": 36944,
+    "taxonName": "Delma australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rusty-topped-snake-lizard": {
+    "scientific": "Delma borea",
+    "taxonId": 36943,
+    "taxonName": "Delma borea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spinifex-snake-lizard": {
+    "scientific": "Delma butleri",
+    "taxonId": 36942,
+    "taxonName": "Delma butleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "javelin-legless-lizard": {
+    "scientific": "Delma concinna",
+    "taxonId": 36945,
+    "taxonName": "Delma concinna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-snake-lizard": {
+    "scientific": "Delma desmosa",
+    "taxonId": 99155,
+    "taxonName": "Delma desmosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-snake-lizard": {
+    "scientific": "Delma elegans",
+    "taxonId": 36938,
+    "taxonName": "Delma elegans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southwestern-snake-lizard": {
+    "scientific": "Delma fraseri",
+    "taxonId": 36939,
+    "taxonName": "Delma fraseri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "side-barred-snake-lizard": {
+    "scientific": "Delma grayii",
+    "taxonId": 36936,
+    "taxonName": "Delma grayii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "neck-barred-snake-lizard": {
+    "scientific": "Delma haroldi",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Delma butleri",
+    "lumpedTaxonId": 36942
+  },
+  "esperance-snake-lizard": {
+    "scientific": "Delma hebesa",
+    "taxonId": 539605,
+    "taxonName": "Delma hebesa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "striped-legless-lizard": {
+    "scientific": "Delma impar",
+    "taxonId": 36937,
+    "taxonName": "Delma impar",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "olive-legless-lizard": {
+    "scientific": "Delma inornata",
+    "taxonId": 36935,
+    "taxonName": "Delma inornata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "single-striped-delma": {
+    "scientific": "Delma labialis",
+    "taxonId": 36933,
+    "taxonName": "Delma labialis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "atherton-delma": {
+    "scientific": "Delma mitella",
+    "taxonId": 36934,
+    "taxonName": "Delma mitella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gulfs-delma": {
+    "scientific": "Delma molleri",
+    "taxonId": 36932,
+    "taxonName": "Delma molleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-nosed-snake-lizard": {
+    "scientific": "Delma nasuta",
+    "taxonId": 36930,
+    "taxonName": "Delma nasuta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "peace-snake-lizard": {
+    "scientific": "Delma pax",
+    "taxonId": 36931,
+    "taxonName": "Delma pax",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "throat-banded-snake-lizard": {
+    "scientific": "Delma petersoni",
+    "taxonId": 318675,
+    "taxonName": "Delma petersoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "leaden-delma": {
+    "scientific": "Delma plebeia",
+    "taxonId": 36928,
+    "taxonName": "Delma plebeia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-range-snake-lizard": {
+    "scientific": "Delma tealei",
+    "taxonId": 99156,
+    "taxonName": "Delma tealei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-necked-snake-lizard": {
+    "scientific": "Delma tincta",
+    "taxonId": 36929,
+    "taxonName": "Delma tincta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "collared-delma": {
+    "scientific": "Delma torquata",
+    "taxonId": 36927,
+    "taxonName": "Delma torquata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "burtons-legless-lizard": {
+    "scientific": "Lialis burtonis",
+    "taxonId": 36978,
+    "taxonName": "Lialis burtonis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bronzeback-snake-lizard": {
+    "scientific": "Ophidiocephalus taeniatus",
+    "taxonId": 36975,
+    "taxonName": "Ophidiocephalus taeniatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brigalow-scaly-foot": {
+    "scientific": "Paradelma orientalis",
+    "taxonId": 36973,
+    "taxonName": "Paradelma orientalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shark-bay-keeled-legless-lizard": {
+    "scientific": "Pletholax edelensis",
+    "taxonId": 1119898,
+    "taxonName": "Pletholax edelensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "west-coast-keeled-legless-lizard": {
+    "scientific": "Pletholax gracilis",
+    "taxonId": 36969,
+    "taxonName": "Pletholax gracilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-scaly-foot": {
+    "scientific": "Pygopus lepidopodus",
+    "taxonId": 36963,
+    "taxonName": "Pygopus lepidopodus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-hooded-scaly-foot": {
+    "scientific": "Pygopus nigriceps",
+    "taxonId": 36964,
+    "taxonName": "Pygopus nigriceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "roberts-scaly-foot": {
+    "scientific": "Pygopus robertsi",
+    "taxonId": 111390,
+    "taxonName": "Pygopus robertsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-hooded-scaly-foot": {
+    "scientific": "Pygopus schraderi",
+    "taxonId": 36965,
+    "taxonName": "Pygopus schraderi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-hooded-scaly-foot": {
+    "scientific": "Pygopus steelescotti",
+    "taxonId": 36967,
+    "taxonName": "Pygopus steelescotti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-tailed-pygmy-monitor": {
+    "scientific": "Varanus brevicauda",
+    "taxonId": 797774,
+    "taxonName": "Varanus brevicauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-pygmy-monitor": {
+    "scientific": "Varanus bushi",
+    "taxonId": 114881,
+    "taxonName": "Varanus bushi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stripe-tailed-pygmy-monitor": {
+    "scientific": "Varanus caudolineatus",
+    "taxonId": 39460,
+    "taxonName": "Varanus caudolineatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "varanus-doreanus": {
+    "scientific": "Varanus doreanus",
+    "taxonId": 39459,
+    "taxonName": "Varanus doreanus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rusty-desert-monitor": {
+    "scientific": "Varanus eremius",
+    "taxonId": 39457,
+    "taxonName": "Varanus eremius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "perentie": {
+    "scientific": "Varanus giganteus",
+    "taxonId": 39453,
+    "taxonName": "Varanus giganteus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-rock-monitor": {
+    "scientific": "Varanus glauerti",
+    "taxonId": 39452,
+    "taxonName": "Varanus glauerti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-palmed-rock-monitor": {
+    "scientific": "Varanus glebopalma",
+    "taxonId": 39450,
+    "taxonName": "Varanus glebopalma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-pilbara-rock-monitor": {
+    "scientific": "Varanus hamersleyensis",
+    "taxonId": 540313,
+    "taxonName": "Varanus hamersleyensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mangrove-monitor": {
+    "scientific": "Varanus indicus",
+    "taxonId": 39427,
+    "taxonName": "Varanus indicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "groote-eylandt-monitor": {
+    "scientific": "Varanus insulanicus",
+    "taxonId": 1403054,
+    "taxonName": "Varanus insulanicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "canopy-goanna": {
+    "scientific": "Varanus keithhornei",
+    "taxonId": 114883,
+    "taxonName": "Varanus keithhornei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-rock-monitor": {
+    "scientific": "Varanus kingorum",
+    "taxonId": 39448,
+    "taxonName": "Varanus kingorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mertens-water-monitor": {
+    "scientific": "Varanus mertensi",
+    "taxonId": 39445,
+    "taxonName": "Varanus mertensi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mitchells-water-monitor": {
+    "scientific": "Varanus mitchelli",
+    "taxonId": 39444,
+    "taxonName": "Varanus mitchelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-dwarf-monitor": {
+    "scientific": "Varanus ocreatus",
+    "taxonId": 1403053,
+    "taxonName": "Varanus ocreatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-spotted-monitor": {
+    "scientific": "Varanus panoptes",
+    "taxonId": 39409,
+    "taxonName": "Varanus panoptes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-pilbara-rock-monitor": {
+    "scientific": "Varanus pilbarensis",
+    "taxonId": 39443,
+    "taxonName": "Varanus pilbarensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "emerald-monitor": {
+    "scientific": "Varanus prasinus",
+    "taxonId": 114888,
+    "taxonName": "Varanus prasinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-ridge-tailed-monitor": {
+    "scientific": "Varanus primordius",
+    "taxonId": 39442,
+    "taxonName": "Varanus primordius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "heath-monitor": {
+    "scientific": "Varanus rosenbergi",
+    "taxonId": 39441,
+    "taxonName": "Varanus rosenbergi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-tree-monitor": {
+    "scientific": "Varanus scalaris",
+    "taxonId": 114892,
+    "taxonName": "Varanus scalaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rusty-monitor": {
+    "scientific": "Varanus semiremex",
+    "taxonId": 39474,
+    "taxonName": "Varanus semiremex",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "varanus-similis": {
+    "scientific": "Varanus similis",
+    "taxonId": 39432,
+    "taxonName": "Varanus similis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dampier-peninsula-monitor": {
+    "scientific": "Varanus sparnus",
+    "taxonId": 467549,
+    "taxonName": "Varanus sparnus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spencers-monitor": {
+    "scientific": "Varanus spenceri",
+    "taxonId": 39473,
+    "taxonName": "Varanus spenceri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-dwarf-monitor": {
+    "scientific": "Varanus storri",
+    "taxonId": 39397,
+    "taxonName": "Varanus storri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "papuan-spotted-python": {
+    "scientific": "Antaresia papuensis",
+    "taxonId": 1250256,
+    "taxonName": "Antaresia papuensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-white-lipped-python": {
+    "scientific": "Leiopython fredparkeri",
+    "taxonId": 1161323,
+    "taxonName": "Leiopython fredparkeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "oenpelli-python": {
+    "scientific": "Nyctophilopython oenpelliensis",
+    "taxonId": 1250058,
+    "taxonName": "Nyctophilopython oenpelliensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "australian-scrub-python": {
+    "scientific": "Simalia kinghorni",
+    "taxonId": 540202,
+    "taxonName": "Simalia kinghorni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-nosed-sea-snake": {
+    "scientific": "Aipysurus apraefrontalis",
+    "taxonId": 35265,
+    "taxonName": "Aipysurus apraefrontalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dubois-sea-snake": {
+    "scientific": "Aipysurus duboisi",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07"
+  },
+  "leaf-scaled-sea-snake": {
+    "scientific": "Aipysurus foliosquama",
+    "taxonId": 35262,
+    "taxonName": "Aipysurus foliosquama",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dusky-sea-snake": {
+    "scientific": "Aipysurus fuscus",
+    "taxonId": 35261,
+    "taxonName": "Aipysurus fuscus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "olive-sea-snake": {
+    "scientific": "Aipysurus laevis",
+    "taxonId": 35260,
+    "taxonName": "Aipysurus laevis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mosaic-sea-snake": {
+    "scientific": "Aipysurus mosaicus",
+    "taxonId": 200167,
+    "taxonName": "Aipysurus mosaicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shark-bay-sea-snake": {
+    "scientific": "Aipysurus pooleorum",
+    "taxonId": 539231,
+    "taxonName": "Aipysurus pooleorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-lined-sea-snake": {
+    "scientific": "Aipysurus tenuis",
+    "taxonId": 35258,
+    "taxonName": "Aipysurus tenuis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "turtle-headed-sea-snake": {
+    "scientific": "Emydocephalus annulatus",
+    "taxonId": 35256,
+    "taxonName": "Emydocephalus annulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-turtle-headed-sea-snake": {
+    "scientific": "Emydocephalus orarius",
+    "taxonId": 1119954,
+    "taxonName": "Emydocephalus orarius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-western-mangrove-sea-snake": {
+    "scientific": "Ephalophis greyae",
+    "taxonId": 35253,
+    "taxonName": "Ephalophis greyae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "port-darwin-sea-snake": {
+    "scientific": "Hydrelaps darwiniensis",
+    "taxonId": 35231,
+    "taxonName": "Hydrelaps darwiniensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-headed-sea-snake": {
+    "scientific": "Hydrophis atriceps",
+    "taxonId": 35228,
+    "taxonName": "Hydrophis atriceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "faint-banded-sea-snake": {
+    "scientific": "Hydrophis belcheri",
+    "taxonId": 35226,
+    "taxonName": "Hydrophis belcheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwarf-sea-snake": {
+    "scientific": "Hydrophis caerulescens",
+    "taxonId": 35224,
+    "taxonName": "Hydrophis caerulescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-necked-sea-snake": {
+    "scientific": "Hydrophis coggeri",
+    "taxonId": 104140,
+    "taxonName": "Hydrophis coggeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spine-bellied-sea-snake": {
+    "scientific": "Hydrophis curtus",
+    "taxonId": 200386,
+    "taxonName": "Hydrophis curtus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fine-spined-sea-snake": {
+    "scientific": "Hydrophis czeblukovi",
+    "taxonId": 35221,
+    "taxonName": "Hydrophis czeblukovi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-scaled-sea-snake": {
+    "scientific": "Hydrophis donaldi",
+    "taxonId": 340518,
+    "taxonName": "Hydrophis donaldi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "elegant-sea-snake": {
+    "scientific": "Hydrophis elegans",
+    "taxonId": 35222,
+    "taxonName": "Hydrophis elegans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spectacled-sea-snake": {
+    "scientific": "Hydrophis kingii",
+    "taxonId": 35277,
+    "taxonName": "Hydrophis kingii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "small-headed-sea-snake": {
+    "scientific": "Hydrophis macdowelli",
+    "taxonId": 35215,
+    "taxonName": "Hydrophis macdowelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "olive-headed-sea-snake": {
+    "scientific": "Hydrophis major",
+    "taxonId": 99453,
+    "taxonName": "Hydrophis major",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-sea-snake": {
+    "scientific": "Hydrophis ocellatus",
+    "taxonId": 35207,
+    "taxonName": "Hydrophis ocellatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pacific-faint-banded-sea-snake": {
+    "scientific": "Hydrophis pacificus",
+    "taxonId": 35213,
+    "taxonName": "Hydrophis pacificus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "horned-sea-snake": {
+    "scientific": "Hydrophis peronii",
+    "taxonId": 200394,
+    "taxonName": "Hydrophis peronii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-bellied-sea-snake": {
+    "scientific": "Hydrophis platurus",
+    "taxonId": 35164,
+    "taxonName": "Hydrophis platurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stokes-sea-snake": {
+    "scientific": "Hydrophis stokesii",
+    "taxonId": 200397,
+    "taxonName": "Hydrophis stokesii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "beaked-sea-snake": {
+    "scientific": "Hydrophis zweifeli",
+    "taxonId": 200400,
+    "taxonName": "Hydrophis zweifeli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-lipped-sea-krait": {
+    "scientific": "Laticauda colubrina",
+    "taxonId": 68343,
+    "taxonName": "Laticauda colubrina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blue-lipped-sea-krait": {
+    "scientific": "Laticauda laticaudata",
+    "taxonId": 35239,
+    "taxonName": "Laticauda laticaudata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "graceful-small-headed-sea-snake": {
+    "scientific": "Microcephalophis gracilis",
+    "taxonId": 1474128,
+    "taxonName": "Microcephalophis gracilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arafura-smooth-sea-snake": {
+    "scientific": "Parahydrophis mertoni",
+    "taxonId": 35168,
+    "taxonName": "Parahydrophis mertoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "loggerhead-turtle": {
+    "scientific": "Caretta caretta",
+    "taxonId": 39665,
+    "taxonName": "Caretta caretta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "green-turtle": {
+    "scientific": "Chelonia mydas",
+    "taxonId": 39659,
+    "taxonName": "Chelonia mydas",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hawksbill-turtle": {
+    "scientific": "Eretmochelys imbricata",
+    "taxonId": 39672,
+    "taxonName": "Eretmochelys imbricata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "olive-ridley-turtle": {
+    "scientific": "Lepidochelys olivacea",
+    "taxonId": 39670,
+    "taxonName": "Lepidochelys olivacea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "flatback-turtle": {
+    "scientific": "Natator depressus",
+    "taxonId": 73876,
+    "taxonName": "Natator depressus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "leatherback-turtle": {
+    "scientific": "Dermochelys coriacea",
+    "taxonId": 39677,
+    "taxonName": "Dermochelys coriacea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pig-nosed-turtle": {
+    "scientific": "Carettochelys insculpta",
+    "taxonId": 39536,
+    "taxonName": "Carettochelys insculpta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arnhem-land-snake-necked-turtle": {
+    "scientific": "Chelodina burrungandjii",
+    "taxonId": 97343,
+    "taxonName": "Chelodina burrungandjii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "canns-snake-necked-turtle": {
+    "scientific": "Chelodina canni",
+    "taxonId": 39601,
+    "taxonName": "Chelodina canni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kuchlings-snake-necked-turtle": {
+    "scientific": "Chelodina kuchlingi",
+    "taxonId": 560417,
+    "taxonName": "Chelodina kuchlingi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "darwin-snake-necked-turtle": {
+    "scientific": "Chelodina kurrichalpongo",
+    "taxonId": 1119974,
+    "taxonName": "Chelodina kurrichalpongo",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southwestern-snake-necked-turtle": {
+    "scientific": "Chelodina oblonga",
+    "taxonId": 1304684,
+    "taxonName": "Chelodina oblonga",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-snake-necked-turtle": {
+    "scientific": "Chelodina rugosa",
+    "taxonId": 39593,
+    "taxonName": "Chelodina rugosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "flat-shelled-turtle": {
+    "scientific": "Chelodina steindachneri",
+    "taxonId": 39590,
+    "taxonName": "Chelodina steindachneri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-snake-necked-turtle": {
+    "scientific": "Chelodina walloyarrina",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Chelodina kuchlingi",
+    "lumpedTaxonId": 560417
+  },
+  "white-throated-snapping-turtle": {
+    "scientific": "Elseya albagula",
+    "taxonId": 99867,
+    "taxonName": "Elseya albagula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-snapping-turtle": {
+    "scientific": "Elseya dentata",
+    "taxonId": 39655,
+    "taxonName": "Elseya dentata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-bellied-snapping-turtle": {
+    "scientific": "Elseya flaviventralis",
+    "taxonId": 560420,
+    "taxonName": "Elseya flaviventralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "irwins-turtle": {
+    "scientific": "Elseya irwini",
+    "taxonId": 39652,
+    "taxonName": "Elseya irwini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kalumburu-snapping-turtle": {
+    "scientific": "Elseya kalumburu",
+    "taxonId": 1439440,
+    "taxonName": "Elseya kalumburu",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gulf-snapping-turtle": {
+    "scientific": "Elseya lavarackorum",
+    "taxonId": 39650,
+    "taxonName": "Elseya lavarackorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mary-river-turtle": {
+    "scientific": "Elusor macrurus",
+    "taxonId": 39648,
+    "taxonName": "Elusor macrurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-bellied-short-necked-turtle": {
+    "scientific": "Emydura subglobosa",
+    "taxonId": 39637,
+    "taxonName": "Emydura subglobosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-yellow-faced-turtle": {
+    "scientific": "Emydura tanybaraga",
+    "taxonId": 39635,
+    "taxonName": "Emydura tanybaraga",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-red-faced-turtle": {
+    "scientific": "Emydura victoriae",
+    "taxonId": 1119953,
+    "taxonName": "Emydura australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-saw-shelled-turtle": {
+    "scientific": "Myuchelys bellii",
+    "taxonId": 146299,
+    "taxonName": "Myuchelys bellii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bellinger-river-turtle": {
+    "scientific": "Myuchelys georgesi",
+    "taxonId": 146300,
+    "taxonName": "Myuchelys georgesi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "manning-river-turtle": {
+    "scientific": "Myuchelys purvisi",
+    "taxonId": 146302,
+    "taxonName": "Myuchelys purvisi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-swamp-turtle": {
+    "scientific": "Pseudemydura umbrina",
+    "taxonId": 39607,
+    "taxonName": "Pseudemydura umbrina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fitzroy-river-turtle": {
+    "scientific": "Rheodytes leukops",
+    "taxonId": 39605,
+    "taxonName": "Rheodytes leukops",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

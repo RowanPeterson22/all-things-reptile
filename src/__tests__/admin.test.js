@@ -25,8 +25,15 @@ const FB_NO_PHOTO = "cccccccc-0000-4000-8000-000000000004";
 const FB_OTHER = "cccccccc-0000-4000-8000-000000000005";
 const PHOTO_ID = "dddddddd-0000-4000-8000-000000000006";
 
-// A tiny JPEG-shaped buffer: SOI, APP0, SOF0 (800 × 600), padding.
+// A real JPEG of w × h (the library resizes with jpeg-js, so it must decode).
+// A huge pad gives a JPEG-shaped stub instead, for the size-limit test.
+const realJpeg = (w, h) => {
+  const data = Buffer.alloc(w * h * 4);
+  for (let i = 0; i < data.length; i += 4) { const x = (i / 4) % w; data[i] = x & 255; data[i + 1] = 120; data[i + 2] = 60; data[i + 3] = 255; }
+  return Buffer.from(require("jpeg-js").encode({ data, width: w, height: h }, 80).data);
+};
 const jpeg = (w = 800, h = 600, pad = 300) => {
+  if (pad < 100000) return realJpeg(w, h);
   const sof = Buffer.from([0xff, 0xc0, 0x00, 0x11, 0x08, h >> 8, h & 255, w >> 8, w & 255, 0x03]);
   const app0 = Buffer.from([0xff, 0xe0, 0x00, 0x10, ...Buffer.from("JFIF\0"), 1, 1, 0, 0, 1, 0, 1, 0, 0]);
   return Buffer.concat([Buffer.from([0xff, 0xd8]), app0, sof, Buffer.alloc(pad, 7)]);
@@ -285,9 +292,12 @@ describe("add photo: licence and attribution are required", () => {
     expect(row).toMatchObject({
       species_slug: "central-bearded-dragon", source: "admin_upload", photographer: "Rowan Peterson",
       licence: "cc-by", licence_url: "https://creativecommons.org/licenses/by/4.0/", source_url: "https://example.org/photo/1",
-      width: 800, height: 600, added_by: "Rowan Peterson", status: "active",
+      // Reference copy cut to 500 px; the 800 px original kept as the master.
+      width: 500, height: 375, master_width: 800, master_height: 600, added_by: "Rowan Peterson", status: "active",
     });
     expect(row.storage_path).toBe(`central-bearded-dragon/admin_upload-${row.source_id}.jpg`);
+    expect(row.master_path).toBe(`central-bearded-dragon/admin_upload-${row.source_id}.master.jpg`);
+    expect(db.objects["reference-photos"][row.master_path]).toBeDefined();
     expect(db.objects["reference-photos"][row.storage_path]).toBeDefined();
     expect(r.body.photo.url).toContain("/storage/v1/object/sign/reference-photos/");
   });
@@ -314,9 +324,12 @@ describe("feedback inbox: add to library", () => {
       storage_path: `central-bearded-dragon/tester-${FB_CONSENT}.jpg`,
       source: "tester", source_id: FB_CONSENT, licence: "tester_consent",
       photographer: "Jane Citizen", source_url: `atr:id_feedback/${FB_CONSENT}`,
-      traits: ["translucent"], width: 1000, height: 750,
+      traits: ["translucent"], width: 500, height: 375,
+      master_path: `central-bearded-dragon/tester-${FB_CONSENT}.master.jpg`, master_width: 1000, master_height: 750,
     });
-    expect(db.objects["reference-photos"][row.storage_path]).toEqual(db.objects["id-photos"][`${TESTER_ID}/p1.jpg`]);
+    // Resized on the server (pure JS), not copied as-is.
+    expect(db.objects["reference-photos"][row.storage_path]).not.toEqual(db.objects["id-photos"][`${TESTER_ID}/p1.jpg`]);
+    expect(db.objects["reference-photos"][row.master_path]).toBeDefined();
     // The inbox now shows it as filed, and a second add is refused.
     const list = await call(feedbackHandler);
     expect(list.body.items[0].inLibrary).toEqual({ speciesSlug: "central-bearded-dragon", status: "active" });
@@ -350,6 +363,7 @@ describe("feedback inbox: add to library", () => {
     db.failNext = "POST reference_photos";
     expect((await call(feedbackHandler, { method: "POST", body: { feedbackId: FB_CONSENT } })).statusCode).toBe(502);
     expect(db.objects["reference-photos"][`central-bearded-dragon/tester-${FB_CONSENT}.jpg`]).toBeUndefined();
+    expect(db.objects["reference-photos"][`central-bearded-dragon/tester-${FB_CONSENT}.master.jpg`]).toBeUndefined();
   });
 });
 

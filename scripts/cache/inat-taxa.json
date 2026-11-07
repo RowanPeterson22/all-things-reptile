@@ -4420,5 +4420,2013 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "tusked-frog": {
+    "scientific": "Adelotus brevis",
+    "taxonId": 22084,
+    "taxonName": "Adelotus brevis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-spotted-frog": {
+    "scientific": "Heleioporus albopunctatus",
+    "taxonId": 22045,
+    "taxonName": "Heleioporus albopunctatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "giant-burrowing-frog": {
+    "scientific": "Heleioporus australiacus",
+    "taxonId": 22042,
+    "taxonName": "Heleioporus australiacus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hooting-frog": {
+    "scientific": "Heleioporus barycragus",
+    "taxonId": 22043,
+    "taxonName": "Heleioporus barycragus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "moaning-frog": {
+    "scientific": "Heleioporus eyrei",
+    "taxonId": 22046,
+    "taxonName": "Heleioporus eyrei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "whooping-frog": {
+    "scientific": "Heleioporus inornatus",
+    "taxonId": 22047,
+    "taxonName": "Heleioporus inornatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sand-frog": {
+    "scientific": "Heleioporus psammophilus",
+    "taxonId": 22044,
+    "taxonName": "Heleioporus psammophilus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "marbled-frog": {
+    "scientific": "Limnodynastes convexiusculus",
+    "taxonId": 22040,
+    "taxonName": "Limnodynastes convexiusculus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "flat-headed-frog": {
+    "scientific": "Limnodynastes depressus",
+    "taxonId": 22034,
+    "taxonName": "Limnodynastes depressus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-banjo-frog": {
+    "scientific": "Limnodynastes dorsalis",
+    "taxonId": 22035,
+    "taxonName": "Limnodynastes dorsalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-banjo-frog": {
+    "scientific": "Limnodynastes dumerilii",
+    "taxonId": 22038,
+    "taxonName": "Limnodynastes dumerilii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "barking-marsh-frog": {
+    "scientific": "Limnodynastes fletcheri",
+    "taxonId": 22033,
+    "taxonName": "Limnodynastes fletcheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "scarlet-sided-banjo-frog": {
+    "scientific": "Limnodynastes grayi",
+    "taxonId": 1545223,
+    "taxonName": "Limnodynastes grayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "giant-banjo-frog": {
+    "scientific": "Limnodynastes interioris",
+    "taxonId": 22030,
+    "taxonName": "Limnodynastes interioris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "woodworker-frog": {
+    "scientific": "Limnodynastes lignarius",
+    "taxonId": 22037,
+    "taxonName": "Limnodynastes lignarius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "salmon-striped-frog": {
+    "scientific": "Limnodynastes salmini",
+    "taxonId": 22028,
+    "taxonName": "Limnodynastes salmini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coastal-banjo-frog": {
+    "scientific": "Limnodynastes superciliaris",
+    "taxonId": 1545222,
+    "taxonName": "Limnodynastes superciliaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-marsh-frog": {
+    "scientific": "Limnodynastes tasmaniensis",
+    "taxonId": 22036,
+    "taxonName": "Limnodynastes tasmaniensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "superb-banjo-frog": {
+    "scientific": "Limnodynastes terraereginae",
+    "taxonId": 22029,
+    "taxonName": "Limnodynastes terraereginae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-footed-trilling-frog": {
+    "scientific": "Neobatrachus albipes",
+    "taxonId": 22074,
+    "taxonName": "Neobatrachus albipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-trilling-frog": {
+    "scientific": "Neobatrachus aquilonius",
+    "taxonId": 22073,
+    "taxonName": "Neobatrachus aquilonius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tawny-trilling-frog": {
+    "scientific": "Neobatrachus fulvus",
+    "taxonId": 22069,
+    "taxonName": "Neobatrachus fulvus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wheatbelt-frog": {
+    "scientific": "Neobatrachus kunapalari",
+    "taxonId": 22070,
+    "taxonName": "Neobatrachus kunapalari",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "humming-frog": {
+    "scientific": "Neobatrachus pelobatoides",
+    "taxonId": 22077,
+    "taxonName": "Neobatrachus pelobatoides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "painted-frog": {
+    "scientific": "Neobatrachus pictus",
+    "taxonId": 22075,
+    "taxonName": "Neobatrachus pictus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sudells-frog": {
+    "scientific": "Neobatrachus sudellae",
+    "taxonId": 134952,
+    "taxonName": "Neobatrachus sudelli",
+    "rank": "species",
+    "via": "synonym:Neobatrachus centralis",
+    "resolvedAt": "2026-11-07"
+  },
+  "shoemaker-frog": {
+    "scientific": "Neobatrachus sutor",
+    "taxonId": 22071,
+    "taxonName": "Neobatrachus sutor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "plonking-frog": {
+    "scientific": "Neobatrachus wilsmorei",
+    "taxonId": 22068,
+    "taxonName": "Neobatrachus wilsmorei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crucifix-frog": {
+    "scientific": "Notaden bennettii",
+    "taxonId": 22082,
+    "taxonName": "Notaden bennettii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-spadefoot": {
+    "scientific": "Notaden melanoscaphus",
+    "taxonId": 22081,
+    "taxonName": "Notaden melanoscaphus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-spadefoot": {
+    "scientific": "Notaden nichollsi",
+    "taxonId": 22080,
+    "taxonName": "Notaden nichollsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-spadefoot": {
+    "scientific": "Notaden weigeli",
+    "taxonId": 22079,
+    "taxonName": "Notaden weigeli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "baw-baw-frog": {
+    "scientific": "Philoria frosti",
+    "taxonId": 22059,
+    "taxonName": "Philoria frosti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mount-ballow-mountain-frog": {
+    "scientific": "Philoria knowlesi",
+    "taxonId": 1363722,
+    "taxonName": "Philoria knowlesi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-and-yellow-mountain-frog": {
+    "scientific": "Philoria kundagungan",
+    "taxonId": 22055,
+    "taxonName": "Philoria kundagungan",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "masked-mountain-frog": {
+    "scientific": "Philoria loveridgei",
+    "taxonId": 22058,
+    "taxonName": "Philoria loveridgei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pughs-mountain-frog": {
+    "scientific": "Philoria pughi",
+    "taxonId": 22057,
+    "taxonName": "Philoria pughi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "richmond-range-mountain-frog": {
+    "scientific": "Philoria richmondensis",
+    "taxonId": 22056,
+    "taxonName": "Philoria richmondensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sphagnum-frog": {
+    "scientific": "Philoria sphagnicolus",
+    "taxonId": 1402638,
+    "taxonName": "Philoria sphagnicola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sandpaper-frog": {
+    "scientific": "Platyplectrum fletcheri",
+    "taxonId": 1250323,
+    "taxonName": "Platyplectrum fletcheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ornate-burrowing-frog": {
+    "scientific": "Platyplectrum ornatum",
+    "taxonId": 66479,
+    "taxonName": "Platyplectrum ornatum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-burrowing-frog": {
+    "scientific": "Platyplectrum spenceri",
+    "taxonId": 66480,
+    "taxonName": "Platyplectrum spenceri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-territory-whistling-frog": {
+    "scientific": "Austrochaperina adelphe",
+    "taxonId": 25021,
+    "taxonName": "Austrochaperina adelphe",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "frys-whistling-frog": {
+    "scientific": "Austrochaperina fryi",
+    "taxonId": 25037,
+    "taxonName": "Austrochaperina fryi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-whistling-frog": {
+    "scientific": "Austrochaperina gracilipes",
+    "taxonId": 25028,
+    "taxonName": "Austrochaperina gracilipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rain-whistling-frog": {
+    "scientific": "Austrochaperina pluvialis",
+    "taxonId": 25024,
+    "taxonName": "Austrochaperina pluvialis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-whistling-frog": {
+    "scientific": "Austrochaperina robusta",
+    "taxonId": 25033,
+    "taxonName": "Austrochaperina robusta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tapping-nursery-frog": {
+    "scientific": "Cophixalus aenigma",
+    "taxonId": 24757,
+    "taxonName": "Cophixalus aenigma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-ornate-nursery-frog": {
+    "scientific": "Cophixalus australis",
+    "taxonId": 134841,
+    "taxonName": "Cophixalus australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "buzzing-nursery-frog": {
+    "scientific": "Cophixalus bombiens",
+    "taxonId": 24787,
+    "taxonName": "Cophixalus bombiens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "beautiful-nursery-frog": {
+    "scientific": "Cophixalus concinnus",
+    "taxonId": 24764,
+    "taxonName": "Cophixalus concinnus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rattling-nursery-frog": {
+    "scientific": "Cophixalus crepitans",
+    "taxonId": 24760,
+    "taxonName": "Cophixalus crepitans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-tapping-nursery-frog": {
+    "scientific": "Cophixalus exiguus",
+    "taxonId": 24788,
+    "taxonName": "Cophixalus exiguus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hinchinbrook-nursery-frog": {
+    "scientific": "Cophixalus hinchinbrookensis",
+    "taxonId": 134698,
+    "taxonName": "Cophixalus hinchinbrookensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hosmers-nursery-frog": {
+    "scientific": "Cophixalus hosmeri",
+    "taxonId": 24761,
+    "taxonName": "Cophixalus hosmeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "creaking-nursery-frog": {
+    "scientific": "Cophixalus infacetus",
+    "taxonId": 24759,
+    "taxonName": "Cophixalus infacetus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kutini-boulder-frog": {
+    "scientific": "Cophixalus kulakula",
+    "taxonId": 134699,
+    "taxonName": "Cophixalus kulakula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mt-elliot-nursery-frog": {
+    "scientific": "Cophixalus mcdonaldi",
+    "taxonId": 24763,
+    "taxonName": "Cophixalus mcdonaldi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mountaintop-nursery-frog": {
+    "scientific": "Cophixalus monticola",
+    "taxonId": 24773,
+    "taxonName": "Cophixalus monticola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bellenden-ker-nursery-frog": {
+    "scientific": "Cophixalus neglectus",
+    "taxonId": 24767,
+    "taxonName": "Cophixalus neglectus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-ornate-nursery-frog": {
+    "scientific": "Cophixalus ornatus",
+    "taxonId": 24771,
+    "taxonName": "Cophixalus ornatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "golden-capped-boulder-frog": {
+    "scientific": "Cophixalus pakayakulangun",
+    "taxonId": 134700,
+    "taxonName": "Cophixalus pakayakulangun",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-york-nursery-frog": {
+    "scientific": "Cophixalus peninsularis",
+    "taxonId": 24762,
+    "taxonName": "Cophixalus peninsularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blotched-boulder-frog": {
+    "scientific": "Cophixalus petrophilus",
+    "taxonId": 476576,
+    "taxonName": "Cophixalus petrophilus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-mountain-boulder-frog": {
+    "scientific": "Cophixalus saxatilis",
+    "taxonId": 24769,
+    "taxonName": "Cophixalus saxatilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-melville-boulder-frog": {
+    "scientific": "Cophixalus zweifeli",
+    "taxonId": 24780,
+    "taxonName": "Cophixalus zweifeli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-bellied-frog": {
+    "scientific": "Anstisia alba",
+    "taxonId": 1402637,
+    "taxonName": "Anstisia alba",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "walpole-frog": {
+    "scientific": "Anstisia lutea",
+    "taxonId": 1402636,
+    "taxonName": "Anstisia lutea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "roseate-frog": {
+    "scientific": "Anstisia rosea",
+    "taxonId": 1402635,
+    "taxonName": "Anstisia rosea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-bellied-frog": {
+    "scientific": "Anstisia vitellina",
+    "taxonId": 1402634,
+    "taxonName": "Anstisia vitellina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-sandhill-frog": {
+    "scientific": "Arenophryne rotunda",
+    "taxonId": 25300,
+    "taxonName": "Arenophryne rotunda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-sandhill-frog": {
+    "scientific": "Arenophryne xiphorhyncha",
+    "taxonId": 70454,
+    "taxonName": "Arenophryne xiphorhyncha",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hip-pocket-frog": {
+    "scientific": "Assa darlingtoni",
+    "taxonId": 25240,
+    "taxonName": "Assa darlingtoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mt-wollumbin-hip-pocket-frog": {
+    "scientific": "Assa wollumbin",
+    "taxonId": 1304882,
+    "taxonName": "Assa wollumbin",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bilingual-froglet": {
+    "scientific": "Crinia bilingua",
+    "taxonId": 25229,
+    "taxonName": "Crinia bilingua",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-froglet": {
+    "scientific": "Crinia deserticola",
+    "taxonId": 25225,
+    "taxonName": "Crinia deserticola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-froglet": {
+    "scientific": "Crinia fimbriata",
+    "taxonId": 70576,
+    "taxonName": "Crinia fimbriata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-flinders-ranges-froglet": {
+    "scientific": "Crinia flindersensis",
+    "taxonId": 199723,
+    "taxonName": "Crinia flindersensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "quacking-frog": {
+    "scientific": "Crinia georgiana",
+    "taxonId": 25232,
+    "taxonName": "Crinia georgiana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rattling-froglet": {
+    "scientific": "Crinia glauerti",
+    "taxonId": 25233,
+    "taxonName": "Crinia glauerti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "squelching-froglet": {
+    "scientific": "Crinia insignifera",
+    "taxonId": 25237,
+    "taxonName": "Crinia insignifera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "moss-froglet": {
+    "scientific": "Crinia nimbus",
+    "taxonId": 25230,
+    "taxonName": "Crinia nimbus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-sign-bearing-froglet": {
+    "scientific": "Crinia parinsignifera",
+    "taxonId": 25224,
+    "taxonName": "Crinia parinsignifera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bleating-froglet": {
+    "scientific": "Crinia pseudinsignifera",
+    "taxonId": 25236,
+    "taxonName": "Crinia pseudinsignifera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "remote-froglet": {
+    "scientific": "Crinia remota",
+    "taxonId": 25226,
+    "taxonName": "Crinia remota",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-flinders-ranges-froglet": {
+    "scientific": "Crinia riparia",
+    "taxonId": 25227,
+    "taxonName": "Crinia riparia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-eastern-froglet": {
+    "scientific": "Crinia signifera",
+    "taxonId": 25231,
+    "taxonName": "Crinia signifera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sloanes-froglet": {
+    "scientific": "Crinia sloanei",
+    "taxonId": 25228,
+    "taxonName": "Crinia sloanei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-coast-froglet": {
+    "scientific": "Crinia subinsignifera",
+    "taxonId": 25235,
+    "taxonName": "Crinia subinsignifera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tasmanian-froglet": {
+    "scientific": "Crinia tasmaniensis",
+    "taxonId": 25238,
+    "taxonName": "Crinia tasmaniensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wallum-froglet": {
+    "scientific": "Crinia tinnula",
+    "taxonId": 25234,
+    "taxonName": "Crinia tinnula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-smooth-frog": {
+    "scientific": "Geocrinia laevis",
+    "taxonId": 25248,
+    "taxonName": "Geocrinia laevis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ticking-frog": {
+    "scientific": "Geocrinia leai",
+    "taxonId": 25243,
+    "taxonName": "Geocrinia leai",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "otway-smooth-frog": {
+    "scientific": "Geocrinia sparsiflora",
+    "taxonId": 1530452,
+    "taxonName": "Geocrinia sparsiflora",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "victorian-smooth-frog": {
+    "scientific": "Geocrinia victoriana",
+    "taxonId": 25246,
+    "taxonName": "Geocrinia victoriana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "forest-toadlet": {
+    "scientific": "Metacrinia nichollsi",
+    "taxonId": 25304,
+    "taxonName": "Metacrinia nichollsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-barred-frog": {
+    "scientific": "Mixophyes australis",
+    "taxonId": 1473439,
+    "taxonName": "Mixophyes australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-barred-frog-balbus": {
+    "scientific": "Mixophyes balbus",
+    "taxonId": 22061,
+    "taxonName": "Mixophyes balbus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "carbine-barred-frog": {
+    "scientific": "Mixophyes carbinensis",
+    "taxonId": 66137,
+    "taxonName": "Mixophyes carbinensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mottled-barred-frog": {
+    "scientific": "Mixophyes coggeri",
+    "taxonId": 66138,
+    "taxonName": "Mixophyes coggeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "great-barred-frog": {
+    "scientific": "Mixophyes fasciolatus",
+    "taxonId": 22066,
+    "taxonName": "Mixophyes fasciolatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fleays-barred-frog": {
+    "scientific": "Mixophyes fleayi",
+    "taxonId": 22064,
+    "taxonName": "Mixophyes fleayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "giant-barred-frog": {
+    "scientific": "Mixophyes iteratus",
+    "taxonId": 22065,
+    "taxonName": "Mixophyes iteratus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-barred-frog-schevilli": {
+    "scientific": "Mixophyes schevilli",
+    "taxonId": 22063,
+    "taxonName": "Mixophyes schevilli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "turtle-frog": {
+    "scientific": "Myobatrachus gouldii",
+    "taxonId": 25298,
+    "taxonName": "Myobatrachus gouldii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "haswells-froglet": {
+    "scientific": "Paracrinia haswelli",
+    "taxonId": 25302,
+    "taxonName": "Paracrinia haswelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-crowned-toadlet": {
+    "scientific": "Pseudophryne australis",
+    "taxonId": 25258,
+    "taxonName": "Pseudophryne australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bibrons-toadlet": {
+    "scientific": "Pseudophryne bibronii",
+    "taxonId": 25260,
+    "taxonName": "Pseudophryne bibronii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-backed-toadlet": {
+    "scientific": "Pseudophryne coriacea",
+    "taxonId": 25257,
+    "taxonName": "Pseudophryne coriacea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-corroboree-frog": {
+    "scientific": "Pseudophryne corroboree",
+    "taxonId": 66981,
+    "taxonName": "Pseudophryne corroboree",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "magnificent-brood-frog": {
+    "scientific": "Pseudophryne covacevichae",
+    "taxonId": 25252,
+    "taxonName": "Pseudophryne covacevichae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dendys-toadlet": {
+    "scientific": "Pseudophryne dendyi",
+    "taxonId": 25253,
+    "taxonName": "Pseudophryne dendyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gorge-toadlet": {
+    "scientific": "Pseudophryne douglasi",
+    "taxonId": 25259,
+    "taxonName": "Pseudophryne douglasi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crawling-toadlet": {
+    "scientific": "Pseudophryne guentheri",
+    "taxonId": 25254,
+    "taxonName": "Pseudophryne guentheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "large-toadlet": {
+    "scientific": "Pseudophryne major",
+    "taxonId": 25261,
+    "taxonName": "Pseudophryne major",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-toadlet": {
+    "scientific": "Pseudophryne occidentalis",
+    "taxonId": 25256,
+    "taxonName": "Pseudophryne occidentalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-corroboree-frog": {
+    "scientific": "Pseudophryne pengilleyi",
+    "taxonId": 25262,
+    "taxonName": "Pseudophryne pengilleyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "copper-backed-toadlet": {
+    "scientific": "Pseudophryne raveni",
+    "taxonId": 25250,
+    "taxonName": "Pseudophryne raveni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-ranges-toadlet": {
+    "scientific": "Pseudophryne robinsoni",
+    "taxonId": 199790,
+    "taxonName": "Pseudophryne robinsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-toadlet": {
+    "scientific": "Pseudophryne semimarmorata",
+    "taxonId": 25251,
+    "taxonName": "Pseudophryne semimarmorata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-gastric-brooding-frog": {
+    "scientific": "Rheobatrachus silus",
+    "taxonId": 26674,
+    "taxonName": "Rheobatrachus silus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-gastric-brooding-frog": {
+    "scientific": "Rheobatrachus vitellinus",
+    "taxonId": 26672,
+    "taxonName": "Rheobatrachus vitellinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sunset-frog": {
+    "scientific": "Spicospina flammocaerulea",
+    "taxonId": 25296,
+    "taxonName": "Spicospina flammocaerulea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sharp-snouted-dayfrog": {
+    "scientific": "Taudactylus acutirostris",
+    "taxonId": 25294,
+    "taxonName": "Taudactylus acutirostris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-dayfrog": {
+    "scientific": "Taudactylus diurnus",
+    "taxonId": 25293,
+    "taxonName": "Taudactylus diurnus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eungella-dayfrog": {
+    "scientific": "Taudactylus eungellensis",
+    "taxonId": 25290,
+    "taxonName": "Taudactylus eungellensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eungella-tinker-frog": {
+    "scientific": "Taudactylus liemi",
+    "taxonId": 25291,
+    "taxonName": "Taudactylus liemi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kroombit-tinker-frog": {
+    "scientific": "Taudactylus pleione",
+    "taxonId": 25292,
+    "taxonName": "Taudactylus pleione",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-tinker-frog": {
+    "scientific": "Taudactylus rheophilus",
+    "taxonId": 25289,
+    "taxonName": "Taudactylus rheophilus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "montane-toadlet": {
+    "scientific": "Uperoleia altissima",
+    "taxonId": 25276,
+    "taxonName": "Uperoleia altissima",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kakadu-toadlet": {
+    "scientific": "Uperoleia arenicola",
+    "taxonId": 25268,
+    "taxonName": "Uperoleia arenicola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "derby-toadlet": {
+    "scientific": "Uperoleia aspera",
+    "taxonId": 25269,
+    "taxonName": "Uperoleia aspera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-toadlet": {
+    "scientific": "Uperoleia borealis",
+    "taxonId": 25272,
+    "taxonName": "Uperoleia borealis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fat-toadlet": {
+    "scientific": "Uperoleia crassa",
+    "taxonId": 25273,
+    "taxonName": "Uperoleia crassa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "howard-springs-toadlet": {
+    "scientific": "Uperoleia daviesae",
+    "taxonId": 67254,
+    "taxonName": "Uperoleia daviesae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dusky-toadlet": {
+    "scientific": "Uperoleia fusca",
+    "taxonId": 25278,
+    "taxonName": "Uperoleia fusca",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "glandular-toadlet": {
+    "scientific": "Uperoleia glandulosa",
+    "taxonId": 25279,
+    "taxonName": "Uperoleia glandulosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gurrumuls-toadlet": {
+    "scientific": "Uperoleia gurrumuli",
+    "taxonId": 1304881,
+    "taxonName": "Uperoleia gurrumuli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "smooth-toadlet": {
+    "scientific": "Uperoleia laevigata",
+    "taxonId": 25281,
+    "taxonName": "Uperoleia laevigata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stonemason-toadlet": {
+    "scientific": "Uperoleia lithomoda",
+    "taxonId": 25267,
+    "taxonName": "Uperoleia lithomoda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "littlejohns-toadlet": {
+    "scientific": "Uperoleia littlejohni",
+    "taxonId": 25284,
+    "taxonName": "Uperoleia littlejohni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mahonys-toadlet": {
+    "scientific": "Uperoleia mahonyi",
+    "taxonId": 517064,
+    "taxonName": "Uperoleia mahonyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "marbled-toadlet": {
+    "scientific": "Uperoleia marmorata",
+    "taxonId": 25285,
+    "taxonName": "Uperoleia marmorata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "martins-toadlet": {
+    "scientific": "Uperoleia martini",
+    "taxonId": 25266,
+    "taxonName": "Uperoleia martini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tiny-toadlet": {
+    "scientific": "Uperoleia micra",
+    "taxonId": 70974,
+    "taxonName": "Uperoleia micra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tanami-toadlet": {
+    "scientific": "Uperoleia micromeles",
+    "taxonId": 25270,
+    "taxonName": "Uperoleia micromeles",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mimic-toadlet": {
+    "scientific": "Uperoleia mimula",
+    "taxonId": 25277,
+    "taxonName": "Uperoleia mimula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "small-toadlet": {
+    "scientific": "Uperoleia minima",
+    "taxonId": 25275,
+    "taxonName": "Uperoleia minima",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "west-kimberley-toadlet": {
+    "scientific": "Uperoleia mjobergii",
+    "taxonId": 67255,
+    "taxonName": "Uperoleia mjobergii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "alexandria-toadlet": {
+    "scientific": "Uperoleia orientalis",
+    "taxonId": 25287,
+    "taxonName": "Uperoleia orientalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wrinkled-toadlet": {
+    "scientific": "Uperoleia rugosa",
+    "taxonId": 25282,
+    "taxonName": "Uperoleia rugosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northwest-toadlet": {
+    "scientific": "Uperoleia russelli",
+    "taxonId": 25286,
+    "taxonName": "Uperoleia russelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-toadlet": {
+    "scientific": "Uperoleia saxatilis",
+    "taxonId": 199802,
+    "taxonName": "Uperoleia saxatilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ratcheting-toadlet": {
+    "scientific": "Uperoleia stridera",
+    "taxonId": 476577,
+    "taxonName": "Uperoleia stridera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mole-toadlet": {
+    "scientific": "Uperoleia talpa",
+    "taxonId": 25283,
+    "taxonName": "Uperoleia talpa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blacksoil-toadlet": {
+    "scientific": "Uperoleia trachyderma",
+    "taxonId": 25274,
+    "taxonName": "Uperoleia trachyderma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tylers-toadlet": {
+    "scientific": "Uperoleia tyleri",
+    "taxonId": 25265,
+    "taxonName": "Uperoleia tyleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "striped-burrowing-frog": {
+    "scientific": "Cyclorana alboguttata",
+    "taxonId": 1632563,
+    "taxonName": "Cyclorana alboguttata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-snapping-frog": {
+    "scientific": "Cyclorana australis",
+    "taxonId": 1632564,
+    "taxonName": "Cyclorana australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "superb-collared-frog": {
+    "scientific": "Cyclorana brevipes",
+    "taxonId": 1632565,
+    "taxonName": "Cyclorana brevipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hidden-ear-frog": {
+    "scientific": "Cyclorana cryptotis",
+    "taxonId": 1632566,
+    "taxonName": "Cyclorana cryptotis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "knife-footed-frog": {
+    "scientific": "Cyclorana cultripes",
+    "taxonId": 1632567,
+    "taxonName": "Cyclorana cultripes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-footed-frog": {
+    "scientific": "Cyclorana longipes",
+    "taxonId": 1632568,
+    "taxonName": "Cyclorana longipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "daly-waters-frog": {
+    "scientific": "Cyclorana maculosa",
+    "taxonId": 1632569,
+    "taxonName": "Cyclorana maculosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mains-frog": {
+    "scientific": "Cyclorana maini",
+    "taxonId": 1632570,
+    "taxonName": "Cyclorana maini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "little-collared-frog": {
+    "scientific": "Cyclorana manya",
+    "taxonId": 1632571,
+    "taxonName": "Cyclorana manya",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-snapping-frog": {
+    "scientific": "Cyclorana novaehollandiae",
+    "taxonId": 1632572,
+    "taxonName": "Cyclorana novaehollandiae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-water-holding-frog": {
+    "scientific": "Cyclorana occidentalis",
+    "taxonId": 1632573,
+    "taxonName": "Cyclorana occidentalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-water-holding-frog": {
+    "scientific": "Cyclorana platycephalus",
+    "taxonId": 1637999,
+    "taxonName": "Cyclorana platycephala",
+    "rank": "species",
+    "via": "synonym:Cyclorana platycephala",
+    "resolvedAt": "2026-11-07"
+  },
+  "wailing-frog": {
+    "scientific": "Cyclorana vagitus",
+    "taxonId": 1632575,
+    "taxonName": "Cyclorana vagitus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-collared-frog": {
+    "scientific": "Cyclorana verrucosa",
+    "taxonId": 1632576,
+    "taxonName": "Cyclorana verrucosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-tree-frog": {
+    "scientific": "Litoria adelaidensis",
+    "taxonId": 1632452,
+    "taxonName": "Coggerdonia adelaidensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "melville-range-tree-frog": {
+    "scientific": "Litoria andiirrmalin",
+    "taxonId": 1632698,
+    "taxonName": "Melvillihyla andiirrmalin",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "green-and-golden-bell-frog": {
+    "scientific": "Litoria aurea",
+    "taxonId": 517069,
+    "taxonName": "Ranoidea aurea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-rockhole-frog": {
+    "scientific": "Litoria aurifera",
+    "taxonId": 1632688,
+    "taxonName": "Mahonabatrachus aurifer",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-rocket-frog": {
+    "scientific": "Litoria axillaris",
+    "taxonId": 134741,
+    "taxonName": "Litoria axillaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-bleating-tree-frog": {
+    "scientific": "Litoria balatus",
+    "taxonId": 1632550,
+    "taxonName": "Colleeneremia balatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "barrington-tops-tree-frog": {
+    "scientific": "Litoria barringtonensis",
+    "taxonId": 1632582,
+    "taxonName": "Dryopsophus barringtonensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-york-graceful-tree-frog": {
+    "scientific": "Litoria bella",
+    "taxonId": 1632441,
+    "taxonName": "Chlorohyla bella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-sedge-frog": {
+    "scientific": "Litoria bicolor",
+    "taxonId": 1632436,
+    "taxonName": "Carichyla bicolor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "booroolong-frog": {
+    "scientific": "Litoria booroolongensis",
+    "taxonId": 1633174,
+    "taxonName": "Rhyaconastes booroolongensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "green-thighed-frog": {
+    "scientific": "Litoria brevipalmata",
+    "taxonId": 1633210,
+    "taxonName": "Sylvagemma brevipalmata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tasmanian-tree-frog": {
+    "scientific": "Litoria burrowsae",
+    "taxonId": 1633180,
+    "taxonName": "Saganura burrowsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-australian-tree-frog": {
+    "scientific": "Litoria calliscelis",
+    "taxonId": 1658296,
+    "taxonName": "Rawlinsonia calliscelis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-spotted-bell-frog": {
+    "scientific": "Litoria castanea",
+    "taxonId": 1637858,
+    "taxonName": "Ranoidea castanea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cave-frog": {
+    "scientific": "Litoria cavernicola",
+    "taxonId": 1633146,
+    "taxonName": "Pelodryas cavernicola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-eyed-tree-frog": {
+    "scientific": "Litoria chloris",
+    "taxonId": 1632443,
+    "taxonName": "Chlorohyla chloris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blue-mountains-tree-frog": {
+    "scientific": "Litoria citropa",
+    "taxonId": 1632583,
+    "taxonName": "Dryopsophus citropa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cooloola-sedge-frog": {
+    "scientific": "Litoria cooloolensis",
+    "taxonId": 1632578,
+    "taxonName": "Drymomantis cooloolensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coplands-rock-frog": {
+    "scientific": "Litoria coplandi",
+    "taxonId": 23599,
+    "taxonName": "Litoria coplandi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "atherton-tablelands-whirring-tree-frog": {
+    "scientific": "Litoria corbeni",
+    "taxonId": 1633163,
+    "taxonName": "Rawlinsonia corbeni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-thighed-frog": {
+    "scientific": "Litoria cyclorhyncha",
+    "taxonId": 1640666,
+    "taxonName": "Ranoidea cyclorhynchus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dahls-aquatic-frog": {
+    "scientific": "Litoria dahlii",
+    "taxonId": 1632695,
+    "taxonName": "Megatestis dahlii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "davies-tree-frog": {
+    "scientific": "Litoria daviesae",
+    "taxonId": 1632584,
+    "taxonName": "Dryopsophus daviesae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "australian-lace-lid": {
+    "scientific": "Litoria dayi",
+    "taxonId": 1632594,
+    "taxonName": "Eremnoculus dayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-bleating-tree-frog": {
+    "scientific": "Litoria dentata",
+    "taxonId": 1632554,
+    "taxonName": "Colleeneremia dentata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "buzzing-tree-frog": {
+    "scientific": "Litoria electrica",
+    "taxonId": 1632555,
+    "taxonName": "Colleeneremia electrica",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fringed-tree-frog": {
+    "scientific": "Litoria eucnemis",
+    "taxonId": 1633203,
+    "taxonName": "Spicicalyx eucnemis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eungella-whirring-tree-frog": {
+    "scientific": "Litoria eungellensis",
+    "taxonId": 1658298,
+    "taxonName": "Rawlinsonia eungellensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-tree-frog": {
+    "scientific": "Litoria ewingii",
+    "taxonId": 1633164,
+    "taxonName": "Rawlinsonia ewingii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wallum-rocket-frog": {
+    "scientific": "Litoria freycineti",
+    "taxonId": 23564,
+    "taxonName": "Litoria freycineti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-tree-frog": {
+    "scientific": "Litoria gilleni",
+    "taxonId": 1633147,
+    "taxonName": "Pelodryas gilleni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "graceful-tree-frog": {
+    "scientific": "Litoria gracilenta",
+    "taxonId": 1632446,
+    "taxonName": "Chlorohyla gracilenta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bumpy-rocket-frog": {
+    "scientific": "Litoria inermis",
+    "taxonId": 23643,
+    "taxonName": "Litoria inermis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jervis-bay-tree-frog": {
+    "scientific": "Litoria jervisiensis",
+    "taxonId": 1633165,
+    "taxonName": "Rawlinsonia jervisiensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-stony-creek-frog": {
+    "scientific": "Litoria jungguy",
+    "taxonId": 1633176,
+    "taxonName": "Rhyaconastes jungguy",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kroombit-tree-frog": {
+    "scientific": "Litoria kroombitensis",
+    "taxonId": 1632585,
+    "taxonName": "Dryopsophus kroombitensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-desert-tree-frog": {
+    "scientific": "Litoria larisonans",
+    "taxonId": 1658276,
+    "taxonName": "Colleeneremia larisonans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "broad-palmed-rocket-frog": {
+    "scientific": "Litoria latopalmata",
+    "taxonId": 23654,
+    "taxonName": "Litoria latopalmata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-stony-creek-frog": {
+    "scientific": "Litoria lesueuri",
+    "taxonId": 1633177,
+    "taxonName": "Rhyaconastes lesueuri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-heath-frog": {
+    "scientific": "Litoria littlejohni",
+    "taxonId": 1633166,
+    "taxonName": "Rawlinsonia littlejohni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-snouted-tree-frog": {
+    "scientific": "Litoria longirostris",
+    "taxonId": 1632690,
+    "taxonName": "Mahonabatrachus longirostris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "armoured-mist-frog": {
+    "scientific": "Litoria lorica",
+    "taxonId": 1632700,
+    "taxonName": "Mosleyia lorica",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rockhole-frog": {
+    "scientific": "Litoria meiriana",
+    "taxonId": 1632691,
+    "taxonName": "Mahonabatrachus meirianus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "javelin-frog": {
+    "scientific": "Litoria microbelos",
+    "taxonId": 1632692,
+    "taxonName": "Mahonabatrachus microbelos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "motorbike-frog": {
+    "scientific": "Litoria moorei",
+    "taxonId": 517096,
+    "taxonName": "Ranoidea moorei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kuranda-tree-frog": {
+    "scientific": "Litoria myola",
+    "taxonId": 1633207,
+    "taxonName": "Spicicalyx myola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "waterfall-frog": {
+    "scientific": "Litoria nannotis",
+    "taxonId": 1632701,
+    "taxonName": "Mosleyia nannotis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "striped-rocket-frog": {
+    "scientific": "Litoria nasuta",
+    "taxonId": 23647,
+    "taxonName": "Litoria nasuta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tawny-rocket-frog": {
+    "scientific": "Litoria nigrofrenata",
+    "taxonId": 23568,
+    "taxonName": "Litoria nigrofrenata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-green-stream-frog": {
+    "scientific": "Litoria nudidigitus",
+    "taxonId": 1632586,
+    "taxonName": "Dryopsophus nudidigitus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mountain-mist-frog": {
+    "scientific": "Litoria nyakalensis",
+    "taxonId": 1632702,
+    "taxonName": "Mosleyia nyakalensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wallum-sedge-frog": {
+    "scientific": "Litoria olongburensis",
+    "taxonId": 1632580,
+    "taxonName": "Drymomantis olongburensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-rocket-frog": {
+    "scientific": "Litoria pallida",
+    "taxonId": 23552,
+    "taxonName": "Litoria pallida",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "victorian-tree-frog": {
+    "scientific": "Litoria paraewingi",
+    "taxonId": 1633167,
+    "taxonName": "Rawlinsonia paraewingi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cascade-tree-frog": {
+    "scientific": "Litoria pearsoniana",
+    "taxonId": 1632587,
+    "taxonName": "Dryopsophus pearsonianus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "masked-frog": {
+    "scientific": "Litoria personata",
+    "taxonId": 23612,
+    "taxonName": "Litoria personata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "leaf-green-tree-frog": {
+    "scientific": "Litoria phyllochroa",
+    "taxonId": 1632589,
+    "taxonName": "Dryopsophus phyllochrous",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "peppered-tree-frog": {
+    "scientific": "Litoria piperata",
+    "taxonId": 1632590,
+    "taxonName": "Dryopsophus piperatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ruddy-tree-frog": {
+    "scientific": "Litoria pyrina",
+    "taxonId": 1658277,
+    "taxonName": "Colleeneremia pyrina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "screaming-tree-frog": {
+    "scientific": "Litoria quiritatus",
+    "taxonId": 1632558,
+    "taxonName": "Colleeneremia quiritatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-bell-frog": {
+    "scientific": "Litoria raniformis",
+    "taxonId": 517107,
+    "taxonName": "Ranoidea raniformis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-whirring-tree-frog": {
+    "scientific": "Litoria revelata",
+    "taxonId": 1633168,
+    "taxonName": "Rawlinsonia revelata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-mist-frog": {
+    "scientific": "Litoria rheocola",
+    "taxonId": 1632703,
+    "taxonName": "Mosleyia rheocola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-laughing-tree-frog": {
+    "scientific": "Litoria ridibunda",
+    "taxonId": 1658294,
+    "taxonName": "Pengilleyia ridibunda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-laughing-tree-frog": {
+    "scientific": "Litoria rothii",
+    "taxonId": 1633156,
+    "taxonName": "Pengilleyia rothii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-tree-frog": {
+    "scientific": "Litoria rubella",
+    "taxonId": 1632559,
+    "taxonName": "Colleeneremia rubella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "green-eyed-tree-frog": {
+    "scientific": "Litoria serrata",
+    "taxonId": 1633208,
+    "taxonName": "Spicicalyx serrata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kangaroo-island-tree-frog": {
+    "scientific": "Litoria sibilus",
+    "taxonId": 1658297,
+    "taxonName": "Rawlinsonia sibilus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spaldings-rocket-frog": {
+    "scientific": "Litoria spaldingi",
+    "taxonId": 1250534,
+    "taxonName": "Litoria spaldingi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-tree-frog": {
+    "scientific": "Litoria spenceri",
+    "taxonId": 1632591,
+    "taxonName": "Dryopsophus spenceri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chattering-rock-frog": {
+    "scientific": "Litoria staccato",
+    "taxonId": 66079,
+    "taxonName": "Litoria staccato",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "new-england-tree-frog": {
+    "scientific": "Litoria subglandulosa",
+    "taxonId": 1632592,
+    "taxonName": "Dryopsophus subglandulosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-shinned-rocket-frog": {
+    "scientific": "Litoria tornieri",
+    "taxonId": 23544,
+    "taxonName": "Litoria tornieri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tylers-tree-frog": {
+    "scientific": "Litoria tyleri",
+    "taxonId": 1633158,
+    "taxonName": "Pengilleyia tyleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "whistling-tree-frog": {
+    "scientific": "Litoria verreauxii",
+    "taxonId": 1633169,
+    "taxonName": "Rawlinsonia verreauxii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wotjulum-rocket-frog": {
+    "scientific": "Litoria watjulumensis",
+    "taxonId": 23583,
+    "taxonName": "Litoria watjulumensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-heath-frog": {
+    "scientific": "Litoria watsoni",
+    "taxonId": 1633170,
+    "taxonName": "Rawlinsonia watsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-stony-creek-frog": {
+    "scientific": "Litoria wilcoxii",
+    "taxonId": 1633178,
+    "taxonName": "Rhyaconastes wilcoxii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-thighed-tree-frog": {
+    "scientific": "Litoria xanthomera",
+    "taxonId": 1632450,
+    "taxonName": "Chlorohyla xanthomera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wood-frog": {
+    "scientific": "Papurana daemeli",
+    "taxonId": 65570,
+    "taxonName": "Hylarana daemeli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

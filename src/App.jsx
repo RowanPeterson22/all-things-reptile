@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { C } from "./constants/colours";
 import SplashScreen from "./components/SplashScreen";
 import BrowseScreen from "./screens/BrowseScreen";
@@ -60,6 +61,8 @@ import HandlingPage from "./pages/care/HandlingPage";
 import HealthPage from "./pages/care/HealthPage";
 import SheddingPage from "./pages/care/SheddingPage";
 import FeederGuidePage from "./pages/care/FeederGuidePage";
+import { SPECIES } from "./data/species";
+import { CARE_GUIDES } from "./data/careGuides";
 
 
 // ─── Page router map ──────────────────────────────────────────────
@@ -119,23 +122,64 @@ const PAGE_MAP = {
   feeders:     FeederGuidePage,
 };
 
-// ─── Root app ─────────────────────────────────────────────────────
-export default function App() {
+// ─── Route tables (D4: routes use slug only) ──────────────────────
+// Only entries with a built page are routable (keeps the Browse "has a page" guard).
+const SPECIES_BY_SLUG = Object.fromEntries(SPECIES.filter(s => s.page && PAGE_MAP[s.page]).map(s => [s.slug, s]));
+const GUIDES_BY_SLUG  = Object.fromEntries(CARE_GUIDES.filter(g => g.page && PAGE_MAP[g.page]).map(g => [g.slug, g]));
+// Legacy page key (PAGE_MAP id) → URL, for screens that still report page keys.
+const URL_FOR_PAGE = {
+  ...Object.fromEntries(Object.values(SPECIES_BY_SLUG).map(s => [s.page, `/species/${s.slug}`])),
+  ...Object.fromEntries(Object.values(GUIDES_BY_SLUG).map(g => [g.page, `/care/${g.slug}`])),
+};
+
+const TABS = [
+  { id: "browse",    icon: "🔍", label: "Browse",     path: "/"          },
+  { id: "care",      icon: "📖", label: "Care",       path: "/care"      },
+  { id: "licencing", icon: "⚖️", label: "Licencing",  path: "/licencing" },
+  { id: "identify",  icon: "📷", label: "ID Reptile", path: "/id"        },
+  { id: "glossary",  icon: "📚", label: "Glossary",   path: "/glossary"  },
+];
+const TAB_FOR_PATH = Object.fromEntries(TABS.map(t => [t.path, t.id]));
+
+// Detail page: renders the species / care guide for :slug, or sends unknown slugs home.
+const DetailRoute = ({ table, onBack }) => {
+  const { slug } = useParams();
+  const entry = table[slug];
+  if (!entry) return <Navigate to="/" replace />;
+  const PageComponent = PAGE_MAP[entry.page];
+  return <PageComponent onBack={onBack} />;
+};
+
+// ─── App shell (layout + routes) ──────────────────────────────────
+export function AppShell() {
   const [showSplash, setShowSplash] = useState(true);
-  const [activeTab, setActiveTab] = useState("browse");
-  const [page, setPage] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const pathname = location.pathname.replace(/\/+$/, "") || "/";
 
-  const tabs = [
-    { id: "browse",    icon: "🔍", label: "Browse"    },
-    { id: "care",      icon: "📖", label: "Care"      },
-    { id: "licencing", icon: "⚖️", label: "Licencing" },
-    { id: "identify",  icon: "📷", label: "ID Reptile"},
-    { id: "glossary",  icon: "📚", label: "Glossary"  },
-  ];
+  // A detail page is any route that isn't one of the five tab screens.
+  const isTabPath = pathname in TAB_FOR_PATH;
+  const isDetail = !isTabPath && /^\/(species|care)\/[^/]+$/.test(pathname);
+  // Tabs highlight from the URL. Detail pages keep the tab they were opened from
+  // (carried in history state); a cold deep link falls back to its section's tab.
+  const activeTab = isTabPath
+    ? TAB_FOR_PATH[pathname]
+    : (location.state && location.state.tab) || (pathname.startsWith("/care/") ? "care" : "browse");
 
-  const handleBack = () => setPage(null);
-  const PageComponent = page ? PAGE_MAP[page] : null;
+  // Re-tapping the current tab is a no-op, as it was with setActiveTab/setPage(null).
+  const go = (path) => { if (path !== pathname) navigate(path); };
+  const openPage = (page) => {
+    const url = URL_FOR_PAGE[page];
+    if (url) navigate(url, { state: { tab: activeTab } });
+  };
+  // Equivalent of setPage(null): return to the screen underneath. If we got here
+  // inside the app, that's the previous history entry; on a cold deep link there's
+  // nothing to go back to, so replace with the section's tab screen.
+  const handleBack = () => {
+    if (location.key !== "default") navigate(-1);
+    else navigate(activeTab === "care" ? "/care" : "/", { replace: true });
+  };
 
   if (showSplash) {
     return <SplashScreen onComplete={() => setShowSplash(false)} />;
@@ -144,17 +188,17 @@ export default function App() {
   return (
     <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
 
-        {!page && (
+        {!isDetail && (
           <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
-              <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { setActiveTab("browse"); setPage(null); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
+              <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { go("/"); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>
             <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>
               <input
                 placeholder="Search species, care guides, glossary..."
                 value={searchQuery}
-                onChange={e => { setSearchQuery(e.target.value); setActiveTab("browse"); setPage(null); }}
+                onChange={e => { setSearchQuery(e.target.value); if (pathname !== "/") navigate("/"); }}
                 style={{ background: "none", border: "none", outline: "none", color: "white", fontSize: 14, width: "100%", fontFamily: "inherit" }}
               />
               {searchQuery && <button onClick={() => setSearchQuery("")} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.6)", cursor: "pointer", fontSize: 18, fontFamily: "inherit", lineHeight: 1 }}>×</button>}
@@ -164,18 +208,22 @@ export default function App() {
         )}
 
         <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", background: "white" }}>
-          {PageComponent && <PageComponent onBack={handleBack} />}
-          {!page && activeTab === "browse"   && (searchQuery.length >= 2 ? <SearchResults query={searchQuery} onNavigate={(p) => { setPage(p); setSearchQuery(""); }} /> : <BrowseScreen onSpecies={setPage} />)}
-          {!page && activeTab === "care"     && <CareScreen     onGuide={setPage}   />}
-          {!page && activeTab === "licencing" && <LegalScreen />}
-          {!page && activeTab === "identify" && <IdentifyScreen />}
-          {!page && activeTab === "glossary" && <GlossaryScreen />}
+          <Routes>
+            <Route path="/"              element={searchQuery.length >= 2 ? <SearchResults query={searchQuery} onNavigate={(p) => { openPage(p); setSearchQuery(""); }} /> : <BrowseScreen onSpecies={openPage} />} />
+            <Route path="/care"          element={<CareScreen onGuide={openPage} />} />
+            <Route path="/licencing"     element={<LegalScreen />} />
+            <Route path="/id"            element={<IdentifyScreen />} />
+            <Route path="/glossary"      element={<GlossaryScreen />} />
+            <Route path="/species/:slug" element={<DetailRoute table={SPECIES_BY_SLUG} onBack={handleBack} />} />
+            <Route path="/care/:slug"    element={<DetailRoute table={GUIDES_BY_SLUG} onBack={handleBack} />} />
+            <Route path="*"              element={<Navigate to="/" replace />} />
+          </Routes>
         </div>
 
         <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", flexDirection: "column", paddingTop: 8, zIndex: 100 }}>
           <div style={{ display: "flex", width: "100%" }}>
-            {tabs.map(t => (
-              <button key={t.id} onClick={() => { setActiveTab(t.id); setPage(null); }} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, cursor: "pointer", padding: "4px 0", fontFamily: "inherit" }}>
+            {TABS.map(t => (
+              <button key={t.id} onClick={() => go(t.path)} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, cursor: "pointer", padding: "4px 0", fontFamily: "inherit" }}>
                 <span style={{ fontSize: 20 }}>{t.icon}</span>
                 <span style={{ fontSize: 10, color: activeTab === t.id ? C.green : "#aaa", fontWeight: activeTab === t.id ? 700 : 400 }}>{t.label}</span>
               </button>
@@ -187,3 +235,14 @@ export default function App() {
     </div>
   );
 }
+
+// ─── Root app ─────────────────────────────────────────────────────
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
+  );
+}
+
+export { PAGE_MAP, SPECIES_BY_SLUG, GUIDES_BY_SLUG, URL_FOR_PAGE };

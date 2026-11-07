@@ -394,5 +394,367 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "southwestern-blind-snake": {
+    "scientific": "Anilios australis",
+    "taxonId": 539265,
+    "taxonName": "Anilios australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shovel-snouted-blind-snake": {
+    "scientific": "Anilios batillus",
+    "taxonId": 539266,
+    "taxonName": "Anilios batillus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dark-spined-blind-snake": {
+    "scientific": "Anilios bicolor",
+    "taxonId": 539267,
+    "taxonName": "Anilios bicolor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "prong-snouted-blind-snake": {
+    "scientific": "Anilios bituberculatus",
+    "taxonId": 539268,
+    "taxonName": "Anilios bituberculatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "faint-striped-blind-snake": {
+    "scientific": "Anilios broomi",
+    "taxonId": 539269,
+    "taxonName": "Anilios broomi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-blind-snake": {
+    "scientific": "Anilios centralis",
+    "taxonId": 539270,
+    "taxonName": "Anilios centralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-york-striped-blind-snake": {
+    "scientific": "Anilios chamodracaena",
+    "taxonId": 539271,
+    "taxonName": "Anilios chamodracaena",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-australian-blind-snake": {
+    "scientific": "Anilios diversus",
+    "taxonId": 539272,
+    "taxonName": "Anilios diversus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "interior-blind-snake": {
+    "scientific": "Anilios endoterus",
+    "taxonId": 539273,
+    "taxonName": "Anilios endoterus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ruby-gap-blind-snake": {
+    "scientific": "Anilios fossor",
+    "taxonId": 539275,
+    "taxonName": "Anilios fossor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cathedral-gorge-blind-snake": {
+    "scientific": "Anilios ganei",
+    "taxonId": 539276,
+    "taxonName": "Anilios ganei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-tailed-beaked-blind-snake": {
+    "scientific": "Anilios grypus",
+    "taxonId": 539277,
+    "taxonName": "Anilios grypus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "top-end-blind-snake": {
+    "scientific": "Anilios guentheri",
+    "taxonId": 539278,
+    "taxonName": "Anilios guentheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-hook-snouted-blind-snake": {
+    "scientific": "Anilios hamatus",
+    "taxonId": 539279,
+    "taxonName": "Anilios hamatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-deep-soil-blind-snake": {
+    "scientific": "Anilios howi",
+    "taxonId": 539280,
+    "taxonName": "Anilios howi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fassifern-blind-snake": {
+    "scientific": "Anilios insperatus",
+    "taxonId": 539281,
+    "taxonName": "Anilios insperatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-shallow-soil-blind-snake": {
+    "scientific": "Anilios kimberleyensis",
+    "taxonId": 539282,
+    "taxonName": "Anilios kimberleyensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "murchison-blind-snake": {
+    "scientific": "Anilios leptosomus",
+    "taxonId": 539283,
+    "taxonName": "Anilios leptosoma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-tailed-blind-snake": {
+    "scientific": "Anilios leucoproctus",
+    "taxonId": 539284,
+    "taxonName": "Anilios leucoproctus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-blind-snake": {
+    "scientific": "Anilios ligatus",
+    "taxonId": 539285,
+    "taxonName": "Anilios ligatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "barrow-island-blind-snake": {
+    "scientific": "Anilios longissimus",
+    "taxonId": 539286,
+    "taxonName": "Anilios longissimus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "buff-snouted-blind-snake": {
+    "scientific": "Anilios margaretae",
+    "taxonId": 539287,
+    "taxonName": "Anilios margaretae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "small-eyed-blind-snake": {
+    "scientific": "Anilios micromma",
+    "taxonId": 539288,
+    "taxonName": "Anilios micromma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "groote-eylandt-dwarf-blind-snake": {
+    "scientific": "Anilios minimus",
+    "taxonId": 539289,
+    "taxonName": "Anilios minimus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fannie-bay-blind-snake": {
+    "scientific": "Anilios nema",
+    "taxonId": 539290,
+    "taxonName": "Anilios nema",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blackish-blind-snake": {
+    "scientific": "Anilios nigrescens",
+    "taxonId": 539291,
+    "taxonName": "Anilios nigrescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "daly-river-blind-snake": {
+    "scientific": "Anilios nigricaudus",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Anilios guentheri",
+    "lumpedTaxonId": 539278
+  },
+  "roebuck-bay-blind-snake": {
+    "scientific": "Anilios nigroterminatus",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07"
+  },
+  "kalbarri-blind-snake": {
+    "scientific": "Anilios obtusifrons",
+    "taxonId": 606435,
+    "taxonName": "Anilios obtusifrons",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-beaked-blind-snake": {
+    "scientific": "Anilios pilbarensis",
+    "taxonId": 539293,
+    "taxonName": "Anilios pilbarensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fat-blind-snake": {
+    "scientific": "Anilios pinguis",
+    "taxonId": 539294,
+    "taxonName": "Anilios pinguis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "woodland-blind-snake": {
+    "scientific": "Anilios proximus",
+    "taxonId": 539295,
+    "taxonName": "Anilios proximus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "romeo-creek-blind-snake": {
+    "scientific": "Anilios robertsi",
+    "taxonId": 539296,
+    "taxonName": "Anilios robertsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cooloola-blind-snake": {
+    "scientific": "Anilios silvia",
+    "taxonId": 539297,
+    "taxonName": "Anilios silvia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "milyering-well-blind-snake": {
+    "scientific": "Anilios splendidus",
+    "taxonId": 539298,
+    "taxonName": "Anilios splendidus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "geraldton-blind-snake": {
+    "scientific": "Anilios systenos",
+    "taxonId": 606436,
+    "taxonName": "Anilios systenos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "torres-blind-snake": {
+    "scientific": "Anilios torresianus",
+    "taxonId": 539299,
+    "taxonName": "Anilios torresianus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "darwin-blind-snake": {
+    "scientific": "Anilios tovelli",
+    "taxonId": 539300,
+    "taxonName": "Anilios tovelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sandamara-blind-snake": {
+    "scientific": "Anilios troglodytes",
+    "taxonId": 539301,
+    "taxonName": "Anilios troglodytes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "claw-snouted-blind-snake": {
+    "scientific": "Anilios unguirostris",
+    "taxonId": 539302,
+    "taxonName": "Anilios unguirostris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mornington-blind-snake": {
+    "scientific": "Anilios vagurima",
+    "taxonId": 1119987,
+    "taxonName": "Anilios vagurima",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-beaked-blind-snake": {
+    "scientific": "Anilios waitii",
+    "taxonId": 539303,
+    "taxonName": "Anilios waitii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-snouted-blind-snake": {
+    "scientific": "Anilios wiedii",
+    "taxonId": 539304,
+    "taxonName": "Anilios wiedii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yampi-blind-snake": {
+    "scientific": "Anilios yampiensis",
+    "taxonId": 539305,
+    "taxonName": "Anilios yampiensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yirrkala-blind-snake": {
+    "scientific": "Anilios yirrikalae",
+    "taxonId": 539306,
+    "taxonName": "Anilios yirrikalae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

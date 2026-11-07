@@ -37,7 +37,7 @@ Work in small commits, one stage per pull request. Never push to `main` directly
 - **D9** AI species ID is **beta-only** at the relaunch: only invited testers (VHS members, breeders) can see or use it, unlocked by a personal invite link (`/id?invite=<code>`, made with `scripts/beta-invite.mjs`). The public build shows no ID tab or route. It goes public when Rowan is happy with its accuracy. Every result is labelled a suggestion and warns never to handle a wild snake based on it. Testers can opt in, per photo (default off), to saving the photo with their correction. Before launch the whole app is behind the pre-launch gate (below), and testers see only their own sections; AI ID stays beta-only even after `ATR_PUBLIC=true`.
 - **D10** Target: app relaunch 29 Jan 2027.
 
-## Pre-launch gate (until launch, signed off 8 Nov 2026)
+## Pre-launch gate (until launch; Rowan, 8 Nov 2026)
 
 The live app (app.allthingsreptile.com.au, `main`) is **not publicly viewable until launch**: the information is changing fast.
 

@@ -41,7 +41,8 @@ Work in small commits, one stage per pull request. Never push to `main` directly
 
 - 46 species: 15 snakes, 9 lizards, 6 geckos, 6 monitors, 4 turtles, 6 frogs. Australian natives only — no Leopard Geckos or other exotics.
 - Black-headed Monitor and Black-headed Python are different species; never let their IDs collide.
-- Licence grids use general tier descriptions, **never** specific class numbers (no NSW R-codes, QLD class numbers, VIC schedule numbers, ACT letters). Every jurisdiction carries a "verify with your authority" disclaimer.
+- Licence grids use each authority's own **licence names** as they appear on its website today (NSW Companion / Class 1 / Advanced licence; VIC Basic / Advanced licence; QLD Standard / Specialised / Advanced licence; SA Basic / Specialist permit; WA Pet keeper's licence; TAS Herpetofauna permit; ACT keeper licence, case by case; NT permit to keep). **Never** show species class codes (no NSW R-codes, QLD Class 1/2 species, VIC schedule numbers, WA categories). Every jurisdiction carries a "verify with your authority" disclaimer, and medium/low-confidence cells add "confirm with authority".
+- Species-by-state availability was researched against every state's official keepable-species list in November 2026 (review page: ATR Licence Matrix artifact). Re-run that research before changing a grid by hand.
 - TAS is always red/unavailable for non-TAS native species.
 - Monitors need a 50–60°C basking surface (see D8 for the two exceptions) — feature it prominently on monitor pages.
 - NSW no longer issues licences instantly; officially at least 8 weeks, often longer — warn clearly on the Licencing screen (the NSW record carries the warning). Don't quote 90 days; there's no official source for it.

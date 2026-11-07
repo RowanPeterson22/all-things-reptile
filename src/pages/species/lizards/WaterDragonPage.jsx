@@ -58,7 +58,7 @@ const WaterDragonPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Allow 3–4 weeks to settle. Approach slowly, support the full body. Once settled they can become very tame and will often voluntarily approach their keeper. Well-handled adults are impressive and engaging animals to interact with.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Eastern Water Dragons are a commonly kept species available from licensed breeders across Australia." states={[{ abbr: "NSW", cat: "Standard keeper licence", ok: true }, { abbr: "VIC", cat: "Basic wildlife licence", ok: true }, { abbr: "QLD", cat: "Standard keeper licence", ok: true }, { abbr: "SA", cat: "Basic permit", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+      {tab === "licencing" && <LegalTab note="Can be kept in NSW, VIC, QLD, SA and NT. Not permitted in WA, TAS and ACT. Licence names are each authority's own; checked November 2026." states={[{ abbr: "NSW", cat: "Companion or Class 1 licence", ok: true }, { abbr: "VIC", cat: "Basic licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Basic permit (one animal permit-free)", ok: true }, { abbr: "WA", cat: "Not permitted", ok: false }, { abbr: "TAS", cat: "Not permitted (TAS natives only)", ok: false }, { abbr: "ACT", cat: "Not permitted · confirm with authority", ok: false }, { abbr: "NT", cat: "Import + keep permit (case by case)", ok: true }]} />}
     </>}
   />
 );

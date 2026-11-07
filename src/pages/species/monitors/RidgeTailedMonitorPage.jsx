@@ -17,7 +17,7 @@ const RidgeTailedMonitorPage = ({ onBack }) => (
     tabs={["overview","feeding","health","handling","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Similar in appearance to the Ackie Monitor but from a different part of Australia — found in the rocky outcrops and escarpments of the Northern Territory and north-western Western Australia. Their strongly keeled, spiny tail scales give them their name. Hardy and active, with care requirements almost identical to the Ackie Monitor. A less commonly available but equally impressive alternative to the Ackie.</p>
+        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Similar in appearance to the Ackie Monitor but from a different part of Australia — found only in the rocky outcrops and escarpments of the Northern Territory. Their strongly keeled, spiny tail scales give them their name. Hardy and active, with care requirements almost identical to the Ackie Monitor. A less commonly available but equally impressive alternative to the Ackie.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","55–75 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","120 × 60 × 60 cm"],["💧","Humidity","25–40%"]]} />
         <WarnBox type="red" title="Very hot basking spot essential">Like the Ackie Monitor, Ridge-tailed Monitors require a very hot basking spot — 50–60°C surface temperature. This is essential for digestion and health.</WarnBox>
@@ -57,7 +57,7 @@ const RidgeTailedMonitorPage = ({ onBack }) => (
         </div>
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Same approach as Ackie Monitors. Hook-train, support full body, start short and build gradually. Less commonly kept than Ackies so community experience is somewhat limited — connect with experienced Ridge-tail keepers for species-specific advice.</div>
       </>}
-      {tab === "licencing" && <LegalTab note="Ridge-tailed Monitors are endemic to the NT and are primarily available there. Check availability in your state before purchasing — less commonly available than Ackie Monitors." states={[{ abbr: "NSW", cat: "Check with authority", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Check with authority", ok: true }, { abbr: "SA", cat: "Check with authority", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Check with authority", ok: true }, { abbr: "NT", cat: "Standard licence", ok: true }]} />}
+      {tab === "licencing" && <LegalTab note="Can be kept in NSW, QLD, SA, ACT and NT. Not permitted in VIC, WA and TAS. Licence names are each authority's own; checked November 2026." states={[{ abbr: "NSW", cat: "Advanced licence", ok: true }, { abbr: "VIC", cat: "Not permitted · confirm with authority", ok: false }, { abbr: "QLD", cat: "Specialised licence", ok: true }, { abbr: "SA", cat: "Basic permit (one animal permit-free)", ok: true }, { abbr: "WA", cat: "Not permitted", ok: false }, { abbr: "TAS", cat: "Not permitted (TAS natives only)", ok: false }, { abbr: "ACT", cat: "Keeper licence (case by case)", ok: true }, { abbr: "NT", cat: "Permit to keep", ok: true }]} />}
     </>}
   />
 );

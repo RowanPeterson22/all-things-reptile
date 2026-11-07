@@ -6,7 +6,7 @@ export const STATES = [
   {
     abbr: "NSW", name: "New South Wales",
     licence: "Native Animal Keeper Licence",
-    categories: "Companion (one animal) → Basic → Advanced",
+    categories: "Companion → Class 1 → Advanced licence",
     minage: "16+ (18+ for advanced tiers)",
     cost: "Companion $50 for 5 years; basic from $63 per tier",
     authority: "Biodiversity & Heritage Regulator (BHR)",
@@ -17,14 +17,14 @@ export const STATES = [
       title: "Allow at least 8 weeks — plan for longer",
       body: "Since 2025 NSW no longer issues licences instantly online. Every application is assessed, and NSW says outcomes take at least 8 weeks because of a backlog. Get your licence before you buy — at an expo you won't be able to take an animal home on the day.",
     },
-    notes: "Most commonly kept reptiles sit in the basic tier. Advanced tiers need you to be 18+ with two years' experience on a lower licence, plus extras such as references and a lockable room. Paying the fee doesn't guarantee approval. Records are lodged every April.",
+    notes: "Most commonly kept reptiles need a Companion (one animal) or Class 1 licence. An Advanced licence needs you to be 18+ with two years' experience on a lower licence, plus extras such as references and a lockable room. Paying the fee doesn't guarantee approval. Records are lodged every April.",
     verifyDisclaimer: "Checked November 2026. Rules change — always verify with the Biodiversity & Heritage Regulator before you buy.",
     colour: "#1A3A5C", pale: "#E8EEF8",
   },
   {
     abbr: "VIC", name: "Victoria",
     licence: "Private Wildlife Licence",
-    categories: "Exempt species → Basic → Advanced",
+    categories: "No licence (exempt) → Basic → Advanced licence",
     minage: "10+ (under 18 needs guardian consent)",
     cost: "From $144.60/yr basic, $267.60/yr advanced (2026–27)",
     authority: "Conservation Regulator (DEECA)",
@@ -66,7 +66,7 @@ export const STATES = [
   {
     abbr: "WA", name: "Western Australia",
     licence: "Fauna Possessing (Pet Keeper's) Licence",
-    categories: "Standard → Advanced",
+    categories: "Pet keeper's licence — standard and advanced species",
     minage: "18+",
     cost: "Fee applies",
     authority: "Dept of Biodiversity, Conservation & Attractions (DBCA)",
@@ -94,7 +94,7 @@ export const STATES = [
   {
     abbr: "ACT", name: "Australian Capital Territory",
     licence: "Nature Conservation Licence",
-    categories: "Keeper's licence (3 years)",
+    categories: "Keeper licence (3 years), assessed case by case",
     minage: "Not stated",
     cost: "Fee per animal applies",
     authority: "Conservator of Flora & Fauna (Access Canberra)",
@@ -112,7 +112,7 @@ export const STATES = [
   {
     abbr: "NT", name: "Northern Territory",
     licence: "Permit to keep protected wildlife",
-    categories: "Exempt species → Permit → Venomous snake permits",
+    categories: "No permit (exempt species) → Permit to keep → Venomous snake permits",
     minage: "Not stated",
     cost: "Fee applies for permit species",
     authority: "Parks & Wildlife Commission NT",

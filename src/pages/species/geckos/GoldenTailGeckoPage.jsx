@@ -20,7 +20,7 @@ const GoldenTailGeckoPage = ({ onBack }) => (
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>One of Australia's most beautiful geckos — their striking golden-orange tail with black markings is instantly recognisable and makes them highly sought after in the hobby. Found in dry woodlands and brigalow scrub of southern Queensland. Like all Strophurus, they possess the remarkable ability to squirt a defensive fluid from their tail. Arboreal, nocturnal, and endlessly fascinating to observe.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","10–12 cm"],["⏳","Lifespan","8–12 yrs"],["🏠","Min. enclosure","45 × 45 × 45 cm"],["💧","Humidity","30–45%"]]} />
-        <WarnBox type="gold" title="State restrictions apply">Golden-tailed Geckos require an Advanced licence in Victoria and a higher-tier licence in Queensland. Always verify your state requirements before purchasing.</WarnBox>
+        <WarnBox type="gold" title="State restrictions apply">Golden-tailed Geckos need an Advanced licence in Victoria and can't be kept in WA or Tasmania. Check the licencing tab for your state and always verify before purchasing.</WarnBox>
         <SectionLabel>Temperature requirements</SectionLabel>
         <TempBar label="Warm side" value="26–30°C" width="58%" color="#e05a2b"/>
         <TempBar label="Cool side" value="20–24°C" width="36%" color="#4a9e6b"/>
@@ -57,7 +57,7 @@ const GoldenTailGeckoPage = ({ onBack }) => (
         <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Handle at night when active. Support the full body. Short sessions only. Their remarkable golden tail is their most striking feature — never grab by the tail. Wash hands before and after handling.</div>
         <WarnBox type="gold" title="Tail fluid warning">Like all Strophurus, can squirt foul-smelling defensive fluid from the tail if threatened. Avoid eye contact with the fluid and wash immediately if it makes contact.</WarnBox>
       </>}
-      {tab === "licencing" && <LegalTab note="Golden-tailed Geckos require an Advanced licence in Victoria and a higher-tier licence in QLD." states={[{ abbr: "NSW", cat: "Standard keeper licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Higher tier — check DETSI", ok: true }, { abbr: "SA", cat: "Basic permit", ok: true }, { abbr: "WA", cat: "Standard licence", ok: true }, { abbr: "TAS", cat: "TAS natives only", ok: false }, { abbr: "ACT", cat: "Standard licence", ok: true }, { abbr: "NT", cat: "Check with authority", ok: true }]} />}
+      {tab === "licencing" && <LegalTab note="Can be kept in NSW, VIC, QLD, SA, ACT and NT. Not permitted in WA and TAS. Licence names are each authority's own; checked November 2026." states={[{ abbr: "NSW", cat: "Companion or Class 1 licence", ok: true }, { abbr: "VIC", cat: "Advanced licence", ok: true }, { abbr: "QLD", cat: "Standard licence", ok: true }, { abbr: "SA", cat: "Basic permit (one animal permit-free)", ok: true }, { abbr: "WA", cat: "Not permitted", ok: false }, { abbr: "TAS", cat: "Not permitted (TAS natives only)", ok: false }, { abbr: "ACT", cat: "Keeper licence (case by case)", ok: true }, { abbr: "NT", cat: "Import + keep permit (case by case)", ok: true }]} />}
     </>}
   />
 );

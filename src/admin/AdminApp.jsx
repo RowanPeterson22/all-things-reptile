@@ -10,6 +10,7 @@ import AddPhotoScreen from "./AddPhotoScreen";
 import FeedbackScreen from "./FeedbackScreen";
 import TestersScreen from "./TestersScreen";
 import IndexScreen from "./IndexScreen";
+import MorphsScreen from "./MorphsScreen";
 
 // ─── ATR admin (interim access: an is_admin beta tester, until D7) ─
 // Loaded as its own chunk, only after /api/admin-check says yes, so the public
@@ -19,6 +20,7 @@ import IndexScreen from "./IndexScreen";
 const NAV = [
   { to: "/admin", label: "Photos", end: true },
   { to: "/admin/add", label: "Add photo" },
+  { to: "/admin/morphs", label: "Morphs" },
   { to: "/admin/feedback", label: "Feedback" },
   { to: "/admin/testers", label: "Testers" },
   { to: "/admin/index", label: "Species index" },
@@ -50,7 +52,7 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
   const forbiddenRef = useRef(onForbidden);
   forbiddenRef.current = onForbidden;
   const api = useMemo(() => makeApi(inviteCode, () => forbiddenRef.current && forbiddenRef.current()), [inviteCode]);
-  const [data, setData] = useState(null); // { species, counts, morphs }
+  const [data, setData] = useState(null); // { species, counts, morphs (catalogue), morphSource }
   const [err, setErr] = useState("");
 
   useEffect(() => {
@@ -67,8 +69,15 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
       .catch(() => { /* counts refresh on the next load */ });
   }, [api]);
 
-  const bySlug = useMemo(() => (data ? Object.fromEntries(data.species.map(r => [r.slug, r])) : {}), [data]);
-  const shared = data ? { api, species: data.species, bySlug, counts: data.counts, morphs: data.morphs, refreshCounts } : null;
+  // Every morph write returns the whole catalogue; screens hand it back here.
+  const setMorphs = useCallback((morphs) => setData(cur => (cur ? { ...cur, morphs, morphSource: "db" } : cur)), []);
+
+  const species = data ? data.species : null;
+  const bySlug = useMemo(() => (species ? Object.fromEntries(species.map(r => [r.slug, r])) : {}), [species]);
+  const shared = data ? {
+    api, species: data.species, bySlug, counts: data.counts, refreshCounts,
+    catalogue: data.morphs || [], setMorphs, morphsReadOnly: data.morphSource !== "db",
+  } : null;
 
   return (
     <div style={{ minHeight: "100vh", background: C.cream, fontFamily: "'DM Sans', system-ui, sans-serif", color: N.ink }}>
@@ -93,6 +102,9 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
           <Route index element={<LibraryScreen {...shared} />} />
           <Route path="species/:slug" element={<SpeciesPhotosScreen {...shared} />} />
           <Route path="add" element={<AddPhotoScreen {...shared} />} />
+          <Route path="morphs" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />
+          <Route path="morphs/new" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} creating />} />
+          <Route path="morphs/:id" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />
           <Route path="feedback" element={<FeedbackScreen {...shared} />} />
           <Route path="testers" element={<TestersScreen api={api} adminId={adminId} />} />
           <Route path="index" element={<IndexScreen {...shared} />} />

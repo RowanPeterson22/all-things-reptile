@@ -2,10 +2,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { C } from "../constants/colours";
 import SpeciesPicker from "./SpeciesPicker";
+import { TraitPicker, SpeciesMorphsPanel } from "./MorphParts";
 import { PhotoCredit } from "../components/PhotoCredit";
 import { objectPosition, focalFromTap } from "../components/focal";
 import { toLibraryJpegs, rotate90, MIN_PUBLIC_EDGE } from "./image";
-import { N, page, btn, smallBtn, chip, badge, card, input, label, hint, errorText, LICENCE_LABEL, STATUS_TONE, fmtDate } from "./ui";
+import { N, page, btn, smallBtn, badge, card, input, label, hint, errorText, LICENCE_LABEL, STATUS_TONE, fmtDate } from "./ui";
 
 const linkStyle = { color: C.green, fontWeight: 700, textDecoration: "none" };
 const isWebUrl = (u) => /^https?:\/\//i.test(u || "");
@@ -164,7 +165,7 @@ export const PublicControls = ({ photo, busy, change }) => {
 };
 
 // ─── One reference photo, with every change going through PATCH /api/admin-photos ──
-const PhotoCard = ({ photo, api, species, traitOptions, onChanged, onGone }) => {
+const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone }) => {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [notes, setNotes] = useState(photo.notes || "");
@@ -188,7 +189,6 @@ const PhotoCard = ({ photo, api, species, traitOptions, onChanged, onGone }) => 
 
   const traits = photo.traits || [];
   const toggleTrait = (id) => change({ traits: traits.includes(id) ? traits.filter(t => t !== id) : [...traits, id] });
-  const extraTraits = traits.filter(t => !traitOptions.some(o => o.id === t));
   const moveTarget = moveTo && species.find(s => s.slug === moveTo);
 
   return (
@@ -247,14 +247,8 @@ const PhotoCard = ({ photo, api, species, traitOptions, onChanged, onGone }) => 
         )}
 
         <div style={{ fontSize: 11, fontWeight: 700, color: N.muted, marginBottom: 4 }}>Traits</div>
-        {traitOptions.length === 0 && extraTraits.length === 0 && <div style={{ fontSize: 11, color: N.faint, marginBottom: 6 }}>No trait list for this species yet.</div>}
-        <div style={{ display: "flex", gap: 5, flexWrap: "wrap", marginBottom: 8 }}>
-          {traitOptions.map(t => (
-            <button key={t.id} type="button" disabled={busy} title={t.cue} onClick={() => toggleTrait(t.id)} style={{ ...chip(traits.includes(t.id)), padding: "4px 9px", fontSize: 11 }}>{t.name}</button>
-          ))}
-          {extraTraits.map(t => (
-            <button key={t} type="button" disabled={busy} onClick={() => toggleTrait(t)} style={{ ...chip(true), padding: "4px 9px", fontSize: 11 }}>{t} ×</button>
-          ))}
+        <div style={{ marginBottom: 8 }}>
+          <TraitPicker catalogue={catalogue} speciesSlug={photo.species_slug} selected={traits} onToggle={toggleTrait} disabled={busy} />
         </div>
 
         <textarea value={notes} onChange={e => setNotes(e.target.value)} rows={2} maxLength={2000} placeholder="Notes" style={{ ...input, fontSize: 14, resize: "vertical" }} aria-label="Notes" />
@@ -269,7 +263,7 @@ const PhotoCard = ({ photo, api, species, traitOptions, onChanged, onGone }) => 
 };
 
 // ─── A species' reference photos ──────────────────────────────────
-const SpeciesPhotosScreen = ({ api, species, bySlug, counts, morphs, refreshCounts }) => {
+const SpeciesPhotosScreen = ({ api, species, bySlug, counts, catalogue, setMorphs, morphsReadOnly, refreshCounts }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const sp = bySlug[slug];
@@ -290,7 +284,6 @@ const SpeciesPhotosScreen = ({ api, species, bySlug, counts, morphs, refreshCoun
   if (!sp) return <div style={page}>That species isn't in the index. <Link to="/admin" style={{ color: C.green }}>Back to the library</Link></div>;
 
   const c = counts[slug] || { active: 0, hidden: 0, rejected: 0, best: 0 };
-  const traitOptions = (sp.appSlug && morphs[sp.appSlug]) || [];
   const onChanged = (next) => {
     setPhotos(list => (showAll || next.status === "active" ? list.map(p => (p.id === next.id ? next : p)) : list.filter(p => p.id !== next.id)));
     refreshCounts();
@@ -310,6 +303,7 @@ const SpeciesPhotosScreen = ({ api, species, bySlug, counts, morphs, refreshCoun
       <div style={{ fontSize: 12, color: N.muted, marginBottom: 10 }}>
         {c.active} active · {c.best} best · {c.hidden} hidden · {c.rejected} rejected
       </div>
+      <SpeciesMorphsPanel api={api} catalogue={catalogue} setMorphs={setMorphs} speciesSlug={slug} readOnly={morphsReadOnly} />
       <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, marginBottom: 12, cursor: "pointer" }}>
         <input type="checkbox" checked={showAll} onChange={e => setShowAll(e.target.checked)} /> Show hidden and rejected photos too
       </label>
@@ -319,7 +313,7 @@ const SpeciesPhotosScreen = ({ api, species, bySlug, counts, morphs, refreshCoun
       {photos && photos.length === 0 && !err && <div style={{ fontSize: 13, color: N.muted }}>No {showAll ? "" : "active "}photos yet.</div>}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 12 }}>
         {(photos || []).map(p => (
-          <PhotoCard key={p.id} photo={p} api={api} species={species} traitOptions={traitOptions} onChanged={onChanged} onGone={onGone} />
+          <PhotoCard key={p.id} photo={p} api={api} species={species} catalogue={catalogue} onChanged={onChanged} onGone={onGone} />
         ))}
       </div>
       {photos && photos.length > 0 && <div style={{ ...hint, marginTop: 12 }}>Image links last 10 minutes. Reopen the species to refresh them.</div>}

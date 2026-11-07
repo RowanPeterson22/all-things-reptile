@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { C } from "../constants/colours";
 import WarnBox from "../components/WarnBox";
 import { GROUP_CHIPS, filterSpecies } from "./species";
+import { morphsForSpecies } from "./morphs";
 import { N, page, input, chip, badge, card, sectionLabel } from "./ui";
 
 const STATES = ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "ACT", "NT"];
@@ -17,8 +18,8 @@ const Row = ({ k, children }) => (
 );
 
 // ─── One record ───────────────────────────────────────────────────
-const RecordView = ({ r, morphs }) => {
-  const list = (r.appSlug && morphs[r.appSlug]) || [];
+const RecordView = ({ r, catalogue }) => {
+  const list = morphsForSpecies(catalogue, r.slug);
   return (
     <>
       <div style={{ fontSize: 20, fontWeight: 700, color: N.ink }}>{r.common}</div>
@@ -51,29 +52,25 @@ const RecordView = ({ r, morphs }) => {
       </div>
       <div style={{ fontSize: 11, color: N.muted, marginTop: 6 }}>Researched November 2026 against each state's keepable-species list. Always verify with your authority.</div>
 
-      {r.appSlug && (
-        <>
-          <div style={sectionLabel}>Morph and trait list (draft)</div>
-          {list.length === 0 && <div style={{ fontSize: 13, color: N.muted }}>No morphs listed for this species.</div>}
-          {list.length > 0 && (
-            <div style={{ ...card, padding: "4px 14px" }}>
-              {list.map(m => (
-                <div key={m.id} style={{ padding: "8px 0", borderBottom: `0.5px solid ${N.line}` }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: N.ink }}>{m.name} <span style={badge(m.au === "established" ? "orange" : "gold")}>{m.au === "established" ? "established in AU" : "check AU"}</span></div>
-                  <div style={{ fontSize: 12, color: N.muted, lineHeight: 1.5 }}>{m.cue}</div>
-                </div>
-              ))}
+      <div style={sectionLabel}>Morphs and traits</div>
+      {list.length === 0 && <div style={{ fontSize: 13, color: N.muted }}>No morphs assigned to this species.</div>}
+      {list.length > 0 && (
+        <div style={{ ...card, padding: "4px 14px" }}>
+          {list.map(m => (
+            <div key={m.id} style={{ padding: "8px 0", borderBottom: `0.5px solid ${N.line}` }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: N.ink }}><Link to={`/admin/morphs/${m.id}`} style={{ color: N.ink, textDecoration: "none" }}>{m.name}</Link> <span style={badge(m.au_status === "established" ? "orange" : "gold")}>{m.au_status === "established" ? "established in AU" : "check AU"}</span></div>
+              <div style={{ fontSize: 12, color: N.muted, lineHeight: 1.5 }}>{m.cue}</div>
             </div>
-          )}
-          <div style={{ fontSize: 11, color: N.muted, marginTop: 6 }}>Draft for Rowan's review (lib/morphs.js). Not signed off.</div>
-        </>
+          ))}
+        </div>
       )}
+      <div style={{ fontSize: 11, color: N.muted, marginTop: 6 }}>Edit in <Link to="/admin/morphs" style={{ color: C.green }}>Morphs</Link>, or from the species' photo page.</div>
     </>
   );
 };
 
 // ─── Species index ────────────────────────────────────────────────
-const IndexScreen = ({ species, bySlug, morphs }) => {
+const IndexScreen = ({ species, bySlug, catalogue }) => {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [q, setQ] = useState("");
@@ -87,7 +84,7 @@ const IndexScreen = ({ species, bySlug, morphs }) => {
       <div style={{ ...page, maxWidth: 720 }}>
         <button type="button" onClick={() => navigate("/admin/index")} style={{ background: "none", border: "none", color: C.green, fontSize: 13, fontWeight: 700, cursor: "pointer", padding: 0, marginBottom: 8, fontFamily: "inherit" }}>‹ Species index</button>
         <WarnBox type="blue" title="Read-only">{READ_ONLY}</WarnBox>
-        {r ? <RecordView r={r} morphs={morphs} /> : <div style={{ fontSize: 13 }}>That species isn't in the index.</div>}
+        {r ? <RecordView r={r} catalogue={catalogue} /> : <div style={{ fontSize: 13 }}>That species isn't in the index.</div>}
       </div>
     );
   }

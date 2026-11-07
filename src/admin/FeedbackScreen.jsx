@@ -1,13 +1,17 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { C } from "../constants/colours";
 import SpeciesPicker from "./SpeciesPicker";
 import { N, page, smallBtn, badge, card, hint, errorText, fmtDate } from "./ui";
+import { byId } from "./morphs";
+
+// Trait ids → names from the morph catalogue (deleted morphs keep theirs).
+export const traitNames = (ids, names) => ids.map(t => (names[t] ? `${names[t].name}${names[t].deleted_at ? " (deleted)" : ""}` : t)).join(", ");
 
 const VERDICT_TONE = { correct: "orange", partly: "gold", wrong: "red" };
 
 // ─── One feedback row ─────────────────────────────────────────────
-const FeedbackItem = ({ item, api, species, bySlug, appName, onFiled, onDeleted }) => {
+const FeedbackItem = ({ item, api, species, bySlug, appName, morphNames = {}, onFiled, onDeleted }) => {
   const [busy, setBusy] = useState(false);
   const [confirming, setConfirming] = useState(false);
   const [deleting, setDeleting] = useState(false);
@@ -55,7 +59,7 @@ const FeedbackItem = ({ item, api, species, bySlug, appName, onFiled, onDeleted 
         <div><b>{item.tester ? item.tester.name : "Unknown tester"}</b>{item.tester ? ` · ${item.tester.group}` : ""}</div>
         <div><span style={{ color: N.muted }}>AI's top pick:</span> {top ? `${top.name || top.slug}${top.confidence ? ` (${top.confidence})` : ""}` : "none"}</div>
         {corrected && <div><span style={{ color: N.muted }}>Corrected to:</span> <b>{corrected}</b></div>}
-        {item.correctTraits.length > 0 && <div><span style={{ color: N.muted }}>Traits:</span> {item.correctTraits.join(", ")}</div>}
+        {item.correctTraits.length > 0 && <div><span style={{ color: N.muted }}>Traits:</span> {traitNames(item.correctTraits, morphNames)}</div>}
         {item.notes && <div style={{ whiteSpace: "pre-wrap" }}><span style={{ color: N.muted }}>Notes:</span> {item.notes}</div>}
         {!item.photoUrl && <div style={{ color: N.faint, marginTop: 4 }}>{item.photoConsent ? "Photo missing." : "No photo (no consent)."}</div>}
 
@@ -116,7 +120,8 @@ const FeedbackItem = ({ item, api, species, bySlug, appName, onFiled, onDeleted 
 };
 
 // ─── Feedback inbox ───────────────────────────────────────────────
-const FeedbackScreen = ({ api, species, bySlug, refreshCounts }) => {
+const FeedbackScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
+  const morphNames = useMemo(() => byId(catalogue), [catalogue]);
   const [items, setItems] = useState(null);
   const [next, setNext] = useState(null);
   const [err, setErr] = useState("");
@@ -158,7 +163,7 @@ const FeedbackScreen = ({ api, species, bySlug, refreshCounts }) => {
       {items === null && <div style={{ fontSize: 13, color: N.muted }}>Loading…</div>}
       {items && items.length === 0 && !err && <div style={{ fontSize: 13, color: N.muted }}>No feedback yet.</div>}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 12 }}>
-        {(items || []).map(i => <FeedbackItem key={i.id} item={i} api={api} species={species} bySlug={bySlug} appName={appName} onFiled={onFiled} onDeleted={onDeleted} />)}
+        {(items || []).map(i => <FeedbackItem morphNames={morphNames} key={i.id} item={i} api={api} species={species} bySlug={bySlug} appName={appName} onFiled={onFiled} onDeleted={onDeleted} />)}
       </div>
       {next !== null && (
         <button type="button" disabled={loadingMore} onClick={async () => { setLoadingMore(true); await load(next); setLoadingMore(false); }} style={{ ...smallBtn("ghost", loadingMore), display: "block", margin: "14px auto 0" }}>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import SpeciesPicker from "./SpeciesPicker";
+import { TraitPicker } from "./MorphParts";
 import WarnBox from "../components/WarnBox";
 import { toLibraryJpegs, MAX_EDGE, MASTER_EDGE, MIN_PUBLIC_EDGE } from "./image";
 import { N, page, btn, chip, input, label, hint, errorText, LICENCE_LABEL } from "./ui";
@@ -32,7 +33,7 @@ export const validateAddForm = (f) => {
 const EMPTY = { photographer: "", licence: "", sourceUrl: "", permissionNote: "", notes: "", traits: [], stockLibrary: "", stockAssetId: "", creditRequired: false, showCredit: true, displayCredit: "" };
 
 // ─── Add a photo to a species ─────────────────────────────────────
-const AddPhotoScreen = ({ api, species, bySlug, morphs, refreshCounts }) => {
+const AddPhotoScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
   const [params] = useSearchParams();
   const navigate = useNavigate();
   const initial = params.get("species");
@@ -47,7 +48,6 @@ const AddPhotoScreen = ({ api, species, bySlug, morphs, refreshCounts }) => {
 
   const set = (patch) => setForm(f => ({ ...f, ...patch }));
   const sp = speciesSlug && bySlug[speciesSlug];
-  const traitOptions = (sp && sp.appSlug && morphs[sp.appSlug]) || [];
   const errors = validateAddForm({ ...form, speciesSlug, photo: photo && photo.dataUrl });
   const ok = Object.keys(errors).length === 0;
   const isStock = form.licence === "royalty_free";
@@ -174,15 +174,11 @@ const AddPhotoScreen = ({ api, species, bySlug, morphs, refreshCounts }) => {
         {show("source")}
       </div>
 
-      {traitOptions.length > 0 && (
+      {sp && (
         <div style={{ marginBottom: 14 }}>
           <span style={label}>Traits</span>
-          <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-            {traitOptions.map(t => {
-              const on = form.traits.includes(t.id);
-              return <button key={t.id} type="button" title={t.cue} onClick={() => set({ traits: on ? form.traits.filter(x => x !== t.id) : [...form.traits, t.id] })} style={{ ...chip(on), padding: "4px 9px", fontSize: 11 }}>{t.name}</button>;
-            })}
-          </div>
+          <TraitPicker catalogue={catalogue} speciesSlug={speciesSlug} selected={form.traits}
+            onToggle={(id) => set({ traits: form.traits.includes(id) ? form.traits.filter(x => x !== id) : [...form.traits, id] })} />
         </div>
       )}
 

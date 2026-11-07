@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { C } from "../constants/colours";
 import WarnBox from "../components/WarnBox";
 import IdFeedbackCard from "../components/IdFeedbackCard";
+import IdSuggestionCard, { NotNativeNotice } from "../components/IdSuggestionCard";
 import { BETA_HEADER } from "../beta/betaAccess";
 import { useSessionState } from "../beta/idSession";
 
@@ -17,12 +18,6 @@ const JPEG_QUALITY = 0.85;
 const SUGGESTION_TEXT = "This is a suggestion, not a confirmed identification.";
 const SNAKE_WARNING = "Never approach or handle a wild snake based on this result — many Australian snakes are venomous. Keep your distance and call a licensed snake catcher.";
 const SHORT_REMINDER = "Suggestion only. Never handle a wild snake based on it.";
-
-const CONFIDENCE_STYLE = {
-  likely:   { label: "Likely",   bg: C.greenPale, color: C.green },
-  possible: { label: "Possible", bg: C.goldLight, color: "#7a5a1e" },
-  unlikely: { label: "Unlikely", bg: "#f0f0ec",   color: "#777" },
-};
 
 // Decode any photo the browser can read and re-encode it as a JPEG data URL,
 // no larger than MAX_EDGE on its long side. Also strips EXIF (including GPS).
@@ -160,39 +155,14 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked }) => {
           {result.subject === "not_reptile_or_frog" && (
             <WarnBox type="blue" title="No reptile or frog found">This photo doesn't seem to show a reptile or frog. Try a closer photo of the animal.</WarnBox>
           )}
+          {result.notNative && <NotNativeNotice />}
           {result.subject !== "not_reptile_or_frog" && (!result.suggestions || result.suggestions.length === 0) && (
             <WarnBox type="blue" title="No suggestion">We couldn't suggest a species from this photo. Try a clearer, closer photo in good light.</WarnBox>
           )}
 
-          {(result.suggestions || []).map((s, i) => {
-            const cs = CONFIDENCE_STYLE[s.confidence] || CONFIDENCE_STYLE.possible;
-            const open = s.inApp && s.slug ? () => navigate(`/species/${s.slug}`, { state: { tab: "identify" } }) : null;
-            return (
-              <div key={i} onClick={open || undefined} style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", padding: 14, marginBottom: 10, cursor: open ? "pointer" : "default" }}>
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                  <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 14, fontWeight: 700, color: "#111" }}>{s.name}</div>
-                    {s.latin && <div style={{ fontSize: 12, fontStyle: "italic", color: "#888", marginTop: 1 }}>{s.latin}</div>}
-                  </div>
-                  <div style={{ fontSize: 10, fontWeight: 700, background: cs.bg, color: cs.color, padding: "3px 9px", borderRadius: 8, whiteSpace: "nowrap" }}>{cs.label}</div>
-                </div>
-                {s.reason && <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5, marginTop: 8 }}>{s.reason}</div>}
-                {s.traits && s.traits.length > 0 && (
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
-                    {s.traits.map(t => (
-                      <span key={t.id} style={{ fontSize: 11, fontWeight: 600, padding: "3px 8px", borderRadius: 8, background: t.confidence === "likely" ? C.greenPale : "#f0f0ec", color: t.confidence === "likely" ? C.green : "#666" }}>
-                        {t.name}{t.confidence === "likely" ? "" : " (possible)"}
-                      </span>
-                    ))}
-                  </div>
-                )}
-                <div style={{ fontSize: 11, color: "#999", marginTop: 8 }}>Suggestion only — not a confirmed identification</div>
-                {open
-                  ? <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginTop: 6 }}>View care guide →</div>
-                  : <div style={{ fontSize: 12, color: "#888", marginTop: 6 }}>Not one of our species</div>}
-              </div>
-            );
-          })}
+          {(result.suggestions || []).map((s, i) => (
+            <IdSuggestionCard key={i} suggestion={s} onOpen={(appSlug) => navigate(`/species/${appSlug}`, { state: { tab: "identify" } })} />
+          ))}
 
           {result.note && (
             <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5, marginBottom: 10 }}>

@@ -6,6 +6,11 @@ import { AppShell } from "../App";
 import { checkCode, inviteFromSearch, readCode, STORAGE_KEY } from "../beta/betaAccess";
 import IdFeedbackCard, { CONSENT_LABEL, CONSENT_TEXT } from "../components/IdFeedbackCard";
 import { clearSession } from "../beta/idSession";
+import { loadSpeciesIndex } from "../beta/speciesSearch";
+
+// The feedback card's species picker loads its index lazily; let that settle
+// inside act() so React doesn't warn.
+const flushSpeciesIndex = () => act(async () => { await loadSpeciesIndex(); });
 
 const CODE = "b".repeat(43);
 const okRes = (body) => ({ ok: true, status: 200, json: async () => body });
@@ -77,7 +82,7 @@ describe("App shell gate", () => {
 });
 
 describe("IdFeedbackCard", () => {
-  const result = { subject: "reptile", note: "", model: "m", suggestions: [{ slug: "central-bearded-dragon", inApp: true, name: "Central Bearded Dragon", latin: "", confidence: "likely", reason: "", traits: [{ id: "translucent", name: "Translucent", confidence: "likely" }] }] };
+  const result = { subject: "reptile", note: "", model: "m", suggestions: [{ slug: "central-bearded-dragon", appSlug: "central-bearded-dragon", inApp: true, matched: true, name: "Central Bearded Dragon", latin: "", confidence: "likely", reason: "", traits: [{ id: "translucent", name: "Translucent", confidence: "likely" }] }] };
   const setup = (photo = "data:image/jpeg;base64,AAAA") => render(<IdFeedbackCard result={result} photo={photo} inviteCode={CODE} traitsBySpecies={TRAITS} />);
 
   test("consent is off by default and the photo is only sent when ticked", async () => {
@@ -107,10 +112,12 @@ describe("IdFeedbackCard", () => {
     expect(body.photoConsent).toBe(true);
     expect(body.photo).toBe("data:image/jpeg;base64,AAAA");
   });
-  test("'Wrong' needs a species or note before it can be sent", () => {
+  test("'Wrong' needs a species or note before it can be sent", async () => {
     setup();
     fireEvent.click(screen.getByText("Wrong"));
-    fireEvent.change(screen.getByLabelText("What is it actually?"), { target: { value: "" } });
+    await flushSpeciesIndex();
+    fireEvent.click(screen.getByText("Change"));
+    fireEvent.click(screen.getByText("Not sure"));
     expect(screen.getByText("Send feedback").closest("button")).toBeDisabled();
     fireEvent.change(screen.getByLabelText("Notes"), { target: { value: "Juvenile Eastern Beardie" } });
     expect(screen.getByText("Send feedback").closest("button")).not.toBeDisabled();
@@ -119,7 +126,7 @@ describe("IdFeedbackCard", () => {
 
 describe("ID results survive a trip to a care guide", () => {
   test("care guide Back returns to the filled-in results and feedback", async () => {
-    const result = { suggestions: [{ name: "Central Bearded Dragon", latin: "Pogona vitticeps", slug: "central-bearded-dragon", inApp: true, confidence: "likely", traits: [] }], note: "" };
+    const result = { suggestions: [{ name: "Central Bearded Dragon", latin: "Pogona vitticeps", slug: "central-bearded-dragon", appSlug: "central-bearded-dragon", inApp: true, matched: true, confidence: "likely", traits: [] }], note: "" };
     window.localStorage.setItem(STORAGE_KEY, CODE);
     global.fetch = jest.fn(async (url) => (String(url).includes("identify") ? okRes(result) : okRes({ ok: true, name: "Rowan", traits: TRAITS })));
     const { container } = await renderAt("/id");
@@ -148,18 +155,19 @@ describe("ID results survive a trip to a care guide", () => {
 });
 
 describe("Feedback species list", () => {
-  test("a suggestion that isn't an app species fills in Other with its name", () => {
+  test("a non-app suggestion is picked as a species, not pushed into Other", async () => {
     const result = { suggestions: [
-      { name: "Eastern Water Dragon", latin: "Intellagama lesueurii", slug: "eastern-water-dragon", inApp: true, confidence: "likely", traits: [] },
-      { name: "Jacky Dragon", latin: "Amphibolurus muricatus", inApp: false, confidence: "unlikely", traits: [] },
+      { name: "Eastern Water Dragon", latin: "Intellagama lesueurii", slug: "eastern-water-dragon", appSlug: "eastern-water-dragon", inApp: true, matched: true, confidence: "likely", traits: [] },
+      { name: "Jacky Dragon", latin: "Amphibolurus muricatus", slug: "jacky-dragon", appSlug: null, inApp: false, matched: true, confidence: "unlikely", traits: [] },
     ] };
     render(<IdFeedbackCard result={result} photo={null} inviteCode={CODE} traitsBySpecies={{}} />);
     fireEvent.click(screen.getByText("Wrong"));
-    const select = screen.getByLabelText("What is it actually?");
-    expect(screen.getByText("Jacky Dragon (not in the app)")).toBeInTheDocument();
-    fireEvent.change(select, { target: { value: "ai:1" } });
-    expect(select.value).toBe("other");
-    expect(screen.getByLabelText("Species name").value).toBe("Jacky Dragon (Amphibolurus muricatus)");
+    await flushSpeciesIndex();
+    fireEvent.click(screen.getByText("Change"));
+    expect(screen.queryByText(/not in the app/)).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Jacky Dragon/ }));
+    expect(screen.queryByLabelText("Species name")).toBeNull();
+    expect(screen.getByText("Jacky Dragon")).toBeInTheDocument();
     expect(screen.getByText("Send feedback").disabled).toBe(false);
   });
 });

@@ -11,7 +11,8 @@ const handler = require("../../api/identify");
 const { clearTesterCache } = require("../../lib/beta");
 const { MORPHS, TRAIT_IDS } = require("../../lib/morphs");
 
-const { identify, validateRequest, parseAnthropicResponse, buildAnthropicRequest, MAX_BASE64_CHARS, OTHER } = lib;
+const INDEX = require("../../lib/speciesIndex");
+const { identify, validateRequest, parseAnthropicResponse, buildAnthropicRequest, MAX_BASE64_CHARS } = lib;
 
 const JPEG = Buffer.concat([Buffer.from([0xff, 0xd8, 0xff, 0xe0]), Buffer.alloc(200, 7)]).toString("base64");
 const PNG = Buffer.concat([Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]), Buffer.alloc(200, 1)]).toString("base64");
@@ -27,12 +28,36 @@ describe("species mirror", () => {
     expect(lib.SPECIES).toEqual(APP_SPECIES.map(pick));
     expect(lib.SPECIES).toHaveLength(46);
   });
-  test("schema enum lists every slug plus the escape hatch", () => {
-    const enumSlugs = lib.OUTPUT_SCHEMA.properties.suggestions.items.properties.slug.enum;
-    expect(enumSlugs).toContain("black-headed-monitor");
-    expect(enumSlugs).toContain("black-headed-python");
-    expect(enumSlugs).toContain(OTHER);
-    expect(new Set(enumSlugs).size).toBe(47);
+  test("every app species is exactly one index record, and the two Black-headed species stay apart", () => {
+    for (const s of lib.SPECIES) {
+      const rs = INDEX.RECORDS.filter(r => r.appSlug === s.slug);
+      expect(rs).toHaveLength(1);
+      expect(rs[0].slug).toBe(s.slug);
+    }
+    expect(INDEX.RECORDS.filter(r => r.appSlug)).toHaveLength(46);
+    expect(INDEX.BY_SLUG.get("black-headed-monitor").scientific).toBe("Varanus tristis");
+    expect(INDEX.BY_SLUG.get("black-headed-python").scientific).toBe("Aspidites melanocephalus");
+  });
+  test("schema asks for index names, not app slugs", () => {
+    const item = lib.OUTPUT_SCHEMA.properties.suggestions.items;
+    expect(item.properties.slug).toBeUndefined();
+    expect(item.required).toEqual(expect.arrayContaining(["scientific_name", "common_name", "confidence"]));
+  });
+});
+
+describe("species index mapping", () => {
+  test("finds records by slug, scientific name, synonym, trinomial and unique common name", () => {
+    const find = (q) => { const h = INDEX.findRecord(q); return h && [h.record.slug, h.via]; };
+    expect(find({ slug: "Jacky-Dragon" })).toEqual(["jacky-dragon", "slug"]);
+    expect(find({ scientific: "amphibolurus  muricatus" })).toEqual(["jacky-dragon", "scientific"]);
+    expect(find({ scientific: "Lophognathus burnsi" })).toEqual(["channel-dragon", "synonym"]);
+    expect(find({ scientific: "Tiliqua scincoides scincoides" })).toEqual(["eastern-blue-tongue-skink", "scientific"]);
+    expect(find({ scientific: "Nephrurus spp." })).toEqual(["knob-tailed-gecko", "scientific"]);
+    expect(find({ common: "Jacky Lizard" })).toEqual(["jacky-dragon", "common"]);
+    expect(find({ scientific: "Pogona imaginaria", common: "Made-up Dragon" })).toBeNull();
+  });
+  test("an ambiguous common name doesn't match on its own", () => {
+    expect(INDEX.findRecord({ common: "Northern Barred Frog" })).toBeNull();
   });
 });
 
@@ -65,37 +90,118 @@ describe("validateRequest", () => {
 });
 
 describe("buildAnthropicRequest", () => {
+  const build = (model) => buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" }, model);
+
   test("puts the image first and asks for JSON schema output", () => {
-    const r = buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" });
+    const r = build();
     expect(r.model).toBe(lib.DEFAULT_MODEL);
     expect(r.messages[0].content[0]).toEqual({ type: "image", source: { type: "base64", media_type: "image/jpeg", data: JPEG } });
     expect(r.output_config.format.type).toBe("json_schema");
-    expect(r.system).toContain("black-headed-monitor | Black-headed Monitor | Varanus tristis");
+  });
+  test("the whole species list is one prompt-cached system block", () => {
+    const r = build();
+    expect(r.system).toHaveLength(1);
+    expect(r.system[0]).toMatchObject({ type: "text", cache_control: { type: "ephemeral", ttl: "1h" } });
+    const sys = r.system[0].text;
+    for (const rec of INDEX.RECORDS) expect(sys).toContain(rec.scientific);
+    expect(sys).toContain("Jacky Dragon|Amphibolurus muricatus");
+    expect(sys).toContain("Black-headed Monitor|Varanus tristis");
+    // Byte-identical across requests, or the cache never hits.
+    expect(build().system[0].text).toBe(sys);
+    expect(JSON.stringify(build("claude-haiku-5-5").system)).toBe(JSON.stringify(r.system));
+  });
+  test("prompt weighs every species equally: no app slugs, no 'our species' steer, always 3", () => {
+    const sys = build().system[0].text;
+    expect(sys).not.toMatch(/not-one-of-our-species|Prefer species from the app/);
+    expect(sys).not.toContain("eastern-water-dragon");
+    expect(sys).toMatch(/equally possible/);
+    expect(sys).toContain(`Return exactly ${lib.MAX_SUGGESTIONS} candidates`);
+    expect(build().messages[0].content[1].text).toContain(`top ${lib.MAX_SUGGESTIONS}`);
+  });
+  test("temperature 0 only on models that accept sampling parameters", () => {
+    expect(build("claude-sonnet-5-5")).not.toHaveProperty("temperature");
+    expect(build("claude-haiku-5-5")).not.toHaveProperty("temperature");
+    expect(build("claude-opus-4-7")).not.toHaveProperty("temperature");
+    expect(build("claude-sonnet-4-6")).not.toHaveProperty("temperature");
+    expect(build("claude-haiku-4-5").temperature).toBe(0);
+    expect(build("claude-sonnet-4-5-20250929").temperature).toBe(0);
+    expect(build("claude-opus-4-1").temperature).toBe(0);
   });
 });
 
 describe("parseAnthropicResponse", () => {
   const parse = (obj, extra) => parseAnthropicResponse({ content: [{ type: "text", text: JSON.stringify(obj) }], ...extra });
+  const s = (scientific_name, common_name = "", confidence = "possible", extra = {}) => ({ scientific_name, common_name, confidence, reason: "", traits: [], ...extra });
 
-  test("maps our species to app data and keeps others unlinked", () => {
-    const out = parse({
-      subject: "reptile", note: "",
-      suggestions: [
-        { slug: "Carpet-Python", common_name: "x", latin_name: "y", confidence: "LIKELY", reason: "Blotched pattern." },
-        { slug: OTHER, common_name: "Eastern Brown Snake", latin_name: "Pseudonaja textilis", confidence: "possible", reason: "Uniform brown." },
-        { slug: "made-up-slug", common_name: "Red-bellied Black Snake", latin_name: "Pseudechis porphyriacus", confidence: "weird", reason: "" },
-        { slug: "woma-python", common_name: "", latin_name: "", confidence: "unlikely", reason: "" },
-      ],
+  test("maps app species to the index with a care link", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [s("Morelia spilota", "x", "LIKELY", { reason: "Blotched pattern." })] });
+    expect(out.suggestions[0]).toEqual({
+      slug: "carpet-python", appSlug: "carpet-python", inApp: true, matched: true, name: "Carpet Python", latin: "Morelia spilota",
+      group: "python", dangerouslyVenomous: false, confidence: "likely", reason: "Blotched pattern.", traits: [],
     });
-    expect(out.subject).toBe("reptile");
-    expect(out.suggestions).toHaveLength(3);
-    expect(out.suggestions[0]).toEqual({ slug: "carpet-python", inApp: true, name: "Carpet Python", latin: "Morelia spilota", confidence: "likely", reason: "Blotched pattern.", traits: [] });
-    expect(out.suggestions[1]).toMatchObject({ slug: null, inApp: false, name: "Eastern Brown Snake", latin: "Pseudonaja textilis" });
-    expect(out.suggestions[2]).toMatchObject({ slug: null, inApp: false, confidence: "possible" });
+  });
+  test("a non-app species is matched but has no care link (Rowan's Jacky Dragon)", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [s("Amphibolurus muricatus", "Jacky Dragon", "likely"), s("Intellagama lesueurii", "Eastern Water Dragon")] });
+    expect(out.suggestions[0]).toMatchObject({ slug: "jacky-dragon", appSlug: null, inApp: false, matched: true, name: "Jacky Dragon", latin: "Amphibolurus muricatus" });
+    expect(out.suggestions[1]).toMatchObject({ slug: "eastern-water-dragon", inApp: true });
+  });
+  test("maps a model answer through a synonym to the current name", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [s("Lophognathus burnsi", "Burns' Dragon")] });
+    expect(out.suggestions[0]).toMatchObject({ slug: "channel-dragon", matched: true, latin: "Amphibolurus burnsi", inApp: false });
+  });
+  test("flags dangerously venomous species from the index", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [s("Pseudonaja textilis", "Eastern Brown Snake", "likely"), s("Dendrelaphis punctulatus", "Common Tree Snake")] });
+    expect(out.suggestions[0]).toMatchObject({ slug: "eastern-brown-snake", dangerouslyVenomous: true, inApp: false });
+    expect(out.suggestions[1].dangerouslyVenomous).toBe(false);
+  });
+  test("a name that isn't in the index is shown unmatched, never as an index species", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [s("Pogona imaginaria", "Rainbow Bearded Dragon", "weird")] });
+    expect(out.suggestions[0]).toEqual({
+      slug: null, appSlug: null, inApp: false, matched: false, name: "Rainbow Bearded Dragon", latin: "Pogona imaginaria",
+      group: null, dangerouslyVenomous: false, confidence: "possible", reason: "", traits: [],
+    });
+  });
+  test("keeps 3, drops duplicates (same species via a synonym) and junk", () => {
+    const out = parse({ subject: "reptile", note: "", suggestions: [
+      s("Amphibolurus burnsi"), null, s("Lophognathus burnsi"), s("Amphibolurus muricatus"), s("Intellagama lesueurii"), s("Pogona barbata"),
+    ] });
+    expect(out.suggestions.map(x => x.slug)).toEqual(["channel-dragon", "jacky-dragon", "eastern-water-dragon"]);
   });
   test("drops suggestions when the subject isn't a reptile or frog", () => {
-    const out = parse({ subject: "not_reptile_or_frog", note: "Looks like a cat.", suggestions: [{ slug: "woma-python", common_name: "", latin_name: "", confidence: "likely", reason: "" }] });
-    expect(out).toEqual({ subject: "not_reptile_or_frog", note: "Looks like a cat.", suggestions: [] });
+    const out = parse({ subject: "not_reptile_or_frog", note: "Looks like a cat.", suggestions: [s("Aspidites ramsayi", "Woma", "likely")] });
+    expect(out).toEqual({ subject: "not_reptile_or_frog", notNative: false, note: "Looks like a cat.", suggestions: [] });
+  });
+  test("a non-native animal is flagged and its guesses are outside coverage, never matched to the index", () => {
+    const out = parse({ subject: "reptile", australian_native: false, note: "", suggestions: [
+      s("Eublepharis macularius", "Leopard Gecko", "likely"),
+      s("Hemidactylus frenatus", "Asian House Gecko"),
+      // Even a name that is in the index stays unmatched when the model says it's not native.
+      s("Christinus marmoratus", "Marbled Gecko", "unlikely"),
+    ] });
+    expect(out.notNative).toBe(true);
+    expect(out.suggestions).toHaveLength(3);
+    for (const sug of out.suggestions) {
+      expect(sug).toMatchObject({ slug: null, appSlug: null, inApp: false, matched: false, outsideCoverage: true, traits: [] });
+    }
+    expect(out.suggestions[0]).toMatchObject({ name: "Leopard Gecko", latin: "Eublepharis macularius", confidence: "likely" });
+  });
+  test("introduced species (not in the index yet) are treated as not native", () => {
+    const out = parse({ subject: "frog", australian_native: false, note: "", suggestions: [s("Rhinella marina", "Cane Toad", "likely")] });
+    expect(out.notNative).toBe(true);
+    expect(out.suggestions[0]).toMatchObject({ name: "Cane Toad", matched: false, outsideCoverage: true });
+    expect(INDEX.findRecord({ scientific: "Rhinella marina" })).toBeNull();
+  });
+  test("natives aren't flagged, and a missing flag counts as native", () => {
+    expect(parse({ subject: "reptile", australian_native: true, note: "", suggestions: [s("Amphibolurus muricatus")] }).notNative).toBe(false);
+    const out = parse({ subject: "reptile", note: "", suggestions: [s("Amphibolurus muricatus")] });
+    expect(out.notNative).toBe(false);
+    expect(out.suggestions[0].outsideCoverage).toBeUndefined();
+  });
+  test("schema and prompt cover non-native animals", () => {
+    expect(lib.OUTPUT_SCHEMA.required).toContain("australian_native");
+    const sys = buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" }).system[0].text;
+    expect(sys).toMatch(/Cane Toad/);
+    expect(sys).toMatch(/australian_native to false/);
   });
   test("unknown subject becomes unclear", () => {
     expect(parse({ subject: "dragon", suggestions: [], note: "" }).subject).toBe("unclear");
@@ -133,8 +239,8 @@ describe("traits", () => {
     const item = lib.OUTPUT_SCHEMA.properties.suggestions.items;
     expect(item.required).toContain("traits");
     expect(item.properties.traits.items.properties.id.enum).toEqual(TRAIT_IDS);
-    const sys = buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" }).system;
-    expect(sys).toContain("central-bearded-dragon:");
+    const sys = buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" }).system[0].text;
+    expect(sys).toContain("Central Bearded Dragon|Pogona vitticeps:");
     expect(sys).toContain("translucent (Translucent):");
   });
   test("returns combined traits (translucent + leatherback), likely first", () => {
@@ -151,11 +257,12 @@ describe("traits", () => {
     const out = parse({ subject: "reptile", note: "", suggestions: [
       sugg("central-bearded-dragon", [{ id: "jaguar", confidence: "likely" }, { id: "zero", confidence: "odd" }, { id: "zero", confidence: "likely" }, null, "red", { id: 4 }]),
       sugg("lace-monitor", [{ id: "albino", confidence: "likely" }]),
-      sugg(OTHER, [{ id: "albino", confidence: "likely" }]),
+      { ...sugg(null, [{ id: "albino", confidence: "likely" }]), scientific_name: "Amphibolurus muricatus" },
     ] });
     expect(out.suggestions[0].traits).toEqual([{ id: "zero", name: "Zero", confidence: "possible" }]);
     expect(out.suggestions[1].traits).toEqual([]);
-    expect(out.suggestions[2].traits).toEqual([]);
+    // Non-app species have no morph list, so no traits.
+    expect(out.suggestions[2]).toMatchObject({ slug: "jacky-dragon", traits: [] });
   });
   test("missing traits field is fine, and the list is capped", () => {
     expect(parse({ subject: "reptile", note: "", suggestions: [sugg("carpet-python")] }).suggestions[0].traits).toEqual([]);
@@ -176,7 +283,7 @@ describe("identify (mocked fetch)", () => {
     expect(fetchImpl).not.toHaveBeenCalled();
   });
   test("sends the right headers and returns parsed suggestions", async () => {
-    const fetchImpl = jest.fn(async () => apiReply({ subject: "frog", note: "", suggestions: [{ slug: "green-tree-frog", common_name: "", latin_name: "", confidence: "likely", reason: "Green, large toe pads." }] }));
+    const fetchImpl = jest.fn(async () => apiReply({ subject: "frog", note: "", suggestions: [{ scientific_name: "Litoria caerulea", common_name: "Green Tree Frog", confidence: "likely", reason: "Green, large toe pads.", traits: [] }] }));
     const out = await identify({ image: JPEG }, { apiKey: "test-key", model: "claude-haiku-5-5", fetchImpl });
     expect(out.status).toBe(200);
     expect(out.body.suggestions[0]).toMatchObject({ slug: "green-tree-frog", inApp: true, name: "Green Tree Frog", traits: [] });

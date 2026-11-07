@@ -4,7 +4,6 @@ import { C } from "../constants/colours";
 import SpeciesPicker from "./SpeciesPicker";
 import { N, page, smallBtn, badge, card, hint, errorText, fmtDate } from "./ui";
 
-const OTHER = "not-one-of-our-species";
 const VERDICT_TONE = { correct: "orange", partly: "gold", wrong: "red" };
 
 // ─── One feedback row ─────────────────────────────────────────────
@@ -16,9 +15,11 @@ const FeedbackItem = ({ item, api, species, bySlug, appName, onFiled }) => {
   const [broken, setBroken] = useState(false);
 
   const top = item.aiSuggestions[0];
-  const corrected = item.correctSlug === OTHER
-    ? `${item.correctOther || "Other"} (not in the app)`
-    : item.correctSlug ? appName(item.correctSlug) : null;
+  // correctSlug is an index slug (new rows) or an app slug (older rows); with
+  // no slug, the tester typed the name under "Other".
+  const corrected = item.correctSlug
+    ? appName(item.correctSlug, item.correctIndexSlug)
+    : item.correctOther ? `${item.correctOther} (Other, not in the index)` : null;
   const target = override ? slug : item.correctIndexSlug;
   const targetName = target && bySlug[target] ? bySlug[target].common : null;
 
@@ -83,11 +84,14 @@ const FeedbackScreen = ({ api, species, bySlug, refreshCounts }) => {
   const [err, setErr] = useState("");
   const [loadingMore, setLoadingMore] = useState(false);
 
-  // app slug → name, via the index record that carries it.
-  const appName = useCallback((appSlug) => {
-    const r = species.find(s => s.appSlug === appSlug && s.slug === appSlug) || species.find(s => s.appSlug === appSlug);
-    return r ? r.common : appSlug;
-  }, [species]);
+  // Feedback slug → name: the index record it maps to (server-resolved), else
+  // the record that carries it as an app slug, else the slug itself.
+  const appName = useCallback((slug, indexSlug) => {
+    if (indexSlug && bySlug[indexSlug]) return bySlug[indexSlug].common;
+    if (bySlug[slug]) return bySlug[slug].common;
+    const r = species.find(s => s.appSlug === slug);
+    return r ? r.common : slug;
+  }, [species, bySlug]);
 
   const load = useCallback(async (offset = 0) => {
     setErr("");

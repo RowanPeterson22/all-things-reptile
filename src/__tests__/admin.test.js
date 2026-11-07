@@ -359,6 +359,26 @@ describe("feedback inbox: add to library", () => {
     expect(r.body.photo.species_slug).toBe("eastern-bearded-dragon");
   });
 
+  test("index slugs from the full-species ID (e.g. jacky-dragon) and null-slug Other rows", async () => {
+    const JACKY = "cccccccc-0000-4000-8000-000000000008";
+    const OTHER_NEW = "cccccccc-0000-4000-8000-000000000009";
+    db.feedback.push(
+      { id: JACKY, tester_id: TESTER_ID, created_at: "2026-11-08T01:00:00Z", verdict: "wrong", ai_top_species_slug: "eastern-bearded-dragon", ai_raw: {}, ai_traits: [], correct_species_slug: "jacky-dragon", correct_species_other: null, correct_traits: [], notes: null, photo_path: `${TESTER_ID}/p1.jpg`, photo_consent: true },
+      { id: OTHER_NEW, tester_id: TESTER_ID, created_at: "2026-11-08T00:30:00Z", verdict: "wrong", ai_top_species_slug: null, ai_raw: {}, ai_traits: [], correct_species_slug: null, correct_species_other: "Asian House Gecko", correct_traits: [], notes: null, photo_path: `${TESTER_ID}/p2.jpg`, photo_consent: true },
+    );
+    const list = await call(feedbackHandler, { method: "GET" });
+    const byId = Object.fromEntries(list.body.items.map(i => [i.id, i]));
+    expect(byId[JACKY]).toMatchObject({ correctSlug: "jacky-dragon", correctIndexSlug: "jacky-dragon" });
+    expect(byId[OTHER_NEW]).toMatchObject({ correctSlug: null, correctOther: "Asian House Gecko", correctIndexSlug: null });
+    // The legacy sentinel reads as "Other", never as a slug.
+    expect(byId[FB_OTHER]).toMatchObject({ correctSlug: null, correctOther: "Garden Skink", correctIndexSlug: null });
+
+    const filed = await call(feedbackHandler, { method: "POST", body: { feedbackId: JACKY } });
+    expect(filed.statusCode).toBe(201);
+    expect(filed.body.photo.species_slug).toBe("jacky-dragon");
+    expect((await call(feedbackHandler, { method: "POST", body: { feedbackId: OTHER_NEW } })).statusCode).toBe(400);
+  });
+
   test("a failed insert removes the copied file", async () => {
     db.failNext = "POST reference_photos";
     expect((await call(feedbackHandler, { method: "POST", body: { feedbackId: FB_CONSENT } })).statusCode).toBe(502);

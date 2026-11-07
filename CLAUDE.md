@@ -34,7 +34,7 @@ Work in small commits, one stage per pull request. Never push to `main` directly
 - **D6** No Firebase, no Sanity. Supabase for accounts and app data; Shopify metaobjects for content.
 - **D7** One ATR login (Supabase Auth), linked to the Shopify customer by email. Breeders are a role on that login.
 - **D8** Pygmy Mulga Monitor 45–60°C and Sand Monitor 50–65°C basking ranges stay as recorded (flagged for Rowan's review).
-- **D9** AI species ID ships with the relaunch. Every result is labelled a suggestion and warns never to handle a wild snake based on it.
+- **D9** AI species ID is **beta-only** at the relaunch: only invited testers (VHS members, breeders) can see or use it, unlocked by a personal invite link (`/id?invite=<code>`, made with `scripts/beta-invite.mjs`). The public build shows no ID tab or route. It goes public when Rowan is happy with its accuracy. Every result is labelled a suggestion and warns never to handle a wild snake based on it. Testers can opt in, per photo (default off), to saving the photo with their correction.
 - **D10** Target: app relaunch 29 Jan 2027.
 
 ## Content rules (non-negotiable)
@@ -54,6 +54,8 @@ Work in small commits, one stage per pull request. Never push to `main` directly
 ## Supabase
 
 Projects created from 30 Oct 2026 onward don't expose new `public` tables to the Data API automatically. Every migration that creates a table must include explicit `GRANT`s for the roles that need it, plus RLS enabled with policies.
+
+**`atr` project** (ref `ledcvbyiqkygcdleucqo`, ap-southeast-2) holds the AI ID beta: `beta_testers`, `id_feedback` and the private `id-photos` bucket. Only the server touches it — the Vercel functions in `api/` and the admin scripts in `scripts/`, using `SUPABASE_URL` + `SUPABASE_SECRET_KEY`. RLS is on with no client access; `anon`/`authenticated` have no grants; `service_role` has SELECT/INSERT/UPDATE/DELETE only. Never put the secret key in a `REACT_APP_` var or anything under `src/`. Migrations live in `supabase/migrations/`. Never touch the `amphibian-social` or `amphibian-studio` projects from ATR work.
 
 ## Shopify
 

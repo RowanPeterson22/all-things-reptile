@@ -34,7 +34,7 @@ const GlossaryScreen = () => {
 
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "16px 18px 0" }}>
+      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 16px) 18px 0" }}>
         <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Reference</div>
         <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 14, lineHeight: 1.2 }}>Reptile Glossary</div>
         <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 10, padding: "9px 12px", display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>

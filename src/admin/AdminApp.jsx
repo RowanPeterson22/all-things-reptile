@@ -76,7 +76,7 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
   const bySlug = useMemo(() => (species ? Object.fromEntries(species.map(r => [r.slug, r])) : {}), [species]);
   const shared = data ? {
     api, species: data.species, bySlug, counts: data.counts, refreshCounts,
-    catalogue: data.morphs || [], setMorphs, morphsReadOnly: data.morphSource !== "db",
+    catalogue: Array.isArray(data.morphs) ? data.morphs : [], setMorphs, morphsReadOnly: data.morphSource !== "db",
   } : null;
 
   return (

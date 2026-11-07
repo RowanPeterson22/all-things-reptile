@@ -115,11 +115,12 @@ describe("suggestion card", () => {
 describe("feedback card", () => {
   let run = 1000;
   const TRAITS = { "central-bearded-dragon": [{ id: "translucent", name: "Translucent" }, { id: "hypomelanistic", name: "Hypomelanistic" }] };
-  const setup = (suggestions) => {
+  const WITH_JACKY = { ...TRAITS, "jacky-dragon": [{ id: "red-phase", name: "Red phase" }] };
+  const setup = (suggestions, traits = TRAITS) => {
     const fetchMock = jest.fn(async () => ({ ok: true, status: 201, json: async () => ({ ok: true }) }));
     global.fetch = fetchMock;
     const result = { subject: "reptile", notNative: false, note: "", suggestions, model: "claude-sonnet-5-5" };
-    render(<IdFeedbackCard result={result} photo={null} inviteCode="code" traitsBySpecies={TRAITS} runId={run++} />);
+    render(<IdFeedbackCard result={result} photo={null} inviteCode="code" traitsBySpecies={traits} runId={run++} />);
     const sent = () => JSON.parse(fetchMock.mock.calls[0][1].body);
     return { fetchMock, sent };
   };
@@ -177,7 +178,15 @@ describe("feedback card", () => {
     await waitFor(() => expect(screen.getByText(/feedback sent/)).toBeInTheDocument());
     expect(sent().correctSpeciesSlug).toBeNull();
   });
-  test("morph chips show for app species with morphs (keyed by app slug) and clear for others", async () => {
+  test("morphs are keyed by index slug, so a species outside the app's 46 gets its chips too", async () => {
+    const { sent } = setup([JACKY], WITH_JACKY);
+    fireEvent.click(screen.getByRole("button", { name: "Partly" }));
+    fireEvent.click(screen.getByRole("button", { name: "Red phase" }));
+    fireEvent.click(screen.getByRole("button", { name: "Send feedback" }));
+    await waitFor(() => expect(screen.getByText(/feedback sent/)).toBeInTheDocument());
+    expect(sent()).toMatchObject({ correctSpeciesSlug: "jacky-dragon", correctTraits: ["red-phase"] });
+  });
+  test("morph chips show for species with morphs and clear for others", async () => {
     const beardie = sug({ slug: "central-bearded-dragon", appSlug: "central-bearded-dragon", inApp: true, name: "Central Bearded Dragon", latin: "Pogona vitticeps", traits: [{ id: "translucent", name: "Translucent", confidence: "likely" }] });
     const { sent } = setup([beardie, JACKY]);
     fireEvent.click(screen.getByRole("button", { name: "Partly" }));

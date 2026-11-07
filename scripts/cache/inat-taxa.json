@@ -1,1 +1,374 @@
-{}
+{
+  "frilled-neck-lizard": {
+    "scientific": "Chlamydosaurus kingii",
+    "taxonId": 31215,
+    "taxonName": "Chlamydosaurus kingii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-water-dragon": {
+    "scientific": "Intellagama lesueurii",
+    "taxonId": 146186,
+    "taxonName": "Intellagama lesueurii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-bearded-dragon": {
+    "scientific": "Pogona barbata",
+    "taxonId": 31419,
+    "taxonName": "Pogona barbata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-bearded-dragon": {
+    "scientific": "Pogona henrylawsoni",
+    "taxonId": 31418,
+    "taxonName": "Pogona henrylawsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-bearded-dragon": {
+    "scientific": "Pogona vitticeps",
+    "taxonId": 31411,
+    "taxonName": "Pogona vitticeps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "striped-marsh-frog": {
+    "scientific": "Limnodynastes peronii",
+    "taxonId": 22039,
+    "taxonName": "Limnodynastes peronii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "green-tree-frog": {
+    "scientific": "Litoria caerulea",
+    "taxonId": 1633145,
+    "taxonName": "Pelodryas caerulea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-dwarf-tree-frog": {
+    "scientific": "Litoria fallax",
+    "taxonId": 1632579,
+    "taxonName": "Drymomantis fallax",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-lipped-tree-frog": {
+    "scientific": "Litoria infrafrenata",
+    "taxonId": 1633186,
+    "taxonName": "Sandyrana infrafrenata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "perons-tree-frog": {
+    "scientific": "Litoria peronii",
+    "taxonId": 1633155,
+    "taxonName": "Pengilleyia peronii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "magnificent-tree-frog": {
+    "scientific": "Litoria splendida",
+    "taxonId": 1633149,
+    "taxonName": "Pelodryas splendida",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "knob-tailed-gecko": {
+    "scientific": "Nephrurus spp.",
+    "taxonId": 34188,
+    "taxonName": "Nephrurus",
+    "rank": "genus",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-leaf-tailed-gecko": {
+    "scientific": "Phyllurus platurus",
+    "taxonId": 109465,
+    "taxonName": "Phyllurus platurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "thick-tailed-gecko": {
+    "scientific": "Underwoodisaurus milii",
+    "taxonId": 33535,
+    "taxonName": "Underwoodisaurus milii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "marbled-velvet-gecko": {
+    "scientific": "Oedura marmorata",
+    "taxonId": 107384,
+    "taxonName": "Oedura marmorata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-spiny-tailed-gecko": {
+    "scientific": "Strophurus ciliaris",
+    "taxonId": 33187,
+    "taxonName": "Strophurus ciliaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "golden-tailed-gecko": {
+    "scientific": "Strophurus taenicauda",
+    "taxonId": 33194,
+    "taxonName": "Strophurus taenicauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ackie-monitor": {
+    "scientific": "Varanus acanthurus",
+    "taxonId": 39424,
+    "taxonName": "Varanus acanthurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-spotted-ridge-tailed-monitor": {
+    "scientific": "Varanus baritji",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Varanus insulanicus",
+    "lumpedTaxonId": 1403054
+  },
+  "pygmy-mulga-monitor": {
+    "scientific": "Varanus gilleni",
+    "taxonId": 39451,
+    "taxonName": "Varanus gilleni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sand-monitor": {
+    "scientific": "Varanus gouldii",
+    "taxonId": 39414,
+    "taxonName": "Varanus gouldii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-headed-monitor": {
+    "scientific": "Varanus tristis",
+    "taxonId": 1691030,
+    "taxonName": "Varanus tristis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lace-monitor": {
+    "scientific": "Varanus varius",
+    "taxonId": 39469,
+    "taxonName": "Varanus varius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "childrens-python": {
+    "scientific": "Antaresia childreni",
+    "taxonId": 94205,
+    "taxonName": "Antaresia childreni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-python": {
+    "scientific": "Antaresia maculosa",
+    "taxonId": 32142,
+    "taxonName": "Antaresia maculosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-python": {
+    "scientific": "Antaresia perthensis",
+    "taxonId": 32141,
+    "taxonName": "Antaresia perthensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stimsons-python": {
+    "scientific": "Antaresia stimsoni",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Antaresia childreni",
+    "lumpedTaxonId": 94205
+  },
+  "black-headed-python": {
+    "scientific": "Aspidites melanocephalus",
+    "taxonId": 32127,
+    "taxonName": "Aspidites melanocephalus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "woma-python": {
+    "scientific": "Aspidites ramsayi",
+    "taxonId": 32131,
+    "taxonName": "Aspidites ramsayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "water-python": {
+    "scientific": "Liasis fuscus",
+    "taxonId": 32191,
+    "taxonName": "Liasis fuscus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "olive-python": {
+    "scientific": "Liasis olivaceus",
+    "taxonId": 32194,
+    "taxonName": "Liasis olivaceus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bredli-python": {
+    "scientific": "Morelia bredli",
+    "taxonId": 32167,
+    "taxonName": "Morelia bredli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-scaled-python": {
+    "scientific": "Morelia carinata",
+    "taxonId": 32168,
+    "taxonName": "Morelia carinata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "carpet-python": {
+    "scientific": "Morelia spilota",
+    "taxonId": 50238,
+    "taxonName": "Morelia spilota",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jungle-carpet-python": {
+    "scientific": "Morelia spilota cheynei",
+    "taxonId": 32172,
+    "taxonName": "Morelia spilota cheynei",
+    "rank": "subspecies",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "diamond-python": {
+    "scientific": "Morelia spilota spilota",
+    "taxonId": 32175,
+    "taxonName": "Morelia spilota spilota",
+    "rank": "subspecies",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "green-tree-python": {
+    "scientific": "Morelia viridis",
+    "taxonId": 1048277,
+    "taxonName": "Morelia viridis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "amethystine-python": {
+    "scientific": "Simalia amethistina",
+    "taxonId": 540199,
+    "taxonName": "Simalia amethistina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blotched-blue-tongue-skink": {
+    "scientific": "Tiliqua nigrolutea",
+    "taxonId": 37466,
+    "taxonName": "Tiliqua nigrolutea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shingleback-lizard": {
+    "scientific": "Tiliqua rugosa",
+    "taxonId": 37460,
+    "taxonName": "Tiliqua rugosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-blue-tongue-skink": {
+    "scientific": "Tiliqua scincoides",
+    "taxonId": 37456,
+    "taxonName": "Tiliqua scincoides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-blue-tongue-skink": {
+    "scientific": "Tiliqua scincoides intermedia",
+    "taxonId": 37457,
+    "taxonName": "Tiliqua scincoides intermedia",
+    "rank": "subspecies",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "broad-shelled-turtle": {
+    "scientific": "Chelodina expansa",
+    "taxonId": 39599,
+    "taxonName": "Chelodina expansa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-long-necked-turtle": {
+    "scientific": "Chelodina longicollis",
+    "taxonId": 39598,
+    "taxonName": "Chelodina longicollis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "murray-river-turtle": {
+    "scientific": "Emydura macquarii",
+    "taxonId": 99882,
+    "taxonName": "Emydura macquarii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saw-shelled-turtle": {
+    "scientific": "Myuchelys latisternum",
+    "taxonId": 106415,
+    "taxonName": "Myuchelys latisternum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  }
+}

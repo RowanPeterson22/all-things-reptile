@@ -44,7 +44,9 @@ Work in small commits, one stage per pull request. Never push to `main` directly
 - Licence grids use general tier descriptions, **never** specific class numbers (no NSW R-codes, QLD class numbers, VIC schedule numbers, ACT letters). Every jurisdiction carries a "verify with your authority" disclaimer.
 - TAS is always red/unavailable for non-TAS native species.
 - Monitors need a 50–60°C basking surface (see D8 for the two exceptions) — feature it prominently on monitor pages.
-- NSW licences take 90+ days to process — warn clearly on the Licencing screen.
+- NSW no longer issues licences instantly; officially at least 8 weeks, often longer — warn clearly on the Licencing screen (the NSW record carries the warning). Don't quote 90 days; there's no official source for it.
+- ACT: since 15 May 2026 no native reptiles are exempt. QLD, WA and ACT have no exempt reptiles; VIC, SA and NT have some.
+- Licence facts in `data/states.js` were checked against official sources in November 2026; re-check before relying on them and update the date in each `verifyDisclaimer`.
 - Wood Roaches are the primary feeder roach. **Dubia roaches are illegal in Australia** (not on the federal Live Import List; DCCEEW seizure June 2026) — never recommend them as a feeder; the Feeder Guide carries a warning instead. BSFL are sold as Calci-worms in Australia.
 - Australian English throughout (colour, licence/license as noun/verb, enclosure, etc.).
 

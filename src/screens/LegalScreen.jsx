@@ -9,7 +9,7 @@ const LegalScreen = () => {
     <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 8px) 18px 0" }}>
       <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.07em", marginBottom: 4 }}>LEGAL</div>
       <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 8 }}>Reptile Licencing</div>
-      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginBottom: 16, lineHeight: 1.5 }}>Tap any state for full details. All reptiles must be purchased from a licensed breeder — wild collection is illegal in every state.</div>
+      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginBottom: 16, lineHeight: 1.5 }}>Tap any state for full details. All reptiles must be purchased from a licensed breeder — taking them from the wild is illegal almost everywhere.</div>
     </div>
 
     <div style={{ padding: "12px 16px" }}>
@@ -31,6 +31,7 @@ const LegalScreen = () => {
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: "#111", marginBottom: 2 }}>{s.name}</div>
                 <div style={{ fontSize: 11, color: "#888" }}>{s.licence}</div>
+                {s.warning && <div style={{ display: "inline-block", marginTop: 4, fontSize: 10, fontWeight: 700, color: "#7a5a1e", background: "#fff3e0", border: "0.5px solid #c8963c44", borderRadius: 6, padding: "2px 6px" }}>⚠️ {s.warning.badge}</div>}
               </div>
               <div style={{ fontSize: 18, color: "#ccc", transform: isOpen ? "rotate(90deg)" : "none", transition: "transform 0.2s" }}>›</div>
             </div>
@@ -41,6 +42,13 @@ const LegalScreen = () => {
                   <div style={{ background: "#fce8e8", borderRadius: 10, padding: "10px 12px", margin: "12px 0 8px", border: "0.5px solid #8b202033" }}>
                     <div style={{ fontSize: 12, fontWeight: 700, color: "#8b2020", marginBottom: 4 }}>⚠️ MOST RESTRICTIVE STATE</div>
                     <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>Only Tasmanian native species may be kept. Bearded Dragons, Carpet Pythons, and most mainland species CANNOT be kept in Tasmania.</div>
+                  </div>
+                )}
+
+                {s.warning && (
+                  <div style={{ background: "#fff3e0", borderRadius: 10, padding: "10px 12px", margin: "12px 0 8px", border: "0.5px solid #c8963c44" }}>
+                    <div style={{ fontSize: 12, fontWeight: 700, color: "#7a5a1e", marginBottom: 4 }}>⚠️ {s.warning.title.toUpperCase()}</div>
+                    <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>{s.warning.body}</div>
                   </div>
                 )}
 
@@ -74,6 +82,8 @@ const LegalScreen = () => {
                     </div>
                   ))}
                 </div>
+
+                <div style={{ marginTop: 10, fontSize: 11, color: "#888", lineHeight: 1.5, fontStyle: "italic" }}>{s.verifyDisclaimer}</div>
               </div>
             )}
           </div>
@@ -84,11 +94,12 @@ const LegalScreen = () => {
         <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginBottom: 8 }}>✅ UNIVERSAL RULES — ALL STATES</div>
         {[
           "All reptiles must be purchased from a licensed breeder or dealer",
-          "Wild collection is illegal in all states and territories",
+          "Never take reptiles from the wild — it's illegal almost everywhere",
           "Keep all purchase records including seller details and date",
           "No exotic (non-Australian native) reptiles may be kept in Australia",
           "It is illegal to release reptiles into the wild",
           "Licence holders must report annually in most states",
+          "Moving a reptile interstate needs permits from both states",
         ].map((rule, i) => (
           <div key={i} style={{ fontSize: 12, color: "#444", marginBottom: 6, paddingLeft: 12, borderLeft: `2px solid ${C.green}`, lineHeight: 1.5 }}>{rule}</div>
         ))}

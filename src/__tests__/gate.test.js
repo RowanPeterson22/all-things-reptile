@@ -89,6 +89,8 @@ describe("middleware", () => {
     const r = await handleGate(reqFor("/robots.txt"), ENV);
     expect(await r.text()).toBe("User-agent: *\nDisallow: /\n");
     expect(passes(await handleGate(reqFor("/favicon.ico"), ENV))).toBe(true);
+    expect(passes(await handleGate(reqFor("/holding-logo.webp"), ENV))).toBe(true);
+    expect(passes(await handleGate(reqFor("/holding-logo.png"), ENV))).toBe(true);
   });
 
   test("ATR_PUBLIC=true opens everything and allows robots", async () => {

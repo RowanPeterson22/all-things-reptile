@@ -6,7 +6,7 @@
 //   /api/*             not matched (the functions check the tester themselves)
 //   /id?invite=CODE    rewritten to /api/beta-check, which checks the code,
 //                      sets the cookie and redirects with no code in the URL
-//   /robots.txt, /favicon.ico   always served (the holding page's only assets)
+//   /robots.txt, /favicon.ico, /holding-logo.(webp|png)   always served (the holding page's only assets)
 //   anything else      needs the atr_gate cookie (HMAC-SHA256, ATR_GATE_SECRET)
 //
 // ATR_PUBLIC=true is the launch switch: the gate is off and robots are allowed.
@@ -29,7 +29,7 @@ export const config = {
 
 const ROBOTS_GATED = "User-agent: *\nDisallow: /\n";
 const ROBOTS_PUBLIC = "User-agent: *\nDisallow:\n";
-const ALWAYS_OPEN = new Set(["/robots.txt", "/favicon.ico"]);
+const ALWAYS_OPEN = new Set(["/robots.txt", "/favicon.ico", "/holding-logo.webp", "/holding-logo.png"]);
 
 const text = (body) => new Response(body, { status: 200, headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" } });
 const holdingResponse = () => new Response(holding.holdingPage(), { status: 200, headers: holding.HOLDING_HEADERS });

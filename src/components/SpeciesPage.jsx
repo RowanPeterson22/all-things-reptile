@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { C } from "../constants/colours";
+import SpeciesGallery from "./SpeciesGallery";
 
 // ─── Species page shell ───────────────────────────────────────────
 // Back label follows the tab the page was opened from (carried in history state).
@@ -12,6 +13,9 @@ const useBackLabel = () => {
 const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent }) => {
   const [tab, setTab] = useState(tabs[0]);
   const backLabel = useBackLabel();
+  // The route is /species/:slug (D4), so the shell knows which gallery to load;
+  // the 46 page files don't change.
+  const { slug } = useParams();
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
       <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
@@ -25,6 +29,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
               <span key={label} style={{ background: bg, color, fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 10 }}>{label}</span>
             ))}
           </div>
+          <SpeciesGallery species={slug} />
           <div style={{ display: "flex", borderBottom: "0.5px solid #eee", margin: "0 -18px", padding: "0 18px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
             {tabs.map(t => (
               <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.green}` : "2px solid transparent", color: tab === t ? C.green : "#888", fontSize: 12, fontWeight: 700, padding: "8px 11px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { C } from "../constants/colours";
 import { GLOSSARY_TERMS } from "../data/glossary";
 
@@ -85,6 +86,9 @@ const GlossaryScreen = () => {
         )}
         <div style={{ padding: "16px 18px", fontSize: 12, color: "#aaa", textAlign: "center" }}>
           {filtered.length} term{filtered.length !== 1 ? "s" : ""} {activeCategory !== "All" ? `in ${activeCategory}` : "in glossary"}
+        </div>
+        <div style={{ padding: "0 18px 18px", fontSize: 11, textAlign: "center" }}>
+          <Link to="/credits" style={{ color: "#aaa", textDecoration: "underline", textUnderlineOffset: 2 }}>Photo credits</Link>
         </div>
       </div>
     </div>

@@ -71,6 +71,8 @@ const IdentifyScreen = lazy(() => import("./screens/IdentifyScreen"));
 // Admin (interim, until D7): its own chunk, loaded only after /api/admin-check
 // confirms an is_admin code. No tab points to it; it lives at /admin.
 const AdminApp = lazy(() => import("./admin/AdminApp"));
+// Photo credits (linked from the Glossary footer): its own small chunk.
+const CreditsScreen = lazy(() => import("./screens/CreditsScreen"));
 
 
 // ─── Page router map ──────────────────────────────────────────────
@@ -198,6 +200,7 @@ export function AppShell() {
   // (carried in history state); a cold deep link falls back to its section's tab.
   const activeTab = isTabPath
     ? TAB_FOR_PATH[pathname]
+    : pathname === "/credits" ? "glossary"
     : (location.state && location.state.tab) || (pathname.startsWith("/care/") ? "care" : "browse");
 
   // Re-tapping the current tab is a no-op, as it was with setActiveTab/setPage(null).
@@ -256,6 +259,7 @@ export function AppShell() {
             <Route path="/licencing"     element={<LegalScreen />} />
             <Route path="/id"            element={idElement} />
             <Route path="/glossary"      element={<GlossaryScreen />} />
+            <Route path="/credits"       element={<Suspense fallback={null}><CreditsScreen /></Suspense>} />
             <Route path="/species/:slug" element={<DetailRoute table={SPECIES_BY_SLUG} onBack={handleBack} />} />
             <Route path="/care/:slug"    element={<DetailRoute table={GUIDES_BY_SLUG} onBack={handleBack} />} />
             <Route path="*"              element={<Navigate to="/" replace />} />

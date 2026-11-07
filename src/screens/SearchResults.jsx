@@ -59,8 +59,8 @@ const SearchResults = ({ query, onNavigate }) => {
         {speciesResults.map(s => {
           const lc = levelColour(s.level);
           return (
-            <div key={s.id} onClick={() => onNavigate(s.page)}
-              style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 16px", borderBottom: "0.5px solid #f8f8f6", cursor: "pointer" }}>
+            <div key={s.id} onClick={() => s.page && onNavigate(s.page)}
+              style={{ display: "flex", alignItems: "center", gap: 12, padding: "12px 16px", borderBottom: "0.5px solid #f8f8f6", cursor: s.page ? "pointer" : "default", opacity: s.page ? 1 : 0.8 }}>
               <div style={{ width: 44, height: 44, borderRadius: 12, background: s.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{s.emoji}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 14, fontWeight: 600, color: "#111", marginBottom: 2 }}>{s.name}</div>

@@ -209,7 +209,7 @@ export function AppShell() {
 
         <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", background: "white" }}>
           <Routes>
-            <Route path="/"              element={searchQuery.length >= 2 ? <SearchResults query={searchQuery} onNavigate={(p) => { openPage(p); setSearchQuery(""); }} /> : <BrowseScreen onSpecies={openPage} />} />
+            <Route path="/"              element={searchQuery.length >= 2 ? <SearchResults query={searchQuery} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} /> : <BrowseScreen onSpecies={openPage} />} />
             <Route path="/care"          element={<CareScreen onGuide={openPage} />} />
             <Route path="/licencing"     element={<LegalScreen />} />
             <Route path="/id"            element={<IdentifyScreen />} />

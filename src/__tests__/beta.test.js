@@ -9,6 +9,10 @@ const { validateFeedback, submitFeedback } = require("../../lib/feedback");
 const feedbackHandler = require("../../api/feedback");
 const betaCheckHandler = require("../../api/beta-check");
 const { MAX_BASE64_CHARS } = require("../../lib/identify");
+const { fallbackSnapshot, clearMorphCache } = require("../../lib/morphStore");
+
+// The morph store caches per process; start every test from cold.
+beforeEach(() => clearMorphCache());
 
 const URL_ = "https://ledcvbyiqkygcdleucqo.supabase.co";
 const KEY = "sb_secret_test";
@@ -166,10 +170,11 @@ describe("validateFeedback", () => {
 describe("submitFeedback (mocked Supabase)", () => {
   const cfg = { url: URL_, key: KEY };
   const body = { ai: AI, verdict: "correct" };
+  const morphs = fallbackSnapshot();
 
   test("inserts the row with the tester id and no photo", async () => {
     const fetchImpl = jest.fn(async () => json(201, null));
-    const out = await submitFeedback(body, { tester: TESTER, cfg, fetchImpl });
+    const out = await submitFeedback(body, { tester: TESTER, cfg, morphs, fetchImpl });
     expect(out).toEqual({ status: 201, body: { ok: true, photoSaved: false } });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
     const [url, init] = fetchImpl.mock.calls[0];
@@ -180,7 +185,7 @@ describe("submitFeedback (mocked Supabase)", () => {
   });
   test("uploads a consented photo to id-photos/<tester_id>/<uuid>.jpg first", async () => {
     const fetchImpl = jest.fn(async () => json(200, {}));
-    const out = await submitFeedback({ ...body, photoConsent: true, photo: JPEG }, { tester: TESTER, cfg, fetchImpl, uuid: () => "abc-uuid" });
+    const out = await submitFeedback({ ...body, photoConsent: true, photo: JPEG }, { tester: TESTER, cfg, morphs, fetchImpl, uuid: () => "abc-uuid" });
     expect(out.body.photoSaved).toBe(true);
     const [upUrl, upInit] = fetchImpl.mock.calls[0];
     expect(upUrl).toBe(`${URL_}/storage/v1/object/id-photos/${TESTER.id}/abc-uuid.jpg`);
@@ -193,7 +198,7 @@ describe("submitFeedback (mocked Supabase)", () => {
   test("removes the uploaded photo if the insert fails", async () => {
     const err = jest.spyOn(console, "error").mockImplementation(() => {});
     const fetchImpl = jest.fn(async (url, init) => (url.includes("/rest/v1/") ? json(500, {}) : json(200, {})));
-    const out = await submitFeedback({ ...body, photoConsent: true, photo: JPEG }, { tester: TESTER, cfg, fetchImpl, uuid: () => "u1" });
+    const out = await submitFeedback({ ...body, photoConsent: true, photo: JPEG }, { tester: TESTER, cfg, morphs, fetchImpl, uuid: () => "u1" });
     expect(out.status).toBe(502);
     const del = fetchImpl.mock.calls[2];
     expect(del[1].method).toBe("DELETE");
@@ -202,8 +207,8 @@ describe("submitFeedback (mocked Supabase)", () => {
   });
   test("validation errors never touch Supabase", async () => {
     const fetchImpl = jest.fn();
-    expect((await submitFeedback({ ai: AI, verdict: "nope" }, { tester: TESTER, cfg, fetchImpl })).status).toBe(400);
-    expect((await submitFeedback({ ...body, photo: JPEG }, { tester: TESTER, cfg, fetchImpl })).status).toBe(400);
+    expect((await submitFeedback({ ai: AI, verdict: "nope" }, { tester: TESTER, cfg, morphs, fetchImpl })).status).toBe(400);
+    expect((await submitFeedback({ ...body, photo: JPEG }, { tester: TESTER, cfg, morphs, fetchImpl })).status).toBe(400);
     expect(fetchImpl).not.toHaveBeenCalled();
   });
 });
@@ -259,7 +264,9 @@ describe("handlers", () => {
     let res = mockRes(); await betaCheckHandler(req(), res);
     expect(res.statusCode).toBe(403);
     clearTesterCache();
-    global.fetch = jest.fn(async () => json(200, [TESTER]));
+    const seed = require("../../lib/morphs").seedRows();
+    global.fetch = jest.fn(async (url) => (url.includes("/species_morphs") ? json(200, seed.links)
+      : url.includes("/morphs") ? json(200, seed.morphs) : json(200, [TESTER])));
     res = mockRes(); await betaCheckHandler(req(), res);
     expect(res.statusCode).toBe(200);
     expect(res.body.ok).toBe(true);

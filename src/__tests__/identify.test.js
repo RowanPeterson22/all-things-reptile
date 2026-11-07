@@ -238,7 +238,7 @@ describe("traits", () => {
   test("schema and prompt carry the trait list", () => {
     const item = lib.OUTPUT_SCHEMA.properties.suggestions.items;
     expect(item.required).toContain("traits");
-    expect(item.properties.traits.items.properties.id.enum).toEqual(TRAIT_IDS);
+    expect(item.properties.traits.items.properties.id.enum).toEqual([...TRAIT_IDS].sort());
     const sys = buildAnthropicRequest({ data: JPEG, mediaType: "image/jpeg" }).system[0].text;
     expect(sys).toContain("Central Bearded Dragon|Pogona vitticeps:");
     expect(sys).toContain("translucent (Translucent):");

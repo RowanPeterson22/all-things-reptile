@@ -5,7 +5,7 @@
 //   verdict             "correct" | "partly" | "wrong"
 //   correctSpeciesSlug  an index slug from src/data/australianSpecies.json (any of the
 //                       1,363 natives, e.g. "jacky-dragon"), or "other" (+ correctSpeciesOther)
-//   correctTraits       trait ids from lib/morphs.js
+//   correctTraits       morph ids (active ones, from the morph store)
 //   notes               free text, max 2000 chars
 //   photoConsent        true only if the tester ticked the per-photo consent box
 //   photo               JPEG base64 / data URL — accepted ONLY with photoConsent: true

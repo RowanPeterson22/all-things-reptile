@@ -21,7 +21,7 @@ const SPECIES = [
 const api = ({ admin }) => jest.fn(async (url) => {
   if (url === "/api/beta-check") return ok({ ok: true, name: "Rowan Peterson", traits: {}, sections: ["id", "species", "care", "licensing", "glossary", "search", "credits"], isAdmin: Boolean(admin) });
   if (url === "/api/admin-check") return admin ? ok({ ok: true, id: "id-1", name: "Rowan Peterson" }) : { ok: false, status: 403, json: async () => ({ error: "nope" }) };
-  if (url.startsWith("/api/admin-species")) return ok({ species: SPECIES, counts: { "carpet-python": { active: 12, hidden: 1, rejected: 0, best: 1 } }, morphs: {} });
+  if (url.startsWith("/api/admin-species")) return ok({ species: SPECIES, counts: { "carpet-python": { active: 12, hidden: 1, rejected: 0, best: 1 } }, morphs: [], morphSource: "db" });
   throw new Error(`unexpected ${url}`);
 });
 

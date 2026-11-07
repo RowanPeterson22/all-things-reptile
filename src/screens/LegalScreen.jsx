@@ -18,7 +18,7 @@ const LegalScreen = () => {
         <div style={{ fontSize: 12, color: "#555", lineHeight: 1.6 }}>Licence requirements change. Always verify with your state wildlife authority before purchasing. This guide is a reference only — not legal advice.</div>
       </div>
 
-      {STATES.map((s, i) => {
+      {STATES.map((s) => {
         const isOpen = expanded === s.abbr;
         const isTas = s.abbr === "TAS";
         return (

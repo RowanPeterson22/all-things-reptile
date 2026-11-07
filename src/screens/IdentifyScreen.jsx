@@ -52,7 +52,9 @@ const btn = (primary, disabled) => ({
   cursor: disabled ? "default" : "pointer", fontFamily: "inherit", opacity: disabled ? 0.5 : 1,
 });
 
-const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked }) => {
+// canOpenCare: the tester can open species care pages (sections species or
+// care). Without it, results name the species with no link out.
+const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCare = true }) => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const requestRef = useRef(null);
@@ -161,7 +163,7 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked }) => {
           )}
 
           {(result.suggestions || []).map((s, i) => (
-            <IdSuggestionCard key={i} suggestion={s} onOpen={(appSlug) => navigate(`/species/${appSlug}`, { state: { tab: "identify" } })} />
+            <IdSuggestionCard key={i} suggestion={s} onOpen={canOpenCare ? (appSlug) => navigate(`/species/${appSlug}`, { state: { tab: "identify" } }) : null} />
           ))}
 
           {result.note && (

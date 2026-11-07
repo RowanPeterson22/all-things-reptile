@@ -9,6 +9,7 @@ import GlossaryScreen from "./screens/GlossaryScreen";
 import SearchResults from "./screens/SearchResults";
 import { useBetaAccess } from "./beta/betaAccess";
 import { useAdminAccess } from "./beta/adminAccess";
+import { accessFor, PUBLIC_SECTIONS } from "./constants/sections";
 import ChildrensPythonPage from "./pages/species/snakes/ChildrensPythonPage";
 import StimsonsPythonPage from "./pages/species/snakes/StimsonsPythonPage";
 import SpottedPythonPage from "./pages/species/snakes/SpottedPythonPage";
@@ -142,24 +143,35 @@ const URL_FOR_PAGE = {
   ...Object.fromEntries(Object.values(GUIDES_BY_SLUG).map(g => [g.page, `/care/${g.slug}`])),
 };
 
-const PUBLIC_TABS = [
-  { id: "browse",    icon: "🔍", label: "Browse",     path: "/"          },
-  { id: "care",      icon: "📖", label: "Care",       path: "/care"      },
-  { id: "licencing", icon: "⚖️", label: "Licencing",  path: "/licencing" },
-  { id: "glossary",  icon: "📚", label: "Glossary",   path: "/glossary"  },
+// Each tab belongs to a section (src/constants/sections.json). Before launch a
+// tester sees only the sections the server gives them; the public build (no
+// invite code) gets the public sections, and AI ID stays beta-only (D9).
+const ALL_TABS = [
+  { id: "browse",    icon: "🔍", label: "Browse",     path: "/",          section: "species"   },
+  { id: "care",      icon: "📖", label: "Care",       path: "/care",      section: "care"      },
+  { id: "licencing", icon: "⚖️", label: "Licencing",  path: "/licencing", section: "licensing" },
+  { id: "identify",  icon: "📷", label: "ID Reptile", path: "/id",        section: "id"        },
+  { id: "glossary",  icon: "📚", label: "Glossary",   path: "/glossary",  section: "glossary"  },
 ];
-// D9: AI ID is closed beta at relaunch. The tab and /id route only exist for a
-// verified invite code (src/beta/betaAccess.js); the public build shows neither.
-const ID_TAB = { id: "identify", icon: "📷", label: "ID Reptile", path: "/id" };
-const BETA_TABS = [...PUBLIC_TABS.slice(0, 3), ID_TAB, PUBLIC_TABS[3]];
-const TAB_FOR_PATH_PUBLIC = Object.fromEntries(PUBLIC_TABS.map(t => [t.path, t.id]));
-const TAB_FOR_PATH_BETA = Object.fromEntries(BETA_TABS.map(t => [t.path, t.id]));
+const PUBLIC_ACCESS = accessFor(PUBLIC_SECTIONS);
+
+const FONT = "'DM Sans', system-ui, sans-serif";
+const Blank = () => <div style={{ minHeight: "100vh", background: C.cream }} />;
+const Notice = ({ title, children }) => (
+  <div style={{ minHeight: "100vh", background: C.cream, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, boxSizing: "border-box" }}>
+    <div style={{ maxWidth: 360, textAlign: "center" }}>
+      <div style={{ fontSize: 17, fontWeight: 700, color: C.ink, marginBottom: 8 }}>{title}</div>
+      <div style={{ fontSize: 13, color: C.muted, lineHeight: 1.6 }}>{children}</div>
+    </div>
+  </div>
+);
+const SearchPrompt = () => <div style={{ padding: 40, textAlign: "center", fontSize: 13, color: C.muted, fontFamily: FONT }}>Type at least two letters to search.</div>;
 
 // Detail page: renders the species / care guide for :slug, or sends unknown slugs home.
-const DetailRoute = ({ table, onBack }) => {
+const DetailRoute = ({ table, onBack, home = "/" }) => {
   const { slug } = useParams();
   const entry = table[slug];
-  if (!entry) return <Navigate to="/" replace />;
+  if (!entry) return <Navigate to={home} replace />;
   const PageComponent = PAGE_MAP[entry.page];
   return <PageComponent onBack={onBack} />;
 };
@@ -178,12 +190,18 @@ export function AppShell() {
   // Taking ?invite= off the URL keeps the code out of history and screenshots.
   const beta = useBetaAccess(location.search, () => navigate("/id", { replace: true }));
   const betaOk = beta.status === "ok";
-  const TABS = betaOk ? BETA_TABS : PUBLIC_TABS;
-  const TAB_FOR_PATH = betaOk ? TAB_FOR_PATH_BETA : TAB_FOR_PATH_PUBLIC;
+  // What this visitor can open. null while we don't know yet (checking, a failed
+  // check, or a tester revoked mid-session while gated).
+  const access = betaOk ? accessFor(beta.sections) : beta.status === "none" ? PUBLIC_ACCESS : null;
+  const TABS = access ? ALL_TABS.filter(t => access.has(t.section)) : [];
+  const TAB_FOR_PATH = Object.fromEntries(TABS.map(t => [t.path, t.id]));
+  const home = access ? access.home : "/";
+  const toHome = <Navigate to={home} replace />;
+  const allow = (ok, element) => (ok ? element : toHome);
   // /id without a verified code: blank while a stored code is checked, then home.
-  const idElement = betaOk
-    ? <Suspense fallback={null}><IdentifyScreen inviteCode={beta.code} traitsBySpecies={beta.traits} onRevoked={() => { beta.revoke(); navigate("/", { replace: true }); }} /></Suspense>
-    : beta.status === "checking" ? null : <Navigate to="/" replace />;
+  const idElement = betaOk && access.id
+    ? <Suspense fallback={null}><IdentifyScreen inviteCode={beta.code} traitsBySpecies={beta.traits} canOpenCare={access.speciesPages} onRevoked={() => { beta.revoke(); navigate("/", { replace: true }); }} /></Suspense>
+    : beta.status === "checking" ? null : toHome;
 
   // /admin: only for a verified beta code whose tester is an admin; anyone else goes home.
   const admin = useAdminAccess(beta.code, isAdminPath && betaOk);
@@ -230,15 +248,30 @@ export function AppShell() {
     );
   }
 
+  if (beta.status === "error") {
+    return (
+      <Notice title="Couldn't check your access">
+        Check your connection and try again.
+        <div><button type="button" onClick={beta.retry} style={{ marginTop: 14, background: C.green, color: "white", border: "none", borderRadius: 10, padding: "10px 20px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Try again</button></div>
+      </Notice>
+    );
+  }
+  if (!access) return <Blank />;
+  if (access.sections.length === 0) {
+    return <Notice title="Nothing to see yet">Your invite doesn't open any sections at the moment. We'll let you know when that changes.</Notice>;
+  }
+  // One section (e.g. ID-only testers): a single screen, no tab bar.
+  const showNav = TABS.length > 1;
+
   return (
     <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
 
         {!isDetail && (
           <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
-              <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { go("/"); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
+              <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { go(home); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>
-            <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
+            {access.search && <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>
               <input
                 placeholder="Search species, care guides, glossary..."
@@ -247,25 +280,29 @@ export function AppShell() {
                 style={{ background: "none", border: "none", outline: "none", color: "white", fontSize: 14, width: "100%", fontFamily: "inherit" }}
               />
               {searchQuery && <button onClick={() => setSearchQuery("")} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.6)", cursor: "pointer", fontSize: 18, fontFamily: "inherit", lineHeight: 1 }}>×</button>}
-            </div>
+            </div>}
 
           </div>
         )}
 
         <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", background: "white" }}>
           <Routes>
-            <Route path="/"              element={searchQuery.length >= 2 ? <SearchResults query={searchQuery} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} /> : <BrowseScreen onSpecies={openPage} />} />
-            <Route path="/care"          element={<CareScreen onGuide={openPage} />} />
-            <Route path="/licencing"     element={<LegalScreen />} />
+            <Route path="/"              element={access.search && searchQuery.length >= 2
+              ? <SearchResults query={searchQuery} show={{ species: access.speciesPages, care: access.careGuides, glossary: access.glossary }} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} />
+              : access.browse ? <BrowseScreen onSpecies={openPage} />
+              : access.search ? <SearchPrompt /> : toHome} />
+            <Route path="/care"          element={allow(access.careGuides, <CareScreen onGuide={openPage} />)} />
+            <Route path="/licencing"     element={allow(access.licensing, <LegalScreen />)} />
             <Route path="/id"            element={idElement} />
-            <Route path="/glossary"      element={<GlossaryScreen />} />
-            <Route path="/credits"       element={<Suspense fallback={null}><CreditsScreen /></Suspense>} />
-            <Route path="/species/:slug" element={<DetailRoute table={SPECIES_BY_SLUG} onBack={handleBack} />} />
-            <Route path="/care/:slug"    element={<DetailRoute table={GUIDES_BY_SLUG} onBack={handleBack} />} />
-            <Route path="*"              element={<Navigate to="/" replace />} />
+            <Route path="/glossary"      element={allow(access.glossary, <GlossaryScreen showCredits={access.credits} />)} />
+            <Route path="/credits"       element={allow(access.credits, <Suspense fallback={null}><CreditsScreen /></Suspense>)} />
+            <Route path="/species/:slug" element={allow(access.speciesPages, <DetailRoute table={SPECIES_BY_SLUG} onBack={handleBack} home={home} />)} />
+            <Route path="/care/:slug"    element={allow(access.careGuides, <DetailRoute table={GUIDES_BY_SLUG} onBack={handleBack} home={home} />)} />
+            <Route path="*"              element={toHome} />
           </Routes>
         </div>
 
+        {showNav && <>
         <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", flexDirection: "column", paddingTop: 8, zIndex: 100 }}>
           <div style={{ display: "flex", width: "100%" }}>
             {TABS.map(t => (
@@ -278,6 +315,8 @@ export function AppShell() {
           <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "10px 0 calc(env(safe-area-inset-bottom, 0px) - 15px)" }}>© 2026 Amphibian Pty Ltd</div>
         </div>
         <div style={{ height: "calc(60px + env(safe-area-inset-bottom, 0px))" }} />
+        </>}
+        {!showNav && <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "10px 0 calc(env(safe-area-inset-bottom, 0px) + 10px)", background: "white" }}>© 2026 Amphibian Pty Ltd</div>}
     </div>
   );
 }

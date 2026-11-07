@@ -20,7 +20,8 @@ const CONFIDENCE_STYLE = {
 
 export const NotNativeNotice = () => <WarnBox type="blue" title={NOT_NATIVE_TITLE}>{NOT_NATIVE_TEXT}</WarnBox>;
 
-// onOpen(appSlug) opens the care guide.
+// onOpen(appSlug) opens the care guide. With no onOpen (a tester without the
+// species or care sections) the card names the species and links nowhere.
 const IdSuggestionCard = ({ suggestion: s, onOpen }) => {
   const cs = CONFIDENCE_STYLE[s.confidence] || CONFIDENCE_STYLE.possible;
   const open = s.inApp && s.appSlug && onOpen ? () => onOpen(s.appSlug) : null;
@@ -58,7 +59,7 @@ const IdSuggestionCard = ({ suggestion: s, onOpen }) => {
       <div style={{ fontSize: 11, color: "#999", marginTop: 8 }}>Suggestion only — not a confirmed identification</div>
       {open
         ? <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginTop: 6 }}>View care guide →</div>
-        : !unmatched && <div style={{ fontSize: 12, color: C.muted, marginTop: 6 }}>No care guide yet</div>}
+        : !unmatched && !s.inApp && <div style={{ fontSize: 12, color: C.muted, marginTop: 6 }}>No care guide yet</div>}
     </div>
   );
 };

@@ -14,6 +14,8 @@ const flushSpeciesIndex = () => act(async () => { await loadSpeciesIndex(); });
 
 const CODE = "b".repeat(43);
 const okRes = (body) => ({ ok: true, status: 200, json: async () => body });
+// Testers with every section, as before the per-tester sections existed.
+const ALL = ["id", "species", "care", "licensing", "glossary", "search", "credits"];
 const TRAITS = { "central-bearded-dragon": [{ id: "translucent", name: "Translucent" }, { id: "leatherback", name: "Leatherback" }] };
 
 // The splash screen runs for 4.4 s before the shell renders.
@@ -43,8 +45,8 @@ describe("betaAccess helpers", () => {
     spy.mockRestore();
   });
   test("checkCode sends the header and separates revoked from transient", async () => {
-    const f = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS }));
-    expect(await checkCode(CODE, f)).toEqual({ ok: true, name: "Jane", traits: TRAITS });
+    const f = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS, sections: ALL }));
+    expect(await checkCode(CODE, f)).toEqual({ ok: true, name: "Jane", traits: TRAITS, sections: ALL, isAdmin: false, gated: true });
     expect(f.mock.calls[0][1].headers).toEqual({ "x-atr-beta": CODE });
     expect(await checkCode(CODE, async () => ({ ok: false, status: 403 }))).toEqual({ ok: false, revoked: true });
     expect(await checkCode(CODE, async () => ({ ok: false, status: 503 }))).toEqual({ ok: false, revoked: false });
@@ -64,7 +66,7 @@ describe("App shell gate", () => {
     expect(global.fetch).not.toHaveBeenCalled();
   });
   test("a valid invite link stores the code and shows the ID tab and screen", async () => {
-    global.fetch = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS }));
+    global.fetch = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS, sections: ALL }));
     await renderAt(`/id?invite=${CODE}`);
     expect(window.localStorage.getItem(STORAGE_KEY)).toBe(CODE);
     expect(global.fetch).toHaveBeenCalledWith("/api/beta-check", expect.objectContaining({ headers: { "x-atr-beta": CODE } }));
@@ -128,7 +130,7 @@ describe("ID results survive a trip to a care guide", () => {
   test("care guide Back returns to the filled-in results and feedback", async () => {
     const result = { suggestions: [{ name: "Central Bearded Dragon", latin: "Pogona vitticeps", slug: "central-bearded-dragon", appSlug: "central-bearded-dragon", inApp: true, matched: true, confidence: "likely", traits: [] }], note: "" };
     window.localStorage.setItem(STORAGE_KEY, CODE);
-    global.fetch = jest.fn(async (url) => (String(url).includes("identify") ? okRes(result) : okRes({ ok: true, name: "Rowan", traits: TRAITS })));
+    global.fetch = jest.fn(async (url) => (String(url).includes("identify") ? okRes(result) : okRes({ ok: true, name: "Rowan", traits: TRAITS, sections: ALL })));
     const { container } = await renderAt("/id");
 
     // Pick a photo (decode stubbed) and identify.

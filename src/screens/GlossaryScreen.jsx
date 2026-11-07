@@ -4,7 +4,7 @@ import { C } from "../constants/colours";
 import { GLOSSARY_TERMS } from "../data/glossary";
 
 // ─── Glossary screen ─────────────────────────────────────────────
-const GlossaryScreen = () => {
+const GlossaryScreen = ({ showCredits = true }) => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
@@ -87,9 +87,9 @@ const GlossaryScreen = () => {
         <div style={{ padding: "16px 18px", fontSize: 12, color: "#aaa", textAlign: "center" }}>
           {filtered.length} term{filtered.length !== 1 ? "s" : ""} {activeCategory !== "All" ? `in ${activeCategory}` : "in glossary"}
         </div>
-        <div style={{ padding: "0 18px 18px", fontSize: 11, textAlign: "center" }}>
+        {showCredits && <div style={{ padding: "0 18px 18px", fontSize: 11, textAlign: "center" }}>
           <Link to="/credits" style={{ color: "#aaa", textDecoration: "underline", textUnderlineOffset: 2 }}>Photo credits</Link>
-        </div>
+        </div>}
       </div>
     </div>
   );

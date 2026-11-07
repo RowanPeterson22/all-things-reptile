@@ -4,22 +4,24 @@ import { CARE_GUIDES } from "../data/careGuides";
 import { GLOSSARY_TERMS } from "../data/glossary";
 
 // ─── Search Results screen ────────────────────────────────────────
-const SearchResults = ({ query, onNavigate }) => {
+// show: which result groups this visitor may open (per-tester sections).
+const ALL_GROUPS = { species: true, care: true, glossary: true };
+const SearchResults = ({ query, onNavigate, show = ALL_GROUPS }) => {
   const q = query.toLowerCase();
 
-  const speciesResults = SPECIES.filter(s =>
+  const speciesResults = !show.species ? [] : SPECIES.filter(s =>
     s.name.toLowerCase().includes(q) ||
     s.latin.toLowerCase().includes(q) ||
     s.type.toLowerCase().includes(q) ||
     s.level.toLowerCase().includes(q)
   );
 
-  const careResults = CARE_GUIDES.filter(g =>
+  const careResults = !show.care ? [] : CARE_GUIDES.filter(g =>
     g.title.toLowerCase().includes(q) ||
     g.sub.toLowerCase().includes(q)
   );
 
-  const glossaryResults = GLOSSARY_TERMS.filter(t =>
+  const glossaryResults = !show.glossary ? [] : GLOSSARY_TERMS.filter(t =>
     t.term.toLowerCase().includes(q) ||
     t.def.toLowerCase().includes(q)
   );

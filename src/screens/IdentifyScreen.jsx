@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { C } from "../constants/colours";
 import WarnBox from "../components/WarnBox";
 import IdFeedbackCard from "../components/IdFeedbackCard";
 import { BETA_HEADER } from "../beta/betaAccess";
+import { useSessionState } from "../beta/idSession";
 
 // ─── ID Reptile screen (D9 AI species ID — closed beta) ───────────
 // Photo → downscaled JPEG in the browser → POST /api/identify → suggestions,
@@ -60,14 +61,20 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked }) => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const requestRef = useRef(null);
-  const [photo, setPhoto] = useState(null);     // JPEG data URL
-  const [status, setStatus] = useState("idle"); // idle | preparing | loading | done | error
-  const [result, setResult] = useState(null);
-  const [error, setError] = useState("");
-  const [runId, setRunId] = useState(0);         // new feedback card per result
+  // Held in memory (not browser storage) so the photo and results are still here
+  // after opening a care guide from a result and tapping Back.
+  const [photo, setPhoto] = useSessionState("id:photo", null);     // JPEG data URL
+  const [status, setStatus] = useSessionState("id:status", "idle"); // idle | preparing | loading | done | error
+  const [result, setResult] = useSessionState("id:result", null);
+  const [error, setError] = useSessionState("id:error", "");
+  const [runId, setRunId] = useSessionState("id:runId", 0);         // new feedback card per result
 
-  // Abandon an in-flight request if the user leaves the screen.
-  useEffect(() => () => requestRef.current && requestRef.current.abort(), []);
+  // Abandon an in-flight request if the user leaves the screen; on return, a
+  // request that was cut off shows the photo ready to identify again.
+  useEffect(() => {
+    if (status === "loading" || status === "preparing") setStatus("idle");
+    return () => requestRef.current && requestRef.current.abort();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const choosePhoto = async (e) => {
     const file = e.target.files && e.target.files[0];
@@ -193,7 +200,7 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked }) => {
             </div>
           )}
 
-          <IdFeedbackCard key={runId} result={result} photo={photo} inviteCode={inviteCode} traitsBySpecies={traitsBySpecies} onRevoked={onRevoked} />
+          <IdFeedbackCard key={runId} runId={runId} result={result} photo={photo} inviteCode={inviteCode} traitsBySpecies={traitsBySpecies} onRevoked={onRevoked} />
 
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
             <button onClick={reset} style={btn(false, false)}>Start again</button>

@@ -10110,5 +10110,853 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "common-death-adder": {
+    "scientific": "Acanthophis antarcticus",
+    "taxonId": 35060,
+    "taxonName": "Acanthophis antarcticus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-death-adder": {
+    "scientific": "Acanthophis cryptamydros",
+    "taxonId": 539197,
+    "taxonName": "Acanthophis cryptamydros",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "barkly-tableland-death-adder": {
+    "scientific": "Acanthophis hawkei",
+    "taxonId": 93063,
+    "taxonName": "Acanthophis hawkei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-death-adder": {
+    "scientific": "Acanthophis praelongus",
+    "taxonId": 35057,
+    "taxonName": "Acanthophis praelongus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-death-adder": {
+    "scientific": "Acanthophis pyrrhus",
+    "taxonId": 35056,
+    "taxonName": "Acanthophis pyrrhus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-scaled-death-adder": {
+    "scientific": "Acanthophis rugosus",
+    "taxonId": 35051,
+    "taxonName": "Acanthophis rugosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-death-adder": {
+    "scientific": "Acanthophis wellsi",
+    "taxonId": 35053,
+    "taxonName": "Acanthophis wellsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-burrowing-snake": {
+    "scientific": "Antaioserpens albiceps",
+    "taxonId": 539345,
+    "taxonName": "Antaioserpens albiceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "warrego-burrowing-snake": {
+    "scientific": "Antaioserpens warro",
+    "taxonId": 539346,
+    "taxonName": "Antaioserpens warro",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-copperhead": {
+    "scientific": "Austrelaps labialis",
+    "taxonId": 35065,
+    "taxonName": "Austrelaps labialis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "highlands-copperhead": {
+    "scientific": "Austrelaps ramsayi",
+    "taxonId": 94945,
+    "taxonName": "Austrelaps ramsayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lowlands-copperhead": {
+    "scientific": "Austrelaps superbus",
+    "taxonId": 94946,
+    "taxonName": "Austrelaps superbus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-western-shovel-nosed-snake": {
+    "scientific": "Brachyurophis approximans",
+    "taxonId": 318642,
+    "taxonName": "Brachyurophis approximans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "australian-coral-snake": {
+    "scientific": "Brachyurophis australis",
+    "taxonId": 318643,
+    "taxonName": "Brachyurophis australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-york-shovel-nosed-snake": {
+    "scientific": "Brachyurophis campbelli",
+    "taxonId": 558846,
+    "taxonName": "Brachyurophis campbelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "narrow-banded-shovel-nosed-snake": {
+    "scientific": "Brachyurophis fasciolatus",
+    "taxonId": 318644,
+    "taxonName": "Brachyurophis fasciolatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "unbanded-shovel-nosed-snake": {
+    "scientific": "Brachyurophis incinctus",
+    "taxonId": 318645,
+    "taxonName": "Brachyurophis incinctus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arnhem-shovel-nosed-snake": {
+    "scientific": "Brachyurophis morrisi",
+    "taxonId": 318646,
+    "taxonName": "Brachyurophis morrisi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-shovel-nosed-snake": {
+    "scientific": "Brachyurophis roperi",
+    "taxonId": 318647,
+    "taxonName": "Brachyurophis roperi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-shovel-nosed-snake": {
+    "scientific": "Brachyurophis semifasciatus",
+    "taxonId": 318648,
+    "taxonName": "Brachyurophis semifasciatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-dwarf-crowned-snake": {
+    "scientific": "Cacophis churchilli",
+    "taxonId": 35048,
+    "taxonName": "Cacophis churchilli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-crowned-snake": {
+    "scientific": "Cacophis harriettae",
+    "taxonId": 35049,
+    "taxonName": "Cacophis harriettae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-dwarf-crowned-snake": {
+    "scientific": "Cacophis krefftii",
+    "taxonId": 35047,
+    "taxonName": "Cacophis krefftii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "golden-crowned-snake": {
+    "scientific": "Cacophis squamulosus",
+    "taxonId": 35046,
+    "taxonName": "Cacophis squamulosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pink-snake": {
+    "scientific": "Cryptophis incredibilis",
+    "taxonId": 318661,
+    "taxonName": "Cryptophis incredibilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-small-eyed-snake": {
+    "scientific": "Cryptophis nigrescens",
+    "taxonId": 35134,
+    "taxonName": "Cryptophis nigrescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-small-eyed-snake": {
+    "scientific": "Cryptophis pallidiceps",
+    "taxonId": 318663,
+    "taxonName": "Cryptophis pallidiceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "narrow-headed-whip-snake": {
+    "scientific": "Demansia angusticeps",
+    "taxonId": 99174,
+    "taxonName": "Demansia angusticeps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-necked-whip-snake": {
+    "scientific": "Demansia calodera",
+    "taxonId": 35039,
+    "taxonName": "Demansia calodera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-tailed-whip-snake": {
+    "scientific": "Demansia flagellatio",
+    "taxonId": 99175,
+    "taxonName": "Demansia flagellatio",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "olive-whip-snake": {
+    "scientific": "Demansia olivacea",
+    "taxonId": 35040,
+    "taxonName": "Demansia olivacea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "greater-black-whip-snake": {
+    "scientific": "Demansia papuensis",
+    "taxonId": 99176,
+    "taxonName": "Demansia papuensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-faced-whip-snake": {
+    "scientific": "Demansia psammophis",
+    "taxonId": 35034,
+    "taxonName": "Demansia psammophis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sombre-whip-snake": {
+    "scientific": "Demansia quaesitor",
+    "taxonId": 99177,
+    "taxonName": "Demansia quaesitor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "reticulated-whip-snake": {
+    "scientific": "Demansia reticulata",
+    "taxonId": 539606,
+    "taxonName": "Demansia reticulata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crack-dwelling-whip-snake": {
+    "scientific": "Demansia rimicola",
+    "taxonId": 99178,
+    "taxonName": "Demansia rimicola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rufous-whip-snake": {
+    "scientific": "Demansia rufescens",
+    "taxonId": 35032,
+    "taxonName": "Demansia rufescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shines-whip-snake": {
+    "scientific": "Demansia shinei",
+    "taxonId": 99179,
+    "taxonName": "Demansia shinei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "grey-whip-snake": {
+    "scientific": "Demansia simplex",
+    "taxonId": 35033,
+    "taxonName": "Demansia simplex",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "collared-whip-snake": {
+    "scientific": "Demansia torquata",
+    "taxonId": 35031,
+    "taxonName": "Demansia torquata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lesser-black-whip-snake": {
+    "scientific": "Demansia vestigiata",
+    "taxonId": 35041,
+    "taxonName": "Demansia vestigiata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "de-vis-banded-snake": {
+    "scientific": "Denisonia devisi",
+    "taxonId": 35029,
+    "taxonName": "Denisonia devisi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ornamental-snake": {
+    "scientific": "Denisonia maculata",
+    "taxonId": 35028,
+    "taxonName": "Denisonia maculata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-lipped-snake": {
+    "scientific": "Drysdalia coronoides",
+    "taxonId": 99620,
+    "taxonName": "Drysdalia coronoides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "masters-snake": {
+    "scientific": "Drysdalia mastersii",
+    "taxonId": 99621,
+    "taxonName": "Drysdalia mastersii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mustard-bellied-snake": {
+    "scientific": "Drysdalia rhodogaster",
+    "taxonId": 35273,
+    "taxonName": "Drysdalia rhodogaster",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bardick": {
+    "scientific": "Echiopsis curta",
+    "taxonId": 35270,
+    "taxonName": "Echiopsis curta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-crowned-snake": {
+    "scientific": "Elapognathus coronatus",
+    "taxonId": 539637,
+    "taxonName": "Elapognathus coronatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-nosed-snake": {
+    "scientific": "Elapognathus minor",
+    "taxonId": 35267,
+    "taxonName": "Elapognathus minor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-naped-snake": {
+    "scientific": "Furina barnardi",
+    "taxonId": 35251,
+    "taxonName": "Furina barnardi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-naped-snake": {
+    "scientific": "Furina diadema",
+    "taxonId": 35249,
+    "taxonName": "Furina diadema",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dunmalls-snake": {
+    "scientific": "Furina dunmalli",
+    "taxonId": 35250,
+    "taxonName": "Furina dunmalli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-naped-snake": {
+    "scientific": "Furina ornata",
+    "taxonId": 35247,
+    "taxonName": "Furina ornata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "grey-naped-snake": {
+    "scientific": "Furina tristis",
+    "taxonId": 35248,
+    "taxonName": "Furina tristis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "grey-snake": {
+    "scientific": "Hemiaspis damelii",
+    "taxonId": 35244,
+    "taxonName": "Hemiaspis damelii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "marsh-snake": {
+    "scientific": "Hemiaspis signata",
+    "taxonId": 35245,
+    "taxonName": "Hemiaspis signata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-headed-snake": {
+    "scientific": "Hoplocephalus bitorquatus",
+    "taxonId": 35235,
+    "taxonName": "Hoplocephalus bitorquatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "broad-headed-snake": {
+    "scientific": "Hoplocephalus bungaroides",
+    "taxonId": 35234,
+    "taxonName": "Hoplocephalus bungaroides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stephens-banded-snake": {
+    "scientific": "Hoplocephalus stephensii",
+    "taxonId": 35233,
+    "taxonName": "Hoplocephalus stephensii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-naped-snake": {
+    "scientific": "Neelaps bimaculatus",
+    "taxonId": 1499800,
+    "taxonName": "Narophis bimaculatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-striped-snake": {
+    "scientific": "Neelaps calonotos",
+    "taxonId": 1403108,
+    "taxonName": "Neelaps calonotos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tiger-snake": {
+    "scientific": "Notechis scutatus",
+    "taxonId": 35178,
+    "taxonName": "Notechis scutatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "inland-taipan": {
+    "scientific": "Oxyuranus microlepidotus",
+    "taxonId": 35172,
+    "taxonName": "Oxyuranus microlepidotus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coastal-taipan": {
+    "scientific": "Oxyuranus scutellatus",
+    "taxonId": 35170,
+    "taxonName": "Oxyuranus scutellatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-desert-taipan": {
+    "scientific": "Oxyuranus temporalis",
+    "taxonId": 108125,
+    "taxonName": "Oxyuranus temporalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lake-cronin-snake": {
+    "scientific": "Paroplocephalus atriceps",
+    "taxonId": 318742,
+    "taxonName": "Paroplocephalus atriceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mulga-snake": {
+    "scientific": "Pseudechis australis",
+    "taxonId": 35161,
+    "taxonName": "Pseudechis australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-mulga-snake": {
+    "scientific": "Pseudechis butleri",
+    "taxonId": 35157,
+    "taxonName": "Pseudechis butleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "colletts-snake": {
+    "scientific": "Pseudechis colletti",
+    "taxonId": 35158,
+    "taxonName": "Pseudechis colletti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-black-snake": {
+    "scientific": "Pseudechis guttatus",
+    "taxonId": 35159,
+    "taxonName": "Pseudechis guttatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "false-king-brown-snake": {
+    "scientific": "Pseudechis pailsei",
+    "taxonId": 35162,
+    "taxonName": "Pseudechis pailsei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "papuan-black-snake": {
+    "scientific": "Pseudechis papuanus",
+    "taxonId": 35160,
+    "taxonName": "Pseudechis papuanus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-bellied-black-snake": {
+    "scientific": "Pseudechis porphyriacus",
+    "taxonId": 35153,
+    "taxonName": "Pseudechis porphyriacus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-mulga-snake": {
+    "scientific": "Pseudechis weigeli",
+    "taxonId": 110926,
+    "taxonName": "Pseudechis weigeli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dugite": {
+    "scientific": "Pseudonaja affinis",
+    "taxonId": 35148,
+    "taxonName": "Pseudonaja affinis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shield-snouted-brown-snake": {
+    "scientific": "Pseudonaja aspidorhyncha",
+    "taxonId": 111067,
+    "taxonName": "Pseudonaja aspidorhyncha",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "speckled-brown-snake": {
+    "scientific": "Pseudonaja guttata",
+    "taxonId": 35146,
+    "taxonName": "Pseudonaja guttata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "peninsula-brown-snake": {
+    "scientific": "Pseudonaja inframacula",
+    "taxonId": 111068,
+    "taxonName": "Pseudonaja inframacula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ingrams-brown-snake": {
+    "scientific": "Pseudonaja ingrami",
+    "taxonId": 35145,
+    "taxonName": "Pseudonaja ingrami",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-brown-snake": {
+    "scientific": "Pseudonaja mengdeni",
+    "taxonId": 111069,
+    "taxonName": "Pseudonaja mengdeni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ringed-brown-snake": {
+    "scientific": "Pseudonaja modesta",
+    "taxonId": 35144,
+    "taxonName": "Pseudonaja modesta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-brown-snake": {
+    "scientific": "Pseudonaja nuchalis",
+    "taxonId": 35143,
+    "taxonName": "Pseudonaja nuchalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-brown-snake": {
+    "scientific": "Pseudonaja textilis",
+    "taxonId": 35140,
+    "taxonName": "Pseudonaja textilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "square-nosed-snake": {
+    "scientific": "Rhinoplocephalus bicolor",
+    "taxonId": 35137,
+    "taxonName": "Rhinoplocephalus bicolor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-desert-banded-snake": {
+    "scientific": "Simoselaps anomalus",
+    "taxonId": 35127,
+    "taxonName": "Simoselaps anomalus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jans-banded-snake": {
+    "scientific": "Simoselaps bertholdi",
+    "taxonId": 35130,
+    "taxonName": "Simoselaps bertholdi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "west-coast-banded-snake": {
+    "scientific": "Simoselaps littoralis",
+    "taxonId": 35119,
+    "taxonName": "Simoselaps littoralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dampierland-burrowing-snake": {
+    "scientific": "Simoselaps minimus",
+    "taxonId": 35120,
+    "taxonName": "Simoselaps minimus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwyers-snake": {
+    "scientific": "Suta dwyeri",
+    "taxonId": 1127947,
+    "taxonName": "Suta dwyeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rosens-snake": {
+    "scientific": "Suta fasciata",
+    "taxonId": 35110,
+    "taxonName": "Suta fasciata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "little-whip-snake": {
+    "scientific": "Suta flagellum",
+    "taxonId": 1127948,
+    "taxonName": "Suta flagellum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-hooded-snake": {
+    "scientific": "Suta gaikhorstorum",
+    "taxonId": 1126045,
+    "taxonName": "Suta gaikhorstorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "goulds-hooded-snake": {
+    "scientific": "Suta gouldii",
+    "taxonId": 1127949,
+    "taxonName": "Suta gouldii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "monk-snake": {
+    "scientific": "Suta monachus",
+    "taxonId": 1127950,
+    "taxonName": "Suta monachus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mitchells-short-tailed-snake": {
+    "scientific": "Suta nigriceps",
+    "taxonId": 1127951,
+    "taxonName": "Suta nigriceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ord-curl-snake": {
+    "scientific": "Suta ordensis",
+    "taxonId": 35105,
+    "taxonName": "Suta ordensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "little-spotted-snake": {
+    "scientific": "Suta punctata",
+    "taxonId": 35106,
+    "taxonName": "Suta punctata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spectacled-hooded-snake": {
+    "scientific": "Suta spectabilis",
+    "taxonId": 1127952,
+    "taxonName": "Suta spectabilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "curl-snake": {
+    "scientific": "Suta suta",
+    "taxonId": 35103,
+    "taxonName": "Suta suta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-scaled-snake": {
+    "scientific": "Tropidechis carinatus",
+    "taxonId": 35083,
+    "taxonName": "Tropidechis carinatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bandy-bandy": {
+    "scientific": "Vermicella annulata",
+    "taxonId": 35073,
+    "taxonName": "Vermicella annulata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "intermediate-bandy-bandy": {
+    "scientific": "Vermicella intermedia",
+    "taxonId": 35071,
+    "taxonName": "Vermicella intermedia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-bandy-bandy": {
+    "scientific": "Vermicella multifasciata",
+    "taxonId": 35072,
+    "taxonName": "Vermicella multifasciata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "weipa-bandy-bandy": {
+    "scientific": "Vermicella parscauda",
+    "taxonId": 797775,
+    "taxonName": "Vermicella parscauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-bandy-bandy": {
+    "scientific": "Vermicella snelli",
+    "taxonId": 35069,
+    "taxonName": "Vermicella snelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-bandy-bandy": {
+    "scientific": "Vermicella vermiformis",
+    "taxonId": 35070,
+    "taxonName": "Vermicella vermiformis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

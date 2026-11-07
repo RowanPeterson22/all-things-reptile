@@ -366,7 +366,7 @@ describe("api/identify handler", () => {
     const res = mockRes();
     await handler(req(), res);
     const [url, init] = global.fetch.mock.calls[0];
-    expect(url).toBe(`https://ledcvbyiqkygcdleucqo.supabase.co/rest/v1/beta_testers?select=id,name&invite_code=eq.${CODE}&active=is.true&limit=1`);
+    expect(url).toBe(`https://ledcvbyiqkygcdleucqo.supabase.co/rest/v1/beta_testers?select=id,name,sections,is_admin&invite_code=eq.${CODE}&active=is.true&limit=1`);
     expect(init.headers).toMatchObject({ apikey: "sb_secret_test", Authorization: "Bearer sb_secret_test" });
     // Gate passed; Anthropic key missing → the identify 503.
     expect(res.statusCode).toBe(503);

@@ -1,0 +1,13 @@
+{
+  "_comment": "App sections a beta tester can be given before launch. The one definition: src/constants/sections.js (app) and lib/sections.js (server) both read this file, and the beta_testers.sections check constraint lists the same keys. Order matters: a tester lands on their first allowed section.",
+  "sections": [
+    { "key": "id",        "label": "ID Reptile",            "path": "/id",        "public": false },
+    { "key": "species",   "label": "Species (Browse and species pages)", "path": "/", "public": true },
+    { "key": "care",      "label": "Care guides",           "path": "/care",      "public": true },
+    { "key": "licensing", "label": "Licencing",             "path": "/licencing", "public": true },
+    { "key": "glossary",  "label": "Glossary",              "path": "/glossary",  "public": true },
+    { "key": "search",    "label": "Search",                "path": "/",          "public": true },
+    { "key": "credits",   "label": "Photo credits",         "path": "/credits",   "public": true }
+  ],
+  "defaultSections": ["id"]
+}

@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
     return res.status(429).json({ error: "Too many submissions in a short time. Wait a minute and try again." });
   }
 
-  const gate = await requireTester(req);
+  const gate = await requireTester(req, { section: "id" });
   if (!gate.tester) return res.status(gate.status).json(gate.body);
 
   if (!/^application\/json\b/i.test(req.headers["content-type"] || "")) {

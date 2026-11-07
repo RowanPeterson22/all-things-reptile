@@ -51,10 +51,10 @@ describe("requireTester", () => {
   test("passes an active tester and caches briefly", async () => {
     const fetchImpl = jest.fn(async () => json(200, [TESTER]));
     const a = await requireTester(req(CODE), { env: ENV, fetchImpl });
-    expect(a.tester).toEqual(TESTER);
+    expect(a.tester).toEqual({ ...TESTER, sections: ["id"], isAdmin: false });
     expect(a.cfg).toEqual({ url: URL_, key: KEY });
     const b = await requireTester(req(CODE), { env: ENV, fetchImpl });
-    expect(b.tester).toEqual(TESTER);
+    expect(b.tester).toEqual({ ...TESTER, sections: ["id"], isAdmin: false });
     expect(b.cfg).toEqual({ url: URL_, key: KEY });
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });

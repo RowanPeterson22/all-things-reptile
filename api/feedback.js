@@ -3,7 +3,8 @@
 // Body (JSON):
 //   ai                  the result object /api/identify returned (required)
 //   verdict             "correct" | "partly" | "wrong"
-//   correctSpeciesSlug  one of the app's 46 slugs, or "other" (+ correctSpeciesOther)
+//   correctSpeciesSlug  an index slug from src/data/australianSpecies.json (any of the
+//                       1,363 natives, e.g. "jacky-dragon"), or "other" (+ correctSpeciesOther)
 //   correctTraits       trait ids from lib/morphs.js
 //   notes               free text, max 2000 chars
 //   photoConsent        true only if the tester ticked the per-photo consent box

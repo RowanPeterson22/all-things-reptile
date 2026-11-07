@@ -36,8 +36,13 @@ export const toCsv = (rows) =>
   [COLUMNS.join(","), ...rows.map(flatten).map(r => COLUMNS.map(c => csvCell(r[c])).join(","))].join("\n") + "\n";
 
 const pct = (n, d) => (d ? `${Math.round((100 * n) / d)}%` : "–");
-const answer = (r) => r.correct_species_slug === "not-one-of-our-species" && r.correct_species_other
-  ? `other: ${r.correct_species_other}` : (r.correct_species_slug || "unknown");
+// Index slug, or the typed name for "Other". Rows from before Nov 2026 carry the
+// old "not-one-of-our-species" sentinel instead of a null slug.
+const LEGACY_OTHER = "not-one-of-our-species";
+export const answer = (r) => {
+  if (r.correct_species_other && (!r.correct_species_slug || r.correct_species_slug === LEGACY_OTHER)) return `other: ${r.correct_species_other}`;
+  return r.correct_species_slug || "unknown";
+};
 
 export const summarise = (rows) => {
   const total = rows.length;

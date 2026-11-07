@@ -8,7 +8,7 @@ const { requireTester, clearTesterCache, FORBIDDEN, NOT_SET_UP } = require("../.
 const { validateFeedback, submitFeedback } = require("../../lib/feedback");
 const feedbackHandler = require("../../api/feedback");
 const betaCheckHandler = require("../../api/beta-check");
-const { OTHER, MAX_BASE64_CHARS } = require("../../lib/identify");
+const { MAX_BASE64_CHARS } = require("../../lib/identify");
 
 const URL_ = "https://ledcvbyiqkygcdleucqo.supabase.co";
 const KEY = "sb_secret_test";
@@ -90,15 +90,33 @@ describe("validateFeedback", () => {
   test("'correct' fills in the AI's top species", () => {
     expect(validateFeedback({ ai: AI, verdict: "correct" }).row.correct_species_slug).toBe("central-bearded-dragon");
   });
-  test("'other' needs a typed name and is stored with the escape-hatch slug", () => {
-    expect(status({ ...base, correctSpeciesSlug: "other" })).toBe(400);
-    const { row } = validateFeedback({ ...base, correctSpeciesSlug: "other", correctSpeciesOther: "Eastern Brown Snake" });
-    expect(row.correct_species_slug).toBe(OTHER);
-    expect(row.correct_species_other).toBe("Eastern Brown Snake");
+  test("a non-app species is stored as its index slug, not a sentinel (Rowan's Jacky Dragon)", () => {
+    const { row } = validateFeedback({ ...base, verdict: "wrong", correctSpeciesSlug: "jacky-dragon", correctTraits: [] });
+    expect(row.correct_species_slug).toBe("jacky-dragon");
+    expect(row.correct_species_other).toBeNull();
   });
-  test("'wrong' needs a species or a note", () => {
+  test("'other' needs a typed name and stores free text only, with no slug", () => {
+    expect(status({ ...base, correctSpeciesSlug: "other" })).toBe(400);
+    const { row } = validateFeedback({ ...base, correctSpeciesSlug: "other", correctSpeciesOther: "Some undescribed Ctenotus" });
+    expect(row.correct_species_slug).toBeNull();
+    expect(row.correct_species_other).toBe("Some undescribed Ctenotus");
+    expect(JSON.stringify(row)).not.toContain("not-one-of-our-species");
+  });
+  test("the old sentinel is no longer accepted as a species", () => {
+    expect(status({ ...base, correctSpeciesSlug: "not-one-of-our-species" })).toBe(400);
+  });
+  test("AI top pick: index slug for any matched species, null when unmatched", () => {
+    const jacky = { ...AI, suggestions: [{ slug: "jacky-dragon", matched: true, inApp: false, name: "Jacky Dragon", traits: [] }] };
+    expect(validateFeedback({ ai: jacky, verdict: "correct" }).row).toMatchObject({ ai_top_species_slug: "jacky-dragon", correct_species_slug: "jacky-dragon" });
+    const made = { ...AI, suggestions: [{ slug: null, matched: false, name: "Rainbow Dragon", traits: [] }] };
+    const { row } = validateFeedback({ ai: made, verdict: "correct" });
+    expect(row.ai_top_species_slug).toBeNull();
+    expect(row.correct_species_slug).toBeNull();
+  });
+  test("'wrong' needs a species, an Other name or a note", () => {
     expect(status({ ai: AI, verdict: "wrong" })).toBe(400);
     expect(status({ ai: AI, verdict: "wrong", notes: "It's a Lace Monitor hatchling" })).toBe(200);
+    expect(status({ ai: AI, verdict: "wrong", correctSpeciesSlug: "other", correctSpeciesOther: "Unknown skink" })).toBe(200);
   });
   test("rejects bad verdicts, species, traits, notes and AI payloads", () => {
     expect(status(null)).toBe(400);

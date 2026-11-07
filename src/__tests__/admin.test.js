@@ -67,6 +67,7 @@ const fresh = () => ({
     { id: PHOTO_ID, species_slug: "central-bearded-dragon", source: "inaturalist", source_id: "123", source_url: "https://www.inaturalist.org/observations/1", photographer: "A. Person", licence: "cc-by", licence_url: "https://creativecommons.org/licenses/by/4.0/", storage_path: "central-bearded-dragon/inaturalist-123.jpg", traits: [], is_best: true, status: "active", notes: null, created_at: "2026-11-07T00:00:00Z" },
   ],
   objects: { "id-photos": { [`${TESTER_ID}/p1.jpg`]: jpeg(1000, 750), [`${TESTER_ID}/p2.jpg`]: jpeg() }, "reference-photos": { "central-bearded-dragon/inaturalist-123.jpg": jpeg() } },
+  settings: { default_sections: ["id"] },
   failNext: null, // e.g. "PATCH reference_photos"
 });
 
@@ -99,6 +100,18 @@ const fakeImpl = async (url, init = {}) => {
       rows.forEach(r => Object.assign(r, body));
       return res(200, rows.map(r => pick(r, q.get("select"))));
     }
+  }
+  if (table === "beta_settings") {
+    if (method === "PATCH") Object.assign(db.settings, body);
+    return res(200, [{ ...db.settings }]);
+  }
+  if (table === "id_feedback" && method === "DELETE") {
+    db.feedback = db.feedback.filter(r => r.id !== eq(q, "id"));
+    return res(204, null);
+  }
+  if (table === "reference_photos" && method === "DELETE") {
+    db.photos = db.photos.filter(r => r.id !== eq(q, "id"));
+    return res(204, null);
   }
   if (table === "id_feedback" && method === "GET") {
     let rows = [...db.feedback].sort((a, b) => b.created_at.localeCompare(a.created_at));
@@ -194,6 +207,9 @@ describe("admin gate", () => {
     ["admin-photos", photosHandler, "GET", undefined, { species: "central-bearded-dragon" }],
     ["admin-feedback", feedbackHandler, "GET", undefined, {}],
     ["admin-testers", testersHandler, "GET", undefined, {}],
+    ["admin-testers sections", testersHandler, "PATCH", { id: TESTER_ID, sections: ["id", "care"] }, {}],
+    ["admin-testers default sections", testersHandler, "PATCH", { defaultSections: ["id", "glossary"] }, {}],
+    ["admin-feedback delete", feedbackHandler, "DELETE", { feedbackId: FB_NO_PHOTO }, {}],
   ];
 
   test.each(routes)("%s: non-admin tester gets 403 and no data", async (_, handler, method, body, query) => {
@@ -204,6 +220,10 @@ describe("admin gate", () => {
     expect(fakeFetch).toHaveBeenCalledTimes(1);
     expect(fakeFetch.mock.calls[0][0]).toContain("is_admin=is.true");
     expect(fakeFetch.mock.calls[0][0]).toContain("active=is.true");
+    // Nothing was written.
+    expect(db.testers[1].sections).toBeUndefined();
+    expect(db.settings.default_sections).toEqual(["id"]);
+    expect(db.feedback).toHaveLength(3);
   });
 
   test.each(routes)("%s: no code or a malformed code gets 403 without a lookup", async (_, handler, method, body, query) => {
@@ -225,7 +245,7 @@ describe("admin gate", () => {
   });
 
   test("admin-check names the admin; 503 when Supabase isn't configured", async () => {
-    expect((await call(checkHandler, { method: "POST", body: {} })).body).toEqual({ ok: true, id: ADMIN_ID, name: "Rowan Peterson" });
+    expect((await call(checkHandler, { method: "POST", body: {} })).body).toEqual({ ok: true, id: ADMIN_ID, name: "Rowan Peterson", gate: { public: false, gated: true, secretSet: false } });
     delete process.env.SUPABASE_SECRET_KEY;
     expect((await call(checkHandler, { method: "POST", body: {} })).statusCode).toBe(503);
   });
@@ -387,6 +407,69 @@ describe("feedback inbox: add to library", () => {
   });
 });
 
+describe("feedback inbox: delete", () => {
+  test("deletes the row and its photo from id-photos", async () => {
+    const r = await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_CONSENT } });
+    expect(r.statusCode).toBe(200);
+    expect(r.body).toMatchObject({ deleted: true, photoDeleted: true, libraryRemoved: 0 });
+    expect(db.feedback.find(f => f.id === FB_CONSENT)).toBeUndefined();
+    expect(db.objects["id-photos"][`${TESTER_ID}/p1.jpg`]).toBeUndefined();
+    // The other tester photo is untouched.
+    expect(db.objects["id-photos"][`${TESTER_ID}/p2.jpg`]).toBeDefined();
+    expect((await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_CONSENT } })).statusCode).toBe(404);
+  });
+
+  test("feedback without a photo deletes just the row", async () => {
+    const r = await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_NO_PHOTO } });
+    expect(r.body).toMatchObject({ deleted: true, photoDeleted: false });
+    expect(calls((u, m) => m === "DELETE" && u.pathname.startsWith("/storage/"))).toHaveLength(0);
+  });
+
+  test("a photo filed in the library: asks first, then removes or keeps that copy", async () => {
+    expect((await call(feedbackHandler, { method: "POST", body: { feedbackId: FB_CONSENT } })).statusCode).toBe(201);
+    const copy = db.photos.find(p => p.source === "tester" && p.source_id === FB_CONSENT);
+    expect(copy).toBeDefined();
+
+    // No choice made → 409, nothing deleted.
+    const ask = await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_CONSENT } });
+    expect(ask.statusCode).toBe(409);
+    expect(db.feedback.find(f => f.id === FB_CONSENT)).toBeDefined();
+    expect(db.objects["id-photos"][`${TESTER_ID}/p1.jpg`]).toBeDefined();
+    expect((await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_CONSENT, removeLibraryCopy: "yes" } })).statusCode).toBe(400);
+
+    const r = await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_CONSENT, removeLibraryCopy: true } });
+    expect(r.body).toMatchObject({ deleted: true, libraryRemoved: 1 });
+    expect(db.photos.find(p => p.id === copy.id)).toBeUndefined();
+    expect(db.objects["reference-photos"][copy.storage_path]).toBeUndefined();
+    expect(db.objects["reference-photos"][copy.master_path]).toBeUndefined();
+    expect(db.objects["id-photos"][`${TESTER_ID}/p1.jpg`]).toBeUndefined();
+  });
+
+  test("keeping the library copy deletes only the feedback and the id-photos file", async () => {
+    await call(feedbackHandler, { method: "POST", body: { feedbackId: FB_OTHER, speciesSlug: "eastern-bearded-dragon" } });
+    const copy = db.photos.find(p => p.source_id === FB_OTHER);
+    const r = await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_OTHER, removeLibraryCopy: false } });
+    expect(r.body).toMatchObject({ deleted: true, libraryRemoved: 0, libraryKept: 1 });
+    expect(db.photos.find(p => p.id === copy.id)).toBeDefined();
+    expect(db.objects["reference-photos"][copy.storage_path]).toBeDefined();
+    expect(db.objects["id-photos"][`${TESTER_ID}/p2.jpg`]).toBeUndefined();
+  });
+
+  test("if the photo can't be deleted, the row stays to retry", async () => {
+    const orig = fakeFetch.getMockImplementation();
+    fakeFetch.mockImplementation(async (url, init = {}) => ((init.method === "DELETE" && String(url).includes("/storage/v1/object/id-photos")) ? res(500, {}) : orig(url, init)));
+    expect((await call(feedbackHandler, { method: "DELETE", body: { feedbackId: FB_CONSENT } })).statusCode).toBe(502);
+    expect(db.feedback.find(f => f.id === FB_CONSENT)).toBeDefined();
+  });
+
+  test("the inbox copes with an empty table", async () => {
+    db.feedback = [];
+    const r = await call(feedbackHandler, { method: "GET" });
+    expect(r.statusCode).toBe(200);
+    expect(r.body).toEqual({ items: [], nextOffset: null });
+  });
+});
+
 // ─── 4. Testers and invites ───────────────────────────────────────
 describe("testers", () => {
   test("creating an invite returns the link once and never logs the code", async () => {
@@ -422,6 +505,29 @@ describe("testers", () => {
     expect(db.testers[1].active).toBe(false);
     r = await call(testersHandler, { method: "PATCH", body: { id: TESTER_ID, active: true } });
     expect(r.body.tester.active).toBe(true);
+  });
+
+  test("sections: list carries the options and default; edits are validated and saved", async () => {
+    const list = await call(testersHandler);
+    expect(list.body.defaultSections).toEqual(["id"]);
+    expect(list.body.sections.map(o => o.key)).toEqual(["id", "species", "care", "licensing", "glossary", "search", "credits"]);
+
+    const r = await call(testersHandler, { method: "PATCH", body: { id: TESTER_ID, sections: ["care", "id", "care"] } });
+    expect(r.statusCode).toBe(200);
+    expect(db.testers[1].sections).toEqual(["id", "care"]);
+    for (const bad of [["id", "admin"], "id", [1]]) {
+      expect((await call(testersHandler, { method: "PATCH", body: { id: TESTER_ID, sections: bad } })).statusCode).toBe(400);
+    }
+    expect(db.testers[1].sections).toEqual(["id", "care"]);
+  });
+
+  test("new invites take the default-sections setting unless sections are given", async () => {
+    expect((await call(testersHandler, { method: "PATCH", body: { defaultSections: ["id", "glossary"] } })).body).toEqual({ defaultSections: ["id", "glossary"] });
+    expect((await call(testersHandler, { method: "PATCH", body: { defaultSections: ["everything"] } })).statusCode).toBe(400);
+    await call(testersHandler, { method: "POST", body: { name: "Default Dan" } });
+    expect(db.testers.find(t => t.name === "Default Dan").sections).toEqual(["id", "glossary"]);
+    await call(testersHandler, { method: "POST", body: { name: "Care Cath", sections: ["care"] } });
+    expect(db.testers.find(t => t.name === "Care Cath").sections).toEqual(["care"]);
   });
 
   test("an admin can't remove their own admin flag or deactivate themselves", async () => {

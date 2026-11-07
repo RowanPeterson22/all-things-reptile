@@ -90,7 +90,8 @@ describe("/admin gate", () => {
   });
 
   test("checkAdmin only says yes for a 200 with ok: true", async () => {
-    expect(await checkAdmin(CODE, async () => ok({ ok: true, id: "x", name: "R" }))).toEqual({ ok: true, id: "x", name: "R" });
+    expect(await checkAdmin(CODE, async () => ok({ ok: true, id: "x", name: "R" }))).toEqual({ ok: true, id: "x", name: "R", gate: null });
+    expect((await checkAdmin(CODE, async () => ok({ ok: true, id: "x", name: "R", gate: { public: false, gated: true, secretSet: true } }))).gate).toEqual({ public: false, gated: true, secretSet: true });
     expect(await checkAdmin(CODE, async () => ({ ok: false, status: 403 }))).toEqual({ ok: false });
     expect(await checkAdmin(CODE, async () => { throw new Error("offline"); })).toEqual({ ok: false });
     const never = jest.fn();
@@ -136,5 +137,66 @@ describe("species search", () => {
   test("few-photo filter sorts the emptiest first", () => {
     const counts = { "carpet-python": { active: 3 }, "central-bearded-dragon": { active: 40 } };
     expect(filterSpecies(list, { photos: "few", counts }).map(s => s.slug)).toEqual(["garden-skink", "carpet-python"]);
+  });
+});
+
+describe("gate banner in /admin", () => {
+  const { GateBanner } = require("../admin/AdminApp");
+  test("says gated, public, or gated without a secret, as the server reports", () => {
+    const { rerender } = render(<GateBanner gate={{ public: false, gated: true, secretSet: true }} />);
+    expect(screen.getByTestId("gate-banner").textContent).toMatch(/^Site is GATED: only invited testers/);
+    rerender(<GateBanner gate={{ public: true, gated: false, secretSet: true }} />);
+    expect(screen.getByTestId("gate-banner").textContent).toMatch(/^Site is PUBLIC/);
+    rerender(<GateBanner gate={{ public: false, gated: true, secretSet: false }} />);
+    expect(screen.getByTestId("gate-banner").textContent).toMatch(/ATR_GATE_SECRET isn't set/);
+    rerender(<GateBanner gate={null} />);
+    expect(screen.getByTestId("gate-banner").textContent).toMatch(/Couldn't read/);
+  });
+});
+
+describe("feedback inbox: delete with an in-page confirm", () => {
+  const FeedbackScreen = require("../admin/FeedbackScreen").default;
+  const item = (over) => ({ id: "f1", createdAt: "2026-11-08T00:00:00Z", tester: { id: "t", name: "Jane", group: "VHS" }, verdict: "wrong", aiSuggestions: [], correctSlug: null, correctOther: "Garden Skink", correctIndexSlug: null, correctTraits: [], notes: null, photoConsent: true, photoUrl: null, canAddToLibrary: false, inLibrary: null, ...over });
+  const setup = async (items) => {
+    const calls = [];
+    const api = jest.fn(async (route, opts = {}) => {
+      calls.push([route, opts]);
+      if (!opts.method) return { items, nextOffset: null };
+      return { deleted: true, libraryRemoved: opts.body.removeLibraryCopy ? 1 : 0 };
+    });
+    const refreshCounts = jest.fn();
+    const bySlug = { "garden-skink": SPECIES[1] };
+    render(<MemoryRouter><FeedbackScreen api={api} species={SPECIES} bySlug={bySlug} refreshCounts={refreshCounts} /></MemoryRouter>);
+    await act(async () => { await Promise.resolve(); });
+    return { calls, refreshCounts };
+  };
+
+  test("Delete asks in the page, Cancel backs out, Yes deletes; no browser confirm()", async () => {
+    const confirmSpy = jest.spyOn(window, "confirm").mockImplementation(() => true);
+    const { calls } = await setup([item()]);
+    fireEvent.click(screen.getByText("Delete"));
+    expect(screen.getByText(/Delete this feedback and the tester's photo\? This can't be undone\./)).toBeInTheDocument();
+    fireEvent.click(screen.getByText("Cancel"));
+    expect(calls.some(([, o]) => o.method === "DELETE")).toBe(false);
+    fireEvent.click(screen.getByText("Delete"));
+    await act(async () => { fireEvent.click(screen.getByText("Yes, delete")); });
+    expect(calls.find(([, o]) => o.method === "DELETE")).toEqual(["admin-feedback", { method: "DELETE", body: { feedbackId: "f1" } }]);
+    expect(await screen.findByText("No feedback yet.")).toBeInTheDocument();
+    expect(confirmSpy).not.toHaveBeenCalled();
+    confirmSpy.mockRestore();
+  });
+
+  test("a photo in the library: choose to remove or keep that copy", async () => {
+    const { calls, refreshCounts } = await setup([item({ inLibrary: { speciesSlug: "garden-skink", status: "active" } })]);
+    fireEvent.click(screen.getByText("Delete"));
+    expect(screen.getByText(/also in the reference library under Garden Skink/)).toBeInTheDocument();
+    await act(async () => { fireEvent.click(screen.getByText("Delete, and remove the library copy")); });
+    expect(calls.find(([, o]) => o.method === "DELETE")[1].body).toEqual({ feedbackId: "f1", removeLibraryCopy: true });
+    expect(refreshCounts).toHaveBeenCalled();
+  });
+
+  test("an empty inbox", async () => {
+    await setup([]);
+    expect(await screen.findByText("No feedback yet.")).toBeInTheDocument();
   });
 });

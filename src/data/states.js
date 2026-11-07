@@ -9,7 +9,7 @@ export const STATES = [
     categories: "Companion → Class 1 → Advanced licence",
     minage: "16+ (18+ for advanced tiers)",
     cost: "Companion $50 for 5 years; basic from $63 per tier",
-    authority: "Biodiversity & Heritage Regulator (BHR)",
+    authority: "NSW DCCEEW — Biodiversity & Heritage Regulator (Wildlife Team)",
     phone: "02 9585 6406",
     website: "environment.nsw.gov.au",
     warning: {
@@ -17,8 +17,8 @@ export const STATES = [
       title: "Allow at least 8 weeks — plan for longer",
       body: "Since 2025 NSW no longer issues licences instantly online. Every application is assessed, and NSW says outcomes take at least 8 weeks because of a backlog. Get your licence before you buy — at an expo you won't be able to take an animal home on the day.",
     },
-    notes: "Most commonly kept reptiles need a Companion (one animal) or Class 1 licence. An Advanced licence needs you to be 18+ with two years' experience on a lower licence, plus extras such as references and a lockable room. Paying the fee doesn't guarantee approval. Records are lodged every April.",
-    verifyDisclaimer: "Checked November 2026. Rules change — always verify with the Biodiversity & Heritage Regulator before you buy.",
+    notes: "Most commonly kept reptiles need a Companion (one animal) or Class 1 licence. An Advanced licence needs you to be 18+ with two years on a Class 1 licence; the highest advanced classes also need a first-aid certificate, a lockable room, references and an emergency plan. Keepers of venomous reptiles must show training and experience. Paying the fee doesn't guarantee approval. Records are lodged every April.",
+    verifyDisclaimer: "Checked November 2026. Rules change — always verify with the Biodiversity & Heritage Regulator Wildlife Team (02 9585 6406) before you buy.",
     colour: "#1A3A5C", pale: "#E8EEF8",
   },
   {

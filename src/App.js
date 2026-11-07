@@ -16,77 +16,11 @@ import LegalScreen from "./screens/LegalScreen";
 import IdentifyScreen from "./screens/IdentifyScreen";
 import GlossaryScreen from "./screens/GlossaryScreen";
 import SearchResults from "./screens/SearchResults";
+import SnakeShedding from "./components/SnakeShedding";
+import SnakeHandling from "./components/SnakeHandling";
+import SnakeBreeding from "./components/SnakeBreeding";
+import SpeciesPage from "./components/SpeciesPage";
 
-
-// ─── Shared UI components ─────────────────────────────────────────
-const SnakeShedding = ({ animal = "reptile" }) => (
-  <>
-    <SectionLabel mt={0}>Shedding basics</SectionLabel>
-    <WarnBox type="blue" title="Signs a shed is coming">Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days.</WarnBox>
-    <HealthItem dot="#4a9e6b" title="Good shed conditions" detail="Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck." />
-    <HealthItem title="Stuck shed (dysecdysis)" detail="Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully." />
-    <HealthItem title="Retained eye caps" detail="If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage." />
-    <WarnBox type="green" title='Never handle during a shed'>Leave your {animal} alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete.</WarnBox>
-  </>
-);
-
-const SnakeHandling = ({ biteRisk = "low", notes }) => (
-  <>
-    <SectionLabel mt={0}>Handling tips</SectionLabel>
-    <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "12px 14px", marginBottom: 8 }}>
-      <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 6 }}>Building trust with your snake</div>
-      {["Wait 5–7 days after feeding before handling — handling too soon causes regurgitation.", "Keep early sessions short (5–10 mins). Build up gradually as the snake settles.", "Support the snake's full body weight — never let it dangle unsupported.", "Move calmly and slowly. Sudden movements trigger a defensive response.", "Always wash hands before handling — food smells on hands can trigger a feeding response."].map((tip, i) => (
-        <div key={i} style={{ fontSize: 12, color: "#666", lineHeight: 1.6, paddingLeft: 12, borderLeft: `2px solid ${C.greenPale}`, marginBottom: 6 }}>{tip}</div>
-      ))}
-    </div>
-    <div style={{ background: biteRisk === "low" ? C.greenPale : biteRisk === "medium" ? C.goldLight : C.redPale, borderRadius: 12, padding: "12px 14px", border: `0.5px solid ${biteRisk === "low" ? "rgba(30,58,47,0.15)" : biteRisk === "medium" ? "rgba(200,150,60,0.3)" : "rgba(139,32,32,0.15)"}`, marginBottom: 10 }}>
-      <div style={{ fontSize: 12, fontWeight: 700, color: biteRisk === "low" ? C.green : biteRisk === "medium" ? "#7a5a1e" : C.red, marginBottom: 3 }}>Bite risk: {biteRisk === "low" ? "Low" : biteRisk === "medium" ? "Medium" : "Higher"}</div>
-      <div style={{ fontSize: 12, color: biteRisk === "low" ? "#2a5040" : biteRisk === "medium" ? "#7a5a1e" : C.red, lineHeight: 1.6 }}>{notes}</div>
-    </div>
-    <WarnBox type="gold" title="Feeding response bites">Even calm snakes can strike if they smell food. Always hook-train your snake (use a snake hook to touch the snake before picking up, signalling it's not feeding time). Wash hands thoroughly before any interaction.</WarnBox>
-  </>
-);
-
-const SnakeBreeding = ({ clutchSize, incubationTemp, incubationDays, maturityAge, notes }) => (
-  <>
-    <SectionLabel mt={0}>Breeding basics</SectionLabel>
-    <StatGrid stats={[["🥚", "Clutch size", clutchSize], ["🌡️", "Incubation temp", incubationTemp], ["📅", "Incubation", incubationDays], ["🎂", "Sexual maturity", maturityAge]]} />
-    <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "12px 14px", marginBottom: 8, marginTop: 8, fontSize: 13, color: "#666", lineHeight: 1.7 }}>
-      {notes}
-    </div>
-    <WarnBox type="gold" title="Licence requirements for breeding">Breeding native reptiles requires a separate breeder licence in most states. Check with your local wildlife authority before attempting to breed.</WarnBox>
-  </>
-);
-
-// ─── Species page shell ───────────────────────────────────────────
-const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent }) => {
-  const [tab, setTab] = useState(tabs[0]);
-  return (
-    <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
-        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to browse</button>
-        <div style={{ textAlign: "center", fontSize: 90, lineHeight: 1, marginBottom: -8 }}>{emoji}</div>
-        <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "18px 18px 0", margin: "0 -20px" }}>
-          <div style={{ fontSize: 20, fontWeight: 700, color: "#111", marginBottom: 2 }}>{name}</div>
-          <div style={{ fontSize: 12, color: "#888", fontStyle: "italic", marginBottom: 10 }}>{latin}</div>
-          <div style={{ display: "flex", gap: 6, marginBottom: 14, flexWrap: "wrap" }}>
-            {badges.map(([label, bg, color]) => (
-              <span key={label} style={{ background: bg, color, fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 10 }}>{label}</span>
-            ))}
-          </div>
-          <div style={{ display: "flex", borderBottom: "0.5px solid #eee", margin: "0 -18px", padding: "0 18px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
-            {tabs.map(t => (
-              <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.green}` : "2px solid transparent", color: tab === t ? C.green : "#888", fontSize: 12, fontWeight: 700, padding: "8px 11px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div style={{ background: "white", padding: "16px 18px 28px" }}>
-        {tabContent(tab)}
-      </div>
-    </div>
-  );
-};
 
 // ─── SNAKE PAGES ──────────────────────────────────────────────────
 
@@ -725,7 +659,6 @@ const EnclosurePage = ({ onBack }) => {
     </div>
   );
 };
-
 
 
 // ─── Pygmy Python page ────────────────────────────────────────────

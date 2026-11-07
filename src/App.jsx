@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { C } from "./constants/colours";
 import SplashScreen from "./components/SplashScreen";
 import BrowseScreen from "./screens/BrowseScreen";
 import CareScreen from "./screens/CareScreen";
 import LegalScreen from "./screens/LegalScreen";
-import IdentifyScreen from "./screens/IdentifyScreen";
 import GlossaryScreen from "./screens/GlossaryScreen";
 import SearchResults from "./screens/SearchResults";
+import { useBetaAccess } from "./beta/betaAccess";
 import ChildrensPythonPage from "./pages/species/snakes/ChildrensPythonPage";
 import StimsonsPythonPage from "./pages/species/snakes/StimsonsPythonPage";
 import SpottedPythonPage from "./pages/species/snakes/SpottedPythonPage";
@@ -63,6 +63,10 @@ import SheddingPage from "./pages/care/SheddingPage";
 import FeederGuidePage from "./pages/care/FeederGuidePage";
 import { SPECIES } from "./data/species";
 import { CARE_GUIDES } from "./data/careGuides";
+
+// Closed beta (D9): the ID screen and feedback card load as a separate chunk,
+// fetched only once an invite code is verified, so the public bundle carries none of it.
+const IdentifyScreen = lazy(() => import("./screens/IdentifyScreen"));
 
 
 // ─── Page router map ──────────────────────────────────────────────
@@ -132,14 +136,18 @@ const URL_FOR_PAGE = {
   ...Object.fromEntries(Object.values(GUIDES_BY_SLUG).map(g => [g.page, `/care/${g.slug}`])),
 };
 
-const TABS = [
+const PUBLIC_TABS = [
   { id: "browse",    icon: "🔍", label: "Browse",     path: "/"          },
   { id: "care",      icon: "📖", label: "Care",       path: "/care"      },
   { id: "licencing", icon: "⚖️", label: "Licencing",  path: "/licencing" },
-  { id: "identify",  icon: "📷", label: "ID Reptile", path: "/id"        },
   { id: "glossary",  icon: "📚", label: "Glossary",   path: "/glossary"  },
 ];
-const TAB_FOR_PATH = Object.fromEntries(TABS.map(t => [t.path, t.id]));
+// D9: AI ID is closed beta at relaunch. The tab and /id route only exist for a
+// verified invite code (src/beta/betaAccess.js); the public build shows neither.
+const ID_TAB = { id: "identify", icon: "📷", label: "ID Reptile", path: "/id" };
+const BETA_TABS = [...PUBLIC_TABS.slice(0, 3), ID_TAB, PUBLIC_TABS[3]];
+const TAB_FOR_PATH_PUBLIC = Object.fromEntries(PUBLIC_TABS.map(t => [t.path, t.id]));
+const TAB_FOR_PATH_BETA = Object.fromEntries(BETA_TABS.map(t => [t.path, t.id]));
 
 // Detail page: renders the species / care guide for :slug, or sends unknown slugs home.
 const DetailRoute = ({ table, onBack }) => {
@@ -157,8 +165,17 @@ export function AppShell() {
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname.replace(/\/+$/, "") || "/";
+  // Taking ?invite= off the URL keeps the code out of history and screenshots.
+  const beta = useBetaAccess(location.search, () => navigate("/id", { replace: true }));
+  const betaOk = beta.status === "ok";
+  const TABS = betaOk ? BETA_TABS : PUBLIC_TABS;
+  const TAB_FOR_PATH = betaOk ? TAB_FOR_PATH_BETA : TAB_FOR_PATH_PUBLIC;
+  // /id without a verified code: blank while a stored code is checked, then home.
+  const idElement = betaOk
+    ? <Suspense fallback={null}><IdentifyScreen inviteCode={beta.code} traitsBySpecies={beta.traits} onRevoked={() => { beta.revoke(); navigate("/", { replace: true }); }} /></Suspense>
+    : beta.status === "checking" ? null : <Navigate to="/" replace />;
 
-  // A detail page is any route that isn't one of the five tab screens.
+  // A detail page is any route that isn't one of the tab screens.
   const isTabPath = pathname in TAB_FOR_PATH;
   const isDetail = !isTabPath && /^\/(species|care)\/[^/]+$/.test(pathname);
   // Tabs highlight from the URL. Detail pages keep the tab they were opened from
@@ -212,7 +229,7 @@ export function AppShell() {
             <Route path="/"              element={searchQuery.length >= 2 ? <SearchResults query={searchQuery} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} /> : <BrowseScreen onSpecies={openPage} />} />
             <Route path="/care"          element={<CareScreen onGuide={openPage} />} />
             <Route path="/licencing"     element={<LegalScreen />} />
-            <Route path="/id"            element={<IdentifyScreen />} />
+            <Route path="/id"            element={idElement} />
             <Route path="/glossary"      element={<GlossaryScreen />} />
             <Route path="/species/:slug" element={<DetailRoute table={SPECIES_BY_SLUG} onBack={handleBack} />} />
             <Route path="/care/:slug"    element={<DetailRoute table={GUIDES_BY_SLUG} onBack={handleBack} />} />

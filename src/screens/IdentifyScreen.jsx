@@ -2,15 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { C } from "../constants/colours";
 import WarnBox from "../components/WarnBox";
+import IdFeedbackCard from "../components/IdFeedbackCard";
+import { BETA_HEADER } from "../beta/betaAccess";
 
-// ─── ID Reptile screen (D9 AI species ID) ─────────────────────────
-// Photo → downscaled JPEG in the browser → POST /api/identify → suggestions.
+// ─── ID Reptile screen (D9 AI species ID — closed beta) ───────────
+// Photo → downscaled JPEG in the browser → POST /api/identify → suggestions,
+// then the tester's feedback (IdFeedbackCard). Only rendered for a verified
+// invite code (App.jsx); every request carries it in the x-atr-beta header.
 
 const MAX_EDGE = 1568;          // long edge sent to the API; keeps cost and upload size down
 const JPEG_QUALITY = 0.85;
 
 const SUGGESTION_TEXT = "This is a suggestion, not a confirmed identification.";
 const SNAKE_WARNING = "Never approach or handle a wild snake based on this result — many Australian snakes are venomous. Keep your distance and call a licensed snake catcher.";
+const SHORT_REMINDER = "Suggestion only. Never handle a wild snake based on it.";
 
 const CONFIDENCE_STYLE = {
   likely:   { label: "Likely",   bg: C.greenPale, color: C.green },
@@ -51,7 +56,7 @@ const btn = (primary, disabled) => ({
   cursor: disabled ? "default" : "pointer", fontFamily: "inherit", opacity: disabled ? 0.5 : 1,
 });
 
-const IdentifyScreen = () => {
+const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked }) => {
   const navigate = useNavigate();
   const inputRef = useRef(null);
   const requestRef = useRef(null);
@@ -59,6 +64,7 @@ const IdentifyScreen = () => {
   const [status, setStatus] = useState("idle"); // idle | preparing | loading | done | error
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+  const [runId, setRunId] = useState(0);         // new feedback card per result
 
   // Abandon an in-flight request if the user leaves the screen.
   useEffect(() => () => requestRef.current && requestRef.current.abort(), []);
@@ -86,13 +92,14 @@ const IdentifyScreen = () => {
     try {
       const res = await fetch("/api/identify", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", [BETA_HEADER]: inviteCode },
         body: JSON.stringify({ image: photo }),
         signal: controller.signal,
       });
+      if (res.status === 403) { if (onRevoked) onRevoked(); return; }
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Something went wrong. Try again.");
-      setResult(data); setStatus("done");
+      setResult(data); setStatus("done"); setRunId(n => n + 1);
     } catch (err) {
       if (err.name === "AbortError") return;
       setStatus("error");
@@ -163,6 +170,15 @@ const IdentifyScreen = () => {
                   <div style={{ fontSize: 10, fontWeight: 700, background: cs.bg, color: cs.color, padding: "3px 9px", borderRadius: 8, whiteSpace: "nowrap" }}>{cs.label}</div>
                 </div>
                 {s.reason && <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5, marginTop: 8 }}>{s.reason}</div>}
+                {s.traits && s.traits.length > 0 && (
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 }}>
+                    {s.traits.map(t => (
+                      <span key={t.id} style={{ fontSize: 11, fontWeight: 600, padding: "3px 8px", borderRadius: 8, background: t.confidence === "likely" ? C.greenPale : "#f0f0ec", color: t.confidence === "likely" ? C.green : "#666" }}>
+                        {t.name}{t.confidence === "likely" ? "" : " (possible)"}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <div style={{ fontSize: 11, color: "#999", marginTop: 8 }}>Suggestion only — not a confirmed identification</div>
                 {open
                   ? <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginTop: 6 }}>View care guide →</div>
@@ -171,15 +187,23 @@ const IdentifyScreen = () => {
             );
           })}
 
-          {result.note && <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5, marginBottom: 10 }}>{result.note}</div>}
+          {result.note && (
+            <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5, marginBottom: 10 }}>
+              <span style={{ fontWeight: 700, color: "#555" }}>Tip: </span>{result.note}
+            </div>
+          )}
 
-          <SafetyNotice />
-          <button onClick={reset} style={{ ...btn(false, false), width: "100%", marginTop: 4 }}>Start again</button>
+          <IdFeedbackCard key={runId} result={result} photo={photo} inviteCode={inviteCode} traitsBySpecies={traitsBySpecies} onRevoked={onRevoked} />
+
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
+            <button onClick={reset} style={btn(false, false)}>Start again</button>
+            <div style={{ flex: 1, fontSize: 11, color: C.red, lineHeight: 1.4 }}>{SHORT_REMINDER}</div>
+          </div>
         </div>
       )}
 
       <div style={{ fontSize: 11, color: "#aaa", lineHeight: 1.6, marginTop: 12, textAlign: "center" }}>
-        Your photo is sent to our AI provider for this check only. We don't store it.
+        Your photo is sent to our AI provider for this check only. We don't keep it unless you choose to save it with your feedback.
       </div>
     </div>
   );

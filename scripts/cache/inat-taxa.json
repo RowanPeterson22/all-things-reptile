@@ -2000,5 +2000,2425 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "channel-dragon": {
+    "scientific": "Amphibolurus burnsi",
+    "taxonId": 606385,
+    "taxonName": "Amphibolurus burnsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-lashtail-dragon": {
+    "scientific": "Amphibolurus centralis",
+    "taxonId": 539248,
+    "taxonName": "Amphibolurus centralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jacky-dragon": {
+    "scientific": "Amphibolurus muricatus",
+    "taxonId": 31631,
+    "taxonName": "Amphibolurus muricatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mallee-lashtail-dragon": {
+    "scientific": "Amphibolurus norrisi",
+    "taxonId": 31632,
+    "taxonName": "Amphibolurus norrisi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chameleon-dragon": {
+    "scientific": "Chelosania brunnea",
+    "taxonId": 31217,
+    "taxonName": "Chelosania brunnea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gravel-dragon": {
+    "scientific": "Cryptagama aurita",
+    "taxonId": 31209,
+    "taxonName": "Cryptagama aurita",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-heath-dragon": {
+    "scientific": "Ctenophorus adelaidensis",
+    "taxonId": 31393,
+    "taxonName": "Ctenophorus adelaidensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shark-bay-heath-dragon": {
+    "scientific": "Ctenophorus butlerorum",
+    "taxonId": 318664,
+    "taxonName": "Ctenophorus butlerorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ring-tailed-dragon": {
+    "scientific": "Ctenophorus caudicinctus",
+    "taxonId": 889376,
+    "taxonName": "Ctenophorus caudicinctus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-heath-dragon": {
+    "scientific": "Ctenophorus chapmani",
+    "taxonId": 318665,
+    "taxonName": "Ctenophorus chapmani",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-shouldered-ground-dragon": {
+    "scientific": "Ctenophorus clayi",
+    "taxonId": 31246,
+    "taxonName": "Ctenophorus clayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crested-dragon": {
+    "scientific": "Ctenophorus cristatus",
+    "taxonId": 31241,
+    "taxonName": "Ctenophorus cristatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-tawny-crevice-dragon": {
+    "scientific": "Ctenophorus decresii",
+    "taxonId": 31242,
+    "taxonName": "Ctenophorus decresii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-tailed-sand-dragon": {
+    "scientific": "Ctenophorus femoralis",
+    "taxonId": 31243,
+    "taxonName": "Ctenophorus femoralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "peninsula-dragon": {
+    "scientific": "Ctenophorus fionni",
+    "taxonId": 31244,
+    "taxonName": "Ctenophorus fionni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-mallee-dragon": {
+    "scientific": "Ctenophorus fordi",
+    "taxonId": 31245,
+    "taxonName": "Ctenophorus fordi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gibber-dragon": {
+    "scientific": "Ctenophorus gibba",
+    "taxonId": 31240,
+    "taxonName": "Ctenophorus gibba",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mount-eveline-dragon": {
+    "scientific": "Ctenophorus graafi",
+    "taxonId": 889373,
+    "taxonName": "Ctenophorus graafi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "laverton-dragon": {
+    "scientific": "Ctenophorus infans",
+    "taxonId": 889374,
+    "taxonName": "Ctenophorus infans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-military-dragon": {
+    "scientific": "Ctenophorus isolepis",
+    "taxonId": 31236,
+    "taxonName": "Ctenophorus isolepis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-military-dragon": {
+    "scientific": "Ctenophorus maculatus",
+    "taxonId": 31231,
+    "taxonName": "Ctenophorus maculatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lake-eyre-dragon": {
+    "scientific": "Ctenophorus maculosus",
+    "taxonId": 31228,
+    "taxonName": "Ctenophorus maculosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwarf-bicycle-dragon": {
+    "scientific": "Ctenophorus mckenziei",
+    "taxonId": 31229,
+    "taxonName": "Ctenophorus mckenziei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "barrier-range-dragon": {
+    "scientific": "Ctenophorus mirrityana",
+    "taxonId": 554062,
+    "taxonName": "Ctenophorus mirrityana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-tawny-crevice-dragon": {
+    "scientific": "Ctenophorus modestus",
+    "taxonId": 1250239,
+    "taxonName": "Ctenophorus modestus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lake-disappointment-dragon": {
+    "scientific": "Ctenophorus nguyarna",
+    "taxonId": 98761,
+    "taxonName": "Ctenophorus nguyarna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-netted-dragon": {
+    "scientific": "Ctenophorus nuchalis",
+    "taxonId": 31230,
+    "taxonName": "Ctenophorus nuchalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ornate-crevice-dragon": {
+    "scientific": "Ctenophorus ornatus",
+    "taxonId": 31227,
+    "taxonName": "Ctenophorus ornatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northwestern-heath-dragon": {
+    "scientific": "Ctenophorus parviceps",
+    "taxonId": 318666,
+    "taxonName": "Ctenophorus parviceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "painted-dragon": {
+    "scientific": "Ctenophorus pictus",
+    "taxonId": 31226,
+    "taxonName": "Ctenophorus pictus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-netted-dragon": {
+    "scientific": "Ctenophorus reticulatus",
+    "taxonId": 31225,
+    "taxonName": "Ctenophorus reticulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "greater-military-dragon": {
+    "scientific": "Ctenophorus rubens",
+    "taxonId": 539511,
+    "taxonName": "Ctenophorus rubens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rusty-crevice-dragon": {
+    "scientific": "Ctenophorus rufescens",
+    "taxonId": 31224,
+    "taxonName": "Ctenophorus rufescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saltpan-ground-dragon": {
+    "scientific": "Ctenophorus salinarum",
+    "taxonId": 31222,
+    "taxonName": "Ctenophorus salinarum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lozenge-marked-dragon": {
+    "scientific": "Ctenophorus scutulatus",
+    "taxonId": 31223,
+    "taxonName": "Ctenophorus scutulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hermannsburg-dragon": {
+    "scientific": "Ctenophorus slateri",
+    "taxonId": 889375,
+    "taxonName": "Ctenophorus slateri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-mallee-dragon": {
+    "scientific": "Ctenophorus spinodomus",
+    "taxonId": 1129160,
+    "taxonName": "Ctenophorus spinodomus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ochre-dragon": {
+    "scientific": "Ctenophorus tjantjalka",
+    "taxonId": 31221,
+    "taxonName": "Ctenophorus tjantjalka",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-barred-dragon": {
+    "scientific": "Ctenophorus vadnappa",
+    "taxonId": 31219,
+    "taxonName": "Ctenophorus vadnappa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yinnietharra-crevice-dragon": {
+    "scientific": "Ctenophorus yinnietharra",
+    "taxonId": 31220,
+    "taxonName": "Ctenophorus yinnietharra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "carnarvon-dragon": {
+    "scientific": "Diporiphora adductus",
+    "taxonId": 200368,
+    "taxonName": "Diporiphora adductus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-lipped-two-lined-dragon": {
+    "scientific": "Diporiphora albilabris",
+    "taxonId": 31109,
+    "taxonName": "Diporiphora albilabris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "goneaway-tablelands-two-lined-dragon": {
+    "scientific": "Diporiphora ameliae",
+    "taxonId": 200369,
+    "taxonName": "Diporiphora ameliae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mulga-dragon": {
+    "scientific": "Diporiphora amphiboluroides",
+    "taxonId": 200370,
+    "taxonName": "Diporiphora amphiboluroides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-two-lined-dragon": {
+    "scientific": "Diporiphora australis",
+    "taxonId": 31108,
+    "taxonName": "Diporiphora australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-sandstone-dragon": {
+    "scientific": "Diporiphora bennettii",
+    "taxonId": 31105,
+    "taxonName": "Diporiphora bennettii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "diporiphora-carpentariensis": {
+    "scientific": "Diporiphora carpentariensis",
+    "taxonId": 965949,
+    "taxonName": "Diporiphora carpentariensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crystal-creek-two-lined-dragon": {
+    "scientific": "Diporiphora convergens",
+    "taxonId": 31103,
+    "taxonName": "Diporiphora convergens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gracile-two-lined-dragon": {
+    "scientific": "Diporiphora gracilis",
+    "taxonId": 965950,
+    "taxonName": "Diporiphora gracilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "diporiphora-granulifera": {
+    "scientific": "Diporiphora granulifera",
+    "taxonId": 965951,
+    "taxonName": "Diporiphora granulifera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "diporiphora-jugularis": {
+    "scientific": "Diporiphora jugularis",
+    "taxonId": 965952,
+    "taxonName": "Diporiphora jugularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-deserts-dragon": {
+    "scientific": "Diporiphora lalliae",
+    "taxonId": 31104,
+    "taxonName": "Diporiphora lalliae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pink-two-lined-dragon": {
+    "scientific": "Diporiphora linga",
+    "taxonId": 31102,
+    "taxonName": "Diporiphora linga",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-sided-two-lined-dragon": {
+    "scientific": "Diporiphora magna",
+    "taxonId": 31101,
+    "taxonName": "Diporiphora magna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northwest-kimberley-two-lined-dragon": {
+    "scientific": "Diporiphora margaretae",
+    "taxonId": 31098,
+    "taxonName": "Diporiphora margaretae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nobbi-dragon": {
+    "scientific": "Diporiphora nobbi",
+    "taxonId": 31628,
+    "taxonName": "Diporiphora nobbi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-two-lined-dragon": {
+    "scientific": "Diporiphora pallida",
+    "taxonId": 965953,
+    "taxonName": "Diporiphora pallida",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "grey-striped-western-desert-dragon": {
+    "scientific": "Diporiphora paraconvergens",
+    "taxonId": 200371,
+    "taxonName": "Diporiphora paraconvergens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-rock-dragon": {
+    "scientific": "Diporiphora perplexa",
+    "taxonId": 965954,
+    "taxonName": "Diporiphora perplexa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-spined-nobbi-dragon": {
+    "scientific": "Diporiphora phaeospinosa",
+    "taxonId": 146092,
+    "taxonName": "Diporiphora phaeospinosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pindan-two-lined-dragon": {
+    "scientific": "Diporiphora pindan",
+    "taxonId": 31099,
+    "taxonName": "Diporiphora pindan",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "plain-backed-two-lined-dragon": {
+    "scientific": "Diporiphora reginae",
+    "taxonId": 31100,
+    "taxonName": "Diporiphora reginae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-savannah-two-pored-dragon": {
+    "scientific": "Diporiphora sobria",
+    "taxonId": 1223345,
+    "taxonName": "Diporiphora sobria",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "superb-two-lined-dragon": {
+    "scientific": "Diporiphora superba",
+    "taxonId": 31113,
+    "taxonName": "Diporiphora superba",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-pilbara-tree-dragon": {
+    "scientific": "Diporiphora valens",
+    "taxonId": 31114,
+    "taxonName": "Diporiphora valens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-pilbara-tree-dragon": {
+    "scientific": "Diporiphora vescus",
+    "taxonId": 200372,
+    "taxonName": "Diporiphora vescus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cane-grass-dragon": {
+    "scientific": "Diporiphora winneckei",
+    "taxonId": 31112,
+    "taxonName": "Diporiphora winneckei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-nosed-dragon": {
+    "scientific": "Gowidon longirostris",
+    "taxonId": 539757,
+    "taxonName": "Gowidon longirostris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "top-end-lashtail-dragon": {
+    "scientific": "Lophognathus gilberti",
+    "taxonId": 31529,
+    "taxonName": "Lophognathus gilberti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "earspot-lashtail-dragon": {
+    "scientific": "Lophognathus horneri",
+    "taxonId": 889747,
+    "taxonName": "Lophognathus horneri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "boyds-forest-dragon": {
+    "scientific": "Lophosaurus boydii",
+    "taxonId": 539911,
+    "taxonName": "Lophosaurus boydii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-angle-headed-dragon": {
+    "scientific": "Lophosaurus spinipes",
+    "taxonId": 539913,
+    "taxonName": "Lophosaurus spinipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "thorny-devil": {
+    "scientific": "Moloch horridus",
+    "taxonId": 31519,
+    "taxonName": "Moloch horridus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-bearded-dragon": {
+    "scientific": "Pogona microlepidota",
+    "taxonId": 31417,
+    "taxonName": "Pogona microlepidota",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "houtman-abrolhos-bearded-dragon": {
+    "scientific": "Pogona minima",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Pogona minor",
+    "lumpedTaxonId": 31413
+  },
+  "dwarf-bearded-dragon": {
+    "scientific": "Pogona minor",
+    "taxonId": 31413,
+    "taxonName": "Pogona minor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-west-bearded-dragon": {
+    "scientific": "Pogona mitchelli",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Pogona minor",
+    "lumpedTaxonId": 31413
+  },
+  "nullarbor-bearded-dragon": {
+    "scientific": "Pogona nullarbor",
+    "taxonId": 31412,
+    "taxonName": "Pogona nullarbor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mountain-heath-dragon": {
+    "scientific": "Rankinia diemensis",
+    "taxonId": 31392,
+    "taxonName": "Rankinia diemensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "swamplands-lashtail": {
+    "scientific": "Tropicagama temporalis",
+    "taxonId": 964795,
+    "taxonName": "Tropicagama temporalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tympanocryptis-argillosa": {
+    "scientific": "Tympanocryptis argillosa",
+    "taxonId": 1119879,
+    "taxonName": "Tympanocryptis argillosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-pebble-dragon": {
+    "scientific": "Tympanocryptis centralis",
+    "taxonId": 121125,
+    "taxonName": "Tympanocryptis centralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pebble-dragon": {
+    "scientific": "Tympanocryptis cephalus",
+    "taxonId": 31352,
+    "taxonName": "Tympanocryptis cephalus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "condamine-earless-dragon": {
+    "scientific": "Tympanocryptis condaminensis",
+    "taxonId": 540277,
+    "taxonName": "Tympanocryptis condaminensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hamersley-pebble-mimic-dragon": {
+    "scientific": "Tympanocryptis diabolicus",
+    "taxonId": 540278,
+    "taxonName": "Tympanocryptis diabolicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fortescue-pebble-mimic-dragon": {
+    "scientific": "Tympanocryptis fortescuensis",
+    "taxonId": 540279,
+    "taxonName": "Tympanocryptis fortescuensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gascoyne-pebble-mimic-dragon": {
+    "scientific": "Tympanocryptis gigas",
+    "taxonId": 540280,
+    "taxonName": "Tympanocryptis gigas",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nullarbor-earless-dragon": {
+    "scientific": "Tympanocryptis houstoni",
+    "taxonId": 540281,
+    "taxonName": "Tympanocryptis houstoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gibber-earless-dragon": {
+    "scientific": "Tympanocryptis intima",
+    "taxonId": 31345,
+    "taxonName": "Tympanocryptis intima",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lined-earless-dragon": {
+    "scientific": "Tympanocryptis lineata",
+    "taxonId": 114697,
+    "taxonName": "Tympanocryptis lineata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "five-lined-earless-dragon": {
+    "scientific": "Tympanocryptis pentalineata",
+    "taxonId": 540282,
+    "taxonName": "Tympanocryptis pentalineata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "victorian-grassland-earless-dragon": {
+    "scientific": "Tympanocryptis pinguicolla",
+    "taxonId": 73985,
+    "taxonName": "Tympanocryptis pinguicolla",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "goldfields-pebble-mimic-dragon": {
+    "scientific": "Tympanocryptis pseudopsephos",
+    "taxonId": 540283,
+    "taxonName": "Tympanocryptis pseudopsephos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eyrean-earless-dragon": {
+    "scientific": "Tympanocryptis tetraporophora",
+    "taxonId": 31341,
+    "taxonName": "Tympanocryptis tetraporophora",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "even-scaled-earless-dragon": {
+    "scientific": "Tympanocryptis uniformis",
+    "taxonId": 31340,
+    "taxonName": "Tympanocryptis uniformis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "roma-earless-dragon": {
+    "scientific": "Tympanocryptis wilsoni",
+    "taxonId": 540284,
+    "taxonName": "Tympanocryptis wilsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chameleon-gecko": {
+    "scientific": "Carphodactylus laevis",
+    "taxonId": 33486,
+    "taxonName": "Carphodactylus laevis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-knob-tailed-gecko": {
+    "scientific": "Nephrurus amyae",
+    "taxonId": 34199,
+    "taxonName": "Nephrurus amyae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-knob-tailed-gecko": {
+    "scientific": "Nephrurus asper",
+    "taxonId": 34198,
+    "taxonName": "Nephrurus asper",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-banded-knob-tailed-gecko": {
+    "scientific": "Nephrurus cinctus",
+    "taxonId": 1119911,
+    "taxonName": "Nephrurus cinctus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pernatty-knob-tailed-gecko": {
+    "scientific": "Nephrurus deleani",
+    "taxonId": 34197,
+    "taxonName": "Nephrurus deleani",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eromanga-basin-knob-tailed-gecko": {
+    "scientific": "Nephrurus eromanga",
+    "taxonId": 1439409,
+    "taxonName": "Nephrurus eromanga",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-knob-tailed-gecko": {
+    "scientific": "Nephrurus laevissimus",
+    "taxonId": 106897,
+    "taxonName": "Nephrurus laevissimus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "smooth-knob-tailed-gecko": {
+    "scientific": "Nephrurus levis",
+    "taxonId": 34191,
+    "taxonName": "Nephrurus levis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-knob-tailed-gecko": {
+    "scientific": "Nephrurus sheai",
+    "taxonId": 34195,
+    "taxonName": "Nephrurus sheai",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "starred-knob-tailed-gecko": {
+    "scientific": "Nephrurus stellatus",
+    "taxonId": 34196,
+    "taxonName": "Nephrurus stellatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "midline-knob-tailed-gecko": {
+    "scientific": "Nephrurus vertebralis",
+    "taxonId": 34194,
+    "taxonName": "Nephrurus vertebralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-banded-knob-tailed-gecko": {
+    "scientific": "Nephrurus wheeleri",
+    "taxonId": 1120215,
+    "taxonName": "Nephrurus wheeleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mcilwraith-leaf-tailed-gecko": {
+    "scientific": "Orraya occultus",
+    "taxonId": 33840,
+    "taxonName": "Orraya occultus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mt-elliot-leaf-tailed-gecko": {
+    "scientific": "Phyllurus amnicola",
+    "taxonId": 33932,
+    "taxonName": "Phyllurus amnicola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bulburin-leaf-tailed-gecko": {
+    "scientific": "Phyllurus caudiannulatus",
+    "taxonId": 33934,
+    "taxonName": "Phyllurus caudiannulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "koumala-leaf-tailed-gecko": {
+    "scientific": "Phyllurus championae",
+    "taxonId": 33935,
+    "taxonName": "Phyllurus championae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "scawfell-island-leaf-tailed-gecko": {
+    "scientific": "Phyllurus fimbriatus",
+    "taxonId": 1474117,
+    "taxonName": "Phyllurus fimbriatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gulbaru-leaf-tailed-gecko": {
+    "scientific": "Phyllurus gulbaru",
+    "taxonId": 33933,
+    "taxonName": "Phyllurus gulbaru",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mt-blackwood-leaf-tailed-gecko": {
+    "scientific": "Phyllurus isis",
+    "taxonId": 33931,
+    "taxonName": "Phyllurus isis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "oakview-leaf-tailed-gecko": {
+    "scientific": "Phyllurus kabikabi",
+    "taxonId": 109464,
+    "taxonName": "Phyllurus kabikabi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eungella-leaf-tailed-gecko": {
+    "scientific": "Phyllurus nepthys",
+    "taxonId": 33929,
+    "taxonName": "Phyllurus nepthys",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mt-ossa-leaf-tailed-gecko": {
+    "scientific": "Phyllurus ossa",
+    "taxonId": 33930,
+    "taxonName": "Phyllurus ossa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pinnacles-leaf-tailed-gecko": {
+    "scientific": "Phyllurus pinnaclensis",
+    "taxonId": 965979,
+    "taxonName": "Phyllurus pinnaclensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-leaf-tailed-gecko": {
+    "scientific": "Saltuarius cornutus",
+    "taxonId": 111970,
+    "taxonName": "Saltuarius cornutus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-melville-leaf-tailed-gecko": {
+    "scientific": "Saltuarius eximius",
+    "taxonId": 540185,
+    "taxonName": "Saltuarius eximius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mt-marsh-leaf-tailed-gecko": {
+    "scientific": "Saltuarius kateae",
+    "taxonId": 111971,
+    "taxonName": "Saltuarius kateae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "new-england-leaf-tailed-gecko": {
+    "scientific": "Saltuarius moritzi",
+    "taxonId": 111972,
+    "taxonName": "Saltuarius moritzi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-throated-leaf-tailed-gecko": {
+    "scientific": "Saltuarius salebrosus",
+    "taxonId": 33839,
+    "taxonName": "Saltuarius salebrosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "border-ranges-leaf-tailed-gecko": {
+    "scientific": "Saltuarius swaini",
+    "taxonId": 33838,
+    "taxonName": "Saltuarius swaini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "granite-belt-leaf-tailed-gecko": {
+    "scientific": "Saltuarius wyberba",
+    "taxonId": 33837,
+    "taxonName": "Saltuarius wyberba",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-barking-gecko": {
+    "scientific": "Underwoodisaurus seorsus",
+    "taxonId": 146529,
+    "taxonName": "Underwoodisaurus seorsus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "granite-belt-thick-tailed-gecko": {
+    "scientific": "Uvidicolus sphyrurus",
+    "taxonId": 33534,
+    "taxonName": "Uvidicolus sphyrurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-york-zigzag-gecko": {
+    "scientific": "Amalosia capensis",
+    "taxonId": 1545921,
+    "taxonName": "Amalosia capensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nandewar-zigzag-gecko": {
+    "scientific": "Amalosia hinesi",
+    "taxonId": 1545920,
+    "taxonName": "Amalosia hinesi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "clouded-zigzag-gecko": {
+    "scientific": "Amalosia jacovae",
+    "taxonId": 107381,
+    "taxonName": "Amalosia jacovae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lesueurs-zigzag-gecko": {
+    "scientific": "Amalosia lesueurii",
+    "taxonId": 107383,
+    "taxonName": "Amalosia lesueurii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "upland-zigzag-gecko": {
+    "scientific": "Amalosia nebula",
+    "taxonId": 1545919,
+    "taxonName": "Amalosia nebula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "obscure-zigzag-gecko": {
+    "scientific": "Amalosia obscura",
+    "taxonId": 34185,
+    "taxonName": "Amalosia obscura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "queensland-zigzag-gecko": {
+    "scientific": "Amalosia queenslandia",
+    "taxonId": 1545918,
+    "taxonName": "Amalosia queenslandia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "zigzag-gecko": {
+    "scientific": "Amalosia rhombifer",
+    "taxonId": 107386,
+    "taxonName": "Amalosia rhombifer",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-velvet-gecko": {
+    "scientific": "Amalosia robusta",
+    "taxonId": 1545917,
+    "taxonName": "Amalosia robusta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rock-zigzag-gecko": {
+    "scientific": "Amalosia saxicola",
+    "taxonId": 1545916,
+    "taxonName": "Amalosia saxicola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-uplands-clawless-gecko": {
+    "scientific": "Crenadactylus horni",
+    "taxonId": 558862,
+    "taxonName": "Crenadactylus horni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-clawless-gecko": {
+    "scientific": "Crenadactylus naso",
+    "taxonId": 558863,
+    "taxonName": "Crenadactylus naso",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-clawless-gecko": {
+    "scientific": "Crenadactylus occidentalis",
+    "taxonId": 558864,
+    "taxonName": "Crenadactylus occidentalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-clawless-gecko": {
+    "scientific": "Crenadactylus ocellatus",
+    "taxonId": 33372,
+    "taxonName": "Crenadactylus ocellatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-clawless-gecko": {
+    "scientific": "Crenadactylus pilbarensis",
+    "taxonId": 558865,
+    "taxonName": "Crenadactylus pilbarensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-west-kimberley-clawless-gecko": {
+    "scientific": "Crenadactylus rostralis",
+    "taxonId": 558866,
+    "taxonName": "Crenadactylus rostralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-range-clawless-gecko": {
+    "scientific": "Crenadactylus tuberculatus",
+    "taxonId": 558867,
+    "taxonName": "Crenadactylus tuberculatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-deserts-fat-tailed-gecko": {
+    "scientific": "Diplodactylus ameyi",
+    "taxonId": 539615,
+    "taxonName": "Diplodactylus ameyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gulf-fat-tailed-gecko": {
+    "scientific": "Diplodactylus barraganae",
+    "taxonId": 539616,
+    "taxonName": "Diplodactylus barraganae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-fat-tailed-gecko": {
+    "scientific": "Diplodactylus bilybara",
+    "taxonId": 539617,
+    "taxonName": "Diplodactylus bilybara",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-coast-stone-gecko": {
+    "scientific": "Diplodactylus calcicolus",
+    "taxonId": 99343,
+    "taxonName": "Diplodactylus calcicolus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-range-stone-gecko": {
+    "scientific": "Diplodactylus capensis",
+    "taxonId": 99344,
+    "taxonName": "Diplodactylus capensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "variable-fat-tailed-gecko": {
+    "scientific": "Diplodactylus conspicillatus",
+    "taxonId": 33212,
+    "taxonName": "Diplodactylus conspicillatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-fat-tailed-gecko": {
+    "scientific": "Diplodactylus custos",
+    "taxonId": 539618,
+    "taxonName": "Diplodactylus custos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lake-disappointment-gecko": {
+    "scientific": "Diplodactylus fulleri",
+    "taxonId": 33210,
+    "taxonName": "Diplodactylus fulleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ranges-stone-gecko": {
+    "scientific": "Diplodactylus furcosus",
+    "taxonId": 99345,
+    "taxonName": "Diplodactylus furcosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fyfes-mesa-gecko": {
+    "scientific": "Diplodactylus fyfei",
+    "taxonId": 1676483,
+    "taxonName": "Diplodactylus fyfei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-pilbara-beak-faced-gecko": {
+    "scientific": "Diplodactylus galaxias",
+    "taxonId": 99346,
+    "taxonName": "Diplodactylus galaxias",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-mesa-gecko": {
+    "scientific": "Diplodactylus galeatus",
+    "taxonId": 33208,
+    "taxonName": "Diplodactylus galeatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wheatbelt-stone-gecko": {
+    "scientific": "Diplodactylus granariensis",
+    "taxonId": 33185,
+    "taxonName": "Diplodactylus granariensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-fat-tailed-gecko": {
+    "scientific": "Diplodactylus hillii",
+    "taxonId": 539619,
+    "taxonName": "Diplodactylus hillii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lake-buchanan-beak-faced-gecko": {
+    "scientific": "Diplodactylus kenneallyi",
+    "taxonId": 33206,
+    "taxonName": "Diplodactylus kenneallyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "carnarvon-basin-saddled-gecko": {
+    "scientific": "Diplodactylus klugei",
+    "taxonId": 33207,
+    "taxonName": "Diplodactylus klugei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-fat-tailed-gecko": {
+    "scientific": "Diplodactylus laevis",
+    "taxonId": 539620,
+    "taxonName": "Diplodactylus laevis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "speckled-stone-gecko": {
+    "scientific": "Diplodactylus lateroides",
+    "taxonId": 564125,
+    "taxonName": "Diplodactylus lateroides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-stone-gecko": {
+    "scientific": "Diplodactylus mitchelli",
+    "taxonId": 33202,
+    "taxonName": "Diplodactylus mitchelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cloudy-stone-gecko": {
+    "scientific": "Diplodactylus nebulosus",
+    "taxonId": 539622,
+    "taxonName": "Diplodactylus nebulosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ornate-stone-gecko": {
+    "scientific": "Diplodactylus ornatus",
+    "taxonId": 99347,
+    "taxonName": "Diplodactylus ornatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-fat-tailed-gecko": {
+    "scientific": "Diplodactylus platyurus",
+    "taxonId": 539623,
+    "taxonName": "Diplodactylus platyurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-sandplain-gecko": {
+    "scientific": "Diplodactylus polyophthalmus",
+    "taxonId": 99348,
+    "taxonName": "Diplodactylus polyophthalmus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "beautiful-beak-faced-gecko": {
+    "scientific": "Diplodactylus pulcher",
+    "taxonId": 33201,
+    "taxonName": "Diplodactylus pulcher",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-pilbara-beak-faced-gecko": {
+    "scientific": "Diplodactylus savagei",
+    "taxonId": 33198,
+    "taxonName": "Diplodactylus savagei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tessellated-gecko": {
+    "scientific": "Diplodactylus tessellatus",
+    "taxonId": 33193,
+    "taxonName": "Diplodactylus tessellatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tjoritja-gecko": {
+    "scientific": "Diplodactylus tjoritjarinya",
+    "taxonId": 1676481,
+    "taxonName": "Diplodactylus tjoritjarinya",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-stone-gecko": {
+    "scientific": "Diplodactylus vittatus",
+    "taxonId": 33189,
+    "taxonName": "Diplodactylus vittatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-wood-gecko": {
+    "scientific": "Diplodactylus wiru",
+    "taxonId": 99349,
+    "taxonName": "Diplodactylus wiru",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "reticulated-velvet-gecko": {
+    "scientific": "Hesperoedura reticulata",
+    "taxonId": 146161,
+    "taxonName": "Hesperoedura reticulata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-spotted-ground-gecko": {
+    "scientific": "Lucasium alboguttatum",
+    "taxonId": 33213,
+    "taxonName": "Lucasium alboguttatum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-sandplain-gecko": {
+    "scientific": "Lucasium bungabinna",
+    "taxonId": 104826,
+    "taxonName": "Lucasium bungabinna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gibber-gecko": {
+    "scientific": "Lucasium byrnei",
+    "taxonId": 33183,
+    "taxonName": "Lucasium byrnei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "beaded-gecko": {
+    "scientific": "Lucasium damaeum",
+    "taxonId": 34334,
+    "taxonName": "Lucasium damaeum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-striped-ground-gecko": {
+    "scientific": "Lucasium immaculatum",
+    "taxonId": 33209,
+    "taxonName": "Lucasium immaculatum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gilbert-ground-gecko": {
+    "scientific": "Lucasium iris",
+    "taxonId": 1161437,
+    "taxonName": "Lucasium iris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mains-ground-gecko": {
+    "scientific": "Lucasium maini",
+    "taxonId": 33204,
+    "taxonName": "Lucasium maini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-central-sandplain-gecko": {
+    "scientific": "Lucasium microplax",
+    "taxonId": 1250185,
+    "taxonName": "Lucasium microplax",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-snouted-ground-gecko": {
+    "scientific": "Lucasium occultum",
+    "taxonId": 33203,
+    "taxonName": "Lucasium occultum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mottled-ground-gecko": {
+    "scientific": "Lucasium squarrosum",
+    "taxonId": 33197,
+    "taxonName": "Lucasium squarrosum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "box-patterned-ground-gecko": {
+    "scientific": "Lucasium steindachneri",
+    "taxonId": 33196,
+    "taxonName": "Lucasium steindachneri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-sandplain-gecko": {
+    "scientific": "Lucasium stenodactylus",
+    "taxonId": 1403111,
+    "taxonName": "Lucasium stenodactylus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-ground-gecko": {
+    "scientific": "Lucasium wombeyi",
+    "taxonId": 33192,
+    "taxonName": "Lucasium wombeyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-sandplain-gecko": {
+    "scientific": "Lucasium woodwardi",
+    "taxonId": 1250184,
+    "taxonName": "Lucasium woodwardi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "silver-eyed-velvet-gecko": {
+    "scientific": "Oedura argentea",
+    "taxonId": 797735,
+    "taxonName": "Oedura argentea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "basalt-velvet-gecko": {
+    "scientific": "Oedura atra",
+    "taxonId": 1631346,
+    "taxonName": "Oedura atra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gulf-velvet-gecko": {
+    "scientific": "Oedura bella",
+    "taxonId": 540001,
+    "taxonName": "Oedura bella",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-velvet-gecko": {
+    "scientific": "Oedura castelnaui",
+    "taxonId": 107378,
+    "taxonName": "Oedura castelnaui",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "inland-velvet-gecko": {
+    "scientific": "Oedura cincta",
+    "taxonId": 540002,
+    "taxonName": "Oedura cincta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-spotted-velvet-gecko": {
+    "scientific": "Oedura coggeri",
+    "taxonId": 34186,
+    "taxonName": "Oedura coggeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "elegant-velvet-gecko": {
+    "scientific": "Oedura elegans",
+    "taxonId": 1031640,
+    "taxonName": "Oedura elegans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fringe-toed-velvet-gecko": {
+    "scientific": "Oedura filicipoda",
+    "taxonId": 34187,
+    "taxonName": "Oedura filicipoda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-velvet-gecko": {
+    "scientific": "Oedura fimbria",
+    "taxonId": 566225,
+    "taxonName": "Oedura fimbria",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jewelled-velvet-gecko": {
+    "scientific": "Oedura gemmata",
+    "taxonId": 107379,
+    "taxonName": "Oedura gemmata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gracile-velvet-gecko": {
+    "scientific": "Oedura gracilis",
+    "taxonId": 107380,
+    "taxonName": "Oedura gracilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "quinkan-velvet-gecko": {
+    "scientific": "Oedura jowalbinna",
+    "taxonId": 107382,
+    "taxonName": "Oedura jowalbinna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arcadia-velvet-gecko": {
+    "scientific": "Oedura lineata",
+    "taxonId": 1031641,
+    "taxonName": "Oedura lineata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mereenie-velvet-gecko": {
+    "scientific": "Oedura luritja",
+    "taxonId": 566224,
+    "taxonName": "Oedura luritja",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ocellated-velvet-gecko": {
+    "scientific": "Oedura monilis",
+    "taxonId": 107385,
+    "taxonName": "Oedura monilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "limestone-range-velvet-gecko": {
+    "scientific": "Oedura murrumanu",
+    "taxonId": 540004,
+    "taxonName": "Oedura murrumanu",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "groote-eylandt-velvet-gecko": {
+    "scientific": "Oedura nesos",
+    "taxonId": 1129118,
+    "taxonName": "Oedura nesos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ornate-velvet-gecko": {
+    "scientific": "Oedura picta",
+    "taxonId": 1031642,
+    "taxonName": "Oedura picta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-spotted-velvet-gecko": {
+    "scientific": "Oedura tryoni",
+    "taxonId": 34183,
+    "taxonName": "Oedura tryoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "giant-tree-gecko": {
+    "scientific": "Pseudothecadactylus australis",
+    "taxonId": 33896,
+    "taxonName": "Pseudothecadactylus australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-giant-cave-gecko": {
+    "scientific": "Pseudothecadactylus cavaticus",
+    "taxonId": 33897,
+    "taxonName": "Pseudothecadactylus cavaticus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-giant-cave-gecko": {
+    "scientific": "Pseudothecadactylus lindneri",
+    "taxonId": 111105,
+    "taxonName": "Pseudothecadactylus lindneri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "border-beaked-gecko": {
+    "scientific": "Rhynchoedura angusta",
+    "taxonId": 146407,
+    "taxonName": "Rhynchoedura angusta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eyre-basin-beaked-gecko": {
+    "scientific": "Rhynchoedura eyrensis",
+    "taxonId": 146408,
+    "taxonName": "Rhynchoedura eyrensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brigalow-beaked-gecko": {
+    "scientific": "Rhynchoedura mentalis",
+    "taxonId": 146409,
+    "taxonName": "Rhynchoedura mentalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-beaked-gecko": {
+    "scientific": "Rhynchoedura ormsbyi",
+    "taxonId": 146410,
+    "taxonName": "Rhynchoedura ormsbyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-beaked-gecko": {
+    "scientific": "Rhynchoedura ornata",
+    "taxonId": 33842,
+    "taxonName": "Rhynchoedura ornata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-beaked-gecko": {
+    "scientific": "Rhynchoedura sexapora",
+    "taxonId": 146411,
+    "taxonName": "Rhynchoedura sexapora",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "goldfields-spiny-tailed-gecko": {
+    "scientific": "Strophurus assimilis",
+    "taxonId": 113314,
+    "taxonName": "Strophurus assimilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "congoo-gecko": {
+    "scientific": "Strophurus congoo",
+    "taxonId": 558947,
+    "taxonName": "Strophurus congoo",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jewelled-gecko": {
+    "scientific": "Strophurus elderi",
+    "taxonId": 33211,
+    "taxonName": "Strophurus elderi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arnhem-phasmid-gecko": {
+    "scientific": "Strophurus horneri",
+    "taxonId": 540231,
+    "taxonName": "Strophurus horneri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-spiny-tailed-gecko": {
+    "scientific": "Strophurus intermedius",
+    "taxonId": 113315,
+    "taxonName": "Strophurus intermedius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-phasmid-gecko": {
+    "scientific": "Strophurus jeanae",
+    "taxonId": 33195,
+    "taxonName": "Strophurus jeanae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kristins-spiny-tailed-gecko": {
+    "scientific": "Strophurus krisalys",
+    "taxonId": 113316,
+    "taxonName": "Strophurus krisalys",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-tailed-spiny-tailed-gecko": {
+    "scientific": "Strophurus mcmillani",
+    "taxonId": 33205,
+    "taxonName": "Strophurus mcmillani",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-spiny-tailed-gecko": {
+    "scientific": "Strophurus michaelseni",
+    "taxonId": 113317,
+    "taxonName": "Strophurus michaelseni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "exmouth-spiny-tailed-gecko": {
+    "scientific": "Strophurus rankini",
+    "taxonId": 33200,
+    "taxonName": "Strophurus rankini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robinsons-spiny-tailed-gecko": {
+    "scientific": "Strophurus robinsoni",
+    "taxonId": 33199,
+    "taxonName": "Strophurus robinsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-spiny-tailed-gecko": {
+    "scientific": "Strophurus spinigerus",
+    "taxonId": 113318,
+    "taxonName": "Strophurus spinigerus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-spiny-tailed-gecko": {
+    "scientific": "Strophurus strophurus",
+    "taxonId": 113319,
+    "taxonName": "Strophurus strophurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "phasmid-striped-gecko": {
+    "scientific": "Strophurus taeniatus",
+    "taxonId": 113320,
+    "taxonName": "Strophurus taeniatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "golden-eyed-gecko": {
+    "scientific": "Strophurus trux",
+    "taxonId": 734647,
+    "taxonName": "Strophurus trux",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-shield-spiny-tailed-gecko": {
+    "scientific": "Strophurus wellingtonae",
+    "taxonId": 113321,
+    "taxonName": "Strophurus wellingtonae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-spiny-tailed-gecko": {
+    "scientific": "Strophurus williamsi",
+    "taxonId": 33190,
+    "taxonName": "Strophurus williamsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mount-augustus-spiny-tailed-gecko": {
+    "scientific": "Strophurus wilsoni",
+    "taxonId": 33191,
+    "taxonName": "Strophurus wilsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nullarbor-marbled-gecko": {
+    "scientific": "Christinus alexanderi",
+    "taxonId": 539472,
+    "taxonName": "Christinus alexanderi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lord-howe-island-gecko": {
+    "scientific": "Christinus guentheri",
+    "taxonId": 73717,
+    "taxonName": "Christinus guentheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "marbled-gecko": {
+    "scientific": "Christinus marmoratus",
+    "taxonId": 33449,
+    "taxonName": "Christinus marmoratus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pascoe-river-ring-tailed-gecko": {
+    "scientific": "Cyrtodactylus adorus",
+    "taxonId": 146060,
+    "taxonName": "Cyrtodactylus adorus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hoskins-ring-tailed-gecko": {
+    "scientific": "Cyrtodactylus hoskini",
+    "taxonId": 146064,
+    "taxonName": "Cyrtodactylus hoskini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-bent-toed-gecko": {
+    "scientific": "Cyrtodactylus kimberleyensis",
+    "taxonId": 146066,
+    "taxonName": "Cyrtodactylus kimberleyensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "inland-ring-tailed-gecko": {
+    "scientific": "Cyrtodactylus mcdonaldi",
+    "taxonId": 146068,
+    "taxonName": "Cyrtodactylus mcdonaldi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mcilwraith-ring-tailed-gecko": {
+    "scientific": "Cyrtodactylus pronarus",
+    "taxonId": 146069,
+    "taxonName": "Cyrtodactylus pronarus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coastal-ring-tailed-gecko": {
+    "scientific": "Cyrtodactylus tuberculatus",
+    "taxonId": 33347,
+    "taxonName": "Cyrtodactylus tuberculatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-dtella": {
+    "scientific": "Gehyra australis",
+    "taxonId": 101294,
+    "taxonName": "Gehyra australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-tailed-dtella": {
+    "scientific": "Gehyra baliola",
+    "taxonId": 101295,
+    "taxonName": "Gehyra baliola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "borroloola-dtella": {
+    "scientific": "Gehyra borroloola",
+    "taxonId": 34640,
+    "taxonName": "Gehyra borroloola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "relictual-karst-dtella": {
+    "scientific": "Gehyra calcitectus",
+    "taxonId": 1220296,
+    "taxonName": "Gehyra calcitectus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-west-cape-dtella": {
+    "scientific": "Gehyra capensis",
+    "taxonId": 797667,
+    "taxonName": "Gehyra capensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chain-backed-dtella": {
+    "scientific": "Gehyra catenata",
+    "taxonId": 34639,
+    "taxonName": "Gehyra catenata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-kimberley-tree-dtella": {
+    "scientific": "Gehyra chimera",
+    "taxonId": 1220301,
+    "taxonName": "Gehyra chimera",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-variegated-dtella": {
+    "scientific": "Gehyra crypta",
+    "taxonId": 797668,
+    "taxonName": "Gehyra crypta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dubious-dtella": {
+    "scientific": "Gehyra dubia",
+    "taxonId": 101296,
+    "taxonName": "Gehyra dubia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "einasleigh-rock-dtella": {
+    "scientific": "Gehyra einasleighensis",
+    "taxonId": 558896,
+    "taxonName": "Gehyra einasleighensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gehyra-electrum": {
+    "scientific": "Gehyra electrum",
+    "taxonId": 1031617,
+    "taxonName": "Gehyra electrum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hamersley-range-spotted-dtella": {
+    "scientific": "Gehyra fenestrula",
+    "taxonId": 797669,
+    "taxonName": "Gehyra fenestrula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "small-spotted-mid-west-rock-dtella": {
+    "scientific": "Gehyra finipunctata",
+    "taxonId": 797670,
+    "taxonName": "Gehyra finipunctata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "plain-tree-dtella": {
+    "scientific": "Gehyra gemina",
+    "taxonId": 1220300,
+    "taxonName": "Gehyra gemina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "girloorloo-dtella": {
+    "scientific": "Gehyra girloorloo",
+    "taxonId": 539720,
+    "taxonName": "Gehyra girloorloo",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lesser-kimberley-spotted-dtella": {
+    "scientific": "Gehyra granulum",
+    "taxonId": 738098,
+    "taxonName": "Gehyra granulum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-pilbara-dtella": {
+    "scientific": "Gehyra incognita",
+    "taxonId": 797671,
+    "taxonName": "Gehyra incognita",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "purnululu-dtella": {
+    "scientific": "Gehyra ipsa",
+    "taxonId": 1220294,
+    "taxonName": "Gehyra ipsa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-termitaria-dtella": {
+    "scientific": "Gehyra kimberleyi",
+    "taxonId": 101297,
+    "taxonName": "Gehyra kimberleyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "koira-dtella": {
+    "scientific": "Gehyra koira",
+    "taxonId": 101298,
+    "taxonName": "Gehyra koira",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gehyra-lauta": {
+    "scientific": "Gehyra lauta",
+    "taxonId": 1220299,
+    "taxonName": "Gehyra lauta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-rock-dtella": {
+    "scientific": "Gehyra lazelli",
+    "taxonId": 101299,
+    "taxonName": "Gehyra lazelli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "large-pilbara-rock-dtella": {
+    "scientific": "Gehyra macra",
+    "taxonId": 797672,
+    "taxonName": "Gehyra macra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "medium-pilbara-spotted-rock-dtella": {
+    "scientific": "Gehyra media",
+    "taxonId": 797673,
+    "taxonName": "Gehyra media",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "small-pilbara-spotted-rock-dtella": {
+    "scientific": "Gehyra micra",
+    "taxonId": 797674,
+    "taxonName": "Gehyra micra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwarf-dtella": {
+    "scientific": "Gehyra minuta",
+    "taxonId": 101301,
+    "taxonName": "Gehyra minuta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "watarru-spotted-dtella": {
+    "scientific": "Gehyra montium",
+    "taxonId": 101302,
+    "taxonName": "Gehyra montium",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "moritzs-dtella": {
+    "scientific": "Gehyra moritzi",
+    "taxonId": 539721,
+    "taxonName": "Gehyra moritzi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mitchell-plateau-dtella": {
+    "scientific": "Gehyra multiporosa",
+    "taxonId": 318681,
+    "taxonName": "Gehyra multiporosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-spotted-dtella": {
+    "scientific": "Gehyra nana",
+    "taxonId": 101303,
+    "taxonName": "Gehyra nana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-kimberley-dtella": {
+    "scientific": "Gehyra occidentalis",
+    "taxonId": 34629,
+    "taxonName": "Gehyra occidentalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-island-dtella": {
+    "scientific": "Gehyra ocellata",
+    "taxonId": 797675,
+    "taxonName": "Gehyra ocellata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arnhem-land-watercourse-dtella": {
+    "scientific": "Gehyra pamela",
+    "taxonId": 34628,
+    "taxonName": "Gehyra pamela",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "litchfield-spotted-gecko": {
+    "scientific": "Gehyra paranana",
+    "taxonId": 738099,
+    "taxonName": "Gehyra paranana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "burrup-peninsula-rock-dtella": {
+    "scientific": "Gehyra peninsularis",
+    "taxonId": 797676,
+    "taxonName": "Gehyra peninsularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-pilbara-dtella": {
+    "scientific": "Gehyra pilbara",
+    "taxonId": 101306,
+    "taxonName": "Gehyra pilbara",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-kimberley-spotted-dtella": {
+    "scientific": "Gehyra pluraporosa",
+    "taxonId": 738100,
+    "taxonName": "Gehyra pluraporosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "large-spotted-mid-west-rock-dtella": {
+    "scientific": "Gehyra polka",
+    "taxonId": 797677,
+    "taxonName": "Gehyra polka",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-kimberley-spotted-dtella": {
+    "scientific": "Gehyra pseudopunctata",
+    "taxonId": 738101,
+    "taxonName": "Gehyra pseudopunctata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "umuwa-spotted-dtella": {
+    "scientific": "Gehyra pulingka",
+    "taxonId": 539722,
+    "taxonName": "Gehyra pulingka",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-pilbara-rock-dtella": {
+    "scientific": "Gehyra punctata",
+    "taxonId": 101307,
+    "taxonName": "Gehyra punctata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "purple-arid-dtella": {
+    "scientific": "Gehyra purpurascens",
+    "taxonId": 34626,
+    "taxonName": "Gehyra purpurascens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-dtella": {
+    "scientific": "Gehyra robusta",
+    "taxonId": 34627,
+    "taxonName": "Gehyra robusta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lesser-wedge-toed-dtella": {
+    "scientific": "Gehyra spheniscus",
+    "taxonId": 318682,
+    "taxonName": "Gehyra spheniscus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crescent-marked-dtella": {
+    "scientific": "Gehyra unguiculata",
+    "taxonId": 797678,
+    "taxonName": "Gehyra unguiculata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southwestern-variegated-dtella": {
+    "scientific": "Gehyra variegata",
+    "taxonId": 101308,
+    "taxonName": "Gehyra variegata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-tree-dtella": {
+    "scientific": "Gehyra versicolor",
+    "taxonId": 539723,
+    "taxonName": "Gehyra versicolor",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crocodile-faced-dtella": {
+    "scientific": "Gehyra xenopus",
+    "taxonId": 34625,
+    "taxonName": "Gehyra xenopus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-pilbara-gecko": {
+    "scientific": "Heteronotia atra",
+    "taxonId": 539831,
+    "taxonName": "Heteronotia atra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bynoes-gecko": {
+    "scientific": "Heteronotia binoei",
+    "taxonId": 34419,
+    "taxonName": "Heteronotia binoei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-headed-gecko": {
+    "scientific": "Heteronotia fasciolata",
+    "taxonId": 539832,
+    "taxonName": "Heteronotia fasciolata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "banded-prickly-gecko": {
+    "scientific": "Heteronotia planiceps",
+    "taxonId": 102724,
+    "taxonName": "Heteronotia planiceps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-cave-gecko": {
+    "scientific": "Heteronotia spelea",
+    "taxonId": 34418,
+    "taxonName": "Heteronotia spelea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mourning-gecko": {
+    "scientific": "Lepidodactylus lugubris",
+    "taxonId": 104226,
+    "taxonName": "Lepidodactylus lugubris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lepidodactylus-pumilus": {
+    "scientific": "Lepidodactylus pumilus",
+    "taxonId": 34341,
+    "taxonName": "Lepidodactylus pumilus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cheverts-gecko": {
+    "scientific": "Nactus cheverti",
+    "taxonId": 34218,
+    "taxonName": "Nactus cheverti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eborac-island-gecko": {
+    "scientific": "Nactus eboracensis",
+    "taxonId": 34219,
+    "taxonName": "Nactus eboracensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-mountain-gecko": {
+    "scientific": "Nactus galgajuga",
+    "taxonId": 34217,
+    "taxonName": "Nactus galgajuga",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

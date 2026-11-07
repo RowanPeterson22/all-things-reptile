@@ -6428,5 +6428,3687 @@
     "rank": "species",
     "via": "scientific",
     "resolvedAt": "2026-11-07"
+  },
+  "bold-striped-cool-skink": {
+    "scientific": "Acritoscincus duperreyi",
+    "taxonId": 966815,
+    "taxonName": "Acritoscincus duperreyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-throated-cool-skink": {
+    "scientific": "Acritoscincus platynotus",
+    "taxonId": 966817,
+    "taxonName": "Acritoscincus platynotus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-cool-skink": {
+    "scientific": "Acritoscincus trilineatus",
+    "taxonId": 966816,
+    "taxonName": "Acritoscincus trilineatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "highlands-forest-skink": {
+    "scientific": "Anepischetosia maccoyi",
+    "taxonId": 318623,
+    "taxonName": "Anepischetosia maccoyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "two-clawed-worm-skink": {
+    "scientific": "Anomalopus leuckartii",
+    "taxonId": 37614,
+    "taxonName": "Anomalopus leuckartii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "five-clawed-worm-skink": {
+    "scientific": "Anomalopus mackayi",
+    "taxonId": 37613,
+    "taxonName": "Anomalopus mackayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "punctate-worm-skink": {
+    "scientific": "Anomalopus swansoni",
+    "taxonId": 37611,
+    "taxonName": "Anomalopus swansoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "three-clawed-worm-skink": {
+    "scientific": "Anomalopus verreauxii",
+    "taxonId": 539344,
+    "taxonName": "Anomalopus verreauxii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-soil-crevice-skink": {
+    "scientific": "Austroablepharus barrylyoni",
+    "taxonId": 964806,
+    "taxonName": "Austroablepharus barrylyoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-tailed-soil-crevice-skink": {
+    "scientific": "Austroablepharus kinghorni",
+    "taxonId": 964807,
+    "taxonName": "Austroablepharus kinghorni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-tailed-soil-crevice-skink": {
+    "scientific": "Austroablepharus naranjicaudus",
+    "taxonId": 964805,
+    "taxonName": "Austroablepharus naranjicaudus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "major-skink": {
+    "scientific": "Bellatorias frerei",
+    "taxonId": 38618,
+    "taxonName": "Bellatorias frerei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "land-mullet": {
+    "scientific": "Bellatorias major",
+    "taxonId": 95701,
+    "taxonName": "Bellatorias major",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arnhem-land-skink": {
+    "scientific": "Bellatorias obiri",
+    "taxonId": 38633,
+    "taxonName": "Bellatorias obiri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "thornton-peak-skink": {
+    "scientific": "Calorodius thorntonensis",
+    "taxonId": 1403161,
+    "taxonName": "Calorodius thorntonensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cone-eared-calyptotis": {
+    "scientific": "Calyptotis lepidorostrum",
+    "taxonId": 37275,
+    "taxonName": "Calyptotis lepidorostrum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-tailed-calyptotis": {
+    "scientific": "Calyptotis ruficauda",
+    "taxonId": 37276,
+    "taxonName": "Calyptotis ruficauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "scute-snouted-calyptotis": {
+    "scientific": "Calyptotis scutirostrum",
+    "taxonId": 37277,
+    "taxonName": "Calyptotis scutirostrum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "broad-templed-calyptotis": {
+    "scientific": "Calyptotis temporalis",
+    "taxonId": 37278,
+    "taxonName": "Calyptotis temporalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-forest-cool-skink": {
+    "scientific": "Carinascincus coventryi",
+    "taxonId": 552262,
+    "taxonName": "Carinascincus coventryi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "alpine-cool-skink": {
+    "scientific": "Carinascincus greeni",
+    "taxonId": 552263,
+    "taxonName": "Carinascincus greeni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "metallic-cool-skink": {
+    "scientific": "Carinascincus metallicus",
+    "taxonId": 552265,
+    "taxonName": "Carinascincus metallicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "boulder-cool-skink": {
+    "scientific": "Carinascincus microlepidotus",
+    "taxonId": 552268,
+    "taxonName": "Carinascincus microlepidotus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ocellated-cool-skink": {
+    "scientific": "Carinascincus ocellatus",
+    "taxonId": 552267,
+    "taxonName": "Carinascincus ocellatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "heath-cool-skink": {
+    "scientific": "Carinascincus orocryptus",
+    "taxonId": 552264,
+    "taxonName": "Carinascincus orocryptus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pedra-branca-cool-skink": {
+    "scientific": "Carinascincus palfreymani",
+    "taxonId": 552269,
+    "taxonName": "Carinascincus palfreymani",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "agile-cool-skink": {
+    "scientific": "Carinascincus pretiosus",
+    "taxonId": 552266,
+    "taxonName": "Carinascincus pretiosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bauxite-rainbow-skink": {
+    "scientific": "Carlia amax",
+    "taxonId": 37272,
+    "taxonName": "Carlia amax",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-red-throated-rainbow-skink": {
+    "scientific": "Carlia crypta",
+    "taxonId": 738072,
+    "taxonName": "Carlia crypta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "elegant-rainbow-skink": {
+    "scientific": "Carlia decora",
+    "taxonId": 528891,
+    "taxonName": "Carlia decora",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sandy-rainbow-skink": {
+    "scientific": "Carlia dogare",
+    "taxonId": 37270,
+    "taxonName": "Carlia dogare",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-rainbow-skink": {
+    "scientific": "Carlia gracilis",
+    "taxonId": 37266,
+    "taxonName": "Carlia gracilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "whitsunday-rainbow-skink": {
+    "scientific": "Carlia inconnexa",
+    "taxonId": 200188,
+    "taxonName": "Carlia inconnexa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-islands-rainbow-skink": {
+    "scientific": "Carlia insularis",
+    "taxonId": 606458,
+    "taxonName": "Carlia insularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "monsoonal-three-keeled-rainbow-skink": {
+    "scientific": "Carlia isostriacantha",
+    "taxonId": 606459,
+    "taxonName": "Carlia isostriacantha",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lined-rainbow-skink": {
+    "scientific": "Carlia jarnoldae",
+    "taxonId": 37267,
+    "taxonName": "Carlia jarnoldae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rough-brown-rainbow-skink": {
+    "scientific": "Carlia johnstonei",
+    "taxonId": 37268,
+    "taxonName": "Carlia johnstonei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "closed-litter-rainbow-skink": {
+    "scientific": "Carlia longipes",
+    "taxonId": 96809,
+    "taxonName": "Carlia longipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shaded-litter-rainbow-skink": {
+    "scientific": "Carlia munda",
+    "taxonId": 37263,
+    "taxonName": "Carlia munda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "open-litter-rainbow-skink": {
+    "scientific": "Carlia pectoralis",
+    "taxonId": 37259,
+    "taxonName": "Carlia pectoralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "five-keeled-rainbow-skink": {
+    "scientific": "Carlia quinquecarinata",
+    "taxonId": 96815,
+    "taxonName": "Carlia quinquecarinata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blue-throated-rainbow-skink": {
+    "scientific": "Carlia rhomboidalis",
+    "taxonId": 37262,
+    "taxonName": "Carlia rhomboidalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crevice-rainbow-skink": {
+    "scientific": "Carlia rimula",
+    "taxonId": 717863,
+    "taxonName": "Lygisaurus rimula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-throated-rainbow-skink": {
+    "scientific": "Carlia rostralis",
+    "taxonId": 37256,
+    "taxonName": "Carlia rostralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-flanked-rainbow-skink": {
+    "scientific": "Carlia rubigo",
+    "taxonId": 200189,
+    "taxonName": "Carlia rubigo",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-throated-rainbow-skink": {
+    "scientific": "Carlia rubrigularis",
+    "taxonId": 37257,
+    "taxonName": "Carlia rubrigularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-sided-rainbow-skink": {
+    "scientific": "Carlia rufilatus",
+    "taxonId": 37253,
+    "taxonName": "Carlia rufilatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-rainbow-skink": {
+    "scientific": "Carlia schmeltzii",
+    "taxonId": 37255,
+    "taxonName": "Carlia schmeltzii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "six-toothed-rainbow-skink": {
+    "scientific": "Carlia sexdentata",
+    "taxonId": 96816,
+    "taxonName": "Carlia sexdentata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "carlia-storri": {
+    "scientific": "Carlia storri",
+    "taxonId": 37252,
+    "taxonName": "Carlia storri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-rainbow-skink": {
+    "scientific": "Carlia tetradactyla",
+    "taxonId": 37249,
+    "taxonName": "Carlia tetradactyla",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-rainbow-skink": {
+    "scientific": "Carlia triacantha",
+    "taxonId": 37250,
+    "taxonName": "Carlia triacantha",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tussock-rainbow-skink": {
+    "scientific": "Carlia vivax",
+    "taxonId": 37248,
+    "taxonName": "Carlia vivax",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-melville-rainbow-skink": {
+    "scientific": "Carlia wundalthini",
+    "taxonId": 539441,
+    "taxonName": "Carlia wundalthini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "limbless-snake-tooth-skink": {
+    "scientific": "Coeranoscincus frontalis",
+    "taxonId": 37189,
+    "taxonName": "Coeranoscincus frontalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "three-toed-snake-tooth-skink": {
+    "scientific": "Coeranoscincus reticulatus",
+    "taxonId": 37190,
+    "taxonName": "Coeranoscincus reticulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fraser-island-sand-skink": {
+    "scientific": "Coggeria naufragus",
+    "taxonId": 37192,
+    "taxonName": "Coggeria naufragus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lemon-barred-forest-skink": {
+    "scientific": "Concinnia ampla",
+    "taxonId": 539497,
+    "taxonName": "Concinnia ampla",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-bar-sided-skink": {
+    "scientific": "Concinnia brachysoma",
+    "taxonId": 539498,
+    "taxonName": "Concinnia brachysoma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bartle-frere-bar-sided-skink": {
+    "scientific": "Concinnia frerei",
+    "taxonId": 539499,
+    "taxonName": "Concinnia frerei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dark-bar-sided-skink": {
+    "scientific": "Concinnia martini",
+    "taxonId": 539500,
+    "taxonName": "Concinnia martini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "prickly-forest-skink": {
+    "scientific": "Concinnia queenslandiae",
+    "taxonId": 1250056,
+    "taxonName": "Gnypetoscincus queenslandiae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stout-bar-sided-skink": {
+    "scientific": "Concinnia sokosoma",
+    "taxonId": 539502,
+    "taxonName": "Concinnia sokosoma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nangur-spiny-skink": {
+    "scientific": "Concinnia spinosa",
+    "taxonId": 37918,
+    "taxonName": "Nangura spinosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bar-sided-skink": {
+    "scientific": "Concinnia tenuis",
+    "taxonId": 538970,
+    "taxonName": "Concinnia tenuis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-blotched-forest-skink": {
+    "scientific": "Concinnia tigrina",
+    "taxonId": 539503,
+    "taxonName": "Concinnia tigrina",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "adamss-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus adamsi",
+    "taxonId": 98702,
+    "taxonName": "Cryptoblepharus adamsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "inland-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus australis",
+    "taxonId": 37178,
+    "taxonName": "Cryptoblepharus australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "buchanans-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus buchananii",
+    "taxonId": 98704,
+    "taxonName": "Cryptoblepharus buchananii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "swansons-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus cygnatus",
+    "taxonId": 98705,
+    "taxonName": "Cryptoblepharus cygnatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dappled-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus daedalos",
+    "taxonId": 98706,
+    "taxonName": "Cryptoblepharus daedalos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "noble-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus exochus",
+    "taxonId": 98707,
+    "taxonName": "Cryptoblepharus exochus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-boulder-shinning-skink": {
+    "scientific": "Cryptoblepharus fuhni",
+    "taxonId": 37172,
+    "taxonName": "Cryptoblepharus fuhni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arafura-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus gurrmul",
+    "taxonId": 98709,
+    "taxonName": "Cryptoblepharus gurrmul",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "junos-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus juno",
+    "taxonId": 98710,
+    "taxonName": "Cryptoblepharus juno",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cryptoblepharus-litoralis": {
+    "scientific": "Cryptoblepharus litoralis",
+    "taxonId": 37168,
+    "taxonName": "Cryptoblepharus litoralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blotched-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus megastictus",
+    "taxonId": 37169,
+    "taxonName": "Cryptoblepharus megastictus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mertenss-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus mertensi",
+    "taxonId": 98712,
+    "taxonName": "Cryptoblepharus mertensi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "metallic-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus metallicus",
+    "taxonId": 98713,
+    "taxonName": "Cryptoblepharus metallicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus ochrus",
+    "taxonId": 98716,
+    "taxonName": "Cryptoblepharus ochrus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ragged-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus pannosus",
+    "taxonId": 98717,
+    "taxonName": "Cryptoblepharus pannosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "callose-palmed-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus plagiocephalus",
+    "taxonId": 37162,
+    "taxonName": "Cryptoblepharus plagiocephalus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "elegant-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus pulcher",
+    "taxonId": 98718,
+    "taxonName": "Cryptoblepharus pulcher",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tawny-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus ruber",
+    "taxonId": 37163,
+    "taxonName": "Cryptoblepharus ruber",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus tytthos",
+    "taxonId": 98720,
+    "taxonName": "Cryptoblepharus tytthos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "russet-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus ustulatus",
+    "taxonId": 98721,
+    "taxonName": "Cryptoblepharus ustulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wall-skink": {
+    "scientific": "Cryptoblepharus virgatus",
+    "taxonId": 37157,
+    "taxonName": "Cryptoblepharus virgatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spangled-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus wulbu",
+    "taxonId": 98722,
+    "taxonName": "Cryptoblepharus wulbu",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "agile-snake-eyed-skink": {
+    "scientific": "Cryptoblepharus zoticus",
+    "taxonId": 98725,
+    "taxonName": "Cryptoblepharus zoticus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "field-ctenotus": {
+    "scientific": "Ctenotus agrestis",
+    "taxonId": 37143,
+    "taxonName": "Ctenotus agrestis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lively-ctenotus": {
+    "scientific": "Ctenotus alacer",
+    "taxonId": 37141,
+    "taxonName": "Ctenotus alacer",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ajana-ctenotus": {
+    "scientific": "Ctenotus alleni",
+    "taxonId": 37142,
+    "taxonName": "Ctenotus alleni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-blazed-wedgesnout-ctenotus": {
+    "scientific": "Ctenotus allotropis",
+    "taxonId": 37140,
+    "taxonName": "Ctenotus allotropis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "little-leopard-ctenotus": {
+    "scientific": "Ctenotus angusticeps",
+    "taxonId": 37139,
+    "taxonName": "Ctenotus angusticeps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "oorida-ctenotus": {
+    "scientific": "Ctenotus aphrodite",
+    "taxonId": 37137,
+    "taxonName": "Ctenotus aphrodite",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arcane-ctenotus": {
+    "scientific": "Ctenotus arcanus",
+    "taxonId": 37138,
+    "taxonName": "Ctenotus arcanus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ariadnas-ctenotus": {
+    "scientific": "Ctenotus ariadnae",
+    "taxonId": 37135,
+    "taxonName": "Ctenotus ariadnae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jabiluka-ctenotus": {
+    "scientific": "Ctenotus arnhemensis",
+    "taxonId": 37136,
+    "taxonName": "Ctenotus arnhemensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stony-downs-ctenotus": {
+    "scientific": "Ctenotus astarte",
+    "taxonId": 37134,
+    "taxonName": "Ctenotus astarte",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "unspotted-ctenotus": {
+    "scientific": "Ctenotus astictus",
+    "taxonId": 37132,
+    "taxonName": "Ctenotus astictus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-mallee-ctenotus": {
+    "scientific": "Ctenotus atlas",
+    "taxonId": 37133,
+    "taxonName": "Ctenotus atlas",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-limestone-ctenotus": {
+    "scientific": "Ctenotus australis",
+    "taxonId": 37131,
+    "taxonName": "Ctenotus australis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "white-faced-ctenotus": {
+    "scientific": "Ctenotus borealis",
+    "taxonId": 37130,
+    "taxonName": "Ctenotus borealis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ctenotus-brachyonyx": {
+    "scientific": "Ctenotus brachyonyx",
+    "taxonId": 1250238,
+    "taxonName": "Ctenotus brachyonyx",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-footed-ctenotus": {
+    "scientific": "Ctenotus brevipes",
+    "taxonId": 37112,
+    "taxonName": "Ctenotus brevipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wedgesnout-ctenotus": {
+    "scientific": "Ctenotus brooksi",
+    "taxonId": 37124,
+    "taxonName": "Ctenotus brooksi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "plain-backed-kimberley-ctenotus": {
+    "scientific": "Ctenotus burbidgei",
+    "taxonId": 98776,
+    "taxonName": "Ctenotus burbidgei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blue-tailed-finesnout-ctenotus": {
+    "scientific": "Ctenotus calurus",
+    "taxonId": 37121,
+    "taxonName": "Ctenotus calurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "capricorn-ctenotus": {
+    "scientific": "Ctenotus capricorni",
+    "taxonId": 37122,
+    "taxonName": "Ctenotus capricorni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chain-striped-south-west-ctenotus": {
+    "scientific": "Ctenotus catenifer",
+    "taxonId": 37120,
+    "taxonName": "Ctenotus catenifer",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-backed-ctenotus": {
+    "scientific": "Ctenotus coggeri",
+    "taxonId": 37119,
+    "taxonName": "Ctenotus coggeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "buff-tailed-finesnout-ctenotus": {
+    "scientific": "Ctenotus colletti",
+    "taxonId": 98777,
+    "taxonName": "Ctenotus colletti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ten-lined-ctenotus": {
+    "scientific": "Ctenotus decaneurus",
+    "taxonId": 37116,
+    "taxonName": "Ctenotus decaneurus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "darling-range-south-west-ctenotus": {
+    "scientific": "Ctenotus delli",
+    "taxonId": 37115,
+    "taxonName": "Ctenotus delli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-pilbara-lined-ctenotus": {
+    "scientific": "Ctenotus duricola",
+    "taxonId": 539512,
+    "taxonName": "Ctenotus duricola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fine-side-lined-ctenotus": {
+    "scientific": "Ctenotus dux",
+    "taxonId": 37114,
+    "taxonName": "Ctenotus dux",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-tailed-finesnout-ctenotus": {
+    "scientific": "Ctenotus ehmanni",
+    "taxonId": 37113,
+    "taxonName": "Ctenotus ehmanni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lowlands-plain-backed-ctenotus": {
+    "scientific": "Ctenotus essingtonii",
+    "taxonId": 37110,
+    "taxonName": "Ctenotus essingtonii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eucla-wedgesnout-ctenotus": {
+    "scientific": "Ctenotus euclae",
+    "taxonId": 539513,
+    "taxonName": "Ctenotus euclae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-backed-yellow-lined-ctenotus": {
+    "scientific": "Ctenotus eurydice",
+    "taxonId": 37108,
+    "taxonName": "Ctenotus eurydice",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-backed-yellow-lined-ctenotus": {
+    "scientific": "Ctenotus eutaenius",
+    "taxonId": 37109,
+    "taxonName": "Ctenotus eutaenius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ctenotus-fallens": {
+    "scientific": "Ctenotus fallens",
+    "taxonId": 1250237,
+    "taxonName": "Ctenotus fallens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "magela-ctenotus": {
+    "scientific": "Ctenotus gagudju",
+    "taxonId": 37107,
+    "taxonName": "Ctenotus gagudju",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jewelled-south-west-ctenotus": {
+    "scientific": "Ctenotus gemmula",
+    "taxonId": 37102,
+    "taxonName": "Ctenotus gemmula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "grand-ctenotus": {
+    "scientific": "Ctenotus grandis",
+    "taxonId": 37103,
+    "taxonName": "Ctenotus grandis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-necked-ctenotus": {
+    "scientific": "Ctenotus greeri",
+    "taxonId": 37101,
+    "taxonName": "Ctenotus greeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chained-ctenotus": {
+    "scientific": "Ctenotus halysis",
+    "taxonId": 98778,
+    "taxonName": "Ctenotus halysis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nimble-ctenotus": {
+    "scientific": "Ctenotus hanloni",
+    "taxonId": 37100,
+    "taxonName": "Ctenotus hanloni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stout-ctenotus": {
+    "scientific": "Ctenotus hebetior",
+    "taxonId": 37097,
+    "taxonName": "Ctenotus hebetior",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ctenotus-helenae": {
+    "scientific": "Ctenotus helenae",
+    "taxonId": 1250236,
+    "taxonName": "Ctenotus helenae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "top-end-lowlands-ctenotus": {
+    "scientific": "Ctenotus hilli",
+    "taxonId": 37095,
+    "taxonName": "Ctenotus hilli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-west-cape-ctenotus": {
+    "scientific": "Ctenotus iapetus",
+    "taxonId": 37145,
+    "taxonName": "Ctenotus iapetus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "odd-striped-ctenotus": {
+    "scientific": "Ctenotus impar",
+    "taxonId": 37089,
+    "taxonName": "Ctenotus impar",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "unspotted-yellow-sided-ctenotus": {
+    "scientific": "Ctenotus ingrami",
+    "taxonId": 37090,
+    "taxonName": "Ctenotus ingrami",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bar-shouldered-ctenotus": {
+    "scientific": "Ctenotus inornatus",
+    "taxonId": 37091,
+    "taxonName": "Ctenotus inornatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-soil-ctenotus": {
+    "scientific": "Ctenotus joanae",
+    "taxonId": 37092,
+    "taxonName": "Ctenotus joanae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kurnbudj-ctenotus": {
+    "scientific": "Ctenotus kurnbudj",
+    "taxonId": 37093,
+    "taxonName": "Ctenotus kurnbudj",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ctenotus-kutjupa": {
+    "scientific": "Ctenotus kutjupa",
+    "taxonId": 1403140,
+    "taxonName": "Ctenotus kutjupa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-south-west-ctenotus": {
+    "scientific": "Ctenotus labillardieri",
+    "taxonId": 37094,
+    "taxonName": "Ctenotus labillardieri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lancelin-south-west-ctenotus": {
+    "scientific": "Ctenotus lancelini",
+    "taxonId": 37088,
+    "taxonName": "Ctenotus lancelini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gravelly-soil-ctenotus": {
+    "scientific": "Ctenotus lateralis",
+    "taxonId": 37087,
+    "taxonName": "Ctenotus lateralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-tailed-finesnout-ctenotus": {
+    "scientific": "Ctenotus leae",
+    "taxonId": 37086,
+    "taxonName": "Ctenotus leae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "leonhards-ctenotus": {
+    "scientific": "Ctenotus leonhardii",
+    "taxonId": 37085,
+    "taxonName": "Ctenotus leonhardii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "maryans-ctenotus": {
+    "scientific": "Ctenotus maryani",
+    "taxonId": 37084,
+    "taxonName": "Ctenotus maryani",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "whiptail-ctenotus": {
+    "scientific": "Ctenotus mastigura",
+    "taxonId": 37079,
+    "taxonName": "Ctenotus mastigura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "median-striped-ctenotus": {
+    "scientific": "Ctenotus mesotes",
+    "taxonId": 98779,
+    "taxonName": "Ctenotus mesotes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "soldier-ctenotus": {
+    "scientific": "Ctenotus militaris",
+    "taxonId": 37080,
+    "taxonName": "Ctenotus militaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "checker-sided-ctenotus": {
+    "scientific": "Ctenotus mimetes",
+    "taxonId": 37081,
+    "taxonName": "Ctenotus mimetes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "atherton-ctenotus": {
+    "scientific": "Ctenotus monticola",
+    "taxonId": 37082,
+    "taxonName": "Ctenotus monticola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nasute-finesnout-ctenotus": {
+    "scientific": "Ctenotus nasutus",
+    "taxonId": 37083,
+    "taxonName": "Ctenotus nasutus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pin-striped-finesnout-ctenotus": {
+    "scientific": "Ctenotus nigrilineatus",
+    "taxonId": 37076,
+    "taxonName": "Ctenotus nigrilineatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nullum-ctenotus": {
+    "scientific": "Ctenotus nullum",
+    "taxonId": 37077,
+    "taxonName": "Ctenotus nullum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saltbush-ctenotus": {
+    "scientific": "Ctenotus olympicus",
+    "taxonId": 37078,
+    "taxonName": "Ctenotus olympicus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coastal-plains-ctenotus": {
+    "scientific": "Ctenotus ora",
+    "taxonId": 146054,
+    "taxonName": "Ctenotus ora",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-ctenotus": {
+    "scientific": "Ctenotus orientalis",
+    "taxonId": 37035,
+    "taxonName": "Ctenotus orientalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-pilbara-lined-ctenotus": {
+    "scientific": "Ctenotus pallasotus",
+    "taxonId": 606463,
+    "taxonName": "Ctenotus pallasotus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-western-wedgesnout-ctenotus": {
+    "scientific": "Ctenotus pallescens",
+    "taxonId": 37075,
+    "taxonName": "Ctenotus pallescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "leopard-ctenotus": {
+    "scientific": "Ctenotus pantherinus",
+    "taxonId": 37070,
+    "taxonName": "Ctenotus pantherinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coarse-sand-ctenotus": {
+    "scientific": "Ctenotus piankai",
+    "taxonId": 37067,
+    "taxonName": "Ctenotus piankai",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-sided-ctenotus": {
+    "scientific": "Ctenotus pulchellus",
+    "taxonId": 37066,
+    "taxonName": "Ctenotus pulchellus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fourteen-lined-ctenotus": {
+    "scientific": "Ctenotus quattuordecimlineatus",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07"
+  },
+  "quinkan-ctenotus": {
+    "scientific": "Ctenotus quinkan",
+    "taxonId": 37059,
+    "taxonName": "Ctenotus quinkan",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spear-like-ctenotus": {
+    "scientific": "Ctenotus quirinus",
+    "taxonId": 98780,
+    "taxonName": "Ctenotus quirinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-heath-ctenotus": {
+    "scientific": "Ctenotus rawlinsoni",
+    "taxonId": 37060,
+    "taxonName": "Ctenotus rawlinsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "royal-ctenotus": {
+    "scientific": "Ctenotus regius",
+    "taxonId": 37061,
+    "taxonName": "Ctenotus regius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-lined-ctenotus": {
+    "scientific": "Ctenotus rhabdotus",
+    "taxonId": 606464,
+    "taxonName": "Ctenotus rhabdotus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "crack-dwelling-ctenotus": {
+    "scientific": "Ctenotus rimacolus",
+    "taxonId": 37062,
+    "taxonName": "Ctenotus rimacola",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-striped-skink": {
+    "scientific": "Ctenotus robustus",
+    "taxonId": 37054,
+    "taxonName": "Ctenotus robustus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-earth-ctenotus": {
+    "scientific": "Ctenotus rosarium",
+    "taxonId": 37144,
+    "taxonName": "Ctenotus rosarium",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ruddy-ctenotus": {
+    "scientific": "Ctenotus rubicundus",
+    "taxonId": 37055,
+    "taxonName": "Ctenotus rubicundus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rufous-finesnout-ctenotus": {
+    "scientific": "Ctenotus rufescens",
+    "taxonId": 37056,
+    "taxonName": "Ctenotus rufescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rusty-shouldered-ctenotus": {
+    "scientific": "Ctenotus rutilans",
+    "taxonId": 37057,
+    "taxonName": "Ctenotus rutilans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stony-soil-ctenotus": {
+    "scientific": "Ctenotus saxatilis",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Ctenotus inornatus",
+    "lumpedTaxonId": 37091
+  },
+  "black-soil-rises-ctenotus": {
+    "scientific": "Ctenotus schevilli",
+    "taxonId": 37050,
+    "taxonName": "Ctenotus schevilli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "barred-wedgesnout-ctenotus": {
+    "scientific": "Ctenotus schomburgkii",
+    "taxonId": 37051,
+    "taxonName": "Ctenotus schomburgkii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "massive-gibber-ctenotus": {
+    "scientific": "Ctenotus septenarius",
+    "taxonId": 37052,
+    "taxonName": "Ctenotus septenarius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gravel-downs-ctenotus": {
+    "scientific": "Ctenotus serotinus",
+    "taxonId": 37053,
+    "taxonName": "Ctenotus serotinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-western-sandy-loam-ctenotus": {
+    "scientific": "Ctenotus serventyi",
+    "taxonId": 37046,
+    "taxonName": "Ctenotus serventyi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "straight-browed-ctenotus": {
+    "scientific": "Ctenotus spaldingi",
+    "taxonId": 37048,
+    "taxonName": "Ctenotus spaldingi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "buff-striped-ctenotus": {
+    "scientific": "Ctenotus storri",
+    "taxonId": 37049,
+    "taxonName": "Ctenotus storri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-barred-wedgesnout-ctenotus": {
+    "scientific": "Ctenotus strauchii",
+    "taxonId": 37043,
+    "taxonName": "Ctenotus strauchii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stripe-headed-finesnout-ctenotus": {
+    "scientific": "Ctenotus striaticeps",
+    "taxonId": 37038,
+    "taxonName": "Ctenotus striaticeps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "point-stuart-ctenotus": {
+    "scientific": "Ctenotus stuarti",
+    "taxonId": 37039,
+    "taxonName": "Ctenotus stuarti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sharp-browed-ctenotus": {
+    "scientific": "Ctenotus superciliaris",
+    "taxonId": 539514,
+    "taxonName": "Ctenotus superciliaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eyrean-ctenotus": {
+    "scientific": "Ctenotus taeniatus",
+    "taxonId": 539515,
+    "taxonName": "Ctenotus taeniatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "copper-tailed-ctenotus": {
+    "scientific": "Ctenotus taeniolatus",
+    "taxonId": 98781,
+    "taxonName": "Ctenotus taeniolatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tanami-ctenotus": {
+    "scientific": "Ctenotus tanamiensis",
+    "taxonId": 37040,
+    "taxonName": "Ctenotus tanamiensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-wedgesnout-ctenotus": {
+    "scientific": "Ctenotus tantillus",
+    "taxonId": 37041,
+    "taxonName": "Ctenotus tantillus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hinchinbrook-ctenotus": {
+    "scientific": "Ctenotus terrareginae",
+    "taxonId": 37042,
+    "taxonName": "Ctenotus terrareginae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-ctenotus": {
+    "scientific": "Ctenotus uber",
+    "taxonId": 37034,
+    "taxonName": "Ctenotus uber",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "uneven-striped-ctenotus": {
+    "scientific": "Ctenotus vagus",
+    "taxonId": 98782,
+    "taxonName": "Ctenotus vagus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "scant-striped-ctenotus": {
+    "scientific": "Ctenotus vertebralis",
+    "taxonId": 37033,
+    "taxonName": "Ctenotus vertebralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wide-striped-ctenotus": {
+    "scientific": "Ctenotus xenopleura",
+    "taxonId": 37030,
+    "taxonName": "Ctenotus xenopleura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shark-bay-south-west-ctenotus": {
+    "scientific": "Ctenotus youngsoni",
+    "taxonId": 37031,
+    "taxonName": "Ctenotus youngsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hamelin-pool-ctenotus": {
+    "scientific": "Ctenotus zastictus",
+    "taxonId": 37032,
+    "taxonName": "Ctenotus zastictus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-cape-york-finesnout-ctenotus": {
+    "scientific": "Ctenotus zebrilla",
+    "taxonId": 37029,
+    "taxonName": "Ctenotus zebrilla",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus branchialis",
+    "taxonId": 98835,
+    "taxonName": "Cyclodomorphus branchialis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "she-oak-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus casuarinae",
+    "taxonId": 37020,
+    "taxonName": "Cyclodomorphus casuarinae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus celatus",
+    "taxonId": 37014,
+    "taxonName": "Cyclodomorphus celatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pink-tongued-skink": {
+    "scientific": "Cyclodomorphus gerrardii",
+    "taxonId": 539530,
+    "taxonName": "Cyclodomorphus gerrardii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "giant-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus maximus",
+    "taxonId": 539531,
+    "taxonName": "Cyclodomorphus maximus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spinifex-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus melanops",
+    "taxonId": 37016,
+    "taxonName": "Cyclodomorphus melanops",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coastal-she-oak-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus michaeli",
+    "taxonId": 37011,
+    "taxonName": "Cyclodomorphus michaeli",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "alpine-she-oak-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus praealtus",
+    "taxonId": 37012,
+    "taxonName": "Cyclodomorphus praealtus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saltbush-slender-blue-tongue": {
+    "scientific": "Cyclodomorphus venustus",
+    "taxonId": 37013,
+    "taxonName": "Cyclodomorphus venustus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cunninghams-skink": {
+    "scientific": "Egernia cunninghami",
+    "taxonId": 38632,
+    "taxonName": "Egernia cunninghami",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-pilbara-spiny-tailed-skink": {
+    "scientific": "Egernia cygnitos",
+    "taxonId": 146107,
+    "taxonName": "Egernia cygnitos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-pygmy-spiny-tailed-skink": {
+    "scientific": "Egernia depressa",
+    "taxonId": 38628,
+    "taxonName": "Egernia depressa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kimberley-crevice-skink": {
+    "scientific": "Egernia douglasi",
+    "taxonId": 38626,
+    "taxonName": "Egernia douglasi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-pygmy-spiny-tailed-skink": {
+    "scientific": "Egernia eos",
+    "taxonId": 146108,
+    "taxonName": "Egernia eos",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-pilbara-spiny-tailed-skink": {
+    "scientific": "Egernia epsisolus",
+    "taxonId": 146109,
+    "taxonName": "Egernia epsisolus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "goldfields-crevice-skink": {
+    "scientific": "Egernia formosa",
+    "taxonId": 38627,
+    "taxonName": "Egernia formosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hosmers-skink": {
+    "scientific": "Egernia hosmeri",
+    "taxonId": 38625,
+    "taxonName": "Egernia hosmeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kings-skink": {
+    "scientific": "Egernia kingii",
+    "taxonId": 99728,
+    "taxonName": "Egernia kingii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-crevice-skink": {
+    "scientific": "Egernia mcpheei",
+    "taxonId": 38617,
+    "taxonName": "Egernia mcpheei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-crevice-skink": {
+    "scientific": "Egernia napoleonis",
+    "taxonId": 38612,
+    "taxonName": "Egernia napoleonis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-crevice-skink": {
+    "scientific": "Egernia pilbarensis",
+    "taxonId": 38608,
+    "taxonName": "Egernia pilbarensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bright-crevice-skink": {
+    "scientific": "Egernia richardi",
+    "taxonId": 38606,
+    "taxonName": "Egernia richardi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yakka-skink": {
+    "scientific": "Egernia rugosa",
+    "taxonId": 38607,
+    "taxonName": "Egernia rugosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-rock-skink": {
+    "scientific": "Egernia saxatilis",
+    "taxonId": 38603,
+    "taxonName": "Egernia saxatilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gidgee-skink": {
+    "scientific": "Egernia stokesii",
+    "taxonId": 38595,
+    "taxonName": "Egernia stokesii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tree-skink": {
+    "scientific": "Egernia striolata",
+    "taxonId": 38591,
+    "taxonName": "Egernia striolata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "emoia-atrocostata": {
+    "scientific": "Emoia atrocostata",
+    "taxonId": 99876,
+    "taxonName": "Emoia atrocostata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "emoia-longicauda": {
+    "scientific": "Emoia longicauda",
+    "taxonId": 38550,
+    "taxonName": "Emoia longicauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-sided-bar-lipped-skink": {
+    "scientific": "Eremiascincus brongersmai",
+    "taxonId": 38406,
+    "taxonName": "Eremiascincus brongersmai",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-sided-bar-lipped-skink": {
+    "scientific": "Eremiascincus douglasi",
+    "taxonId": 38397,
+    "taxonName": "Eremiascincus douglasi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-narrow-banded-sand-swimmer": {
+    "scientific": "Eremiascincus fasciolatus",
+    "taxonId": 38504,
+    "taxonName": "Eremiascincus fasciolatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-narrow-banded-sand-swimmer": {
+    "scientific": "Eremiascincus intermedius",
+    "taxonId": 539665,
+    "taxonName": "Eremiascincus intermedius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-bar-lipped-skink": {
+    "scientific": "Eremiascincus isolepis",
+    "taxonId": 38394,
+    "taxonName": "Eremiascincus isolepis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mosaic-desert-skink": {
+    "scientific": "Eremiascincus musivus",
+    "taxonId": 100326,
+    "taxonName": "Eremiascincus musivus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-narrow-banded-sand-swimmer": {
+    "scientific": "Eremiascincus pallidus",
+    "taxonId": 539666,
+    "taxonName": "Eremiascincus pallidus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lowlands-bar-lipped-skink": {
+    "scientific": "Eremiascincus pardalis",
+    "taxonId": 37480,
+    "taxonName": "Eremiascincus pardalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ghost-skink": {
+    "scientific": "Eremiascincus phantasmus",
+    "taxonId": 539667,
+    "taxonName": "Eremiascincus phantasmus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "broad-banded-sand-swimmer": {
+    "scientific": "Eremiascincus richardsonii",
+    "taxonId": 38503,
+    "taxonName": "Eremiascincus richardsonii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rusty-skink": {
+    "scientific": "Eremiascincus rubiginosus",
+    "taxonId": 738097,
+    "taxonName": "Eremiascincus rubiginosus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "elf-skink": {
+    "scientific": "Eroticoscincus graciloides",
+    "taxonId": 38501,
+    "taxonName": "Eroticoscincus graciloides",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eugongylus-rufescens": {
+    "scientific": "Eugongylus rufescens",
+    "taxonId": 38498,
+    "taxonName": "Eugongylus rufescens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-bellied-water-skink": {
+    "scientific": "Eulamprus heatwolei",
+    "taxonId": 38492,
+    "taxonName": "Eulamprus heatwolei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "alpine-water-skink": {
+    "scientific": "Eulamprus kosciuskoi",
+    "taxonId": 38493,
+    "taxonName": "Eulamprus kosciuskoi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blue-mountains-swamp-skink": {
+    "scientific": "Eulamprus leuraensis",
+    "taxonId": 38486,
+    "taxonName": "Eulamprus leuraensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-water-skink": {
+    "scientific": "Eulamprus quoyii",
+    "taxonId": 100709,
+    "taxonName": "Eulamprus quoyii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-water-skink": {
+    "scientific": "Eulamprus tympanum",
+    "taxonId": 38483,
+    "taxonName": "Eulamprus tympanum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mount-elliot-mulch-skink": {
+    "scientific": "Glaphyromorphus clandestinus",
+    "taxonId": 38404,
+    "taxonName": "Glaphyromorphus clandestinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-mulch-skink": {
+    "scientific": "Glaphyromorphus cracens",
+    "taxonId": 38403,
+    "taxonName": "Glaphyromorphus cracens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "glaphyromorphus-crassicauda": {
+    "scientific": "Glaphyromorphus crassicauda",
+    "taxonId": 38391,
+    "taxonName": "Glaphyromorphus crassicaudus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-mulch-skink": {
+    "scientific": "Glaphyromorphus darwiniensis",
+    "taxonId": 38399,
+    "taxonName": "Glaphyromorphus darwiniensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "brown-tailed-bar-lipped-skink": {
+    "scientific": "Glaphyromorphus fuscicaudis",
+    "taxonId": 38395,
+    "taxonName": "Glaphyromorphus fuscicaudis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "atherton-tableland-mulch-skink": {
+    "scientific": "Glaphyromorphus mjobergi",
+    "taxonId": 38393,
+    "taxonName": "Glaphyromorphus mjobergi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "glaphyromorphus-nigricaudis": {
+    "scientific": "Glaphyromorphus nigricaudis",
+    "taxonId": 38392,
+    "taxonName": "Glaphyromorphus nigricaudis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mcilwraith-bar-lipped-skink": {
+    "scientific": "Glaphyromorphus nyanchupinta",
+    "taxonId": 539738,
+    "taxonName": "Glaphyromorphus nyanchupinta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-melville-bar-lipped-skink": {
+    "scientific": "Glaphyromorphus othelarrni",
+    "taxonId": 539739,
+    "taxonName": "Glaphyromorphus othelarrni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwarf-mulch-skink": {
+    "scientific": "Glaphyromorphus pumilus",
+    "taxonId": 101479,
+    "taxonName": "Glaphyromorphus pumilus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fine-spotted-mulch-skink": {
+    "scientific": "Glaphyromorphus punctulatus",
+    "taxonId": 38389,
+    "taxonName": "Glaphyromorphus punctulatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rainforest-cool-skink": {
+    "scientific": "Harrisoniascincus zia",
+    "taxonId": 318684,
+    "taxonName": "Harrisoniascincus zia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "three-toed-earless-skink": {
+    "scientific": "Hemiergis decresiensis",
+    "taxonId": 38359,
+    "taxonName": "Hemiergis decresiensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-mulch-skink": {
+    "scientific": "Hemiergis gracilipes",
+    "taxonId": 38396,
+    "taxonName": "Hemiergis gracilipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-earless-skink": {
+    "scientific": "Hemiergis initialis",
+    "taxonId": 38367,
+    "taxonName": "Hemiergis initialis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "triodia-earless-skink": {
+    "scientific": "Hemiergis millewae",
+    "taxonId": 38365,
+    "taxonName": "Hemiergis millewae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lowlands-earless-skink": {
+    "scientific": "Hemiergis peronii",
+    "taxonId": 38366,
+    "taxonName": "Hemiergis peronii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "two-toed-earless-skink": {
+    "scientific": "Hemiergis quadrilineata",
+    "taxonId": 539816,
+    "taxonName": "Hemiergis quadrilineatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-three-toed-earless-skink": {
+    "scientific": "Hemiergis talbingoensis",
+    "taxonId": 38360,
+    "taxonName": "Hemiergis talbingoensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "diamond-shielded-sunskink": {
+    "scientific": "Lampropholis adonis",
+    "taxonId": 38299,
+    "taxonName": "Lampropholis adonis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "friendly-sunskink": {
+    "scientific": "Lampropholis amicula",
+    "taxonId": 38298,
+    "taxonName": "Lampropholis amicula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bellenden-ker-sunskink": {
+    "scientific": "Lampropholis bellendenkerensis",
+    "taxonId": 738109,
+    "taxonName": "Lampropholis bellendenkerensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "montane-sunskink": {
+    "scientific": "Lampropholis caligula",
+    "taxonId": 38297,
+    "taxonName": "Lampropholis caligula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rainforest-sunskink": {
+    "scientific": "Lampropholis coggeri",
+    "taxonId": 38296,
+    "taxonName": "Lampropholis coggeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bunya-sunskink": {
+    "scientific": "Lampropholis colossus",
+    "taxonId": 38295,
+    "taxonName": "Lampropholis colossus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "plain-backed-sunskink": {
+    "scientific": "Lampropholis couperi",
+    "taxonId": 38294,
+    "taxonName": "Lampropholis couperi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "delicate-skink": {
+    "scientific": "Lampropholis delicata",
+    "taxonId": 38293,
+    "taxonName": "Lampropholis delicata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mount-elliot-sunskink": {
+    "scientific": "Lampropholis elliotensis",
+    "taxonId": 738110,
+    "taxonName": "Lampropholis elliotensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "long-sunskink": {
+    "scientific": "Lampropholis elongata",
+    "taxonId": 38292,
+    "taxonName": "Lampropholis elongata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "garden-skink": {
+    "scientific": "Lampropholis guichenoti",
+    "taxonId": 38291,
+    "taxonName": "Lampropholis guichenoti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saxicoline-sunskink": {
+    "scientific": "Lampropholis mirabilis",
+    "taxonId": 38290,
+    "taxonName": "Lampropholis mirabilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "grey-bellied-sunskink": {
+    "scientific": "Lampropholis robertsi",
+    "taxonId": 38289,
+    "taxonName": "Lampropholis robertsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-rainforest-sunskink": {
+    "scientific": "Lampropholis similis",
+    "taxonId": 738111,
+    "taxonName": "Lampropholis similis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-plain-slider": {
+    "scientific": "Lerista aericeps",
+    "taxonId": 38240,
+    "taxonName": "Lerista aericeps",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lerista-alia": {
+    "scientific": "Lerista alia",
+    "taxonId": 889744,
+    "taxonName": "Lerista alia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "retro-slider": {
+    "scientific": "Lerista allanae",
+    "taxonId": 38241,
+    "taxonName": "Lerista allanae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-range-slider": {
+    "scientific": "Lerista allochira",
+    "taxonId": 38239,
+    "taxonName": "Lerista allochira",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "limbless-fine-lined-slider": {
+    "scientific": "Lerista ameles",
+    "taxonId": 38238,
+    "taxonName": "Lerista ameles",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "friendly-slider": {
+    "scientific": "Lerista amicorum",
+    "taxonId": 104400,
+    "taxonName": "Lerista amicorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lerista-anyara": {
+    "scientific": "Lerista anyara",
+    "taxonId": 965965,
+    "taxonName": "Lerista anyara",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dampier-land-limbless-slider": {
+    "scientific": "Lerista apoda",
+    "taxonId": 38237,
+    "taxonName": "Lerista apoda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bight-slider": {
+    "scientific": "Lerista arenicola",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Lerista microtis",
+    "lumpedTaxonId": 38154
+  },
+  "stripe-sided-robust-slider": {
+    "scientific": "Lerista axillaris",
+    "taxonId": 38236,
+    "taxonName": "Lerista axillaris",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "speckled-slider": {
+    "scientific": "Lerista baynesi",
+    "taxonId": 104402,
+    "taxonName": "Lerista baynesi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-western-sandslider": {
+    "scientific": "Lerista bipes",
+    "taxonId": 38234,
+    "taxonName": "Lerista bipes",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "inland-kimberley-slider": {
+    "scientific": "Lerista borealis",
+    "taxonId": 38235,
+    "taxonName": "Lerista borealis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-eastern-slider": {
+    "scientific": "Lerista bougainvillii",
+    "taxonId": 104403,
+    "taxonName": "Lerista bougainvillii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bungle-bungle-robust-slider": {
+    "scientific": "Lerista bunglebungle",
+    "taxonId": 38233,
+    "taxonName": "Lerista bunglebungle",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "carpentaria-fine-lined-slider": {
+    "scientific": "Lerista carpentariae",
+    "taxonId": 38230,
+    "taxonName": "Lerista carpentariae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lyre-patterned-slider": {
+    "scientific": "Lerista chordae",
+    "taxonId": 104404,
+    "taxonName": "Lerista chordae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bold-striped-slider": {
+    "scientific": "Lerista christinae",
+    "taxonId": 38232,
+    "taxonName": "Lerista christinae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "vine-thicket-fine-lined-slider": {
+    "scientific": "Lerista cinerea",
+    "taxonId": 38228,
+    "taxonName": "Lerista cinerea",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sharp-blazed-three-toed-slider": {
+    "scientific": "Lerista clara",
+    "taxonId": 104405,
+    "taxonName": "Lerista clara",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nubbined-fine-lined-slider": {
+    "scientific": "Lerista colliveri",
+    "taxonId": 38229,
+    "taxonName": "Lerista colliveri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blinking-broad-blazed-slider": {
+    "scientific": "Lerista connivens",
+    "taxonId": 38227,
+    "taxonName": "Lerista connivens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "central-deserts-robust-slider": {
+    "scientific": "Lerista desertorum",
+    "taxonId": 38224,
+    "taxonName": "Lerista desertorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-orange-tailed-slider": {
+    "scientific": "Lerista distinguenda",
+    "taxonId": 38225,
+    "taxonName": "Lerista distinguenda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-slider": {
+    "scientific": "Lerista dorsalis",
+    "taxonId": 38223,
+    "taxonName": "Lerista dorsalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "myall-slider": {
+    "scientific": "Lerista edwardsae",
+    "taxonId": 38220,
+    "taxonName": "Lerista edwardsae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "elegant-slider": {
+    "scientific": "Lerista elegans",
+    "taxonId": 38221,
+    "taxonName": "Lerista elegans",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wide-striped-mulch-slider": {
+    "scientific": "Lerista elongata",
+    "taxonId": 38222,
+    "taxonName": "Lerista elongata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "noonbah-robust-slider": {
+    "scientific": "Lerista emmotti",
+    "taxonId": 38219,
+    "taxonName": "Lerista emmotti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "good-legged-slider": {
+    "scientific": "Lerista eupoda",
+    "taxonId": 38218,
+    "taxonName": "Lerista eupoda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-flame-tailed-slider": {
+    "scientific": "Lerista flammicauda",
+    "taxonId": 38215,
+    "taxonName": "Lerista flammicauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-mulch-slider": {
+    "scientific": "Lerista fragilis",
+    "taxonId": 38216,
+    "taxonName": "Lerista fragilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-slider": {
+    "scientific": "Lerista frosti",
+    "taxonId": 38217,
+    "taxonName": "Lerista frosti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gascoyne-broad-blazed-slider": {
+    "scientific": "Lerista gascoynensis",
+    "taxonId": 38213,
+    "taxonName": "Lerista gascoynensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bold-striped-robust-slider": {
+    "scientific": "Lerista gerrardii",
+    "taxonId": 38214,
+    "taxonName": "Lerista gerrardii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-eastern-kimberley-sandslider": {
+    "scientific": "Lerista greeri",
+    "taxonId": 38210,
+    "taxonName": "Lerista greeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "stout-sandslider": {
+    "scientific": "Lerista griffini",
+    "taxonId": 38211,
+    "taxonName": "Lerista griffini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gnaraloo-mulch-slider": {
+    "scientific": "Lerista haroldi",
+    "taxonId": 38212,
+    "taxonName": "Lerista haroldi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hobsons-fine-lined-slider": {
+    "scientific": "Lerista hobsoni",
+    "taxonId": 558907,
+    "taxonName": "Lerista hobsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "taper-tailed-west-coast-slider": {
+    "scientific": "Lerista humphriesi",
+    "taxonId": 38207,
+    "taxonName": "Lerista humphriesi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mcivor-river-slider": {
+    "scientific": "Lerista ingrami",
+    "taxonId": 38208,
+    "taxonName": "Lerista ingrami",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "robust-duneslider": {
+    "scientific": "Lerista ips",
+    "taxonId": 38209,
+    "taxonName": "Lerista ips",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jacksons-slider": {
+    "scientific": "Lerista jacksoni",
+    "taxonId": 104406,
+    "taxonName": "Lerista jacksoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kalumburu-kimberley-slider": {
+    "scientific": "Lerista kalumburu",
+    "taxonId": 38205,
+    "taxonName": "Lerista kalumburu",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lesser-robust-fine-lined-slider": {
+    "scientific": "Lerista karlschmidti",
+    "taxonId": 38206,
+    "taxonName": "Lerista karlschmidti",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dark-broad-blazed-slider": {
+    "scientific": "Lerista kendricki",
+    "taxonId": 38203,
+    "taxonName": "Lerista kendricki",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kennedy-range-broad-blazed-slider": {
+    "scientific": "Lerista kennedyensis",
+    "taxonId": 38204,
+    "taxonName": "Lerista kennedyensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "kings-slider": {
+    "scientific": "Lerista kingi",
+    "taxonId": 104407,
+    "taxonName": "Lerista kingi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-sandslider": {
+    "scientific": "Lerista labialis",
+    "taxonId": 38202,
+    "taxonName": "Lerista labialis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "perth-slider": {
+    "scientific": "Lerista lineata",
+    "taxonId": 38201,
+    "taxonName": "Lerista lineata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dotted-line-robust-slider": {
+    "scientific": "Lerista lineopunctulata",
+    "taxonId": 38195,
+    "taxonName": "Lerista lineopunctulata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "unpatterned-robust-slider": {
+    "scientific": "Lerista macropisthopus",
+    "taxonId": 38196,
+    "taxonName": "Lerista macropisthopus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spotted-broad-blazed-slider": {
+    "scientific": "Lerista maculosa",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Lerista uniduo",
+    "lumpedTaxonId": 38167
+  },
+  "micro-slider": {
+    "scientific": "Lerista micra",
+    "taxonId": 104408,
+    "taxonName": "Lerista micra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-slider": {
+    "scientific": "Lerista microtis",
+    "taxonId": 38154,
+    "taxonName": "Lerista microtis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-dotted-lined-robust-slider": {
+    "scientific": "Lerista miopus",
+    "taxonId": 606500,
+    "taxonName": "Lerista miopus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wood-mulch-slider": {
+    "scientific": "Lerista muelleri",
+    "taxonId": 38193,
+    "taxonName": "Lerista muelleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-robust-slider": {
+    "scientific": "Lerista neander",
+    "taxonId": 38189,
+    "taxonName": "Lerista neander",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "nevins-slider": {
+    "scientific": "Lerista nevinae",
+    "taxonId": 104409,
+    "taxonName": "Lerista nevinae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "inland-broad-blazed-slider": {
+    "scientific": "Lerista nichollsi",
+    "taxonId": 38190,
+    "taxonName": "Lerista nichollsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hidden-slider": {
+    "scientific": "Lerista occulta",
+    "taxonId": 104410,
+    "taxonName": "Lerista occulta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "onslow-broad-blazed-slider": {
+    "scientific": "Lerista onsloviana",
+    "taxonId": 38191,
+    "taxonName": "Lerista onsloviana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-eastern-orange-tailed-slider-orientalis": {
+    "scientific": "Lerista orientalis",
+    "taxonId": 38192,
+    "taxonName": "Lerista orientalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lerista-parameles": {
+    "scientific": "Lerista parameles",
+    "taxonId": 889745,
+    "taxonName": "Lerista parameles",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-broad-blazed-slider": {
+    "scientific": "Lerista petersoni",
+    "taxonId": 38187,
+    "taxonName": "Lerista petersoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-robust-slider": {
+    "scientific": "Lerista picturata",
+    "taxonId": 38188,
+    "taxonName": "Lerista picturata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "keeled-slider": {
+    "scientific": "Lerista planiventralis",
+    "taxonId": 38183,
+    "taxonName": "Lerista planiventralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yampi-sandslider": {
+    "scientific": "Lerista praefrontalis",
+    "taxonId": 38182,
+    "taxonName": "Lerista praefrontalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blunt-tailed-west-coast-slider": {
+    "scientific": "Lerista praepedita",
+    "taxonId": 38181,
+    "taxonName": "Lerista praepedita",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-robust-slider": {
+    "scientific": "Lerista punctatovittata",
+    "taxonId": 38180,
+    "taxonName": "Lerista punctatovittata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dotty-tailed-robust-slider": {
+    "scientific": "Lerista puncticauda",
+    "taxonId": 38177,
+    "taxonName": "Lerista puncticauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "four-chained-slider": {
+    "scientific": "Lerista quadrivincula",
+    "taxonId": 38226,
+    "taxonName": "Lerista quadrivincula",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lerista-rhodonoides": {
+    "scientific": "Lerista rhodonoides",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Lerista timida",
+    "lumpedTaxonId": 558908
+  },
+  "broad-eyed-slider": {
+    "scientific": "Lerista robusta",
+    "taxonId": 38178,
+    "taxonName": "Lerista robusta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rochford-slider": {
+    "scientific": "Lerista rochfordensis",
+    "taxonId": 104412,
+    "taxonName": "Lerista rochfordensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rolfes-slider": {
+    "scientific": "Lerista rolfei",
+    "taxonId": 104413,
+    "taxonName": "Lerista rolfei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dampierland-plain-slider": {
+    "scientific": "Lerista separanda",
+    "taxonId": 38179,
+    "taxonName": "Lerista separanda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fitzroy-sandslider": {
+    "scientific": "Lerista simillima",
+    "taxonId": 38174,
+    "taxonName": "Lerista simillima",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-striped-mulch-slider": {
+    "scientific": "Lerista speciosa",
+    "taxonId": 38175,
+    "taxonName": "Lerista speciosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "speckle-sided-broad-blazed-slider": {
+    "scientific": "Lerista stictopleura",
+    "taxonId": 38176,
+    "taxonName": "Lerista stictopleura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chillagoe-fine-lined-slider": {
+    "scientific": "Lerista storri",
+    "taxonId": 38171,
+    "taxonName": "Lerista storri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "arnhem-coast-fine-lined-slider": {
+    "scientific": "Lerista stylis",
+    "taxonId": 38172,
+    "taxonName": "Lerista stylis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ribbon-slider": {
+    "scientific": "Lerista taeniata",
+    "taxonId": 38173,
+    "taxonName": "Lerista taeniata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "phantom-mole-slider": {
+    "scientific": "Lerista talpina",
+    "taxonId": null,
+    "taxonName": null,
+    "rank": null,
+    "via": null,
+    "resolvedAt": "2026-11-07",
+    "lumpedInto": "Lerista petersoni",
+    "lumpedTaxonId": 38187
+  },
+  "robust-mulch-slider": {
+    "scientific": "Lerista terdigitata",
+    "taxonId": 38170,
+    "taxonName": "Lerista terdigitata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwarf-three-toed-slider": {
+    "scientific": "Lerista timida",
+    "taxonId": 558908,
+    "taxonName": "Lerista timida",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dark-backed-mulch-slider": {
+    "scientific": "Lerista tridactyla",
+    "taxonId": 38168,
+    "taxonName": "Lerista tridactyla",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-broad-blazed-slider": {
+    "scientific": "Lerista uniduo",
+    "taxonId": 38167,
+    "taxonName": "Lerista uniduo",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "leaden-bellied-fine-lined-slider": {
+    "scientific": "Lerista vanderduysi",
+    "taxonId": 558909,
+    "taxonName": "Lerista vanderduysi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shark-bay-broad-blazed-slider": {
+    "scientific": "Lerista varia",
+    "taxonId": 38166,
+    "taxonName": "Lerista varia",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "powerful-slider": {
+    "scientific": "Lerista verhmens",
+    "taxonId": 104414,
+    "taxonName": "Lerista verhmens",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slender-duneslider": {
+    "scientific": "Lerista vermicularis",
+    "taxonId": 38162,
+    "taxonName": "Lerista vermicularis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ravensthorpe-range-slider": {
+    "scientific": "Lerista viduata",
+    "taxonId": 38163,
+    "taxonName": "Lerista viduata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "side-striped-fine-lined-slider": {
+    "scientific": "Lerista vittata",
+    "taxonId": 38164,
+    "taxonName": "Lerista vittata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coastal-kimberley-slider": {
+    "scientific": "Lerista walkeri",
+    "taxonId": 38165,
+    "taxonName": "Lerista walkeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "two-toed-fine-lined-slider": {
+    "scientific": "Lerista wilkinsi",
+    "taxonId": 38161,
+    "taxonName": "Lerista wilkinsi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yellow-tailed-plain-slider": {
+    "scientific": "Lerista xanthura",
+    "taxonId": 38159,
+    "taxonName": "Lerista xanthura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yuna-broad-blazed-slider": {
+    "scientific": "Lerista yuna",
+    "taxonId": 38160,
+    "taxonName": "Lerista yuna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pilbara-blue-tailed-slider": {
+    "scientific": "Lerista zietzi",
+    "taxonId": 38231,
+    "taxonName": "Lerista chalybura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "north-eastern-orange-tailed-slider-zonulata": {
+    "scientific": "Lerista zonulata",
+    "taxonId": 38158,
+    "taxonName": "Lerista zonulata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bamboo-range-rock-skink": {
+    "scientific": "Liburnascincus artemis",
+    "taxonId": 539891,
+    "taxonName": "Liburnascincus artemis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "coen-rock-skink": {
+    "scientific": "Liburnascincus coensis",
+    "taxonId": 37269,
+    "taxonName": "Liburnascincus coensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "outcrop-rock-skink": {
+    "scientific": "Liburnascincus mundivensis",
+    "taxonId": 37264,
+    "taxonName": "Liburnascincus mundivensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "black-mountain-rock-skink": {
+    "scientific": "Liburnascincus scirtetis",
+    "taxonId": 37251,
+    "taxonName": "Liburnascincus scirtetis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "guthega-skink": {
+    "scientific": "Liopholis guthega",
+    "taxonId": 38629,
+    "taxonName": "Liopholis guthega",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "desert-skink": {
+    "scientific": "Liopholis inornata",
+    "taxonId": 38624,
+    "taxonName": "Liopholis inornata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "great-desert-skink": {
+    "scientific": "Liopholis kintorei",
+    "taxonId": 38622,
+    "taxonName": "Liopholis kintorei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-ranges-rock-skink": {
+    "scientific": "Liopholis margaretae",
+    "taxonId": 38619,
+    "taxonName": "Liopholis margaretae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-ranges-rock-skink": {
+    "scientific": "Liopholis modesta",
+    "taxonId": 38616,
+    "taxonName": "Liopholis modesta",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "mountain-skink": {
+    "scientific": "Liopholis montana",
+    "taxonId": 104712,
+    "taxonName": "Liopholis montana",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bull-skink": {
+    "scientific": "Liopholis multiscutata",
+    "taxonId": 38613,
+    "taxonName": "Liopholis multiscutata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "flinders-ranges-rock-skink": {
+    "scientific": "Liopholis personata",
+    "taxonId": 606502,
+    "taxonName": "Liopholis personata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-western-rock-skink": {
+    "scientific": "Liopholis pulchra",
+    "taxonId": 38609,
+    "taxonName": "Liopholis pulchra",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "slaters-skink": {
+    "scientific": "Liopholis slateri",
+    "taxonId": 38600,
+    "taxonName": "Liopholis slateri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "night-skink": {
+    "scientific": "Liopholis striata",
+    "taxonId": 38590,
+    "taxonName": "Liopholis striata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "whites-skink": {
+    "scientific": "Liopholis whitii",
+    "taxonId": 38592,
+    "taxonName": "Liopholis whitii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "swamp-skink": {
+    "scientific": "Lissolepis coventryi",
+    "taxonId": 38631,
+    "taxonName": "Lissolepis coventryi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-mourning-skink": {
+    "scientific": "Lissolepis luctuosa",
+    "taxonId": 38623,
+    "taxonName": "Lissolepis luctuosa",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hidden-litter-skink": {
+    "scientific": "Lygisaurus absconditus",
+    "taxonId": 104898,
+    "taxonName": "Lygisaurus absconditus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "large-disced-litter-skink": {
+    "scientific": "Lygisaurus aeratus",
+    "taxonId": 38248,
+    "taxonName": "Lygisaurus aeratus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "iridescent-litter-skink": {
+    "scientific": "Lygisaurus foliorum",
+    "taxonId": 104900,
+    "taxonName": "Lygisaurus foliorum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "rainforest-edge-litter-skink": {
+    "scientific": "Lygisaurus laevis",
+    "taxonId": 38247,
+    "taxonName": "Lygisaurus laevis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lygisaurus-macfarlani": {
+    "scientific": "Lygisaurus macfarlani",
+    "taxonId": 104901,
+    "taxonName": "Lygisaurus macfarlani",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "red-tailed-litter-skink": {
+    "scientific": "Lygisaurus malleolus",
+    "taxonId": 104902,
+    "taxonName": "Lygisaurus malleolus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fire-tailed-rainbow-skink": {
+    "scientific": "Lygisaurus parrhasius",
+    "taxonId": 37265,
+    "taxonName": "Lygisaurus parrhasius",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "chillagoe-litter-skink": {
+    "scientific": "Lygisaurus rococo",
+    "taxonId": 38244,
+    "taxonName": "Lygisaurus rococo",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eastern-cape-litter-skink": {
+    "scientific": "Lygisaurus sesbrauna",
+    "taxonId": 38245,
+    "taxonName": "Lygisaurus sesbrauna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "endeavour-river-litter-skink": {
+    "scientific": "Lygisaurus tanneri",
+    "taxonId": 38246,
+    "taxonName": "Lygisaurus tanneri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "sun-loving-litter-skink": {
+    "scientific": "Lygisaurus zuma",
+    "taxonId": 38243,
+    "taxonName": "Lygisaurus zuma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "top-end-dwarf-skink": {
+    "scientific": "Menetia alanae",
+    "taxonId": 37949,
+    "taxonName": "Menetia alanae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "jabiluka-dwarf-skink": {
+    "scientific": "Menetia concinna",
+    "taxonId": 37951,
+    "taxonName": "Menetia concinna",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "common-dwarf-skink": {
+    "scientific": "Menetia greyii",
+    "taxonId": 37948,
+    "taxonName": "Menetia greyii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-dwarf-skink": {
+    "scientific": "Menetia maini",
+    "taxonId": 37945,
+    "taxonName": "Menetia maini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-dwarf-skink": {
+    "scientific": "Menetia surda",
+    "taxonId": 37942,
+    "taxonName": "Menetia surda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "saltbush-morethia-skink": {
+    "scientific": "Morethia adelaidensis",
+    "taxonId": 37921,
+    "taxonName": "Morethia adelaidensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "south-eastern-morethia-skink": {
+    "scientific": "Morethia boulengeri",
+    "taxonId": 37920,
+    "taxonName": "Morethia boulengeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "woodland-morethia-skink": {
+    "scientific": "Morethia butleri",
+    "taxonId": 37928,
+    "taxonName": "Morethia butleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "west-coast-morethia-skink": {
+    "scientific": "Morethia lineoocellata",
+    "taxonId": 106153,
+    "taxonName": "Morethia lineoocellata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "shrubland-morethia-skink": {
+    "scientific": "Morethia obscura",
+    "taxonId": 37927,
+    "taxonName": "Morethia obscura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lined-fire-tailed-skink": {
+    "scientific": "Morethia ruficauda",
+    "taxonId": 37924,
+    "taxonName": "Morethia ruficauda",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "top-end-fire-tailed-skink": {
+    "scientific": "Morethia storri",
+    "taxonId": 37922,
+    "taxonName": "Morethia storri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fire-tailed-skink": {
+    "scientific": "Morethia taeniopleura",
+    "taxonId": 37923,
+    "taxonName": "Morethia taeniopleura",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lined-soil-crevice-skink": {
+    "scientific": "Notoscincus butleri",
+    "taxonId": 37888,
+    "taxonName": "Notoscincus butleri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "ornate-soil-crevice-skink": {
+    "scientific": "Notoscincus ornatus",
+    "taxonId": 37885,
+    "taxonName": "Notoscincus ornatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lord-howe-island-skink": {
+    "scientific": "Oligosoma lichenigerum",
+    "taxonId": 37024,
+    "taxonName": "Oligosoma lichenigerum",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cooloola-snake-skink": {
+    "scientific": "Ophioscincus cooloolensis",
+    "taxonId": 37845,
+    "taxonName": "Ophioscincus cooloolensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "yolk-bellied-snake-skink": {
+    "scientific": "Ophioscincus ophioscincus",
+    "taxonId": 37841,
+    "taxonName": "Ophioscincus ophioscincus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-limbed-snake-skink": {
+    "scientific": "Ophioscincus truncatus",
+    "taxonId": 37842,
+    "taxonName": "Ophioscincus truncatus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "praeteropus-auxilliger": {
+    "scientific": "Praeteropus auxilliger",
+    "taxonId": 1304730,
+    "taxonName": "Praeteropus auxilliger",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "short-necked-worm-skink": {
+    "scientific": "Praeteropus brevicollis",
+    "taxonId": 1304680,
+    "taxonName": "Praeteropus brevicollis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "speckled-worm-skink": {
+    "scientific": "Praeteropus gowi",
+    "taxonId": 1304681,
+    "taxonName": "Praeteropus gowi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "praeteropus-monachus": {
+    "scientific": "Praeteropus monachus",
+    "taxonId": 1304729,
+    "taxonName": "Praeteropus monachus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-soil-crevice-skink": {
+    "scientific": "Proablepharus reginae",
+    "taxonId": 37756,
+    "taxonName": "Proablepharus reginae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "northern-soil-crevice-skink": {
+    "scientific": "Proablepharus tenuis",
+    "taxonId": 110393,
+    "taxonName": "Proablepharus tenuis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bight-coast-skink": {
+    "scientific": "Pseudemoia baudini",
+    "taxonId": 37749,
+    "taxonName": "Pseudemoia baudini",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "alpine-bog-skink": {
+    "scientific": "Pseudemoia cryodroma",
+    "taxonId": 37748,
+    "taxonName": "Pseudemoia cryodroma",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "southern-grass-skink": {
+    "scientific": "Pseudemoia entrecasteauxii",
+    "taxonId": 110927,
+    "taxonName": "Pseudemoia entrecasteauxii",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "tussock-skink": {
+    "scientific": "Pseudemoia pagenstecheri",
+    "taxonId": 37747,
+    "taxonName": "Pseudemoia pagenstecheri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "glossy-grass-skink": {
+    "scientific": "Pseudemoia rawlinsoni",
+    "taxonId": 37746,
+    "taxonName": "Pseudemoia rawlinsoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "spencers-skink": {
+    "scientific": "Pseudemoia spenceri",
+    "taxonId": 37745,
+    "taxonName": "Pseudemoia spenceri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "fine-browed-dwarf-skink": {
+    "scientific": "Pygmaeascincus koshlandae",
+    "taxonId": 540156,
+    "taxonName": "Pygmaeascincus koshlandae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "magnetic-island-dwarf-skink": {
+    "scientific": "Pygmaeascincus sadlieri",
+    "taxonId": 540157,
+    "taxonName": "Pygmaeascincus sadlieri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "dwarf-litter-skink": {
+    "scientific": "Pygmaeascincus timlowi",
+    "taxonId": 540158,
+    "taxonName": "Pygmaeascincus timlowi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "three-toed-skink": {
+    "scientific": "Saiphos equalis",
+    "taxonId": 37725,
+    "taxonName": "Saiphos equalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pale-lipped-shadeskink": {
+    "scientific": "Saproscincus basiliscus",
+    "taxonId": 37722,
+    "taxonName": "Saproscincus basiliscus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-tailed-shadeskink": {
+    "scientific": "Saproscincus challengeri",
+    "taxonId": 37723,
+    "taxonName": "Saproscincus challengeri",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "wedge-snouted-shadeskink": {
+    "scientific": "Saproscincus czechurai",
+    "taxonId": 37718,
+    "taxonName": "Saproscincus czechurai",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "eungella-shadeskink": {
+    "scientific": "Saproscincus eungellensis",
+    "taxonId": 112043,
+    "taxonName": "Saproscincus eungellensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "hannahs-shadeskink": {
+    "scientific": "Saproscincus hannahae",
+    "taxonId": 37719,
+    "taxonName": "Saproscincus hannahae",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "lewiss-shadeskink": {
+    "scientific": "Saproscincus lewisi",
+    "taxonId": 37720,
+    "taxonName": "Saproscincus lewisi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "weasel-skink": {
+    "scientific": "Saproscincus mustelinus",
+    "taxonId": 37721,
+    "taxonName": "Saproscincus mustelinus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "heath-shadeskink": {
+    "scientific": "Saproscincus oriarus",
+    "taxonId": 37715,
+    "taxonName": "Saproscincus oriarus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "roses-shadeskink": {
+    "scientific": "Saproscincus rosei",
+    "taxonId": 37716,
+    "taxonName": "Saproscincus rosei",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-melville-shadeskink": {
+    "scientific": "Saproscincus saltus",
+    "taxonId": 540187,
+    "taxonName": "Saproscincus saltus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "gully-shadeskink": {
+    "scientific": "Saproscincus spectabilis",
+    "taxonId": 37717,
+    "taxonName": "Saproscincus spectabilis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "four-fingered-shadeskink": {
+    "scientific": "Saproscincus tetradactylus",
+    "taxonId": 37714,
+    "taxonName": "Saproscincus tetradactylus",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "cape-york-worm-skink": {
+    "scientific": "Sepsiscus pluto",
+    "taxonId": 1664747,
+    "taxonName": "Suppressascincus pluto",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "blue-spectacled-forest-skink": {
+    "scientific": "Silvascincus murrayi",
+    "taxonId": 540197,
+    "taxonName": "Silvascincus murrayi",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "border-ranges-forest-skink": {
+    "scientific": "Silvascincus tryoni",
+    "taxonId": 540198,
+    "taxonName": "Silvascincus tryoni",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "bartle-frere-cool-skink": {
+    "scientific": "Techmarscincus jigurru",
+    "taxonId": 318764,
+    "taxonName": "Techmarscincus jigurru",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "pygmy-blue-tongue-lizard": {
+    "scientific": "Tiliqua adelaidensis",
+    "taxonId": 37472,
+    "taxonName": "Tiliqua adelaidensis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "centralian-blue-tongue": {
+    "scientific": "Tiliqua multifasciata",
+    "taxonId": 37467,
+    "taxonName": "Tiliqua multifasciata",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "western-blue-tongue": {
+    "scientific": "Tiliqua occipitalis",
+    "taxonId": 37465,
+    "taxonName": "Tiliqua occipitalis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
+  },
+  "orange-speckled-forest-skink": {
+    "scientific": "Tumbunascincus luteilateralis",
+    "taxonId": 540273,
+    "taxonName": "Tumbunascincus luteilateralis",
+    "rank": "species",
+    "via": "scientific",
+    "resolvedAt": "2026-11-07"
   }
 }

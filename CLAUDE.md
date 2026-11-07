@@ -45,7 +45,7 @@ Work in small commits, one stage per pull request. Never push to `main` directly
 - TAS is always red/unavailable for non-TAS native species.
 - Monitors need a 50–60°C basking surface (see D8 for the two exceptions) — feature it prominently on monitor pages.
 - NSW licences take 90+ days to process — warn clearly on the Licencing screen.
-- Wood Roaches are the primary feeder roach; Dubias appear only comparatively in the Feeder Guide. BSFL are sold as Calci-worms in Australia.
+- Wood Roaches are the primary feeder roach. **Dubia roaches are illegal in Australia** (not on the federal Live Import List; DCCEEW seizure June 2026) — never recommend them as a feeder; the Feeder Guide carries a warning instead. BSFL are sold as Calci-worms in Australia.
 - Australian English throughout (colour, licence/license as noun/verb, enclosure, etc.).
 
 ## Supabase
@@ -54,4 +54,4 @@ Projects created from 30 Oct 2026 onward don't expose new `public` tables to the
 
 ## Shopify
 
-Store: allthingsreptile.com.au (`all-things-reptile-2`). Never publish a theme, never write to the live theme, never touch the PUC store. Theme edits go in custom-prefixed files only; never edit stock Pursuit files.
+Store: allthingsreptile.com.au (`all-things-reptile-2`, `w1xh0a-xk.myshopify.com`). Unattended jobs write to Shopify only through the ATR Data Sync app credentials (`SHOPIFY_ATR_STORE`, `SHOPIFY_ATR_CLIENT_ID`, `SHOPIFY_ATR_CLIENT_SECRET`, set in the ATR cloud environment), never through the shared Shopify connector. Before any write, query `shop { myshopifyDomain }` and stop if it isn't `w1xh0a-xk.myshopify.com`. Never publish a theme, never write to the live theme, never touch the PUC store. Theme edits go in custom-prefixed files only; never edit stock Pursuit files.

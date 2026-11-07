@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { C } from "../../constants/colours";
 import InsectCard from "../../components/InsectCard";
+import WarnBox from "../../components/WarnBox";
 
 // ─── Feeder Guide page ────────────────────────────────────────────
 const FeederGuidePage = ({ onBack }) => {
@@ -55,17 +56,7 @@ const FeederGuidePage = ({ onBack }) => {
             tagColor={C.green}
           />
 
-          <InsectCard
-            name="Dubia Roaches"
-            protein="Very high (~23%)"
-            fat="Low (~7%)"
-            calcium="Poor — dust every feed"
-            availability="⭐⭐⭐ Increasingly available Australia-wide (now legal)"
-            best="Bearded Dragons, large geckos, monitors. Excellent staple."
-            notes="Nutritionally superior to most other feeders — high protein, low fat, easy to digest due to low chitin content. Less active than Woodies so less stimulating for hunting. Cannot climb smooth surfaces — easier to contain. Previously thought illegal in Australia but now confirmed legal and becoming more widely available."
-            tag="Nutritional Gold Standard"
-            tagColor="#1a3a5c"
-          />
+          <WarnBox type="red" title="Dubia roaches are illegal in Australia">Dubia roaches (Blaptica dubia) aren't on the federal Live Import List, so keeping, breeding or selling them is illegal in every state and territory. Federal authorities seized over 100,000 exotic cockroaches from a NSW breeder in June 2026 and warned keepers to switch to legal feeders. Use Wood Roaches instead — they fill the same role.</WarnBox>
 
           <InsectCard
             name="Crickets"
@@ -128,13 +119,13 @@ const FeederGuidePage = ({ onBack }) => {
           />
 
           <InsectCard
-            name="Cockroach Nymphs (Baby Woodies or Dubias)"
+            name="Cockroach Nymphs (Baby Woodies)"
             protein="High"
             fat="Low"
             calcium="Poor — dust every feed"
             availability="⭐⭐⭐⭐ From roach colony keepers"
             best="Hatchling and juvenile reptiles. Small geckos and frogs."
-            notes="Baby roaches (nymphs) are one of the best feeders for hatchling reptiles — small, soft-bodied, nutritious, and very active. If you keep a Woody or Dubia colony you will have a constant supply of nymphs. Far superior to pinhead crickets for very small animals."
+            notes="Baby roaches (nymphs) are one of the best feeders for hatchling reptiles — small, soft-bodied, nutritious, and very active. If you keep a Woody colony you will have a constant supply of nymphs. Far superior to pinhead crickets for very small animals."
             tag="Best for Hatchlings"
             tagColor={C.green}
           />

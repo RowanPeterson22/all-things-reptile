@@ -17,12 +17,14 @@
 //                      the cookie cleared) otherwise, so a deactivated tester is
 //                      locked out at their next app load. 503 if not set up.
 //
-// `traits` is the draft morph list for the feedback form; it's only sent to
-// testers so the public bundle never carries it. Never log codes or cookies.
+// `traits` is the morph list for the feedback form, { [index slug]: [{ id, name }] },
+// from the morph store (Supabase, edited in /admin → Morphs; cached ~60 s).
+// It's only sent to testers so the public bundle never carries it, and the
+// visual cues stay server-side. Never log codes or cookies.
 
 const { requireTester, CODE_RE } = require("../lib/beta");
 const { supabaseConfig, findActiveTester, SupabaseError } = require("../lib/supabase");
-const { MORPHS } = require("../lib/morphs");
+const { getMorphs } = require("../lib/morphStore");
 const { makeRateLimiter, clientIp } = require("../lib/rateLimit");
 const gate = require("../lib/gate");
 const { holdingPage, HOLDING_HEADERS } = require("../lib/holdingPage");
@@ -32,9 +34,9 @@ const { effectiveSections, firstSectionPath, PUBLIC_SECTIONS } = require("../lib
 const checkLimited = makeRateLimiter({ windowMs: 60 * 1000, max: 10 });
 const bootstrapLimited = makeRateLimiter({ windowMs: 60 * 1000, max: 10 });
 
-// species slug → [{ id, name }] (visual cues stay server-side)
-const TRAITS_BY_SPECIES = Object.fromEntries(
-  Object.entries(MORPHS).map(([slug, list]) => [slug, list.map(t => ({ id: t.id, name: t.name }))])
+// index slug → [{ id, name }] (visual cues stay server-side)
+const traitsBySpecies = (snap) => Object.fromEntries(
+  Object.entries(snap.bySpecies).map(([slug, list]) => [slug, list.map(t => ({ id: t.id, name: t.name }))])
 );
 
 const holdingReply = (res, notice, cookies = []) => {
@@ -105,12 +107,12 @@ module.exports = async (req, res) => {
     return res.status(result.status).json(result.body);
   }
   const t = result.tester;
-  const access = await accessCookie(t, mode);
+  const [access, morphs] = await Promise.all([accessCookie(t, mode), getMorphs({ cfg: result.cfg })]);
   if (access) res.setHeader("Set-Cookie", [access]);
   return res.status(200).json({
     ok: true,
     name: t.name,
-    traits: TRAITS_BY_SPECIES,
+    traits: traitsBySpecies(morphs),
     sections: effectiveSections(t, { isPublic: mode.isPublic }),
     isAdmin: t.isAdmin === true,
     gated: mode.gated,

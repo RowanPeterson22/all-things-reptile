@@ -9,8 +9,8 @@ import { useSessionState } from "../beta/idSession";
 // "Was this right?" → verdict, correct species, traits, notes, and an opt-in
 // (default off, per photo) to save the photo for ATR's reference library.
 // The species picker searches every native species in the index, which it
-// loads lazily. traitsBySpecies (keyed by app slug) comes from /api/beta-check,
-// so the draft morph list never ships in the public bundle.
+// loads lazily. traitsBySpecies (keyed by index slug) comes from /api/beta-check,
+// so the morph list never ships in the public bundle.
 //
 // The species is sent as an index slug (e.g. "jacky-dragon"); only "Other"
 // sends free text.
@@ -57,9 +57,9 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
   // A send interrupted by leaving the screen didn't finish; let them send again.
   useEffect(() => { if (status === "sending") setStatus("idle"); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Morphs are keyed by app slug, so only the 46 app species can have them.
-  const appSlug = species && species !== OTHER && picked ? picked.appSlug : null;
-  const traitOptions = useMemo(() => (appSlug && traitsBySpecies[appSlug]) || [], [traitsBySpecies, appSlug]);
+  // Morphs are keyed by index slug, so any species can have them.
+  const slug = species && species !== OTHER ? species : null;
+  const traitOptions = useMemo(() => (slug && traitsBySpecies[slug]) || [], [traitsBySpecies, slug]);
 
   const suggested = (result && result.suggestions) || [];
   const chooseSpecies = (value, pick) => {
@@ -69,7 +69,7 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
       if (pick && pick.otherName) setOtherName(pick.otherName);
     } else setPicked(pick || null);
     // Keep only traits that exist for the new species.
-    const allowed = new Set(((pick && pick.appSlug && traitsBySpecies[pick.appSlug]) || []).map(t => t.id));
+    const allowed = new Set(((value && value !== OTHER && traitsBySpecies[value]) || []).map(t => t.id));
     setTraits(ts => ts.filter(t => allowed.has(t)));
   };
   const toggleTrait = (id) => setTraits(ts => (ts.includes(id) ? ts.filter(t => t !== id) : [...ts, id]));

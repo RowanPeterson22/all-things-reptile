@@ -4,6 +4,7 @@
 // (checked against beta_testers in the atr Supabase project); 403 otherwise.
 // Env: ANTHROPIC_API_KEY (ANTHROPIC_MODEL optional), SUPABASE_URL, SUPABASE_SECRET_KEY.
 // The photo is passed to the Anthropic API and never stored or logged here.
+// The trait list comes from the morph store (lib/morphStore.js, cached ~60 s).
 
 const { identify } = require("../lib/identify");
 const { requireTester } = require("../lib/beta");
@@ -34,6 +35,7 @@ module.exports = async (req, res) => {
   const { status, body: out } = await identify(body, {
     apiKey: process.env.ANTHROPIC_API_KEY,
     model: process.env.ANTHROPIC_MODEL,
+    cfg: gate.cfg,
   });
   return res.status(status).json(out);
 };

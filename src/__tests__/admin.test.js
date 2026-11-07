@@ -68,6 +68,7 @@ const fresh = () => ({
   ],
   objects: { "id-photos": { [`${TESTER_ID}/p1.jpg`]: jpeg(1000, 750), [`${TESTER_ID}/p2.jpg`]: jpeg() }, "reference-photos": { "central-bearded-dragon/inaturalist-123.jpg": jpeg() } },
   settings: { default_sections: ["id"] },
+  morphs: require("../../lib/morphs").seedRows(),
   failNext: null, // e.g. "PATCH reference_photos"
 });
 
@@ -141,6 +142,13 @@ const fakeImpl = async (url, init = {}) => {
       return res(200, rows);
     }
   }
+  if (table === "morphs" && method === "GET") {
+    let rows = db.morphs.morphs;
+    const ids = q.get("id");
+    if (ids && ids.startsWith("in.(")) { const list = ids.slice(4, -1).split(",").map(decodeURIComponent); rows = rows.filter(r => list.includes(r.id)); }
+    return res(200, rows);
+  }
+  if (table === "species_morphs" && method === "GET") return res(200, db.morphs.links);
   if (table === "rpc/admin_photo_counts") return res(200, [{ species_slug: "central-bearded-dragon", active: 1, hidden: 0, rejected: 0, best: 1 }]);
 
   // Storage
@@ -187,6 +195,7 @@ const calls = (pred) => fakeFetch.mock.calls.filter(([u, i = {}]) => pred(new UR
 
 const saved = { url: process.env.SUPABASE_URL, key: process.env.SUPABASE_SECRET_KEY, fetch: global.fetch };
 beforeEach(() => {
+  require("../../lib/morphStore").clearMorphCache();
   db = fresh();
   fakeFetch = jest.fn(fakeImpl);
   process.env.SUPABASE_URL = URL_;
@@ -261,7 +270,9 @@ describe("admin gate", () => {
     const r = await call(speciesHandler);
     expect(r.body.species.length).toBeGreaterThan(1300);
     expect(r.body.counts["central-bearded-dragon"]).toEqual({ active: 1, hidden: 0, rejected: 0, best: 1 });
-    expect(r.body.morphs["central-bearded-dragon"].length).toBeGreaterThan(0);
+    const translucent = r.body.morphs.find(m => m.id === "translucent");
+    expect(translucent.species.map(x => x.slug)).toContain("central-bearded-dragon");
+    expect(r.body.morphSource).toBe("db");
     const counts = await call(speciesHandler, { query: { only: "counts" } });
     expect(Object.keys(counts.body)).toEqual(["counts"]);
   });

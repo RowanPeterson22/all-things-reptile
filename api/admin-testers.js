@@ -1,8 +1,9 @@
 // ─── /api/admin-testers ───────────────────────────────────────────
 // Admin only. Beta testers. Invite codes are never listed or logged.
-//   GET                                     list
-//   POST  { name, group }                   create; the invite link is in this response only
-//   PATCH { id, active?, is_admin? }        (de)activate, grant/remove admin
+//   GET                                     list, plus section options and defaultSections
+//   POST  { name, group, sections? }        create; the invite link is in this response only
+//   PATCH { id, active?, is_admin?, sections? }   (de)activate, grant/remove admin, set sections
+//   PATCH { defaultSections }               the sections new invites get
 
 const { adminRoute } = require("../lib/admin");
 const { listTesters, createTester, updateTester } = require("../lib/adminTesters");

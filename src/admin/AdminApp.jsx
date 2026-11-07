@@ -29,7 +29,22 @@ const navStyle = ({ isActive }) => ({
   textDecoration: "none", padding: "8px 2px 10px", borderBottom: `2px solid ${isActive ? "white" : "transparent"}`, whiteSpace: "nowrap",
 });
 
-const AdminApp = ({ inviteCode, adminId, adminName, onForbidden }) => {
+// Gated or public, as the server reports it (api/admin-check). Shown on every
+// admin screen so nobody forgets which state the live site is in.
+export const GateBanner = ({ gate }) => {
+  const known = Boolean(gate);
+  const isPublic = known && gate.public;
+  const noSecret = known && !gate.public && !gate.secretSet;
+  const bg = !known ? N.wash : isPublic ? C.redPale : noSecret ? C.goldLight : C.greenPale;
+  const fg = !known ? N.muted : isPublic ? C.red : noSecret ? C.gold : C.green;
+  const text = !known ? "Couldn't read the site's gate status from the server."
+    : isPublic ? "Site is PUBLIC: ATR_PUBLIC=true, anyone can open the app."
+    : noSecret ? "Site is GATED, but ATR_GATE_SECRET isn't set: everyone, testers included, gets the holding page."
+    : "Site is GATED: only invited testers get past the holding page.";
+  return <div role="status" data-testid="gate-banner" style={{ background: bg, color: fg, fontSize: 12, fontWeight: 700, padding: "8px 16px", textAlign: "center" }}>{text}</div>;
+};
+
+const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
   const navigate = useNavigate();
   // A ref keeps the client stable across renders, so screens don't reload when the parent re-renders.
   const forbiddenRef = useRef(onForbidden);
@@ -70,6 +85,7 @@ const AdminApp = ({ inviteCode, adminId, adminName, onForbidden }) => {
         </nav>
       </div>
 
+      <GateBanner gate={gate} />
       {err && <div style={{ padding: 16, color: C.red, fontSize: 13 }}>{err}</div>}
       {!shared && !err && <div style={{ padding: 16, color: N.muted, fontSize: 13 }}>Loading the species index…</div>}
       {shared && (

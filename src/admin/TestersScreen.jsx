@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import WarnBox from "../components/WarnBox";
+import { C } from "../constants/colours";
 import { N, page, btn, smallBtn, chip, badge, card, input, label, hint, errorText, fmtDate } from "./ui";
 
 const GROUPS = ["VHS", "breeder", "other"];
@@ -28,7 +29,7 @@ const InviteBox = ({ link, onDone }) => {
   );
   return (
     <div style={{ ...card, padding: 14, marginBottom: 16 }}>
-      <WarnBox type="gold" title="Copy this invite now">It's shown only once. Send it only to this tester: it unlocks AI ID on any device they open it on.</WarnBox>
+      <WarnBox type="gold" title="Copy this invite now">It's shown only once. Send it only to this tester: it opens their sections of the app on any device they open it on.</WarnBox>
       {row(link, "main", "Invite link")}
       {previewLink && row(previewLink, "preview", "Same invite on this preview site")}
       {copied === "fail" && <div style={errorText}>Couldn't copy. Select the text and copy it by hand.</div>}
@@ -36,6 +37,26 @@ const InviteBox = ({ link, onDone }) => {
     </div>
   );
 };
+
+// ─── Section tick-boxes ───────────────────────────────────────────
+// options: [{ key, label }] from the server (src/constants/sections.json).
+// Each tick saves straight away; the server re-checks admin and the keys.
+const SectionBoxes = ({ options, value, onChange, disabled, idPrefix }) => (
+  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 14px" }}>
+    {options.map(o => {
+      const on = value.includes(o.key);
+      const id = `${idPrefix}-${o.key}`;
+      return (
+        <label key={o.key} htmlFor={id} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: N.ink, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.6 : 1 }}>
+          <input id={id} type="checkbox" checked={on} disabled={disabled}
+            onChange={() => onChange(on ? value.filter(k => k !== o.key) : [...value, o.key])}
+            style={{ width: 16, height: 16, accentColor: C.green, margin: 0 }} />
+          {o.label}
+        </label>
+      );
+    })}
+  </div>
+);
 
 // ─── Beta testers ─────────────────────────────────────────────────
 const TestersScreen = ({ api, adminId }) => {
@@ -48,11 +69,26 @@ const TestersScreen = ({ api, adminId }) => {
   const [invite, setInvite] = useState("");
   const [busyId, setBusyId] = useState("");
   const [rowErr, setRowErr] = useState({});
+  const [options, setOptions] = useState([]);
+  const [defaults, setDefaults] = useState(null);
+  const [defaultsBusy, setDefaultsBusy] = useState(false);
+  const [defaultsErr, setDefaultsErr] = useState("");
 
   const load = useCallback(async () => {
     setErr("");
-    try { setTesters((await api("admin-testers")).testers); } catch (e) { setErr(e.message); setTesters([]); }
+    try {
+      const d = await api("admin-testers");
+      setTesters(d.testers);
+      setOptions(Array.isArray(d.sections) ? d.sections : []);
+      setDefaults(Array.isArray(d.defaultSections) ? d.defaultSections : ["id"]);
+    } catch (e) { setErr(e.message); setTesters([]); }
   }, [api]);
+
+  const saveDefaults = async (list) => {
+    setDefaultsBusy(true); setDefaultsErr("");
+    try { setDefaults((await api("admin-testers", { method: "PATCH", body: { defaultSections: list } })).defaultSections); }
+    catch (e) { setDefaultsErr(e.message); } finally { setDefaultsBusy(false); }
+  };
   useEffect(() => { load(); }, [load]);
 
   const create = async () => {
@@ -93,6 +129,15 @@ const TestersScreen = ({ api, adminId }) => {
         </div>
       )}
 
+      {defaults && options.length > 0 && (
+        <div style={{ ...card, padding: 14, marginBottom: 16 }}>
+          <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 4 }}>Sections for new invites</div>
+          <div style={{ ...hint, marginTop: 0, marginBottom: 10 }}>What a new tester can open before launch. Change any tester below at any time.</div>
+          <SectionBoxes options={options} value={defaults} onChange={saveDefaults} disabled={defaultsBusy} idPrefix="adm-default" />
+          {defaultsErr && <div style={errorText}>{defaultsErr}</div>}
+        </div>
+      )}
+
       {err && <div style={errorText}>{err}</div>}
       {testers === null && <div style={{ fontSize: 13, color: N.muted }}>Loading…</div>}
       <div style={card}>
@@ -108,6 +153,13 @@ const TestersScreen = ({ api, adminId }) => {
                 {t.is_admin && <span style={badge("gold")}>admin</span>}
               </div>
               <div style={{ fontSize: 11, color: N.muted, margin: "2px 0 8px" }}>Created {fmtDate(t.created_at)}</div>
+              {options.length > 0 && (
+                <div style={{ marginBottom: 10 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: N.muted, marginBottom: 4 }}>Sections{t.is_admin ? ": admins see everything" : ""}</div>
+                  <SectionBoxes options={options} value={t.is_admin ? options.map(o => o.key) : (t.sections || [])} disabled={busy || t.is_admin}
+                    onChange={(list) => update(t.id, { sections: list })} idPrefix={`adm-${t.id}`} />
+                </div>
+              )}
               <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                 {t.active
                   ? <button type="button" disabled={busy || self} onClick={() => update(t.id, { active: false })} style={smallBtn("danger", busy || self)}>Deactivate</button>

@@ -8,7 +8,8 @@ import { BETA_HEADER, isCodeShape } from "./betaAccess";
 // the beta gate, this decides what the UI shows; every api/admin-* route
 // re-checks the code on the server.
 
-// → { ok: true, id, name } | { ok: false }
+// → { ok: true, id, name, gate } | { ok: false }. gate: { public, gated, secretSet }
+// from the server, for the /admin banner.
 export const checkAdmin = async (code, fetchImpl) => {
   const doFetch = fetchImpl || (typeof fetch === "function" ? fetch : null);
   if (!doFetch || !isCodeShape(code)) return { ok: false };
@@ -21,7 +22,9 @@ export const checkAdmin = async (code, fetchImpl) => {
     if (!res.ok) return { ok: false };
     const data = await res.json().catch(() => null);
     if (!data || data.ok !== true) return { ok: false };
-    return { ok: true, id: String(data.id || ""), name: typeof data.name === "string" ? data.name : "" };
+    const g = data.gate && typeof data.gate === "object" ? data.gate : null;
+    const gate = g ? { public: g.public === true, gated: g.gated !== false, secretSet: g.secretSet === true } : null;
+    return { ok: true, id: String(data.id || ""), name: typeof data.name === "string" ? data.name : "", gate };
   } catch (e) {
     return { ok: false };
   }
@@ -29,16 +32,16 @@ export const checkAdmin = async (code, fetchImpl) => {
 
 // status: "idle" (not asked) | "checking" | "ok" | "denied"
 export const useAdminAccess = (code, enabled) => {
-  const [state, setState] = useState({ status: "idle", code: "", id: "", name: "" });
+  const [state, setState] = useState({ status: "idle", code: "", id: "", name: "", gate: null });
 
   useEffect(() => {
     if (!enabled || !code) return undefined;
     if (state.code === code && state.status === "ok") return undefined;
     let live = true;
-    setState({ status: "checking", code, id: "", name: "" });
+    setState({ status: "checking", code, id: "", name: "", gate: null });
     checkAdmin(code).then(r => {
       if (!live) return;
-      setState(r.ok ? { status: "ok", code, id: r.id, name: r.name } : { status: "denied", code, id: "", name: "" });
+      setState(r.ok ? { status: "ok", code, id: r.id, name: r.name, gate: r.gate } : { status: "denied", code, id: "", name: "", gate: null });
     });
     return () => { live = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps

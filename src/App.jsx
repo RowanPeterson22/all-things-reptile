@@ -208,7 +208,7 @@ export function AppShell() {
   const denyAdmin = admin.deny;
   const leaveAdmin = useCallback(() => { denyAdmin(); navigate("/", { replace: true }); }, [denyAdmin, navigate]);
   const adminElement = betaOk && admin.status === "ok"
-    ? <Suspense fallback={<AdminWait />}><AdminApp inviteCode={beta.code} adminId={admin.id} adminName={admin.name} onForbidden={leaveAdmin} /></Suspense>
+    ? <Suspense fallback={<AdminWait />}><AdminApp inviteCode={beta.code} adminId={admin.id} adminName={admin.name} gate={admin.gate} onForbidden={leaveAdmin} /></Suspense>
     : beta.status === "checking" || (betaOk && (admin.status === "checking" || admin.status === "idle")) ? <AdminWait /> : <Navigate to="/" replace />;
 
   // A detail page is any route that isn't one of the tab screens.

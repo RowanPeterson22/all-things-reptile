@@ -29,13 +29,21 @@ export const normaliseGroup = (g) => {
   return hit;
 };
 
+// The sections new invites get (admin → Testers → "Sections for new invites").
+export const defaultSections = async (cfg, fetchImpl) => {
+  const rows = await rest(cfg, "beta_settings?select=default_sections&id=is.true&limit=1", {}, fetchImpl).catch(() => null);
+  const v = Array.isArray(rows) && rows[0] && Array.isArray(rows[0].default_sections) ? rows[0].default_sections : null;
+  return v || ["id"];
+};
+
 export const createTester = async (cfg, name, group, fetchImpl) => {
   const clean = String(name || "").trim();
   if (!clean || clean.length > 200) throw new Error("Give the tester's name (1–200 characters).");
+  const sections = await defaultSections(cfg, fetchImpl);
   const rows = await rest(cfg, "beta_testers", {
     method: "POST",
     headers: { "Content-Type": "application/json", Prefer: "return=representation" },
-    body: JSON.stringify({ name: clean, group: normaliseGroup(group), invite_code: newInviteCode(), active: true }),
+    body: JSON.stringify({ name: clean, group: normaliseGroup(group), sections, invite_code: newInviteCode(), active: true }),
   }, fetchImpl);
   return rows[0];
 };
@@ -45,8 +53,8 @@ const main = async (argv) => {
   const [cmd, ...rest_] = argv;
 
   if (cmd === "--list") {
-    const rows = await rest(cfg, "beta_testers?select=id,name,group,active,created_at&order=created_at.asc");
-    for (const r of rows) console.log(`${r.active ? "active  " : "inactive"}  ${r.group.padEnd(7)}  ${r.id}  ${r.name}`);
+    const rows = await rest(cfg, "beta_testers?select=id,name,group,active,is_admin,sections,created_at&order=created_at.asc");
+    for (const r of rows) console.log(`${r.active ? "active  " : "inactive"}  ${r.group.padEnd(7)}  ${r.id}  ${r.name}  [${r.is_admin ? "admin: all" : (r.sections || []).join(", ")}]`);
     console.log(`${rows.length} tester(s).`);
     return;
   }
@@ -74,8 +82,9 @@ const main = async (argv) => {
   const t = await createTester(cfg, cmd, rest_[0]);
   console.log(`Tester:  ${t.name} (${t.group})`);
   console.log(`Id:      ${t.id}`);
+  console.log(`Sections: ${(t.sections || []).join(", ") || "none"} (change them in /admin → Testers)`);
   console.log(`Invite:  ${inviteLink(t.invite_code)}`);
-  console.log("Send this link only to them. It unlocks AI ID on any device they open it on.");
+  console.log("Send this link only to them. It opens their sections of the app on any device they open it on.");
 };
 
 if (import.meta.url === pathToFileURL(process.argv[1] || "").href) {

@@ -13,15 +13,17 @@ const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
 const num = (v, d) => (typeof v === "number" && Number.isFinite(v) ? v : d);
 const round4 = (v) => Math.round(v * 10000) / 10000;
 
-export const maxCropWidth = (imgAspect) => Math.min(1, HERO_ASPECT / imgAspect);
-export const minCropWidth = (imgAspect) => Math.min(MIN_CROP_W, maxCropWidth(imgAspect));
-export const heightFor = (w, imgAspect) => (w * imgAspect) / HERO_ASPECT;
+// Every helper takes the frame's aspect last (2.4 : 1 unless said otherwise),
+// so the same maths serves the hero, category banners and Browse cards.
+export const maxCropWidth = (imgAspect, aspect = HERO_ASPECT) => Math.min(1, aspect / imgAspect);
+export const minCropWidth = (imgAspect, aspect = HERO_ASPECT) => Math.min(MIN_CROP_W, maxCropWidth(imgAspect, aspect));
+export const heightFor = (w, imgAspect, aspect = HERO_ASPECT) => (w * imgAspect) / aspect;
 
 // Any { x, y, w } → a valid 2.4 : 1 crop inside the image: w clamped to
 // [min, max], h from the aspect, x/y kept inside.
-export const fitCrop = (crop, imgAspect) => {
-  const w = clamp(num(crop && crop.w, maxCropWidth(imgAspect)), minCropWidth(imgAspect), maxCropWidth(imgAspect));
-  const h = Math.min(1, heightFor(w, imgAspect));
+export const fitCrop = (crop, imgAspect, aspect = HERO_ASPECT) => {
+  const w = clamp(num(crop && crop.w, maxCropWidth(imgAspect, aspect)), minCropWidth(imgAspect, aspect), maxCropWidth(imgAspect, aspect));
+  const h = Math.min(1, heightFor(w, imgAspect, aspect));
   const x = clamp(num(crop && crop.x, (1 - w) / 2), 0, 1 - w);
   const y = clamp(num(crop && crop.y, (1 - h) / 2), 0, 1 - h);
   return { x: round4(x), y: round4(y), w: round4(w), h: round4(h) };
@@ -29,35 +31,39 @@ export const fitCrop = (crop, imgAspect) => {
 
 // The widest 2.4 : 1 crop, centred on the focus point (then clamped): the
 // fallback when Rowan hasn't chosen a crop.
-export const defaultCrop = (imgAspect, focal) => {
-  const w = maxCropWidth(imgAspect);
-  const h = Math.min(1, heightFor(w, imgAspect));
+export const defaultCrop = (imgAspect, focal, aspect = HERO_ASPECT) => {
+  const w = maxCropWidth(imgAspect, aspect);
+  const h = Math.min(1, heightFor(w, imgAspect, aspect));
   const fx = clamp(num(focal && focal.x, 0.5), 0, 1);
   const fy = clamp(num(focal && focal.y, 0.5), 0, 1);
-  return fitCrop({ x: fx - w / 2, y: fy - h / 2, w }, imgAspect);
+  return fitCrop({ x: fx - w / 2, y: fy - h / 2, w }, imgAspect, aspect);
 };
 
 // Move by (dx, dy) in image fractions, staying inside.
-export const moveCrop = (crop, dx, dy, imgAspect) => fitCrop({ ...crop, x: crop.x + dx, y: crop.y + dy }, imgAspect);
+export const moveCrop = (crop, dx, dy, imgAspect, aspect = HERO_ASPECT) => fitCrop({ ...crop, x: crop.x + dx, y: crop.y + dy }, imgAspect, aspect);
 
 // Resize to width w about the crop's centre, staying inside.
-export const zoomCrop = (crop, w, imgAspect) => {
+export const zoomCrop = (crop, w, imgAspect, aspect = HERO_ASPECT) => {
   const cx = crop.x + crop.w / 2;
   const cy = crop.y + crop.h / 2;
-  const nw = clamp(w, minCropWidth(imgAspect), maxCropWidth(imgAspect));
-  const nh = Math.min(1, heightFor(nw, imgAspect));
-  return fitCrop({ x: cx - nw / 2, y: cy - nh / 2, w: nw }, imgAspect);
+  const nw = clamp(w, minCropWidth(imgAspect, aspect), maxCropWidth(imgAspect, aspect));
+  const nh = Math.min(1, heightFor(nw, imgAspect, aspect));
+  return fitCrop({ x: cx - nw / 2, y: cy - nh / 2, w: nw }, imgAspect, aspect);
 };
 
 // The crop to show for a public photo: the stored one, else centred on the
 // focus point. Needs the image's size; null when it isn't known.
-export const heroCropFor = (photo) => {
+export const heroCropFor = (photo) => cropFor(photo, photo && photo.heroCrop, HERO_ASPECT);
+
+// The same for any frame: the stored crop fitted to the frame's aspect, else
+// the widest one centred on the focus point.
+export const cropFor = (photo, stored, aspect = HERO_ASPECT) => {
   if (!photo || !(photo.width > 0) || !(photo.height > 0)) return null;
-  const aspect = photo.width / photo.height;
-  return photo.heroCrop ? fitCrop(photo.heroCrop, aspect) : defaultCrop(aspect, photo.focal);
+  const imgAspect = photo.width / photo.height;
+  return stored ? fitCrop(stored, imgAspect, aspect) : defaultCrop(imgAspect, photo.focal, aspect);
 };
 
-// Crop rect → the <img> style inside a 2.4 : 1 box with overflow hidden.
+// Crop rect → the <img> style inside a box of the crop's aspect with overflow hidden.
 // Percentages of the box, so it holds at any banner width.
 export const heroImageStyle = (crop) => {
   const pct = (v) => `${Math.round(v * 10000) / 100}%`;

@@ -4,9 +4,15 @@ import { SPECIES } from "../data/species";
 import { CATEGORIES } from "../data/categories";
 import LevelBadge from "../components/LevelBadge";
 import BackButton from "../components/BackButton";
+import { usePublicPhotos } from "../components/SpeciesGallery";
+import { CreditedImage } from "../components/PhotoCredit";
 
 const BrowseScreen = ({ onSpecies }) => {
   const [category, setCategory] = useState(null);
+  // Each species' first chosen photo replaces its emoji on the cards.
+  const allPhotos = usePublicPhotos(null, { all: !!category }); // only once a category is open
+  const firstPhoto = {};
+  allPhotos.forEach(p => { if (p.species && !firstPhoto[p.species]) firstPhoto[p.species] = p; });
 
   if (category) {
     const catSpecies = SPECIES.filter(s => s.type === category);
@@ -27,7 +33,12 @@ const BrowseScreen = ({ onSpecies }) => {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
             {catSpecies.map(sp => (
               <div key={sp.id} onClick={() => sp.page && onSpecies(sp.page)} style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", cursor: sp.page ? "pointer" : "default", opacity: sp.page ? 1 : 0.8 }}>
-                <div style={{ height: 80, background: sp.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36 }}>{sp.emoji}</div>
+                {firstPhoto[sp.slug] ? (
+                  <CreditedImage src={firstPhoto[sp.slug].url} alt={sp.name} credit={firstPhoto[sp.slug].credit} focal={firstPhoto[sp.slug].focal}
+                    style={{ height: 96, background: sp.bg }} />
+                ) : (
+                  <div style={{ height: 96, background: sp.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36 }}>{sp.emoji}</div>
+                )}
                 <div style={{ padding: "8px 10px 10px" }}>
                   <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 2 }}>{sp.name}</div>
                   <div style={{ fontSize: 11, color: "#888", marginBottom: 6, textTransform: "capitalize" }}>{sp.type}</div>

@@ -40,8 +40,9 @@ export const usePublicPhotos = (species, { all = false, fetchImpl } = {}) => {
   return photos;
 };
 
-const SpeciesGallery = ({ species, fetchImpl }) => {
-  const photos = usePublicPhotos(species, { fetchImpl });
+// skip: how many leading photos are already shown elsewhere (the page hero).
+const SpeciesGallery = ({ species, fetchImpl, skip = 0 }) => {
+  const photos = usePublicPhotos(species, { fetchImpl }).slice(skip);
   if (!photos.length) return null;
   const single = photos.length === 1;
   return (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CreditedImage } from "./PhotoCredit";
+import ScrollRow from "./ScrollRow";
 
 // ─── Species photo gallery ────────────────────────────────────────
 // The photos Rowan chose in /admin for this species, from the public, read-only
@@ -44,13 +45,13 @@ const SpeciesGallery = ({ species, fetchImpl }) => {
   if (!photos.length) return null;
   const single = photos.length === 1;
   return (
-    <div data-testid="species-gallery" aria-label="Photos" role="region"
+    <ScrollRow data-testid="species-gallery" aria-label="Photos" role="region" label="Photos"
       style={{ display: "flex", gap: 8, overflowX: "auto", scrollSnapType: "x mandatory", margin: "0 -18px 14px", padding: "0 18px", scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}>
       {photos.map(p => (
         <CreditedImage key={p.id} src={p.url} alt={p.alt} credit={p.credit} width={p.width} height={p.height} focal={p.focal}
           style={{ flex: single ? "1 0 100%" : "0 0 82%", maxWidth: single ? "100%" : 360, aspectRatio: "4 / 3", scrollSnapAlign: "start", borderRadius: 12, overflow: "hidden", background: "#f0f0ec" }} />
       ))}
-    </div>
+    </ScrollRow>
   );
 };
 

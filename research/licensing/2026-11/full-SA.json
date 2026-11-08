@@ -1,0 +1,1685 @@
+[
+  {
+    "group": "gecko",
+    "common": "Bynoe's gecko",
+    "latin": "Heteronotia binoei",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "gecko",
+    "common": "Common barking gecko",
+    "latin": "Underwoodisaurus milii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt. Thick-tailed Gecko."
+  },
+  {
+    "group": "gecko",
+    "common": "Marbled gecko",
+    "latin": "Christinus marmoratus",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "gecko",
+    "common": "Western tree dtella",
+    "latin": "Gehyra variegata",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Central bearded dragon",
+    "latin": "Pogona vitticeps",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Adelaide snake-eye",
+    "latin": "Morethia adelaidensis",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Bougainville's skink",
+    "latin": "Lerista bougainvillii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Common snake-eye",
+    "latin": "Morethia boulengeri",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Delicate skink",
+    "latin": "Lampropholis delicata",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Dwarf skink",
+    "latin": "Menetia greyii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern bluetongue",
+    "latin": "Tiliqua scincoides",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt. Species level, no subspecies named. Read as covering T. s. intermedia (Northern Blue-tongue); confirm."
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern tree skink",
+    "latin": "Egernia striolata",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern water skink",
+    "latin": "Eulamprus quoyii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Four-toed earless skink",
+    "latin": "Hemiergis peronii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Garden skink",
+    "latin": "Lampropholis guichenoti",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Mallee snake-eye",
+    "latin": "Morethia obscura",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Myall slider",
+    "latin": "Lerista edwardsae",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Sandplain ctenotus",
+    "latin": "Ctenotus schomburgkii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Sleepy lizard",
+    "latin": "Tiliqua rugosa",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt. Shingleback."
+  },
+  {
+    "group": "lizard",
+    "common": "Southern robust slider",
+    "latin": "Lerista picturata",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Spotted slider",
+    "latin": "Lerista punctatovittata",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "Three-toed earless skink",
+    "latin": "Hemiergis decresiensis",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "lizard",
+    "common": "White's skink",
+    "latin": "Liopholis whitii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "turtle",
+    "common": "Eastern long-necked tortoise",
+    "latin": "Chelodina longicollis",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt."
+  },
+  {
+    "group": "turtle",
+    "common": "Macquarie River turtle",
+    "latin": "Emydura macquarii macquarii",
+    "tier": "No permit needed",
+    "official_tier": "Exempt",
+    "venomous": false,
+    "notes": "Must be captive-bred before you acquire it; keep the receipt. Nominate subspecies only. E. m. krefftii is Basic; other forms are unlisted, so Specialist."
+  },
+  {
+    "group": "lizard",
+    "common": "Black-collared dragon",
+    "latin": "Ctenophorus clayi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Central netted dragon",
+    "latin": "Ctenophorus nuchalis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Crested dragon",
+    "latin": "Ctenophorus cristatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Downs bearded dragon",
+    "latin": "Pogona henrylawsoni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Pygmy Bearded Dragon."
+  },
+  {
+    "group": "lizard",
+    "common": "Dwarf bearded dragon",
+    "latin": "Pogona minor minor",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern bearded dragon",
+    "latin": "Pogona barbata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eyrean earless dragon",
+    "latin": "Tympanocryptis tetraporophora",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eyre Peninsula dragon",
+    "latin": "Ctenophorus fionni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Gilbert's dragon",
+    "latin": "Lophognathus gilberti",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Jacky lizard",
+    "latin": "Amphibolurus muricatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Kimberley bearded dragon",
+    "latin": "Pogona microlepidota",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Lined earless dragon",
+    "latin": "Tympanocryptis lineata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Long-nosed dragon",
+    "latin": "Gowidon longirostris",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Mallee dragon",
+    "latin": "Ctenophorus fordi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Military dragon",
+    "latin": "Ctenophorus isolepis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Mountain dragon",
+    "latin": "Rankinia diemensis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Nobbi dragon",
+    "latin": "Diporiphora nobbi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "North-west bearded dragon",
+    "latin": "Pogona minor mitchelli",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Ornate dragon",
+    "latin": "Ctenophorus ornatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Painted dragon",
+    "latin": "Ctenophorus pictus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Red-barred dragon",
+    "latin": "Ctenophorus vadnappa",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Ring-tailed dragon",
+    "latin": "Ctenophorus caudicinctus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Southern angle-headed dragon",
+    "latin": "Lophosaurus spinipes",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Tawny dragon",
+    "latin": "Ctenophorus decresii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Water dragon",
+    "latin": "Intellagama lesueurii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Western bearded dragon",
+    "latin": "Pogona minor minima",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Western netted dragon",
+    "latin": "Ctenophorus reticulatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Common scaly-foot",
+    "latin": "Pygopus lepidopodus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern hooded scaly-foot",
+    "latin": "Pygopus schraderi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Excitable delma",
+    "latin": "Delma tincta",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Gulfs delma",
+    "latin": "Delma molleri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Patternless delma",
+    "latin": "Delma inornata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Western hooded scaly-foot",
+    "latin": "Pygopus nigriceps",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Black rock skink",
+    "latin": "Egernia saxatilis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Blacksoil skink",
+    "latin": "Proablepharus kinghorni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Blotched bluetongue",
+    "latin": "Tiliqua nigrolutea",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Broad-banded sandswimmer",
+    "latin": "Eremiascincus richardsonii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Bull skink",
+    "latin": "Liopholis multiscutata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Centralian bluetongue",
+    "latin": "Tiliqua multifasciata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Centralian Ranges rock-skink",
+    "latin": "Liopholis margaretae",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Common desert ctenotus",
+    "latin": "Ctenotus leonhardii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Copper-tailed skink",
+    "latin": "Ctenotus taeniolatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Cunningham's skink",
+    "latin": "Egernia cunninghami",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Dampier Land limbless slider",
+    "latin": "Lerista apoda",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Dark barsided skink",
+    "latin": "Concinnia martini",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Desert skink",
+    "latin": "Liopholis inornata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern crevice skink",
+    "latin": "Egernia mcpheei",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern desert ctenotus",
+    "latin": "Ctenotus regius",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern striped skink",
+    "latin": "Ctenotus spaldingi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Eastern three-lined skink",
+    "latin": "Acritoscincus duperreyi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Gidgee skink",
+    "latin": "Egernia stokesii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Goldfields crevice-skink",
+    "latin": "Egernia formosa",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Hosmer's skink",
+    "latin": "Egernia hosmeri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "King's skink",
+    "latin": "Egernia kingii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Land mullet",
+    "latin": "Bellatorias major",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Lined soil-crevice skink",
+    "latin": "Notoscincus butleri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Mainland she-oak skink",
+    "latin": "Cyclodomorphus michaeli",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Major skink",
+    "latin": "Bellatorias frerei",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Murray's skink",
+    "latin": "Silvascincus murrayi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Narrow-banded sandswimmer",
+    "latin": "Eremiascincus fasciolatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Marked '(revised)' on the list."
+  },
+  {
+    "group": "lizard",
+    "common": "Night skink",
+    "latin": "Liopholis striata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Northern bar-lipped skink",
+    "latin": "Eremiascincus isolepis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Pink-tongued lizard",
+    "latin": "Cyclodomorphus gerrardii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Pin-striped ctenotus",
+    "latin": "Ctenotus ariadnae",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Pygmy spiny-tailed skink",
+    "latin": "Egernia depressa",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Robust rainbow-skink",
+    "latin": "Carlia schmeltzii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Sandhill ctenotus",
+    "latin": "Ctenotus brooksi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Southern four-toed slider",
+    "latin": "Lerista dorsalis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Southern three-toed slider",
+    "latin": "Lerista terdigitata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Southern water skink",
+    "latin": "Eulamprus tympanum",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Speckled wall skink",
+    "latin": "Cryptoblepharus pannosus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Striped wall skink",
+    "latin": "Cryptoblepharus pulcher",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Taper-tailed west-coast slider",
+    "latin": "Lerista humphriesi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Three-toed skink",
+    "latin": "Saiphos equalis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Western bluetongue",
+    "latin": "Tiliqua occipitalis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Western earless skink",
+    "latin": "Hemiergis initialis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Banded knob-tail",
+    "latin": "Nephrurus wheeleri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Banded velvet gecko",
+    "latin": "Oedura cincta",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Formerly treated as part of Oedura marmorata (Central Australian populations)."
+  },
+  {
+    "group": "gecko",
+    "common": "Beaded gecko",
+    "latin": "Lucasium damaeum",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Centralian knob-tailed gecko",
+    "latin": "Nephrurus amyae",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Common knob-tailed gecko",
+    "latin": "Nephrurus levis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Dotted velvet gecko",
+    "latin": "Oedura gemmata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Eastern stone gecko",
+    "latin": "Diplodactylus vittatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Marked '(revised)' on the list."
+  },
+  {
+    "group": "gecko",
+    "common": "Fringe-toed velvet gecko",
+    "latin": "Oedura filicipoda",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Gibber gecko",
+    "latin": "Lucasium byrnei",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Golden-tailed gecko",
+    "latin": "Strophurus taenicauda",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Helmeted gecko",
+    "latin": "Diplodactylus galeatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Jewelled gecko",
+    "latin": "Strophurus elderi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Lesueur's velvet gecko",
+    "latin": "Amalosia lesueurii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Map gecko",
+    "latin": "Lucasium steindachneri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Northern giant cave gecko",
+    "latin": "Pseudothecadactylus lindneri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Northern knob-tailed gecko",
+    "latin": "Nephrurus sheai",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Northern spiny-tailed gecko",
+    "latin": "Strophurus ciliaris",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Northern spotted velvet gecko",
+    "latin": "Oedura coggeri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Northern velvet gecko",
+    "latin": "Oedura castelnaui",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Ocellated velvet gecko",
+    "latin": "Oedura monilis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Pale knob-tailed gecko",
+    "latin": "Nephrurus laevissimus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Phasmid striped gecko",
+    "latin": "Strophurus taeniatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Ring-tailed gecko",
+    "latin": "Cyrtodactylus tuberculatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Robust tree dtella",
+    "latin": "Gehyra purpurascens",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Robust velvet gecko",
+    "latin": "Nebulifera robusta",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Rough knob-tail",
+    "latin": "Nephrurus asper",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Rough-throated leaf-tailed gecko",
+    "latin": "Saltuarius salebrosus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Sandplain gecko",
+    "latin": "Lucasium stenodactylum",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Short-tailed dtella",
+    "latin": "Gehyra baliola",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Southern spiny-tailed gecko",
+    "latin": "Strophurus intermedius",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Southern spotted velvet gecko",
+    "latin": "Oedura tryoni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Starred knob-tailed gecko",
+    "latin": "Nephrurus stellatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Western spiny-tailed gecko",
+    "latin": "Strophurus strophurus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Wheat-belt stone gecko",
+    "latin": "Diplodactylus granariensis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Marked '(revised)' on the list."
+  },
+  {
+    "group": "monitor",
+    "common": "Black-headed monitor",
+    "latin": "Varanus tristis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Black-palmed monitor",
+    "latin": "Varanus glebopalma",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Black-spotted spiny-tailed monitor",
+    "latin": "Varanus baritji",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Desert pygmy goanna",
+    "latin": "Varanus eremius",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Gould's goanna",
+    "latin": "Varanus gouldii gouldii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Kimberley rock monitor",
+    "latin": "Varanus glauerti",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Long-tailed rock monitor",
+    "latin": "Varanus kingorum",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Mangrove monitor",
+    "latin": "Varanus indicus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Mertens' water monitor",
+    "latin": "Varanus mertensi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Mitchell's water monitor",
+    "latin": "Varanus mitchelli",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Northern ridge-tailed monitor",
+    "latin": "Varanus primordius",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Pilbara Mulga monitor",
+    "latin": "Varanus bushi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Pilbara rock monitor",
+    "latin": "Varanus pilbarensis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Pygmy Mulga goanna",
+    "latin": "Varanus gilleni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Ridge-tailed monitor",
+    "latin": "Varanus acanthurus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Ackie Monitor."
+  },
+  {
+    "group": "monitor",
+    "common": "Rusty monitor",
+    "latin": "Varanus semiremex",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Sand monitor (arid subspecies)",
+    "latin": "Varanus gouldii flavirufus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Short-tailed pygmy goanna",
+    "latin": "Varanus brevicauda",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Spencer's monitor",
+    "latin": "Varanus spenceri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Spotted tree monitor",
+    "latin": "Varanus scalaris",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Storr's monitor",
+    "latin": "Varanus storri",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Stripe-tailed monitor",
+    "latin": "Varanus caudolineatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Black-headed python",
+    "latin": "Aspidites melanocephalus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Brown tree snake",
+    "latin": "Boiga irregularis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": true,
+    "notes": "Rear-fanged colubrid with mild venom; DEW lists it as Basic, not with the venomous elapids."
+  },
+  {
+    "group": "snake",
+    "common": "Carpet python",
+    "latin": "Morelia spilota",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Species level, no subspecies named. Read as covering Diamond, Jungle and other carpet subspecies; confirm with the Fauna Permit Unit."
+  },
+  {
+    "group": "snake",
+    "common": "Centralian carpet python",
+    "latin": "Morelia bredli",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Bredli Python."
+  },
+  {
+    "group": "snake",
+    "common": "Childrens python",
+    "latin": "Antaresia childreni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Common (green) tree snake",
+    "latin": "Dendrelaphis punctulatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Keelback snake",
+    "latin": "Tropidonophis mairii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Northern tree snake",
+    "latin": "Dendrelaphis calligastra",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Olive python",
+    "latin": "Liasis olivaceus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Rough-scaled python",
+    "latin": "Morelia carinata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Slaty-grey snake",
+    "latin": "Stegonotus cucullatus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Spotted python",
+    "latin": "Antaresia maculosa",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Stimson's python",
+    "latin": "Antaresia stimsoni",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Water python",
+    "latin": "Liasis fuscus",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Woma",
+    "latin": "Aspidites ramsayi",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Broadshelled tortoise",
+    "latin": "Chelodina expansa",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Jardine River turtle",
+    "latin": "Emydura subglobosa",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Krefft's River turtle",
+    "latin": "Emydura macquarii krefftii",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Northern snake-necked turtle",
+    "latin": "Chelodina oblonga",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Name-use caveat: this name has been applied to both the northern snake-necked turtle (now often C. rugosa) and the south-western oblong turtle; list also carries C. colliei separately."
+  },
+  {
+    "group": "turtle",
+    "common": "Northern snapping turtle",
+    "latin": "Elseya dentata",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Northern yellow-faced turtle",
+    "latin": "Emydura tanybaraga",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "North-west red-faced turtle",
+    "latin": "Emydura victoriae",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Oblong turtle",
+    "latin": "Chelodina colliei",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Saw-shelled turtle",
+    "latin": "Wollumbinia latisternum",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "Current name Myuchelys latisternum."
+  },
+  {
+    "group": "frog",
+    "common": "Southern bell frog",
+    "latin": "Litoria raniformis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "SA protects this amphibian because it is listed as threatened."
+  },
+  {
+    "group": "frog",
+    "common": "Smooth frog",
+    "latin": "Geocrinia laevis",
+    "tier": "Basic permit (one animal permit-free)",
+    "official_tier": "Basic (Sch 6)",
+    "venomous": false,
+    "notes": "SA protects this amphibian because it is listed as threatened."
+  },
+  {
+    "group": "rule",
+    "common": "Any other reptile indigenous to Australia",
+    "latin": "",
+    "tier": "Specialist permit",
+    "official_tier": "Specialist (Class 3)",
+    "venomous": false,
+    "notes": "SA protects all reptiles indigenous to Australia, not only SA natives. Any protected animal missing from the Unprotected/Exempt/Basic list is Specialist: it always needs a permit, plus proof of skills and facilities (~8 weeks). DEW publishes no Specialist list. Examples: Lace Monitor, all venomous elapids, Green Tree Python, Amethystine Python, Pygmy Python, Frilled-neck Lizard, Phyllurus leaf-tails. Exotic (non-Australian) reptiles are a Biosecurity SA matter, not covered here."
+  },
+  {
+    "group": "rule",
+    "common": "Venomous snakes",
+    "latin": "",
+    "tier": "Specialist permit",
+    "official_tier": "Specialist + DEW Keeping venomous snakes policy",
+    "venomous": true,
+    "notes": "Venomous snakes are Specialist. They also fall under DEW's separate keeping-venomous-snakes policy (https://cdn.environment.sa.gov.au/environment/docs/keeping-venomous-snakes-policy-gen.pdf, not reviewed in detail)."
+  },
+  {
+    "group": "rule",
+    "common": "Frogs other than Southern bell frog and Smooth frog",
+    "latin": "",
+    "tier": "No permit needed",
+    "official_tier": "Not protected (amphibian not listed as threatened)",
+    "venomous": false,
+    "notes": "SA protects amphibians only when listed as threatened, so other frogs need no SA keeping permit. Animals bought interstate may need the source state's export permit. Biosecurity or disease rules may still apply."
+  },
+  {
+    "group": "rule",
+    "common": "Crocodiles",
+    "latin": "Crocodylus porosus, C. johnstoni",
+    "tier": "Specialist permit",
+    "official_tier": "Specialist (unlisted reptile)",
+    "venomous": false,
+    "notes": "No crocodile is on any SA list. As reptiles indigenous to Australia they default to Specialist; in practice approval is unlikely for private keepers. Confirm with the Fauna Permit Unit."
+  }
+]

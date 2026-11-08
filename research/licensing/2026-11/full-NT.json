@@ -1,0 +1,281 @@
+[
+ {
+  "group": "lizard",
+  "common": "Central Bearded Dragon",
+  "latin": "Pogona vitticeps",
+  "tier": "No permit needed",
+  "official_tier": "Exempt species (no permit to keep)",
+  "venomous": false,
+  "notes": "Must be lawfully sourced.  Source: NT Govt, Animals that do not need a permit (https://nt.gov.au/environment/animals/wildlife-permits/animals-that-do-not-need-a-permit)"
+ },
+ {
+  "group": "lizard",
+  "common": "Central Netted Dragon",
+  "latin": "Ctenophorus nuchalis",
+  "tier": "No permit needed",
+  "official_tier": "Exempt species (no permit to keep)",
+  "venomous": false,
+  "notes": "Must be lawfully sourced.  Source: NT Govt, Animals that do not need a permit (https://nt.gov.au/environment/animals/wildlife-permits/animals-that-do-not-need-a-permit)"
+ },
+ {
+  "group": "lizard",
+  "common": "Centralian Blue-tongued Lizard",
+  "latin": "Tiliqua multifasciata",
+  "tier": "No permit needed",
+  "official_tier": "Exempt species (no permit to keep)",
+  "venomous": false,
+  "notes": "Must be lawfully sourced.  Source: NT Govt, Animals that do not need a permit (https://nt.gov.au/environment/animals/wildlife-permits/animals-that-do-not-need-a-permit)"
+ },
+ {
+  "group": "lizard",
+  "common": "Common Blue-tongued Lizard",
+  "latin": "Tiliqua scincoides",
+  "tier": "No permit needed",
+  "official_tier": "Exempt species (no permit to keep)",
+  "venomous": false,
+  "notes": "Must be lawfully sourced. Listed at species level (misspelt 'scinoides' on the page). The NT-native form is T. s. intermedia (Northern Blue-tongue). It's unclear whether the exemption covers the interstate Eastern Blue-tongue (T. s. scincoides), which also needs an import permit; confirm with PWCNT. Source: NT Govt, Animals that do not need a permit (https://nt.gov.au/environment/animals/wildlife-permits/animals-that-do-not-need-a-permit)"
+ },
+ {
+  "group": "snake",
+  "common": "Children's Python",
+  "latin": "Antaresia childreni",
+  "tier": "No permit needed",
+  "official_tier": "Exempt species (no permit to keep)",
+  "venomous": false,
+  "notes": "Must be lawfully sourced.  Source: NT Govt, Animals that do not need a permit (https://nt.gov.au/environment/animals/wildlife-permits/animals-that-do-not-need-a-permit)"
+ },
+ {
+  "group": "turtle",
+  "common": "Northern Long-necked Turtle",
+  "latin": "Chelodina rugosa",
+  "tier": "No permit needed",
+  "official_tier": "Exempt species (no permit to keep)",
+  "venomous": false,
+  "notes": "Must be lawfully sourced. The exempt-list page uses this binomial. Current taxonomy often treats it as C. oblonga. It's the only turtle that doesn't need a keeping permit. Source: NT Govt, Animals that do not need a permit (https://nt.gov.au/environment/animals/wildlife-permits/animals-that-do-not-need-a-permit)"
+ },
+ {
+  "group": "snake",
+  "common": "Brown Tree Snake",
+  "latin": "Boiga irregularis",
+  "tier": "Venomous permit (mildly dangerous)",
+  "official_tier": "Category 1 - Mildly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. Holder 18+ (14-17 may be a nominee on a parent's permit); no experience needed. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Bockadam",
+  "latin": "Cerberus australis",
+  "tier": "Venomous permit (mildly dangerous)",
+  "official_tier": "Category 1 - Mildly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. Holder 18+ (14-17 may be a nominee on a parent's permit); no experience needed. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Macleay's Water Snake",
+  "latin": "Enhydris polylepis",
+  "tier": "Venomous permit (mildly dangerous)",
+  "official_tier": "Category 1 - Mildly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. Holder 18+ (14-17 may be a nominee on a parent's permit); no experience needed. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Yellow-faced Whip Snake",
+  "latin": "Demansia psammophis",
+  "tier": "Venomous permit (mildly dangerous)",
+  "official_tier": "Category 1 - Mildly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. Holder 18+ (14-17 may be a nominee on a parent's permit); no experience needed. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Northern Small-eyed Snake",
+  "latin": "Rhinoplocephalus pallidiceps",
+  "tier": "Venomous permit (mildly dangerous)",
+  "official_tier": "Category 1 - Mildly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. Holder 18+ (14-17 may be a nominee on a parent's permit); no experience needed. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Little Spotted Snake",
+  "latin": "Suta punctata",
+  "tier": "Venomous permit (dangerous)",
+  "official_tier": "Category 2 - Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 2/3 permit-holder references; 12 months venomous/Cat 1 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Myall or Curl Snake",
+  "latin": "Suta suta",
+  "tier": "Venomous permit (dangerous)",
+  "official_tier": "Category 2 - Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 2/3 permit-holder references; 12 months venomous/Cat 1 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Olive Whip Snake",
+  "latin": "Demansia olivacea",
+  "tier": "Venomous permit (dangerous)",
+  "official_tier": "Category 2 - Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 2/3 permit-holder references; 12 months venomous/Cat 1 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Black Whip Snake",
+  "latin": "Demansia atra",
+  "tier": "Venomous permit (dangerous)",
+  "official_tier": "Category 2 - Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 2/3 permit-holder references; 12 months venomous/Cat 1 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Papuan Whip Snake",
+  "latin": "Demansia papuensis",
+  "tier": "Venomous permit (dangerous)",
+  "official_tier": "Category 2 - Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 2/3 permit-holder references; 12 months venomous/Cat 1 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Red-bellied Black Snake",
+  "latin": "Pseudechis porphyriacus",
+  "tier": "Venomous permit (dangerous)",
+  "official_tier": "Category 2 - Dangerous Venomous keep permit (Prohibited)",
+  "venomous": true,
+  "notes": "NT list status: Prohibited. 18+; training course or two Cat 2/3 permit-holder references; 12 months venomous/Cat 1 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Not native to the NT (prohibited entrant): also needs an import permit, assessed case by case. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Southern Death Adder",
+  "latin": "Acanthophis antarcticus",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Northern Death Adder",
+  "latin": "Acanthophis praelongus",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Desert Death Adder",
+  "latin": "Acanthophis pyrrhus",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Inland Taipan (Fierce Snake)",
+  "latin": "Oxyuranus microlepidotus",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Coastal Taipan",
+  "latin": "Oxyuranus scutellatus",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Mulga Snake (King Brown)",
+  "latin": "Pseudechis australis",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Speckled Brown Snake",
+  "latin": "Pseudonaja guttata",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Western Brown Snake",
+  "latin": "Pseudonaja nuchalis",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Eastern Brown Snake",
+  "latin": "Pseudonaja textilis",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Protected)",
+  "venomous": true,
+  "notes": "NT list status: Protected. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Pilbara Death Adder",
+  "latin": "Acanthophis wellsi",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Prohibited)",
+  "venomous": true,
+  "notes": "NT list status: Prohibited. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Not native to the NT (prohibited entrant): also needs an import permit, assessed case by case. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Collett's Snake",
+  "latin": "Pseudechis colletti",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Prohibited)",
+  "venomous": true,
+  "notes": "NT list status: Prohibited. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Not native to the NT (prohibited entrant): also needs an import permit, assessed case by case. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "snake",
+  "common": "Spotted (Blue-bellied) Black Snake",
+  "latin": "Pseudechis guttatus",
+  "tier": "Venomous permit (highly dangerous)",
+  "official_tier": "Category 3 - Highly Dangerous Venomous keep permit (Prohibited)",
+  "venomous": true,
+  "notes": "NT list status: Prohibited. 18+; training course or two Cat 3 permit-holder references; 12 months Cat 2/3 experience; snakebite first aid certificate. Property inspection; council/other approvals may apply. Not native to the NT (prohibited entrant): also needs an import permit, assessed case by case. Source: Guidelines for Keeping Venomous Snakes in the NT, v1 Feb 2013 (https://environment.nt.gov.au/__data/assets/pdf_file/0007/255076/guidelines_venomous_snakes.pdf); category pages under https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/"
+ },
+ {
+  "group": "crocodile",
+  "common": "Crocodiles (NT species)",
+  "latin": "Crocodylus spp.",
+  "tier": "Permit required",
+  "official_tier": "Permit to keep protected wildlife",
+  "venomous": false,
+  "notes": "nt.gov.au says you need a permit to keep a crocodile but names no species or conditions. The two NT species are C. johnstoni and C. porosus; check with PWCNT whether both can be kept privately. Source: https://www.nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-crocodiles"
+ },
+ {
+  "group": "rule",
+  "common": "Everything else",
+  "latin": "",
+  "tier": "NT natives: Permit required. Non-NT reptiles: Permit required, case by case. Non-NT frogs and turtles: Not permitted",
+  "official_tier": "Permit to keep protected or prohibited wildlife (TPWC Act 1976 ss 43, 52, 55); prohibited-entrant rules",
+  "venomous": null,
+  "notes": "NT has no published positive list of keepable non-venomous species and no tiered licences. Rules: (a) every native NT reptile/frog not exempt needs a permit to keep protected wildlife, bought from a lawful permitted source, applied for within 7 days of purchase (no frogs are exempt); (b) Australian reptiles not native to the NT are prohibited entrants, which need an import permit plus a keep permit, assessed case by case; (c) frogs not native to the NT are illegal, and turtle imports are never permitted (even NT-origin animals); (d) exotics can't be kept privately (red-eared slider, axolotl specifically banned); (e) venomous snakes not permitted: Austrelaps, Hoplocephalus, Notechis, Tropidechis carinatus, Rhinoplocephalus nigrescens. Sources: https://nt.gov.au/environment/animals/wildlife-permits/keeping-protected-prohibited-wildlife ; https://nt.gov.au/environment/animals/wildlife-permits/prohibited-wildlife ; https://nt.gov.au/environment/animals/keeping-wildlife-as-pets/keeping-snakes/permits-for-venomous-snakes"
+ }
+]

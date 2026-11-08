@@ -1,0 +1,191 @@
+[
+ {
+  "group": "crocodilian",
+  "common": "Alligators, crocodiles and gharials",
+  "latin": "Alligatoridae, Crocodylidae, Gavialidae",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Group entry; covers Saltwater and Freshwater Crocodiles. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "turtle",
+  "common": "Sea turtles",
+  "latin": "Cheloniidae, Dermochelyidae",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Group entry. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "snake",
+  "common": "Sea snakes and sea kraits",
+  "latin": "Hydrophiidae, Laticaudidae",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": true,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Group entry. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "snake",
+  "common": "Venomous snakes (all)",
+  "latin": "Elapidae and other venomous families",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": true,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1 and Animal Welfare (Private Keeping of Native Reptiles) Mandatory Code of Practice 2023 (DI2023-5): venomous snakes not permitted for private keepers. Group entry. Zoos with existing licences and licensed snake relocators (48-hour holding) excepted."
+ },
+ {
+  "group": "turtle",
+  "common": "Collie's Snake-necked Turtle",
+  "latin": "Chelodina colliei",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Also known as Oblong Turtle (C. oblonga in older lists). Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "turtle",
+  "common": "Steindachner's Snake-necked Turtle",
+  "latin": "Chelodina steindachneri",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "turtle",
+  "common": "Saw-shelled Turtle",
+  "latin": "Myuchelys latisternum",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1 lists it as Wollumbinia latisternum (synonym; also Elseya latisternum). Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "gecko",
+  "common": "Tree Dtella",
+  "latin": "Gehyra variegata",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "lizard",
+  "common": "Canberra Grassland Earless Dragon",
+  "latin": "Tympanocryptis lineata",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Threatened ACT endemic. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Water Dragon (non-local nominate subspecies)",
+  "latin": "Intellagama lesueurii lesueurii",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": false,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1: 'non-local subspecies of eastern water dragon'. The local Gippsland Water Dragon (I. l. howittii) is not excluded and can be licensed. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "reptile",
+  "common": "Non-native (exotic) reptiles",
+  "latin": "all non-Australian reptile species",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": null,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Group entry. Exceptions only for rehabilitation organisations, ethics-approved research, zoos and travelling zoos."
+ },
+ {
+  "group": "amphibian",
+  "common": "Exotic amphibians (except Axolotl)",
+  "latin": "all non-Australian amphibians except Ambystoma mexicanum",
+  "tier": "Not permitted",
+  "official_tier": "NI2024-486 s 2.1.1 - licences will not be issued for private keeping",
+  "venomous": null,
+  "notes": "Conservator Guidelines 2024 (NI2024-486) s 2.1.1. Group entry. The Axolotl is the named exception and may be considered for a licence."
+ },
+ {
+  "group": "frog",
+  "common": "Brown-striped Frog",
+  "latin": "Limnodynastes peronii",
+  "tier": "No licence needed",
+  "official_tier": "Exempt animal (tadpoles and juveniles only), DI2026-61",
+  "venomous": false,
+  "notes": "Nature Conservation (Exempt Animals) Declaration 2026 (DI2026-61), per ACT Government 'Keeping or selling animals in the ACT' page. Exempt ONLY as tadpoles and juveniles; adults need a licence. Must be captive-bred - taking from the wild is an offence. Latin name mapped from the common name; the page gives common names only. Same species as the app's Striped Marsh Frog."
+ },
+ {
+  "group": "frog",
+  "common": "Eastern Banjo Frog",
+  "latin": "Limnodynastes dumerilii",
+  "tier": "No licence needed",
+  "official_tier": "Exempt animal (tadpoles and juveniles only), DI2026-61",
+  "venomous": false,
+  "notes": "Nature Conservation (Exempt Animals) Declaration 2026 (DI2026-61), per ACT Government 'Keeping or selling animals in the ACT' page. Exempt ONLY as tadpoles and juveniles; adults need a licence. Must be captive-bred - taking from the wild is an offence. Latin name mapped from the common name; the page gives common names only."
+ },
+ {
+  "group": "frog",
+  "common": "Spotted Grass Frog",
+  "latin": "Limnodynastes tasmaniensis",
+  "tier": "No licence needed",
+  "official_tier": "Exempt animal (tadpoles and juveniles only), DI2026-61",
+  "venomous": false,
+  "notes": "Nature Conservation (Exempt Animals) Declaration 2026 (DI2026-61), per ACT Government 'Keeping or selling animals in the ACT' page. Exempt ONLY as tadpoles and juveniles; adults need a licence. Must be captive-bred - taking from the wild is an offence. Latin name mapped from the common name; the page gives common names only."
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Blue-tongue Skink",
+  "latin": "Tiliqua scincoides",
+  "tier": "Licence needed",
+  "official_tier": "Keep non-exempt animal licence (non-commercial)",
+  "venomous": false,
+  "notes": "Exempt under the 2019 declaration; removed from the exemption by DI2026-61 from 15 May 2026 (named in ES db_74297 and RIS db_74298). Existing keepers must apply. A press report (Region, 21 May 2026) says fees are waived for existing owners who apply by 14 Aug 2026; not in the official docs."
+ },
+ {
+  "group": "lizard",
+  "common": "Blotched Blue-tongue Skink",
+  "latin": "Tiliqua nigrolutea",
+  "tier": "Licence needed",
+  "official_tier": "Keep non-exempt animal licence (non-commercial)",
+  "venomous": false,
+  "notes": "Exempt under the 2019 declaration; removed from the exemption by DI2026-61 from 15 May 2026 (named in ES db_74297 and RIS db_74298). Existing keepers must apply. A press report (Region, 21 May 2026) says fees are waived for existing owners who apply by 14 Aug 2026; not in the official docs."
+ },
+ {
+  "group": "lizard",
+  "common": "Shingleback Lizard",
+  "latin": "Tiliqua rugosa",
+  "tier": "Licence needed",
+  "official_tier": "Keep non-exempt animal licence (non-commercial)",
+  "venomous": false,
+  "notes": "Exempt under the 2019 declaration; removed from the exemption by DI2026-61 from 15 May 2026 (named in ES db_74297 and RIS db_74298). Existing keepers must apply. A press report (Region, 21 May 2026) says fees are waived for existing owners who apply by 14 Aug 2026; not in the official docs."
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Bearded Dragon",
+  "latin": "Pogona barbata",
+  "tier": "Licence needed",
+  "official_tier": "Keep non-exempt animal licence (non-commercial)",
+  "venomous": false,
+  "notes": "Exempt under the 2019 declaration; removed from the exemption by DI2026-61 from 15 May 2026 (named in ES db_74297 and RIS db_74298). Existing keepers must apply. A press report (Region, 21 May 2026) says fees are waived for existing owners who apply by 14 Aug 2026; not in the official docs."
+ },
+ {
+  "group": "turtle",
+  "common": "Eastern Long-necked Turtle",
+  "latin": "Chelodina longicollis",
+  "tier": "Licence needed",
+  "official_tier": "Keep non-exempt animal licence (non-commercial)",
+  "venomous": false,
+  "notes": "Listed as Common Long-necked Tortoise. Exempt under the 2019 declaration; removed from the exemption by DI2026-61 from 15 May 2026 (named in ES db_74297 and RIS db_74298). Existing keepers must apply. A press report (Region, 21 May 2026) says fees are waived for existing owners who apply by 14 Aug 2026; not in the official docs."
+ },
+ {
+  "group": "rule",
+  "common": "All other native reptiles and amphibians",
+  "latin": "-",
+  "tier": "Licence needed (assessed individually)",
+  "official_tier": "Keep non-exempt animal licence (non-commercial)",
+  "venomous": null,
+  "notes": "No positive list. Any native species not named above needs a licence, and the Conservator assesses each application against three criteria (NI2024-486 s 2.1): readily sourced from captive-bred animals; basic welfare needs known and manageable; negligible risk to human safety. For reptiles, the unpublished 'Risk Assessment for the Importation of Native Reptiles into the ACT' also applies. Non-local species also need an import licence. Verify with Access Canberra licensing."
+ }
+]

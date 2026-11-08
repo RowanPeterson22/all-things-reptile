@@ -1,0 +1,470 @@
+[
+  {
+    "group": "frog",
+    "common": "Magnificent tree frog",
+    "latin": "Litoria splendida",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "frog",
+    "common": "Northern green tree frog",
+    "latin": "Litoria caerulea",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Also called Green Tree Frog. Current name Ranoidea caerulea is used by some authorities."
+  },
+  {
+    "group": "frog",
+    "common": "Western green tree frog",
+    "latin": "Litoria moorei",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Also called Motorbike Frog. Some authorities now use Ranoidea moorei."
+  },
+  {
+    "group": "frog",
+    "common": "Western spotted frog",
+    "latin": "Heleioporus albopunctatus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Binoe's gecko",
+    "latin": "Heteronotia binoei",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Banded knob-tailed gecko",
+    "latin": "Nephrurus wheeleri",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Black-headed python",
+    "latin": "Aspidites melanocephalus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Black-tailed monitor",
+    "latin": "Varanus tristus tristus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'tristus' in source; correct spelling Varanus tristis tristis. Also called Black-headed Monitor."
+  },
+  {
+    "group": "lizard",
+    "common": "Bobtail",
+    "latin": "Tiliqua rugosa rugosa",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Shingleback, WA nominate subspecies only."
+  },
+  {
+    "group": "lizard",
+    "common": "Centralian bluetongue",
+    "latin": "Tiliqua multifasciata",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Children's python",
+    "latin": "Antaresia childrenii",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'childrenii' in source; correct spelling Antaresia childreni."
+  },
+  {
+    "group": "lizard",
+    "common": "Frilled lizard",
+    "latin": "Chlamydosaurus kingii",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Green tree snake",
+    "latin": "Dendrelaphis punctulatus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Non-venomous colubrid. The python exclusion in the 2025 review doesn't apply to it."
+  },
+  {
+    "group": "lizard",
+    "common": "King skink",
+    "latin": "Egernia kingie",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'kingie' in source; correct spelling Egernia kingii."
+  },
+  {
+    "group": "lizard",
+    "common": "Long-nosed ta-ta dragon",
+    "latin": "Lophognathus longirostris",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Now generally placed in Gowidon as Gowidon longirostris."
+  },
+  {
+    "group": "lizard",
+    "common": "Northern blue-tongued skink",
+    "latin": "Tiliqua scincoides intermedia",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Northern spiny tailed gecko",
+    "latin": "Strophurus ciliaris",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Northwest carpet python",
+    "latin": "Morelia spilota varigata",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'varigata' in source; correct spelling Morelia spilota variegata."
+  },
+  {
+    "group": "turtle",
+    "common": "North-western red-faced turtle",
+    "latin": "Emydura victoriae",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Oblong tortoise",
+    "latin": "Chelodina oblonga",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Name as listed. After a 2013 nomenclature ruling the south-west WA species is generally called Chelodina colliei; the name C. oblonga now applies to the northern species once called C. rugosa. DBCA almost certainly means the south-west species (common name Oblong Turtle). Confirm with DBCA before naming it in the app."
+  },
+  {
+    "group": "snake",
+    "common": "Pygmy python",
+    "latin": "Antaresia perthensis",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Ridge-tailed monitor",
+    "latin": "Varanus acanthurus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Ackie monitor."
+  },
+  {
+    "group": "monitor",
+    "common": "Short-tailed pygmy monitor",
+    "latin": "Varanus brevicauda",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "South-West crevice egernia",
+    "latin": "Egernia napoliensis",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'napoliensis' in source; correct spelling Egernia napoleonis."
+  },
+  {
+    "group": "gecko",
+    "common": "South-West spiny tailed gecko",
+    "latin": "Strophurus spinigerus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "South-Western carpet python",
+    "latin": "Morelia spilota imbricata",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "turtle",
+    "common": "Steindachner's snake-necked turtle",
+    "latin": "Chelodina steinachneri",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'steinachneri' in source; correct spelling Chelodina steindachneri."
+  },
+  {
+    "group": "snake",
+    "common": "Stimson's python",
+    "latin": "Antaresia stimsoni",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "monitor",
+    "common": "Stripe-tailed pygmy monitor",
+    "latin": "Varanus caudolineatus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Thick-tailed gecko",
+    "latin": "Underwoodisaurus milii",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Three-lined Knob-tailed gecko",
+    "latin": "Nephrurus levis",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Tree dtella",
+    "latin": "Gehrya variegata",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'Gehrya' in source; correct genus Gehyra (Gehyra variegata). WA populations have been revised taxonomically; the listed name covers the variegata group."
+  },
+  {
+    "group": "snake",
+    "common": "Water python",
+    "latin": "Liasis mackloti/Liasis fuscus",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Listed with both names. Also written Liasis mackloti fuscus or Liasis fuscus."
+  },
+  {
+    "group": "lizard",
+    "common": "Western bearded dragon",
+    "latin": "Pogona minor minor",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "lizard",
+    "common": "Western bluetongue",
+    "latin": "Tiliqua occipitalis",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "gecko",
+    "common": "Western marbled velvet gecko",
+    "latin": "Oedura fimbria",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "WA species split from Oedura marmorata."
+  },
+  {
+    "group": "lizard",
+    "common": "Western netted dragon",
+    "latin": "Ctenophorus reticulates",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": "Spelt 'reticulates' in source; correct spelling Ctenophorus reticulatus."
+  },
+  {
+    "group": "snake",
+    "common": "Woma python",
+    "latin": "Aspidites ramsayi",
+    "tier": "Standard licence",
+    "official_tier": "Category B",
+    "venomous": false,
+    "notes": ""
+  },
+  {
+    "group": "snake",
+    "common": "Brown tree snake",
+    "latin": "Boiga irregularis",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Rear-fanged and mildly venomous."
+  },
+  {
+    "group": "snake",
+    "common": "Desert death adder",
+    "latin": "Acanthopis pyrrhus",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Spelt 'Acanthopis' in source; correct genus Acanthophis."
+  },
+  {
+    "group": "snake",
+    "common": "Dugite",
+    "latin": "Pseudonaja affinis affinis",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Highly venomous elapid."
+  },
+  {
+    "group": "monitor",
+    "common": "Gould's monitor",
+    "latin": "Varanus gouldi",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": false,
+    "notes": "Flagged dangerous (size and bite), not a venomous snake. Spelt 'gouldi' in source; usually Varanus gouldii. Also called Sand Monitor."
+  },
+  {
+    "group": "snake",
+    "common": "Gwardar",
+    "latin": "Pseudonaja nuchalis",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Western brown snake; WA populations are now often treated as Pseudonaja mengdeni."
+  },
+  {
+    "group": "snake",
+    "common": "Mulga snake",
+    "latin": "Pseudechis australis",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. King brown snake."
+  },
+  {
+    "group": "snake",
+    "common": "Olive python",
+    "latin": "Liasis olivaceus",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": false,
+    "notes": "Flagged dangerous because of its size; non-venomous."
+  },
+  {
+    "group": "snake",
+    "common": "Pilbara death adder",
+    "latin": "Acanthopis wellsi",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Spelt 'Acanthopis' in source; correct genus Acanthophis."
+  },
+  {
+    "group": "snake",
+    "common": "Rough scaled python",
+    "latin": "Morelia carinata",
+    "tier": "Advanced licence",
+    "official_tier": "Category C",
+    "venomous": false,
+    "notes": "Not flagged dangerous."
+  },
+  {
+    "group": "snake",
+    "common": "Southern death adder",
+    "latin": "Acanthopis antarcticus",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Spelt 'Acanthopis' in source; correct genus Acanthophis (Common Death Adder)."
+  },
+  {
+    "group": "monitor",
+    "common": "Southern heath monitor",
+    "latin": "Varanus rosenbergi",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": false,
+    "notes": "Flagged dangerous; not venomous in the snake sense. Also called Rosenberg's or Heath Monitor."
+  },
+  {
+    "group": "snake",
+    "common": "Spotted mulga snake",
+    "latin": "Pseudechis butleri",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Butler's mulga snake."
+  },
+  {
+    "group": "snake",
+    "common": "Tiger snake",
+    "latin": "Notechis scutatus",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. WA populations are the western tiger snake (formerly N. s. occidentalis)."
+  },
+  {
+    "group": "snake",
+    "common": "Yellow-faced whip snake",
+    "latin": "Demansia psammophis",
+    "tier": "Advanced licence",
+    "official_tier": "Category C (* dangerous)",
+    "venomous": true,
+    "notes": "Flagged dangerous. Venomous elapid; WA populations sometimes split as Demansia reticulata."
+  }
+]

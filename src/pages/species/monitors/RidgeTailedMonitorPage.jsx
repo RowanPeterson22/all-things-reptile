@@ -13,7 +13,7 @@ import SnakeShedding from "../../../components/SnakeShedding";
 // ─── Black-spotted Ridge-tailed Monitor page ────────────────────────────────────
 const RidgeTailedMonitorPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Black-spotted Ridge-tailed Monitor" latin="Varanus baritji" emoji="🦎"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["NT/WA endemic", C.redPale, C.red]]}
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Native to the NT", C.bluePale, C.blue]]}
     tabs={["overview","feeding","health","handling","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>

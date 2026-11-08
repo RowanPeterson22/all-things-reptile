@@ -12,7 +12,7 @@ import SpeciesPage from "../../../components/SpeciesPage";
 // ─── Saw-shelled Turtle page ──────────────────────────────────────
 const SawShellTurtlePage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Saw-shelled Turtle" latin="Myuchelys latisternum" emoji="🐢"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["QLD/NSW only", C.redPale, C.red]]}
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Native to QLD & NSW", C.bluePale, C.blue]]}
     tabs={["overview","feeding","health & setup","handling","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>

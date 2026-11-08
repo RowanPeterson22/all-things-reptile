@@ -104,7 +104,7 @@ const HeroCropEditor = ({ photo, busy, onSave, onCancel }) => {
         <img src={photo.url} alt="" draggable={false}
           onLoad={e => { const { naturalWidth: w, naturalHeight: h } = e.currentTarget; if (w && h) setNat({ w, h }); }}
           style={{ width: "100%", height: "100%", display: "block", pointerEvents: "none" }} />
-        <div data-testid="hero-crop-box" role="slider" tabIndex={0} aria-label="Hero crop position. Arrow keys move it, plus and minus zoom."
+        <div data-testid="hero-crop-box" role="slider" tabIndex={0} aria-label="Hero crop box. Arrow keys move it; plus and minus resize it."
           aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(crop.x * 100)}
           aria-valuetext={`${Math.round(crop.x * 100)}% across, ${Math.round(crop.y * 100)}% down, ${Math.round(crop.w * 100)}% wide`}
           onKeyDown={onKeyDown}

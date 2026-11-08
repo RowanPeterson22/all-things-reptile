@@ -7,9 +7,9 @@ const LegalScreen = () => {
   return (
   <div style={{ flex: 1, overflowY: "auto" }}>
     <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 8px) 18px 0" }}>
-      <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.6)", letterSpacing: "0.07em", marginBottom: 4 }}>LEGAL</div>
+      <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.85)", letterSpacing: "0.07em", marginBottom: 4 }}>LEGAL</div>
       <div style={{ fontSize: 20, fontWeight: 700, color: "white", marginBottom: 8 }}>Reptile Licencing</div>
-      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)", marginBottom: 16, lineHeight: 1.5 }}>Tap any state for full details. All reptiles must be purchased from a licensed breeder — taking them from the wild is illegal almost everywhere.</div>
+      <div style={{ fontSize: 12, color: "rgba(255,255,255,0.9)", marginBottom: 16, lineHeight: 1.5 }}>Tap any state for full details. All reptiles must be purchased from a licensed breeder — taking them from the wild is illegal almost everywhere.</div>
     </div>
 
     <div style={{ padding: "12px 16px" }}>

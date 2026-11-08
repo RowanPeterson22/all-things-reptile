@@ -3,6 +3,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { C } from "../constants/colours";
 import SpeciesGallery from "./SpeciesGallery";
 import ScrollRow from "./ScrollRow";
+import BackButton from "./BackButton";
 
 // ─── Species page shell ───────────────────────────────────────────
 // Back label follows the tab the page was opened from (carried in history state).
@@ -20,7 +21,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
       <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
-        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>{backLabel}</button>
+        <BackButton onClick={onBack} marginBottom={16}>{backLabel}</BackButton>
         <div style={{ textAlign: "center", fontSize: 90, lineHeight: 1, marginBottom: -8 }}>{emoji}</div>
         <div style={{ background: "white", borderRadius: "20px 20px 0 0", padding: "18px 18px 0", margin: "0 -20px" }}>
           <div style={{ fontSize: 20, fontWeight: 700, color: "#111", marginBottom: 2 }}>{name}</div>
@@ -33,7 +34,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
           <SpeciesGallery species={slug} />
           <ScrollRow tone="light" label="Sections" style={{ display: "flex", borderBottom: "0.5px solid #eee", margin: "0 -18px", padding: "0 18px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
             {tabs.map(t => (
-              <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.green}` : "2px solid transparent", color: tab === t ? C.green : "#888", fontSize: 12, fontWeight: 700, padding: "8px 11px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>
+              <button key={t} onClick={() => setTab(t)} aria-pressed={tab === t} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.green}` : "2px solid transparent", color: tab === t ? C.green : "#888", fontSize: 12, fontWeight: 700, padding: "12px 11px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>
             ))}
           </ScrollRow>
         </div>

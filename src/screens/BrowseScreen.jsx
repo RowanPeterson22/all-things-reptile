@@ -3,6 +3,7 @@ import { C } from "../constants/colours";
 import { SPECIES } from "../data/species";
 import { CATEGORIES } from "../data/categories";
 import LevelBadge from "../components/LevelBadge";
+import BackButton from "../components/BackButton";
 
 const BrowseScreen = ({ onSpecies }) => {
   const [category, setCategory] = useState(null);
@@ -13,12 +14,12 @@ const BrowseScreen = ({ onSpecies }) => {
     return (
       <div style={{ flex: 1, overflowY: "auto" }}>
         <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 8px) 18px 0" }}>
-          <button onClick={() => setCategory(null)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 12, fontFamily: "inherit" }}>‹ All categories</button>
+          <BackButton onClick={() => setCategory(null)} marginBottom={12}>‹ All categories</BackButton>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
             <div style={{ fontSize: 36 }}>{cat.emoji}</div>
             <div>
               <div style={{ fontSize: 20, fontWeight: 700, color: "white" }}>{cat.label}</div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.65)" }}>{catSpecies.length} species</div>
+              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.9)" }}>{catSpecies.length} species</div>
             </div>
           </div>
         </div>
@@ -46,9 +47,9 @@ const BrowseScreen = ({ onSpecies }) => {
       <div style={{ background: C.green, borderRadius: 14, padding: 16, marginBottom: 16, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} onClick={() => onSpecies("bluetongue")}>
         <div style={{ fontSize: 40 }}>🦎</div>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Featured species</div>
+          <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.85)", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Featured species</div>
           <div style={{ fontSize: 15, fontWeight: 700, color: "white", marginBottom: 2 }}>Blue-tongue Skink</div>
-          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)" }}>Great beginner reptile ↗</div>
+          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.9)" }}>Great beginner reptile ↗</div>
         </div>
       </div>
       <div style={{ fontSize: 11, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 12 }}>Browse by category</div>
@@ -59,7 +60,7 @@ const BrowseScreen = ({ onSpecies }) => {
             <div style={{ height: 90, background: cat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 42 }}>{cat.emoji}</div>
             <div style={{ padding: "10px 12px 12px" }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 4 }}>{cat.label}</div>
-              <div style={{ fontSize: 10, color: "#888", lineHeight: 1.4, marginBottom: 5 }}>{cat.desc}</div>
+              <div style={{ fontSize: 11, color: "#777", lineHeight: 1.4, marginBottom: 5 }}>{cat.desc}</div>
               <div style={{ fontSize: 10, fontWeight: 700, color: C.green }}>{cat.count} species →</div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { C } from "./constants/colours";
 import SplashScreen from "./components/SplashScreen";
@@ -138,6 +138,13 @@ const PAGE_MAP = {
 // Only entries with a built page are routable (keeps the Browse "has a page" guard).
 const SPECIES_BY_SLUG = Object.fromEntries(SPECIES.filter(s => s.page && PAGE_MAP[s.page]).map(s => [s.slug, s]));
 const GUIDES_BY_SLUG  = Object.fromEntries(CARE_GUIDES.filter(g => g.page && PAGE_MAP[g.page]).map(g => [g.slug, g]));
+// Old IDs and page keys (e.g. /species/blackheadedmonitor) → today's slug (D4),
+// so links made before the hyphenated slugs still land on the right page.
+const legacyMap = (list, table) => Object.fromEntries(list
+  .filter(x => table[x.slug])
+  .flatMap(x => [x.id, x.page].filter(k => k && k !== x.slug).map(k => [k, x.slug])));
+const LEGACY_SPECIES = legacyMap(SPECIES, SPECIES_BY_SLUG);
+const LEGACY_GUIDES  = legacyMap(CARE_GUIDES, GUIDES_BY_SLUG);
 // Legacy page key (PAGE_MAP id) → URL, for screens that still report page keys.
 const URL_FOR_PAGE = {
   ...Object.fromEntries(Object.values(SPECIES_BY_SLUG).map(s => [s.page, `/species/${s.slug}`])),
@@ -172,12 +179,25 @@ const Notice = ({ title, children }) => (
 const SearchPrompt = () => <div style={{ padding: 40, textAlign: "center", fontSize: 13, color: C.muted, fontFamily: FONT }}>Type at least two letters to search.</div>;
 
 // Detail page: renders the species / care guide for :slug, or sends unknown slugs home.
-const DetailRoute = ({ table, onBack, home = "/" }) => {
+const DetailRoute = ({ table, legacy = {}, base, onBack, home = "/" }) => {
   const { slug } = useParams();
   const entry = table[slug];
+  if (!entry && legacy[slug]) return <Navigate to={`${base}/${legacy[slug]}`} replace />;
   if (!entry) return <Navigate to={home} replace />;
   const PageComponent = PAGE_MAP[entry.page];
   return <PageComponent onBack={onBack} />;
+};
+
+// Browser tab / history title for a path: "<page> · All Things Reptile".
+const SITE = "All Things Reptile";
+export const titleFor = (path) => {
+  const [, first, second] = path.split("/");
+  if (first === "species" && second) return SPECIES_BY_SLUG[second] ? `${SPECIES_BY_SLUG[second].name} · ${SITE}` : SITE;
+  if (first === "care" && second) return GUIDES_BY_SLUG[second] ? `${GUIDES_BY_SLUG[second].title} · ${SITE}` : SITE;
+  if (first === "admin") return `Admin · ${SITE}`;
+  if (first === "credits") return `Credits · ${SITE}`;
+  const tab = ALL_TABS.find(t => t.path === `/${first || ""}`);
+  return tab && tab.path !== "/" ? `${tab.label} · ${SITE}` : SITE;
 };
 
 const AdminWait = () => <div style={{ padding: 24, fontSize: 13, color: "#888", fontFamily: "'DM Sans', system-ui, sans-serif" }}>Checking access…</div>;
@@ -188,6 +208,7 @@ export function AppShell() {
   const navigate = useNavigate();
   const pathname = location.pathname.replace(/\/+$/, "") || "/";
   const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
+  useEffect(() => { document.title = titleFor(pathname); }, [pathname]);
   // The admin tool skips the splash; the public app is unchanged.
   const [showSplash, setShowSplash] = useState(() => !isAdminPath);
   const [searchQuery, setSearchQuery] = useState("");
@@ -296,8 +317,8 @@ export function AppShell() {
             <Route path="/id"            element={idElement} />
             <Route path="/glossary"      element={allow(access.glossary, <GlossaryScreen showCredits={access.credits} />)} />
             <Route path="/credits"       element={allow(access.credits, <Suspense fallback={null}><CreditsScreen /></Suspense>)} />
-            <Route path="/species/:slug" element={allow(access.speciesPages, <DetailRoute table={SPECIES_BY_SLUG} onBack={handleBack} home={home} />)} />
-            <Route path="/care/:slug"    element={allow(access.careGuides, <DetailRoute table={GUIDES_BY_SLUG} onBack={handleBack} home={home} />)} />
+            <Route path="/species/:slug" element={allow(access.speciesPages, <DetailRoute table={SPECIES_BY_SLUG} legacy={LEGACY_SPECIES} base="/species" onBack={handleBack} home={home} />)} />
+            <Route path="/care/:slug"    element={allow(access.careGuides, <DetailRoute table={GUIDES_BY_SLUG} legacy={LEGACY_GUIDES} base="/care" onBack={handleBack} home={home} />)} />
             <Route path="*"              element={toHome} />
           </Routes>
         </div>

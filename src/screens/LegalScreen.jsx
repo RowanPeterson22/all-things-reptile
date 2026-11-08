@@ -2,6 +2,9 @@ import { useState } from "react";
 import { C } from "../constants/colours";
 import { STATES } from "../data/states";
 
+// "1300 130 372 (option 4)" → "tel:1300130372". Australian numbers dial as written.
+export const telHref = (phone) => `tel:${String(phone).replace(/\(option.*$/i, "").replace(/[^\d+]/g, "")}`;
+
 const LegalScreen = () => {
   const [expanded, setExpanded] = useState(null);
   return (
@@ -72,14 +75,16 @@ const LegalScreen = () => {
 
                 <div style={{ marginTop: 10, borderRadius: 8, overflow: "hidden", border: `0.5px solid ${s.colour}22` }}>
                   {[
-                    s.phone && ["📞", s.phone],
-                    s.email && ["✉️", s.email],
-                    s.website && ["🌐", s.website],
-                  ].filter(Boolean).map(([icon, val]) => (
-                    <div key={val} style={{ padding: "8px 12px", background: s.pale, borderBottom: `0.5px solid ${s.colour}22`, fontSize: 11, color: s.colour, display: "flex", gap: 8, alignItems: "center" }}>
-                      <span>{icon}</span>
-                      <span style={{ fontWeight: 600 }}>{val}</span>
-                    </div>
+                    s.phone && ["📞", s.phone, telHref(s.phone), `Call ${s.authority || s.name}`],
+                    s.email && ["✉️", s.email, `mailto:${s.email}`, `Email ${s.email}`],
+                    s.website && ["🌐", s.website, `https://${s.website.replace(/^https?:\/\//, "")}`, `Open ${s.website}`],
+                  ].filter(Boolean).map(([icon, val, href, aria]) => (
+                    <a key={val} href={href} aria-label={aria} {...(href.startsWith("https:") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      style={{ padding: "8px 12px", minHeight: 44, boxSizing: "border-box", background: s.pale, borderBottom: `0.5px solid ${s.colour}22`, fontSize: 12, color: s.colour, display: "flex", gap: 8, alignItems: "center", textDecoration: "none" }}>
+                      <span aria-hidden="true">{icon}</span>
+                      <span style={{ fontWeight: 600, flex: 1 }}>{val}</span>
+                      <span aria-hidden="true" style={{ fontSize: 14, opacity: 0.6 }}>›</span>
+                    </a>
                   ))}
                 </div>
 

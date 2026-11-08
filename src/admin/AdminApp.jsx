@@ -28,8 +28,8 @@ const NAV = [
 ];
 
 const navStyle = ({ isActive }) => ({
-  color: isActive ? "white" : "rgba(255,255,255,0.7)", fontWeight: isActive ? 700 : 500, fontSize: 13,
-  textDecoration: "none", padding: "8px 2px 10px", borderBottom: `2px solid ${isActive ? "white" : "transparent"}`, whiteSpace: "nowrap",
+  color: isActive ? "white" : "rgba(255,255,255,0.85)", fontWeight: isActive ? 700 : 500, fontSize: 13,
+  textDecoration: "none", padding: "11px 2px 12px", borderBottom: `2px solid ${isActive ? "white" : "transparent"}`, whiteSpace: "nowrap",
 });
 
 // Gated or public, as the server reports it (api/admin-check). Shown on every
@@ -86,9 +86,9 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
         <div style={{ display: "flex", alignItems: "center", gap: 10, maxWidth: 960, margin: "0 auto" }}>
           <div style={{ flex: 1 }}>
             <div style={{ fontSize: 17, fontWeight: 700, color: "white" }}>ATR Admin</div>
-            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.7)" }}>{adminName ? `Signed in as ${adminName}` : "Private"}</div>
+            <div style={{ fontSize: 11, color: "rgba(255,255,255,0.9)" }}>{adminName ? `Signed in as ${adminName}` : "Private"}</div>
           </div>
-          <button type="button" onClick={() => navigate("/")} style={{ background: "rgba(255,255,255,0.15)", border: "none", color: "white", borderRadius: 8, padding: "6px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Back to app</button>
+          <button type="button" onClick={() => navigate("/")} style={{ background: "rgba(255,255,255,0.15)", border: "none", color: "white", borderRadius: 8, padding: "6px 12px", minHeight: 40, fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Back to app</button>
         </div>
         <ScrollRow tone="dark" style={{ display: "flex", gap: 18, overflowX: "auto", maxWidth: 960, margin: "6px auto 0", WebkitOverflowScrolling: "touch" }}>
           {NAV.map(n => <NavLink key={n.to} to={n.to} end={n.end} style={navStyle}>{n.label}</NavLink>)}

@@ -12,15 +12,15 @@ export const btn = (kind = "primary", disabled = false) => ({
   color: kind === "primary" ? "white" : kind === "danger" ? C.red : C.green,
   border: kind === "primary" ? "none" : `1px solid ${kind === "danger" ? "rgba(139,32,32,0.25)" : C.green}`,
   borderRadius: 10, padding: "8px 14px", fontSize: 13, fontWeight: 700, fontFamily: "inherit",
-  cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.5 : 1, minHeight: 36,
+  cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.5 : 1, minHeight: 40,
 });
 
-export const smallBtn = (kind = "ghost", disabled = false) => ({ ...btn(kind, disabled), padding: "5px 10px", fontSize: 12, minHeight: 30 });
+export const smallBtn = (kind = "ghost", disabled = false) => ({ ...btn(kind, disabled), padding: "5px 10px", fontSize: 12, minHeight: 36 });
 
 export const chip = (on) => ({
   background: on ? C.green : "white", color: on ? "white" : N.ink,
   border: `1px solid ${on ? C.green : N.line}`, borderRadius: 999, padding: "6px 12px",
-  fontSize: 12, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap",
+  fontSize: 12, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", minHeight: 36,
 });
 
 export const input = {

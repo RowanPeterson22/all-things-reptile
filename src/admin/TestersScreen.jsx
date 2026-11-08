@@ -47,10 +47,10 @@ const SectionBoxes = ({ options, value, onChange, disabled, idPrefix }) => (
       const on = value.includes(o.key);
       const id = `${idPrefix}-${o.key}`;
       return (
-        <label key={o.key} htmlFor={id} style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: N.ink, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.6 : 1 }}>
+        <label key={o.key} htmlFor={id} style={{ display: "flex", alignItems: "center", gap: 8, minHeight: 32, fontSize: 12, color: N.ink, cursor: disabled ? "default" : "pointer", opacity: disabled ? 0.6 : 1 }}>
           <input id={id} type="checkbox" checked={on} disabled={disabled}
             onChange={() => onChange(on ? value.filter(k => k !== o.key) : [...value, o.key])}
-            style={{ width: 16, height: 16, accentColor: C.green, margin: 0 }} />
+            style={{ width: 20, height: 20, accentColor: C.green, margin: 0 }} />
           {o.label}
         </label>
       );

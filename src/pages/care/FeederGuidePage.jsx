@@ -2,7 +2,7 @@ import { useState } from "react";
 import { C } from "../../constants/colours";
 import InsectCard from "../../components/InsectCard";
 import WarnBox from "../../components/WarnBox";
-import ScrollRow from "../../components/ScrollRow";
+import CareGuideHeader from "../../components/CareGuideHeader";
 
 // ─── Feeder Guide page ────────────────────────────────────────────
 const FeederGuidePage = ({ onBack }) => {
@@ -25,17 +25,7 @@ const FeederGuidePage = ({ onBack }) => {
 
   return (
     <div style={{flex:1,overflowY:"auto"}}>
-      <div style={{background:C.green,padding:"calc(env(safe-area-inset-top, 0px) + 20px) 20px 0"}}>
-        <button onClick={onBack} style={{background:"none",border:"none",color:"rgba(255,255,255,0.7)",fontSize:13,cursor:"pointer",display:"flex",alignItems:"center",gap:6,marginBottom:16,fontFamily:"inherit"}}>‹ Back to care guides</button>
-        <div style={{fontSize:10,fontWeight:700,color:"rgba(255,255,255,0.6)",letterSpacing:"0.07em",marginBottom:4}}>CARE GUIDE</div>
-        <div style={{fontSize:22,fontWeight:700,color:"white",marginBottom:4}}>Feeder Guide</div>
-        <div style={{fontSize:13,color:"rgba(255,255,255,0.7)",marginBottom:16,lineHeight:1.5}}>Everything beginners need to know about feeding insects and rodents to Australian reptiles</div>
-        <ScrollRow tone="dark" style={{display:"flex",borderBottom:"0.5px solid rgba(255,255,255,0.2)",margin:"0 -20px",padding:"0 20px",gap:4,overflowX:"auto",scrollbarWidth:"none"}}>
-          {tabs.map(t=>(
-            <button key={t} onClick={()=>setTab(t)} style={{background:"none",border:"none",borderBottom:tab===t?"2px solid #fff":"2px solid transparent",color:tab===t?"white":"rgba(255,255,255,0.55)",fontSize:12,fontWeight:700,padding:"8px 12px",cursor:"pointer",fontFamily:"inherit",whiteSpace:"nowrap",marginBottom:-1,textTransform:"capitalize"}}>{t}</button>
-          ))}
-        </ScrollRow>
-      </div>
+      <CareGuideHeader onBack={onBack} title="Feeder Guide" subtitle="Everything beginners need to know about feeding insects and rodents to Australian reptiles" tabs={tabs} tab={tab} onTab={setTab} />
 
       <div style={{background:"white",padding:"16px 18px 40px"}}>
 

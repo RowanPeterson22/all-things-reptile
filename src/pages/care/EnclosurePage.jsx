@@ -3,7 +3,7 @@ import { C } from "../../constants/colours";
 import SectionLabel from "../../components/SectionLabel";
 import WarnBox from "../../components/WarnBox";
 import ShopBtn from "../../components/ShopBtn";
-import ScrollRow from "../../components/ScrollRow";
+import CareGuideHeader from "../../components/CareGuideHeader";
 
 // ─── Enclosure Guide page ─────────────────────────────────────────
 const EnclosurePage = ({ onBack }) => {
@@ -23,22 +23,7 @@ const EnclosurePage = ({ onBack }) => {
   );
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
-        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
-        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
-          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>🏠</div>
-          <div style={{ paddingBottom: 18 }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Enclosure setup & sizing</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>For Australian reptile keepers</div>
-          </div>
-        </div>
-        <ScrollRow tone="dark" style={{ display: "flex", borderBottom: "2px solid rgba(255,255,255,0.1)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
-          {tabs.map(t => (
-            <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.gold}` : "2px solid transparent", color: tab === t ? C.gold : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "10px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -2 }}>{tabLabels[t]}</button>
-          ))}
-        </ScrollRow>
-      </div>
+      <CareGuideHeader onBack={onBack} emoji="🏠" title="Enclosure setup & sizing" subtitle="For Australian reptile keepers" tabs={tabs} tab={tab} onTab={setTab} labelFor={t => tabLabels[t]} />
       <div style={{ background: "white", padding: "16px 18px 24px", minHeight: 400 }}>
         {tab === "types" && <>
           <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Three main enclosure styles are used in Australia. The right choice depends on your species, budget, and setup space.</p>

@@ -3,7 +3,7 @@ import { C } from "../../constants/colours";
 import SectionLabel from "../../components/SectionLabel";
 import WarnBox from "../../components/WarnBox";
 import HealthItem from "../../components/HealthItem";
-import ScrollRow from "../../components/ScrollRow";
+import CareGuideHeader from "../../components/CareGuideHeader";
 
 // ─── Shedding & Skin Care page ────────────────────────────────────
 const SheddingPage = ({ onBack }) => {
@@ -11,20 +11,7 @@ const SheddingPage = ({ onBack }) => {
   const tabs = ["how shedding works", "helping a shed", "problems", "skin care"];
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
-      <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
-        <button onClick={onBack} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.7)", fontSize: 13, cursor: "pointer", display: "flex", alignItems: "center", gap: 6, marginBottom: 16, fontFamily: "inherit" }}>‹ Back to care guides</button>
-        <div style={{ display: "flex", alignItems: "flex-end", gap: 14 }}>
-          <div style={{ fontSize: 64, lineHeight: 1, marginBottom: -4 }}>✨</div>
-          <div style={{ paddingBottom: 18 }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: C.gold, textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Care guide</div>
-            <div style={{ fontSize: 20, fontWeight: 700, color: "white", lineHeight: 1.2 }}>Shedding & Skin Care</div>
-            <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>Helping with a healthy shed</div>
-          </div>
-        </div>
-        <ScrollRow tone="dark" style={{ display: "flex", borderBottom: "0.5px solid rgba(255,255,255,0.2)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
-          {tabs.map(t => <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? "2px solid #fff" : "2px solid transparent", color: tab === t ? "white" : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "8px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>)}
-        </ScrollRow>
-      </div>
+      <CareGuideHeader onBack={onBack} emoji="✨" title="Shedding & Skin Care" subtitle="Helping with a healthy shed" tabs={tabs} tab={tab} onTab={setTab} />
       <div style={{ background: "white", padding: "16px 18px 40px" }}>
         {tab === "how shedding works" && <>
           <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>All reptiles shed their outer layer of skin (ecdysis) as they grow. It is a completely normal and essential process. Understanding the stages helps you provide the right support at the right time.</p>

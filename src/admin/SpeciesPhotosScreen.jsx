@@ -5,6 +5,7 @@ import SpeciesPicker from "./SpeciesPicker";
 import { TraitPicker, SpeciesMorphsPanel } from "./MorphParts";
 import { PhotoCredit } from "../components/PhotoCredit";
 import { objectPosition, focalFromTap } from "../components/focal";
+import HeroCropEditor from "./HeroCropEditor";
 import { toLibraryJpegs, rotate90, MIN_PUBLIC_EDGE } from "./image";
 import { N, page, btn, smallBtn, badge, card, input, label, hint, errorText, LICENCE_LABEL, STATUS_TONE, fmtDate } from "./ui";
 
@@ -73,7 +74,7 @@ const saveFile = (url) => {
   document.body.appendChild(a); a.click(); a.remove();
 };
 
-const ImageTools = ({ photo, api, busy, setBusy, onChanged, setErr, setNote, onFocus }) => {
+const ImageTools = ({ photo, api, busy, setBusy, onChanged, setErr, setNote, onFocus, onHeroCrop }) => {
   const fileRef = useRef(null);
   const run = async (fn) => {
     setBusy(true); setErr(""); setNote("");
@@ -86,6 +87,7 @@ const ImageTools = ({ photo, api, busy, setBusy, onChanged, setErr, setNote, onF
       out.warning,
       out.unpublished && `Taken off the species page: ${out.unpublished}`,
       out.republished && "The species-page copy was remade from the new image.",
+      photo.hero_crop && "The hero crop was cleared for the new image; set it again if needed.",
       photo.licence === "cc-by" && "CC BY: the credit now says it was modified from the original.",
     ].filter(Boolean);
     if (notes.length) setNote(notes.join(" "));
@@ -106,6 +108,7 @@ const ImageTools = ({ photo, api, busy, setBusy, onChanged, setErr, setNote, onF
         <button type="button" disabled={busy} onClick={() => fileRef.current && fileRef.current.click()} style={smallBtn("ghost", busy)}>Replace image</button>
         <button type="button" disabled={busy} onClick={rotate} style={smallBtn("ghost", busy)}>Rotate 90°</button>
         <button type="button" disabled={busy || !photo.url} onClick={onFocus} style={smallBtn("ghost", busy)}>Set focus point</button>
+        <button type="button" disabled={busy || !photo.url} onClick={onHeroCrop} style={smallBtn("ghost", busy)}>Hero crop{photo.hero_crop ? " ✓" : ""}</button>
         <input ref={fileRef} type="file" accept="image/jpeg,image/*" aria-label="Replacement image" style={{ display: "none" }}
           onChange={e => { const f = e.target.files && e.target.files[0]; e.target.value = ""; pickReplacement(f); }} />
       </div>
@@ -122,7 +125,27 @@ const ImageTools = ({ photo, api, busy, setBusy, onChanged, setErr, setNote, onF
 // The server is the real check (lib/photoRules.js); this shows its answers:
 // photo.publicBlock says why a photo can't go public, photo.attributionRequired
 // whether the credit can be hidden, photo.credit what customers will see.
-export const PublicControls = ({ photo, busy, change }) => {
+// "Hero (main image)": one per species; ticking it unticks the previous one on
+// the server. On a photo that isn't public yet, ticking it also publishes it.
+export const HeroCheckbox = ({ photo, busy, blocked, change, fallback }) => {
+  const id = `hero-${photo.id}`;
+  const on = Boolean(photo.is_hero);
+  const toggle = (v) => change(photo.public_use ? { is_hero: v } : { public_use: true, is_hero: true });
+  return (
+    <div style={{ padding: "6px 0 2px" }}>
+      <label htmlFor={id} style={{ display: "flex", alignItems: "center", gap: 10, minHeight: 40, fontSize: 13, fontWeight: 700, color: N.ink, cursor: busy || blocked ? "default" : "pointer", opacity: blocked ? 0.55 : 1 }}>
+        <input id={id} type="checkbox" checked={on} disabled={busy || blocked || (!photo.public_use && on)} onChange={e => toggle(e.target.checked)}
+          style={{ width: 22, height: 22, margin: 0, accentColor: C.green, flex: "0 0 auto" }} />
+        Hero (main image)
+      </label>
+      {!photo.public_use && !blocked && <div style={{ ...hint, marginTop: 0 }}>Ticking this also puts it on the species page.</div>}
+      {photo.public_use && on && <div style={{ ...hint, marginTop: 0 }}>The species-page header and the Browse card. Ticking another photo moves it.</div>}
+      {photo.public_use && !on && fallback && <div style={{ ...hint, marginTop: 0 }}>No hero chosen: this first photo is used for now.</div>}
+    </div>
+  );
+};
+
+export const PublicControls = ({ photo, busy, change, fallbackHero = false }) => {
   const [order, setOrder] = useState(photo.public_order ?? "");
   const [credit, setCredit] = useState(photo.display_credit || "");
   useEffect(() => { setOrder(photo.public_order ?? ""); }, [photo.public_order]);
@@ -136,6 +159,7 @@ export const PublicControls = ({ photo, busy, change }) => {
       <Switch id={`pub-${photo.id}`} on={Boolean(photo.public_use)} disabled={busy || blocked} onChange={(v) => change({ public_use: v })} label="Use on species page" />
       {blocked && <div style={{ fontSize: 11, color: photo.licence === "cc-by-sa" ? C.red : N.muted, lineHeight: 1.5, marginBottom: 4 }}>{photo.publicBlock}</div>}
       {!photo.public_use && !blocked && <div style={hint}>Copies the photo to the public species page{photo.source === "inaturalist" ? " at the larger size from iNaturalist" : ""}.</div>}
+      <HeroCheckbox photo={photo} busy={busy} blocked={blocked} change={change} fallback={fallbackHero} />
       {photo.public_use && (
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", fontSize: 12 }}>
           <label htmlFor={`ord-${photo.id}`} style={{ fontWeight: 700 }}>Order</label>
@@ -165,7 +189,7 @@ export const PublicControls = ({ photo, busy, change }) => {
 };
 
 // ─── One reference photo, with every change going through PATCH /api/admin-photos ──
-const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone }) => {
+const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone, fallbackHero = false }) => {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [notes, setNotes] = useState(photo.notes || "");
@@ -173,6 +197,7 @@ const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone }) => {
   const [moveTo, setMoveTo] = useState(null);
   const [broken, setBroken] = useState(false);
   const [focusing, setFocusing] = useState(false);
+  const [cropping, setCropping] = useState(false);
 
   useEffect(() => { setNotes(photo.notes || ""); }, [photo.notes]);
 
@@ -201,6 +226,7 @@ const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone }) => {
           {photo.status !== "active" && <span style={badge(STATUS_TONE[photo.status])}>{photo.status}</span>}
           {photo.is_best && <span style={badge("gold")}>★ Best</span>}
           {photo.public_use && <span style={badge("orange")}>On species page</span>}
+          {photo.is_hero && <span style={badge("gold")}>Hero</span>}
         </div>
         {photo.url && !broken && <PhotoCredit credit={photo.credit} />}
       </div>
@@ -224,14 +250,19 @@ const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone }) => {
           <button type="button" disabled={busy} onClick={() => { setMoving(m => !m); setMoveTo(null); }} style={smallBtn("ghost", busy)}>{moving ? "Cancel move" : "Move…"}</button>
         </div>
 
-        <ImageTools photo={photo} api={api} busy={busy} setBusy={setBusy} setErr={setErr} setNote={setNote} onFocus={() => setFocusing(f => !f)}
+        <ImageTools photo={photo} api={api} busy={busy} setBusy={setBusy} setErr={setErr} setNote={setNote} onFocus={() => setFocusing(f => !f)} onHeroCrop={() => setCropping(c => !c)}
           onChanged={(next) => { setBroken(false); onChanged(next); }} />
         {focusing && photo.url && (
           <FocusPicker photo={photo} busy={busy} onCancel={() => setFocusing(false)}
             onSave={async (pt) => { if (await change({ focal_x: pt.x, focal_y: pt.y })) setFocusing(false); }} />
         )}
 
-        <PublicControls photo={photo} busy={busy} change={change} />
+        {cropping && photo.url && (
+          <HeroCropEditor photo={photo} busy={busy} onCancel={() => setCropping(false)}
+            onSave={async (crop) => { if (await change({ hero_crop: crop })) setCropping(false); }} />
+        )}
+
+        <PublicControls photo={photo} busy={busy} change={change} fallbackHero={fallbackHero} />
 
         {moving && (
           <div style={{ background: N.wash, borderRadius: 10, padding: 10, marginBottom: 10 }}>
@@ -262,6 +293,22 @@ const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone }) => {
   );
 };
 
+// ─── Hero fallback ────────────────────────────────────────────────
+// With no photo ticked as hero, the app uses the first public photo by
+// public_order (then date added), as lib/speciesPhotos.js sorts them.
+const isOnPage = (p) => Boolean(p && p.public_use && p.status === "active");
+const byPublicOrder = (a, b) => {
+  const ao = a.public_order ?? Infinity;
+  const bo = b.public_order ?? Infinity;
+  return ao - bo || String(a.created_at || "").localeCompare(String(b.created_at || ""));
+};
+// → the id of the photo used as hero by fallback, or null (a hero is ticked, or none public).
+export const heroFallbackId = (photos) => {
+  const pub = (photos || []).filter(isOnPage);
+  if (!pub.length || pub.some(p => p.is_hero)) return null;
+  return [...pub].sort(byPublicOrder)[0].id;
+};
+
 // ─── A species' reference photos ──────────────────────────────────
 const SpeciesPhotosScreen = ({ api, species, bySlug, counts, catalogue, setMorphs, morphsReadOnly, refreshCounts }) => {
   const { slug } = useParams();
@@ -285,10 +332,15 @@ const SpeciesPhotosScreen = ({ api, species, bySlug, counts, catalogue, setMorph
 
   const c = counts[slug] || { active: 0, hidden: 0, rejected: 0, best: 0 };
   const onChanged = (next) => {
-    setPhotos(list => (showAll || next.status === "active" ? list.map(p => (p.id === next.id ? next : p)) : list.filter(p => p.id !== next.id)));
+    // One hero per species: the server unticked the old one, so mirror that.
+    const others = (p) => (next.is_hero && p.is_hero && p.id !== next.id ? { ...p, is_hero: false } : p);
+    setPhotos(list => (showAll || next.status === "active" ? list.map(p => (p.id === next.id ? next : others(p))) : list.filter(p => p.id !== next.id).map(others)));
     refreshCounts();
   };
   const onGone = (id) => { setPhotos(list => list.filter(p => p.id !== id)); refreshCounts(); };
+
+  const fallbackId = heroFallbackId(photos);
+  const publicCount = (photos || []).filter(isOnPage).length;
 
   return (
     <div style={page}>
@@ -308,12 +360,17 @@ const SpeciesPhotosScreen = ({ api, species, bySlug, counts, catalogue, setMorph
         <input type="checkbox" checked={showAll} onChange={e => setShowAll(e.target.checked)} /> Show hidden and rejected photos too
       </label>
 
+      {publicCount > 0 && (
+        <div data-testid="hero-status" style={{ fontSize: 12, color: N.ink, background: fallbackId ? C.goldLight : C.greenPale, borderRadius: 10, padding: "8px 12px", marginBottom: 12 }}>
+          {fallbackId ? "No hero chosen: using the first photo." : "Hero chosen. Tick “Hero (main image)” on another public photo to change it."}
+        </div>
+      )}
       {err && <div style={errorText}>{err}</div>}
       {photos === null && <div style={{ fontSize: 13, color: N.muted }}>Loading photos…</div>}
       {photos && photos.length === 0 && !err && <div style={{ fontSize: 13, color: N.muted }}>No {showAll ? "" : "active "}photos yet.</div>}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 12 }}>
         {(photos || []).map(p => (
-          <PhotoCard key={p.id} photo={p} api={api} species={species} catalogue={catalogue} onChanged={onChanged} onGone={onGone} />
+          <PhotoCard key={p.id} photo={p} api={api} species={species} catalogue={catalogue} onChanged={onChanged} onGone={onGone} fallbackHero={p.id === fallbackId} />
         ))}
       </div>
       {photos && photos.length > 0 && <div style={{ ...hint, marginTop: 12 }}>Image links last 10 minutes. Reopen the species to refresh them.</div>}

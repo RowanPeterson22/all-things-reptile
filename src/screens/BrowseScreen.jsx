@@ -6,13 +6,17 @@ import LevelBadge from "../components/LevelBadge";
 import BackButton from "../components/BackButton";
 import { usePublicPhotos } from "../components/SpeciesGallery";
 import { CreditedImage } from "../components/PhotoCredit";
+import { pickHero } from "../components/heroCrop";
 
 const BrowseScreen = ({ onSpecies }) => {
   const [category, setCategory] = useState(null);
-  // Each species' first chosen photo replaces its emoji on the cards.
+  // Each species' main image (the hero Rowan ticked, else its first photo)
+  // replaces the emoji on the cards.
   const allPhotos = usePublicPhotos(null, { all: !!category }); // only once a category is open
+  const bySpecies = {};
+  allPhotos.forEach(p => { if (p.species) (bySpecies[p.species] = bySpecies[p.species] || []).push(p); });
   const firstPhoto = {};
-  allPhotos.forEach(p => { if (p.species && !firstPhoto[p.species]) firstPhoto[p.species] = p; });
+  Object.keys(bySpecies).forEach(k => { firstPhoto[k] = pickHero(bySpecies[k]); });
 
   if (category) {
     const catSpecies = SPECIES.filter(s => s.type === category);
@@ -34,7 +38,7 @@ const BrowseScreen = ({ onSpecies }) => {
             {catSpecies.map(sp => (
               <div key={sp.id} onClick={() => sp.page && onSpecies(sp.page)} style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", cursor: sp.page ? "pointer" : "default", opacity: sp.page ? 1 : 0.8 }}>
                 {firstPhoto[sp.slug] ? (
-                  <CreditedImage src={firstPhoto[sp.slug].url} alt={sp.name} credit={firstPhoto[sp.slug].credit} focal={firstPhoto[sp.slug].focal}
+                  <CreditedImage key={firstPhoto[sp.slug].id} src={firstPhoto[sp.slug].url} alt={sp.name} credit={firstPhoto[sp.slug].credit} focal={firstPhoto[sp.slug].focal}
                     style={{ height: 96, background: sp.bg }} />
                 ) : (
                   <div style={{ height: 96, background: sp.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36 }}>{sp.emoji}</div>

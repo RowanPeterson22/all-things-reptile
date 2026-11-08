@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { C } from "../constants/colours";
-import SpeciesGallery, { usePublicPhotos } from "./SpeciesGallery";
-import { CreditedImage } from "./PhotoCredit";
-import { objectPosition } from "./focal";
+import { usePublicPhotos } from "./SpeciesGallery";
+import SpeciesHero from "./SpeciesHero";
+import SpeciesSlideshow from "./SpeciesSlideshow";
+import { pickHero, othersThan } from "./heroCrop";
 import ScrollRow from "./ScrollRow";
 import BackButton from "./BackButton";
 
@@ -20,22 +21,20 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
   // The route is /species/:slug (D4), so the shell knows which gallery to load;
   // the 46 page files don't change.
   const { slug } = useParams();
-  // The first photo Rowan chose for this species becomes the header hero; the
-  // rest stay in the gallery. No photos: the emoji header as before.
+  // The photo Rowan ticked as hero (else the first by his order) fills the
+  // 2.4 : 1 header; the rest roll in the slideshow. No photos: the emoji
+  // header as before.
   const photos = usePublicPhotos(slug);
-  const hero = photos[0];
+  const [brokenHero, setBrokenHero] = useState(null);
+  const picked = pickHero(photos);
+  const hero = picked && picked.id !== brokenHero ? picked : null;
+  const rest = othersThan(photos, picked);
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
       {hero ? (
-        <div style={{ position: "relative", height: "min(75vw, 340px)", background: C.black,
-          backgroundImage: `url(${hero.url})`, backgroundSize: "cover", backgroundPosition: objectPosition(hero.focal) }}>
-          <CreditedImage src={hero.url} alt={hero.alt || name} credit={hero.credit} width={hero.width} height={hero.height} focal={hero.focal} loading="eager"
-            style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 20 }} />
-          <div aria-hidden="true" style={{ position: "absolute", inset: 0, bottom: "auto", height: 110, background: "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0))", pointerEvents: "none" }} />
-          <div style={{ position: "absolute", top: 0, left: 0, right: 0, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
-            <BackButton onClick={onBack} marginBottom={0}>{backLabel}</BackButton>
-          </div>
-        </div>
+        <SpeciesHero photo={hero} name={name} onBroken={() => setBrokenHero(hero.id)}>
+          <BackButton onClick={onBack} marginBottom={0}>{backLabel}</BackButton>
+        </SpeciesHero>
       ) : null}
       <div style={{ background: hero ? "transparent" : C.green, padding: hero ? "0 20px" : "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0", marginTop: hero ? -20 : 0, position: "relative" }}>
         {!hero && <BackButton onClick={onBack} marginBottom={16}>{backLabel}</BackButton>}
@@ -48,7 +47,7 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
               <span key={label} style={{ background: bg, color, fontSize: 11, fontWeight: 700, padding: "3px 9px", borderRadius: 10 }}>{label}</span>
             ))}
           </div>
-          <SpeciesGallery species={slug} skip={hero ? 1 : 0} />
+          <SpeciesSlideshow photos={rest} />
           <ScrollRow tone="light" label="Sections" style={{ display: "flex", borderBottom: "0.5px solid #eee", margin: "0 -18px", padding: "0 18px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
             {tabs.map(t => (
               <button key={t} onClick={() => setTab(t)} aria-pressed={tab === t} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.green}` : "2px solid transparent", color: tab === t ? C.green : "#888", fontSize: 12, fontWeight: 700, padding: "12px 11px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>

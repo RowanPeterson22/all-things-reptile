@@ -52,7 +52,7 @@ const SearchResults = ({ query, onNavigate, show = ALL_GROUPS }) => {
 
   return (
     <div style={{ flex: 1, overflowY: "auto", background: "white" }}>
-      <div style={{ padding: "12px 16px 6px", fontSize: 12, color: "#999" }}>
+      <div style={{ padding: "12px 16px 6px", fontSize: 12, color: C.muted }}>
         {totalResults} result{totalResults !== 1 ? "s" : ""} for <span style={{ fontWeight: 700, color: "#555" }}>"{query}"</span>
       </div>
 
@@ -66,7 +66,7 @@ const SearchResults = ({ query, onNavigate, show = ALL_GROUPS }) => {
               <div style={{ width: 44, height: 44, borderRadius: 12, background: s.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{s.emoji}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 14, fontWeight: 600, color: "#111", marginBottom: 2 }}>{s.name}</div>
-                <div style={{ fontSize: 11, color: "#999", fontStyle: "italic", marginBottom: 4 }}>{s.latin}</div>
+                <div style={{ fontSize: 11, color: C.muted, fontStyle: "italic", marginBottom: 4 }}>{s.latin}</div>
                 <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 8, background: lc.bg, color: lc.color }}>{s.level}</span>
               </div>
               <span style={{ color: "#ccc", fontSize: 16 }}>›</span>
@@ -83,7 +83,7 @@ const SearchResults = ({ query, onNavigate, show = ALL_GROUPS }) => {
             <div style={{ width: 44, height: 44, borderRadius: 12, background: C.greenPale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, flexShrink: 0 }}>{g.icon}</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 14, fontWeight: 600, color: "#111", marginBottom: 2 }}>{g.title}</div>
-              <div style={{ fontSize: 11, color: "#999" }}>{g.sub}</div>
+              <div style={{ fontSize: 11, color: C.muted }}>{g.sub}</div>
             </div>
             <span style={{ color: "#ccc", fontSize: 16 }}>›</span>
           </div>

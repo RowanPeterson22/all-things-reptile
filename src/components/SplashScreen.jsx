@@ -24,11 +24,12 @@ const SplashScreen = ({ onComplete }) => {
 
   return (
     <div style={{
-      position: "fixed", inset: 0, paddingTop: "env(safe-area-inset-top, 0px)",
+      position: "fixed", inset: 0,
       background: C.black,
       display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
-      padding: "0 24px",
+      // Centred within the safe area (notch and home bar).
+      padding: "env(safe-area-inset-top, 0px) 24px env(safe-area-inset-bottom, 0px)",
       opacity: containerOpacity,
       transition: "opacity 0.6s ease",
       zIndex: 9999,

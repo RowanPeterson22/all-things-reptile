@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { C } from "./constants/colours";
 import SplashScreen from "./components/SplashScreen";
+import SearchField from "./components/SearchField";
 import BrowseScreen from "./screens/BrowseScreen";
 import CareScreen from "./screens/CareScreen";
 import LegalScreen from "./screens/LegalScreen";
@@ -274,16 +275,12 @@ export function AppShell() {
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
               <img src="/header-logo-dark.png" alt="All Things Reptile" onClick={() => { go(home); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>
-            {access.search && <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
-              <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>
-              <input
-                placeholder="Search species, care guides, glossary..."
-                value={searchQuery}
-                onChange={e => { setSearchQuery(e.target.value); if (pathname !== "/") navigate("/"); }}
-                style={{ background: "none", border: "none", outline: "none", color: "white", fontSize: 14, width: "100%", fontFamily: "inherit" }}
-              />
-              {searchQuery && <button onClick={() => setSearchQuery("")} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.6)", cursor: "pointer", fontSize: 18, fontFamily: "inherit", lineHeight: 1 }}>×</button>}
-            </div>}
+            {access.search && <SearchField
+              placeholder="Search species, care guides, glossary..."
+              value={searchQuery}
+              onChange={e => { setSearchQuery(e.target.value); if (pathname !== "/") navigate("/"); }}
+              onClear={() => setSearchQuery("")}
+            />}
 
           </div>
         )}

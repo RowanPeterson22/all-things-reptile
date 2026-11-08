@@ -6,9 +6,11 @@ import { TraitPicker, SpeciesMorphsPanel } from "./MorphParts";
 import { PhotoCredit } from "../components/PhotoCredit";
 import { objectPosition, focalFromTap } from "../components/focal";
 import HeroCropEditor from "./HeroCropEditor";
+import { CATEGORIES } from "../data/categories";
 import { toLibraryJpegs, rotate90, MIN_PUBLIC_EDGE } from "./image";
 import { N, page, btn, smallBtn, badge, card, input, label, hint, errorText, LICENCE_LABEL, STATUS_TONE, fmtDate } from "./ui";
 
+const CATEGORY_LABEL = Object.fromEntries(CATEGORIES.map(c => [c.id, c.label]));
 const linkStyle = { color: C.green, fontWeight: 700, textDecoration: "none" };
 const isWebUrl = (u) => /^https?:\/\//i.test(u || "");
 
@@ -227,6 +229,7 @@ const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone, fallback
           {photo.is_best && <span style={badge("gold")}>★ Best</span>}
           {photo.public_use && <span style={badge("orange")}>On species page</span>}
           {photo.is_hero && <span style={badge("gold")}>Hero</span>}
+          {(photo.categories || []).map(id => <span key={id} style={badge("blue")} title="Hiding, rejecting or moving it clears this">{CATEGORY_LABEL[id] || id} image</span>)}
         </div>
         {photo.url && !broken && <PhotoCredit credit={photo.credit} />}
       </div>

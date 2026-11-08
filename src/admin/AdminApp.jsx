@@ -11,6 +11,7 @@ import FeedbackScreen from "./FeedbackScreen";
 import TestersScreen from "./TestersScreen";
 import IndexScreen from "./IndexScreen";
 import MorphsScreen from "./MorphsScreen";
+import CategoriesScreen from "./CategoriesScreen";
 import ScrollRow from "../components/ScrollRow";
 
 // ─── ATR admin (interim access: an is_admin beta tester, until D7) ─
@@ -21,6 +22,7 @@ import ScrollRow from "../components/ScrollRow";
 const NAV = [
   { to: "/admin", label: "Photos", end: true },
   { to: "/admin/add", label: "Add photo" },
+  { to: "/admin/categories", label: "Categories" },
   { to: "/admin/morphs", label: "Morphs" },
   { to: "/admin/feedback", label: "Feedback" },
   { to: "/admin/testers", label: "Testers" },
@@ -103,6 +105,7 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
           <Route index element={<LibraryScreen {...shared} />} />
           <Route path="species/:slug" element={<SpeciesPhotosScreen {...shared} />} />
           <Route path="add" element={<AddPhotoScreen {...shared} />} />
+          <Route path="categories" element={<CategoriesScreen api={api} />} />
           <Route path="morphs" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />
           <Route path="morphs/new" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} creating />} />
           <Route path="morphs/:id" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />

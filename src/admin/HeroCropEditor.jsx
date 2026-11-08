@@ -23,14 +23,14 @@ export const initialCrop = (photo, imgAspect, { stored = photo.hero_crop, aspect
 
 const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
 
-export const HeroPreview = ({ url, crop, label = "Preview of the species-page header" }) => (
+export const HeroPreview = ({ url, crop, label = "Preview of the species-page header", backLabel = "‹ Back to browse", title }) => (
   <div aria-label={label} role="img" style={{ position: "relative", width: "100%", aspectRatio: `${HERO_ASPECT} / 1`, overflow: "hidden", background: C.black, borderRadius: 8 }}>
     <img src={url} alt="" style={heroImageStyle(crop)} />
     <div aria-hidden="true" style={{ position: "absolute", top: 0, left: 0, right: 0, height: "54%", background: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0))" }} />
-    <div aria-hidden="true" style={{ position: "absolute", top: 8, left: 12, color: "white", fontSize: 11, fontWeight: 700 }}>‹ Back to browse</div>
+    <div aria-hidden="true" style={{ position: "absolute", top: 8, left: 12, color: "white", fontSize: 11, fontWeight: 700 }}>{backLabel}</div>
     <span aria-hidden="true" style={{ position: "absolute", right: 10, bottom: 20 + 10, width: 18, height: 18, borderRadius: "50%", background: "rgba(0,0,0,0.55)", border: "1.5px solid rgba(255,255,255,0.9)", color: "white", fontSize: 11, lineHeight: "15px", textAlign: "center", fontFamily: "Georgia, serif", fontStyle: "italic", fontWeight: 700, boxSizing: "border-box" }}>i</span>
     {/* The white sheet overlaps the bottom 20 px on the real page. */}
-    <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 20, background: "white", borderRadius: "14px 14px 0 0" }} />
+    <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 20, background: "white", borderRadius: "14px 14px 0 0", padding: "6px 12px 0", boxSizing: "border-box", fontSize: 11, fontWeight: 700, color: N.ink, overflow: "hidden", whiteSpace: "nowrap" }}>{title}</div>
   </div>
 );
 

@@ -11,20 +11,20 @@ import { heroCropFor, heroImageStyle } from "./heroCrop";
 // focus point when he hasn't set one). The white sheet overlaps the bottom
 // 20 px, so the credit icon sits above that. Renders the back button over a
 // dark top fade. Calls onBroken if the image fails, so the page can fall back
-// to the emoji header.
+// to the emoji header. Category pages use it too (their banner crop as heroCrop).
 
 export const HERO_MAX_H = 240;
 const OVERLAP = 20;
 // The exact 2.4 : 1 frame: full width up to 576 px, centred beyond that.
 const frame = { position: "absolute", top: 0, left: "50%", height: "100%", aspectRatio: "2.4 / 1", maxWidth: "100%", transform: "translateX(-50%)" };
 
-const SpeciesHero = ({ photo, name, onBroken, children }) => {
+const SpeciesHero = ({ photo, name, onBroken, children, testId = "species-hero" }) => {
   const crop = heroCropFor(photo);
   const imgStyle = crop
     ? heroImageStyle(crop)
     : { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: objectPosition(photo.focal), display: "block" };
   return (
-    <div data-testid="species-hero" style={{ position: "relative", width: "100%", aspectRatio: "2.4 / 1", maxHeight: HERO_MAX_H, background: C.black, overflow: "hidden" }}>
+    <div data-testid={testId} style={{ position: "relative", width: "100%", aspectRatio: "2.4 / 1", maxHeight: HERO_MAX_H, background: C.black, overflow: "hidden" }}>
       {/* Only seen beside the frame on screens wider than 576 px. */}
       <img src={photo.url} alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: objectPosition(photo.focal), filter: "blur(18px) brightness(0.55)", transform: "scale(1.1)", display: "block" }} />
       <div data-testid="hero-frame" style={{ ...frame, overflow: "hidden" }}>

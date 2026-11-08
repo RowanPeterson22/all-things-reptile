@@ -3,6 +3,8 @@
 import { render, screen, act, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AppShell } from "../App";
+import { clearCategoryImageCache } from "../components/CategoryImage";
+import { expectOnlyCategoryImages } from "../testUtils/publicFetch";
 import { STORAGE_KEY } from "../beta/betaAccess";
 import { checkAdmin } from "../beta/adminAccess";
 import { validateAddForm } from "../admin/AddPhotoScreen";
@@ -35,7 +37,7 @@ const renderAt = async (path) => {
 };
 const urls = () => global.fetch.mock.calls.map(c => c[0]);
 
-beforeEach(() => { window.localStorage.clear(); global.fetch = jest.fn(); });
+beforeEach(() => { clearCategoryImageCache(); window.localStorage.clear(); global.fetch = jest.fn(); });
 afterEach(() => { delete global.fetch; });
 
 describe("/admin gate", () => {
@@ -43,7 +45,9 @@ describe("/admin gate", () => {
     await renderAt("/admin");
     expect(screen.queryByText("ATR Admin")).toBeNull();
     expect(screen.getByText("Browse")).toBeInTheDocument();
-    expect(global.fetch).not.toHaveBeenCalled();
+    // The Browse home's one public, edge-cached request (category images);
+    // nothing to beta-check, admin-check or any other route, and no invite header.
+    expectOnlyCategoryImages();
   });
 
   test("a tester who isn't an admin is sent home", async () => {

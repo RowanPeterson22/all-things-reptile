@@ -3,6 +3,8 @@
 import { render, screen, act, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AppShell } from "../App";
+import { clearCategoryImageCache } from "../components/CategoryImage";
+import { expectOnlyCategoryImages } from "../testUtils/publicFetch";
 import { checkCode, inviteFromSearch, readCode, STORAGE_KEY } from "../beta/betaAccess";
 import IdFeedbackCard, { CONSENT_LABEL, CONSENT_TEXT } from "../components/IdFeedbackCard";
 import { clearSession } from "../beta/idSession";
@@ -28,7 +30,7 @@ const renderAt = async (path) => {
   return utils;
 };
 
-beforeEach(() => { window.localStorage.clear(); clearSession(); global.fetch = jest.fn(); });
+beforeEach(() => { clearCategoryImageCache(); window.localStorage.clear(); clearSession(); global.fetch = jest.fn(); });
 afterEach(() => { delete global.fetch; });
 
 describe("betaAccess helpers", () => {
@@ -63,7 +65,9 @@ describe("App shell gate", () => {
     expect(screen.queryByText("ID Reptile")).toBeNull();
     expect(screen.queryByText(/Identify a reptile or frog/)).toBeNull();
     expect(screen.getByText("Browse")).toBeInTheDocument();
-    expect(global.fetch).not.toHaveBeenCalled();
+    // The Browse home's one public, edge-cached request (category images);
+    // nothing to beta-check, admin-check or any other route, and no invite header.
+    expectOnlyCategoryImages();
   });
   test("a valid invite link stores the code and shows the ID tab and screen", async () => {
     global.fetch = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS, sections: ALL }));

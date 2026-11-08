@@ -48,7 +48,7 @@ const btn = (primary, disabled) => ({
   background: primary ? C.green : "white",
   color: primary ? "white" : C.green,
   border: primary ? "none" : `1.5px solid ${C.green}`,
-  borderRadius: 10, padding: "10px 20px", fontSize: 14, fontWeight: 700,
+  borderRadius: 10, padding: "10px 20px", fontSize: 14, fontWeight: 700, minHeight: 44,
   cursor: disabled ? "default" : "pointer", fontFamily: "inherit", opacity: disabled ? 0.5 : 1,
 });
 
@@ -181,7 +181,7 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
         </div>
       )}
 
-      <div style={{ fontSize: 11, color: "#aaa", lineHeight: 1.6, marginTop: 12, textAlign: "center" }}>
+      <div style={{ fontSize: 11, color: "#777", lineHeight: 1.6, marginTop: 12, textAlign: "center" }}>
         Your photo is sent to our AI provider for this check only. We don't keep it unless you choose to save it with your feedback.
       </div>
     </div>

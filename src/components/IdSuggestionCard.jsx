@@ -56,7 +56,7 @@ const IdSuggestionCard = ({ suggestion: s, onOpen }) => {
           ))}
         </div>
       )}
-      <div style={{ fontSize: 11, color: "#999", marginTop: 8 }}>Suggestion only — not a confirmed identification</div>
+      <div style={{ fontSize: 11, color: "#777", marginTop: 8 }}>Suggestion only — not a confirmed identification</div>
       {open
         ? <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginTop: 6 }}>View care guide →</div>
         : !unmatched && !s.inApp && <div style={{ fontSize: 12, color: C.muted, marginTop: 6 }}>No care guide yet</div>}

@@ -28,11 +28,11 @@ const label = { fontSize: 11, fontWeight: 700, color: C.muted, textTransform: "u
 const field = { width: "100%", boxSizing: "border-box", border: `1px solid ${C.line}`, borderRadius: 10, padding: "9px 10px", fontSize: 16, fontFamily: "inherit", background: "white", color: C.ink };
 const pill = (on) => ({
   background: on ? C.green : "white", color: on ? "white" : C.green, border: `1.5px solid ${C.green}`,
-  borderRadius: 10, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", flex: 1,
+  borderRadius: 10, padding: "8px 0", minHeight: 40, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", flex: 1,
 });
 const chip = (on) => ({
   background: on ? C.greenPale : "white", color: on ? C.green : "#555", border: `1px solid ${on ? C.green : C.line}`,
-  borderRadius: 8, padding: "5px 9px", fontSize: 12, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit",
+  borderRadius: 8, padding: "5px 9px", minHeight: 36, fontSize: 12, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit",
 });
 
 // The species the card starts on: the AI's top pick, if it's an index species.
@@ -120,7 +120,7 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
   return (
     <div style={{ background: "white", borderRadius: 14, border: `1.5px solid ${C.greenPale}`, padding: 14, marginBottom: 12 }}>
       <div style={{ fontSize: 14, fontWeight: 700, color: C.ink }}>Was this right?</div>
-      <div style={{ fontSize: 11, color: "#999", marginTop: 2 }}>Beta tester feedback</div>
+      <div style={{ fontSize: 11, color: "#777", marginTop: 2 }}>Beta tester feedback</div>
 
       <div style={{ display: "flex", gap: 8, marginTop: 10 }} role="group" aria-label="Was this right?">
         {VERDICTS.map(v => (
@@ -164,7 +164,7 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
           {status === "error" && <div style={{ marginTop: 12 }}><WarnBox type="gold" title="Couldn't send feedback">{error}</WarnBox></div>}
 
           <button type="button" onClick={submit} disabled={!canSend} style={{
-            background: C.green, color: "white", border: "none", borderRadius: 10, padding: "10px 20px", fontSize: 14, fontWeight: 700,
+            background: C.green, color: "white", border: "none", borderRadius: 10, padding: "10px 20px", minHeight: 44, fontSize: 14, fontWeight: 700,
             width: "100%", marginTop: 14, fontFamily: "inherit", cursor: canSend ? "pointer" : "default", opacity: canSend ? 1 : 0.5,
           }}>
             {status === "sending" ? "Sending…" : "Send feedback"}

@@ -60,7 +60,7 @@ const SpeciesPicker = ({ value, selected, suggestions = [], onChange }) => {
           <div style={{ fontWeight: 700 }}>{selected.name}</div>
           {selected.latin && <div style={sub}>{selected.latin}</div>}
         </div>
-        <button type="button" onClick={() => setOpen(true)} style={{ background: "none", border: "none", color: C.green, fontWeight: 700, fontSize: 13, cursor: "pointer", fontFamily: "inherit", padding: 8 }}>Change</button>
+        <button type="button" onClick={() => setOpen(true)} style={{ background: "none", border: "none", color: C.green, fontWeight: 700, fontSize: 13, cursor: "pointer", fontFamily: "inherit", padding: "8px 12px", minHeight: 40, margin: "-4px -8px" }}>Change</button>
       </div>
     );
   }

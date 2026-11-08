@@ -267,9 +267,9 @@ export function AppShell() {
     <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
 
         {!isDetail && (
-          <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
+          <div style={{ background: C.black, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
-              <img src="/AllThingsReptile_Logo.png" alt="All Things Reptile" onClick={() => { go(home); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
+              <img src="/header-logo-dark.png" alt="All Things Reptile" onClick={() => { go(home); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>
             {access.search && <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: 12, padding: "10px 14px", display: "flex", alignItems: "center", gap: 8, marginBottom: 14 }}>
               <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>🔍</span>

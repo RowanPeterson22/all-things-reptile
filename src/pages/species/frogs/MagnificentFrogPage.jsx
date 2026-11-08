@@ -13,14 +13,14 @@ import SnakeShedding from "../../../components/SnakeShedding";
 // ─── Magnificent Tree Frog page ───────────────────────────────────
 const MagnificentFrogPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Magnificent Tree Frog" latin="Litoria splendida" emoji="🐸"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["WA/NT endemic", C.redPale, C.red]]}
+    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Native to WA & NT", C.bluePale, C.blue]]}
     tabs={["overview","feeding","health & shedding","handling","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
         <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>Arguably Australia's most stunning tree frog. Found only in the Kimberley region of Western Australia and adjacent Northern Territory. Similar in appearance to the Green Tree Frog but distinguished by large glands on the head and behind the eyes that give them a more dramatic appearance. Larger, rarer, and more challenging to source than Green Tree Frogs — but a truly spectacular species for experienced frog keepers.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","8–13 cm"],["⏳","Lifespan","15–20 yrs"],["🏠","Min. enclosure","60 × 45 × 90 cm"],["💧","Humidity","60–80%"]]} />
-        <WarnBox type="red" title="Limited availability — WA/NT endemic">Magnificent Tree Frogs are endemic to the Kimberley and NT. They are less commonly available than Green Tree Frogs and command higher prices. Only available from specialist breeders. Confirm availability and licencing requirements carefully before purchasing.</WarnBox>
+        <WarnBox type="red" title="Limited availability">Magnificent Tree Frogs are endemic to the Kimberley and NT. They are less commonly available than Green Tree Frogs and command higher prices. Only available from specialist breeders. Confirm availability and licencing requirements carefully before purchasing.</WarnBox>
         <SectionLabel>Temperature requirements</SectionLabel>
         <TempBar label="Daytime ambient" value="26–30°C" width="60%" color="#e05a2b"/>
         <TempBar label="Nighttime low" value="20–24°C" width="36%" color="#2b7ec0"/>

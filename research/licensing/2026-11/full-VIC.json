@@ -1,0 +1,1721 @@
+[
+ {
+  "group": "frog",
+  "common": "Common Eastern Froglet",
+  "latin": "Crinia signifera",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Eastern Banjo Frog",
+  "latin": "Limnodynastes dumerilii",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Plains Froglet",
+  "latin": "Crinia parinsignifera",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Southern Brown Tree Frog",
+  "latin": "Litoria ewingii",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Spotted Grass Frog",
+  "latin": "Limnodynastes tasmaniensis",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Blotched Blue-tongued Lizard",
+  "latin": "Tiliqua nigrolutea",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Common Long-necked Tortoise",
+  "latin": "Chelodina longicollis",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Cunningham's Skink",
+  "latin": "Egernia cunninghami",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Blue-tongued Lizard",
+  "latin": "Tiliqua scincoides",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Marbled Gecko",
+  "latin": "Christinus marmoratus",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Murray Turtle",
+  "latin": "Emydura macquarii",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "White's Skink",
+  "latin": "Liopholis whitii",
+  "tier": "No licence needed (captive-bred, lawful source)",
+  "official_tier": "Schedule 4 (no-licence list)",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Australian Scrub Python",
+  "latin": "Morelia kinghorni",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Now usually Simalia kinghorni (Australian Scrub Python); formerly within Morelia amethistina."
+ },
+ {
+  "group": "gecko",
+  "common": "Beaded Gecko",
+  "latin": "Lucasium damaeum",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Arafura File Snake",
+  "latin": "Acrochordus arafurae",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Beaked Gecko",
+  "latin": "Rhynchoedura ornata",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Bearded Dragon",
+  "latin": "Pogona barbata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Black Rock Skink",
+  "latin": "Egernia saxatilis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Black-headed Monitor",
+  "latin": "Varanus tristis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Black-headed Python",
+  "latin": "Aspidites melanocephalus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Bougainville's Skink",
+  "latin": "Lerista bougainvillii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Boulenger's Skink",
+  "latin": "Morethia boulengeri",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Boyd's Forest Dragon",
+  "latin": "Hypsilurus boydii",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Broad-shelled River Turtle",
+  "latin": "Chelodina expansa",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Brook's Striped Skink",
+  "latin": "Ctenotus brooksi",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Brown Tree Snake",
+  "latin": "Boiga irregularis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Rear-fanged, mildly venomous (not marked in source)."
+ },
+ {
+  "group": "lizard",
+  "common": "Burrowing Skink",
+  "latin": "Lerista picturata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Burton's Snake-Lizard",
+  "latin": "Lialis burtonis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Bynoe's Gecko",
+  "latin": "Heteronotia binoei",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Carpet or Diamond Python",
+  "latin": "Morelia spilota",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Central Bearded Dragon",
+  "latin": "Pogona vitticeps",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Central Military Dragon",
+  "latin": "Ctenophorus isolepis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Central Netted Dragon",
+  "latin": "Ctenophorus nuchalis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Centralian Blue-tongued Lizard",
+  "latin": "Tiliqua multifasciata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Centralian Carpet Python",
+  "latin": "Morelia bredli",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Centralian Knob-tailed Gecko",
+  "latin": "Nephrurus amyae",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Centralian Ranges Rock-skink",
+  "latin": "Liopholis margaretae",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Children's Python",
+  "latin": "Antaresia childreni",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Collett's Snake",
+  "latin": "Pseudechis colletti",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Common Death Adder",
+  "latin": "Acanthophis antarcticus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Common or Green Tree Snake",
+  "latin": "Dendrelaphis punctulata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Current spelling Dendrelaphis punctulatus."
+ },
+ {
+  "group": "lizard",
+  "common": "Common Scaly-foot",
+  "latin": "Pygopus lepidopodus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Crested Dragon",
+  "latin": "Ctenophorus cristatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Curl Snake",
+  "latin": "Suta suta",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "gecko",
+  "common": "Desert Cave Gecko",
+  "latin": "Heteronotia spelea",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Desert Death Adder",
+  "latin": "Acanthophis pyrrhus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Diamond Python",
+  "latin": "Morelia spilota spilota",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Downs Bearded Dragon",
+  "latin": "Pogona henrylawsoni",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "Also called Pygmy/Rankin's Bearded Dragon."
+ },
+ {
+  "group": "snake",
+  "common": "Dugite",
+  "latin": "Pseudonaja affinis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Eastern Brown Snake",
+  "latin": "Pseudonaja textilis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Eastern Carpet Python",
+  "latin": "Morelia spilota mcdowelli",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Hooded Scaly-foot",
+  "latin": "Pygopus schraderi",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Eastern Small-eyed Snake",
+  "latin": "Cryptophis nigrescens",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "gecko",
+  "common": "Eastern Stone Gecko",
+  "latin": "Diplodactylus vittatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Three-lined Skink",
+  "latin": "Acritoscincus duperreyi",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Water Dragon",
+  "latin": "Intellagama lesueurii lesueurii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Eastern Water Skink",
+  "latin": "Eulamprus quoyii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Eyrean Earless Dragon",
+  "latin": "Tympanocryptis tetraporophora",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Fat-tailed Gecko",
+  "latin": "Diplodactylus conspicillatus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Fierce Snake",
+  "latin": "Oxyuranus microlepidotus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "crocodile",
+  "common": "Freshwater Crocodile",
+  "latin": "Crocodylus johnstoni",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "VIC announced Oct 2025 that private keeping of crocodiles will be prohibited via Wildlife Act reform; not yet implemented."
+ },
+ {
+  "group": "lizard",
+  "common": "Frilled Lizard",
+  "latin": "Chlamydosaurus kingii",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Garden Skink",
+  "latin": "Lampropholis delicata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Giant Cave Gecko",
+  "latin": "Pseudothecadactylus lindneri",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Gidgee Skink",
+  "latin": "Egernia stokesii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Gilbert's Dragon",
+  "latin": "Amphibolurus gilberti",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Gippsland Water Dragon",
+  "latin": "Intellagama lesueurii howittii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Golden-tailed Gecko",
+  "latin": "Strophurus taenicauda",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Grass Skink",
+  "latin": "Lampropholis guichenoti",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Green Python",
+  "latin": "Morelia viridis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Hosmer's Skink",
+  "latin": "Egernia hosmeri",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Jacky Lizard",
+  "latin": "Amphibolurus muricatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Jewelled Gecko",
+  "latin": "Strophurus elderi",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Jungle Carpet Python",
+  "latin": "Morelia spilota cheynei",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Some authorities treat this as Morelia spilota cheynei only (no change)."
+ },
+ {
+  "group": "snake",
+  "common": "Keelback",
+  "latin": "Tropidonophis mairii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "King's Skink",
+  "latin": "Egernia kingii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Krefft's River Turtle",
+  "latin": "Emydura krefftii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Lace Monitor",
+  "latin": "Varanus varius",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Land Mullet",
+  "latin": "Bellatorias major",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Little Whip Snake",
+  "latin": "Parasuta flagellum",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "lizard",
+  "common": "Long-nosed Water Dragon",
+  "latin": "Amphibolurus longirostris",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Lowland Copperhead",
+  "latin": "Austrelaps superbus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "lizard",
+  "common": "Major Skink",
+  "latin": "Bellatorias frerei",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Mallee Military Dragon",
+  "latin": "Ctenophorus fordi",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Mangrove Monitor",
+  "latin": "Varanus indicus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Marbled Velvet Gecko",
+  "latin": "Oedura marmorata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Mary River Tortoise",
+  "latin": "Elusor macrurus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Merten's Water Monitor",
+  "latin": "Varanus mertensi",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Mitchell's Short-tailed Snake",
+  "latin": "Parasuta nigriceps",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "monitor",
+  "common": "Mitchell's Water Monitor",
+  "latin": "Varanus mitchelli",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Mulga Snake",
+  "latin": "Pseudechis australis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Murray/Darling Carpet Python",
+  "latin": "Morelia spilota metcalfei",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Narrow-banded Sand Swimmer",
+  "latin": "Eremiascincus fasciolatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Northern Death Adder",
+  "latin": "Acanthophis praelongus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "gecko",
+  "common": "Northern Dtella",
+  "latin": "Gehyra australis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Northern Snake-necked Turtle",
+  "latin": "Chelodina rugosa",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Northern Snapping Turtle",
+  "latin": "Elseya dentata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Northern Spiny-tailed Gecko",
+  "latin": "Strophurus ciliaris",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Northern Tree Snake",
+  "latin": "Dendrelaphis calligastra",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Oblong Turtle",
+  "latin": "Chelodina colliei",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Also called Chelodina oblonga (Oblong Turtle) in older works."
+ },
+ {
+  "group": "lizard",
+  "common": "Ocellated Skink",
+  "latin": "Ctenotus pantherinus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Olive Legless Lizard",
+  "latin": "Delma inornata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Olive Python",
+  "latin": "Liasis olivaceus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Painted Dragon",
+  "latin": "Ctenophorus pictus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Painted Turtle (Jardine River Turtle only)",
+  "latin": "Emydura subglobosa subglobosa",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Pale Knob-tailed Gecko",
+  "latin": "Nephrurus laevissimus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Peninsula Dragon",
+  "latin": "Ctenophorus fionni",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Pig-nosed Turtle",
+  "latin": "Carettochelys insulpta",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "Spelled as listed; correct spelling Carettochelys insculpta."
+ },
+ {
+  "group": "lizard",
+  "common": "Pink-tongued Lizard",
+  "latin": "Cyclodomorphus gerrardii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Prickly Knob-tailed Gecko",
+  "latin": "Nephrurus asper",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Pygmy Mulga Monitor",
+  "latin": "Varanus gilleni",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Pygmy Python",
+  "latin": "Antaresia perthensis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Red-barred Dragon",
+  "latin": "Ctenophorus vadnappa",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Red-bellied Black Snake",
+  "latin": "Pseudechis porphyriacus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "lizard",
+  "common": "Red-throated Skink",
+  "latin": "Acritoscincus platynotus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Regal Striped Skink",
+  "latin": "Ctenotus regius",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Ridge-tailed Monitor",
+  "latin": "Varanus acanthurus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Ackie Monitor. V. baritji not separately listed."
+ },
+ {
+  "group": "snake",
+  "common": "Rough-scaled Python",
+  "latin": "Morelia carinata",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Rough-throated Leaf-tail Gecko",
+  "latin": "Saltuarius salebrosus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "crocodile",
+  "common": "Saltwater Crocodile",
+  "latin": "Crocodylus porosus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "VIC announced Oct 2025 that private keeping of crocodiles will be prohibited via Wildlife Act reform; not yet implemented."
+ },
+ {
+  "group": "monitor",
+  "common": "Sand Monitor",
+  "latin": "Varanus gouldii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Saw-shelled Turtle",
+  "latin": "Wollumbinia latisternum",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Current name Myuchelys latisternum."
+ },
+ {
+  "group": "lizard",
+  "common": "Schomburgk's Skink",
+  "latin": "Ctenotus schomburgkii",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Shingle-Back Lizard",
+  "latin": "Tiliqua rugosa",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Short-tailed Pygmy Monitor",
+  "latin": "Varanus brevicauda",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Slatey-grey Snake",
+  "latin": "Stegonotus cucullatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Smooth Knob-tailed Gecko",
+  "latin": "Nephrurus levis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Southern Angle-headed Dragon",
+  "latin": "Hypsilurus spinipes",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Southern Grass Skink",
+  "latin": "Pseudemoia entrecasteauxii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Southern Leaf-tailed Gecko",
+  "latin": "Saltuarius swaini",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "Not Phyllurus platurus, which is unlisted."
+ },
+ {
+  "group": "lizard",
+  "common": "Southern Legless Lizard",
+  "latin": "Delma australis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Southern Spiny-tailed Gecko",
+  "latin": "Strophurus intermedius",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Southern Spotted Velvet Gecko",
+  "latin": "Oedura tryoni",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Southern Water Skink (subspecies only)",
+  "latin": "Eulamprus tympanum tympanum",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Speckled Brown Snake",
+  "latin": "Pseudonaja guttata",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "monitor",
+  "common": "Spencer's Monitor",
+  "latin": "Varanus spenceri",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Spencer's Skink",
+  "latin": "Pseudemoia spenceri",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Spotted Black Snake",
+  "latin": "Pseudechis guttatus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Spotted Python",
+  "latin": "Antaresia maculosus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Current spelling Antaresia maculosa."
+ },
+ {
+  "group": "monitor",
+  "common": "Spotted Tree Monitor",
+  "latin": "Varanus scalaris",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "turtle",
+  "common": "Steindachner's Turtle",
+  "latin": "Chelodina steindachneri",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Stephen's Banded Snake",
+  "latin": "Hoplocephalus stephensii",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Stimson's Python",
+  "latin": "Antaresia stimsoni",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Storr's Monitor",
+  "latin": "Varanus storri",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "monitor",
+  "common": "Stripe-tailed Monitor",
+  "latin": "Varanus caudolineatus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Taipan",
+  "latin": "Oxyuranus scutellatus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "lizard",
+  "common": "Tawny Dragon",
+  "latin": "Ctenophorus decresii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Tessellated Gecko",
+  "latin": "Diplodactylus tessellatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Thick-tailed Gecko",
+  "latin": "Underwoodisaurus milii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Tiger Snake (all taxa)",
+  "latin": "Notechis scutatus (all taxa)",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Top End Carpet Python",
+  "latin": "Morelia spilota variegata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Tree Dtella",
+  "latin": "Gehyra variegata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Tree Skink",
+  "latin": "Egernia striolata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Water Python",
+  "latin": "Liasis mackloti",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Australian population now usually Liasis fuscus (Water Python)."
+ },
+ {
+  "group": "lizard",
+  "common": "Western Blue-tongued Lizard",
+  "latin": "Tiliqua occipitalis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Western Brown Snake (Gwardar)",
+  "latin": "Pseudonaja mengdeni",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Western Brown Snake (southern central Australia variety)",
+  "latin": "Pseudonaja aspidorhyncha",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Western Brown Snake (tropical northern Australia variety)",
+  "latin": "Pseudonaja nuchalis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Western Carpet Python",
+  "latin": "Morelia spilota imbricata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Western Hooded Scaly-foot",
+  "latin": "Pygopus nigriceps",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "lizard",
+  "common": "Western Netted Dragon",
+  "latin": "Ctenophorus reticulatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "gecko",
+  "common": "Western Stone Gecko",
+  "latin": "Diplodactylus granariensis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "White-lipped Snake",
+  "latin": "Drysdalia coronoides",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "snake",
+  "common": "Woma Python",
+  "latin": "Aspidites ramsayi",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "snake",
+  "common": "Yellow-faced Whip Snake",
+  "latin": "Demansia psammophis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": true,
+  "notes": "Front-fanged venomous elapid (not marked in source; added from general knowledge)."
+ },
+ {
+  "group": "frog",
+  "common": "Blue Mountains Tree Frog",
+  "latin": "Litoria citropa",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Brown Striped Frog",
+  "latin": "Limnodynastes peronii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Common Spadefoot Toad",
+  "latin": "Neobatrachus sudellae",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Dainty Green Tree Frog",
+  "latin": "Litoria gracilenta",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Eastern Dwarf Tree Frog",
+  "latin": "Litoria fallax",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Giant Barred Frog",
+  "latin": "Mixophyes iteratus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Giant Burrowing Frog",
+  "latin": "Heleioporus australiacus",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Giant Tree Frog",
+  "latin": "Litoria infrafrenata",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Some authorities now use Nyctimystes infrafrenatus."
+ },
+ {
+  "group": "frog",
+  "common": "Great Barred Frog",
+  "latin": "Mixophyes fasciolatus",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Green and Golden Bell Frog",
+  "latin": "Litoria aurea",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "Some authorities now use Ranoidea aurea."
+ },
+ {
+  "group": "frog",
+  "common": "Green Tree Frog",
+  "latin": "Litoria caerulea",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Some authorities now use Ranoidea caerulea."
+ },
+ {
+  "group": "frog",
+  "common": "Growling Grass Frog",
+  "latin": "Litoria raniformis",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "Some authorities now use Ranoidea raniformis."
+ },
+ {
+  "group": "frog",
+  "common": "Haswell's Frog",
+  "latin": "Paracrinia haswelli",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Leaf Green Tree Frog",
+  "latin": "Litoria phyllochroa",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Leaf Green Tree Frog",
+  "latin": "Litoria nudidigita",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Leseur's Frog",
+  "latin": "Litoria lesueuri",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Spelled 'Leseur's' in source."
+ },
+ {
+  "group": "frog",
+  "common": "Northern Dwarf Tree Frog",
+  "latin": "Litoria bicolor",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Orange-Thighed Frog",
+  "latin": "Litoria xanthomera",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Peron's Tree Frog",
+  "latin": "Litoria peronii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Red-eyed Tree Frog",
+  "latin": "Litoria chloris",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Roth's Tree Frog",
+  "latin": "Litoria rothii",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Southern Smooth Froglet",
+  "latin": "Geocrinia laevis",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Southern Toadlet",
+  "latin": "Pseudophryne semimarmorata",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Water-holding Frog",
+  "latin": "Cyclorana platycephala",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": "Some authorities now use Ranoidea platycephala."
+ },
+ {
+  "group": "frog",
+  "common": "Whistling Tree Frog",
+  "latin": "Litoria verreauxii",
+  "tier": "Basic licence (also allowed on Advanced)",
+  "official_tier": "Schedule 2",
+  "venomous": false,
+  "notes": ""
+ },
+ {
+  "group": "frog",
+  "common": "Magnificent Tree Frog",
+  "latin": "Litoria splendida",
+  "tier": "Advanced licence",
+  "official_tier": "Schedule 3",
+  "venomous": false,
+  "notes": "Some authorities now use Ranoidea splendida."
+ }
+]

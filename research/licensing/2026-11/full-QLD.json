@@ -1,0 +1,3572 @@
+[
+  {
+    "group": "frog",
+    "common": "barking frog",
+    "latin": "Limnodynastes fletcheri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "beeping froglet",
+    "latin": "Crinia parinsignifera",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "big shouldered gungan",
+    "latin": "Uperoleia capitulata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "bleating treefrog",
+    "latin": "Litoria dentata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Blue Mountains treefrog",
+    "latin": "Litoria citropa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "broad palmed rocketfrog",
+    "latin": "Litoria latopalmata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Centralian treefrog",
+    "latin": "Litoria gilleni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "chubby gungan",
+    "latin": "Uperoleia rugosa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "clicking froglet",
+    "latin": "Crinia signifera",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "common green treefrog",
+    "latin": "Litoria caerulea",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "desert treefrog",
+    "latin": "Litoria rubella",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "dusky toadlet",
+    "latin": "Uperoleia fusca",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "eastern gungan",
+    "latin": "Uperoleia laevigata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "eastern sedgefrog",
+    "latin": "Litoria fallax",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "eastern snapping frog",
+    "latin": "Cyclorana novaehollandiae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "eastern stony creek frog",
+    "latin": "Litoria wilcoxii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "emerald spotted treefrog",
+    "latin": "Litoria peronii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "giant bullfrog",
+    "latin": "Limnodynastes interioris",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "graceful treefrog",
+    "latin": "Litoria gracilenta",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "green stream frog",
+    "latin": "Litoria phyllochroa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "greenstripe frog",
+    "latin": "Cyclorana alboguttata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "grey bellied pobblebonk",
+    "latin": "Limnodynastes dumerilii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Jervis Bay treefrog",
+    "latin": "Litoria jervisiensis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "leaf green treefrog",
+    "latin": "Litoria nudidigita",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "magnificent treefrog",
+    "latin": "Litoria splendida",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "meeowing frog",
+    "latin": "Neobatrachus sudellae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Moore's frog",
+    "latin": "Litoria moorei",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "northern laughing treefrog",
+    "latin": "Litoria rothii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "northern sedgefrog",
+    "latin": "Litoria bicolor",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "northern snapping frog",
+    "latin": "Cyclorana australis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "northern stony creek frog",
+    "latin": "Litoria jungguy",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "orange eyed treefrog",
+    "latin": "Litoria chloris",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "ornate burrowing frog",
+    "latin": "Platyplectrum ornatum",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Limnodynastes ornatus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "salmon striped frog",
+    "latin": "Limnodynastes salmini",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "scarlet sided pobblebonk",
+    "latin": "Limnodynastes terraereginae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Sloane's froglet",
+    "latin": "Crinia sloanei",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "southern brown tree frog",
+    "latin": "Litoria ewingii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "southern laughing treefrog",
+    "latin": "Litoria tyleri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "spotted grassfrog",
+    "latin": "Limnodynastes tasmaniensis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "stony creek frog",
+    "latin": "Litoria lesueuri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "striped marshfrog",
+    "latin": "Limnodynastes peronii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "striped rocketfrog",
+    "latin": "Litoria nasuta",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "superb collared frog",
+    "latin": "Cyclorana brevipes",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "trilling frog",
+    "latin": "Neobatrachus centralis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Tyler's toadlet",
+    "latin": "Uperoleia tyleri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "wallum rocketfrog",
+    "latin": "Litoria freycineti",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "water holding frog",
+    "latin": "Cyclorana platycephala",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "whistling treefrog",
+    "latin": "Litoria verreauxii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "white lipped treefrog",
+    "latin": "Litoria infrafrenata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Bibron's toadlet",
+    "latin": "Pseudophryne bibronii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Booroolong frog",
+    "latin": "Litoria booroolongensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "cascade treefrog",
+    "latin": "Litoria pearsoniana",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "chirping froglet",
+    "latin": "Crinia deserticola",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "desert shovelfoot",
+    "latin": "Notaden nichollsi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "giant barred frog",
+    "latin": "Mixophyes iteratus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "giant burrowing frog",
+    "latin": "Heleioporus australiacus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "grassland collared frog",
+    "latin": "Cyclorana cultripes",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "great barred frog",
+    "latin": "Mixophyes fasciolatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "great brown broodfrog",
+    "latin": "Pseudophryne major",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "green and golden bell frog",
+    "latin": "Litoria aurea",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "green thighed frog",
+    "latin": "Litoria brevipalmata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "growling green eyed frog",
+    "latin": "Litoria eucnemis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Haswell's froglet",
+    "latin": "Paracrinia haswelli",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "holy cross frog",
+    "latin": "Notaden bennettii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Littlejohn's treefrog",
+    "latin": "Litoria littlejohni",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "masked mountainfrog",
+    "latin": "Philoria loveridgei",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "northern waterfrog",
+    "latin": "Litoria dahlii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "orange thighed treefrog",
+    "latin": "Litoria xanthomera",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "orange-bellied Frog",
+    "latin": "Geocrinia vitellina",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "pouched frog",
+    "latin": "Assa darlingtoni",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "red backed broodfrog",
+    "latin": "Pseudophryne coriacea",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "red crowned toadlet",
+    "latin": "Pseudophryne australis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "red-and-yellow mountainfrog",
+    "latin": "Philoria kundagungan",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "rough collared frog",
+    "latin": "Cyclorana verrucosa",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "southern bell frog",
+    "latin": "Litoria raniformis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "southern toadlet",
+    "latin": "Pseudophryne dendyi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "southern toadlet",
+    "latin": "Pseudophryne semimarmorata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "sphagnum frog",
+    "latin": "Philoria sphagnicolus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "stuttering frog",
+    "latin": "Mixophyes balbus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Tasmanian smooth froglet",
+    "latin": "Geocrinia laevis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Tasmanian treefrog",
+    "latin": "Litoria burrowsae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "tusked frog",
+    "latin": "Adelotus brevis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "Victorian smooth froglet",
+    "latin": "Geocrinia victoriana",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "wallum froglet",
+    "latin": "Crinia tinnula",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "frog",
+    "common": "whirring treefrog",
+    "latin": "Litoria revelata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "amethystine python",
+    "latin": "Simalia amethistina",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Morelia amethistina.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "banded knob-tail gecko",
+    "latin": "Nephrurus wheeleri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "bar-sided skink",
+    "latin": "Concinnia tenuis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "beaded gecko",
+    "latin": "Lucasium damaeum",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "bearded dragon",
+    "latin": "Pogona barbata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "black crevice-skink",
+    "latin": "Egernia saxatilis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "black-headed python",
+    "latin": "Aspidites melanocephalus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "black-headed worm-lizard",
+    "latin": "Aprasia picturata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "black-tailed monitor",
+    "latin": "Varanus tristis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "blotched blue-tongued lizard",
+    "latin": "Tiliqua nigrolutea",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "broad-banded sand swimmer",
+    "latin": "Eremiascincus richardsonii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "broad-shelled river turtle",
+    "latin": "Chelodina expansa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "broad-tailed gecko",
+    "latin": "Phyllurus platurus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "brown tree snake",
+    "latin": "Boiga irregularis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "rear-fanged colubrid, mildly venomous; not listed dangerous.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Burns's dragon",
+    "latin": "Amphibolurus burnsi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Burton's legless lizard",
+    "latin": "Lialis burtonis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Bynoe's gecko",
+    "latin": "Heteronotia binoei",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "Cann's longneck turtle",
+    "latin": "Chelodina canni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "carpet python",
+    "latin": "Morelia spilota",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "cave prickly gecko",
+    "latin": "Heteronotia spelea",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "central bearded dragon",
+    "latin": "Pogona vitticeps",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "central netted dragon",
+    "latin": "Ctenophorus nuchalis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "centralian blue-tongued lizard",
+    "latin": "Tiliqua multifasciata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "centralian carpet python",
+    "latin": "Morelia bredli",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "centralian knob-tailed gecko",
+    "latin": "Nephrurus amyae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "centralian lashtail dragon",
+    "latin": "Amphibolurus centralis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "Children's python",
+    "latin": "Antaresia childreni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "common dwarf skink",
+    "latin": "Menetia greyii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "common scaly-foot",
+    "latin": "Pygopus lepidopodus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "copper-tailed skink",
+    "latin": "Ctenotus taeniolatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Cunningham's skink",
+    "latin": "Egernia cunninghami",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "dark-flecked garden sunskink",
+    "latin": "Lampropholis delicata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "desert skink",
+    "latin": "Egernia inornata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "downs bearded dragon",
+    "latin": "Pogona henrylawsoni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "dubious dtella",
+    "latin": "Gehyra dubia",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "Dwyer's snake",
+    "latin": "Parasuta dwyeri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern blue-tongued lizard",
+    "latin": "Tiliqua scincoides",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern hooded scaly-foot",
+    "latin": "Pygopus schraderi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern ranges rock-skink",
+    "latin": "Liopholis modesta",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "eastern snake-necked turtle",
+    "latin": "Chelodina longicollis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern water dragon",
+    "latin": "Intellagama lesueurii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Physignathus lesueurii.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern water skink",
+    "latin": "Eulamprus quoyii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "excitable delma",
+    "latin": "Delma tincta",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "fringe-toed velvet gecko",
+    "latin": "Oedura filicipoda",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "ghost skink",
+    "latin": "Eremiascincus phantasmus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "gidgee skink",
+    "latin": "Egernia stokesii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Gilbert's dragon",
+    "latin": "Amphibolurus gilberti",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "golden-tailed gecko",
+    "latin": "Strophurus taenicauda",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "green python",
+    "latin": "Morelia viridis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "green tree snake",
+    "latin": "Dendrelaphis punctulatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Gulf delma",
+    "latin": "Delma molleri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Gulf marbled velvet gecko",
+    "latin": "Oedura bella",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "hooded scaly-foot",
+    "latin": "Pygopus nigriceps",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Hosmer's skink",
+    "latin": "Egernia hosmeri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "inland marbled velvet gecko",
+    "latin": "Oedura cincta",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "jacky lizard",
+    "latin": "Amphibolurus muricatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "keelback snake",
+    "latin": "Tropidonophis mairii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Kimberley Plateau dtella",
+    "latin": "Gehyra occidentalis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Kimberley rough knob-tail gecko",
+    "latin": "Nephrurus sheai",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "King's skink",
+    "latin": "Egernia kingii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Kristin's spiny-tailed gecko",
+    "latin": "Strophurus krisalys",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "land mullet",
+    "latin": "Bellatorias major",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Egernia major.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Lesueur's velvet gecko",
+    "latin": "Amalosia lesueurii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "long-nosed dragon",
+    "latin": "Amphibolurus longirostris",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "mainland she-oak skink",
+    "latin": "Cyclodomorphus michaeli",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "major skink",
+    "latin": "Bellatorias frerei",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Egernia frerei.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "marbled southern gecko",
+    "latin": "Christinus marmoratus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "marbled velvet gecko",
+    "latin": "Oedura marmorata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "Mary River turtle",
+    "latin": "Elusor macrurus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Mertens' water monitor",
+    "latin": "Varanus mertensi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Moritz's leaf-tailed gecko",
+    "latin": "Saltuarius moritzi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "mountain heath dragon",
+    "latin": "Rankinia diemensis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Murray's skink",
+    "latin": "Karma murrayi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Eulamprus murrayi.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "narrow-banded sand swimmer",
+    "latin": "Eremiascincus fasciolatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "nobbi",
+    "latin": "Diporiphora nobbi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "northern dtella",
+    "latin": "Gehyra australis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "northern leaf-tailed gecko",
+    "latin": "Saltuarius cornutus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "northern snake-necked turtle",
+    "latin": "Chelodina rugosa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "northern snapping turtle",
+    "latin": "Elseya dentata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "northern spotted velvet gecko",
+    "latin": "Oedura coggeri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "northern velvet gecko",
+    "latin": "Oedura castelnaui",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "north-west bearded dragon",
+    "latin": "Pogona mitchelli",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "ocellated velvet gecko",
+    "latin": "Oedura monilis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "olive python",
+    "latin": "Liasis olivaceus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "painted dragon",
+    "latin": "Ctenophorus pictus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "pale-flecked garden sunskink",
+    "latin": "Lampropholis guichenoti",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "pale-rumped ctenotus",
+    "latin": "Ctenotus regius",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "pink-tongued lizard",
+    "latin": "Cyclodomorphus gerrardii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "pygmy bearded dragon",
+    "latin": "Pogona minor",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "pygmy mulga monitor",
+    "latin": "Varanus gilleni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "pygmy python",
+    "latin": "Antaresia perthensis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "red-throated cool-skink",
+    "latin": "Acritoscincus platynotum",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "ridge-tailed monitor",
+    "latin": "Varanus acanthurus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "river turtle",
+    "latin": "Emydura macquarii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "robust ctenotus",
+    "latin": "Ctenotus robustus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "robust velvet gecko",
+    "latin": "Nebulifera robusta",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "rough knob-tailed gecko",
+    "latin": "Nephrurus asper",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "rough-scaled python",
+    "latin": "Morelia carinata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "rough-throated leaf-tailed gecko",
+    "latin": "Saltuarius salebrosus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "sand monitor",
+    "latin": "Varanus gouldii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "saw-shelled turtle",
+    "latin": "Wollumbinia latisternum",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Now usually Myuchelys latisternum.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Schomburgk's ctenotus",
+    "latin": "Ctenotus schomburgkii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "she-oak slender blue-tongue lizard",
+    "latin": "Cyclodomorphus casuarinae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "shingle-back",
+    "latin": "Tiliqua rugosa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "slaty-grey snake",
+    "latin": "Stegonotus cucullatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "smooth knob-tail gecko",
+    "latin": "Nephrurus laevissimus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "soft-spined gecko",
+    "latin": "Strophurus williamsi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "south-eastern morethia skink",
+    "latin": "Morethia boulengeri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "southern angle-headed dragon",
+    "latin": "Lophosaurus spinipes",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Hypsilurus spinipes.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "southern leaf-tailed gecko",
+    "latin": "Saltuarius swaini",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "southern phasmid gecko",
+    "latin": "Strophurus jeanae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "southern spiny-tailed gecko",
+    "latin": "Strophurus intermedius",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "southern spotted velvet gecko",
+    "latin": "Oedura tryoni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "spiny-tailed gecko",
+    "latin": "Strophurus ciliaris",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "spotted python",
+    "latin": "Antaresia maculosa",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "spotted tree monitor",
+    "latin": "Varanus scalaris",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Steindachner's gecko",
+    "latin": "Lucasium steindachneri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "stellate knob-tail gecko",
+    "latin": "Nephrurus stellatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "Stimson's python",
+    "latin": "Antaresia stimsoni",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Storr's monitor",
+    "latin": "Varanus storri",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "straight-browed ctenotus",
+    "latin": "Ctenotus spaldingi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "striped snake-eyed skink",
+    "latin": "Cryptoblepharus virgatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "swamplands lashtail",
+    "latin": "Amphibolurus temporalis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "tessellated gecko",
+    "latin": "Diplodactylus tessellatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "thick-tailed gecko",
+    "latin": "Underwoodisaurus milii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "three-lined knob-tail gecko",
+    "latin": "Nephrurus levis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "tommy roundhead",
+    "latin": "Diporiphora australis",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "tree skink",
+    "latin": "Egernia striolata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "varied dtella",
+    "latin": "Gehyra versicolor",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "water python",
+    "latin": "Liasis fuscus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "west coast morethia skink",
+    "latin": "Morethia lineoocellata",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "western shield spiny-tailed gecko",
+    "latin": "Strophurus wellingtonae",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "White's skink",
+    "latin": "Liopholis whitii",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "Formerly Egernia whitii.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "woma",
+    "latin": "Aspidites ramsayi",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "wood gecko",
+    "latin": "Diplodactylus vittatus",
+    "tier": "Standard licence",
+    "official_tier": "Class 1 — NC (Animals) Reg 2020 sch 3 pt 2",
+    "venomous": false,
+    "notes": "",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "Arafura file snake",
+    "latin": "Acrochordus arafurae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "bandy-bandy",
+    "latin": "Vermicella annulata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "bardick",
+    "latin": "Echiopsis curta",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "beaked gecko",
+    "latin": "Rhynchoedura ornata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "Bell's turtle",
+    "latin": "Wollumbinia belli",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Now usually Myuchelys bellii. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "black-bellied swamp snake",
+    "latin": "Hemiaspis signata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "black-collared dragon",
+    "latin": "Ctenophorus clayi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "blackish blind snake",
+    "latin": "Anilios nigrescens",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "black-spotted ridge-tailed monitor",
+    "latin": "Varanus baritji",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "bockadam",
+    "latin": "Cerberus australis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "rear-fanged homalopsid, mildly venomous; not listed dangerous. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "border thick-tailed gecko",
+    "latin": "Uvidicolus sphyrurus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Boyd's forest dragon",
+    "latin": "Lophosaurus boydii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Formerly Hypsilurus boydii. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Bush's monitor",
+    "latin": "Varanus bushi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Byrne's gecko",
+    "latin": "Lucasium byrnei",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "canegrass dragon",
+    "latin": "Diporiphora winneckei",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "central Pilbara spiny-tailed skink",
+    "latin": "Egernia eos",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "centralian dtella",
+    "latin": "Gehyra montium",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "centralian earless dragon",
+    "latin": "Tympanocryptis centralis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "centralian Ranges rock-skink",
+    "latin": "Liopholis margaretae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "chameleon dragon",
+    "latin": "Chelosania brunnea",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "chameleon gecko",
+    "latin": "Carphodactylus laevis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "claypan dragon",
+    "latin": "Ctenophorus salinarum",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Coen rainbow-skink",
+    "latin": "Liburnascincus coensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "coral snake",
+    "latin": "Brachyurophis australis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "crested dragon",
+    "latin": "Ctenophorus cristatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "crowned gecko",
+    "latin": "Lucasium stenodactylum",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "dark bar-sided skink",
+    "latin": "Concinnia martini",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "De Vis' banded snake",
+    "latin": "Denisonia devisi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "desert fat-tailed gecko",
+    "latin": "Diplodactylus laevis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "dotted velvet gecko",
+    "latin": "Oedura gemmata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "dwarf crowned snake",
+    "latin": "Cacophis krefftii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern crevice-skink",
+    "latin": "Egernia mcpheei",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "eastern deserts fat-tailed gecko",
+    "latin": "Diplodactylus ameyi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "eastern fat-tailed gecko",
+    "latin": "Diplodactylus platyurus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "eastern Pilbara spiny-tailed skink",
+    "latin": "Egernia epsisolus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "emerald monitor",
+    "latin": "Varanus prasinus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Eyrean earless dragon",
+    "latin": "Tympanocryptis tetraporophora",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "Fitzroy River turtle",
+    "latin": "Rheodytes leukops",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "flat-shelled snake-necked turtle",
+    "latin": "Chelodina steindachneri",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "frilled lizard",
+    "latin": "Chlamydosaurus kingii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "giant cave gecko",
+    "latin": "Pseudothecadactylus lindneri",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "gibber earless dragon",
+    "latin": "Tympanocryptis intima",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "golden-crowned snake",
+    "latin": "Cacophis squamulosus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "granite leaf-tailed gecko",
+    "latin": "Saltuarius wyberba",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "Gulf fat-tailed gecko",
+    "latin": "Diplodactylus barraganae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "Gulf snapping turtle",
+    "latin": "Elseya lavarackorum",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "helmeted gecko",
+    "latin": "Diplodactylus galeatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "Irwin's turtle",
+    "latin": "Elseya irwini",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "jewelled gecko",
+    "latin": "Strophurus elderi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Kimberley bearded dragon",
+    "latin": "Pogona microlepidota",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Kimberley rock monitor",
+    "latin": "Varanus glauerti",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "lace monitor",
+    "latin": "Varanus varius",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Leonhardi's ctenotus",
+    "latin": "Ctenotus leonhardii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "leopard ctenotus",
+    "latin": "Ctenotus pantherinus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "lined earless dragon",
+    "latin": "Tympanocryptis lineata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "line-tailed pygmy monitor",
+    "latin": "Varanus caudolineatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "little file snake",
+    "latin": "Acrochordus granulatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "little whip snake",
+    "latin": "Parasuta flagellum",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "long-tailed rock monitor",
+    "latin": "Varanus glebopalma",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "Macleay's water snake",
+    "latin": "Pseudoferania polylepis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "rear-fanged homalopsid, mildly venomous; not listed dangerous. Formerly Enhydris polylepis. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "mallee dragon",
+    "latin": "Ctenophorus fordi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "mangrove monitor",
+    "latin": "Varanus indicus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "McDonald's ring-tailed gecko",
+    "latin": "Cyrtodactylus mcdonaldi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "military dragon",
+    "latin": "Ctenophorus isolepis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Mitchell's water monitor",
+    "latin": "Varanus mitchelli",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "mourning gecko",
+    "latin": "Lepidodactylus lugubris",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "mustard-bellied snake",
+    "latin": "Drysdalia rhodogaster",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "nocturnal desert-skink",
+    "latin": "Liopholis striata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "northern Pilbara rock monitor",
+    "latin": "Varanus pilbarensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "northern red-faced turtle",
+    "latin": "Emydura victoriae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "northern ridge-tailed monitor",
+    "latin": "Varanus primordius",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "northern tree snake",
+    "latin": "Dendrelaphis calligastra",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "northern yellow-faced turtle",
+    "latin": "Emydura tanybaraga",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "Oenpelli rock python",
+    "latin": "Morelia oenpelliensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Sometimes placed in Nyctophilopython. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "orange-naped snake",
+    "latin": "Furina ornata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "ornamental snake",
+    "latin": "Denisonia maculata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "ornate dragon",
+    "latin": "Ctenophorus ornatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "patternless delma",
+    "latin": "Delma inornata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "pebble dragon",
+    "latin": "Tympanocryptis cephalus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "peninsula dragon",
+    "latin": "Ctenophorus fionni",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "perentie",
+    "latin": "Varanus giganteus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "pig-nosed turtle",
+    "latin": "Carettochelys insculpta",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "prickly forest skink",
+    "latin": "Gnypetoscincus queenslandiae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "pygmy rock monitor",
+    "latin": "Varanus kingorum",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "pygmy spiny-tailed skink",
+    "latin": "Egernia depressa",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "red-barred dragon",
+    "latin": "Ctenophorus vadnappa",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "red-flushed river turtle",
+    "latin": "Emydura subglobosa",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "red-naped snake",
+    "latin": "Furina diadema",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "red-tailed calyptotis",
+    "latin": "Calyptotis ruficauda",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "ring-tailed dragon",
+    "latin": "Ctenophorus caudicinctus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "ring-tailed gecko",
+    "latin": "Cyrtodactylus tuberculatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "robust dtella",
+    "latin": "Gehyra robusta",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "robust two-line dragon",
+    "latin": "Diporiphora bennettii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Rosenberg's goanna",
+    "latin": "Varanus rosenbergi",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "rusty desert monitor",
+    "latin": "Varanus eremius",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "rusty monitor",
+    "latin": "Varanus semiremex",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "sandstone long-necked turtle",
+    "latin": "Chelodina burrungandjii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "scrub python",
+    "latin": "Simalia kinghorni",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "short-tailed pygmy monitor",
+    "latin": "Varanus brevicauda",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Southern Pilbara rock monitor",
+    "latin": "Varanus hammersleyensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "turtle",
+    "common": "southern snapping turtle",
+    "latin": "Elseya albagula",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "southern water-skink",
+    "latin": "Eulamprus tympanum",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "south-western rock-skink",
+    "latin": "Liopholis pulchra",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "spectacled hooded snake",
+    "latin": "Parasuta spectabilis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "Spencer's monitor",
+    "latin": "Varanus spenceri",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "stony-soil ctenotus",
+    "latin": "Ctenotus saxatilis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "striped legless lizard",
+    "latin": "Delma impar",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Legless lizard (Pygopodidae, gecko relative); grouped as lizard. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "tawny dragon",
+    "latin": "Ctenophorus decresii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "three-clawed worm-skink",
+    "latin": "Anomalopus verreauxii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "Tryon's skink",
+    "latin": "Karma tryoni",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Formerly Eulamprus tryoni. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "two-lined dragon",
+    "latin": "Diporiphora bilineata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "variable fat-tailed gecko",
+    "latin": "Diplodactylus conspicillatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "western blue-tongued lizard",
+    "latin": "Tiliqua occipitalis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "western giant cave gecko",
+    "latin": "Pseudothecadactylus cavaticus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "western netted dragon",
+    "latin": "Ctenophorus reticulatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "western Pilbara spiny-tailed skink",
+    "latin": "Egernia cygnitos",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "western spiny-tailed gecko",
+    "latin": "Strophurus spinigerus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "gecko",
+    "common": "wheat-belt stone gecko",
+    "latin": "Diplodactylus granariensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "white-crowned snake",
+    "latin": "Cacophis harriettae",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "white-lipped python",
+    "latin": "Leiopython hoserae/albertisii",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Listed as two names on one line; one entry here. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "white-lipped snake",
+    "latin": "Drysdalia coronoides",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "yakka skink",
+    "latin": "Egernia rugosa",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "yellow-faced whip snake",
+    "latin": "Demansia psammophis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Venomous elapid but not listed as Dangerous; still treat with care. Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "lizard",
+    "common": "yellow-sided two-lined dragon",
+    "latin": "Diporiphora magna",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "monitor",
+    "common": "yellow-spotted monitor",
+    "latin": "Varanus panoptes",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": false,
+    "notes": "Class 2: Specialised or Advanced licence only.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "black snakes",
+    "latin": "Pseudechis spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "broad-headed snakes",
+    "latin": "Hoplocephalus spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "brown snakes",
+    "latin": "Pseudonaja spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "copperheads",
+    "latin": "Austrelaps spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "death adders",
+    "latin": "Acanthophis spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "eastern small-eyed snake",
+    "latin": "Cryptophis nigrescens",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "greater black whipsnake",
+    "latin": "Demansia papuensis",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "lesser black whipsnake",
+    "latin": "Demansia vestigiata",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "myall snake",
+    "latin": "Suta suta",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "rough-scaled snake",
+    "latin": "Tropidechis carinatus",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "taipans",
+    "latin": "Oxyuranus spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  },
+  {
+    "group": "snake",
+    "common": "tiger snakes",
+    "latin": "Notechis spp.",
+    "tier": "Specialised licence",
+    "official_tier": "Class 2 (Dangerous Animal) — NC (Animals) Reg 2020 sch 3 pt 3",
+    "venomous": true,
+    "notes": "Listed as a Dangerous Animal: licence needs separate dangerous-snake approval; not allowed on Standard. Genus-level entry: covers all protected species in the genus.",
+    "source": "Categories of protected animals under the Nature Conservation (Animals) Regulation 2020 (qld.gov.au PDF, undated) https://www.qld.gov.au/__data/assets/pdf_file/0035/139697/classes-of-animals-under-the-nc-animals-regulation-2020.pdf"
+  }
+]

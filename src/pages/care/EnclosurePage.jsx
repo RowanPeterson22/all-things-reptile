@@ -3,6 +3,7 @@ import { C } from "../../constants/colours";
 import SectionLabel from "../../components/SectionLabel";
 import WarnBox from "../../components/WarnBox";
 import ShopBtn from "../../components/ShopBtn";
+import ScrollRow from "../../components/ScrollRow";
 
 // ─── Enclosure Guide page ─────────────────────────────────────────
 const EnclosurePage = ({ onBack }) => {
@@ -32,11 +33,11 @@ const EnclosurePage = ({ onBack }) => {
             <div style={{ fontSize: 12, color: "rgba(255,255,255,0.6)", marginTop: 3 }}>For Australian reptile keepers</div>
           </div>
         </div>
-        <div style={{ display: "flex", borderBottom: "2px solid rgba(255,255,255,0.1)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+        <ScrollRow tone="dark" style={{ display: "flex", borderBottom: "2px solid rgba(255,255,255,0.1)", margin: "0 -20px", padding: "0 20px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
           {tabs.map(t => (
             <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.gold}` : "2px solid transparent", color: tab === t ? C.gold : "rgba(255,255,255,0.55)", fontSize: 12, fontWeight: 700, padding: "10px 12px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -2 }}>{tabLabels[t]}</button>
           ))}
-        </div>
+        </ScrollRow>
       </div>
       <div style={{ background: "white", padding: "16px 18px 24px", minHeight: 400 }}>
         {tab === "types" && <>

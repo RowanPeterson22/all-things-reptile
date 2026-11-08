@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { C } from "../constants/colours";
 import { GROUP_CHIPS, PHOTO_FILTERS, filterSpecies, activeCount } from "./species";
 import { N, page, input, chip, badge } from "./ui";
+import ScrollRow from "../components/ScrollRow";
 
 const PAGE_SIZE = 60;
 
@@ -10,7 +11,7 @@ const PAGE_SIZE = 60;
 let remembered = { q: "", group: "all", photos: "any", appOnly: false };
 
 const ChipRow = ({ children }) => (
-  <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, marginBottom: 8, WebkitOverflowScrolling: "touch" }}>{children}</div>
+  <ScrollRow tone="light" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, marginBottom: 8, WebkitOverflowScrolling: "touch" }}>{children}</ScrollRow>
 );
 
 // ─── Photo library: every species, searchable, with photo counts ──

@@ -11,6 +11,7 @@ import FeedbackScreen from "./FeedbackScreen";
 import TestersScreen from "./TestersScreen";
 import IndexScreen from "./IndexScreen";
 import MorphsScreen from "./MorphsScreen";
+import ScrollRow from "../components/ScrollRow";
 
 // ─── ATR admin (interim access: an is_admin beta tester, until D7) ─
 // Loaded as its own chunk, only after /api/admin-check says yes, so the public
@@ -89,9 +90,9 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
           </div>
           <button type="button" onClick={() => navigate("/")} style={{ background: "rgba(255,255,255,0.15)", border: "none", color: "white", borderRadius: 8, padding: "6px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Back to app</button>
         </div>
-        <nav style={{ display: "flex", gap: 18, overflowX: "auto", maxWidth: 960, margin: "6px auto 0", WebkitOverflowScrolling: "touch" }}>
+        <ScrollRow tone="dark" style={{ display: "flex", gap: 18, overflowX: "auto", maxWidth: 960, margin: "6px auto 0", WebkitOverflowScrolling: "touch" }}>
           {NAV.map(n => <NavLink key={n.to} to={n.to} end={n.end} style={navStyle}>{n.label}</NavLink>)}
-        </nav>
+        </ScrollRow>
       </div>
 
       <GateBanner gate={gate} />

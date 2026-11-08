@@ -1,0 +1,5 @@
+{
+  "ids": ["lizard", "snake", "gecko", "turtle", "frog", "monitor"],
+  "cardAspect": 1.85,
+  "bannerAspect": 2.4
+}

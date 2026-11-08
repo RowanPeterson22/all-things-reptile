@@ -112,6 +112,8 @@ const fakeImpl = async (url, init = {}) => {
       return res(200, rows);
     }
   }
+  // No category images in these tests (src/__tests__/categoryImages.test.js covers them).
+  if (table === "category_images" && method === "GET") return res(200, []);
   if (path === "/storage/v1/object/move" && method === "POST") {
     const bucket = db.objects[body.bucketId];
     if (!bucket[body.sourceKey]) return res(404, {});

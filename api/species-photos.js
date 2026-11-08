@@ -4,10 +4,13 @@
 // with the secret key and returns only public rows and display fields.
 //   GET ?species=<app slug, D4>   one species page's gallery
 //   GET                           every public photo (the /credits page)
+//   GET ?categories=1             the Browse category images (cards and
+//                                 category headers), with their credits
 // Cached at Vercel's edge for 5 minutes, so page views don't reach Supabase.
 
 const { supabaseConfig, SupabaseError } = require("../lib/supabase");
 const { listPublicPhotos } = require("../lib/speciesPhotos");
+const { listPublicCategoryImages } = require("../lib/categoryImages");
 const { APP_TO_INDEX } = require("../lib/adminSpecies");
 
 const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
@@ -27,16 +30,22 @@ module.exports = async (req, res) => {
   const cfg = supabaseConfig();
   if (!cfg) {
     res.setHeader("Cache-Control", "no-store");
-    return res.status(503).json({ error: "Photos aren't set up yet.", photos: [] });
+    return res.status(503).json({ error: "Photos aren't set up yet.", photos: [], categories: [] });
   }
+  const wantCategories = req.query && (req.query.categories === "1" || req.query.categories === "true");
   try {
+    if (wantCategories && species === undefined) {
+      const categories = await listPublicCategoryImages(cfg);
+      res.setHeader("Cache-Control", "public, max-age=60, s-maxage=300, stale-while-revalidate=600");
+      return res.status(200).json({ categories });
+    }
     const photos = await listPublicPhotos(cfg, species);
     res.setHeader("Cache-Control", "public, max-age=60, s-maxage=300, stale-while-revalidate=600");
     return res.status(200).json({ photos });
   } catch (e) {
     res.setHeader("Cache-Control", "no-store");
-    if (e instanceof SupabaseError) return res.status(502).json({ error: "Photos are unavailable right now.", photos: [] });
+    if (e instanceof SupabaseError) return res.status(502).json({ error: "Photos are unavailable right now.", photos: [], categories: [] });
     console.error("species photos: unexpected error");
-    return res.status(500).json({ error: "Something went wrong.", photos: [] });
+    return res.status(500).json({ error: "Something went wrong.", photos: [], categories: [] });
   }
 };

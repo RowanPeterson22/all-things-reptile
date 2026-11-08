@@ -110,6 +110,8 @@ const fakeImpl = async (url, init = {}) => {
     db.feedback = db.feedback.filter(r => r.id !== eq(q, "id"));
     return res(204, null);
   }
+  // No category images here (src/__tests__/categoryImages.test.js covers them).
+  if (table === "category_images") return res(200, []);
   if (table === "reference_photos" && method === "DELETE") {
     db.photos = db.photos.filter(r => r.id !== eq(q, "id"));
     return res(204, null);

@@ -4,7 +4,7 @@
 // margins) makes it a 40px-tall tap target. White, because 70% white on the
 // brand orange was 2.8:1.
 
-const PAD = 11;
+const PAD = 12;
 
 const BackButton = ({ onClick, children, marginBottom = 16 }) => (
   <button type="button" onClick={onClick} style={{

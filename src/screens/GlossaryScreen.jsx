@@ -51,7 +51,7 @@ const GlossaryScreen = ({ showCredits = true }) => {
               <span style={{
                 display: "block", padding: "4px 12px", borderRadius: 20, fontSize: 11, fontWeight: 700, whiteSpace: "nowrap",
                 background: activeCategory === cat ? "white" : "rgba(255,255,255,0.15)",
-                color: activeCategory === cat ? C.green : "rgba(255,255,255,0.9)",
+                color: activeCategory === cat ? C.green : "white",
               }}>{cat}</span>
             </button>
           ))}
@@ -82,7 +82,7 @@ const GlossaryScreen = ({ showCredits = true }) => {
             </div>
           ))
         )}
-        <div style={{ padding: "16px 18px", fontSize: 12, color: "#aaa", textAlign: "center" }}>
+        <div style={{ padding: "16px 18px", fontSize: 12, color: C.muted, textAlign: "center" }}>
           {filtered.length} term{filtered.length !== 1 ? "s" : ""} {activeCategory !== "All" ? `in ${activeCategory}` : "in glossary"}
         </div>
         {showCredits && <div style={{ padding: "0 18px 5px", fontSize: 11, textAlign: "center", marginTop: -13 }}>

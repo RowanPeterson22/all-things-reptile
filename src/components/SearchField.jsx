@@ -10,7 +10,7 @@ const IOS_MIN = 16;
 
 const SearchField = ({ value, onChange, onClear, placeholder, label = "Search", size = 14, radius = 12, padX = 14, padY = 10, marginBottom = 14, clearSize = 18, clearAlpha = 0.6 }) => {
   const k = size / IOS_MIN;
-  const line = Math.round(size * 1.35); // visual line height, px
+  const line = Math.round(size * 1.43); // visual line height, px
   const height = line + padY * 2;       // visual (and tappable) height of the input
   return (
     <div style={{ background: "rgba(255,255,255,0.12)", border: "0.5px solid rgba(255,255,255,0.2)", borderRadius: radius, padding: `0 ${padX}px`, display: "flex", alignItems: "center", gap: 8, marginBottom }}>

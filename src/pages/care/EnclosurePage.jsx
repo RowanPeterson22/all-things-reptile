@@ -39,8 +39,8 @@ const EnclosurePage = ({ onBack }) => {
           <SectionLabel mt={0}>Minimum vs recommended sizes</SectionLabel>
           <div style={{ borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", marginBottom: 16 }}>
             <div style={{ background: C.green, padding: "8px 14px", display: "flex", justifyContent: "space-between" }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>Species</span>
-              <span style={{ fontSize: 11, fontWeight: 700, color: C.gold }}>Recommended size</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,0.9)" }}>Species</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: "white" }}>Recommended size</span>
             </div>
             {sizes.map(([species, min, rec], i) => (
               <div key={species} style={{ padding: "10px 14px", borderBottom: i < sizes.length - 1 ? "0.5px solid #f0f0ea" : "none", display: "flex", alignItems: "center", justifyContent: "space-between", background: i % 2 === 0 ? "white" : C.cream }}>

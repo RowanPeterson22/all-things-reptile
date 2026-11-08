@@ -7,9 +7,9 @@ const InsectCard = ({ name, protein, fat, calcium, availability, best, notes, ta
       {tag && <span style={{fontSize:10,fontWeight:700,padding:"3px 9px",borderRadius:10,background:tagColor+"22",color:tagColor}}>{tag}</span>}
     </div>
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:6,marginBottom:10}}>
-      {[["Protein",protein,"#2a7e4a"],["Fat",fat,"#c8963c"],["Ca:P ratio",calcium,"#1a3a5c"]].map(([label,val,col])=>(
+      {[["Protein",protein,"#2a7e4a"],["Fat",fat,"#7a5a1e"],["Ca:P ratio",calcium,"#1a3a5c"]].map(([label,val,col])=>(
         <div key={label} style={{background:"white",borderRadius:8,padding:"6px 8px",textAlign:"center",border:"0.5px solid #eee"}}>
-          <div style={{fontSize:9,color:"#999",fontWeight:700,marginBottom:2}}>{label}</div>
+          <div style={{fontSize:10,color:"#777",fontWeight:700,marginBottom:2}}>{label}</div>
           <div style={{fontSize:12,fontWeight:700,color:col}}>{val}</div>
         </div>
       ))}

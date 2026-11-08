@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { C } from "../constants/colours";
 import { GLOSSARY_TERMS } from "../data/glossary";
+import ScrollRow from "../components/ScrollRow";
 
 // ─── Glossary screen ─────────────────────────────────────────────
 const GlossaryScreen = ({ showCredits = true }) => {
@@ -48,7 +49,7 @@ const GlossaryScreen = ({ showCredits = true }) => {
           />
           {search && <button onClick={() => setSearch("")} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.5)", cursor: "pointer", fontSize: 16, fontFamily: "inherit" }}>×</button>}
         </div>
-        <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 12, scrollbarWidth: "none" }}>
+        <ScrollRow tone="dark" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 12, scrollbarWidth: "none" }}>
           {categories.map(cat => (
             <button key={cat} onClick={() => setActiveCategory(cat)} style={{
               padding: "4px 12px", borderRadius: 20, fontSize: 11, fontWeight: 700, whiteSpace: "nowrap",
@@ -57,7 +58,7 @@ const GlossaryScreen = ({ showCredits = true }) => {
               color: activeCategory === cat ? C.green : "rgba(255,255,255,0.7)",
             }}>{cat}</button>
           ))}
-        </div>
+        </ScrollRow>
       </div>
 
       <div style={{ background: "white", padding: "8px 0 24px" }}>

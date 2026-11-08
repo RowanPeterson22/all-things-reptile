@@ -5,6 +5,7 @@ import WarnBox from "../components/WarnBox";
 import { GROUP_CHIPS, filterSpecies } from "./species";
 import { morphsForSpecies } from "./morphs";
 import { N, page, input, chip, badge, card, sectionLabel } from "./ui";
+import ScrollRow from "../components/ScrollRow";
 
 const STATES = ["NSW", "VIC", "QLD", "SA", "WA", "TAS", "ACT", "NT"];
 const READ_ONLY = "Read-only for now. Editing comes later, once species data moves to Shopify and Supabase (D5).";
@@ -93,10 +94,10 @@ const IndexScreen = ({ species, bySlug, catalogue }) => {
     <div style={{ ...page, maxWidth: 720 }}>
       <WarnBox type="blue" title="Read-only">{READ_ONLY}</WarnBox>
       <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search common or scientific name" style={{ ...input, marginBottom: 10 }} aria-label="Search the index" />
-      <div style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, marginBottom: 8 }}>
+      <ScrollRow tone="light" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, marginBottom: 8 }}>
         {GROUP_CHIPS.map(c => <button key={c.id} type="button" onClick={() => setGroup(c.id)} style={chip(group === c.id)}>{c.label}</button>)}
         <button type="button" onClick={() => setAppOnly(v => !v)} style={chip(appOnly)}>In the app</button>
-      </div>
+      </ScrollRow>
       <div style={{ fontSize: 11, color: N.muted, margin: "4px 0 8px" }}>{list.length.toLocaleString("en-AU")} records</div>
       <div style={card}>
         {list.slice(0, 100).map(r => (

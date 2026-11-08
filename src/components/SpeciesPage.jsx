@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { C } from "../constants/colours";
 import SpeciesGallery from "./SpeciesGallery";
+import ScrollRow from "./ScrollRow";
 
 // ─── Species page shell ───────────────────────────────────────────
 // Back label follows the tab the page was opened from (carried in history state).
@@ -30,11 +31,11 @@ const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent
             ))}
           </div>
           <SpeciesGallery species={slug} />
-          <div style={{ display: "flex", borderBottom: "0.5px solid #eee", margin: "0 -18px", padding: "0 18px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
+          <ScrollRow tone="light" label="Sections" style={{ display: "flex", borderBottom: "0.5px solid #eee", margin: "0 -18px", padding: "0 18px", gap: 4, overflowX: "auto", scrollbarWidth: "none" }}>
             {tabs.map(t => (
               <button key={t} onClick={() => setTab(t)} style={{ background: "none", border: "none", borderBottom: tab === t ? `2px solid ${C.green}` : "2px solid transparent", color: tab === t ? C.green : "#888", fontSize: 12, fontWeight: 700, padding: "8px 11px", cursor: "pointer", fontFamily: "inherit", whiteSpace: "nowrap", marginBottom: -1, textTransform: "capitalize" }}>{t}</button>
             ))}
-          </div>
+          </ScrollRow>
         </div>
       </div>
       <div style={{ background: "white", padding: "16px 18px 28px" }}>

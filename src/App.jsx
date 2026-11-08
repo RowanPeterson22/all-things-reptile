@@ -156,6 +156,9 @@ const ALL_TABS = [
 const PUBLIC_ACCESS = accessFor(PUBLIC_SECTIONS);
 
 const FONT = "'DM Sans', system-ui, sans-serif";
+// Bottom tab bar, sized explicitly so the spacer under the content matches it.
+// The copyright line sits partly in the home-bar zone on notched iPhones.
+const NAV = { top: 8, row: 48, footTop: 10, footLine: 12, footBottom: "max(4px, calc(env(safe-area-inset-bottom, 0px) - 15px))" };
 const Blank = () => <div style={{ minHeight: "100vh", background: C.cream }} />;
 const Notice = ({ title, children }) => (
   <div style={{ minHeight: "100vh", background: C.cream, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, boxSizing: "border-box" }}>
@@ -303,18 +306,19 @@ export function AppShell() {
         </div>
 
         {showNav && <>
-        <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", flexDirection: "column", paddingTop: 8, zIndex: 100 }}>
+        <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", flexDirection: "column", paddingTop: NAV.top, zIndex: 100 }}>
           <div style={{ display: "flex", width: "100%" }}>
             {TABS.map(t => (
-              <button key={t.id} onClick={() => go(t.path)} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", gap: 3, cursor: "pointer", padding: "4px 0", fontFamily: "inherit" }}>
-                <span style={{ fontSize: 20 }}>{t.icon}</span>
-                <span style={{ fontSize: 10, color: activeTab === t.id ? C.green : "#aaa", fontWeight: activeTab === t.id ? 700 : 400 }}>{t.label}</span>
+              <button key={t.id} onClick={() => go(t.path)} aria-current={activeTab === t.id ? "page" : undefined} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, cursor: "pointer", padding: 0, height: NAV.row, fontFamily: "inherit" }}>
+                <span style={{ fontSize: 20, lineHeight: "24px" }}>{t.icon}</span>
+                <span style={{ fontSize: 10, lineHeight: "13px", color: activeTab === t.id ? C.green : C.muted, fontWeight: activeTab === t.id ? 700 : 400 }}>{t.label}</span>
               </button>
             ))}
           </div>
-          <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "10px 0 calc(env(safe-area-inset-bottom, 0px) - 15px)" }}>© 2026 Amphibian Pty Ltd</div>
+          <div style={{ textAlign: "center", fontSize: 9, lineHeight: `${NAV.footLine}px`, color: "#ccc", padding: `${NAV.footTop}px 0 ${NAV.footBottom}` }}>© 2026 Amphibian Pty Ltd</div>
         </div>
-        <div style={{ height: "calc(60px + env(safe-area-inset-bottom, 0px))" }} />
+        {/* Same height as the fixed bar, so the end of every screen clears it. */}
+        <div style={{ height: `calc(${1 + NAV.top + NAV.row + NAV.footTop + NAV.footLine}px + ${NAV.footBottom})`, flexShrink: 0 }} />
         </>}
         {!showNav && <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "10px 0 calc(env(safe-area-inset-bottom, 0px) + 10px)", background: "white" }}>© 2026 Amphibian Pty Ltd</div>}
     </div>

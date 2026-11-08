@@ -83,15 +83,15 @@ export const CategoryPicker = ({ api, cat, busy, onChoose, onCancel }) => {
         <div key={g.appSlug}>
           <div style={sectionLabel}>{g.name} · {g.photos.length}</div>
           {g.photos.length === 0 && <div style={hint}>No library photos yet.</div>}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 8 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: 8 }}>
             {g.photos.map(p => {
               const current = data.currentPhotoId === p.id;
               const disabled = busy || Boolean(p.block) || current;
               return (
                 <button key={p.id} type="button" disabled={disabled} onClick={() => onChoose(p)}
                   aria-label={p.block ? `${p.speciesName}, ${p.credit.name}: can't be used. ${p.block}` : current ? `${p.speciesName}, ${p.credit.name}: the current image` : `Use this photo: ${p.speciesName}, ${p.credit.name}`}
-                  style={{ display: "block", textAlign: "left", padding: 0, border: `${current ? 2 : 0.5}px solid ${current ? C.green : N.line}`, borderRadius: 10, background: "white", overflow: "hidden", cursor: disabled ? "default" : "pointer", fontFamily: "inherit", opacity: p.block ? 0.55 : 1 }}>
-                  <div style={{ width: "100%", aspectRatio: "4 / 3", background: N.line }}>
+                  style={{ display: "block", alignSelf: "start", textAlign: "left", padding: 0, border: `${current ? 2 : 0.5}px solid ${current ? C.green : N.line}`, borderRadius: 10, background: "white", overflow: "hidden", cursor: disabled ? "default" : "pointer", fontFamily: "inherit", color: N.ink }}>
+                  <div style={{ width: "100%", aspectRatio: "4 / 3", background: N.line, opacity: p.block ? 0.5 : 1 }}>
                     {p.url && <img src={p.url} alt="" loading="lazy" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", filter: p.block ? "grayscale(1)" : "none" }} />}
                   </div>
                   <div style={{ padding: "6px 8px 8px", fontSize: 11, lineHeight: 1.4, color: N.ink }}>

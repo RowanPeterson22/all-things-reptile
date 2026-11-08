@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { C } from "../constants/colours";
 import { SPECIES } from "../data/species";
 import { CATEGORIES } from "../data/categories";
@@ -12,6 +12,15 @@ import { useCategoryImages, CategoryCardImage, CategoryEmoji, useBrokenSet } fro
 
 const BrowseScreen = ({ onSpecies }) => {
   const [category, setCategory] = useState(null);
+  // Opening a category (or going back) starts at the top, so the header and
+  // its back button are in view even when the card tapped was low on the page.
+  const rootRef = useRef(null);
+  const firstRender = useRef(true);
+  useEffect(() => {
+    if (firstRender.current) { firstRender.current = false; return; }
+    for (let el = rootRef.current; el; el = el.parentElement) if (el.scrollTop) el.scrollTop = 0;
+    if (document.scrollingElement) document.scrollingElement.scrollTop = 0;
+  }, [category]);
   // Each species' main image (the hero Rowan ticked, else its first photo)
   // replaces the emoji on the cards.
   const allPhotos = usePublicPhotos(null, { all: !!category }); // only once a category is open
@@ -30,7 +39,7 @@ const BrowseScreen = ({ onSpecies }) => {
     const cat = CATEGORIES.find(c => c.id === category);
     const banner = imageFor(category);
     return (
-      <div style={{ flex: 1, overflowY: "auto" }}>
+      <div ref={rootRef} style={{ flex: 1, overflowY: "auto" }}>
         {banner ? (
           <>
             {/* The same treatment as the species hero: 2.4 : 1, back button over a top fade. */}
@@ -79,7 +88,7 @@ const BrowseScreen = ({ onSpecies }) => {
   }
 
   return (
-    <div style={{ flex: 1, overflowY: "auto", padding: 16 }}>
+    <div ref={rootRef} style={{ flex: 1, overflowY: "auto", padding: 16 }}>
       <div style={{ background: C.green, borderRadius: 14, padding: 16, marginBottom: 16, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} onClick={() => onSpecies("bluetongue")}>
         <div style={{ fontSize: 40 }}>🦎</div>
         <div style={{ flex: 1 }}>

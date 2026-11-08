@@ -234,14 +234,22 @@ describe("slideshow", () => {
     vis.mockRestore();
   });
 
-  test("prefers-reduced-motion: no auto-advance, but the arrows still work", () => {
+  test("prefers-reduced-motion: still advances (plain fade), arrows work", () => {
+    const saved = window.matchMedia;
     window.matchMedia = jest.fn().mockImplementation((q) => ({ matches: /reduce/.test(q), media: q, addEventListener: jest.fn(), removeEventListener: jest.fn() }));
     render(<SpeciesSlideshow photos={[ph(1), ph(2)]} />);
-    act(() => { jest.advanceTimersByTime(AUTO_MS * 5); });
-    expect(activeAlt()).toBe("Ackie 1");
-    fireEvent.click(screen.getByRole("button", { name: "Next photo" }));
+    act(() => { jest.advanceTimersByTime(AUTO_MS + 10); });
     expect(activeAlt()).toBe("Ackie 2");
-    act(() => { jest.advanceTimersByTime(RESUME_MS * 3); });
+    fireEvent.click(screen.getByRole("button", { name: "Next photo" }));
+    expect(activeAlt()).toBe("Ackie 1");
+    window.matchMedia = saved;
+  });
+
+  test("mouse hover does not pause auto-advance", () => {
+    render(<SpeciesSlideshow photos={[ph(1), ph(2)]} />);
+    const frame = screen.getByTestId("species-slideshow").firstChild;
+    fireEvent.pointerEnter(frame, { pointerType: "mouse" });
+    act(() => { jest.advanceTimersByTime(AUTO_MS + 10); });
     expect(activeAlt()).toBe("Ackie 2");
   });
 });

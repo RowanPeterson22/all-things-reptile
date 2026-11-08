@@ -7,8 +7,9 @@ import { CreditedImage } from "./PhotoCredit";
 // frame (each on its focus point), cross-fading every ~5 s and looping.
 // Previous / next arrows (40 px), dots ("Photo n of N") and swipe step
 // through it. Auto-advance pauses while the user interacts (pointer down,
-// keyboard focus inside, mouse over) and for ~10 s after, stops while the tab
-// is hidden, and never runs with prefers-reduced-motion. The live region only
+// keyboard focus inside) and for ~10 s after, and stops while the tab is
+// hidden. Mouse hover doesn't pause it. With prefers-reduced-motion it still
+// advances, as a slower plain fade (no movement). The live region only
 // announces changes the user made. One photo: shown alone, no controls.
 // None: nothing.
 
@@ -61,12 +62,12 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
   const count = list.length;
   const [index, setIndex] = useState(0);
   const [manual, setManual] = useState(false); // last change came from the user
-  const [holding, setHolding] = useState(0);   // pointer down / focus inside / hover (a count)
+  const [holding, setHolding] = useState(0);   // pointer down / keyboard focus inside (a count)
   const [holdUntil, setHoldUntil] = useState(0);
   const reduced = useReducedMotion();
   const hidden = usePageHidden();
   const swipe = useRef(null);
-  const holds = useRef({ pointer: false, focus: false, hover: false });
+  const holds = useRef({ pointer: false, focus: false });
 
   useEffect(() => { if (index >= count && count) setIndex(0); }, [index, count]);
 
@@ -88,11 +89,11 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
 
   // Auto-advance: one timer per slide, re-armed on every change.
   useEffect(() => {
-    if (count < 2 || reduced || hidden || holding) return undefined;
+    if (count < 2 || hidden || holding) return undefined;
     const wait = Math.max(autoMs, holdUntil - Date.now());
     const t = setTimeout(() => { setManual(false); setIndex(i => (i + 1) % count); }, wait);
     return () => clearTimeout(t);
-  }, [index, count, reduced, hidden, holding, holdUntil, autoMs]);
+  }, [index, count, hidden, holding, holdUntil, autoMs]);
 
   if (!count) return null;
   const current = Math.min(index, count - 1);
@@ -135,15 +136,13 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
         if (e.key === "ArrowRight") { e.preventDefault(); go(1); }
       }}>
       <div style={{ ...frameStyle, touchAction: "pan-y" }}
-        onPointerDown={onPointerDown} onPointerUp={endPointer} onPointerCancel={endPointer}
-        onPointerEnter={(e) => { if (e.pointerType === "mouse") setHold("hover", true); }}
-        onPointerLeave={(e) => { if (e.pointerType === "mouse") setHold("hover", false); }}>
+        onPointerDown={onPointerDown} onPointerUp={endPointer} onPointerCancel={endPointer}>
         {list.map((p, i) => {
           const on = i === current;
           return (
             <div key={p.id || i} role="group" aria-roledescription="slide" aria-label={`Photo ${i + 1} of ${count}`} aria-hidden={on ? undefined : "true"} inert={on ? undefined : true}
               data-active={on ? "true" : "false"}
-              style={{ position: "absolute", inset: 0, opacity: on ? 1 : 0, transition: reduced ? "none" : "opacity 0.6s ease", pointerEvents: on ? "auto" : "none" }}>
+              style={{ position: "absolute", inset: 0, opacity: on ? 1 : 0, transition: reduced ? "opacity 1.2s linear" : "opacity 0.6s ease", pointerEvents: on ? "auto" : "none" }}>
               <CreditedImage src={p.url} alt={p.alt} credit={p.credit} width={p.width} height={p.height} focal={p.focal} loading={on || i === (current + 1) % count ? "eager" : "lazy"}
                 style={{ width: "100%", height: "100%" }} />
             </div>

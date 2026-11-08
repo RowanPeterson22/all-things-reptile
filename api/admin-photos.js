@@ -5,7 +5,10 @@
 //   POST  { speciesSlug, photo, master?, photographer, licence, sourceUrl | permissionNote, … }
 //   PUT   { id, photo, master? }          replace the image (also Rotate 90°); keeps credit/licence/source
 //   PATCH { id, changes: { status | is_best | traits | notes | species_slug |
-//           public_use | public_order | show_credit | display_credit | credit_by_name } }
+//           public_use | public_order | show_credit | display_credit | credit_by_name |
+//           focal_x | focal_y | is_hero | hero_crop } }
+//         is_hero true makes it the species' only hero (the old one is unticked atomically);
+//         hero_crop { x, y, w, h } (0–1, 2.4 : 1, w ≥ 0.3) or null.
 //         public_use true copies the photo into the public species-photos bucket
 //         (iNaturalist at the large size where it can); false removes that copy.
 

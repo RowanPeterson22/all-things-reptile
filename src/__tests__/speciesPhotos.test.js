@@ -47,7 +47,7 @@ const res = (status, body) => ({
 });
 const eq = (q, k) => { const v = q.get(k); return v && v.startsWith("eq.") ? decodeURIComponent(v.slice(3)) : null; };
 
-const base = { source: "inaturalist", photographer: "A. Person", licence_url: "https://creativecommons.org/licenses/by/4.0/", traits: [], is_best: false, status: "active", notes: "internal note", created_at: "2026-11-07T00:00:00Z", stock_library: null, stock_asset_id: null, credit_required: false, show_credit: true, display_credit: null, credit_by_name: false, public_use: false, public_order: null, public_path: null };
+const base = { source: "inaturalist", photographer: "A. Person", licence_url: "https://creativecommons.org/licenses/by/4.0/", traits: [], is_best: false, status: "active", notes: "internal note", created_at: "2026-11-07T00:00:00Z", stock_library: null, stock_asset_id: null, credit_required: false, show_credit: true, display_credit: null, credit_by_name: false, public_use: false, public_order: null, public_path: null, is_hero: false, hero_crop: null };
 const row = (o) => ({ ...base, species_slug: "central-bearded-dragon", source_url: `https://www.inaturalist.org/observations/${o.source_id}`, storage_path: `${o.species_slug || "central-bearded-dragon"}/inaturalist-${o.source_id}.jpg`, ...o });
 
 let db;
@@ -108,9 +108,15 @@ const fakeImpl = async (url, init = {}) => {
     }
     if (method === "PATCH") {
       const rows = db.photos.filter(p => p.id === eq(q, "id"));
-      rows.forEach(r => Object.assign(r, body));
+      rows.forEach(r => { const old = { ...r }; Object.assign(r, body); heroGuard(old, r); });
       return res(200, rows);
     }
+  }
+  if (path === "/storage/v1/object/move" && method === "POST") {
+    const bucket = db.objects[body.bucketId];
+    if (!bucket[body.sourceKey]) return res(404, {});
+    bucket[body.destinationKey] = bucket[body.sourceKey]; delete bucket[body.sourceKey];
+    return res(200, { message: "Successfully moved" });
   }
   const sign = /^\/storage\/v1\/object\/sign\/([^/]+)$/.exec(path);
   if (sign) return res(200, body.paths.map(p => ({ path: p, signedURL: `/object/sign/${sign[1]}/${p}?token=t` })));
@@ -128,6 +134,15 @@ const fakeImpl = async (url, init = {}) => {
   throw new Error(`fake: unhandled ${method} ${path}`);
 };
 let fakeFetch;
+
+// The reference_photos_hero_guard trigger and one-hero index, as in the migration.
+const heroGuard = (old, r) => {
+  if (r.is_hero && !(r.public_use && r.status === "active")) r.is_hero = false;
+  if (r.species_slug !== old.species_slug) r.is_hero = false;
+  if (r.is_hero && !old.is_hero) db.photos.forEach(p => { if (p !== r && p.species_slug === r.species_slug && p.is_hero) p.is_hero = false; });
+  if (db.photos.filter(p => p.is_hero && p.species_slug === r.species_slug).length > 1) throw new Error("unique index violated");
+  if (r.is_hero && !(r.public_use && r.status === "active")) throw new Error("check violated");
+};
 
 const mockRes = () => {
   const r = { headers: {}, statusCode: 200, body: undefined };
@@ -185,7 +200,7 @@ describe("public species photos endpoint", () => {
   test("returns only display fields: no notes, storage paths, stock asset IDs or keys", async () => {
     const r = await call(publicHandler, { code: null, query: { species: "central-bearded-dragon" } });
     const [first, stock] = r.body.photos;
-    expect(Object.keys(first).sort()).toEqual(["alt", "credit", "focal", "height", "id", "scientific", "species", "speciesName", "url", "width"]);
+    expect(Object.keys(first).sort()).toEqual(["alt", "credit", "focal", "height", "hero", "heroCrop", "id", "scientific", "species", "speciesName", "url", "width"]);
     expect(first).toMatchObject({ width: 1024, height: 768, focal: { x: 0.25, y: 0.8 } });
     expect(first.url).toBe(`${URL_}/storage/v1/object/public/species-photos/central-bearded-dragon/${PUBLIC_BY}.jpg`);
     const text = JSON.stringify(r.body);
@@ -566,5 +581,139 @@ describe("focus point", () => {
     expect(photo(CC_BY)).toMatchObject({ focal_x: 0.3, focal_y: 0.71 });
     expect((await patch(CC_BY, { focal_x: 1.2 })).statusCode).toBe(400);
     expect((await patch(CC_BY, { focal_y: "0.5" })).statusCode).toBe(400);
+  });
+});
+
+// ─── Hero (main image) and hero crop ──────────────────────────────
+const { validateHeroCrop, minCropWidth, maxCropWidth } = require("../../lib/heroCrop");
+const patchBodies = () => fakeFetch.mock.calls.filter(([u, init]) => init && init.method === "PATCH" && new URL(u).pathname === "/rest/v1/reference_photos").map(([, init]) => JSON.parse(init.body));
+
+describe("hero: one per species", () => {
+  test("ticking a new hero clears the old one, in the same update", async () => {
+    expect((await patch(PUBLIC_BY, { is_hero: true })).statusCode).toBe(200);
+    expect(photo(PUBLIC_BY).is_hero).toBe(true);
+    fakeFetch.mockClear();
+    const r = await patch(STOCK, { is_hero: true });
+    expect(r.statusCode).toBe(200);
+    expect(r.body.photo.is_hero).toBe(true);
+    expect(photo(STOCK).is_hero).toBe(true);
+    expect(photo(PUBLIC_BY).is_hero).toBe(false);
+    // One PATCH, on the new hero only: the trigger does the unticking atomically.
+    expect(patchBodies()).toEqual([{ is_hero: true }]);
+    expect(db.photos.filter(p => p.is_hero)).toHaveLength(1);
+  });
+
+  test("the public list flags the hero", async () => {
+    await patch(STOCK, { is_hero: true });
+    const r = await call(publicHandler, { code: null, query: { species: "central-bearded-dragon" } });
+    expect(r.body.photos.map(p => [p.id, p.hero])).toEqual([[PUBLIC_BY, false], [STOCK, true]]);
+  });
+
+  test("only a public, active photo can be hero; ticking it with public_use publishes it", async () => {
+    const r = await patch(CC_BY, { is_hero: true });
+    expect(r.statusCode).toBe(400);
+    expect(r.body.error).toMatch(/on the species page/);
+    expect(photo(CC_BY).is_hero).toBe(false);
+    expect((await patch(HIDDEN, { public_use: true, is_hero: true })).statusCode).toBe(400);
+    const both = await patch(CC_BY, { public_use: true, is_hero: true });
+    expect(both.statusCode).toBe(200);
+    expect(photo(CC_BY)).toMatchObject({ public_use: true, is_hero: true });
+    expect(db.objects[PUBLIC_BUCKET][`central-bearded-dragon/${CC_BY}.jpg`]).toBeDefined();
+    expect((await patch(CC_BY, { is_hero: "yes" })).statusCode).toBe(400);
+  });
+
+  test("hiding or rejecting the hero clears it", async () => {
+    await patch(PUBLIC_BY, { is_hero: true });
+    expect((await patch(PUBLIC_BY, { status: "hidden" })).statusCode).toBe(200);
+    expect(photo(PUBLIC_BY)).toMatchObject({ status: "hidden", public_use: false, is_hero: false });
+    await patch(STOCK, { is_hero: true });
+    await patch(STOCK, { status: "rejected" });
+    expect(photo(STOCK).is_hero).toBe(false);
+  });
+
+  test("taking the hero off the species page clears it", async () => {
+    await patch(PUBLIC_BY, { is_hero: true });
+    fakeFetch.mockClear();
+    await patch(PUBLIC_BY, { public_use: false });
+    expect(photo(PUBLIC_BY)).toMatchObject({ public_use: false, is_hero: false });
+    expect(patchBodies()[0]).toMatchObject({ public_use: false, is_hero: false }); // the server says so, not only the trigger
+  });
+
+  test("moving a photo to another species clears its hero flag", async () => {
+    await patch(PUBLIC_BY, { is_hero: true });
+    await patch(PUBLIC_BY, { public_use: false });
+    fakeFetch.mockClear();
+    expect((await patch(PUBLIC_BY, { species_slug: "carpet-python" })).statusCode).toBe(200);
+    expect(patchBodies()[0]).toMatchObject({ species_slug: "carpet-python", is_hero: false });
+    expect(photo(PUBLIC_BY).is_hero).toBe(false);
+  });
+
+  test("non-admins can't set the hero or the crop", async () => {
+    const code = "N".repeat(43);
+    const a = await call(photosHandler, { method: "PATCH", code, body: { id: PUBLIC_BY, changes: { is_hero: true } } });
+    const b = await call(photosHandler, { method: "PATCH", code, body: { id: PUBLIC_BY, changes: { hero_crop: { x: 0.2, y: 0.3, w: 0.6, h: 1 / 3 } } } });
+    const c = await call(photosHandler, { method: "PATCH", code: null, body: { id: PUBLIC_BY, changes: { is_hero: true } } });
+    expect([a.statusCode, b.statusCode, c.statusCode]).toEqual([403, 403, 403]);
+    expect(photo(PUBLIC_BY)).toMatchObject({ is_hero: false, hero_crop: null });
+  });
+});
+
+describe("hero crop", () => {
+  // PUBLIC_BY is 1024 × 768 (4:3): a 2.4 : 1 crop 0.6 wide is 0.6 × (4/3) / 2.4 = 1/3 tall.
+  const good = { x: 0.2, y: 0.3, w: 0.6, h: 1 / 3 };
+
+  test("saves a valid crop, normalised to the exact aspect", async () => {
+    const r = await patch(PUBLIC_BY, { hero_crop: { ...good, h: 0.335 } }); // within rounding
+    expect(r.statusCode).toBe(200);
+    expect(photo(PUBLIC_BY).hero_crop).toEqual({ x: 0.2, y: 0.3, w: 0.6, h: 0.3333 });
+    const pub = await call(publicHandler, { code: null, query: { species: "central-bearded-dragon" } });
+    expect(pub.body.photos[0].heroCrop).toEqual({ x: 0.2, y: 0.3, w: 0.6, h: 0.3333 });
+    expect(pub.body.photos[1].heroCrop).toBeNull();
+  });
+
+  test("null clears it", async () => {
+    await patch(PUBLIC_BY, { hero_crop: good });
+    expect((await patch(PUBLIC_BY, { hero_crop: null })).statusCode).toBe(200);
+    expect(photo(PUBLIC_BY).hero_crop).toBeNull();
+  });
+
+  test.each([
+    ["the wrong aspect", { x: 0, y: 0, w: 0.6, h: 0.6 }, /2\.4 : 1/],
+    ["under 30% wide", { x: 0, y: 0, w: 0.2, h: 0.2 * (4 / 3) / 2.4 }, /30%/],
+    ["outside the photo", { x: 0.6, y: 0, w: 0.6, h: 1 / 3 }, /outside/],
+    ["below the photo", { x: 0, y: 0.8, w: 0.6, h: 1 / 3 }, /outside/],
+    ["a negative value", { x: -0.1, y: 0, w: 0.6, h: 1 / 3 }, /between 0 and 1/],
+    ["a string", { x: "0", y: 0, w: 0.6, h: 1 / 3 }, /between 0 and 1/],
+    ["a missing key", { x: 0, y: 0, w: 0.6 }, /\{ x, y, w, h \}/],
+    ["an extra key", { ...good, z: 1 }, /\{ x, y, w, h \}/],
+    ["an array", [0, 0, 0.6, 0.3], /\{ x, y, w, h \}/],
+    ["not an object", "0,0,1,1", /\{ x, y, w, h \}/],
+  ])("rejects %s", async (_, crop, msg) => {
+    const r = await patch(PUBLIC_BY, { hero_crop: crop });
+    expect(r.statusCode).toBe(400);
+    expect(r.body.error).toMatch(msg);
+    expect(photo(PUBLIC_BY).hero_crop).toBeNull();
+  });
+
+  test("replacing the image clears the crop", async () => {
+    Object.assign(photo(CC0), { width: 500, height: 375 });
+    await patch(CC0, { hero_crop: { x: 0, y: 0, w: 1, h: (4 / 3) / 2.4 } });
+    expect(photo(CC0).hero_crop).not.toBeNull();
+    const r = await call(photosHandler, { method: "PUT", body: { id: CC0, photo: dataUrl(MEDIUM) } });
+    expect(r.statusCode).toBe(200);
+    expect(photo(CC0).hero_crop).toBeNull();
+  });
+
+  test("validateHeroCrop: limits and clamping", () => {
+    expect(maxCropWidth(4 / 3)).toBe(1);
+    expect(maxCropWidth(4)).toBeCloseTo(0.6);   // a panorama: full height is the limit
+    expect(minCropWidth(4 / 3)).toBe(0.3);
+    expect(minCropWidth(10)).toBeCloseTo(0.24); // never above the widest crop that fits
+    // A portrait photo (3:4): full width is 1 × 0.75 / 2.4 = 0.3125 tall.
+    expect(validateHeroCrop({ x: 0, y: 0.5, w: 1, h: 0.3125 }, { width: 750, height: 1000 })).toEqual({ x: 0, y: 0.5, w: 1, h: 0.3125 });
+    // Edge rounding is pulled back inside.
+    expect(validateHeroCrop({ x: 0.4005, y: 0, w: 0.6, h: 1 / 3 }, { width: 1024, height: 768 })).toEqual({ x: 0.4, y: 0, w: 0.6, h: 0.3333 });
+    expect(() => validateHeroCrop(good, null)).toThrow(/size isn't known/);
+    expect(validateHeroCrop(null, { width: 1, height: 1 })).toBeNull();
   });
 });

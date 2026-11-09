@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
 
 // ─── Splash Screen ───────────────────────────────────────────────
 // Black, with the negative ATR logo (the same file as the app header, so it's
@@ -25,7 +25,7 @@ const SplashScreen = ({ onComplete }) => {
   return (
     <div style={{
       position: "fixed", inset: 0,
-      background: C.black,
+      background: T.bg,
       display: "flex", flexDirection: "column",
       alignItems: "center", justifyContent: "center",
       // Centred within the safe area (notch and home bar).
@@ -46,7 +46,7 @@ const SplashScreen = ({ onComplete }) => {
       />
       <div style={{
         position: "absolute", bottom: "calc(env(safe-area-inset-bottom, 0px) + 40px)",
-        fontSize: 11, color: "rgba(255,255,255,0.45)",
+        fontSize: 11, color: T.muted,
         letterSpacing: "0.1em", fontFamily: "sans-serif",
       }}>
         AN AMPHIBIAN PTY LTD COMPANY

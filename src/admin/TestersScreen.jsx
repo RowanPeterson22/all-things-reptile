@@ -29,7 +29,7 @@ const InviteBox = ({ link, onDone }) => {
   );
   return (
     <div style={{ ...card, padding: 14, marginBottom: 16 }}>
-      <WarnBox type="gold" title="Copy this invite now">It's shown only once. Send it only to this tester: it opens their sections of the app on any device they open it on.</WarnBox>
+      <WarnBox light type="gold" title="Copy this invite now">It's shown only once. Send it only to this tester: it opens their sections of the app on any device they open it on.</WarnBox>
       {row(link, "main", "Invite link")}
       {previewLink && row(previewLink, "preview", "Same invite on this preview site")}
       {copied === "fail" && <div style={errorText}>Couldn't copy. Select the text and copy it by hand.</div>}

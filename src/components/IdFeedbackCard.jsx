@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from "react";
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
 import WarnBox from "./WarnBox";
 import SpeciesPicker, { OTHER } from "./SpeciesPicker";
 import { BETA_HEADER } from "../beta/betaAccess";
@@ -24,15 +24,15 @@ const VERDICTS = [
   { id: "wrong",   label: "Wrong"   },
 ];
 
-const label = { fontSize: 11, fontWeight: 700, color: C.muted, textTransform: "uppercase", letterSpacing: "0.07em", margin: "14px 0 6px" };
-const field = { width: "100%", boxSizing: "border-box", border: `1px solid ${C.line}`, borderRadius: 10, padding: "9px 10px", fontSize: 16, fontFamily: "inherit", background: "white", color: C.ink };
+const label = { fontSize: 12, fontWeight: 700, color: T.muted, textTransform: "uppercase", letterSpacing: "0.07em", margin: "16px 0 8px" };
+const field = { width: "100%", boxSizing: "border-box", border: `1px solid ${T.fieldBorder}`, borderRadius: 12, padding: "10px 12px", fontSize: 16, fontFamily: "inherit", background: T.field, color: T.text };
 const pill = (on) => ({
-  background: on ? C.green : "white", color: on ? "white" : C.green, border: `1.5px solid ${C.green}`,
-  borderRadius: 10, padding: "8px 0", minHeight: 40, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", flex: 1,
+  background: on ? T.accent : "transparent", color: on ? T.onAccent : T.text, border: `1.5px solid ${on ? T.accent : T.line}`,
+  borderRadius: 12, padding: "8px 0", minHeight: 44, fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", flex: 1,
 });
 const chip = (on) => ({
-  background: on ? C.greenPale : "white", color: on ? C.green : "#555", border: `1px solid ${on ? C.green : C.line}`,
-  borderRadius: 8, padding: "5px 9px", minHeight: 36, fontSize: 12, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit",
+  background: on ? T.chipBg : "transparent", color: on ? T.chip : T.body, border: `1px solid ${on ? T.accent : T.line}`,
+  borderRadius: 999, padding: "6px 12px", minHeight: 44, fontSize: 13, fontWeight: on ? 700 : 500, cursor: "pointer", fontFamily: "inherit",
 });
 
 // The species the card starts on: the AI's top pick, if it's an index species.
@@ -105,9 +105,9 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
 
   if (status === "sent") {
     return (
-      <div style={{ background: C.greenPale, borderRadius: 14, padding: 16, marginBottom: 12, textAlign: "center" }}>
-        <div style={{ fontSize: 15, fontWeight: 700, color: C.green, marginBottom: 4 }}>Thanks — feedback sent</div>
-        <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>Every correction helps us make ATR's ID more accurate.</div>
+      <div style={{ background: T.okBg, borderRadius: 18, padding: 16, marginBottom: 12, textAlign: "center" }}>
+        <div style={{ fontSize: 15, fontWeight: 700, color: T.ok, marginBottom: 4 }}>Thanks — feedback sent</div>
+        <div style={{ fontSize: 14, color: T.body, lineHeight: 1.5 }}>Every correction helps us make ATR's ID more accurate.</div>
       </div>
     );
   }
@@ -118,9 +118,9 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
   const canSend = verdict && !needsName && !needsAnswer && status !== "sending";
 
   return (
-    <div style={{ background: "white", borderRadius: 14, border: `1.5px solid ${C.greenPale}`, padding: 14, marginBottom: 12 }}>
-      <div style={{ fontSize: 14, fontWeight: 700, color: C.ink }}>Was this right?</div>
-      <div style={{ fontSize: 11, color: "#777", marginTop: 2 }}>Beta tester feedback</div>
+    <div style={{ background: T.card, borderRadius: 18, border: `1.5px solid ${T.line}`, padding: 16, marginBottom: 12 }}>
+      <div style={{ fontSize: 16, fontWeight: 700, color: T.text }}>Was this right?</div>
+      <div style={{ fontSize: 13, color: T.muted, marginTop: 2 }}>Beta tester feedback</div>
 
       <div style={{ display: "flex", gap: 8, marginTop: 10 }} role="group" aria-label="Was this right?">
         {VERDICTS.map(v => (
@@ -152,19 +152,19 @@ const IdFeedbackCard = ({ result, photo, inviteCode, traitsBySpecies = {}, onRev
 
           {photo && (
             <label style={{ display: "flex", gap: 10, alignItems: "flex-start", marginTop: 14, cursor: "pointer" }}>
-              <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} style={{ marginTop: 3, accentColor: C.green, width: 16, height: 16, flexShrink: 0 }} />
+              <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} style={{ marginTop: 2, accentColor: T.accent, width: 20, height: 20, flexShrink: 0 }} />
               <span>
-                <span style={{ display: "block", fontSize: 13, fontWeight: 700, color: "#333" }}>{CONSENT_LABEL}</span>
-                <span style={{ display: "block", fontSize: 12, color: "#777", lineHeight: 1.5, marginTop: 2 }}>{CONSENT_TEXT}</span>
+                <span style={{ display: "block", fontSize: 14, fontWeight: 700, color: T.text }}>{CONSENT_LABEL}</span>
+                <span style={{ display: "block", fontSize: 13, color: T.muted, lineHeight: 1.5, marginTop: 2 }}>{CONSENT_TEXT}</span>
               </span>
             </label>
           )}
 
-          {needsAnswer && <div style={{ fontSize: 12, color: C.muted, marginTop: 10 }}>Pick the right species or add a note so we know what it is.</div>}
+          {needsAnswer && <div style={{ fontSize: 13, color: T.muted, marginTop: 10 }}>Pick the right species or add a note so we know what it is.</div>}
           {status === "error" && <div style={{ marginTop: 12 }}><WarnBox type="gold" title="Couldn't send feedback">{error}</WarnBox></div>}
 
           <button type="button" onClick={submit} disabled={!canSend} style={{
-            background: C.green, color: "white", border: "none", borderRadius: 10, padding: "10px 20px", minHeight: 44, fontSize: 14, fontWeight: 700,
+            background: T.accent, color: T.onAccent, border: "none", borderRadius: 14, padding: "10px 20px", minHeight: 48, fontSize: 15, fontWeight: 700,
             width: "100%", marginTop: 14, fontFamily: "inherit", cursor: canSend ? "pointer" : "default", opacity: canSend ? 1 : 0.5,
           }}>
             {status === "sending" ? "Sending…" : "Send feedback"}

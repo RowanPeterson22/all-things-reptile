@@ -1,40 +1,38 @@
-import { C } from "../constants/colours";
+import { T, SIZE } from "../constants/theme";
 
 // ─── Shared look for Home, Learn, Community, My Profile ────────────
 // The new screens are built from a few small pieces (src/components/
 // SectionTiles.jsx: Card, SectionHeading, IconBadge, SectionTile, FeaturedCard,
-// PlanningCard, StatusBadge; LearnNav; ComingSoonScreen) and every colour and
-// size they use is here, so the coming shell restyle (header, tab bar, theme)
-// is a change to this file rather than to each screen. Inline styles only (D3);
-// colours from C.
+// PlanningCard, StatusBadge; LearnNav; ComingSoonScreen). Their colours come
+// from the design tokens (src/constants/theme.js); this file names the roles.
+// Inline styles only.
 
 export const UI = {
-  font: "'DM Sans', system-ui, sans-serif",
+  font: T.font,
   // surfaces
-  pageBg: "white",
-  cardBg: "white",
-  cardBorder: "0.5px solid #e8e8e4",
-  radius: 14,
+  pageBg: T.bg,
+  cardBg: T.card,
+  cardBorder: "none",
+  radius: 16,
   gap: 10,          // between tiles
   blockGap: 18,     // between Home blocks
-  pad: 16,          // screen padding
+  pad: SIZE.pad,    // screen padding
   // text
-  ink: C.ink,
-  body: "#666",
-  sub: "#777",
-  muted: C.muted,
+  ink: T.text,
+  body: T.body,
+  sub: T.muted,
+  muted: T.muted,
   // accents
-  accent: C.green,          // the brand orange (C.green holds it until the design pass, D2)
-  accentPale: C.greenPale,
-  onAccent: "white",
-  onAccentSoft: "rgba(255,255,255,0.9)",
-  band: C.green,            // tab page / Coming soon header band
-  searchBand: C.black,
+  accent: T.accent,
+  accentText: T.accentText,
+  accentPale: T.chipBg,
+  onAccent: T.onAccent,
+  onAccentSoft: "rgba(255,255,255,0.92)",
   // badges
-  soonBg: C.goldLight, soonFg: "#7a5a1e",
-  hiddenBg: C.redPale, hiddenFg: C.red,
+  soonBg: T.chipBg, soonFg: T.chip,
+  hiddenBg: T.noBg, hiddenFg: T.no,
   // sizes
-  tile: { minHeight: 128, pad: 12, icon: 40, iconRadius: 12, glyph: 22, title: 13, blurb: 11 },
-  heading: { size: 11, spacing: "0.07em" },
-  pill: { height: 34, size: 13, padX: 14, bg: "rgba(255,255,255,0.12)", fg: "rgba(255,255,255,0.85)" },
+  tile: { minHeight: 128, pad: 14, icon: 40, iconRadius: 12, glyph: 22, title: 14, blurb: 12 },
+  heading: { size: 13, spacing: "0.08em" },
+  pill: { height: 44, size: 13, padX: 14, bg: T.seg, fg: T.muted },
 };

@@ -4,7 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 // A horizontally scrolling row that looks scrollable on a phone: the edge with
 // more content fades out and shows a small chevron button (tap to scroll).
 // The fade is a mask on the row itself, so it works on any background.
-// tone: "light" (row sits on white) or "dark" (row sits on a coloured header).
+// tone: "light" (row sits on white, /admin), "dark" (row sits on a coloured
+// header, /admin) or "ink" (the public app's dark design: a #2A2A2A disc).
 // Drop-in for a `display: flex; overflowX: auto` div: pass its style through.
 // Other props (data-testid, role, aria-label…) go on the scrolling element.
 
@@ -60,23 +61,26 @@ const ScrollRow = ({ style = {}, tone = "light", children, label = "More", ...re
     width: 24, height: 24, borderRadius: 12, margin: "0 2px",
     display: "flex", alignItems: "center", justifyContent: "center",
     fontSize: 16, lineHeight: 1, fontWeight: 700,
-    background: tone === "dark" ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.95)",
-    color: tone === "dark" ? "#fff" : "#555",
-    boxShadow: tone === "dark" ? "none" : "0 1px 4px rgba(0,0,0,0.18)",
+    background: tone === "ink" ? "#2A2A2A" : tone === "dark" ? "rgba(0,0,0,0.35)" : "rgba(255,255,255,0.95)",
+    color: tone === "ink" || tone === "dark" ? "#fff" : "#555",
+    border: tone === "ink" ? "1px solid #444" : "none",
+    boxSizing: "border-box",
+    boxShadow: tone === "ink" ? "0 2px 8px rgba(0,0,0,0.6)" : tone === "dark" ? "none" : "0 1px 4px rgba(0,0,0,0.18)",
   };
 
   return (
     <div style={{ position: "relative", margin }}>
       <div
         {...rest}
+        data-scroll-row=""
         ref={ref}
         onScroll={measure}
         style={{ ...inner, overflowX: "auto", scrollbarWidth: "none", WebkitOverflowScrolling: "touch", WebkitMaskImage: mask, maskImage: mask }}
       >
         {children}
       </div>
-      {edges.left && <button type="button" aria-label={`Scroll back`} onClick={() => nudge(-1)} style={btn(-1)}><span style={disc}>‹</span></button>}
-      {edges.right && <button type="button" aria-label={`${label}: scroll for more`} onClick={() => nudge(1)} style={btn(1)}><span style={disc}>›</span></button>}
+      {edges.left && <button type="button" data-layout-overlay="" aria-label={`Scroll back`} onClick={() => nudge(-1)} style={btn(-1)}><span style={disc}>‹</span></button>}
+      {edges.right && <button type="button" data-layout-overlay="" aria-label={`${label}: scroll for more`} onClick={() => nudge(1)} style={btn(1)}><span style={disc}>›</span></button>}
     </div>
   );
 };

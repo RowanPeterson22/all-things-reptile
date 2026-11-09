@@ -1,14 +1,17 @@
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
 
-const FoodItem = ({ icon, name, detail, freq }) => (
-  <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "10px 0", borderBottom: "0.5px solid #f0f0ea" }}>
-    <div style={{ width: 36, height: 36, borderRadius: 10, background: C.greenPale, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, flexShrink: 0 }}>{icon}</div>
-    <div style={{ flex: 1 }}>
-      <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 1 }}>{name}</div>
-      <div style={{ fontSize: 12, color: "#888" }}>{detail}</div>
-    </div>
-    <div style={{ fontSize: 11, padding: "3px 8px", borderRadius: 8, background: C.greenPale, color: C.green, fontWeight: 700, whiteSpace: "nowrap" }}>{freq}</div>
+// One feeding row: name, detail, then the frequency as an orange chip.
+// Pages still pass an emoji `icon`; the design has none in food rows.
+// Rows sit in a FoodList card; the rule between rows is drawn by the card.
+const FoodItem = ({ name, detail, freq }) => (
+  <div data-food-row="" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", padding: "14px 0", borderBottom: `1px solid ${T.rule}` }}>
+    <div style={{ fontSize: 15, fontWeight: 700, color: T.text, lineHeight: 1.35 }}>{name}</div>
+    {detail && <div style={{ fontSize: 13, color: T.muted, marginTop: 2, lineHeight: 1.45 }}>{detail}</div>}
+    {freq && <div style={{ marginTop: 8, fontSize: 12, fontWeight: 700, color: T.chip, background: T.chipBg, borderRadius: 999, padding: "4px 10px", lineHeight: 1.4, maxWidth: "100%" }}>{freq}</div>}
   </div>
 );
 
 export default FoodItem;
+
+// The card a page's food rows sit in. The clip hides the last row's rule.
+export const FOOD_CARD = { background: T.card, borderRadius: 18, padding: "0 16px", marginBottom: 10, clipPath: "inset(0 0 1px 0 round 18px)" };

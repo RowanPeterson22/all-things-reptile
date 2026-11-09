@@ -1,13 +1,20 @@
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
 
-const HealthItem = ({ dot = "#e05a2b", title, detail }) => (
-  <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", marginBottom: 8, display: "flex", gap: 10 }}>
-    <div style={{ width: 8, height: 8, borderRadius: "50%", background: dot, marginTop: 5, flexShrink: 0 }} />
-    <div>
-      <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 2 }}>{title}</div>
-      <div style={{ fontSize: 12, color: "#777", lineHeight: 1.6 }}>{detail}</div>
+// A dot-led row. The pages pass green (#4a9e6b) for good signs and nothing
+// (or a red/orange) for problems: good → ok green, anything else → orange.
+const GOOD = new Set(["#4a9e6b", "#2a7e4a", "#2e8b57"]);
+
+const HealthItem = ({ dot, title, detail }) => {
+  const good = dot && GOOD.has(String(dot).toLowerCase());
+  return (
+    <div data-health-row="" style={{ background: T.card, borderRadius: 14, padding: "14px 16px", marginBottom: 8, display: "flex", gap: 12 }}>
+      <span aria-hidden="true" style={{ width: 10, height: 10, borderRadius: 5, marginTop: 6, flexShrink: 0, background: good ? T.okDot : T.accent }} />
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 15, fontWeight: 700, color: T.text, lineHeight: 1.35 }}>{title}</div>
+        <div style={{ fontSize: 14, color: T.body, lineHeight: 1.55, marginTop: 3 }}>{detail}</div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default HealthItem;

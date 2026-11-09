@@ -77,7 +77,7 @@ const AddPhotoScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
   if (saved) {
     return (
       <div style={page}>
-        <WarnBox type="green" title="Saved to the library">{bySlug[saved.species_slug] ? bySlug[saved.species_slug].common : saved.species_slug} · {saved.credit ? saved.credit.name : saved.photographer} · {LICENCE_LABEL[saved.licence]}</WarnBox>
+        <WarnBox light type="green" title="Saved to the library">{bySlug[saved.species_slug] ? bySlug[saved.species_slug].common : saved.species_slug} · {saved.credit ? saved.credit.name : saved.photographer} · {LICENCE_LABEL[saved.licence]}</WarnBox>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           <button type="button" onClick={() => { setSaved(null); setPhoto(null); setForm(f => ({ ...EMPTY, photographer: f.photographer, licence: f.licence })); setTried(false); }} style={btn("primary")}>Add another</button>
           <button type="button" onClick={() => navigate(`/admin/species/${saved.species_slug}`)} style={btn("ghost")}>View species</button>

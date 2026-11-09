@@ -26,7 +26,7 @@ export const CardPreview = ({ cat, image, crop, label = "Preview of the Browse c
     <div role="img" aria-label={label} style={{ width: 167, background: "white", borderRadius: 14, border: `0.5px solid ${N.line}`, overflow: "hidden", flex: "0 0 auto" }}>
       <div style={{ position: "relative", width: "100%", aspectRatio: `${CARD_ASPECT} / 1`, overflow: "hidden", background: cat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 42 }}>
         {image && c ? <img src={image.url} alt="" style={heroImageStyle(c)} /> : cat.emoji}
-        {image && <PhotoCredit credit={image.credit} />}
+        {image && <PhotoCredit credit={image.credit} tone="light" />}
       </div>
       <div style={{ padding: "10px 12px 12px" }}>
         <div style={{ fontSize: 13, fontWeight: 700, color: C.ink, marginBottom: 4 }}>{cat.label}</div>

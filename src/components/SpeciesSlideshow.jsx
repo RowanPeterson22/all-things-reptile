@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
 import { CreditedImage } from "./PhotoCredit";
 
 // ─── Species photo slideshow ──────────────────────────────────────
@@ -45,7 +45,7 @@ const usePageHidden = () => {
   return hidden;
 };
 
-const frameStyle = { position: "relative", width: "100%", aspectRatio: "4 / 3", borderRadius: 12, overflow: "hidden", background: "#f0f0ec" };
+const frameStyle = { position: "relative", width: "100%", aspectRatio: "4 / 3", borderRadius: 16, overflow: "hidden", background: T.imgBg };
 
 // A 40 px dark disc with a white ring and chevron: readable on light and dark photos.
 const Arrow = ({ dir, onClick }) => (
@@ -101,7 +101,7 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
   if (count === 1) {
     const p = list[0];
     return (
-      <div data-testid="species-slideshow" role="region" aria-label="Photos" style={{ marginBottom: 14 }}>
+      <div data-testid="species-slideshow" role="region" aria-label="Photos" >
         <CreditedImage src={p.url} alt={p.alt} credit={p.credit} width={p.width} height={p.height} focal={p.focal} style={frameStyle} />
       </div>
     );
@@ -122,7 +122,7 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
   };
 
   return (
-    <div data-testid="species-slideshow" role="region" aria-roledescription="carousel" aria-label="Photos" style={{ marginBottom: 14 }}
+    <div data-testid="species-slideshow" role="region" aria-roledescription="carousel" aria-label="Photos" style={{ position: "relative" }}
       onFocus={(e) => {
         // Keyboard focus only: a tapped arrow keeps focus in some browsers, and
         // that shouldn't pause the show for good.
@@ -151,11 +151,11 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
         <Arrow dir={-1} onClick={() => go(-1)} />
         <Arrow dir={1} onClick={() => go(1)} />
       </div>
-      <div style={{ display: "flex", justifyContent: "center", gap: 2, marginTop: 4 }}>
+      <div style={{ display: "flex", justifyContent: "center", gap: 2, marginTop: 2, marginBottom: -10 }}>
         {list.map((p, i) => (
           <button key={p.id || i} type="button" aria-label={`Photo ${i + 1} of ${count}`} aria-current={i === current ? "true" : undefined} onClick={() => goTo(i)}
-            style={{ width: 28, height: 28, padding: 0, border: "none", background: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", WebkitTapHighlightColor: "transparent" }}>
-            <span aria-hidden="true" style={{ width: i === current ? 18 : 8, height: 8, borderRadius: 4, background: i === current ? C.green : "#c8c8c2", transition: reduced ? "none" : "width 0.2s" }} />
+            style={{ width: 36, height: 44, padding: 0, border: "none", background: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", WebkitTapHighlightColor: "transparent" }}>
+            <span aria-hidden="true" style={{ width: i === current ? 18 : 8, height: 8, borderRadius: 4, background: i === current ? T.accent : T.dotIdle, transition: reduced ? "none" : "width 0.2s" }} />
           </button>
         ))}
       </div>

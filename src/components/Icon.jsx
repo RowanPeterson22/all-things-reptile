@@ -28,7 +28,21 @@ const P = {
   settings: <><circle cx="12" cy="12" r="3" /><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7" /></>,
   sparkle: <path d="M12 3c.6 4.5 2.5 6.4 7 7-4.5.6-6.4 2.5-7 7-.6-4.5-2.5-6.4-7-7 4.5-.6 6.4-2.5 7-7z" />,
   build: <><path d="M3 20h18M5 20V9l7-5 7 5v11" /><path d="M9 20v-6h6v6" /></>,
+  // Care guides (the dark design: line icons instead of emoji)
+  thermo: <><path d="M10 13.5V5a2 2 0 0 1 4 0v8.5a4 4 0 1 1-4 0z" /><path d="M12 9v6.5" /></>,
+  bug: <><ellipse cx="12" cy="13.5" rx="4" ry="5.5" /><path d="M12 8V5M9.5 5.5 8 3.5M14.5 5.5 16 3.5M8 11H4.5M8 15H4.5M16 11h3.5M16 15h3.5M12 8v11" /></>,
+  hand: <><path d="M8 13V6.5a1.5 1.5 0 0 1 3 0V12M11 11.5V5a1.5 1.5 0 0 1 3 0v6.5M14 11.5V6.5a1.5 1.5 0 0 1 3 0V14c0 4-2.5 7-6 7-2.4 0-3.8-1-5-2.8L4 15.2a1.5 1.5 0 0 1 2.5-1.7L8 15" /></>,
+  health: <><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" /><path d="M8 12h2.5l1-2 2 4 1-2H16" /></>,
+  enclosure: <><rect x="3" y="6" width="18" height="13" rx="1.5" /><path d="M3 15h18M7 15v-3l3-2 3 2v3" /></>,
+  chevron: <path d="m9 6 6 6-6 6" />,
+  phone: <path d="M5 4h3.5l1.5 4-2 1.5a11 11 0 0 0 6.5 6.5L16 14l4 1.5V19a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z" />,
+  mail: <><rect x="3" y="5.5" width="18" height="13" rx="1.5" /><path d="m3.5 6.5 8.5 7 8.5-7" /></>,
+  globe: <><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.5 2.6 3.5 5.4 3.5 8.5s-1 5.9-3.5 8.5c-2.5-2.6-3.5-5.4-3.5-8.5s1-5.9 3.5-8.5z" /></>,
+  alert: <><path d="M12 3.5 21.5 20h-19z" /><path d="M12 10v4.5M12 17.2v.1" /></>,
 };
+
+// Care-guide emoji (in the page files and data/careGuides.js) → line icon.
+export const CARE_ICON = { "🏠": "enclosure", "🌡️": "thermo", "🦗": "bug", "🤲": "hand", "🩺": "health", "✨": "sparkle" };
 
 export const ICON_KEYS = Object.keys(P);
 

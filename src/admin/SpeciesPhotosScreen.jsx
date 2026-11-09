@@ -231,7 +231,7 @@ const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone, fallback
           {photo.is_hero && <span style={badge("gold")}>Hero</span>}
           {(photo.categories || []).map(id => <span key={id} style={badge("blue")} title="Hiding, rejecting or moving it clears this">{CATEGORY_LABEL[id] || id} image</span>)}
         </div>
-        {photo.url && !broken && <PhotoCredit credit={photo.credit} />}
+        {photo.url && !broken && <PhotoCredit credit={photo.credit} tone="light" />}
       </div>
 
       <div style={{ padding: "10px 12px 12px", fontSize: 12, color: N.ink, lineHeight: 1.6 }}>

@@ -1,5 +1,5 @@
 import { useEffect, useId, useMemo, useState } from "react";
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
 import { loadSpeciesIndex, searchSpecies, matchedAltName } from "../beta/speciesSearch";
 
 // ─── Species picker for the AI ID feedback card (beta) ────────────
@@ -19,16 +19,16 @@ export const OTHER = "other";
 const row = (on) => ({
   display: "flex", alignItems: "center", gap: 10, width: "100%", minHeight: 46, boxSizing: "border-box",
   textAlign: "left", padding: "8px 12px", fontFamily: "inherit", fontSize: 14, cursor: "pointer",
-  background: on ? C.greenPale : "white", color: C.ink,
-  border: `1px solid ${on ? C.green : C.line}`, borderRadius: 10, marginBottom: 6,
+  background: on ? T.chipBg : T.field, color: T.text,
+  border: `1px solid ${on ? T.accent : T.fieldBorder}`, borderRadius: 12, marginBottom: 6,
 });
-const sub = { fontSize: 12, fontStyle: "italic", color: C.muted };
-const tag = (bg, color) => ({ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 7, background: bg, color, whiteSpace: "nowrap" });
+const sub = { fontSize: 13, fontStyle: "italic", color: T.muted };
+const tag = (bg, color) => ({ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 999, background: bg, color, whiteSpace: "nowrap" });
 
 const Tags = ({ venomous, appSlug }) => (
   <>
-    {venomous && <span style={tag(C.redPale, C.red)}>Venomous</span>}
-    {appSlug && <span style={tag(C.greenPale, C.green)}>Care guide</span>}
+    {venomous && <span style={tag(T.noBg, T.no)}>Venomous</span>}
+    {appSlug && <span style={tag(T.okBg, T.ok)}>Care guide</span>}
   </>
 );
 
@@ -60,7 +60,7 @@ const SpeciesPicker = ({ value, selected, suggestions = [], onChange }) => {
           <div style={{ fontWeight: 700 }}>{selected.name}</div>
           {selected.latin && <div style={sub}>{selected.latin}</div>}
         </div>
-        <button type="button" onClick={() => setOpen(true)} style={{ background: "none", border: "none", color: C.green, fontWeight: 700, fontSize: 13, cursor: "pointer", fontFamily: "inherit", padding: "8px 12px", minHeight: 40, margin: "-4px -8px" }}>Change</button>
+        <button type="button" onClick={() => setOpen(true)} style={{ background: "none", border: "none", color: T.accentText, fontWeight: 700, fontSize: 14, cursor: "pointer", fontFamily: "inherit", padding: "8px 12px", minHeight: 44, margin: "-6px -8px" }}>Change</button>
       </div>
     );
   }
@@ -69,7 +69,7 @@ const SpeciesPicker = ({ value, selected, suggestions = [], onChange }) => {
     <div>
       {suggestions.length > 0 && (
         <>
-          <div style={{ fontSize: 11, color: C.muted, marginBottom: 6 }}>From the suggestions</div>
+          <div style={{ fontSize: 13, color: T.muted, marginBottom: 6 }}>From the suggestions</div>
           {suggestions.map((s, i) => {
             const on = s.matched ? value === s.slug : false;
             return (
@@ -78,7 +78,7 @@ const SpeciesPicker = ({ value, selected, suggestions = [], onChange }) => {
                   <span style={{ display: "block", fontWeight: 600 }}>{s.name}</span>
                   {s.latin && <span style={{ ...sub, display: "block" }}>{s.latin}</span>}
                 </span>
-                {s.matched ? <Tags venomous={s.dangerouslyVenomous} appSlug={s.appSlug} /> : <span style={s.outsideCoverage ? tag(C.bluePale, C.blue) : tag(C.goldLight, C.gold)}>{s.outsideCoverage ? "Not native" : "Unmatched"}</span>}
+                {s.matched ? <Tags venomous={s.dangerouslyVenomous} appSlug={s.appSlug} /> : <span style={s.outsideCoverage ? tag(T.infoBg, T.info) : tag(T.chipBg, T.chip)}>{s.outsideCoverage ? "Not native" : "Unmatched"}</span>}
               </button>
             );
           })}
@@ -92,17 +92,17 @@ const SpeciesPicker = ({ value, selected, suggestions = [], onChange }) => {
 
       {value !== OTHER && (
         <>
-          <label htmlFor={inputId} style={{ display: "block", fontSize: 11, color: C.muted, margin: "4px 0 6px" }}>Or search all Australian species</label>
+          <label htmlFor={inputId} style={{ display: "block", fontSize: 13, color: T.muted, margin: "4px 0 6px" }}>Or search all Australian species</label>
           <input
             id={inputId} type="search" role="combobox" aria-expanded={results.length > 0} aria-controls={`${inputId}-list`} aria-autocomplete="list"
             autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} enterKeyHint="search"
             placeholder={entries ? "Common or scientific name" : loadError ? "Couldn't load the species list" : "Loading species…"}
             disabled={!entries} value={query} onChange={e => setQuery(e.target.value)}
-            style={{ width: "100%", boxSizing: "border-box", border: `1px solid ${C.line}`, borderRadius: 10, padding: "11px 12px", fontSize: 16, fontFamily: "inherit", background: "white", color: C.ink }}
+            style={{ width: "100%", boxSizing: "border-box", border: `1px solid ${T.fieldBorder}`, borderRadius: 12, padding: "11px 12px", fontSize: 16, fontFamily: "inherit", background: T.field, color: T.text }}
           />
           {query.trim() && entries && (
             <div id={`${inputId}-list`} role="listbox" aria-label="Matching species" style={{ marginTop: 6 }}>
-              {results.length === 0 && <div style={{ fontSize: 12, color: C.muted, padding: "6px 2px" }}>No match. Try another name, or choose Other and type it.</div>}
+              {results.length === 0 && <div style={{ fontSize: 13, color: T.muted, padding: "6px 2px" }}>No match. Try another name, or choose Other and type it.</div>}
               {results.map(e => {
                 const alt = matchedAltName(e, query);
                 return (
@@ -110,7 +110,7 @@ const SpeciesPicker = ({ value, selected, suggestions = [], onChange }) => {
                     <span style={{ flex: 1, minWidth: 0 }}>
                       <span style={{ display: "block", fontWeight: 600 }}>{e.common}</span>
                       {e.common !== e.scientific && <span style={{ ...sub, display: "block" }}>{e.scientific}</span>}
-                      {alt && <span style={{ display: "block", fontSize: 11, color: C.muted }}>also: {alt}</span>}
+                      {alt && <span style={{ display: "block", fontSize: 12, color: T.muted }}>also: {alt}</span>}
                     </span>
                     <Tags venomous={e.venomous} appSlug={e.appSlug} />
                   </button>

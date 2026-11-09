@@ -84,7 +84,7 @@ const IndexScreen = ({ species, bySlug, catalogue }) => {
     return (
       <div style={{ ...page, maxWidth: 720 }}>
         <button type="button" onClick={() => navigate("/admin/index")} style={{ background: "none", border: "none", color: C.green, fontSize: 13, fontWeight: 700, cursor: "pointer", padding: 0, marginBottom: 8, fontFamily: "inherit" }}>‹ Species index</button>
-        <WarnBox type="blue" title="Read-only">{READ_ONLY}</WarnBox>
+        <WarnBox light type="blue" title="Read-only">{READ_ONLY}</WarnBox>
         {r ? <RecordView r={r} catalogue={catalogue} /> : <div style={{ fontSize: 13 }}>That species isn't in the index.</div>}
       </div>
     );
@@ -92,7 +92,7 @@ const IndexScreen = ({ species, bySlug, catalogue }) => {
 
   return (
     <div style={{ ...page, maxWidth: 720 }}>
-      <WarnBox type="blue" title="Read-only">{READ_ONLY}</WarnBox>
+      <WarnBox light type="blue" title="Read-only">{READ_ONLY}</WarnBox>
       <input value={q} onChange={e => setQ(e.target.value)} placeholder="Search common or scientific name" style={{ ...input, marginBottom: 10 }} aria-label="Search the index" />
       <ScrollRow tone="light" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4, marginBottom: 8 }}>
         {GROUP_CHIPS.map(c => <button key={c.id} type="button" onClick={() => setGroup(c.id)} style={chip(group === c.id)}>{c.label}</button>)}

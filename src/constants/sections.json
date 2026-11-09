@@ -1,13 +1,40 @@
 {
-  "_comment": "App sections a beta tester can be given before launch. The one definition: src/constants/sections.js (app) and lib/sections.js (server) both read this file, and the beta_testers.sections check constraint lists the same keys. Order matters: a tester lands on their first allowed section.",
+  "_comment": "App sections and tabs. The one definition: src/constants/appLayout.js (shared by the app and the server), src/constants/sections.js (app) and lib/sections.js (server) all read this file. perTester sections are the ones a beta tester is given one by one (beta_testers.sections; its check constraint lists the same keys) and their order matters: a tester with one section lands on the first. Placeholder sections (built: false) are never per-tester: their audience decides. status/audience here are the defaults; the app_sections table (/admin -> Sections) overrides them, plus title, blurb, sort order and featured. Tab labels and the Home block order live in app_layout. icon is a key in src/components/Icon.jsx (line SVGs).",
+  "tabs": [
+    { "key": "home",      "label": "Home",       "icon": "home", "path": "/" },
+    { "key": "learn",     "label": "Learn",      "icon": "learn", "path": null },
+    { "key": "id",        "label": "ID",         "icon": "camera", "path": "/id" },
+    { "key": "community", "label": "Community",  "icon": "users", "path": "/community" },
+    { "key": "profile",   "label": "My Profile", "icon": "user", "path": "/profile" }
+  ],
+  "homeBlocks": [
+    { "key": "search",   "label": "Search bar" },
+    { "key": "personal", "label": "Personal (my animals, reminders, shopping list)" },
+    { "key": "featured", "label": "Featured card" },
+    { "key": "explore",  "label": "Explore (section tiles)" }
+  ],
+  "defaultHomeBlocks": ["search", "personal", "featured", "explore"],
   "sections": [
-    { "key": "id",        "label": "ID Reptile",            "path": "/id",        "public": false },
-    { "key": "species",   "label": "Species (Browse and species pages)", "path": "/", "public": true },
-    { "key": "care",      "label": "Care guides",           "path": "/care",      "public": true },
-    { "key": "licensing", "label": "Licencing",             "path": "/licencing", "public": true },
-    { "key": "glossary",  "label": "Glossary",              "path": "/glossary",  "public": true },
-    { "key": "search",    "label": "Search",                "path": "/",          "public": true },
-    { "key": "credits",   "label": "Photo credits",         "path": "/credits",   "public": true }
+    { "key": "id",        "label": "ID Reptile",            "tab": "id",    "path": "/id",        "title": "ID a reptile",   "blurb": "Snap a photo for a suggested species (beta)", "icon": "camera", "built": true, "perTester": true, "tile": true,  "neverPublic": true, "status": "live", "audience": "testers" },
+    { "key": "species",   "label": "Species (Browse and species pages)", "tab": "learn", "path": "/species", "title": "Species", "blurb": "Australian natives, with a care sheet for each", "icon": "lizard", "built": true, "perTester": true, "tile": true, "status": "live", "audience": "everyone" },
+    { "key": "care",      "label": "Care guides",           "tab": "learn", "path": "/care",      "title": "Care guides",    "blurb": "Enclosures, heat, feeding, handling and health", "icon": "care", "built": true, "perTester": true, "tile": true, "status": "live", "audience": "everyone" },
+    { "key": "licensing", "label": "Licencing",             "tab": "learn", "path": "/licencing", "title": "Licencing",      "blurb": "What each state asks of keepers", "icon": "scale", "built": true, "perTester": true, "tile": true, "status": "live", "audience": "everyone" },
+    { "key": "glossary",  "label": "Glossary",              "tab": "learn", "path": "/glossary",  "title": "Glossary",       "blurb": "Keeping terms, explained", "icon": "glossary", "built": true, "perTester": true, "tile": true, "status": "live", "audience": "everyone" },
+    { "key": "search",    "label": "Search",                "tab": "learn", "path": "/search",    "title": "Search",         "blurb": "Search species, care guides and the glossary", "icon": "search", "built": true, "perTester": true, "tile": false, "status": "live", "audience": "everyone" },
+    { "key": "credits",   "label": "Photo credits",         "tab": "learn", "path": "/credits",   "title": "Photo credits",  "blurb": "Who took the photos", "icon": "image", "built": true, "perTester": true, "tile": false, "status": "live", "audience": "everyone" },
+
+    { "key": "sightings",      "tab": "community", "path": "/community/sightings",    "title": "Sightings",               "blurb": "Log wild and captive sightings", "icon": "binoculars", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "ladders",        "tab": "community", "path": "/community/ladders",      "title": "Sighting ladders",        "blurb": "Who has spotted the most species", "icon": "ladder", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "competitions",   "tab": "community", "path": "/community/competitions", "title": "Competitions",            "blurb": "Photo comps, like the ATR calendar", "icon": "trophy", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "venues",         "tab": "community", "path": "/community/venues",       "title": "Venues",                  "blurb": "Zoos, wildlife parks, sanctuaries and expos", "icon": "pin", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+
+    { "key": "shortlist",      "tab": "profile",   "path": "/profile/shortlist",      "title": "Shortlist",               "blurb": "Save species and compare them side by side", "icon": "star", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "can-i-keep",     "tab": "profile",   "path": "/profile/can-i-keep-it",  "title": "Can I keep it?",          "blurb": "A licence check for your state", "icon": "check", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "shopping-lists", "tab": "profile",   "path": "/profile/shopping-lists", "title": "Shopping lists",          "blurb": "The set-up gear list for each species", "icon": "cart", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "suits-me",       "tab": "profile",   "path": "/profile/which-reptile",  "title": "Which reptile suits me?", "blurb": "A short quiz to find your match", "icon": "compass", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "collection",     "tab": "profile",   "path": "/profile/collection",     "title": "My animals",              "blurb": "Your collection, all in one place", "icon": "snake", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "reminders",      "tab": "profile",   "path": "/profile/reminders",      "title": "Reminders",               "blurb": "Feeding, shedding, cleaning and vet visits", "icon": "bell", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "account",        "tab": "profile",   "path": "/profile/account",        "title": "Account",                 "blurb": "Your ATR login and details", "icon": "settings", "built": false, "tile": true, "status": "soon", "audience": "testers" }
   ],
   "defaultSections": ["id"]
 }

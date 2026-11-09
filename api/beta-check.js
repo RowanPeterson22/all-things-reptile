@@ -8,11 +8,13 @@
 //                      app's localStorage, and 303s to the tester's first allowed
 //                      section, so no code is left in the URL. A bad code gets
 //                      the holding page.
-//   GET                { gated, sections } for a visitor with no invite code:
-//                      what the app shell shows before launch (nothing) and
-//                      after ATR_PUBLIC=true (the public sections).
+//   GET                { gated, sections, app } for a visitor with no invite
+//                      code: before launch nothing (sections [], app null, so
+//                      the layout isn't readable by anyone outside); after
+//                      ATR_PUBLIC=true the public sections and layout. Edge
+//                      cached for 30 s (it's the same for every visitor).
 //   POST               The app's start-up check, x-atr-beta header as before.
-//                      200 { ok, name, traits, sections, isAdmin, gated } for an
+//                      200 { ok, name, traits, sections, app, isAdmin, gated } for an
 //                      active tester, and the access cookie is renewed; 403 (and
 //                      the cookie cleared) otherwise, so a deactivated tester is
 //                      locked out at their next app load. 503 if not set up.
@@ -21,6 +23,11 @@
 // from the morph store (Supabase, edited in /admin → Morphs; cached ~60 s).
 // It's only sent to testers so the public bundle never carries it, and the
 // visual cues stay server-side. Never log codes or cookies.
+//
+// `app` is the layout for this visitor (src/constants/appLayout.js): tab
+// labels, Home block order, and the sections they can see with status, title,
+// blurb and featured, from app_sections/app_layout (/admin → Sections, cached
+// ~30 s). `sections` stays the list of built sections they can open.
 
 const { requireTester, CODE_RE } = require("../lib/beta");
 const { supabaseConfig, findActiveTester, SupabaseError } = require("../lib/supabase");
@@ -28,7 +35,12 @@ const { getMorphs } = require("../lib/morphStore");
 const { makeRateLimiter, clientIp } = require("../lib/rateLimit");
 const gate = require("../lib/gate");
 const { holdingPage, HOLDING_HEADERS } = require("../lib/holdingPage");
-const { effectiveSections, firstSectionPath, PUBLIC_SECTIONS } = require("../lib/sections");
+const { viewerFor, landingPath } = require("../lib/sections");
+const { resolveView } = require("../src/constants/appLayout.js");
+const { getAppConfig } = require("../lib/appSections");
+
+// The sections and layout one visitor gets under the current settings.
+const viewFor = async (tester, mode, cfg) => resolveView(await getAppConfig({ cfg }), viewerFor(tester, { isPublic: mode.isPublic }));
 
 // Tight limits: this is the endpoint someone would use to guess codes.
 const checkLimited = makeRateLimiter({ windowMs: 60 * 1000, max: 10 });
@@ -82,7 +94,7 @@ const bootstrap = async (req, res, mode) => {
   const access = await accessCookie(tester, mode);
   if (access) cookies.push(access);
   res.setHeader("Set-Cookie", cookies);
-  res.setHeader("Location", firstSectionPath(effectiveSections(tester, { isPublic: mode.isPublic })));
+  res.setHeader("Location", landingPath(await viewFor(tester, mode, cfg)));
   return res.status(303).send("");
 };
 
@@ -92,7 +104,10 @@ module.exports = async (req, res) => {
 
   if (req.method === "GET") {
     if (req.query && req.query.invite !== undefined) return bootstrap(req, res, mode);
-    return res.status(200).json({ gated: mode.gated, sections: mode.isPublic ? PUBLIC_SECTIONS : [] });
+    if (!mode.isPublic) return res.status(200).json({ gated: mode.gated, sections: [], app: null });
+    const view = await viewFor(null, mode, supabaseConfig());
+    res.setHeader("Cache-Control", "public, max-age=0, s-maxage=30, stale-while-revalidate=60");
+    return res.status(200).json({ gated: mode.gated, sections: view.sections, app: view.app });
   }
   if (req.method !== "POST") {
     res.setHeader("Allow", "GET, POST");
@@ -107,13 +122,14 @@ module.exports = async (req, res) => {
     return res.status(result.status).json(result.body);
   }
   const t = result.tester;
-  const [access, morphs] = await Promise.all([accessCookie(t, mode), getMorphs({ cfg: result.cfg })]);
+  const [access, morphs, view] = await Promise.all([accessCookie(t, mode), getMorphs({ cfg: result.cfg }), viewFor(t, mode, result.cfg)]);
   if (access) res.setHeader("Set-Cookie", [access]);
   return res.status(200).json({
     ok: true,
     name: t.name,
     traits: traitsBySpecies(morphs),
-    sections: effectiveSections(t, { isPublic: mode.isPublic }),
+    sections: view.sections,
+    app: view.app,
     isAdmin: t.isAdmin === true,
     gated: mode.gated,
   });

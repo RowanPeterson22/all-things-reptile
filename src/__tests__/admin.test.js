@@ -68,6 +68,8 @@ const fresh = () => ({
   ],
   objects: { "id-photos": { [`${TESTER_ID}/p1.jpg`]: jpeg(1000, 750), [`${TESTER_ID}/p2.jpg`]: jpeg() }, "reference-photos": { "central-bearded-dragon/inaturalist-123.jpg": jpeg() } },
   settings: { default_sections: ["id"] },
+  appSections: [{ key: "sightings", status: "soon", audience: "testers", sort_order: 70, featured: false, title: null, blurb: null }],
+  appLayout: null,
   morphs: require("../../lib/morphs").seedRows(),
   failNext: null, // e.g. "PATCH reference_photos"
 });
@@ -105,6 +107,26 @@ const fakeImpl = async (url, init = {}) => {
   if (table === "beta_settings") {
     if (method === "PATCH") Object.assign(db.settings, body);
     return res(200, [{ ...db.settings }]);
+  }
+  // App layout (/admin → Sections). The unique index on featured is enforced here too.
+  if (table === "app_sections") {
+    if (method === "GET") return res(200, db.appSections);
+    if (method === "POST") {
+      for (const row of body) {
+        const i = db.appSections.findIndex(r => r.key === row.key);
+        if (i >= 0) db.appSections[i] = { ...db.appSections[i], ...row }; else db.appSections.push(row);
+      }
+      if (db.appSections.filter(r => r.featured).length > 1) return res(409, { code: "23505" });
+      return res(201, null);
+    }
+  }
+  if (table === "app_layout") {
+    if (method === "GET") return res(200, db.appLayout ? [db.appLayout] : []);
+    if (method === "POST") { db.appLayout = { ...body }; return res(201, null); }
+  }
+  if (table === "rpc/app_sections_set_featured") {
+    db.appSections.forEach(r => { r.featured = r.key === body.p_key; });
+    return res(204, null);
   }
   if (table === "id_feedback" && method === "DELETE") {
     db.feedback = db.feedback.filter(r => r.id !== eq(q, "id"));
@@ -221,6 +243,8 @@ describe("admin gate", () => {
     ["admin-testers sections", testersHandler, "PATCH", { id: TESTER_ID, sections: ["id", "care"] }, {}],
     ["admin-testers default sections", testersHandler, "PATCH", { defaultSections: ["id", "glossary"] }, {}],
     ["admin-feedback delete", feedbackHandler, "DELETE", { feedbackId: FB_NO_PHOTO }, {}],
+    ["admin-testers layout read", testersHandler, "GET", undefined, { scope: "sections" }],
+    ["admin-testers layout edit", testersHandler, "PATCH", { section: { key: "sightings", status: "hidden" } }, { scope: "sections" }],
   ];
 
   test.each(routes)("%s: non-admin tester gets 403 and no data", async (_, handler, method, body, query) => {
@@ -235,6 +259,7 @@ describe("admin gate", () => {
     expect(db.testers[1].sections).toBeUndefined();
     expect(db.settings.default_sections).toEqual(["id"]);
     expect(db.feedback).toHaveLength(3);
+    expect(db.appSections[0].status).toBe("soon");
   });
 
   test.each(routes)("%s: no code or a malformed code gets 403 without a lookup", async (_, handler, method, body, query) => {
@@ -548,6 +573,105 @@ describe("testers", () => {
     expect((await call(testersHandler, { method: "PATCH", body: { id: ADMIN_ID.toUpperCase(), active: false } })).statusCode).toBe(400);
     expect(db.testers[0]).toMatchObject({ is_admin: true, active: true });
     expect((await call(testersHandler, { method: "PATCH", body: { id: TESTER_ID, is_admin: true } })).body.tester.is_admin).toBe(true);
+  });
+});
+
+// ─── 4b. App layout (/admin → Sections) ───────────────────────────
+describe("app layout (admin-testers?scope=sections)", () => {
+  const S = { scope: "sections" };
+  const edit = (body) => call(testersHandler, { method: "PATCH", body, query: S });
+  const row = (key) => db.appSections.find(r => r.key === key);
+
+  test("GET: every section grouped by tab with defaults, tabs and the Home block order", async () => {
+    const r = await call(testersHandler, { query: S });
+    expect(r.statusCode).toBe(200);
+    const keys = r.body.sections.map(x => x.key);
+    expect(keys.slice(0, 1)).toEqual(["species"]); // Learn first (Home has none)
+    expect(keys).toEqual(expect.arrayContaining(["id", "sightings", "reminders", "account"]));
+    expect(r.body.sections.find(x => x.key === "sightings")).toMatchObject({ tab: "community", built: false, status: "soon", audience: "testers", defaultTitle: "Sightings", title: null });
+    expect(r.body.tabs.map(t => [t.key, t.defaultLabel])).toEqual([["home", "Home"], ["learn", "Learn"], ["id", "ID"], ["community", "Community"], ["profile", "My Profile"]]);
+    expect(r.body.homeBlocks).toEqual(["search", "personal", "featured", "explore"]);
+  });
+
+  test("placeholders can't go live; AI ID can't be public; bad values are refused", async () => {
+    let r = await edit({ section: { key: "sightings", status: "live" } });
+    expect(r.statusCode).toBe(400);
+    expect(r.body.error).toMatch(/isn't built yet/);
+    r = await edit({ section: { key: "id", audience: "everyone" } });
+    expect(r.statusCode).toBe(400);
+    expect(r.body.error).toMatch(/beta-only/);
+    for (const body of [{ section: { key: "nope", status: "soon" } }, { section: { key: "venues", status: "gone" } }, { section: { key: "venues", audience: "public" } }, { section: { key: "venues", title: "x".repeat(41) } }, { section: { key: "venues" } }, {}, { featured: "venues", homeBlocks: [] }]) {
+      expect((await edit(body)).statusCode).toBe(400);
+    }
+    expect(row("sightings").status).toBe("soon");
+    expect(row("id")).toBeUndefined();
+  });
+
+  test("status, audience, title and blurb save, stamped with the admin; reset clears the override", async () => {
+    let r = await edit({ section: { key: "competitions", status: "hidden", audience: "everyone", title: "Calendar comp", blurb: "Enter the 2027 calendar" } });
+    expect(r.statusCode).toBe(200);
+    expect(row("competitions")).toMatchObject({ status: "hidden", audience: "everyone", title: "Calendar comp", blurb: "Enter the 2027 calendar", sort_order: 90, updated_by: "Rowan Peterson" });
+    expect(r.body.sections.find(x => x.key === "competitions")).toMatchObject({ status: "hidden", title: "Calendar comp" });
+    await edit({ section: { key: "competitions", title: null, blurb: "" } });
+    expect(row("competitions")).toMatchObject({ title: null, blurb: null });
+    // A built section can go live, soon or hidden.
+    expect((await edit({ section: { key: "licensing", status: "soon" } })).statusCode).toBe(200);
+  });
+
+  test("featured: one at most, moved in one call; only tile sections; null clears it", async () => {
+    await edit({ featured: "competitions" });
+    await edit({ featured: "venues" });
+    expect(db.appSections.filter(r => r.featured).map(r => r.key)).toEqual(["venues"]);
+    expect(calls(u => u.pathname.endsWith("/rpc/app_sections_set_featured"))).toHaveLength(2);
+    expect((await edit({ featured: "search" })).statusCode).toBe(400);
+    const r = await edit({ featured: null });
+    expect(db.appSections.some(x => x.featured)).toBe(false);
+    expect(r.body.sections.some(x => x.featured)).toBe(false);
+  });
+
+  test("order: a full permutation of one tab, kept inside that tab's numbers", async () => {
+    const keys = ["venues", "sightings", "ladders", "competitions"];
+    const r = await edit({ order: { tab: "community", keys } });
+    expect(r.statusCode).toBe(200);
+    expect(r.body.sections.filter(x => x.tab === "community").map(x => x.key)).toEqual(keys);
+    expect(row("venues").sort_order).toBe(70);
+    expect((await edit({ order: { tab: "community", keys: ["venues"] } })).statusCode).toBe(400);
+    expect((await edit({ order: { tab: "community", keys: ["venues", "sightings", "ladders", "shortlist"] } })).statusCode).toBe(400);
+  });
+
+  test("tab labels and the Home block order", async () => {
+    let r = await edit({ tabs: { profile: "Me", learn: "Learn", community: "" } });
+    expect(r.statusCode).toBe(200);
+    expect(db.appLayout.tab_labels).toEqual({ profile: "Me" }); // the default label isn't stored
+    expect(r.body.tabs.find(t => t.key === "profile").label).toBe("Me");
+    expect((await edit({ tabs: { profile: "A label far too long" } })).statusCode).toBe(400);
+    expect((await edit({ tabs: { shop: "Shop" } })).statusCode).toBe(400);
+    r = await edit({ homeBlocks: ["personal", "search", "explore", "featured"] });
+    expect(r.body.homeBlocks).toEqual(["personal", "search", "explore", "featured"]);
+    expect(db.appLayout.tab_labels).toEqual({ profile: "Me" });
+    for (const bad of [["search"], ["search", "search", "explore", "featured"], ["search", "personal", "featured", "ads"]]) {
+      expect((await edit({ homeBlocks: bad })).statusCode).toBe(400);
+    }
+  });
+
+  test("beta-check serves the edited layout to testers (and nothing to the public while gated)", async () => {
+    const betaCheck = require("../../api/beta-check");
+    const { clearAppConfigCache } = require("../../lib/appSections");
+    const { clearTesterCache } = require("../../lib/beta");
+    clearAppConfigCache(); clearTesterCache();
+    await edit({ section: { key: "ladders", status: "hidden" } });
+    await edit({ featured: "venues" });
+    clearAppConfigCache();
+    const r = mockRes(); r.send = r.json;
+    await betaCheck({ method: "POST", headers: { "x-atr-beta": TESTER_CODE, "x-forwarded-for": "10.9.9.1" }, query: {} }, r);
+    expect(r.statusCode).toBe(200);
+    const keys = r.body.app.items.map(i => i.key);
+    expect(keys).toContain("sightings");
+    expect(keys).not.toContain("ladders");
+    expect(r.body.app.items.find(i => i.key === "venues").featured).toBe(true);
+    const g = mockRes(); g.send = g.json;
+    await betaCheck({ method: "GET", headers: { "x-forwarded-for": "10.9.9.2" }, query: {} }, g);
+    expect(g.body).toEqual({ gated: true, sections: [], app: null });
   });
 });
 

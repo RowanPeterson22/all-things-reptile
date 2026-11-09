@@ -16,6 +16,7 @@ const gate = require("../../lib/gate");
 const { holdingPage } = require("../../lib/holdingPage");
 const betaCheck = require("../../api/beta-check");
 const { clearTesterCache } = require("../../lib/beta");
+const { clearAppConfigCache } = require("../../lib/appSections");
 
 const SECRET = "s".repeat(48);
 const TESTER = "11111111-2222-4333-8444-555555555555";
@@ -155,7 +156,7 @@ describe("invite bootstrap", () => {
   const saved = { ...process.env };
   const savedFetch = global.fetch;
   beforeEach(() => {
-    clearTesterCache();
+    clearTesterCache(); clearAppConfigCache();
     Object.assign(process.env, { SUPABASE_URL: "https://ledcvbyiqkygcdleucqo.supabase.co", SUPABASE_SECRET_KEY: "sb_secret_test", ATR_GATE_SECRET: SECRET, VERCEL_ENV: "production" });
     delete process.env.ATR_PUBLIC;
   });
@@ -183,11 +184,13 @@ describe("invite bootstrap", () => {
     expect(global.fetch.mock.calls[0][0]).toContain(`invite_code=eq.${CODE}&active=is.true`);
   });
 
-  test("lands on the first allowed section; admins on the first of all", async () => {
+  test("lands on Home with two or more sections, else on the one section; admins on Home", async () => {
     global.fetch = testerRows([{ id: TESTER, name: "Jane", sections: ["glossary", "care"], is_admin: false }]);
-    expect((await call({ query: { invite: CODE } })).headers.location).toBe("/care");
+    expect((await call({ query: { invite: CODE } })).headers.location).toBe("/");
+    global.fetch = testerRows([{ id: TESTER, name: "Jane", sections: ["glossary", "credits"], is_admin: false }]);
+    expect((await call({ query: { invite: CODE } })).headers.location).toBe("/glossary");
     global.fetch = testerRows([{ id: TESTER, name: "Rowan", sections: [], is_admin: true }]);
-    expect((await call({ query: { invite: CODE } })).headers.location).toBe("/id");
+    expect((await call({ query: { invite: CODE } })).headers.location).toBe("/");
   });
 
   test("an unknown, inactive or malformed code gets the holding page and a cleared cookie", async () => {
@@ -241,7 +244,14 @@ describe("invite bootstrap", () => {
     global.fetch = testerRows([{ id: TESTER, name: "Jane", sections: ["id"], is_admin: false }]);
     const r = await call({ method: "POST", headers: { "x-atr-beta": CODE } });
     expect(r.body).toMatchObject({ gated: false, sections: ["id", "species", "care", "licensing", "glossary", "search", "credits"] });
-    expect((await call()).body).toEqual({ gated: false, sections: ["species", "care", "licensing", "glossary", "search", "credits"] });
+    const pub = await call();
+    expect(pub.body).toMatchObject({ gated: false, sections: ["species", "care", "licensing", "glossary", "search", "credits"] });
+    // The public layout: no AI ID, no tester-only placeholders; edge cached.
+    expect(pub.body.app.items.map(i => i.key)).toEqual(["species", "care", "licensing", "glossary", "search", "credits"]);
+    expect(pub.headers["cache-control"]).toContain("s-maxage=30");
+    delete process.env.ATR_PUBLIC;
+    // Gated: nothing at all for a visitor with no code.
+    expect((await call()).body).toEqual({ gated: true, sections: [], app: null });
   });
 
   test("the AI ID endpoints refuse a tester without the id section", async () => {

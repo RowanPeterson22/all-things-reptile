@@ -1,15 +1,19 @@
 import DEF from "./sections.json";
+import { resolveView, DEFAULT_CONFIG } from "./appLayout";
 
 // ─── App sections (pre-launch gate, per-tester access) ────────────
 // Defined once in sections.json; lib/sections.js reads the same file on the
 // server. The server decides who gets which sections (/api/beta-check); this
-// module only turns that list into tabs, routes and links.
+// module only turns that list into routes and links. Tabs, tiles and the Home
+// page come from ./appLayout (shared with the server).
 
-export const SECTIONS = DEF.sections;
+// Per-tester sections (beta_testers.sections), in the canonical order.
+export const SECTIONS = DEF.sections.filter(s => s.perTester);
 export const SECTION_KEYS = SECTIONS.map(s => s.key);
 export const DEFAULT_SECTIONS = DEF.defaultSections;
-// What the public sees once ATR_PUBLIC=true. AI ID stays beta-only (D9).
-export const PUBLIC_SECTIONS = SECTIONS.filter(s => s.public).map(s => s.key);
+// What the public sees once ATR_PUBLIC=true, by default (before any
+// /admin → Sections changes). AI ID stays beta-only (D9).
+export const PUBLIC_SECTIONS = resolveView(DEFAULT_CONFIG, { role: "public", isPublic: true }).sections;
 
 // Known keys only, no duplicates, in the canonical order.
 export const normaliseSections = (list) => {
@@ -39,6 +43,5 @@ export const accessFor = (list) => {
     search: has("search"),
     credits: has("credits"),
     id: has("id"),
-    home: firstSectionPath([...set]),
   };
 };

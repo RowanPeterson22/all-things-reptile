@@ -156,7 +156,8 @@ describe("ID results survive a trip to a care guide", () => {
 
     // Open the care guide, then come back.
     await act(async () => { fireEvent.click(screen.getByText(/View care guide/)); });
-    const back = screen.getByText("‹ Back to ID results");
+    // The species page back button is the round icon button on the photo; its label is its accessible name.
+    const back = screen.getByRole("button", { name: "Back to ID results" });
     await act(async () => { fireEvent.click(back); });
 
     expect(screen.getByText(/View care guide/)).toBeInTheDocument();

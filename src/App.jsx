@@ -8,9 +8,15 @@ import CareScreen from "./screens/CareScreen";
 import LegalScreen from "./screens/LegalScreen";
 import GlossaryScreen from "./screens/GlossaryScreen";
 import SearchResults from "./screens/SearchResults";
-import { useBetaAccess } from "./beta/betaAccess";
+import HomeScreen from "./screens/HomeScreen";
+import TabPage from "./screens/TabPage";
+import ComingSoonScreen from "./screens/ComingSoonScreen";
+import LearnNav from "./components/LearnNav";
+import Icon from "./components/Icon";
+import { useBetaAccess, usePublicLayout } from "./beta/betaAccess";
 import { useAdminAccess } from "./beta/adminAccess";
-import { accessFor, PUBLIC_SECTIONS } from "./constants/sections";
+import { accessFor } from "./constants/sections";
+import { SECTIONS as ALL_SECTIONS, shellFor } from "./constants/appLayout";
 import ChildrensPythonPage from "./pages/species/snakes/ChildrensPythonPage";
 import StimsonsPythonPage from "./pages/species/snakes/StimsonsPythonPage";
 import SpottedPythonPage from "./pages/species/snakes/SpottedPythonPage";
@@ -151,17 +157,22 @@ const URL_FOR_PAGE = {
   ...Object.fromEntries(Object.values(GUIDES_BY_SLUG).map(g => [g.page, `/care/${g.slug}`])),
 };
 
-// Each tab belongs to a section (src/constants/sections.json). Before launch a
-// tester sees only the sections the server gives them; the public build (no
-// invite code) gets the public sections, and AI ID stays beta-only (D9).
-const ALL_TABS = [
-  { id: "browse",    icon: "🔍", label: "Browse",     path: "/",          section: "species"   },
-  { id: "care",      icon: "📖", label: "Care",       path: "/care",      section: "care"      },
-  { id: "licencing", icon: "⚖️", label: "Licencing",  path: "/licencing", section: "licensing" },
-  { id: "identify",  icon: "📷", label: "ID Reptile", path: "/id",        section: "id"        },
-  { id: "glossary",  icon: "📚", label: "Glossary",   path: "/glossary",  section: "glossary"  },
-];
-const PUBLIC_ACCESS = accessFor(PUBLIC_SECTIONS);
+// ─── Tabs and sections ────────────────────────────────────────────
+// Five bottom tabs, fixed in code (src/constants/sections.json): Home, Learn,
+// ID, Community, My Profile. Sections sit inside them; who sees which, their
+// titles, order and the featured card come from the server (/api/beta-check,
+// edited in /admin → Sections) through the shared rules in
+// src/constants/appLayout.js. Before launch a tester sees only what the server
+// gives them; the public build (no invite code) gets the public layout, and
+// AI ID stays beta-only (D9). A visitor who can open only one built section
+// gets that screen alone, with no tab bar (e.g. ID-only testers).
+const PLACEHOLDERS = ALL_SECTIONS.filter(s => !s.built);
+const LEARN_PATHS = new Set(["/species", "/care", "/licencing", "/glossary"]);
+const tabOfPath = (p) => (p === "/" ? "home"
+  : p === "/id" ? "id"
+    : p === "/community" || p.startsWith("/community/") ? "community"
+      : p === "/profile" || p.startsWith("/profile/") ? "profile"
+        : "learn");
 
 const FONT = "'DM Sans', system-ui, sans-serif";
 // Bottom tab bar, sized explicitly so the spacer under the content matches it.
@@ -189,15 +200,20 @@ const DetailRoute = ({ table, legacy = {}, base, onBack, home = "/" }) => {
 };
 
 // Browser tab / history title for a path: "<page> · All Things Reptile".
+// Default names (the admin titles only change what's on screen).
 const SITE = "All Things Reptile";
+const PATH_TITLES = {
+  ...Object.fromEntries(ALL_SECTIONS.map(s => [s.path, s.key === "licensing" ? "Licencing" : s.title])),
+  "/community": "Community",
+  "/profile": "My Profile",
+};
 export const titleFor = (path) => {
   const [, first, second] = path.split("/");
   if (first === "species" && second) return SPECIES_BY_SLUG[second] ? `${SPECIES_BY_SLUG[second].name} · ${SITE}` : SITE;
   if (first === "care" && second) return GUIDES_BY_SLUG[second] ? `${GUIDES_BY_SLUG[second].title} · ${SITE}` : SITE;
   if (first === "admin") return `Admin · ${SITE}`;
-  if (first === "credits") return `Credits · ${SITE}`;
-  const tab = ALL_TABS.find(t => t.path === `/${first || ""}`);
-  return tab && tab.path !== "/" ? `${tab.label} · ${SITE}` : SITE;
+  const name = PATH_TITLES[path];
+  return name ? `${name} · ${SITE}` : SITE;
 };
 
 const AdminWait = () => <div style={{ padding: 24, fontSize: 13, color: "#888", fontFamily: "'DM Sans', system-ui, sans-serif" }}>Checking access…</div>;
@@ -215,18 +231,41 @@ export function AppShell() {
   // Taking ?invite= off the URL keeps the code out of history and screenshots.
   const beta = useBetaAccess(location.search, () => navigate("/id", { replace: true }));
   const betaOk = beta.status === "ok";
-  // What this visitor can open. null while we don't know yet (checking, a failed
-  // check, or a tester revoked mid-session while gated).
-  const access = betaOk ? accessFor(beta.sections) : beta.status === "none" ? PUBLIC_ACCESS : null;
-  const TABS = access ? ALL_TABS.filter(t => access.has(t.section)) : [];
-  const TAB_FOR_PATH = Object.fromEntries(TABS.map(t => [t.path, t.id]));
-  const home = access ? access.home : "/";
+  // No code: the public layout (one cached GET), or the built-in defaults.
+  const pub = usePublicLayout(beta.status === "none" && !isAdminPath);
+  // What this visitor can open and see. null while we don't know yet (checking,
+  // a failed check, or a tester revoked mid-session while gated).
+  const view = betaOk ? { sections: beta.sections, app: beta.app }
+    : beta.status === "none" && pub.status === "ok" ? { sections: pub.sections, app: pub.app } : null;
+  const access = view ? accessFor(view.sections) : null;
+  const shell = view ? shellFor(view) : null;
+  const home = shell && shell.landing ? shell.landing : "/";
   const toHome = <Navigate to={home} replace />;
   const allow = (ok, element) => (ok ? element : toHome);
+  const tabByKey = shell ? Object.fromEntries(shell.tabs.map(t => [t.key, t])) : {};
+
+  // Back from a page with no detail of its own: the previous entry if we came
+  // from inside the app, else the given fallback.
+  const backOr = (fallback) => () => {
+    if (location.key !== "default") navigate(-1);
+    else navigate(fallback, { replace: true });
+  };
+  const comingSoon = (item) => {
+    const tab = tabByKey[item.tab];
+    const backTo = tab && tab.key !== "learn" ? tab : tabByKey.home || { path: home, label: "Back" };
+    return <ComingSoonScreen item={item} backLabel={backTo.label} onBack={backOr(backTo.path)} />;
+  };
+  // A built section: its screen if they can open it; its Coming soon page if
+  // /admin → Sections has it set to Coming soon; otherwise home.
+  const section = (key, ok, element) => {
+    if (ok) return element;
+    const item = shell && shell.byKey[key];
+    return item && item.status !== "live" ? comingSoon(item) : toHome;
+  };
   // /id without a verified code: blank while a stored code is checked, then home.
   const idElement = betaOk && access.id
     ? <Suspense fallback={null}><IdentifyScreen inviteCode={beta.code} traitsBySpecies={beta.traits} canOpenCare={access.speciesPages} onRevoked={() => { beta.revoke(); navigate("/", { replace: true }); }} /></Suspense>
-    : beta.status === "checking" ? null : toHome;
+    : beta.status === "checking" ? null : section("id", false, null);
 
   // /admin: only for a verified beta code whose tester is an admin; anyone else goes home.
   const admin = useAdminAccess(beta.code, isAdminPath && betaOk);
@@ -236,15 +275,10 @@ export function AppShell() {
     ? <Suspense fallback={<AdminWait />}><AdminApp inviteCode={beta.code} adminId={admin.id} adminName={admin.name} gate={admin.gate} onForbidden={leaveAdmin} /></Suspense>
     : beta.status === "checking" || (betaOk && (admin.status === "checking" || admin.status === "idle")) ? <AdminWait /> : <Navigate to="/" replace />;
 
-  // A detail page is any route that isn't one of the tab screens.
-  const isTabPath = pathname in TAB_FOR_PATH;
-  const isDetail = !isTabPath && /^\/(species|care)\/[^/]+$/.test(pathname);
+  const isDetail = /^\/(species|care)\/[^/]+$/.test(pathname);
   // Tabs highlight from the URL. Detail pages keep the tab they were opened from
-  // (carried in history state); a cold deep link falls back to its section's tab.
-  const activeTab = isTabPath
-    ? TAB_FOR_PATH[pathname]
-    : pathname === "/credits" ? "glossary"
-    : (location.state && location.state.tab) || (pathname.startsWith("/care/") ? "care" : "browse");
+  // (carried in history state, e.g. a care guide opened from ID); otherwise Learn.
+  const activeTab = (isDetail && location.state && location.state.tab) || tabOfPath(pathname);
 
   // Re-tapping the current tab is a no-op, as it was with setActiveTab/setPage(null).
   const go = (path) => { if (path !== pathname) navigate(path); };
@@ -254,11 +288,13 @@ export function AppShell() {
   };
   // Equivalent of setPage(null): return to the screen underneath. If we got here
   // inside the app, that's the previous history entry; on a cold deep link there's
-  // nothing to go back to, so replace with the section's tab screen.
+  // nothing to go back to, so replace with the section's index screen.
   const handleBack = () => {
     if (location.key !== "default") navigate(-1);
-    else navigate(activeTab === "care" ? "/care" : "/", { replace: true });
+    else navigate(pathname.startsWith("/care/") && access && access.careGuides ? "/care" : access && access.browse ? "/species" : home, { replace: true });
   };
+  const onQuery = (e) => { setSearchQuery(e.target.value); if (pathname !== "/search") navigate("/search"); };
+  const clearQuery = () => setSearchQuery("");
 
   if (showSplash) {
     return <SplashScreen onComplete={() => setShowSplash(false)} />;
@@ -282,11 +318,15 @@ export function AppShell() {
     );
   }
   if (!access) return <Blank />;
-  if (access.sections.length === 0) {
+  if (!shell.landing) {
     return <Notice title="Nothing to see yet">Your invite doesn't open any sections at the moment. We'll let you know when that changes.</Notice>;
   }
-  // One section (e.g. ID-only testers): a single screen, no tab bar.
-  const showNav = TABS.length > 1;
+  const showNav = shell.tabs.length > 1;
+  const onHome = pathname === "/" && shell.full;
+  // Search sits in the header on the Learn screens (and on a single screen);
+  // on Home it's one of the blocks.
+  const showHeaderSearch = access.search && !onHome && (!shell.full || activeTab === "learn");
+  const showLearnNav = shell.full && LEARN_PATHS.has(pathname) && shell.learnNav.length > 1;
 
   return (
     <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
@@ -296,43 +336,55 @@ export function AppShell() {
             <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
               <img src="/header-logo-dark.png" alt="All Things Reptile" onClick={() => { go(home); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
             </div>
-            {access.search && <SearchField
+            {showHeaderSearch && <SearchField
               placeholder="Search species, care guides, glossary..."
               value={searchQuery}
-              onChange={e => { setSearchQuery(e.target.value); if (pathname !== "/") navigate("/"); }}
-              onClear={() => setSearchQuery("")}
+              onChange={onQuery}
+              onClear={clearQuery}
+              autoFocus={pathname === "/search" && searchQuery.length > 0}
             />}
-
+            {showLearnNav && <LearnNav items={shell.learnNav} active={pathname} onGo={go} />}
           </div>
         )}
 
         <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", background: "white" }}>
           <Routes>
-            <Route path="/"              element={access.search && searchQuery.length >= 2
+            <Route path="/"              element={shell.full
+              ? <HomeScreen shell={shell} canSearch={access.search} query={searchQuery} onQuery={onQuery} onClearQuery={clearQuery} onOpen={go} profileTab={tabByKey.profile} />
+              : toHome} />
+            <Route path="/search"        element={allow(access.search, searchQuery.length >= 2
               ? <SearchResults query={searchQuery} show={{ species: access.speciesPages, care: access.careGuides, glossary: access.glossary }} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} />
-              : access.browse ? <BrowseScreen onSpecies={openPage} />
-              : access.search ? <SearchPrompt /> : toHome} />
-            <Route path="/care"          element={allow(access.careGuides, <CareScreen onGuide={openPage} />)} />
-            <Route path="/licencing"     element={allow(access.licensing, <LegalScreen />)} />
+              : <SearchPrompt />)} />
+            <Route path="/species"       element={section("species", access.browse, <BrowseScreen onSpecies={openPage} />)} />
+            <Route path="/care"          element={section("care", access.careGuides, <CareScreen onGuide={openPage} />)} />
+            <Route path="/licencing"     element={section("licensing", access.licensing, <LegalScreen />)} />
             <Route path="/id"            element={idElement} />
-            <Route path="/glossary"      element={allow(access.glossary, <GlossaryScreen showCredits={access.credits} />)} />
+            <Route path="/glossary"      element={section("glossary", access.glossary, <GlossaryScreen showCredits={access.credits} />)} />
             <Route path="/credits"       element={allow(access.credits, <Suspense fallback={null}><CreditsScreen /></Suspense>)} />
             <Route path="/species/:slug" element={allow(access.speciesPages, <DetailRoute table={SPECIES_BY_SLUG} legacy={LEGACY_SPECIES} base="/species" onBack={handleBack} home={home} />)} />
             <Route path="/care/:slug"    element={allow(access.careGuides, <DetailRoute table={GUIDES_BY_SLUG} legacy={LEGACY_GUIDES} base="/care" onBack={handleBack} home={home} />)} />
+            {["community", "profile"].map(k => (
+              <Route key={k} path={`/${k}`} element={tabByKey[k]
+                ? <TabPage tab={tabByKey[k]} items={shell.tiles.filter(i => i.tab === k)} onOpen={go} />
+                : toHome} />
+            ))}
+            {PLACEHOLDERS.map(s => (
+              <Route key={s.key} path={s.path} element={shell.byKey[s.key] ? comingSoon(shell.byKey[s.key]) : toHome} />
+            ))}
             <Route path="*"              element={toHome} />
           </Routes>
         </div>
 
         {showNav && <>
         <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", flexDirection: "column", paddingTop: NAV.top, zIndex: 100 }}>
-          <div style={{ display: "flex", width: "100%" }}>
-            {TABS.map(t => (
-              <button key={t.id} onClick={() => go(t.path)} aria-current={activeTab === t.id ? "page" : undefined} style={{ flex: 1, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, cursor: "pointer", padding: 0, height: NAV.row, fontFamily: "inherit" }}>
-                <span style={{ fontSize: 20, lineHeight: "24px" }}>{t.icon}</span>
-                <span style={{ fontSize: 10, lineHeight: "13px", color: activeTab === t.id ? C.green : C.muted, fontWeight: activeTab === t.id ? 700 : 400 }}>{t.label}</span>
+          <nav aria-label="Main" style={{ display: "flex", width: "100%" }}>
+            {shell.tabs.map(t => (
+              <button key={t.key} type="button" data-testid={`tab-${t.key}`} onClick={() => go(t.path)} aria-current={activeTab === t.key ? "page" : undefined} style={{ flex: 1, minWidth: 0, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, cursor: "pointer", padding: 0, height: NAV.row, fontFamily: "inherit" }}>
+                <span aria-hidden="true" style={{ height: 24, display: "flex", alignItems: "center", color: activeTab === t.key ? C.green : C.muted }}><Icon name={t.icon} size={22} strokeWidth={activeTab === t.key ? 2.1 : 1.8} /></span>
+                <span style={{ fontSize: 10, lineHeight: "13px", color: activeTab === t.key ? C.green : C.muted, fontWeight: activeTab === t.key ? 700 : 400, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "100%" }}>{t.label}</span>
               </button>
             ))}
-          </div>
+          </nav>
           <div style={{ textAlign: "center", fontSize: 9, lineHeight: `${NAV.footLine}px`, color: "#ccc", padding: `${NAV.footTop}px 0 ${NAV.footBottom}` }}>© 2026 Amphibian Pty Ltd</div>
         </div>
         {/* Same height as the fixed bar, so the end of every screen clears it. */}
@@ -342,6 +394,7 @@ export function AppShell() {
     </div>
   );
 }
+
 
 // ─── Root app ─────────────────────────────────────────────────────
 export default function App() {

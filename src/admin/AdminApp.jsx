@@ -9,6 +9,7 @@ import SpeciesPhotosScreen from "./SpeciesPhotosScreen";
 import AddPhotoScreen from "./AddPhotoScreen";
 import FeedbackScreen from "./FeedbackScreen";
 import TestersScreen from "./TestersScreen";
+import SectionsScreen from "./SectionsScreen";
 import IndexScreen from "./IndexScreen";
 import MorphsScreen from "./MorphsScreen";
 import CategoriesScreen from "./CategoriesScreen";
@@ -26,6 +27,7 @@ const NAV = [
   { to: "/admin/morphs", label: "Morphs" },
   { to: "/admin/feedback", label: "Feedback" },
   { to: "/admin/testers", label: "Testers" },
+  { to: "/admin/sections", label: "Sections" },
   { to: "/admin/index", label: "Species index" },
 ];
 
@@ -111,6 +113,7 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
           <Route path="morphs/:id" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />
           <Route path="feedback" element={<FeedbackScreen {...shared} />} />
           <Route path="testers" element={<TestersScreen api={api} adminId={adminId} />} />
+          <Route path="sections" element={<SectionsScreen api={api} />} />
           <Route path="index" element={<IndexScreen {...shared} />} />
           <Route path="index/:slug" element={<IndexScreen {...shared} />} />
           <Route path="*" element={<Navigate to="/admin" replace />} />

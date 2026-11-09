@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { normaliseSections } from "../constants/sections";
+import { cleanApp, fallbackApp } from "../constants/appLayout";
 
 // ─── Beta access: AI ID (D9) and the pre-launch gate ──────────────
 // A tester opens /id?invite=<code>. On Vercel, middleware.js sends that to
@@ -49,7 +50,9 @@ export const inviteFromSearch = (search) => {
   } catch (e) { return ""; }
 };
 
-// → { ok: true, name, traits, sections, isAdmin, gated } | { ok: false, revoked: boolean }
+// → { ok: true, name, traits, sections, app, isAdmin, gated } | { ok: false, revoked: boolean }
+// app: the layout for this tester (tabs, Home blocks, visible sections); the
+// app's own defaults if the server sent none.
 // revoked = the server rejected the code (403); anything else is a transient failure.
 export const checkCode = async (code, fetchImpl) => {
   const doFetch = fetchImpl || (typeof fetch === "function" ? fetch : null);
@@ -60,13 +63,16 @@ export const checkCode = async (code, fetchImpl) => {
     if (!res.ok) return { ok: false, revoked: false };
     const data = await res.json().catch(() => null);
     if (!data || data.ok !== true) return { ok: false, revoked: false };
+    // Missing → the DB default (ID only), never more.
+    const sections = Array.isArray(data.sections) ? normaliseSections(data.sections) : ["id"];
+    const isAdmin = data.isAdmin === true;
     return {
       ok: true,
       name: typeof data.name === "string" ? data.name : "",
       traits: data.traits && typeof data.traits === "object" ? data.traits : {},
-      // Missing → the DB default (ID only), never more.
-      sections: Array.isArray(data.sections) ? normaliseSections(data.sections) : ["id"],
-      isAdmin: data.isAdmin === true,
+      sections,
+      app: cleanApp(data.app) || fallbackApp(sections, isAdmin ? "admin" : "tester"),
+      isAdmin,
       gated: data.gated !== false,
     };
   } catch (e) {
@@ -80,7 +86,7 @@ export const checkCode = async (code, fetchImpl) => {
 // than opening up sections the tester may not have).
 // onInvite(): called once after an invite code is taken from the URL, so the
 // caller can strip ?invite= from the address bar and history.
-const EMPTY = { name: "", traits: {}, sections: [], isAdmin: false, gated: null };
+const EMPTY = { name: "", traits: {}, sections: [], app: null, isAdmin: false, gated: null };
 
 export const useBetaAccess = (search, onInvite) => {
   const fromUrl = inviteFromSearch(search);
@@ -104,7 +110,7 @@ export const useBetaAccess = (search, onInvite) => {
     let live = true;
     checkCode(state.code).then(r => {
       if (!live) return;
-      if (r.ok) setState(s => (s.code === state.code ? { ...s, status: "ok", name: r.name, traits: r.traits, sections: r.sections, isAdmin: r.isAdmin, gated: r.gated } : s));
+      if (r.ok) setState(s => (s.code === state.code ? { ...s, status: "ok", name: r.name, traits: r.traits, sections: r.sections, app: r.app, isAdmin: r.isAdmin, gated: r.gated } : s));
       else if (r.revoked) {
         clearCode();
         setState(s => (s.code === state.code ? { status: "none", code: "", ...EMPTY } : s));
@@ -129,4 +135,42 @@ export const useBetaAccess = (search, onInvite) => {
   };
 
   return { ...state, revoke, retry };
+};
+
+// ─── Visitors with no code ────────────────────────────────────────
+// GET /api/beta-check (no header, edge cached) → the public sections and
+// layout. Before launch the server sends nothing (and on Vercel nobody without
+// a pass gets this far); then, and when there is no API at all (`npm start`)
+// or it fails, the app's own defaults stand in: the public sections, as before.
+export const fetchPublicLayout = async (fetchImpl) => {
+  const doFetch = fetchImpl || (typeof fetch === "function" ? fetch : null);
+  const fallback = () => {
+    const app = fallbackApp([], "public");
+    return { sections: normaliseSections(app.items.map(i => i.key)), app };
+  };
+  if (!doFetch) return fallback();
+  try {
+    const res = await doFetch("/api/beta-check", { method: "GET" });
+    if (!res || !res.ok) return fallback();
+    const data = await res.json().catch(() => null);
+    const app = data && data.gated === false ? cleanApp(data.app) : null;
+    if (!app || !Array.isArray(data.sections)) return fallback();
+    return { sections: normaliseSections(data.sections), app };
+  } catch (e) {
+    return fallback();
+  }
+};
+
+// status "idle" (not needed) | "loading" | "ok"
+export const usePublicLayout = (enabled) => {
+  const [state, setState] = useState({ status: "idle", sections: [], app: null });
+  useEffect(() => {
+    if (!enabled || state.status !== "idle") return undefined;
+    let live = true;
+    setState(s => ({ ...s, status: "loading" }));
+    fetchPublicLayout().then(r => { if (live) setState({ status: "ok", sections: r.sections, app: r.app }); });
+    return () => { live = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [enabled]);
+  return enabled ? state : { status: "idle", sections: [], app: null };
 };

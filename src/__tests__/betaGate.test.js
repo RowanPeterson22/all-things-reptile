@@ -4,7 +4,7 @@ import { render, screen, act, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AppShell } from "../App";
 import { clearCategoryImageCache } from "../components/CategoryImage";
-import { expectOnlyCategoryImages } from "../testUtils/publicFetch";
+import { expectOnlyPublicRequests } from "../testUtils/publicFetch";
 import { checkCode, inviteFromSearch, readCode, STORAGE_KEY } from "../beta/betaAccess";
 import IdFeedbackCard, { CONSENT_LABEL, CONSENT_TEXT } from "../components/IdFeedbackCard";
 import { clearSession } from "../beta/idSession";
@@ -48,7 +48,11 @@ describe("betaAccess helpers", () => {
   });
   test("checkCode sends the header and separates revoked from transient", async () => {
     const f = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS, sections: ALL }));
-    expect(await checkCode(CODE, f)).toEqual({ ok: true, name: "Jane", traits: TRAITS, sections: ALL, isAdmin: false, gated: true });
+    const r = await checkCode(CODE, f);
+    expect(r).toMatchObject({ ok: true, name: "Jane", traits: TRAITS, sections: ALL, isAdmin: false, gated: true });
+    // No layout from the server: the app's defaults for this tester.
+    expect(r.app.items.map(i => i.key)).toContain("sightings");
+    expect(r.app.tabs.profile).toBe("My Profile");
     expect(f.mock.calls[0][1].headers).toEqual({ "x-atr-beta": CODE });
     expect(await checkCode(CODE, async () => ({ ok: false, status: 403 }))).toEqual({ ok: false, revoked: true });
     expect(await checkCode(CODE, async () => ({ ok: false, status: 503 }))).toEqual({ ok: false, revoked: false });
@@ -60,28 +64,29 @@ describe("betaAccess helpers", () => {
 });
 
 describe("App shell gate", () => {
-  test("public: no ID tab, /id sends you home, no beta request is made", async () => {
+  test("public: no ID tab, /id sends you home, no tester request is made", async () => {
     await renderAt("/id");
-    expect(screen.queryByText("ID Reptile")).toBeNull();
+    expect(screen.queryByTestId("tab-id")).toBeNull();
     expect(screen.queryByText(/Identify a reptile or frog/)).toBeNull();
-    expect(screen.getByText("Browse")).toBeInTheDocument();
-    // The Browse home's one public, edge-cached request (category images);
-    // nothing to beta-check, admin-check or any other route, and no invite header.
-    expectOnlyCategoryImages();
+    expect(screen.getByTestId("home")).toBeInTheDocument();
+    expect(screen.queryByTestId("tile-id")).toBeNull();
+    // Only the public layout (a plain, edge-cached GET): no POST check, no
+    // admin check, no invite header.
+    expectOnlyPublicRequests();
   });
   test("a valid invite link stores the code and shows the ID tab and screen", async () => {
     global.fetch = jest.fn(async () => okRes({ ok: true, name: "Jane", traits: TRAITS, sections: ALL }));
     await renderAt(`/id?invite=${CODE}`);
     expect(window.localStorage.getItem(STORAGE_KEY)).toBe(CODE);
     expect(global.fetch).toHaveBeenCalledWith("/api/beta-check", expect.objectContaining({ headers: { "x-atr-beta": CODE } }));
-    expect(await screen.findByText("ID Reptile")).toBeInTheDocument();
+    expect(await screen.findByTestId("tab-id")).toBeInTheDocument();
     expect(await screen.findByText(/Identify a reptile or frog/)).toBeInTheDocument();
   });
   test("a rejected code is cleared and the feature stays hidden", async () => {
     window.localStorage.setItem(STORAGE_KEY, CODE);
     global.fetch = jest.fn(async () => ({ ok: false, status: 403 }));
     await renderAt("/id");
-    expect(screen.queryByText("ID Reptile")).toBeNull();
+    expect(screen.queryByTestId("tab-id")).toBeNull();
     expect(screen.queryByText(/Identify a reptile or frog/)).toBeNull();
     expect(window.localStorage.getItem(STORAGE_KEY)).toBeNull();
   });

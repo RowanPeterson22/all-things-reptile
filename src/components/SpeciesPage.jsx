@@ -12,7 +12,7 @@ import BackButton from "./BackButton";
 // Back label follows the tab the page was opened from (carried in history state).
 const useBackLabel = () => {
   const { state } = useLocation();
-  return state && state.tab === "identify" ? "‹ Back to ID results" : "‹ Back to browse";
+  return state && state.tab === "id" ? "‹ Back to ID results" : "‹ Back to browse";
 };
 
 const SpeciesPage = ({ onBack, name, latin, emoji, badges = [], tabs, tabContent }) => {

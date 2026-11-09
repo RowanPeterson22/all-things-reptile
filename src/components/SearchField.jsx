@@ -5,10 +5,12 @@
 //   laid out at 16px and scaled down to the design size (`size`); it looks the
 //   same as before and the placeholder fits the same width.
 // - The clear button is a 40px tap target.
+// - autoFocus: /search takes focus over from the Home search block, so typing
+//   carries on when the results page opens.
 
 const IOS_MIN = 16;
 
-const SearchField = ({ value, onChange, onClear, placeholder, label = "Search", size = 14, radius = 12, padX = 14, padY = 10, marginBottom = 14, clearSize = 18, clearAlpha = 0.6 }) => {
+const SearchField = ({ value, onChange, onClear, placeholder, label = "Search", size = 14, radius = 12, padX = 14, padY = 10, marginBottom = 14, clearSize = 18, clearAlpha = 0.6, autoFocus = false }) => {
   const k = size / IOS_MIN;
   const line = Math.round(size * 1.43); // visual line height, px
   const height = line + padY * 2;       // visual (and tappable) height of the input
@@ -21,6 +23,7 @@ const SearchField = ({ value, onChange, onClear, placeholder, label = "Search", 
           onChange={onChange}
           placeholder={placeholder}
           aria-label={label}
+          autoFocus={autoFocus}
           style={{
             display: "block", boxSizing: "border-box", width: `${100 / k}%`, height: height / k, transform: `scale(${k})`, transformOrigin: "left top",
             margin: 0, padding: `${padY / k}px 0`, lineHeight: `${line / k}px`,

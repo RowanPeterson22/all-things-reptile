@@ -44,9 +44,9 @@ describe("legacy species and guide links", () => {
     expect(where).toBe("/species/black-headed-monitor");
   });
 
-  test("unknown slugs go to the tester's home (first section)", async () => {
+  test("unknown slugs go to the tester's home (Home, with the full shell)", async () => {
     await renderAt("/species/leopard-gecko");
-    expect(where).toBe("/id");
+    expect(where).toBe("/");
   });
 
   test("Black-headed Monitor and Black-headed Python never share a slug or old ID", () => {
@@ -70,6 +70,9 @@ describe("page titles", () => {
     expect(titleFor("/care/enclosure-setup")).toBe("Enclosure setup · All Things Reptile");
     expect(titleFor("/licencing")).toBe("Licencing · All Things Reptile");
     expect(titleFor("/")).toBe("All Things Reptile");
+    expect(titleFor("/species")).toBe("Species · All Things Reptile");
+    expect(titleFor("/community/sightings")).toBe("Sightings · All Things Reptile");
+    expect(titleFor("/profile")).toBe("My Profile · All Things Reptile");
     expect(titleFor("/species/nope")).toBe("All Things Reptile");
   });
 

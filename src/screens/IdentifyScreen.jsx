@@ -163,7 +163,7 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
           )}
 
           {(result.suggestions || []).map((s, i) => (
-            <IdSuggestionCard key={i} suggestion={s} onOpen={canOpenCare ? (appSlug) => navigate(`/species/${appSlug}`, { state: { tab: "identify" } }) : null} />
+            <IdSuggestionCard key={i} suggestion={s} onOpen={canOpenCare ? (appSlug) => navigate(`/species/${appSlug}`, { state: { tab: "id" } }) : null} />
           ))}
 
           {result.note && (

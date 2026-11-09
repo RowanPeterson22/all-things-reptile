@@ -1,10 +1,10 @@
 // Front end of the admin section: /admin only opens for a verified admin code,
 // shows no tab, and the add-photo form enforces the licence rules.
-import { render, screen, act, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, act, fireEvent, waitFor, within } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AppShell } from "../App";
 import { clearCategoryImageCache } from "../components/CategoryImage";
-import { expectOnlyCategoryImages } from "../testUtils/publicFetch";
+import { expectOnlyPublicRequests } from "../testUtils/publicFetch";
 import { STORAGE_KEY } from "../beta/betaAccess";
 import { checkAdmin } from "../beta/adminAccess";
 import { validateAddForm } from "../admin/AddPhotoScreen";
@@ -44,10 +44,9 @@ describe("/admin gate", () => {
   test("no code: /admin goes home without asking the server", async () => {
     await renderAt("/admin");
     expect(screen.queryByText("ATR Admin")).toBeNull();
-    expect(screen.getByText("Browse")).toBeInTheDocument();
-    // The Browse home's one public, edge-cached request (category images);
-    // nothing to beta-check, admin-check or any other route, and no invite header.
-    expectOnlyCategoryImages();
+    expect(screen.getByTestId("home")).toBeInTheDocument();
+    // Only the public layout (a plain GET); no admin-check, no invite header.
+    expectOnlyPublicRequests();
   });
 
   test("a tester who isn't an admin is sent home", async () => {
@@ -55,7 +54,7 @@ describe("/admin gate", () => {
     global.fetch = api({ admin: false });
     await renderAt("/admin");
     await waitFor(() => expect(urls()).toContain("/api/admin-check"));
-    expect(await screen.findByText("Browse")).toBeInTheDocument();
+    expect(await screen.findByTestId("home")).toBeInTheDocument();
     expect(screen.queryByText("ATR Admin")).toBeNull();
     expect(urls().some(u => u.startsWith("/api/admin-species"))).toBe(false);
   });
@@ -76,7 +75,7 @@ describe("/admin gate", () => {
     window.localStorage.setItem(STORAGE_KEY, CODE);
     global.fetch = api({ admin: true });
     await renderAt("/");
-    expect(await screen.findByText("ID Reptile")).toBeInTheDocument();
+    expect(await screen.findByTestId("tab-id")).toBeInTheDocument();
     expect(screen.queryByText(/admin/i)).toBeNull();
     expect(urls()).not.toContain("/api/admin-check");
   });
@@ -202,5 +201,77 @@ describe("feedback inbox: delete with an in-page confirm", () => {
   test("an empty inbox", async () => {
     await setup([]);
     expect(await screen.findByText("No feedback yet.")).toBeInTheDocument();
+  });
+});
+
+describe("/admin → Sections", () => {
+  const view = () => {
+    const { editorView } = require("../../lib/appSections");
+    return editorView({ rows: [], layoutRow: null });
+  };
+  const sectionsApi = ({ admin }) => {
+    const patches = [];
+    const f = jest.fn(async (url, init = {}) => {
+      if (String(url).startsWith("/api/admin-testers?scope=sections")) {
+        if ((init.method || "GET") === "PATCH") {
+          const body = JSON.parse(init.body);
+          patches.push(body);
+          const v = view();
+          if (body.section) Object.assign(v.sections.find(s => s.key === body.section.key), body.section);
+          return ok(v);
+        }
+        return ok(view());
+      }
+      return api({ admin })(url);
+    });
+    f.patches = patches;
+    return f;
+  };
+
+  test("a tester who isn't an admin can't open it", async () => {
+    window.localStorage.setItem(STORAGE_KEY, CODE);
+    global.fetch = sectionsApi({ admin: false });
+    await renderAt("/admin/sections");
+    await waitFor(() => expect(urls()).toContain("/api/admin-check"));
+    expect(screen.queryByText("Tab labels")).toBeNull();
+    expect(urls().some(u => u.startsWith("/api/admin-testers"))).toBe(false);
+  });
+
+  test("lists sections by tab; live is off for placeholders; hiding asks in the page first", async () => {
+    window.localStorage.setItem(STORAGE_KEY, CODE);
+    global.fetch = sectionsApi({ admin: true });
+    const confirmSpy = jest.spyOn(window, "confirm").mockImplementation(() => true);
+    await renderAt("/admin/sections");
+    expect(await screen.findByText("Tab labels")).toBeInTheDocument();
+    for (const t of ["learn", "id", "community", "profile"]) expect(screen.getByTestId(`sections-tab-${t}`)).toBeInTheDocument();
+    const status = screen.getByLabelText("Status", { selector: "#sec-sightings-status" });
+    expect(status.querySelector('option[value="live"]').disabled).toBe(true);
+    expect(screen.getByLabelText("Audience", { selector: "#sec-id-aud" }).querySelector('option[value="everyone"]').disabled).toBe(true);
+
+    fireEvent.change(status, { target: { value: "hidden" } });
+    expect(global.fetch.patches).toHaveLength(0);
+    expect(screen.getByRole("alertdialog")).toHaveTextContent("Hide Sightings?");
+    await act(async () => { fireEvent.click(screen.getByText("Hide it")); });
+    expect(global.fetch.patches).toEqual([{ section: { key: "sightings", status: "hidden" } }]);
+    expect(await screen.findByText(/Saved: Sightings/)).toBeInTheDocument();
+    expect(confirmSpy).not.toHaveBeenCalled();
+    confirmSpy.mockRestore();
+  });
+
+  test("move, feature, Home order and tab labels send one change each", async () => {
+    window.localStorage.setItem(STORAGE_KEY, CODE);
+    global.fetch = sectionsApi({ admin: true });
+    await renderAt("/admin/sections");
+    await screen.findByText("Tab labels");
+    await act(async () => { fireEvent.click(screen.getByLabelText("Move Venues up")); });
+    expect(global.fetch.patches.pop()).toEqual({ order: { tab: "community", keys: ["sightings", "ladders", "venues", "competitions"] } });
+    const row = screen.getByTestId("section-row-competitions");
+    await act(async () => { fireEvent.click(within(row).getByLabelText("Featured on Home")); });
+    expect(global.fetch.patches.pop()).toEqual({ featured: "competitions" });
+    await act(async () => { fireEvent.click(screen.getByLabelText("Move Search bar down")); });
+    expect(global.fetch.patches.pop()).toEqual({ homeBlocks: ["personal", "search", "featured", "explore"] });
+    fireEvent.change(screen.getByLabelText("My Profile tab label"), { target: { value: "Me" } });
+    await act(async () => { fireEvent.click(screen.getByText("Save tab labels")); });
+    expect(global.fetch.patches.pop()).toEqual({ tabs: { home: null, learn: null, id: null, community: null, profile: "Me" } });
   });
 });

@@ -1,9 +1,9 @@
-import { C } from "../../../constants/colours";
+import { T } from "../../../constants/theme";
 import SectionLabel from "../../../components/SectionLabel";
 import WarnBox from "../../../components/WarnBox";
 import ShopBtn from "../../../components/ShopBtn";
-import TempBar from "../../../components/TempBar";
-import FoodItem from "../../../components/FoodItem";
+import TempBar, { TempCard } from "../../../components/TempBar";
+import FoodItem, { FOOD_CARD } from "../../../components/FoodItem";
 import HealthItem from "../../../components/HealthItem";
 import StatGrid from "../../../components/StatGrid";
 import LegalTab from "../../../components/LegalTab";
@@ -14,27 +14,29 @@ import SnakeBreeding from "../../../components/SnakeBreeding";
 
 const BlackHeadedPythonPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Black-headed Python" latin="Aspidites melanocephalus" emoji="🐍"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Specialist care", C.redPale, C.red]]}
+    badges={[["Intermediate", T.chipBg, T.chip], ["Australian native", T.infoBg, T.info], ["Specialist care", T.noBg, T.no]]}
     tabs={["overview", "feeding", "health & shedding", "handling & breeding", "licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>One of Australia's most striking pythons — a glossy black head and banded red-brown body. Related to the Woma, they share the characteristic of having no heat-sensing pits. Found in tropical and subtropical northern Australia. An impressive species that requires committed, experienced husbandry.</p>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>One of Australia's most striking pythons — a glossy black head and banded red-brown body. Related to the Woma, they share the characteristic of having no heat-sensing pits. Found in tropical and subtropical northern Australia. An impressive species that requires committed, experienced husbandry.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏", "Adult size", "1.5–2.5 m"], ["⏳", "Lifespan", "25–30 yrs"], ["🏠", "Min. enclosure", "180 × 60 cm"], ["💧", "Humidity", "50–65%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
-        <TempBar label="Basking spot" value="38–42°C" width="94%" color="#e03a1a" />
-        <TempBar label="Warm side" value="30–34°C" width="72%" color="#e05a2b" />
-        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b" />
-        <TempBar label="Overnight low" value="20–24°C" width="34%" color="#2b7ec0" />
+        <TempCard>
+          <TempBar label="Basking spot" value="38–42°C" width="94%" color="#e03a1a" />
+          <TempBar label="Warm side" value="30–34°C" width="72%" color="#e05a2b" />
+          <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b" />
+          <TempBar label="Overnight low" value="20–24°C" width="34%" color="#2b7ec0" />
+        </TempCard>
         <WarnBox type="blue" title="Higher basking temps than most pythons">Black-headed Pythons use their dark head to absorb radiant heat before warming their body — a unique adaptation. They require higher basking spot temps than most Australian pythons. A proper thermal gradient is essential.</WarnBox>
         <SectionLabel>Enclosure setup</SectionLabel>
-        <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>Large timber or PVC enclosure. Sandy or coir substrate — they burrow. Deep hides at both ends. Moderate humidity (not as dry as Womas, not as humid as tropical species). Water bowl large enough to soak in. A powerful basking spot with a good temperature gradient is the most important element.</div>
-        <ShopBtn>🛒 Shop Black-headed Python supplies</ShopBtn>
+        <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7 }}>Large timber or PVC enclosure. Sandy or coir substrate — they burrow. Deep hides at both ends. Moderate humidity (not as dry as Womas, not as humid as tropical species). Water bowl large enough to soak in. A powerful basking spot with a good temperature gradient is the most important element.</div>
+        <ShopBtn>Shop Black-headed Python supplies</ShopBtn>
         <ShopBtn secondary>Ask a question ↗</ShopBtn>
       </>}
       {tab === "feeding" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 12 }}>In the wild, Black-headed Pythons primarily eat reptiles — including venomous snakes. Captive animals are fed rodents, though some individuals (especially hatchlings) are reluctant to accept them.</p>
-        <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 12 }}>In the wild, Black-headed Pythons primarily eat reptiles — including venomous snakes. Captive animals are fed rodents, though some individuals (especially hatchlings) are reluctant to accept them.</p>
+        <div style={FOOD_CARD}>
           <FoodItem icon="🐭" name="Mice (scented)" detail="Hatchlings — often need lizard scenting" freq="Every 7–10 days" />
           <FoodItem icon="🐭" name="Adult mice" detail="Juveniles once established" freq="Every 7–10 days" />
           <FoodItem icon="🐀" name="Medium rats" detail="Adults" freq="Every 10–14 days" />

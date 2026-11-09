@@ -1,9 +1,9 @@
-import { C } from "../../../constants/colours";
+import { T } from "../../../constants/theme";
 import SectionLabel from "../../../components/SectionLabel";
 import WarnBox from "../../../components/WarnBox";
 import ShopBtn from "../../../components/ShopBtn";
-import TempBar from "../../../components/TempBar";
-import FoodItem from "../../../components/FoodItem";
+import TempBar, { TempCard } from "../../../components/TempBar";
+import FoodItem, { FOOD_CARD } from "../../../components/FoodItem";
 import HealthItem from "../../../components/HealthItem";
 import StatGrid from "../../../components/StatGrid";
 import LegalTab from "../../../components/LegalTab";
@@ -15,33 +15,35 @@ import SnakeBreeding from "../../../components/SnakeBreeding";
 // ─── Water Python page ────────────────────────────────────────────
 const WaterPythonPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Water Python" latin="Liasis fuscus" emoji="🐍"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Semi-aquatic", C.greenPale, C.green]]}
+    badges={[["Intermediate", T.chipBg, T.chip], ["Australian native", T.infoBg, T.info], ["Semi-aquatic", T.chipBg, T.accentText]]}
     tabs={["overview","feeding","health & shedding","handling & breeding","licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:14}}>A sleek, iridescent python from the tropical north of Australia. Found near rivers, lakes, and wetlands across northern Australia and New Guinea. Their dark brown scales with a beautiful blue-purple iridescent sheen make them a striking display animal. Active, alert, and fast-moving.</p>
+        <p style={{fontSize: 15, color: T.body,lineHeight:1.6,marginBottom:14}}>A sleek, iridescent python from the tropical north of Australia. Found near rivers, lakes, and wetlands across northern Australia and New Guinea. Their dark brown scales with a beautiful blue-purple iridescent sheen make them a striking display animal. Active, alert, and fast-moving.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏","Adult size","1.5–2.5 m"],["⏳","Lifespan","20–25 yrs"],["🏠","Min. enclosure","180 × 60 cm"],["💧","Humidity","60–80%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
-        <TempBar label="Basking spot" value="33–36°C" width="82%" color="#e05a2b"/>
-        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
-        <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
-        <TempBar label="Overnight low" value="22–24°C" width="36%" color="#2b7ec0"/>
+        <TempCard>
+          <TempBar label="Basking spot" value="33–36°C" width="82%" color="#e05a2b"/>
+          <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b"/>
+          <TempBar label="Cool side" value="24–28°C" width="50%" color="#4a9e6b"/>
+          <TempBar label="Overnight low" value="22–24°C" width="36%" color="#2b7ec0"/>
+        </TempCard>
         <WarnBox type="blue" title="Water access is essential">Water Pythons are semi-aquatic and should have access to a large water feature or soaking tub. They frequently soak and swim — this is natural behaviour, not a sign of mites or illness.</WarnBox>
         <SectionLabel>Enclosure setup</SectionLabel>
-        <div style={{background:C.cream,borderRadius:12,padding:"12px 14px",border:"0.5px solid #e8e8e4",fontSize:13,color:"#666",lineHeight:1.7}}>Large PVC or timber enclosure with a significant water feature — at minimum a tub large enough for the snake to fully submerge. High humidity. Sturdy branches for climbing. Cork bark hides at warm and cool ends. Ensure excellent ventilation to prevent respiratory issues despite the high humidity.</div>
-        <ShopBtn>🛒 Shop Water Python supplies</ShopBtn>
+        <div style={{background:T.card,borderRadius:14,padding:"12px 14px",border: "none",fontSize: 15, color: T.body,lineHeight:1.7}}>Large PVC or timber enclosure with a significant water feature — at minimum a tub large enough for the snake to fully submerge. High humidity. Sturdy branches for climbing. Cork bark hides at warm and cool ends. Ensure excellent ventilation to prevent respiratory issues despite the high humidity.</div>
+        <ShopBtn>Shop Water Python supplies</ShopBtn>
         <ShopBtn secondary>Ask a question ↗</ShopBtn>
       </>}
       {tab === "feeding" && <>
-        <p style={{fontSize:13,color:"#666",lineHeight:1.6,marginBottom:12}}>Carnivorous. In the wild, Water Pythons feed heavily on rats, birds, and aquatic prey. In captivity they adapt well to rodents. Can be enthusiastic but sometimes defensive feeders.</p>
-        <div style={{background:C.cream,borderRadius:12,border:"0.5px solid #e8e8e4",padding:"0 14px"}}>
+        <p style={{fontSize: 15, color: T.body,lineHeight:1.6,marginBottom:12}}>Carnivorous. In the wild, Water Pythons feed heavily on rats, birds, and aquatic prey. In captivity they adapt well to rodents. Can be enthusiastic but sometimes defensive feeders.</p>
+        <div style={FOOD_CARD}>
           <FoodItem icon="🐭" name="Mice (various sizes)" detail="Hatchlings through juveniles" freq="Every 5–7 days"/>
           <FoodItem icon="🐀" name="Small to medium rats" detail="Sub-adults and adults" freq="Every 10–14 days"/>
         </div>
         <WarnBox type="red" title="Active feeding response">Water Pythons can be enthusiastic and fast-striking feeders. Always use long tongs and hook-train before every interaction.</WarnBox>
         <WarnBox type="gold" title="Feeding near water">Some Water Pythons prefer to be fed near their water feature — this mimics their natural feeding environment and can improve feeding response in reluctant individuals.</WarnBox>
-        <ShopBtn>🛒 Shop feeders</ShopBtn>
+        <ShopBtn>Shop feeders</ShopBtn>
       </>}
       {tab === "health & shedding" && <>
         <SectionLabel mt={0}>Common health issues</SectionLabel>

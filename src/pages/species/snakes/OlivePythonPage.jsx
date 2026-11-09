@@ -1,9 +1,9 @@
-import { C } from "../../../constants/colours";
+import { T } from "../../../constants/theme";
 import SectionLabel from "../../../components/SectionLabel";
 import WarnBox from "../../../components/WarnBox";
 import ShopBtn from "../../../components/ShopBtn";
-import TempBar from "../../../components/TempBar";
-import FoodItem from "../../../components/FoodItem";
+import TempBar, { TempCard } from "../../../components/TempBar";
+import FoodItem, { FOOD_CARD } from "../../../components/FoodItem";
 import HealthItem from "../../../components/HealthItem";
 import StatGrid from "../../../components/StatGrid";
 import LegalTab from "../../../components/LegalTab";
@@ -14,27 +14,29 @@ import SnakeBreeding from "../../../components/SnakeBreeding";
 
 const OlivePythonPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Olive Python" latin="Liasis olivaceus" emoji="🐍"
-    badges={[["Advanced", C.redPale, C.red], ["Australian native", C.bluePale, C.blue], ["Large species", C.redPale, C.red]]}
+    badges={[["Advanced", T.noBg, T.no], ["Australian native", T.infoBg, T.info], ["Large species", T.noBg, T.no]]}
     tabs={["overview", "feeding", "health & shedding", "handling & breeding", "licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Australia's second largest python — a powerful, olive-brown snake with an iridescent sheen. Found near rocky gorges and water sources across northern and north-western Australia. Impressive in scale and personality. Suited to experienced keepers only due to their size, strength, and specific requirements.</p>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>Australia's second largest python — a powerful, olive-brown snake with an iridescent sheen. Found near rocky gorges and water sources across northern and north-western Australia. Impressive in scale and personality. Suited to experienced keepers only due to their size, strength, and specific requirements.</p>
         <WarnBox type="red" title="Advanced species">Olive Pythons grow large and are very strong. They require large enclosures, significant feeding costs, and confident, experienced handling. Not suitable for beginners.</WarnBox>
         <SectionLabel>Quick stats</SectionLabel>
         <StatGrid stats={[["📏", "Adult size", "2.5–4.0 m"], ["⏳", "Lifespan", "25–35 yrs"], ["🏠", "Min. enclosure", "240 × 90 cm"], ["💧", "Humidity", "50–70%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
-        <TempBar label="Basking spot" value="35–38°C" width="86%" color="#e05a2b" />
-        <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b" />
-        <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b" />
-        <TempBar label="Overnight low" value="20–22°C" width="32%" color="#2b7ec0" />
+        <TempCard>
+          <TempBar label="Basking spot" value="35–38°C" width="86%" color="#e05a2b" />
+          <TempBar label="Warm side" value="28–32°C" width="66%" color="#e0922b" />
+          <TempBar label="Cool side" value="22–26°C" width="44%" color="#4a9e6b" />
+          <TempBar label="Overnight low" value="20–22°C" width="32%" color="#2b7ec0" />
+        </TempCard>
         <SectionLabel>Enclosure setup</SectionLabel>
-        <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>A very large, secure enclosure is non-negotiable. Timber or PVC construction must be robust — Olive Pythons are powerful and will exploit any weakness. Large water feature or soaking tub strongly recommended — they love water. Rocky hides, sturdy climbing branches. Security locks on all doors.</div>
-        <ShopBtn>🛒 Shop Olive Python supplies</ShopBtn>
+        <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7 }}>A very large, secure enclosure is non-negotiable. Timber or PVC construction must be robust — Olive Pythons are powerful and will exploit any weakness. Large water feature or soaking tub strongly recommended — they love water. Rocky hides, sturdy climbing branches. Security locks on all doors.</div>
+        <ShopBtn>Shop Olive Python supplies</ShopBtn>
         <ShopBtn secondary>Ask a question ↗</ShopBtn>
       </>}
       {tab === "feeding" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 12 }}>Carnivorous and a powerful feeder. Adults require large prey items. The feeding cost of an Olive Python is significant — factor this into your decision to keep one.</p>
-        <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 12 }}>Carnivorous and a powerful feeder. Adults require large prey items. The feeding cost of an Olive Python is significant — factor this into your decision to keep one.</p>
+        <div style={FOOD_CARD}>
           <FoodItem icon="🐭" name="Mice / small rats" detail="Hatchlings and juveniles" freq="Every 7–10 days" />
           <FoodItem icon="🐀" name="Large rats" detail="Sub-adults" freq="Every 10–14 days" />
           <FoodItem icon="🐇" name="Rabbits / large rats" detail="Adults" freq="Every 14–21 days" />

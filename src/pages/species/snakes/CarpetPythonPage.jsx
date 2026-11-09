@@ -1,9 +1,9 @@
-import { C } from "../../../constants/colours";
+import { T } from "../../../constants/theme";
 import SectionLabel from "../../../components/SectionLabel";
 import WarnBox from "../../../components/WarnBox";
 import ShopBtn from "../../../components/ShopBtn";
-import TempBar from "../../../components/TempBar";
-import FoodItem from "../../../components/FoodItem";
+import TempBar, { TempCard } from "../../../components/TempBar";
+import FoodItem, { FOOD_CARD } from "../../../components/FoodItem";
 import HealthItem from "../../../components/HealthItem";
 import StatGrid from "../../../components/StatGrid";
 import LegalTab from "../../../components/LegalTab";
@@ -14,27 +14,29 @@ import SnakeBreeding from "../../../components/SnakeBreeding";
 
 const CarpetPythonPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Carpet Python" latin="Morelia spilota" emoji="🐍"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Nocturnal", C.goldLight, "#7a5a1e"]]}
+    badges={[["Intermediate", T.chipBg, T.chip], ["Australian native", T.infoBg, T.info], ["Nocturnal", T.chipBg, T.chip]]}
     tabs={["overview", "feeding", "health & shedding", "handling & breeding", "licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Australia's most widely kept python and one of the most variable — with multiple subspecies ranging from the coastal Jungle Carpet to the Coastal Carpet. Bold, inquisitive, and impressive. A rewarding snake for keepers ready to step up from smaller pythons.</p>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>Australia's most widely kept python and one of the most variable — with multiple subspecies ranging from the coastal Jungle Carpet to the Coastal Carpet. Bold, inquisitive, and impressive. A rewarding snake for keepers ready to step up from smaller pythons.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏", "Adult size", "1.5–3.0 m"], ["⏳", "Lifespan", "20–30 yrs"], ["🏠", "Min. enclosure", "180 × 60 cm"], ["💧", "Humidity", "50–70%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
-        <TempBar label="Basking spot" value="33–36°C" width="82%" color="#e05a2b" />
-        <TempBar label="Warm side" value="28–30°C" width="64%" color="#e0922b" />
-        <TempBar label="Cool side" value="22–26°C" width="46%" color="#4a9e6b" />
-        <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0" />
+        <TempCard>
+          <TempBar label="Basking spot" value="33–36°C" width="82%" color="#e05a2b" />
+          <TempBar label="Warm side" value="28–30°C" width="64%" color="#e0922b" />
+          <TempBar label="Cool side" value="22–26°C" width="46%" color="#4a9e6b" />
+          <TempBar label="Overnight low" value="18–22°C" width="28%" color="#2b7ec0" />
+        </TempCard>
         <SectionLabel>Enclosure setup</SectionLabel>
-        <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>Tall timber or PVC enclosure with good climbing opportunities — sturdy horizontal branches are essential. Cypress mulch or coir substrate. Large snug hides. A water bowl large enough to soak in. Carpets are semi-arboreal so vertical space matters.</div>
+        <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7 }}>Tall timber or PVC enclosure with good climbing opportunities — sturdy horizontal branches are essential. Cypress mulch or coir substrate. Large snug hides. A water bowl large enough to soak in. Carpets are semi-arboreal so vertical space matters.</div>
         <WarnBox type="gold" title="Subspecies vary significantly">Jungle Carpets prefer higher humidity and temps; Inland Carpets are more arid. Research your specific subspecies before setting up.</WarnBox>
-        <ShopBtn>🛒 Shop Carpet Python supplies</ShopBtn>
+        <ShopBtn>Shop Carpet Python supplies</ShopBtn>
         <ShopBtn secondary>Ask a question ↗</ShopBtn>
       </>}
       {tab === "feeding" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 12 }}>Carnivorous. Carpet Pythons are generally enthusiastic feeders. Feed pre-killed or frozen/thawed prey. Adults can take small rats — do not feed live prey.</p>
-        <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 12 }}>Carnivorous. Carpet Pythons are generally enthusiastic feeders. Feed pre-killed or frozen/thawed prey. Adults can take small rats — do not feed live prey.</p>
+        <div style={FOOD_CARD}>
           <FoodItem icon="🐭" name="Fuzzy / hopper mice" detail="Hatchlings and small juveniles" freq="Every 5–7 days" />
           <FoodItem icon="🐭" name="Adult mice" detail="Juveniles" freq="Every 7–10 days" />
           <FoodItem icon="🐀" name="Small to medium rats" detail="Sub-adults and adults" freq="Every 10–14 days" />

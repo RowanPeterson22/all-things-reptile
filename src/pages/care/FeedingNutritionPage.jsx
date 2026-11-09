@@ -1,5 +1,5 @@
+import { T } from "../../constants/theme";
 import { useState } from "react";
-import { C } from "../../constants/colours";
 import SectionLabel from "../../components/SectionLabel";
 import WarnBox from "../../components/WarnBox";
 import HealthItem from "../../components/HealthItem";
@@ -12,20 +12,20 @@ const FeedingNutritionPage = ({ onBack }) => {
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
       <CareGuideHeader onBack={onBack} emoji="🦗" title="Feeding & Nutrition" subtitle="Diet, supplements & frequency" tabs={tabs} tab={tab} onTab={setTab} />
-      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+      <div style={{ background: "transparent", padding: "16px 16px 40px" }}>
         {tab === "basics" && <>
-          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Getting nutrition right is critical for long-term health. Australian reptiles fall into three broad dietary categories — insectivores, carnivores, and omnivores. Understanding which category your reptile belongs to and how that changes with age is fundamental to keeping them healthy.</p>
+          <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>Getting nutrition right is critical for long-term health. Australian reptiles fall into three broad dietary categories — insectivores, carnivores, and omnivores. Understanding which category your reptile belongs to and how that changes with age is fundamental to keeping them healthy.</p>
           {[
-            ["🦗", "Insectivores", "Feed exclusively on insects. Geckos and most small lizards. Require a variety of live insects gut-loaded and dusted with supplements. Variety is key — no single feeder insect provides complete nutrition.", C.greenPale],
-            ["🐭", "Carnivores", "Feed on vertebrate prey. All pythons and large snakes. Rodents form the basis of the captive diet. Always feed pre-killed or frozen/thawed — never live prey.", C.redPale],
-            ["🥗", "Omnivores", "Eat both animal protein and plant matter. Blue-tongue skinks, bearded dragons, and many other lizards. Diet varies significantly with age — juveniles need more protein, adults more vegetables.", C.goldLight],
+            ["🦗", "Insectivores", "Feed exclusively on insects. Geckos and most small lizards. Require a variety of live insects gut-loaded and dusted with supplements. Variety is key — no single feeder insect provides complete nutrition.", T.chipBg],
+            ["🐭", "Carnivores", "Feed on vertebrate prey. All pythons and large snakes. Rodents form the basis of the captive diet. Always feed pre-killed or frozen/thawed — never live prey.", T.noBg],
+            ["🥗", "Omnivores", "Eat both animal protein and plant matter. Blue-tongue skinks, bearded dragons, and many other lizards. Diet varies significantly with age — juveniles need more protein, adults more vegetables.", T.chipBg],
           ].map(([icon, name, desc, bg]) => (
-            <div key={name} style={{ background: bg, borderRadius: 12, padding: "13px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+            <div key={name} style={{ background: bg, borderRadius: 12, padding: "13px 14px", marginBottom: 10, border: "none" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
                 <span style={{ fontSize: 26 }}>{icon}</span>
                 <div style={{ fontSize: 14, fontWeight: 700 }}>{name}</div>
               </div>
-              <div style={{ fontSize: 12, color: "#555", lineHeight: 1.6 }}>{desc}</div>
+              <div style={{ fontSize: 14, color: T.body, lineHeight: 1.6 }}>{desc}</div>
             </div>
           ))}
           <SectionLabel>Feeding frequency by age</SectionLabel>
@@ -35,9 +35,9 @@ const FeedingNutritionPage = ({ onBack }) => {
             ["Sub-adults (1–2 years)", "Every 2–3 days"],
             ["Adults (2+ years)", "Every 3–7 days depending on species"],
           ].map(([age, freq]) => (
-            <div key={age} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <div style={{ fontSize: 12, color: "#555" }}>{age}</div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.green }}>{freq}</div>
+            <div key={age} style={{ background: T.card, borderRadius: 14, padding: "10px 12px", marginBottom: 8, border: "none", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              <div style={{ fontSize: 14, color: T.body }}>{age}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: T.accentText }}>{freq}</div>
             </div>
           ))}
           <WarnBox type="gold" title="Never feed immediately after handling">Wait at least 24 hours after handling before feeding. Feeding stressed reptiles causes regurgitation. Similarly, do not handle for 48 hours after a feed.</WarnBox>
@@ -49,32 +49,32 @@ const FeedingNutritionPage = ({ onBack }) => {
             ["🦎 Geckos", "Insectivores", [["Feeder variety","Wood roaches (Woodies), crickets, BSFL — rotate regularly for best nutrition"], ["Feeding time","Always at night when naturally active — never during daylight hours"], ["Prey size","No larger than the space between the gecko's eyes"]]],
             ["🐢 Turtles", "Carnivores / Omnivores", [["Feed in water","Turtles cannot swallow without water — always feed in the tank"], ["Diet","Whole feeder fish, prawns, earthworms, quality turtle pellets"], ["Remove uneaten food","Within 30 minutes — uneaten food degrades water quality rapidly"]]],
           ].map(([title, type, items]) => (
-            <div key={title} style={{ background: C.cream, borderRadius: 12, padding: "13px 14px", marginBottom: 12, border: "0.5px solid #e8e8e4" }}>
+            <div key={title} style={{ background: T.card, borderRadius: 14, padding: "13px 14px", marginBottom: 12, border: "none" }}>
               <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 4 }}>{title}</div>
-              <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 8px", borderRadius: 8, background: C.greenPale, color: C.green, marginBottom: 10, display: "inline-block" }}>{type}</span>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: "2px 8px", borderRadius: 8, background: T.chipBg, color: T.accentText, marginBottom: 10, display: "inline-block" }}>{type}</span>
               {items.map(([label, detail]) => (
-                <div key={label} style={{ marginTop: 8, paddingTop: 8, borderTop: "0.5px solid #eee" }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, color: C.green, marginBottom: 2 }}>{label}</div>
-                  <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{detail}</div>
+                <div key={label} style={{ marginTop: 8, paddingTop: 8, borderTop: `1px solid ${T.rule}` }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, color: T.accentText, marginBottom: 2 }}>{label}</div>
+                  <div style={{ fontSize: 14, color: T.body, lineHeight: 1.5 }}>{detail}</div>
                 </div>
               ))}
             </div>
           ))}
         </>}
         {tab === "supplements" && <>
-          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Feeder insects alone are nutritionally incomplete. Supplementation bridges the gap. See the Feeder Guide for full details — this is a quick reference summary.</p>
+          <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>Feeder insects alone are nutritionally incomplete. Supplementation bridges the gap. See the Feeder Guide for full details — this is a quick reference summary.</p>
           {[
-            ["Calcium + D3", "Critical", "Dust all insects before every feed for juveniles. Every other feed for adults. D3 aids calcium absorption. Essential for bone health and preventing MBD.", C.redPale, C.red],
-            ["Calcium without D3", "For UVB keepers", "Use this if your reptile has strong UVB lighting — they synthesise D3 naturally from UV. Alternate with D3 version once or twice per month.", C.bluePale, C.blue],
-            ["Multivitamin powder", "Weekly", "Provides vitamins A, E and other micronutrients. Use 1–2 times per week — not every feed. Over-supplementation of vitamins can be harmful.", C.goldLight, "#7a5a1e"],
-            ["Gut loading feeders", "Always", "Feed feeder insects nutritious food 24–48 hours before feeding them to your reptile. See Feeder Guide for best gut-loading foods.", C.greenPale, C.green],
+            ["Calcium + D3", "Critical", "Dust all insects before every feed for juveniles. Every other feed for adults. D3 aids calcium absorption. Essential for bone health and preventing MBD.", T.noBg, T.no],
+            ["Calcium without D3", "For UVB keepers", "Use this if your reptile has strong UVB lighting — they synthesise D3 naturally from UV. Alternate with D3 version once or twice per month.", T.infoBg, T.info],
+            ["Multivitamin powder", "Weekly", "Provides vitamins A, E and other micronutrients. Use 1–2 times per week — not every feed. Over-supplementation of vitamins can be harmful.", T.chipBg, T.chip],
+            ["Gut loading feeders", "Always", "Feed feeder insects nutritious food 24–48 hours before feeding them to your reptile. See Feeder Guide for best gut-loading foods.", T.chipBg, T.accentText],
           ].map(([name, freq, desc, bg, col]) => (
-            <div key={name} style={{ background: bg, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: `0.5px solid ${col}33` }}>
+            <div key={name} style={{ background: bg, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: "none" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
                 <div style={{ fontSize: 13, fontWeight: 700 }}>{name}</div>
-                <span style={{ fontSize: 10, fontWeight: 700, color: col }}>{freq}</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: col }}>{freq}</span>
               </div>
-              <div style={{ fontSize: 12, color: "#555", lineHeight: 1.5 }}>{desc}</div>
+              <div style={{ fontSize: 14, color: T.body, lineHeight: 1.5 }}>{desc}</div>
             </div>
           ))}
         </>}

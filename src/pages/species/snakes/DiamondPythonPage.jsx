@@ -1,9 +1,9 @@
-import { C } from "../../../constants/colours";
+import { T } from "../../../constants/theme";
 import SectionLabel from "../../../components/SectionLabel";
 import WarnBox from "../../../components/WarnBox";
 import ShopBtn from "../../../components/ShopBtn";
-import TempBar from "../../../components/TempBar";
-import FoodItem from "../../../components/FoodItem";
+import TempBar, { TempCard } from "../../../components/TempBar";
+import FoodItem, { FOOD_CARD } from "../../../components/FoodItem";
 import HealthItem from "../../../components/HealthItem";
 import StatGrid from "../../../components/StatGrid";
 import LegalTab from "../../../components/LegalTab";
@@ -14,27 +14,29 @@ import SnakeBreeding from "../../../components/SnakeBreeding";
 
 const DiamondPythonPage = ({ onBack }) => (
   <SpeciesPage onBack={onBack} name="Diamond Python" latin="Morelia spilota spilota" emoji="🐍"
-    badges={[["Intermediate", C.goldLight, "#7a5a1e"], ["Australian native", C.bluePale, C.blue], ["Cool climate", C.greenPale, C.green]]}
+    badges={[["Intermediate", T.chipBg, T.chip], ["Australian native", T.infoBg, T.info], ["Cool climate", T.chipBg, T.accentText]]}
     tabs={["overview", "feeding", "health & shedding", "handling & breeding", "licencing"]}
     tabContent={(tab) => <>
       {tab === "overview" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>The iconic black and gold python of south-eastern Australia. Strikingly beautiful and unique among Australian pythons in their preference for cooler temperatures. Found naturally in the forests of NSW and Victoria — including Sydney's outer suburbs. Requires a different approach to heating than most pythons.</p>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>The iconic black and gold python of south-eastern Australia. Strikingly beautiful and unique among Australian pythons in their preference for cooler temperatures. Found naturally in the forests of NSW and Victoria — including Sydney's outer suburbs. Requires a different approach to heating than most pythons.</p>
         <SectionLabel mt={0}>Quick stats</SectionLabel>
         <StatGrid stats={[["📏", "Adult size", "2.0–3.0 m"], ["⏳", "Lifespan", "20–30 yrs"], ["🏠", "Min. enclosure", "180 × 60 cm"], ["💧", "Humidity", "60–80%"]]} />
         <SectionLabel>Temperature requirements</SectionLabel>
-        <TempBar label="Basking spot" value="30–33°C" width="70%" color="#e05a2b" />
-        <TempBar label="Warm side" value="25–28°C" width="54%" color="#e0922b" />
-        <TempBar label="Cool side" value="18–22°C" width="34%" color="#4a9e6b" />
-        <TempBar label="Overnight low" value="12–16°C" width="16%" color="#2b7ec0" />
+        <TempCard>
+          <TempBar label="Basking spot" value="30–33°C" width="70%" color="#e05a2b" />
+          <TempBar label="Warm side" value="25–28°C" width="54%" color="#e0922b" />
+          <TempBar label="Cool side" value="18–22°C" width="34%" color="#4a9e6b" />
+          <TempBar label="Overnight low" value="12–16°C" width="16%" color="#2b7ec0" />
+        </TempCard>
         <WarnBox type="blue" title="Cooler temps than most pythons">Diamond Pythons overheat easily. Their basking temp is significantly lower than other carpets. Do not apply standard carpet python heating to a diamond — it can be fatal. Cool end temperatures as low as 12°C in winter are normal and beneficial.</WarnBox>
         <SectionLabel>Enclosure setup</SectionLabel>
-        <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>Tall timber enclosure with climbing branches — diamonds are highly arboreal. Higher humidity than most pythons; misting is beneficial. Ensure excellent ventilation despite the higher humidity. Forest substrate (coir, leaf litter mix). Water bowl large enough to soak in.</div>
-        <ShopBtn>🛒 Shop Diamond Python supplies</ShopBtn>
+        <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7 }}>Tall timber enclosure with climbing branches — diamonds are highly arboreal. Higher humidity than most pythons; misting is beneficial. Ensure excellent ventilation despite the higher humidity. Forest substrate (coir, leaf litter mix). Water bowl large enough to soak in.</div>
+        <ShopBtn>Shop Diamond Python supplies</ShopBtn>
         <ShopBtn secondary>Ask a question ↗</ShopBtn>
       </>}
       {tab === "feeding" && <>
-        <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 12 }}>Carnivorous. Diamond Pythons can be fussier feeders than other carpets, especially in captivity. Patience is key. They may refuse food in summer when ambient temps are high.</p>
-        <div style={{ background: C.cream, borderRadius: 12, border: "0.5px solid #e8e8e4", padding: "0 14px" }}>
+        <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 12 }}>Carnivorous. Diamond Pythons can be fussier feeders than other carpets, especially in captivity. Patience is key. They may refuse food in summer when ambient temps are high.</p>
+        <div style={FOOD_CARD}>
           <FoodItem icon="🐭" name="Mice (various sizes)" detail="Juveniles" freq="Every 7–10 days" />
           <FoodItem icon="🐀" name="Small to medium rats" detail="Adults" freq="Every 14 days" />
         </div>

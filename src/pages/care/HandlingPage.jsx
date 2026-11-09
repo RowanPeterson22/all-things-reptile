@@ -1,5 +1,5 @@
+import { T } from "../../constants/theme";
 import { useState } from "react";
-import { C } from "../../constants/colours";
 import SectionLabel from "../../components/SectionLabel";
 import WarnBox from "../../components/WarnBox";
 import CareGuideHeader from "../../components/CareGuideHeader";
@@ -11,9 +11,9 @@ const HandlingPage = ({ onBack }) => {
   return (
     <div style={{ flex: 1, overflowY: "auto" }}>
       <CareGuideHeader onBack={onBack} emoji="🤲" title="Handling & Socialising" subtitle="Building trust & safe interaction" tabs={tabs} tab={tab} onTab={setTab} />
-      <div style={{ background: "white", padding: "16px 18px 40px" }}>
+      <div style={{ background: "transparent", padding: "16px 16px 40px" }}>
         {tab === "getting started" && <>
-          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Handling builds trust over time. Patience and consistency are far more effective than rushing the process. A reptile that is handled correctly from a young age will be calmer and more confident throughout its life.</p>
+          <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>Handling builds trust over time. Patience and consistency are far more effective than rushing the process. A reptile that is handled correctly from a young age will be calmer and more confident throughout its life.</p>
           <WarnBox type="red" title="Allow settling time first">Every new reptile needs time to adjust to its new home before handling begins. Give your reptile at least 1–2 weeks (longer for shy or wild-caught species) with no handling — just food, water, and peace.</WarnBox>
           <SectionLabel>Building up gradually</SectionLabel>
           {[
@@ -22,30 +22,30 @@ const HandlingPage = ({ onBack }) => {
             ["Month 2", "Gradually extend sessions to 10–15 minutes. Handle in a calm environment away from other pets and loud noises."],
             ["Month 3+", "Regular daily or every-other-day handling. Sessions can extend to 20–30 minutes for most species. Always watch for stress signals."],
           ].map(([time, detail]) => (
-            <div key={time} style={{ background: C.cream, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #e8e8e4" }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: C.green, marginBottom: 3 }}>{time}</div>
-              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>{detail}</div>
+            <div key={time} style={{ background: T.card, borderRadius: 14, padding: "10px 12px", marginBottom: 8, border: "none" }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: T.accentText, marginBottom: 3 }}>{time}</div>
+              <div style={{ fontSize: 14, color: T.body, lineHeight: 1.5 }}>{detail}</div>
             </div>
           ))}
           <WarnBox type="gold" title="Never handle these times">Never handle within 48 hours of feeding. Never handle during shedding. Never handle a sick reptile. Never handle when the reptile is in threat display. Never handle when temperatures are too cold — reptiles are sluggish and unable to regulate stress responses.</WarnBox>
         </>}
         {tab === "technique" && <>
           <SectionLabel mt={0}>General technique</SectionLabel>
-          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 12 }}>Always approach slowly and from the side — never from directly above, which mimics a predator attack. Support the full body at all times. Let the reptile walk onto your hand rather than grabbing. Move slowly and deliberately. If the animal tries to escape, guide it gently — don't grip tightly.</div>
+          <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7, marginBottom: 12 }}>Always approach slowly and from the side — never from directly above, which mimics a predator attack. Support the full body at all times. Let the reptile walk onto your hand rather than grabbing. Move slowly and deliberately. If the animal tries to escape, guide it gently — don't grip tightly.</div>
           {[
             ["🦎 Lizards & dragons", "Support the full body including the tail. Place one hand under the chest, the other supporting the hindquarters and tail. Never pick up by the tail — many species can drop their tail as a stress response."],
             ["🐍 Snakes", "Support multiple points along the body. Never restrain the head unless medically necessary. Let the snake move between your hands in a flowing figure-8 motion. Do not dangle from one point."],
             ["🐢 Turtles", "Hold at the sides of the shell — not the legs or neck. Be aware of the reach of the neck, especially Long-necked Turtles which can bite. Keep sessions brief and return to water promptly."],
             ["🦎 Geckos", "Handle at night when active. Support the full body — never grab. Handle close to a surface in case they jump. Very short sessions only for delicate species."],
           ].map(([title, detail]) => (
-            <div key={title} style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", marginBottom: 10, border: "0.5px solid #e8e8e4" }}>
+            <div key={title} style={{ background: T.card, borderRadius: 14, padding: "12px 14px", marginBottom: 10, border: "none" }}>
               <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 6 }}>{title}</div>
-              <div style={{ fontSize: 12, color: "#666", lineHeight: 1.6 }}>{detail}</div>
+              <div style={{ fontSize: 14, color: T.body, lineHeight: 1.6 }}>{detail}</div>
             </div>
           ))}
         </>}
         {tab === "reading behaviour" && <>
-          <p style={{ fontSize: 13, color: "#666", lineHeight: 1.6, marginBottom: 14 }}>Learning to read your reptile's body language is one of the most important handling skills. Respecting stress signals prevents bites and builds trust faster.</p>
+          <p style={{ fontSize: 15, color: T.body, lineHeight: 1.6, marginBottom: 14 }}>Learning to read your reptile's body language is one of the most important handling skills. Respecting stress signals prevents bites and builds trust faster.</p>
           <SectionLabel mt={0}>Signs of stress — end the session</SectionLabel>
           {[
             ["Trying to escape constantly", "The animal wants to return to its enclosure. End the session."],
@@ -55,9 +55,9 @@ const HandlingPage = ({ onBack }) => {
             ["Musking (turtles, snakes)", "Releasing foul-smelling fluid — a stress response. Return to enclosure."],
             ["Tail wagging rapidly (lizards)", "An agitation or warning signal in many species."],
           ].map(([sign, detail]) => (
-            <div key={sign} style={{ background: "#fce8e8", borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: "0.5px solid #8b202033" }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.red, marginBottom: 2 }}>{sign}</div>
-              <div style={{ fontSize: 12, color: "#555" }}>{detail}</div>
+            <div key={sign} style={{ background: T.noBg, borderRadius: 14, padding: "10px 12px", marginBottom: 8, border: "none" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: T.no, marginBottom: 2 }}>{sign}</div>
+              <div style={{ fontSize: 14, color: T.body }}>{detail}</div>
             </div>
           ))}
           <SectionLabel>Signs of comfort — continue</SectionLabel>
@@ -67,18 +67,18 @@ const HandlingPage = ({ onBack }) => {
             ["Eyes open, alert but not darting", "Calm and aware."],
             ["Moving slowly and deliberately", "Confident and relaxed movement."],
           ].map(([sign, detail]) => (
-            <div key={sign} style={{ background: C.greenPale, borderRadius: 10, padding: "10px 12px", marginBottom: 8, border: `0.5px solid ${C.green}33` }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.green, marginBottom: 2 }}>{sign}</div>
-              <div style={{ fontSize: 12, color: "#555" }}>{detail}</div>
+            <div key={sign} style={{ background: T.chipBg, borderRadius: 14, padding: "10px 12px", marginBottom: 8, border: "none" }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: T.accentText, marginBottom: 2 }}>{sign}</div>
+              <div style={{ fontSize: 14, color: T.body }}>{detail}</div>
             </div>
           ))}
         </>}
         {tab === "safety" && <>
           <SectionLabel mt={0}>Hygiene — always</SectionLabel>
-          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7, marginBottom: 12 }}>Always wash hands with soap and water before and after handling any reptile. All reptiles can carry Salmonella — this is manageable with good hygiene but should never be ignored. Supervise children carefully and ensure they wash hands immediately after handling.</div>
+          <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7, marginBottom: 12 }}>Always wash hands with soap and water before and after handling any reptile. All reptiles can carry Salmonella — this is manageable with good hygiene but should never be ignored. Supervise children carefully and ensure they wash hands immediately after handling.</div>
           <WarnBox type="red" title="If you are bitten">Most reptile bites are minor. Wash the wound thoroughly with soap and water. Apply antiseptic. Seek medical advice if the wound is deep, if you are bitten by a large python (bites from large pythons require proper wound care), or if any signs of infection develop. Do NOT jerk away when bitten — this causes more tissue damage. Stay calm and gently support the animal until it releases.</WarnBox>
           <SectionLabel>Children and reptiles</SectionLabel>
-          <div style={{ background: C.cream, borderRadius: 12, padding: "12px 14px", border: "0.5px solid #e8e8e4", fontSize: 13, color: "#666", lineHeight: 1.7 }}>Children can have wonderful interactions with reptiles under proper adult supervision. Beginner species like Central Bearded Dragons, Eastern Blue-tongue Skinks, and Children's Pythons are ideal for families. Always supervise. Ensure hand washing after every interaction. Teach children to be calm and gentle — sudden movements stress reptiles and increase bite risk.</div>
+          <div style={{ background: T.card, borderRadius: 14, padding: "12px 14px", border: "none", fontSize: 15, color: T.body, lineHeight: 1.7 }}>Children can have wonderful interactions with reptiles under proper adult supervision. Beginner species like Central Bearded Dragons, Eastern Blue-tongue Skinks, and Children's Pythons are ideal for families. Always supervise. Ensure hand washing after every interaction. Teach children to be calm and gentle — sudden movements stress reptiles and increase bite risk.</div>
         </>}
       </div>
     </div>

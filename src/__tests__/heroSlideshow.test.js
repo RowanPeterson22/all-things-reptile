@@ -9,7 +9,7 @@ import {
   HERO_ASPECT, fitCrop, defaultCrop, moveCrop, zoomCrop, heroImageStyle, heroCropFor, pickHero, othersThan, maxCropWidth, minCropWidth,
 } from "../components/heroCrop";
 import SpeciesHero from "../components/SpeciesHero";
-import SpeciesSlideshow, { AUTO_MS, RESUME_MS } from "../components/SpeciesSlideshow";
+import SpeciesSlideshow, { AUTO_MS, RESUME_MS, HeroSlideshow } from "../components/SpeciesSlideshow";
 import SpeciesPage from "../components/SpeciesPage";
 import BrowseScreen from "../screens/BrowseScreen";
 import { clearPhotoCache } from "../components/SpeciesGallery";
@@ -254,6 +254,59 @@ describe("slideshow", () => {
   });
 });
 
+// ─── The hero as the slideshow ────────────────────────────────────
+describe("hero slideshow", () => {
+  beforeEach(() => jest.useFakeTimers());
+  afterEach(() => { jest.useRealTimers(); delete window.matchMedia; });
+  const hero = (n = 3) => render(<HeroSlideshow photos={[ph(1), ph(2), ph(3)].slice(0, n)} name="Ackie Monitor" overlay={<h1>Ackie Monitor</h1>}><button>Back</button></HeroSlideshow>);
+  const frame = () => active().parentElement;
+
+  test("auto-advances and wraps; the dots sit with the name, over the photo", () => {
+    hero();
+    expect(activeAlt()).toBe("Ackie 1");
+    for (const next of ["Ackie 2", "Ackie 3", "Ackie 1"]) { // wraps 3 → 1
+      act(() => { jest.advanceTimersByTime(AUTO_MS + 10); });
+      expect(activeAlt()).toBe(next);
+    }
+    const dots = screen.getByTestId("slideshow-dots");
+    expect(dots.parentElement.parentElement).toContainElement(screen.getByRole("heading", { name: "Ackie Monitor" }));
+    expect(screen.queryByRole("button", { name: "Next photo" })).toBeNull();
+  });
+
+  test("one ⓘ, always the current photo's credit", () => {
+    hero();
+    const openCredit = () => fireEvent.click(screen.getByRole("button", { name: "Photo credit" }));
+    openCredit();
+    expect(screen.getByRole("dialog", { name: "Photo credit" })).toHaveTextContent("Person 1");
+    fireEvent.click(screen.getByRole("button", { name: "Photo 3 of 3" }));
+    expect(screen.getAllByRole("button", { name: "Photo credit" })).toHaveLength(1);
+    expect(screen.queryByRole("dialog")).toBeNull(); // a new photo starts closed
+    openCredit();
+    expect(screen.getByRole("dialog", { name: "Photo credit" })).toHaveTextContent("Person 3");
+  });
+
+  test("holding a finger pauses; letting go waits ~10 s; a swipe steps back with wrap", () => {
+    hero();
+    fireEvent.pointerDown(frame(), { clientX: 100, clientY: 50, pointerId: 1, pointerType: "touch" });
+    act(() => { jest.advanceTimersByTime(AUTO_MS * 4); });
+    expect(activeAlt()).toBe("Ackie 1");
+    fireEvent.pointerUp(frame(), { clientX: 102, clientY: 50, pointerId: 1, pointerType: "touch" });
+    act(() => { jest.advanceTimersByTime(RESUME_MS - 100); });
+    expect(activeAlt()).toBe("Ackie 1");
+    fireEvent.pointerDown(frame(), { clientX: 100, clientY: 50, pointerId: 1, pointerType: "touch" });
+    fireEvent.pointerUp(frame(), { clientX: 200, clientY: 52, pointerId: 1, pointerType: "touch" });
+    expect(activeAlt()).toBe("Ackie 3");
+  });
+
+  test("prefers-reduced-motion: still advances, as a plain fade", () => {
+    window.matchMedia = jest.fn().mockImplementation((q) => ({ matches: /reduce/.test(q), media: q, addEventListener: jest.fn(), removeEventListener: jest.fn() }));
+    hero(2);
+    expect(active().style.transition).toBe("opacity 1.2s linear");
+    act(() => { jest.advanceTimersByTime(AUTO_MS + 10); });
+    expect(activeAlt()).toBe("Ackie 2");
+  });
+});
+
 // ─── Species page and Browse card ─────────────────────────────────
 const mockPhotos = (photos) => {
   global.fetch = jest.fn(async () => ({ ok: true, json: async () => ({ photos }) }));
@@ -270,24 +323,33 @@ describe("species page and Browse card use the hero", () => {
     </MemoryRouter>,
   );
 
-  test("the ticked hero fills the header, the rest roll in the slideshow, no emoji", async () => {
+  test("the hero is the slideshow: it starts on the ticked photo, then the rest; no card below, no emoji", async () => {
     mockPhotos([ph(1), ph(2, { hero: true }), ph(3)]);
     page();
     const hero = await screen.findByTestId("species-hero");
-    expect(within(hero).getByAltText("Ackie 2")).toBeInTheDocument();
+    const slides = within(hero).getAllByRole("group", { hidden: true });
+    expect(slides.map(g => within(g).getByRole("img", { hidden: true }).getAttribute("alt"))).toEqual(["Ackie 2", "Ackie 1", "Ackie 3"]);
+    expect(slides[0]).toHaveAttribute("data-active", "true");
+    expect(within(hero).getAllByRole("button", { name: /^Photo \d of 3$/ })).toHaveLength(3);
+    expect(within(hero).getAllByRole("button", { name: "Photo credit" })).toHaveLength(1);
+    expect(screen.queryByTestId("species-slideshow")).toBeNull();
     expect(screen.queryByText("🦎")).toBeNull();
-    const show = screen.getByTestId("species-slideshow");
-    expect(within(show).getAllByRole("group", { hidden: true }).map(g => within(g).getByRole("img", { hidden: true }).getAttribute("alt"))).toEqual(["Ackie 1", "Ackie 3"]);
   });
 
-  test("no hero ticked: the first photo is the hero; one left shows alone", async () => {
+  test("no hero ticked: it starts on the first photo; one photo shows alone with no dots", async () => {
     mockPhotos([ph(1), ph(2)]);
-    page();
+    const { unmount } = page();
     const hero = await screen.findByTestId("species-hero");
-    expect(within(hero).getByAltText("Ackie 1")).toBeInTheDocument();
-    const show = screen.getByTestId("species-slideshow");
-    expect(within(show).getByAltText("Ackie 2")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Next photo" })).toBeNull();
+    expect(within(within(hero).getAllByRole("group").find(g => g.dataset.active === "true")).getByRole("img").getAttribute("alt")).toBe("Ackie 1");
+    unmount();
+    clearPhotoCache();
+    mockPhotos([ph(1)]);
+    page();
+    const single = await screen.findByTestId("species-hero");
+    expect(within(single).getByAltText("Ackie 1")).toBeInTheDocument();
+    expect(within(single).queryByRole("button", { name: /^Photo 1 of/ })).toBeNull();
+    expect(within(single).queryByTestId("slideshow-dots")).toBeNull();
+    expect(within(single).getByRole("button", { name: "Photo credit" })).toBeInTheDocument();
   });
 
   test("no public photos: the emoji header, no slideshow", async () => {

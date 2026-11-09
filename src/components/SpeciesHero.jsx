@@ -18,38 +18,6 @@ const OVERLAP = 20;
 // The exact 2.4 : 1 frame: full width up to 576 px, centred beyond that.
 const frame = { position: "absolute", top: 0, left: "50%", height: "100%", aspectRatio: "2.4 / 1", maxWidth: "100%", transform: "translateX(-50%)" };
 
-// The species page's tall hero (variant "tall", the dark design): full width,
-// about 400 px tall on a 390 px phone, a dark fade at the bottom, `overlay`
-// (pills, name, latin) over the fade, the back button (children) top left and
-// the credit top right. The 2.4 : 1 crop Rowan sets can't fill a near-square
-// frame, so the photo covers it centred on the crop's centre (else the focus
-// point).
-export const TALL_H = "min(103vw, 440px)";
-
-export const tallPosition = (photo) => {
-  const c = photo && photo.heroCrop && photo.width > 0 && photo.height > 0 ? heroCropFor(photo) : null;
-  if (!c) return objectPosition(photo && photo.focal);
-  return objectPosition({ x: c.x + c.w / 2, y: c.y + c.h / 2 });
-};
-
-const SAFE_TOP = "calc(env(safe-area-inset-top, 0px) + 12px)";
-
-export const TallHero = ({ photo, name, onBroken, children, overlay, testId = "species-hero" }) => (
-  <div data-testid={testId} data-variant="tall" style={{ position: "relative", width: "100%", height: TALL_H, minHeight: 300, background: T.imgBg, overflow: "hidden" }}>
-    <img data-layout-decor="" src={photo.url} alt={photo.alt || name} width={photo.width || undefined} height={photo.height || undefined} loading="eager" decoding="async"
-      onError={() => onBroken && onBroken()}
-      style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: tallPosition(photo), display: "block" }} />
-    <div data-layout-decor="" aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0) 28%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.92))", pointerEvents: "none" }} />
-    <div style={{ position: "absolute", top: SAFE_TOP, left: 14 }}>{children}</div>
-    {/* The credit sits top right, where the design's (unbuilt) save button was,
-        so it never meets the name however many lines that takes. */}
-    <div style={{ position: "absolute", top: SAFE_TOP, right: 14, width: "calc(100% - 28px)", height: 220, pointerEvents: "none" }}>
-      <PhotoCredit credit={photo.credit} placement="below" />
-    </div>
-    <div style={{ position: "absolute", left: 20, right: 20, bottom: 34 }}>{overlay}</div>
-  </div>
-);
-
 const SpeciesHero = ({ photo, name, onBroken, children, testId = "species-hero" }) => {
   const crop = heroCropFor(photo);
   const imgStyle = crop

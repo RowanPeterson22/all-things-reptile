@@ -2,16 +2,16 @@ import { useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { T } from "../constants/theme";
 import { usePublicPhotos } from "./SpeciesGallery";
-import { TallHero, TALL_H } from "./SpeciesHero";
-import SpeciesSlideshow from "./SpeciesSlideshow";
-import { pickHero, othersThan } from "./heroCrop";
-import Segmented from "./Segmented";
+import { HeroSlideshow } from "./SpeciesSlideshow";
+import { pickHero, othersThan, TALL_H } from "./heroCrop";
+import Segmented, { sentence } from "./Segmented";
 import { RoundBack } from "./BackButton";
 
 // ─── Species page shell ───────────────────────────────────────────
-// The dark design: a tall photo hero with the pills, name and latin name over
-// its bottom fade and a round back button on it; then the sheet (slideshow,
-// segmented tabs, the tab's content). Back label follows the tab the page was
+// The dark design: the hero is the slideshow (tall photo, dots on it, one ⓘ
+// for the current photo), with the pills, name and latin name over its bottom
+// fade and a round back button on it; then the sheet (segmented tabs, the
+// tab's content). Back label follows the tab the page was
 // opened from (carried in history state).
 const useBackLabel = () => {
   const { state } = useLocation();
@@ -22,6 +22,9 @@ const pill = (lead) => ({
   fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: "16px",
   background: lead ? T.accent : T.glass, color: T.onAccent, borderRadius: 999, padding: "4px 10px",
 });
+
+// The design names the licence tab "Licence"; the pages' key stays "licencing".
+const tabLabel = (t) => (t === "licencing" ? "Licence" : sentence(t));
 
 // Pills, name, latin (and other names when a page gives them) over the photo.
 const HeroText = ({ name, latin, aka, badges }) => (
@@ -43,19 +46,19 @@ const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabCo
   // The route is /species/:slug (D4), so the shell knows which gallery to load;
   // the 46 page files don't change.
   const { slug } = useParams();
-  // The photo Rowan ticked as hero (else the first by his order) fills the
-  // hero; the rest roll in the slideshow. No photos: the emoji on a dark block.
+  // The hero starts on the photo Rowan ticked (else the first by his order)
+  // and rolls through the rest. Photos that fail to load drop out; none left:
+  // the emoji on a dark block.
   const photos = usePublicPhotos(slug);
-  const [brokenHero, setBrokenHero] = useState(null);
+  const [broken, setBroken] = useState({});
   const picked = pickHero(photos);
-  const hero = picked && picked.id !== brokenHero ? picked : null;
-  const rest = othersThan(photos, picked);
+  const ordered = (picked ? [picked, ...othersThan(photos, picked)] : []).filter(p => !broken[p.id || p.url]);
   const back = <RoundBack onClick={onBack} label={backLabel} />;
   const text = <HeroText name={name} latin={latin} aka={aka} badges={badges} />;
   return (
     <div style={{ flex: 1 }}>
-      {hero ? (
-        <TallHero photo={hero} name={name} onBroken={() => setBrokenHero(hero.id)} overlay={text}>{back}</TallHero>
+      {ordered.length ? (
+        <HeroSlideshow photos={ordered} name={name} overlay={text} onBroken={(p) => setBroken(b => ({ ...b, [p.id || p.url]: true }))}>{back}</HeroSlideshow>
       ) : (
         <div data-testid="species-hero-fallback" style={{ position: "relative", width: "100%", height: `calc(${TALL_H} * 0.8)`, minHeight: 280, background: `linear-gradient(to bottom, ${T.cardHi}, ${T.bg})`, overflow: "hidden" }}>
           <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, top: "18%", textAlign: "center", fontSize: 84, lineHeight: 1 }}>{emoji}</div>
@@ -63,9 +66,8 @@ const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabCo
           <div style={{ position: "absolute", left: 20, right: 20, bottom: 34 }}>{text}</div>
         </div>
       )}
-      <div style={{ position: "relative", marginTop: -20, borderRadius: "22px 22px 0 0", background: T.bg, padding: "18px 16px 8px", display: "flex", flexDirection: "column", gap: 16 }}>
-        {rest.length > 0 && <SpeciesSlideshow photos={rest} />}
-        <Segmented tabs={tabs} tab={tab} onTab={setTab} label="Sections" testId="species-tabs" />
+      <div style={{ position: "relative", marginTop: -20, borderRadius: "22px 22px 0 0", background: T.bg, padding: "18px 16px 8px", display: "flex", flexDirection: "column", gap: 16 }}>{/* tabs, then content */}
+        <Segmented tabs={tabs} tab={tab} onTab={setTab} labelFor={tabLabel} label="Sections" testId="species-tabs" />
         <div data-testid="species-tab-content">
           {tabContent(tab)}
         </div>

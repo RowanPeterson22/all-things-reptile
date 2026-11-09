@@ -1,3 +1,5 @@
+import { objectPosition } from "./focal";
+
 // ─── Hero crop maths (client) ─────────────────────────────────────
 // The species-page hero is a fixed 2.4 : 1 banner. A crop is { x, y, w, h },
 // fractions 0–1 of the image (lib/heroCrop.js checks the same rules on the
@@ -82,3 +84,15 @@ export const heroImageStyle = (crop) => {
 // (the list arrives sorted by public_order).
 export const pickHero = (photos) => (photos && photos.length ? photos.find(p => p && p.hero) || photos[0] : null);
 export const othersThan = (photos, hero) => (photos || []).filter(p => p !== hero);
+
+// ─── The species page's tall hero (the dark design) ───────────────
+// About 400 px tall on a 390 px phone. A 2.4 : 1 crop can't fill a near-square
+// frame, so the photo covers it centred on the stored crop's centre (else the
+// focus point). The /admin crop editor still previews the 2.4 : 1 banner.
+export const TALL_H = "min(103vw, 440px)";
+
+export const tallPosition = (photo) => {
+  const c = photo && photo.heroCrop && photo.width > 0 && photo.height > 0 ? heroCropFor(photo) : null;
+  if (!c) return objectPosition(photo && photo.focal);
+  return objectPosition({ x: c.x + c.w / 2, y: c.y + c.h / 2 });
+};

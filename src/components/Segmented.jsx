@@ -7,6 +7,8 @@ import ScrollRow from "./ScrollRow";
 // fit (long care-guide tabs, a 320px phone) the track scrolls sideways with
 // ScrollRow's fade and chevron. Each segment is a 44px tap target.
 // Labels are sentence case (first letter up) unless labelFor says otherwise.
+// 14 px text, 4 px side padding: the design's five species tabs fit in one
+// row from 375 px; longer sets (e.g. "Handling & breeding") scroll.
 
 export const sentence = (t) => (t ? t[0].toUpperCase() + t.slice(1) : t);
 
@@ -17,7 +19,7 @@ const Segmented = ({ tabs, tab, onTab, labelFor = sentence, label = "Sections", 
       const on = t === tab;
       return (
         <button key={t} type="button" onClick={() => onTab(t)} aria-pressed={on}
-          style={{ flex: "1 0 auto", border: "none", borderRadius: 10, fontFamily: "inherit", fontSize: 13, minHeight: 44, padding: "0 12px", cursor: "pointer", whiteSpace: "nowrap",
+          style={{ flex: "1 0 auto", border: "none", borderRadius: 10, fontFamily: "inherit", fontSize: 14, minHeight: 44, padding: "0 4px", cursor: "pointer", whiteSpace: "nowrap",
             background: on ? T.segOn : "transparent", color: on ? T.text : T.muted, fontWeight: on ? 700 : 600 }}>
           {labelFor(t)}
         </button>

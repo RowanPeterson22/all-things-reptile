@@ -7,8 +7,8 @@ import { visibleModules } from "../home/homeModules";
 // ─── Home (/) ─────────────────────────────────────────────────────
 // An ordered set of blocks; the order is set in /admin → Sections
 // (app_layout.home_blocks): search, personal, featured, explore.
-//   search    the search bar (only with the search section). First in the
-//             order, it sits in the black header like the old Browse search.
+//   search    the search bar (only with the search section). The shell's
+//             header also has the design's round search button.
 //   personal  the keeper's own modules (src/home/homeModules.jsx); while all
 //             are empty, one compact "Planning your first reptile?" card.
 //   featured  the section picked in /admin → Sections, if this visitor sees it
@@ -24,11 +24,9 @@ const HomeScreen = ({ shell, canSearch, query, onQuery, onClearQuery, onOpen, pr
         : b === "featured" ? Boolean(shell.featured)
           : b === "explore" ? shell.tiles.length > 0 : false));
 
-  const search = (inHeader) => (
-    <div data-testid="home-search" style={inHeader
-      ? { background: UI.searchBand, padding: "0 20px" }
-      : { background: UI.searchBand, borderRadius: UI.radius, padding: "12px 12px 0" }}>
-      <SearchField placeholder="Search species, care guides, glossary..." value={query} onChange={onQuery} onClear={onClearQuery} marginBottom={inHeader ? 14 : 12} />
+  const search = (lead) => (
+    <div data-testid="home-search" style={lead ? { padding: `4px ${UI.pad}px 0` } : undefined}>
+      <SearchField placeholder="Search species, care guides, glossary..." value={query} onChange={onQuery} onClear={onClearQuery} marginBottom={0} />
     </div>
   );
 
@@ -45,9 +43,9 @@ const HomeScreen = ({ shell, canSearch, query, onQuery, onClearQuery, onOpen, pr
   const lead = blocks[0] === "search" ? search(true) : null;
   const rest = lead ? blocks.slice(1) : blocks;
   return (
-    <div data-testid="home" style={{ flex: 1, overflowY: "auto" }}>
+    <div data-testid="home" style={{ flex: 1 }}>
       {lead}
-      <div style={{ padding: UI.pad, display: "flex", flexDirection: "column", gap: UI.blockGap }}>
+      <div style={{ padding: `${lead ? UI.blockGap : 8}px ${UI.pad}px ${UI.pad}px`, display: "flex", flexDirection: "column", gap: UI.blockGap }}>
         {rest.map(b => <div key={b} data-block={b}>{body(b)}</div>)}
       </div>
     </div>

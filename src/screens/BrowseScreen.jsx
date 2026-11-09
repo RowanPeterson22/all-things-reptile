@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
+import Icon from "../components/Icon";
 import { SPECIES } from "../data/species";
 import { CATEGORIES } from "../data/categories";
 import LevelBadge from "../components/LevelBadge";
@@ -39,45 +40,46 @@ const BrowseScreen = ({ onSpecies }) => {
     const cat = CATEGORIES.find(c => c.id === category);
     const banner = imageFor(category);
     return (
-      <div ref={rootRef} style={{ flex: 1, overflowY: "auto" }}>
+      <div ref={rootRef} style={{ flex: 1 }}>
         {banner ? (
           <>
-            {/* The same treatment as the species hero: 2.4 : 1, back button over a top fade. */}
+            {/* The same treatment as the category banner always had: 2.4 : 1, back pill over a top fade. */}
             <SpeciesHero testId="category-banner" photo={{ ...banner, heroCrop: banner.bannerCrop }} name={cat.label} onBroken={() => markBroken(banner.url)}>
-              <BackButton onClick={() => setCategory(null)} marginBottom={0}>‹ All categories</BackButton>
+              <BackButton onPhoto onClick={() => setCategory(null)} marginBottom={0}>‹ All categories</BackButton>
             </SpeciesHero>
-            <div style={{ position: "relative", marginTop: -20, background: "white", borderRadius: "20px 20px 0 0", padding: "16px 18px 0" }}>
-              <div style={{ fontSize: 20, fontWeight: 700, color: C.ink }}>{cat.label}</div>
-              <div style={{ fontSize: 12, color: C.muted }}>{catSpecies.length} species</div>
+            <div style={{ position: "relative", marginTop: -20, background: T.bg, borderRadius: "22px 22px 0 0", padding: "18px 16px 0" }}>
+              <h2 style={{ margin: 0, fontSize: 26, fontWeight: 700, color: T.text, lineHeight: 1.15 }}>{cat.label}</h2>
+              <div style={{ fontSize: 14, color: T.muted, marginTop: 4 }}>{catSpecies.length} species</div>
             </div>
           </>
         ) : (
-        <div style={{ background: C.green, padding: "calc(env(safe-area-inset-top, 0px) + 8px) 18px 0" }}>
+        <div style={{ padding: "0 16px" }}>
           <BackButton onClick={() => setCategory(null)} marginBottom={12}>‹ All categories</BackButton>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-            <div style={{ fontSize: 36 }}>{cat.emoji}</div>
-            <div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: "white" }}>{cat.label}</div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.9)" }}>{catSpecies.length} species</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 16, background: T.card, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, flexShrink: 0 }}>{cat.emoji}</div>
+            <div style={{ minWidth: 0 }}>
+              <h2 style={{ margin: 0, fontSize: 26, fontWeight: 700, color: T.text, lineHeight: 1.15 }}>{cat.label}</h2>
+              <div style={{ fontSize: 14, color: T.muted, marginTop: 4 }}>{catSpecies.length} species</div>
             </div>
           </div>
         </div>
         )}
         <div style={{ padding: 16 }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10 }}>
             {catSpecies.map(sp => (
-              <div key={sp.id} onClick={() => sp.page && onSpecies(sp.page)} style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", cursor: sp.page ? "pointer" : "default", opacity: sp.page ? 1 : 0.8 }}>
+              <div key={sp.id} onClick={() => sp.page && onSpecies(sp.page)}
+                style={{ background: T.card, borderRadius: 16, overflow: "hidden", cursor: sp.page ? "pointer" : "default", opacity: sp.page ? 1 : 0.8, minWidth: 0 }}>
                 {firstPhoto[sp.slug] ? (
                   <CreditedImage key={firstPhoto[sp.slug].id} src={firstPhoto[sp.slug].url} alt={sp.name} credit={firstPhoto[sp.slug].credit} focal={firstPhoto[sp.slug].focal}
-                    style={{ height: 96, background: sp.bg }} />
+                    style={{ height: 104, background: T.imgBg }} />
                 ) : (
-                  <div style={{ height: 96, background: sp.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36 }}>{sp.emoji}</div>
+                  <div style={{ height: 104, background: T.cardHi, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36 }}>{sp.emoji}</div>
                 )}
-                <div style={{ padding: "8px 10px 10px" }}>
-                  <div style={{ fontSize: 13, fontWeight: 700, marginBottom: 2 }}>{sp.name}</div>
-                  <div style={{ fontSize: 11, color: "#888", marginBottom: 6, textTransform: "capitalize" }}>{sp.type}</div>
+                <div style={{ padding: "10px 12px 12px" }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: T.text, marginBottom: 2, lineHeight: 1.3, overflowWrap: "break-word" }}>{sp.name}</div>
+                  <div style={{ fontSize: 12, color: T.muted, marginBottom: 8, textTransform: "capitalize" }}>{sp.type}</div>
                   <LevelBadge level={sp.level} />
-                  {!sp.page && <div style={{ fontSize: 10, color: "#bbb", marginTop: 4 }}>Coming soon</div>}
+                  {!sp.page && <div style={{ fontSize: 11, color: T.muted, marginTop: 6 }}>Coming soon</div>}
                 </div>
               </div>
             ))}
@@ -88,27 +90,29 @@ const BrowseScreen = ({ onSpecies }) => {
   }
 
   return (
-    <div ref={rootRef} style={{ flex: 1, overflowY: "auto", padding: 16 }}>
-      <div style={{ background: C.green, borderRadius: 14, padding: 16, marginBottom: 16, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} onClick={() => onSpecies("bluetongue")}>
-        <div style={{ fontSize: 40 }}>🦎</div>
-        <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 10, fontWeight: 700, color: "rgba(255,255,255,0.85)", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>Featured species</div>
-          <div style={{ fontSize: 15, fontWeight: 700, color: "white", marginBottom: 2 }}>Blue-tongue Skink</div>
-          <div style={{ fontSize: 12, color: "rgba(255,255,255,0.9)" }}>Great beginner reptile ↗</div>
+    <div ref={rootRef} style={{ flex: 1, padding: "4px 16px 16px" }}>
+      <div role="link" tabIndex={0} onClick={() => onSpecies("bluetongue")} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSpecies("bluetongue"); } }}
+        style={{ background: T.accent, borderRadius: 18, padding: 16, marginBottom: 20, display: "flex", alignItems: "center", gap: 14, cursor: "pointer" }}>
+        <div aria-hidden="true" style={{ width: 48, height: 48, borderRadius: 14, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 28, flexShrink: 0 }}>🦎</div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 11, fontWeight: 700, color: T.onAccent, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>Featured species</div>
+          <div style={{ fontSize: 17, fontWeight: 700, color: T.onAccent, marginBottom: 2 }}>Blue-tongue Skink</div>
+          <div style={{ fontSize: 13, color: T.onAccent }}>Great beginner reptile ↗</div>
         </div>
+        <span aria-hidden="true" style={{ color: T.onAccent }}><Icon name="chevron" size={20} /></span>
       </div>
-      <div style={{ fontSize: 11, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 12 }}>Browse by category</div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+      <h2 style={{ margin: "0 0 12px", fontSize: 13, fontWeight: 700, color: T.muted, textTransform: "uppercase", letterSpacing: "0.08em" }}>Browse by category</h2>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10 }}>
         {CATEGORIES.map(cat => (
           <div key={cat.id} onClick={() => setCategory(cat.id)}
-            style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", overflow: "hidden", cursor: "pointer" }}>
+            style={{ background: T.card, borderRadius: 16, overflow: "hidden", cursor: "pointer", minWidth: 0 }}>
             {imageFor(cat.id)
-              ? <CategoryCardImage image={imageFor(cat.id)} bg={cat.bg} onBroken={() => markBroken(imageFor(cat.id).url)} />
-              : <CategoryEmoji emoji={cat.emoji} bg={cat.bg} />}
+              ? <CategoryCardImage image={imageFor(cat.id)} bg={T.imgBg} onBroken={() => markBroken(imageFor(cat.id).url)} />
+              : <CategoryEmoji emoji={cat.emoji} bg={T.cardHi} />}
             <div style={{ padding: "10px 12px 12px" }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 4 }}>{cat.label}</div>
-              <div style={{ fontSize: 11, color: "#777", lineHeight: 1.4, marginBottom: 5 }}>{cat.desc}</div>
-              <div style={{ fontSize: 10, fontWeight: 700, color: C.green }}>{cat.count} species →</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: T.text, marginBottom: 4, lineHeight: 1.3, overflowWrap: "break-word" }}>{cat.label}</div>
+              <div style={{ fontSize: 12, color: T.muted, lineHeight: 1.45, marginBottom: 6 }}>{cat.desc}</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: T.accentText }}>{cat.count} species →</div>
             </div>
           </div>
         ))}

@@ -1,6 +1,6 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
-import { C } from "./constants/colours";
+import { T, SIZE, NAV_BOTTOM, NAV_CLEARANCE } from "./constants/theme";
 import SplashScreen from "./components/SplashScreen";
 import SearchField from "./components/SearchField";
 import BrowseScreen from "./screens/BrowseScreen";
@@ -174,20 +174,39 @@ const tabOfPath = (p) => (p === "/" ? "home"
       : p === "/profile" || p.startsWith("/profile/") ? "profile"
         : "learn");
 
-const FONT = "'DM Sans', system-ui, sans-serif";
-// Bottom tab bar, sized explicitly so the spacer under the content matches it.
-// The copyright line sits partly in the home-bar zone on notched iPhones.
-const NAV = { top: 8, row: 48, footTop: 10, footLine: 12, footBottom: "max(4px, calc(env(safe-area-inset-bottom, 0px) - 15px))" };
-const Blank = () => <div style={{ minHeight: "100vh", background: C.cream }} />;
+const FONT = T.font;
+// Screen-reader-only text (the tab labels: the bar shows icons, as designed).
+const SR_ONLY = { position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0 0 0 0)", whiteSpace: "nowrap", border: 0 };
+const Blank = () => <div style={{ minHeight: "100vh", background: T.bg }} />;
 const Notice = ({ title, children }) => (
-  <div style={{ minHeight: "100vh", background: C.cream, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, boxSizing: "border-box" }}>
+  <div style={{ minHeight: "100vh", background: T.bg, color: T.text, fontFamily: FONT, display: "flex", alignItems: "center", justifyContent: "center", padding: 24, boxSizing: "border-box" }}>
     <div style={{ maxWidth: 360, textAlign: "center" }}>
-      <div style={{ fontSize: 17, fontWeight: 700, color: C.ink, marginBottom: 8 }}>{title}</div>
-      <div style={{ fontSize: 13, color: C.muted, lineHeight: 1.6 }}>{children}</div>
+      <div style={{ fontSize: 18, fontWeight: 700, color: T.text, marginBottom: 8 }}>{title}</div>
+      <div style={{ fontSize: 14, color: T.muted, lineHeight: 1.6 }}>{children}</div>
     </div>
   </div>
 );
-const SearchPrompt = () => <div style={{ padding: 40, textAlign: "center", fontSize: 13, color: C.muted, fontFamily: FONT }}>Type at least two letters to search.</div>;
+const SearchPrompt = () => <div style={{ padding: 40, textAlign: "center", fontSize: 14, color: T.muted, fontFamily: FONT }}>Type at least two letters to search.</div>;
+
+// ─── Header pieces (the dark design) ──────────────────────────────
+// Home: the small logo top left and a round search button (OptionC).
+// Every other non-detail screen: a big bold page title instead of the old
+// full-width logo band (Rowan: too big), then search / the Learn sub-nav.
+const SAFE_TOP = "calc(env(safe-area-inset-top, 0px) + 12px)";
+const HomeHeader = ({ canSearch, onSearch }) => (
+  <header style={{ padding: `${SAFE_TOP} ${SIZE.pad}px 8px`, display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 44 }}>
+    <img src="/header-logo-dark.png" alt="All Things Reptile" style={{ height: 26, width: "auto", display: "block", maxWidth: "70%" }} />
+    {canSearch && (
+      <button type="button" aria-label="Search" onClick={onSearch}
+        style={{ width: 44, height: 44, borderRadius: 22, border: "none", background: T.field, color: T.text, display: "flex", alignItems: "center", justifyContent: "center", padding: 0, cursor: "pointer", flexShrink: 0 }}>
+        <Icon name="search" size={20} strokeWidth={2} />
+      </button>
+    )}
+  </header>
+);
+const PageTitle = ({ children }) => (
+  <h1 style={{ margin: "0 0 14px", fontSize: "clamp(30px, 9vw, 34px)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: T.text, overflowWrap: "break-word" }}>{children}</h1>
+);
 
 // Detail page: renders the species / care guide for :slug, or sends unknown slugs home.
 const DetailRoute = ({ table, legacy = {}, base, onBack, home = "/" }) => {
@@ -216,7 +235,8 @@ export const titleFor = (path) => {
   return name ? `${name} · ${SITE}` : SITE;
 };
 
-const AdminWait = () => <div style={{ padding: 24, fontSize: 13, color: "#888", fontFamily: "'DM Sans', system-ui, sans-serif" }}>Checking access…</div>;
+// /admin keeps its light look (internal tool): light colour-scheme, white page.
+const AdminWait = () => <div style={{ padding: 24, fontSize: 13, color: "#666", background: "white", colorScheme: "light", minHeight: "100vh", fontFamily: FONT }}>Checking access…</div>;
 
 // ─── App shell (layout + routes) ──────────────────────────────────
 export function AppShell() {
@@ -303,9 +323,11 @@ export function AppShell() {
   // The admin tool has its own header and no tab bar.
   if (isAdminPath) {
     return (
-      <Routes>
-        <Route path="/admin/*" element={adminElement} />
-      </Routes>
+      <div style={{ colorScheme: "light", background: "white", color: "#111", minHeight: "100vh" }}>
+        <Routes>
+          <Route path="/admin/*" element={adminElement} />
+        </Routes>
+      </div>
     );
   }
 
@@ -313,7 +335,7 @@ export function AppShell() {
     return (
       <Notice title="Couldn't check your access">
         Check your connection and try again.
-        <div><button type="button" onClick={beta.retry} style={{ marginTop: 14, background: C.green, color: "white", border: "none", borderRadius: 10, padding: "10px 20px", fontSize: 14, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Try again</button></div>
+        <div><button type="button" onClick={beta.retry} style={{ marginTop: 16, background: T.accent, color: T.onAccent, border: "none", borderRadius: 14, padding: "10px 22px", minHeight: 48, fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: "inherit" }}>Try again</button></div>
       </Notice>
     );
   }
@@ -328,26 +350,32 @@ export function AppShell() {
   const showHeaderSearch = access.search && !onHome && (!shell.full || activeTab === "learn");
   const showLearnNav = shell.full && LEARN_PATHS.has(pathname) && shell.learnNav.length > 1;
 
-  return (
-    <div style={{ display: "flex", flexDirection: "column", fontFamily: "'DM Sans', system-ui, sans-serif", minHeight: "100vh", background: C.cream }}>
+  // The big title on screens without their own header: the tab's name (Learn,
+  // ID, Community, My Profile), "Search" on /search; a single-screen visitor
+  // gets the section's name.
+  const tabLabel = tabByKey[activeTab] && tabByKey[activeTab].label;
+  const pageTitle = pathname === "/search" ? "Search" : (shell.full && tabLabel) || PATH_TITLES[pathname] || tabLabel || SITE;
 
-        {!isDetail && (
-          <div style={{ background: C.black, padding: "calc(env(safe-area-inset-top, 0px) + 10px) 20px 0" }}>
-            <div style={{ marginBottom: 14, display: "flex", alignItems: "center" }}>
-              <img src="/header-logo-dark.png" alt="All Things Reptile" onClick={() => { go(home); setSearchQuery(""); }} style={{ width: "100%", objectFit: "contain", cursor: "pointer" }} />
-            </div>
+  return (
+    <div data-theme={T.name} style={{ display: "flex", flexDirection: "column", fontFamily: FONT, minHeight: "100vh", background: T.bg, color: T.text, colorScheme: T.scheme }}>
+
+        {!isDetail && (onHome
+          ? <HomeHeader canSearch={access.search} onSearch={() => go("/search")} />
+          : (
+          <header style={{ padding: `${SAFE_TOP} ${SIZE.pad}px 0` }}>
+            <PageTitle>{pageTitle}</PageTitle>
             {showHeaderSearch && <SearchField
               placeholder="Search species, care guides, glossary..."
               value={searchQuery}
               onChange={onQuery}
               onClear={clearQuery}
-              autoFocus={pathname === "/search" && searchQuery.length > 0}
+              autoFocus={pathname === "/search"}
             />}
             {showLearnNav && <LearnNav items={shell.learnNav} active={pathname} onGo={go} />}
-          </div>
-        )}
+          </header>
+        ))}
 
-        <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", background: "white" }}>
+        <main style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
           <Routes>
             <Route path="/"              element={shell.full
               ? <HomeScreen shell={shell} canSearch={access.search} query={searchQuery} onQuery={onQuery} onClearQuery={clearQuery} onOpen={go} profileTab={tabByKey.profile} />
@@ -373,24 +401,30 @@ export function AppShell() {
             ))}
             <Route path="*"              element={toHome} />
           </Routes>
-        </div>
+        </main>
+
+        <footer style={{ textAlign: "center", fontSize: 11, lineHeight: "16px", color: T.muted, padding: showNav ? "8px 0 0" : "12px 0 calc(env(safe-area-inset-bottom, 0px) + 12px)" }}>© 2026 Amphibian Pty Ltd</footer>
 
         {showNav && <>
-        <div style={{ position: "fixed", bottom: 0, left: 0, right: 0, background: "white", borderTop: "0.5px solid #e8e8e4", display: "flex", flexDirection: "column", paddingTop: NAV.top, zIndex: 100 }}>
-          <nav aria-label="Main" style={{ display: "flex", width: "100%" }}>
-            {shell.tabs.map(t => (
-              <button key={t.key} type="button" data-testid={`tab-${t.key}`} onClick={() => go(t.path)} aria-current={activeTab === t.key ? "page" : undefined} style={{ flex: 1, minWidth: 0, background: "none", border: "none", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 3, cursor: "pointer", padding: 0, height: NAV.row, fontFamily: "inherit" }}>
-                <span aria-hidden="true" style={{ height: 24, display: "flex", alignItems: "center", color: activeTab === t.key ? C.green : C.muted }}><Icon name={t.icon} size={22} strokeWidth={activeTab === t.key ? 2.1 : 1.8} /></span>
-                <span style={{ fontSize: 10, lineHeight: "13px", color: activeTab === t.key ? C.green : C.muted, fontWeight: activeTab === t.key ? 700 : 400, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: "100%" }}>{t.label}</span>
+        {/* Clearance for the floating bar: its height, its offset from the
+            bottom (the home indicator's safe area) and a 16 px margin, so the
+            end of every screen clears it. */}
+        <div aria-hidden="true" data-testid="nav-clearance" style={{ height: NAV_CLEARANCE, flexShrink: 0 }} />
+        <nav aria-label="Main" style={{ position: "fixed", left: "50%", transform: "translateX(-50%)", width: `min(calc(100% - ${SIZE.navSide * 2}px), 480px)`, bottom: NAV_BOTTOM, height: SIZE.navH, boxSizing: "border-box", background: T.nav, borderRadius: SIZE.navH / 2, boxShadow: T.navShadow, display: "grid", gridTemplateColumns: `repeat(${shell.tabs.length}, minmax(0, 1fr))`, alignItems: "center", padding: "0 6px", zIndex: 100 }}>
+          {shell.tabs.map(t => {
+            const on = activeTab === t.key;
+            return (
+              <button key={t.key} type="button" data-testid={`tab-${t.key}`} onClick={() => go(t.path)} aria-current={on ? "page" : undefined} title={t.label}
+                style={{ position: "relative", height: SIZE.navH - 8, minWidth: 0, background: "none", border: "none", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", padding: 0, fontFamily: "inherit", borderRadius: 26 }}>
+                <span aria-hidden="true" style={{ width: 52, maxWidth: "100%", height: 44, borderRadius: 22, display: "flex", alignItems: "center", justifyContent: "center", background: on ? T.accent : "transparent", color: on ? T.onAccent : T.navIdle }}>
+                  <Icon name={t.icon} size={22} strokeWidth={2} />
+                </span>
+                <span style={SR_ONLY}>{t.label}</span>
               </button>
-            ))}
-          </nav>
-          <div style={{ textAlign: "center", fontSize: 9, lineHeight: `${NAV.footLine}px`, color: "#ccc", padding: `${NAV.footTop}px 0 ${NAV.footBottom}` }}>© 2026 Amphibian Pty Ltd</div>
-        </div>
-        {/* Same height as the fixed bar, so the end of every screen clears it. */}
-        <div style={{ height: `calc(${1 + NAV.top + NAV.row + NAV.footTop + NAV.footLine}px + ${NAV.footBottom})`, flexShrink: 0 }} />
+            );
+          })}
+        </nav>
         </>}
-        {!showNav && <div style={{ textAlign: "center", fontSize: 9, color: "#ccc", padding: "10px 0 calc(env(safe-area-inset-bottom, 0px) + 10px)", background: "white" }}>© 2026 Amphibian Pty Ltd</div>}
     </div>
   );
 }

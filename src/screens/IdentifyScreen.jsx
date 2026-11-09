@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { C } from "../constants/colours";
+import { T } from "../constants/theme";
+import Icon from "../components/Icon";
 import WarnBox from "../components/WarnBox";
 import IdFeedbackCard from "../components/IdFeedbackCard";
 import IdSuggestionCard, { NotNativeNotice } from "../components/IdSuggestionCard";
@@ -39,16 +40,16 @@ const toJpegDataUrl = (file) => new Promise((resolve, reject) => {
 
 const SafetyNotice = () => (
   <>
-    <div style={{ fontSize: 13, fontWeight: 700, color: "#333", marginBottom: 8 }}>{SUGGESTION_TEXT}</div>
+    <div style={{ fontSize: 14, fontWeight: 700, color: T.text, marginBottom: 10 }}>{SUGGESTION_TEXT}</div>
     <WarnBox type="red" title="⚠️ Wild snakes">{SNAKE_WARNING}</WarnBox>
   </>
 );
 
 const btn = (primary, disabled) => ({
-  background: primary ? C.green : "white",
-  color: primary ? "white" : C.green,
-  border: primary ? "none" : `1.5px solid ${C.green}`,
-  borderRadius: 10, padding: "10px 20px", fontSize: 14, fontWeight: 700, minHeight: 44,
+  background: primary ? T.accent : "transparent",
+  color: primary ? T.onAccent : T.text,
+  border: primary ? "none" : `1.5px solid ${T.line}`,
+  borderRadius: 14, padding: "10px 20px", fontSize: 15, fontWeight: 700, minHeight: 48,
   cursor: disabled ? "default" : "pointer", fontFamily: "inherit", opacity: disabled ? 0.5 : 1,
 });
 
@@ -119,21 +120,21 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
   const busy = status === "preparing" || status === "loading";
 
   return (
-    <div style={{ flex: 1, overflowY: "auto", padding: 16 }}>
+    <div style={{ flex: 1, padding: "4px 16px 16px" }}>
       <input ref={inputRef} type="file" accept="image/*" capture="environment" onChange={choosePhoto} style={{ display: "none" }} />
 
       {!photo ? (
-        <div style={{ background: "white", border: "1.5px dashed #e0e0dc", borderRadius: 14, padding: "32px 16px", textAlign: "center", marginBottom: 16 }}>
-          <div style={{ fontSize: 36, marginBottom: 10 }}>📷</div>
-          <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Identify a reptile or frog</div>
-          <div style={{ fontSize: 13, color: "#888", lineHeight: 1.5 }}>Take or choose a clear photo and our AI will suggest what it might be</div>
+        <div style={{ background: T.card, border: `1.5px dashed ${T.line}`, borderRadius: 18, padding: "32px 16px", textAlign: "center", marginBottom: 16 }}>
+          <div aria-hidden="true" style={{ width: 64, height: 64, borderRadius: 32, background: T.chipBg, color: T.accentText, display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 12px" }}><Icon name="camera" size={30} /></div>
+          <div style={{ fontSize: 17, fontWeight: 700, color: T.text, marginBottom: 4 }}>Identify a reptile or frog</div>
+          <div style={{ fontSize: 14, color: T.muted, lineHeight: 1.5 }}>Take or choose a clear photo and our AI will suggest what it might be</div>
           <button onClick={() => inputRef.current && inputRef.current.click()} disabled={busy} style={{ ...btn(true, busy), marginTop: 14 }}>
             {status === "preparing" ? "Preparing photo…" : "Take or choose a photo"}
           </button>
         </div>
       ) : (
-        <div style={{ background: "white", borderRadius: 14, border: "0.5px solid #e8e8e4", padding: 12, marginBottom: 16 }}>
-          <img src={photo} alt="The animal to identify" style={{ width: "100%", maxHeight: 320, objectFit: "contain", borderRadius: 10, background: C.cream, display: "block" }} />
+        <div style={{ background: T.card, borderRadius: 18, padding: 12, marginBottom: 16 }}>
+          <img src={photo} alt="The animal to identify" style={{ width: "100%", maxHeight: 320, objectFit: "contain", borderRadius: 12, background: T.bg, display: "block" }} />
           <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
             <button onClick={identify} disabled={busy} style={{ ...btn(true, busy), flex: 1 }}>
               {status === "loading" ? "Identifying…" : result ? "Identify again" : "Identify"}
@@ -141,7 +142,7 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
             <button onClick={() => inputRef.current && inputRef.current.click()} disabled={status === "preparing"} style={btn(false, status === "preparing")}>New photo</button>
           </div>
           {status === "loading" && (
-            <div style={{ fontSize: 12, color: "#888", textAlign: "center", marginTop: 10 }}>Looking closely — this usually takes a few seconds.</div>
+            <div style={{ fontSize: 13, color: T.muted, textAlign: "center", marginTop: 10 }}>Looking closely — this usually takes a few seconds.</div>
           )}
         </div>
       )}
@@ -152,7 +153,7 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
 
       {status === "done" && result && (
         <div style={{ marginTop: 6 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 10 }}>Suggestions</div>
+          <h2 style={{ margin: "0 0 10px", fontSize: 13, fontWeight: 700, color: T.muted, textTransform: "uppercase", letterSpacing: "0.08em" }}>Suggestions</h2>
 
           {result.subject === "not_reptile_or_frog" && (
             <WarnBox type="blue" title="No reptile or frog found">This photo doesn't seem to show a reptile or frog. Try a closer photo of the animal.</WarnBox>
@@ -167,8 +168,8 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
           ))}
 
           {result.note && (
-            <div style={{ fontSize: 12, color: "#777", lineHeight: 1.5, marginBottom: 10 }}>
-              <span style={{ fontWeight: 700, color: "#555" }}>Tip: </span>{result.note}
+            <div style={{ fontSize: 14, color: T.body, lineHeight: 1.5, marginBottom: 10 }}>
+              <span style={{ fontWeight: 700, color: T.text }}>Tip: </span>{result.note}
             </div>
           )}
 
@@ -176,12 +177,12 @@ const IdentifyScreen = ({ inviteCode, traitsBySpecies = {}, onRevoked, canOpenCa
 
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 4 }}>
             <button onClick={reset} style={btn(false, false)}>Start again</button>
-            <div style={{ flex: 1, fontSize: 11, color: C.red, lineHeight: 1.4 }}>{SHORT_REMINDER}</div>
+            <div style={{ flex: 1, fontSize: 13, color: T.no, lineHeight: 1.4 }}>{SHORT_REMINDER}</div>
           </div>
         </div>
       )}
 
-      <div style={{ fontSize: 11, color: "#777", lineHeight: 1.6, marginTop: 12, textAlign: "center" }}>
+      <div style={{ fontSize: 13, color: T.muted, lineHeight: 1.6, marginTop: 12, textAlign: "center" }}>
         Your photo is sent to our AI provider for this check only. We don't keep it unless you choose to save it with your feedback.
       </div>
     </div>

@@ -499,25 +499,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -811,25 +811,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -1757,25 +1757,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "The skin turns pale, dull or whitish all over a day or two before a shed, and the gecko may hide and refuse food. Most geckos shed in one go, often overnight, and eat the old skin — so finding no skin is normal."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Give a humid hide (a box with damp sphagnum moss or coir) and lightly mist one side of the enclosure when a shed is coming. Don't make an arid enclosure humid all over — the humid hide lets the gecko choose."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in geckos. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check every toe after each shed. If skin is stuck, put the gecko in a ventilated tub lined with damp, warm paper towel for 15–20 minutes, then ease the skin off gently with a damp cotton bud. Never pull."
        },
        {
         "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "text": "Geckos have no eyelids: a clear scale (the spectacle) covers each eye and comes off with the shed. If old skin stays over an eye, or the eye looks cloudy or sunken afterwards, don't try to remove it yourself — see a reptile vet."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your gecko alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Leave your gecko alone during a shed",
+       "text": "Avoid handling while your gecko is shedding — the new skin is delicate and handling adds stress. Never pull at skin that isn't ready to come away."
       }
      }
     ]
@@ -2053,25 +2053,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "The skin turns pale, dull or whitish all over a day or two before a shed, and the gecko may hide and refuse food. Most geckos shed in one go, often overnight, and eat the old skin — so finding no skin is normal."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Give a humid hide (a box with damp sphagnum moss or coir) and lightly mist one side of the enclosure when a shed is coming. Don't make an arid enclosure humid all over — the humid hide lets the gecko choose."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in geckos. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check every toe after each shed. If skin is stuck, put the gecko in a ventilated tub lined with damp, warm paper towel for 15–20 minutes, then ease the skin off gently with a damp cotton bud. Never pull."
        },
        {
         "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "text": "Geckos have no eyelids: a clear scale (the spectacle) covers each eye and comes off with the shed. If old skin stays over an eye, or the eye looks cloudy or sunken afterwards, don't try to remove it yourself — see a reptile vet."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your gecko alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Leave your gecko alone during a shed",
+       "text": "Avoid handling while your gecko is shedding — the new skin is delicate and handling adds stress. Never pull at skin that isn't ready to come away."
       }
      }
     ]
@@ -2332,25 +2332,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "The skin turns pale, dull or whitish all over a day or two before a shed, and the gecko may hide and refuse food. Most geckos shed in one go, often overnight, and eat the old skin — so finding no skin is normal."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Give a humid hide (a box with damp sphagnum moss or coir) and lightly mist one side of the enclosure when a shed is coming. Don't make an arid enclosure humid all over — the humid hide lets the gecko choose."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in geckos. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check every toe after each shed. If skin is stuck, put the gecko in a ventilated tub lined with damp, warm paper towel for 15–20 minutes, then ease the skin off gently with a damp cotton bud. Never pull."
        },
        {
         "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "text": "Geckos have no eyelids: a clear scale (the spectacle) covers each eye and comes off with the shed. If old skin stays over an eye, or the eye looks cloudy or sunken afterwards, don't try to remove it yourself — see a reptile vet."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your gecko alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Leave your gecko alone during a shed",
+       "text": "Avoid handling while your gecko is shedding — the new skin is delicate and handling adds stress. Never pull at skin that isn't ready to come away."
       }
      }
     ]
@@ -2927,25 +2927,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "The skin turns pale, dull or whitish all over a day or two before a shed, and the gecko may hide and refuse food. Most geckos shed in one go, often overnight, and eat the old skin — so finding no skin is normal."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Give a humid hide (a box with damp sphagnum moss or coir) and lightly mist one side of the enclosure when a shed is coming. Don't make an arid enclosure humid all over — the humid hide lets the gecko choose."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in geckos. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check every toe after each shed. If skin is stuck, put the gecko in a ventilated tub lined with damp, warm paper towel for 15–20 minutes, then ease the skin off gently with a damp cotton bud. Never pull."
        },
        {
         "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "text": "Geckos have no eyelids: a clear scale (the spectacle) covers each eye and comes off with the shed. If old skin stays over an eye, or the eye looks cloudy or sunken afterwards, don't try to remove it yourself — see a reptile vet."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your gecko alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Leave your gecko alone during a shed",
+       "text": "Avoid handling while your gecko is shedding — the new skin is delicate and handling adds stress. Never pull at skin that isn't ready to come away."
       }
      }
     ]
@@ -3228,25 +3228,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "The skin turns pale, dull or whitish all over a day or two before a shed, and the gecko may hide and refuse food. Most geckos shed in one go, often overnight, and eat the old skin — so finding no skin is normal."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Give a humid hide (a box with damp sphagnum moss or coir) and lightly mist one side of the enclosure when a shed is coming. Don't make an arid enclosure humid all over — the humid hide lets the gecko choose."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in geckos. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check every toe after each shed. If skin is stuck, put the gecko in a ventilated tub lined with damp, warm paper towel for 15–20 minutes, then ease the skin off gently with a damp cotton bud. Never pull."
        },
        {
         "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "text": "Geckos have no eyelids: a clear scale (the spectacle) covers each eye and comes off with the shed. If old skin stays over an eye, or the eye looks cloudy or sunken afterwards, don't try to remove it yourself — see a reptile vet."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your gecko alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Leave your gecko alone during a shed",
+       "text": "Avoid handling while your gecko is shedding — the new skin is delicate and handling adds stress. Never pull at skin that isn't ready to come away."
       }
      }
     ]
@@ -3546,25 +3546,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -3848,25 +3848,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -4149,25 +4149,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -4455,25 +4455,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -4766,25 +4766,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -5067,25 +5067,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -5368,25 +5368,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -5669,25 +5669,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -5981,25 +5981,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]
@@ -6299,25 +6299,25 @@
       "label": "Shedding basics",
       "signs": {
        "title": "Signs a shed is coming",
-       "text": "Eyes turn blue/milky, skin looks dull, behaviour changes (hiding more, reduced appetite, sometimes irritable). This pre-shed phase lasts 5–10 days."
+       "text": "Skin turns dull, pale or greyish, often in patches, and may start to lift at the edges. Some lizards eat less, bask more or hide for a day or two. Lizards shed in pieces over several days, not in one piece like a snake."
       },
       "good": {
        "title": "Good shed conditions",
-       "text": "Humidity at 60–70% during shed. Add a humid hide packed with damp sphagnum moss. A soak in shallow warm water helps if the snake seems stuck."
+       "text": "Keep the enclosure at its normal humidity for the species — don't make an arid enclosure humid all over. Instead give a humid hide (a box with damp sphagnum moss) or a damp sand corner the lizard can use when it needs to. Rough rocks and bark help it rub old skin off."
       },
       "problems": [
        {
-        "title": "Stuck shed (dysecdysis)",
-        "text": "Stuck shed around eyes (spectacles) or tail tip is the most common issue. Soak the snake in shallow warm water for 20–30 mins, then gently roll the shed off with a damp cloth. Never pull forcefully."
+        "title": "Retained shed on toes and tail tip",
+        "text": "The most common shedding problem in lizards. Rings of old skin tighten as they dry and can cut off blood flow, so toes and tail tips can be lost. Check the feet and tail after every shed. A shallow lukewarm soak for 10–15 minutes softens stuck skin; then ease it off gently with a damp cotton bud. Never pull skin that isn't lifting."
        },
        {
-        "title": "Retained eye caps",
-        "text": "If spectacles don't come off with the shed, do not attempt to remove them yourself — see a reptile vet. Retained eye caps can cause permanent eye damage."
+        "title": "Patchy or incomplete sheds",
+        "text": "Repeated stuck patches usually mean the enclosure is too dry, the lizard is dehydrated, or its diet or health is off. Check temperatures, the humid hide, water and body condition, and see a reptile vet if sheds keep going wrong."
        }
       ],
       "warn": {
-       "title": "Never handle during a shed",
-       "text": "Leave your lizard alone while it's in shed. They're vulnerable, often irritable, and have reduced vision. Wait until 2–3 days after the shed is complete."
+       "title": "Go gently during a shed",
+       "text": "Keep handling to a minimum while your lizard is shedding — the new skin underneath is delicate and some lizards are irritable. Never peel off skin that isn't ready to come away."
       }
      }
     ]

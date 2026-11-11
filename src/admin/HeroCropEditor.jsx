@@ -4,6 +4,7 @@ import { HERO_ASPECT, TALL_ASPECT, fitCrop, defaultCrop, moveCrop, zoomCrop, max
 import { HeroSlideshow, HeroFrameCtx } from "../components/SpeciesSlideshow";
 import { HeroText, HERO_TEXT_INSET } from "../components/SpeciesPage";
 import SNAPSHOT from "../data/speciesContent.json";
+import { N, smallBtn, hint } from "./ui";
 
 // ─── The pills and name over the photo (Rowan, 12 Nov 2026) ─────────
 // The species page lays its pills, name and latin over the bottom of the
@@ -39,7 +40,6 @@ export const useTextBand = (text, w = SMALLEST) => {
   ) : null;
   return [band, measurer];
 };
-import { N, smallBtn, hint } from "./ui";
 
 // ─── Crop editor (species hero, category card and banner) ────────
 // The whole photo with a fixed-aspect crop box over it (100 : 103 for the

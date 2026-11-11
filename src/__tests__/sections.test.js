@@ -195,7 +195,7 @@ describe("Home", () => {
   });
 
   test("status and audience: hidden and admin-only sections drop out; a tab with nothing left is hidden", async () => {
-    const rows = ["sightings", "ladders", "competitions", "venues"].map((key, i) => ({ key, status: i < 2 ? "hidden" : "soon", audience: i < 2 ? "testers" : "admin" }));
+    const rows = ["sightings", "ladders", "competitions", "venues", "expos", "breeders"].map((key, i) => ({ key, status: i < 2 ? "hidden" : "soon", audience: i < 2 ? "testers" : "admin" }));
     global.fetch = asServer(["id", "species"], { rows });
     await renderAt("/");
     expect(tabKeys()).toEqual(["home", "learn", "id", "profile"]);
@@ -251,7 +251,7 @@ describe("Learn, Community and My Profile", () => {
     global.fetch = asServer(["id", "species"]);
     await renderAt("/community");
     expect(within(screen.getByTestId("tab-grid-community")).getAllByRole("button").map(b => b.getAttribute("data-testid")))
-      .toEqual(["tile-sightings", "tile-ladders", "tile-competitions", "tile-venues"]);
+      .toEqual(["tile-sightings", "tile-ladders", "tile-competitions", "tile-venues", "tile-expos", "tile-breeders"]);
     await renderAt("/profile");
     expect(screen.getByTestId("planning-intro")).toHaveTextContent("Planning your first reptile?");
     expect(within(screen.getByTestId("tab-grid-profile")).getAllByRole("button")).toHaveLength(7);

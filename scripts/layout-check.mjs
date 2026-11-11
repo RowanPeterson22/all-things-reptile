@@ -130,7 +130,8 @@ function inspect() {
   if (sw > vw) out.hscroll = { scrollWidth: sw, innerWidth: vw };
 
   const nav = document.querySelector('nav[aria-label="Main"]');
-  const excluded = (el) => el.closest("[data-layout-decor],[data-layout-overlay]") || (nav && nav.contains(el));
+  const foot = document.querySelector("[data-layout-foot]");
+  const excluded = (el) => el.closest("[data-layout-decor],[data-layout-overlay]") || (nav && nav.contains(el)) || (foot && foot.contains(el));
   const visible = (el) => {
     for (let e = el; e && e !== document.documentElement; e = e.parentElement) {
       const cs = getComputedStyle(e);
@@ -235,12 +236,14 @@ function inspect() {
   }
 
   // The floating bar, scrolled to the very end: nothing under it.
-  if (nav) {
-    const n = nav.getBoundingClientRect();
+  // The same for the Amphibian credit band fixed beneath it.
+  for (const bar of [nav, foot]) {
+    if (!bar) continue;
+    const n = bar.getBoundingClientRect();
     for (const it of live) {
       const w = Math.min(it.r.right, n.right) - Math.max(it.r.left, n.left);
       const h = Math.min(it.r.bottom, n.bottom) - Math.max(it.r.top, n.top);
-      if (w > 1 && h > 1) out.underNav.push(label(it.el));
+      if (w > 1 && h > 1) out.underNav.push(label(it.el) + (bar === foot ? " (under credit)" : ""));
     }
   }
   return out;

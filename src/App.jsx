@@ -13,6 +13,7 @@ import TabPage from "./screens/TabPage";
 import ComingSoonScreen from "./screens/ComingSoonScreen";
 import LearnNav from "./components/LearnNav";
 import Icon from "./components/Icon";
+import AmphibianCredit from "./components/AmphibianCredit";
 import { useBetaAccess, usePublicLayout } from "./beta/betaAccess";
 import { useAdminAccess } from "./beta/adminAccess";
 import { accessFor } from "./constants/sections";
@@ -321,7 +322,7 @@ export function AppShell() {
           </Routes>
         </main>
 
-        <footer style={{ textAlign: "center", fontSize: 11, lineHeight: "16px", color: T.muted, padding: showNav ? "8px 0 0" : "12px 0 calc(env(safe-area-inset-bottom, 0px) + 12px)" }}>© 2026 Amphibian Pty Ltd</footer>
+        {!showNav && <AmphibianCredit />}
 
         {showNav && <>
         {/* Clearance for the floating bar: its height, its offset from the
@@ -342,6 +343,7 @@ export function AppShell() {
             );
           })}
         </nav>
+        <AmphibianCredit fixed />
         </>}
     </div>
   );

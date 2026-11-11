@@ -630,13 +630,13 @@ describe("app layout (admin-testers?scope=sections)", () => {
   });
 
   test("order: a full permutation of one tab, kept inside that tab's numbers", async () => {
-    const keys = ["venues", "sightings", "ladders", "competitions"];
+    const keys = ["venues", "sightings", "ladders", "competitions", "breeders", "expos"];
     const r = await edit({ order: { tab: "community", keys } });
     expect(r.statusCode).toBe(200);
     expect(r.body.sections.filter(x => x.tab === "community").map(x => x.key)).toEqual(keys);
     expect(row("venues").sort_order).toBe(70);
     expect((await edit({ order: { tab: "community", keys: ["venues"] } })).statusCode).toBe(400);
-    expect((await edit({ order: { tab: "community", keys: ["venues", "sightings", "ladders", "shortlist"] } })).statusCode).toBe(400);
+    expect((await edit({ order: { tab: "community", keys: ["venues", "sightings", "ladders", "competitions", "expos", "shortlist"] } })).statusCode).toBe(400);
   });
 
   test("tab labels and the Home block order", async () => {

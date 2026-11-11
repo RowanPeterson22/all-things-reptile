@@ -264,7 +264,7 @@ describe("/admin → Sections", () => {
     await renderAt("/admin/sections");
     await screen.findByText("Tab labels");
     await act(async () => { fireEvent.click(screen.getByLabelText("Move Venues up")); });
-    expect(global.fetch.patches.pop()).toEqual({ order: { tab: "community", keys: ["sightings", "ladders", "venues", "competitions"] } });
+    expect(global.fetch.patches.pop()).toEqual({ order: { tab: "community", keys: ["sightings", "ladders", "venues", "competitions", "expos", "breeders"] } });
     const row = screen.getByTestId("section-row-competitions");
     await act(async () => { fireEvent.click(within(row).getByLabelText("Featured on Home")); });
     expect(global.fetch.patches.pop()).toEqual({ featured: "competitions" });

@@ -64,6 +64,29 @@ describe("the snapshot", () => {
   });
 });
 
+describe("shedding text matches the animal", () => {
+  const shed = (d) => blocksOf(d).find(b => b.type === "shedding");
+  test("snakes keep the snake text", () => {
+    for (const d of SNAPSHOT.filter(x => x.type === "snake" && shed(x))) expect(JSON.stringify(shed(d))).toMatch(/spectacles/);
+  });
+  test("lizards, monitors and frogs never get snake advice or a blanket 60–70%", () => {
+    for (const d of SNAPSHOT.filter(x => ["lizard", "monitor", "gecko", "frog"].includes(x.type) && shed(x))) {
+      const text = JSON.stringify(shed(d));
+      expect([d.slug, /soak the snake|the snake seems stuck|60–70%/.test(text)]).toEqual([d.slug, false]);
+    }
+  });
+  test("geckos (no eyelids) keep the eye-cap warning; lizards and monitors (eyelids) don't", () => {
+    for (const d of SNAPSHOT.filter(x => shed(x))) {
+      const text = JSON.stringify(shed(d));
+      if (d.type === "gecko") expect(text).toMatch(/no eyelids/);
+      if (d.type === "lizard" || d.type === "monitor") expect(text).not.toMatch(/eye cap|spectacle/);
+    }
+  });
+  test("turtles have no shedding block", () => {
+    for (const d of SNAPSHOT.filter(x => x.type === "turtle")) expect(shed(d)).toBeUndefined();
+  });
+});
+
 describe("the shape check refuses rule-breaking edits", () => {
   const ackie = bySlug["ackie-monitor"];
   test.each([

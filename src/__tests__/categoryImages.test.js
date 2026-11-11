@@ -18,6 +18,11 @@ const { decode } = require("../../lib/imageResize");
 const { clearForPhoto } = require("../../lib/categoryImages");
 const jpegJs = require("jpeg-js");
 
+// These tests cover the public (post-launch) behaviour of /api/species-photos;
+// the pre-launch gate on it is tested in speciesContentApi.test.js.
+beforeAll(() => { process.env.ATR_PUBLIC = "true"; });
+afterAll(() => { delete process.env.ATR_PUBLIC; });
+
 const URL_ = "https://ledcvbyiqkygcdleucqo.supabase.co";
 const KEY = "sb_secret_test";
 const ADMIN_CODE = "A".repeat(43);

@@ -588,6 +588,11 @@ describe("focus point", () => {
 
 // ─── Hero (main image) and hero crop ──────────────────────────────
 const { validateHeroCrop, minCropWidth, maxCropWidth } = require("../../lib/heroCrop");
+
+// These tests cover the public (post-launch) behaviour of /api/species-photos;
+// the pre-launch gate on it is tested in speciesContentApi.test.js.
+beforeAll(() => { process.env.ATR_PUBLIC = "true"; });
+afterAll(() => { delete process.env.ATR_PUBLIC; });
 const patchBodies = () => fakeFetch.mock.calls.filter(([u, init]) => init && init.method === "PATCH" && new URL(u).pathname === "/rest/v1/reference_photos").map(([, init]) => JSON.parse(init.body));
 
 describe("hero: one per species", () => {

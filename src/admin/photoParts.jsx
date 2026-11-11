@@ -197,7 +197,7 @@ export const PublicControls = ({ photo, busy, change, fallbackHero = false }) =>
 // ─── One reference photo, with every change going through PATCH /api/admin-photos ──
 // onCropChange(crop | null): the crop being dragged (null when the editor
 // closes), so the Species editor's preview can follow it before it's saved.
-export const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone, fallbackHero = false, onCropChange, onClose }) => {
+export const PhotoCard = ({ photo, heroText, api, species, catalogue, onChanged, onGone, fallbackHero = false, onCropChange, onClose }) => {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [notes, setNotes] = useState(photo.notes || "");
@@ -276,7 +276,7 @@ export const PhotoCard = ({ photo, api, species, catalogue, onChanged, onGone, f
         )}
 
         {cropping && photo.url && (
-          <HeroCropEditor photo={photo} busy={busy} onCancel={() => setCroppingAndTell(false)} onChange={onCropChange}
+          <HeroCropEditor photo={photo} heroText={heroText} busy={busy} onCancel={() => setCroppingAndTell(false)} onChange={onCropChange}
             onSave={async (crop) => { if (await change({ hero_crop: crop })) setCroppingAndTell(false); }} />
         )}
 

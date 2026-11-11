@@ -89,7 +89,7 @@ const PublicRow = ({ photo, index, count, busy, fallback, onMove, onChange, open
 // ─── The panel ────────────────────────────────────────────────────
 // appSlug: the content slug (D4); indexSlug: the library's slug for it.
 // onPreview(photos | null): the preview's photos (null until loaded).
-const PhotosPanel = ({ api, appSlug, indexSlug, name, species, bySlug, catalogue, counts, refreshCounts, onPreview }) => {
+const PhotosPanel = ({ api, appSlug, indexSlug, name, heroText, species, bySlug, catalogue, counts, refreshCounts, onPreview }) => {
   const [pub, setPub] = useState(null);
   const [ref, setRef] = useState([]);
   const [filter, setFilter] = useState("reference");
@@ -166,7 +166,7 @@ const PhotosPanel = ({ api, appSlug, indexSlug, name, species, bySlug, catalogue
   const fallbackId = heroFallbackId(pub);
   const c = (counts && counts[indexSlug]) || { active: 0, hidden: 0, rejected: 0 };
   const cardFor = (p, where) => (
-    <PhotoCard key={`${where}-${p.id}`} photo={p} api={api} species={species} catalogue={catalogue} onChanged={onChanged} onGone={onGone}
+    <PhotoCard key={`${where}-${p.id}`} photo={p} heroText={heroText} api={api} species={species} catalogue={catalogue} onChanged={onChanged} onGone={onGone}
       fallbackHero={p.id === fallbackId} onClose={() => setOpen(null)}
       onCropChange={(crop) => setLive(crop ? { id: p.id, crop } : null)} />
   );

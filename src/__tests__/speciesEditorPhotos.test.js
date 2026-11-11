@@ -407,6 +407,24 @@ describe("Photos panel", () => {
   });
 });
 
+  test("the crop box shades where the pills and name sit, and the preview draws this species' real pills and name at 320 or 390", async () => {
+    await openEditor();
+    await waitFor(() => expect(previewSlides()).toHaveLength(2));
+    fireEvent.click(within(screen.getByTestId(`public-photo-${P1}`)).getByRole("button", { name: "Edit" }));
+    fireEvent.click(await panel().findByRole("button", { name: "Hero crop" }));
+    const band = panel().getByTestId("hero-crop-text-band");
+    expect(within(panel().getByTestId("hero-crop-box")).getByTestId("hero-crop-text-band")).toBe(band);
+    expect(parseFloat(band.style.height)).toBeGreaterThan(20); // a share of the hero, from the bottom
+    const editor = within(panel().getByTestId("hero-crop-editor"));
+    const preview = editor.getByTestId("tall-hero-preview");
+    expect(preview.style.maxWidth).toBe("320px"); // smallest phone first
+    expect(within(preview).getByRole("heading", { name: "Ackie Monitor" })).toBeInTheDocument();
+    expect(within(preview).getByTestId("species-badges")).toHaveTextContent(/Intermediate/i);
+    expect(within(preview).getByText("Varanus acanthurus")).toBeInTheDocument();
+    fireEvent.click(editor.getByTestId("hero-crop-preview-390"));
+    expect(editor.getByTestId("tall-hero-preview").style.maxWidth).toBe("390px");
+  });
+
 // ─── The photo library links to the editor ────────────────────────
 describe("photo library", () => {
   test("each app species' row links to Edit in Species editor; others don't", () => {

@@ -286,7 +286,7 @@ export const SpeciesContentEditor = ({ api, species, bySlug, counts, catalogue, 
       {species && (
         <div style={{ ...card, padding: "4px 14px 12px", marginBottom: 16 }}>
           <div style={sectionLabel}>Photos</div>
-          <PhotosPanel api={api} appSlug={slug} indexSlug={indexSlug} name={local.name} species={species} bySlug={bySlug} catalogue={catalogue}
+          <PhotosPanel api={api} appSlug={slug} indexSlug={indexSlug} name={local.name} heroText={{ name: local.name, latin: local.latin, badges: local.badges }} species={species} bySlug={bySlug} catalogue={catalogue}
             counts={counts} refreshCounts={refreshCounts} onPreview={setPreviewPhotos} />
         </div>
       )}

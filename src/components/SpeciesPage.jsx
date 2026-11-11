@@ -28,14 +28,19 @@ const pill = (lead) => ({
 // (tabLabel, shared with /admin, lives with the content shape).
 
 // Pills, name, latin (and other names when a page gives them) over the photo.
-const HeroText = ({ name, latin, aka, badges }) => (
+// Exported for /admin's hero crop editor, which measures and previews it;
+// nameSize lets that preview size the name by its own width (cqw), not the
+// admin window's. HERO_TEXT_INSET is where the hero places it.
+export const HERO_TEXT_INSET = { left: 20, right: 20, bottom: 34 };
+export const HERO_NAME_SIZE = "clamp(28px, 8.7vw, 34px)";
+export const HeroText = ({ name, latin, aka, badges, nameSize = HERO_NAME_SIZE }) => (
   <div style={{ display: "flex", flexDirection: "column", gap: 4, color: T.onAccent }}>
     {badges.length > 0 && (
       <div data-testid="species-badges" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 6 }}>
         {badges.map(([label], i) => <span key={label} style={pill(i === 0)}>{label}</span>)}
       </div>
     )}
-    <h1 style={{ margin: 0, fontSize: "clamp(28px, 8.7vw, 34px)", lineHeight: 1.08, fontWeight: 700, letterSpacing: "-0.02em", overflowWrap: "break-word" }}>{name}</h1>
+    <h1 style={{ margin: 0, fontSize: nameSize, lineHeight: 1.08, fontWeight: 700, letterSpacing: "-0.02em", overflowWrap: "break-word" }}>{name}</h1>
     <div style={{ fontSize: 15, fontStyle: "italic", color: T.photoMuted }}>{latin}</div>
     {aka && <div style={{ fontSize: 13, color: T.muted }}>Also called {aka}</div>}
   </div>

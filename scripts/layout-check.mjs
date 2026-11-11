@@ -303,6 +303,8 @@ const ROUTES = [
   { label: "My Profile", url: "/profile" },
   { label: "Coming soon: Sightings", url: "/community/sightings" },
   { label: "Coming soon: Which reptile suits me?", url: "/profile/which-reptile" },
+  { label: "Customise Home", url: "/profile/home" },
+  { label: "Menu (☰) open", url: "/", after: async (p) => { await p.click('[data-testid="header-menu"]'); await wait(p, 200); } },
 ];
 
 // --selftest: plant three faults on Home; the run must report all three.
@@ -422,6 +424,8 @@ async function shots(browser, dir) {
     ["Coming soon: Sightings", "17-coming-soon.png"],
     ["Search: python", "18-search.png"],
     ["Community", "19-community.png"],
+    ["Customise Home", "23-customise-home.png"],
+    ["Menu (☰) open", "24-menu.png"],
   ]);
   await at(320, [[ackie, "20-ackie-overview-320.png"], ["Home", "21-home-320.png"]]);
   // The viewport only (not full page) at 390, to show the floating bar over content.

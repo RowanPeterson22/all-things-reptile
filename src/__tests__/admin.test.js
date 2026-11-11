@@ -590,7 +590,7 @@ describe("app layout (admin-testers?scope=sections)", () => {
     expect(keys).toEqual(expect.arrayContaining(["id", "sightings", "reminders", "account"]));
     expect(r.body.sections.find(x => x.key === "sightings")).toMatchObject({ tab: "community", built: false, status: "soon", audience: "testers", defaultTitle: "Sightings", title: null });
     expect(r.body.tabs.map(t => [t.key, t.defaultLabel])).toEqual([["home", "Home"], ["learn", "Learn"], ["id", "ID"], ["community", "Community"], ["profile", "My Profile"]]);
-    expect(r.body.homeBlocks).toEqual(["search", "personal", "featured", "explore"]);
+    expect(r.body.homeBlocks).toEqual(["personal", "featured", "explore"]);
   });
 
   test("placeholders can't go live; AI ID can't be public; bad values are refused", async () => {
@@ -630,7 +630,7 @@ describe("app layout (admin-testers?scope=sections)", () => {
   });
 
   test("order: a full permutation of one tab, kept inside that tab's numbers", async () => {
-    const keys = ["venues", "sightings", "ladders", "competitions", "breeders", "expos"];
+    const keys = ["venues", "sightings", "ladders", "competitions", "breeders", "expos", "snake-catchers", "societies"];
     const r = await edit({ order: { tab: "community", keys } });
     expect(r.statusCode).toBe(200);
     expect(r.body.sections.filter(x => x.tab === "community").map(x => x.key)).toEqual(keys);
@@ -646,10 +646,10 @@ describe("app layout (admin-testers?scope=sections)", () => {
     expect(r.body.tabs.find(t => t.key === "profile").label).toBe("Me");
     expect((await edit({ tabs: { profile: "A label far too long" } })).statusCode).toBe(400);
     expect((await edit({ tabs: { shop: "Shop" } })).statusCode).toBe(400);
-    r = await edit({ homeBlocks: ["personal", "search", "explore", "featured"] });
-    expect(r.body.homeBlocks).toEqual(["personal", "search", "explore", "featured"]);
+    r = await edit({ homeBlocks: ["personal", "explore", "featured"] });
+    expect(r.body.homeBlocks).toEqual(["personal", "explore", "featured"]);
     expect(db.appLayout.tab_labels).toEqual({ profile: "Me" });
-    for (const bad of [["search"], ["search", "search", "explore", "featured"], ["search", "personal", "featured", "ads"]]) {
+    for (const bad of [["explore"], ["explore", "explore", "featured"], ["personal", "featured", "ads"], ["search", "personal", "featured", "explore"]]) {
       expect((await edit({ homeBlocks: bad })).statusCode).toBe(400);
     }
   });

@@ -100,12 +100,14 @@ describe("shell: tabs, Home and routes by section", () => {
     expect(screen.queryByText(/Coming soon/)).toBeNull();
   });
 
-  test("search lists only the groups a tester can open; Home's search opens /search", async () => {
+  test("search lists only the groups a tester can open; the header's round search button opens /search", async () => {
     window.localStorage.setItem(STORAGE_KEY, CODE);
     global.fetch = tester(["species", "care", "search"]);
     await renderAt("/");
-    fireEvent.change(within(screen.getByTestId("home-search")).getByPlaceholderText(/Search species/), { target: { value: "python" } });
+    expect(screen.queryByPlaceholderText(/Search species/)).toBeNull(); // no search bar on Home
+    await act(async () => { fireEvent.click(screen.getByTestId("header-search")); });
     expect(where).toBe("/search");
+    fireEvent.change(screen.getByPlaceholderText(/Search species/), { target: { value: "python" } });
     expect(screen.getByText("Species")).toBeInTheDocument();
     expect(screen.queryByText("Glossary")).toBeNull();
     expect(screen.getByTestId("tab-learn")).toHaveAttribute("aria-current", "page");
@@ -160,13 +162,15 @@ describe("shell: tabs, Home and routes by section", () => {
 describe("Home", () => {
   beforeEach(() => window.localStorage.setItem(STORAGE_KEY, CODE));
 
-  test("blocks in the default order: search, planning card, explore tiles with Coming soon badges", async () => {
+  test("blocks in the default order: planning card, explore tiles with Coming soon badges; wide logo, search and menu buttons", async () => {
     global.fetch = asServer(["id", "species", "care", "search"]);
     await renderAt("/");
     const blocks = [...screen.getByTestId("home").querySelectorAll("[data-block]")].map(b => b.getAttribute("data-block"));
-    // Search leads, in the header; then personal and explore (nothing featured by default).
-    expect(screen.getByTestId("home").firstChild).toBe(screen.getByTestId("home-search"));
+    // Personal and explore (nothing featured by default); search is the header button.
     expect(blocks).toEqual(["personal", "explore"]);
+    expect(screen.getByTestId("logo-wide")).toBeInTheDocument();
+    expect(screen.getByTestId("header-search")).toBeInTheDocument();
+    expect(screen.getByTestId("header-menu")).toBeInTheDocument();
     expect(screen.getByTestId("planning-card")).toHaveTextContent("Planning your first reptile?");
     expect(screen.getByText("Explore")).toBeInTheDocument();
     expect(within(screen.getByTestId("tile-sightings")).getByText("Coming soon")).toBeInTheDocument();
@@ -177,14 +181,70 @@ describe("Home", () => {
     expect(where).toBe("/profile");
   });
 
+  test("☰ menu lists Home's tiles with their badges, opens a section and closes; other screens show the square mark", async () => {
+    global.fetch = asServer(["id", "species", "care", "search"]);
+    await renderAt("/");
+    await act(async () => { fireEvent.click(screen.getByTestId("header-menu")); });
+    const sheet = screen.getByTestId("menu-sheet");
+    expect(within(sheet).getByTestId("menu-species")).toBeInTheDocument();
+    expect(within(sheet).getByTestId("menu-expos")).toHaveTextContent("Coming soon");
+    expect(within(sheet).getByTestId("menu-breeders")).toHaveTextContent("Breeder index");
+    expect(document.activeElement).toBe(screen.getByTestId("menu-close"));
+    await act(async () => { fireEvent.click(within(sheet).getByTestId("menu-care")); });
+    expect(where).toBe("/care");
+    expect(screen.queryByTestId("menu-sheet")).toBeNull();
+    expect(screen.getByTestId("logo-mark")).toBeInTheDocument();
+    expect(screen.queryByTestId("logo-wide")).toBeNull();
+    expect(screen.queryByPlaceholderText(/Search species/)).toBeNull(); // the field only lives on /search
+    await act(async () => { fireEvent.click(screen.getByTestId("header-menu")); });
+    await act(async () => { fireEvent.keyDown(document, { key: "Escape" }); });
+    expect(screen.queryByTestId("menu-sheet")).toBeNull();
+  });
+
+  test("Customise Home: hide and reorder Home's tiles from My Profile; Home only, saved on the device, Reset restores", async () => {
+    global.fetch = asServer(["id", "species", "care", "search"]);
+    await renderAt("/profile");
+    await act(async () => { fireEvent.click(screen.getByTestId("edit-home")); });
+    expect(where).toBe("/profile/home");
+    const list = screen.getByTestId("home-edit-list");
+    const order = () => [...list.querySelectorAll("li")].map(li => li.getAttribute("data-testid").replace("home-edit-", ""));
+    expect(order().slice(0, 2)).toEqual(["species", "care"]);
+    await act(async () => { fireEvent.click(screen.getByLabelText("Show Sightings on Home")); });
+    await act(async () => { fireEvent.click(screen.getByLabelText("Move Care guides up")); });
+    expect(order().slice(0, 2)).toEqual(["care", "species"]);
+    expect(screen.getByLabelText("Move Care guides up")).toBeDisabled();
+    expect(JSON.parse(window.localStorage.getItem("atr_home_tiles_v1")).hidden).toEqual(["sightings"]);
+    await act(async () => { fireEvent.click(screen.getByTestId("tab-home")); });
+    const tiles = [...screen.getByTestId("explore-grid").querySelectorAll("button")].map(b => b.getAttribute("data-testid"));
+    expect(tiles.slice(0, 2)).toEqual(["tile-care", "tile-species"]);
+    expect(tiles).not.toContain("tile-sightings");
+    // Community and the menu still list it.
+    await act(async () => { fireEvent.click(screen.getByTestId("header-menu")); });
+    expect(screen.getByTestId("menu-sightings")).toBeInTheDocument();
+    await act(async () => { fireEvent.click(screen.getByTestId("menu-close")); });
+    await act(async () => { fireEvent.click(screen.getByTestId("home-edit-link")); });
+    await act(async () => { fireEvent.click(screen.getByTestId("home-edit-reset")); });
+    expect(window.localStorage.getItem("atr_home_tiles_v1")).toBeNull();
+    window.localStorage.setItem("atr_home_tiles_v1", "not json");
+    await renderAt("/");
+    expect(screen.getByTestId("explore-grid")).toBeInTheDocument();
+  });
+
+  test("species pages carry the search and ☰ buttons on the photo", async () => {
+    global.fetch = asServer(["id", "species", "care", "search"]);
+    await renderAt("/species/ackie-monitor");
+    expect(screen.getByTestId("header-search")).toBeInTheDocument();
+    expect(screen.getByTestId("header-menu")).toBeInTheDocument();
+  });
+
   test("admin's block order, featured card, titles and tab labels apply", async () => {
     global.fetch = asServer(["id", "species", "search"], {
       rows: [{ key: "competitions", status: "soon", audience: "testers", featured: true, title: "Calendar comp", blurb: "Enter the 2027 ATR calendar" }],
-      layout: { tab_labels: { profile: "Me" }, home_blocks: ["featured", "explore", "search", "personal"] },
+      layout: { tab_labels: { profile: "Me" }, home_blocks: ["featured", "explore", "search", "personal"] }, // a stored "search" is ignored
     });
     await renderAt("/");
     const blocks = [...screen.getByTestId("home").querySelectorAll("[data-block]")].map(b => b.getAttribute("data-block"));
-    expect(blocks).toEqual(["featured", "explore", "search", "personal"]);
+    expect(blocks).toEqual(["featured", "explore", "personal"]);
     expect(screen.getByTestId("featured-card")).toHaveTextContent("Calendar comp");
     expect(screen.getByTestId("featured-card")).toHaveTextContent("Coming soon");
     expect(screen.getByTestId("tab-profile")).toHaveTextContent("Me");
@@ -195,7 +255,7 @@ describe("Home", () => {
   });
 
   test("status and audience: hidden and admin-only sections drop out; a tab with nothing left is hidden", async () => {
-    const rows = ["sightings", "ladders", "competitions", "venues", "expos", "breeders"].map((key, i) => ({ key, status: i < 2 ? "hidden" : "soon", audience: i < 2 ? "testers" : "admin" }));
+    const rows = ["sightings", "ladders", "competitions", "venues", "expos", "breeders", "snake-catchers", "societies"].map((key, i) => ({ key, status: i < 2 ? "hidden" : "soon", audience: i < 2 ? "testers" : "admin" }));
     global.fetch = asServer(["id", "species"], { rows });
     await renderAt("/");
     expect(tabKeys()).toEqual(["home", "learn", "id", "profile"]);
@@ -251,7 +311,7 @@ describe("Learn, Community and My Profile", () => {
     global.fetch = asServer(["id", "species"]);
     await renderAt("/community");
     expect(within(screen.getByTestId("tab-grid-community")).getAllByRole("button").map(b => b.getAttribute("data-testid")))
-      .toEqual(["tile-sightings", "tile-ladders", "tile-competitions", "tile-venues", "tile-expos", "tile-breeders"]);
+      .toEqual(["tile-sightings", "tile-ladders", "tile-competitions", "tile-venues", "tile-expos", "tile-breeders", "tile-snake-catchers", "tile-societies"]);
     await renderAt("/profile");
     expect(screen.getByTestId("planning-intro")).toHaveTextContent("Planning your first reptile?");
     expect(within(screen.getByTestId("tab-grid-profile")).getAllByRole("button")).toHaveLength(7);

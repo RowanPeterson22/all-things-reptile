@@ -3,8 +3,8 @@ import { T, CREDIT_H } from "../constants/theme";
 
 // The Amphibian Pty Ltd credit, as on the store's password page
 // (allthingsreptile.com.au/password, sections/password-content.liquid):
-// the frog mark in front of the app's own "© <year> Amphibian Pty Ltd"
-// (year from the device clock, so it rolls over on 1 January), linking to
+// the frog mark, "Amphibian Pty Ltd" in bold, "- © <year>" (year from the
+// device clock, so it rolls over on 1 January), linking to
 // amphibian.com.au, orange on hover. The frog is the store's own inline SVG
 // path, unchanged (viewBox 0 0 40 46.8), drawn in currentColor.
 //
@@ -25,7 +25,7 @@ function CreditLink() {
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 46.8" width="16" height="19" aria-hidden="true" focusable="false" style={{ fill: "currentColor", flexShrink: 0 }}>
         <path d={FROG} />
       </svg>
-      <span>© {new Date().getFullYear()} Amphibian Pty Ltd</span>
+      <span><strong style={{ fontWeight: 700 }}>Amphibian Pty Ltd</strong> - © {new Date().getFullYear()}</span>
     </a>
   );
 }
@@ -33,7 +33,7 @@ function CreditLink() {
 export default function AmphibianCredit({ fixed = false }) {
   if (fixed) {
     return (
-      <footer data-layout-foot style={{ position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 99, background: T.bg, display: "flex", justifyContent: "center", alignItems: "center", height: CREDIT_H, boxSizing: "content-box", paddingBottom: "max(6px, env(safe-area-inset-bottom, 0px))" }}>
+      <footer data-layout-foot style={{ position: "fixed", left: 0, right: 0, bottom: 0, zIndex: 99, background: T.bg, display: "flex", justifyContent: "center", alignItems: "flex-end", height: CREDIT_H, boxSizing: "content-box", paddingBottom: "max(6px, env(safe-area-inset-bottom, 0px))" }}>
         <CreditLink />
       </footer>
     );

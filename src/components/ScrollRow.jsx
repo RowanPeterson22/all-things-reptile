@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { T } from "../constants/theme";
 
 // ─── ScrollRow ───────────────────────────────────────────────────
 // A horizontally scrolling row that looks scrollable on a phone: the edge with
 // more content fades out and shows a small chevron button (tap to scroll).
 // The fade is a mask on the row itself, so it works on any background.
 // tone: "light" (row sits on white, /admin), "dark" (row sits on a coloured
-// header, /admin) or "ink" (the public app's dark design: a #2A2A2A disc).
+// header, /admin) or "ink" (the public app's dark design: a plain line
+// chevron over the fade, no disc; Rowan, 11 Nov 2026: keep arrows simple).
 // Drop-in for a `display: flex; overflowX: auto` div: pass its style through.
 // Other props (data-testid, role, aria-label…) go on the scrolling element.
 
@@ -68,6 +70,12 @@ const ScrollRow = ({ style = {}, tone = "light", children, label = "More", ...re
     boxShadow: tone === "ink" ? "0 2px 8px rgba(0,0,0,0.6)" : tone === "dark" ? "none" : "0 1px 4px rgba(0,0,0,0.18)",
   };
 
+  const chevron = (dir) => (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={T.text} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", margin: "0 4px" }}>
+      <path d={dir < 0 ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"} />
+    </svg>
+  );
+
   return (
     <div style={{ position: "relative", margin }}>
       <div
@@ -79,8 +87,8 @@ const ScrollRow = ({ style = {}, tone = "light", children, label = "More", ...re
       >
         {children}
       </div>
-      {edges.left && <button type="button" data-layout-overlay="" aria-label={`Scroll back`} onClick={() => nudge(-1)} style={btn(-1)}><span style={disc}>‹</span></button>}
-      {edges.right && <button type="button" data-layout-overlay="" aria-label={`${label}: scroll for more`} onClick={() => nudge(1)} style={btn(1)}><span style={disc}>›</span></button>}
+      {edges.left && <button type="button" data-layout-overlay="" aria-label={`Scroll back`} onClick={() => nudge(-1)} style={btn(-1)}>{tone === "ink" ? chevron(-1) : <span style={disc}>‹</span>}</button>}
+      {edges.right && <button type="button" data-layout-overlay="" aria-label={`${label}: scroll for more`} onClick={() => nudge(1)} style={btn(1)}>{tone === "ink" ? chevron(1) : <span style={disc}>›</span>}</button>}
     </div>
   );
 };

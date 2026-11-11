@@ -7,6 +7,7 @@ import { pickHero, othersThan, TALL_H } from "./heroCrop";
 import Segmented from "./Segmented";
 import { tabLabel } from "../data/speciesContentShape";
 import { RoundBack } from "./BackButton";
+import { HeaderActions } from "./AppChrome";
 
 // ─── Species page shell ───────────────────────────────────────────
 // The dark design: the hero is the slideshow (tall photo, dots on it, one ⓘ
@@ -58,7 +59,13 @@ const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabCo
   const [broken, setBroken] = useState({});
   const picked = pickHero(photos);
   const ordered = (picked ? [picked, ...othersThan(photos, picked)] : []).filter(p => !broken[p.id || p.url]);
-  const back = <RoundBack onClick={onBack} label={backLabel} />;
+  // Back on the left, the shell's search and ☰ on the right, over the photo.
+  const back = (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+      <RoundBack onClick={onBack} label={backLabel} />
+      <HeaderActions onPhoto />
+    </div>
+  );
   const text = <HeroText name={name} latin={latin} aka={aka} badges={badges} />;
   return (
     <div style={{ flex: 1 }}>
@@ -67,7 +74,7 @@ const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabCo
       ) : (
         <div data-testid="species-hero-fallback" style={{ position: "relative", width: "100%", height: `calc(${TALL_H} * 0.8)`, minHeight: 280, background: `linear-gradient(to bottom, ${T.cardHi}, ${T.bg})`, overflow: "hidden" }}>
           <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, top: "18%", textAlign: "center", fontSize: 84, lineHeight: 1 }}>{emoji}</div>
-          <div style={{ position: "absolute", top: "calc(env(safe-area-inset-top, 0px) + 12px)", left: 14 }}>{back}</div>
+          <div style={{ position: "absolute", top: "calc(env(safe-area-inset-top, 0px) + 12px)", left: 14, right: 14 }}>{back}</div>
           <div style={{ position: "absolute", left: 20, right: 20, bottom: 34 }}>{text}</div>
         </div>
       )}

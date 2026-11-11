@@ -8,12 +8,11 @@
     { "key": "profile",   "label": "My Profile", "icon": "user", "path": "/profile" }
   ],
   "homeBlocks": [
-    { "key": "search",   "label": "Search bar" },
     { "key": "personal", "label": "Personal (my animals, reminders, shopping list)" },
     { "key": "featured", "label": "Featured card" },
     { "key": "explore",  "label": "Explore (section tiles)" }
   ],
-  "defaultHomeBlocks": ["search", "personal", "featured", "explore"],
+  "defaultHomeBlocks": ["personal", "featured", "explore"],
   "sections": [
     { "key": "id",        "label": "ID Reptile",            "tab": "id",    "path": "/id",        "title": "ID a reptile",   "blurb": "Snap a photo for a suggested species (beta)", "icon": "camera", "built": true, "perTester": true, "tile": true,  "neverPublic": true, "status": "live", "audience": "testers" },
     { "key": "species",   "label": "Species (Browse and species pages)", "tab": "learn", "path": "/species", "title": "Species", "blurb": "Australian natives, with a care sheet for each", "icon": "lizard", "built": true, "perTester": true, "tile": true, "status": "live", "audience": "everyone" },
@@ -26,9 +25,11 @@
     { "key": "sightings",      "tab": "community", "path": "/community/sightings",    "title": "Sightings",               "blurb": "Log wild and captive sightings", "icon": "binoculars", "built": false, "tile": true, "status": "soon", "audience": "testers" },
     { "key": "ladders",        "tab": "community", "path": "/community/ladders",      "title": "Sighting ladders",        "blurb": "Who has spotted the most species", "icon": "ladder", "built": false, "tile": true, "status": "soon", "audience": "testers" },
     { "key": "competitions",   "tab": "community", "path": "/community/competitions", "title": "Competitions",            "blurb": "Photo comps, like the ATR calendar", "icon": "trophy", "built": false, "tile": true, "status": "soon", "audience": "testers" },
-    { "key": "venues",         "tab": "community", "path": "/community/venues",       "title": "Venues",                  "blurb": "Zoos, wildlife parks and sanctuaries", "icon": "pin", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "venues",         "tab": "community", "path": "/community/venues",       "title": "Zoos & Sanctuaries",      "blurb": "Zoos, wildlife parks and sanctuaries", "icon": "pin", "built": false, "tile": true, "status": "soon", "audience": "testers" },
     { "key": "expos",          "tab": "community", "path": "/community/expos",        "title": "Expos",                   "blurb": "Reptile expos and shows around Australia", "icon": "calendar", "built": false, "tile": true, "status": "soon", "audience": "testers" },
     { "key": "breeders",       "tab": "community", "path": "/community/breeders",     "title": "Breeder index",           "blurb": "Find breeders by species and state", "icon": "egg", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "snake-catchers", "tab": "community", "path": "/community/snake-catchers", "title": "Local snake catchers", "blurb": "Find a snake catcher near you", "icon": "phone", "built": false, "tile": true, "status": "soon", "audience": "testers" },
+    { "key": "societies",      "tab": "community", "path": "/community/herp-societies", "title": "Herp societies",          "blurb": "Herpetological societies around Australia", "icon": "users", "built": false, "tile": true, "status": "soon", "audience": "testers" },
 
     { "key": "shortlist",      "tab": "profile",   "path": "/profile/shortlist",      "title": "Shortlist",               "blurb": "Save species and compare them side by side", "icon": "star", "built": false, "tile": true, "status": "soon", "audience": "testers" },
     { "key": "can-i-keep",     "tab": "profile",   "path": "/profile/can-i-keep-it",  "title": "Can I keep it?",          "blurb": "A licence check for your state", "icon": "check", "built": false, "tile": true, "status": "soon", "audience": "testers" },

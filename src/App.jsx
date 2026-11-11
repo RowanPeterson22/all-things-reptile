@@ -14,6 +14,9 @@ import ComingSoonScreen from "./screens/ComingSoonScreen";
 import LearnNav from "./components/LearnNav";
 import Icon from "./components/Icon";
 import AmphibianCredit from "./components/AmphibianCredit";
+import { ChromeContext, TopBar, MenuSheet } from "./components/AppChrome";
+import HomeEditScreen from "./screens/HomeEditScreen";
+import { useHomePrefs, homeTiles } from "./home/homePrefs";
 import { useBetaAccess, usePublicLayout } from "./beta/betaAccess";
 import { useAdminAccess } from "./beta/adminAccess";
 import { accessFor } from "./constants/sections";
@@ -101,21 +104,10 @@ const Notice = ({ title, children }) => (
 const SearchPrompt = () => <div style={{ padding: 40, textAlign: "center", fontSize: 14, color: T.muted, fontFamily: FONT }}>Type at least two letters to search.</div>;
 
 // ─── Header pieces (the dark design) ──────────────────────────────
-// Home: the small logo top left and a round search button (OptionC).
-// Every other non-detail screen: a big bold page title instead of the old
-// full-width logo band (Rowan: too big), then search / the Learn sub-nav.
-const SAFE_TOP = "calc(env(safe-area-inset-top, 0px) + 12px)";
-const HomeHeader = ({ canSearch, onSearch }) => (
-  <header style={{ padding: `${SAFE_TOP} ${SIZE.pad}px 8px`, display: "flex", alignItems: "center", justifyContent: "space-between", minHeight: 44 }}>
-    <img src="/header-logo-dark.png" alt="All Things Reptile" style={{ height: 26, width: "auto", display: "block", maxWidth: "70%" }} />
-    {canSearch && (
-      <button type="button" aria-label="Search" onClick={onSearch}
-        style={{ width: 44, height: 44, borderRadius: 22, border: "none", background: T.field, color: T.text, display: "flex", alignItems: "center", justifyContent: "center", padding: 0, cursor: "pointer", flexShrink: 0 }}>
-        <Icon name="search" size={20} strokeWidth={2} />
-      </button>
-    )}
-  </header>
-);
+// Every screen: TopBar (components/AppChrome.jsx): the wide logo on Home, the
+// square ATR mark elsewhere, with round search and ☰ buttons. Non-detail
+// screens then get a big bold page title, the search field (on /search only)
+// and the Learn sub-nav.
 const PageTitle = ({ children }) => (
   <h1 style={{ margin: "0 0 14px", fontSize: "clamp(30px, 9vw, 34px)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", color: T.text, overflowWrap: "break-word" }}>{children}</h1>
 );
@@ -138,6 +130,7 @@ const PATH_TITLES = {
   ...Object.fromEntries(ALL_SECTIONS.map(s => [s.path, s.key === "licensing" ? "Licencing" : s.title])),
   "/community": "Community",
   "/profile": "My Profile",
+  "/profile/home": "Customise Home",
 };
 export const titleFor = (path) => {
   const [, first, second] = path.split("/");
@@ -160,6 +153,8 @@ export function AppShell() {
   const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
   // The admin tool skips the splash; the public app is unchanged.
   const [showSplash, setShowSplash] = useState(() => !isAdminPath);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const homePrefs = useHomePrefs();
   const [searchQuery, setSearchQuery] = useState("");
   // Taking ?invite= off the URL keeps the code out of history and screenshots.
   const beta = useBetaAccess(location.search, () => navigate("/id", { replace: true }));
@@ -221,6 +216,9 @@ export function AppShell() {
 
   // Re-tapping the current tab is a no-op, as it was with setActiveTab/setPage(null).
   const go = (path) => { if (path !== pathname) navigate(path); };
+  // Any navigation closes the ☰ menu.
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
   const openPage = (page) => {
     const url = URL_FOR_PAGE[page];
     if (url) navigate(url, { state: { tab: activeTab } });
@@ -264,9 +262,11 @@ export function AppShell() {
   }
   const showNav = shell.tabs.length > 1;
   const onHome = pathname === "/" && shell.full;
-  // Search sits in the header on the Learn screens (and on a single screen);
-  // on Home it's one of the blocks.
-  const showHeaderSearch = access.search && !onHome && (!shell.full || activeTab === "learn");
+  // The round search button (every screen) opens /search; the field itself
+  // only shows there.
+  const showHeaderSearch = access.search && pathname === "/search";
+  const chrome = { onSearch: access.search ? () => go("/search") : null, onMenu: shell.full ? () => setMenuOpen(true) : null };
+  const toHomeLogo = shell.full && !onHome ? () => go("/") : undefined;
   const showLearnNav = shell.full && LEARN_PATHS.has(pathname) && shell.learnNav.length > 1;
 
   // The big title on screens without their own header: the tab's name (Learn,
@@ -276,12 +276,16 @@ export function AppShell() {
   const pageTitle = pathname === "/search" ? "Search" : (shell.full && tabLabel) || PATH_TITLES[pathname] || tabLabel || SITE;
 
   return (
+    <ChromeContext.Provider value={chrome}>
     <div data-theme={T.name} style={{ display: "flex", flexDirection: "column", fontFamily: FONT, minHeight: "100vh", background: T.bg, color: T.text, colorScheme: T.scheme }}>
 
+        {pathname.startsWith("/care/") && isDetail && <TopBar onLogo={toHomeLogo} />}
         {!isDetail && (onHome
-          ? <HomeHeader canSearch={access.search} onSearch={() => go("/search")} />
+          ? <header><TopBar wide /></header>
           : (
-          <header style={{ padding: `${SAFE_TOP} ${SIZE.pad}px 0` }}>
+          <header>
+          <TopBar onLogo={toHomeLogo} padBottom={10} />
+          <div style={{ padding: `0 ${SIZE.pad}px` }}>
             <PageTitle>{pageTitle}</PageTitle>
             {showHeaderSearch && <SearchField
               placeholder="Search species, care guides, glossary..."
@@ -291,13 +295,14 @@ export function AppShell() {
               autoFocus={pathname === "/search"}
             />}
             {showLearnNav && <LearnNav items={shell.learnNav} active={pathname} onGo={go} />}
+          </div>
           </header>
         ))}
 
         <main style={{ flex: 1, display: "flex", flexDirection: "column", minWidth: 0 }}>
           <Routes>
             <Route path="/"              element={shell.full
-              ? <HomeScreen shell={shell} canSearch={access.search} query={searchQuery} onQuery={onQuery} onClearQuery={clearQuery} onOpen={go} profileTab={tabByKey.profile} />
+              ? <HomeScreen shell={shell} tiles={homeTiles(shell.tiles, homePrefs.prefs)} onEdit={() => go("/profile/home")} onOpen={go} profileTab={tabByKey.profile} />
               : toHome} />
             <Route path="/search"        element={allow(access.search, searchQuery.length >= 2
               ? <SearchResults query={searchQuery} live={liveContent} show={{ species: access.speciesPages, care: access.careGuides, glossary: access.glossary }} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} />
@@ -312,9 +317,13 @@ export function AppShell() {
             <Route path="/care/:slug"    element={allow(access.careGuides, <DetailRoute table={GUIDES_BY_SLUG} legacy={LEGACY_GUIDES} base="/care" onBack={handleBack} home={home} />)} />
             {["community", "profile"].map(k => (
               <Route key={k} path={`/${k}`} element={tabByKey[k]
-                ? <TabPage tab={tabByKey[k]} items={shell.tiles.filter(i => i.tab === k)} onOpen={go} />
+                ? <TabPage tab={tabByKey[k]} items={shell.tiles.filter(i => i.tab === k)} onOpen={go} onEditHome={k === "profile" ? () => go("/profile/home") : undefined} />
                 : toHome} />
             ))}
+            <Route path="/profile/home" element={shell.full
+              ? <HomeEditScreen tiles={shell.tiles} prefs={homePrefs.prefs} onChange={homePrefs.update} onReset={homePrefs.reset}
+                  backLabel={tabByKey.profile ? tabByKey.profile.label : "Home"} onBack={backOr(tabByKey.profile ? tabByKey.profile.path : "/")} />
+              : toHome} />
             {PLACEHOLDERS.map(s => (
               <Route key={s.key} path={s.path} element={shell.byKey[s.key] ? comingSoon(shell.byKey[s.key]) : toHome} />
             ))}
@@ -345,7 +354,9 @@ export function AppShell() {
         </nav>
         <AmphibianCredit fixed />
         </>}
+        {menuOpen && chrome.onMenu && <MenuSheet items={shell.tiles} onOpen={(p) => { setMenuOpen(false); go(p); }} onClose={closeMenu} onHome={() => { setMenuOpen(false); go("/"); }} homeLabel={(tabByKey.home && tabByKey.home.label) || "Home"} />}
     </div>
+    </ChromeContext.Provider>
   );
 }
 

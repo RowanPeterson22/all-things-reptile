@@ -263,13 +263,13 @@ describe("/admin → Sections", () => {
     global.fetch = sectionsApi({ admin: true });
     await renderAt("/admin/sections");
     await screen.findByText("Tab labels");
-    await act(async () => { fireEvent.click(screen.getByLabelText("Move Venues up")); });
-    expect(global.fetch.patches.pop()).toEqual({ order: { tab: "community", keys: ["sightings", "ladders", "venues", "competitions", "expos", "breeders"] } });
+    await act(async () => { fireEvent.click(screen.getByLabelText("Move Zoos & Sanctuaries up")); });
+    expect(global.fetch.patches.pop()).toEqual({ order: { tab: "community", keys: ["sightings", "ladders", "venues", "competitions", "expos", "breeders", "snake-catchers", "societies"] } });
     const row = screen.getByTestId("section-row-competitions");
     await act(async () => { fireEvent.click(within(row).getByLabelText("Featured on Home")); });
     expect(global.fetch.patches.pop()).toEqual({ featured: "competitions" });
-    await act(async () => { fireEvent.click(screen.getByLabelText("Move Search bar down")); });
-    expect(global.fetch.patches.pop()).toEqual({ homeBlocks: ["personal", "search", "featured", "explore"] });
+    await act(async () => { fireEvent.click(screen.getByLabelText("Move Personal (my animals, reminders, shopping list) down")); });
+    expect(global.fetch.patches.pop()).toEqual({ homeBlocks: ["featured", "personal", "explore"] });
     fireEvent.change(screen.getByLabelText("My Profile tab label"), { target: { value: "Me" } });
     await act(async () => { fireEvent.click(screen.getByText("Save tab labels")); });
     expect(global.fetch.patches.pop()).toEqual({ tabs: { home: null, learn: null, id: null, community: null, profile: "Me" } });

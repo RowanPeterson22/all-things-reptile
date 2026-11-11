@@ -114,6 +114,6 @@ export const SIZE = {
 // The Amphibian credit band (components/AmphibianCredit.jsx) sits under the
 // bar, CREDIT_H tall above the home indicator's safe area, so the bar rises
 // by that much and NAV_CLEARANCE covers bar and band.
-export const CREDIT_H = 28;
+export const CREDIT_H = 38; // 28 px link + a 10 px gap under the bar (Rowan: more space above the frog)
 export const NAV_BOTTOM = `calc(max(6px, env(safe-area-inset-bottom, 0px)) + ${CREDIT_H}px)`;
 export const NAV_CLEARANCE = `calc(${SIZE.navH}px + ${NAV_BOTTOM} + 16px)`;

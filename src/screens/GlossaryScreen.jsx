@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { T } from "../constants/theme";
 import { GLOSSARY_TERMS } from "../data/glossary";
-import ScrollRow from "../components/ScrollRow";
+import Segmented from "../components/Segmented";
 import SearchField from "../components/SearchField";
 
 // ─── Glossary screen ─────────────────────────────────────────────
@@ -41,20 +41,9 @@ const GlossaryScreen = ({ showCredits = true }) => {
         <div style={{ fontSize: 12, fontWeight: 700, color: T.muted, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>Reference</div>
         <h2 style={{ margin: "0 0 14px", fontSize: 26, fontWeight: 700, color: T.text, lineHeight: 1.15 }}>Reptile Glossary</h2>
         <SearchField value={search} onChange={e => setSearch(e.target.value)} onClear={() => setSearch("")} placeholder="Search terms..." label="Search terms" marginBottom={4} />
-        {/* Each chip is a 44px-tall tap target; the visible pill sits inside it. */}
-        <ScrollRow tone="ink" label="Categories" style={{ display: "flex", gap: 6, margin: "0 -16px", padding: "0 16px 4px" }}>
-          {categories.map(cat => (
-            <button key={cat} onClick={() => setActiveCategory(cat)} aria-pressed={activeCategory === cat} style={{
-              padding: "6px 0", minHeight: 44, background: "none", border: "none", cursor: "pointer", fontFamily: "inherit", flexShrink: 0,
-            }}>
-              <span style={{
-                display: "block", padding: "6px 14px", borderRadius: 999, fontSize: 13, fontWeight: 700, whiteSpace: "nowrap",
-                background: activeCategory === cat ? T.accent : T.card,
-                color: activeCategory === cat ? T.onAccent : T.muted,
-              }}>{cat}</span>
-            </button>
-          ))}
-        </ScrollRow>
+        <div style={{ paddingTop: 6 }}>
+          <Segmented tabs={categories} tab={activeCategory} onTab={setActiveCategory} labelFor={(c) => c} label="Categories" testId="glossary-categories" padX={12} />
+        </div>
       </div>
 
       <div style={{ padding: "8px 0 8px" }}>

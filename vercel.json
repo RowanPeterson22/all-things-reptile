@@ -1,16 +1,40 @@
 {
+  "regions": [
+    "syd1"
+  ],
   "functions": {
-    "api/identify.js": { "maxDuration": 30 },
-    "api/feedback.js": { "maxDuration": 15 },
-    "api/beta-check.js": { "maxDuration": 10 },
-    "api/admin-check.js": { "maxDuration": 10 },
-    "api/admin-species.js": { "maxDuration": 15 },
-    "api/admin-photos.js": { "maxDuration": 30 },
-    "api/admin-feedback.js": { "maxDuration": 20 },
-    "api/admin-testers.js": { "maxDuration": 10 },
-    "api/species-photos.js": { "maxDuration": 10 }
+    "api/identify.js": {
+      "maxDuration": 30
+    },
+    "api/feedback.js": {
+      "maxDuration": 15
+    },
+    "api/beta-check.js": {
+      "maxDuration": 10
+    },
+    "api/admin-check.js": {
+      "maxDuration": 10
+    },
+    "api/admin-species.js": {
+      "maxDuration": 15
+    },
+    "api/admin-photos.js": {
+      "maxDuration": 30
+    },
+    "api/admin-feedback.js": {
+      "maxDuration": 20
+    },
+    "api/admin-testers.js": {
+      "maxDuration": 10
+    },
+    "api/species-photos.js": {
+      "maxDuration": 10
+    }
   },
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
   ]
 }

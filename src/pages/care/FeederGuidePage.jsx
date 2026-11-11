@@ -42,8 +42,8 @@ const FeederGuidePage = ({ onBack }) => {
             calcium="Poor — dust every feed"
             availability="⭐⭐⭐⭐⭐ Widely available Australia-wide"
             best="All insectivorous reptiles and frogs. Suitable for all ages."
-            notes="Australia's most popular feeder roach. Native species (Nauphoeta cinerea). Very active — excellent for stimulating natural hunting behaviour. Easy to keep a colony. Cannot infest homes if they escape unlike some roaches. Available live, frozen, and dried."
-            tag="Australian Native"
+            notes="Australia's most popular feeder roach, also sold as speckled or lobster roaches (Nauphoeta cinerea). An introduced species, originally from East Africa, now established in parts of Queensland and northern NSW, and bred commercially Australia-wide. Very active — excellent for stimulating natural hunting behaviour. Easy to keep a colony. They climb smooth surfaces quickly, so use a tub with a Fluon or oil barrier and never release them. Available live, frozen, and dried."
+            tag="Introduced species"
             tagColor={T.accentText}
           />
 

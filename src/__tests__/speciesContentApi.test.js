@@ -162,3 +162,22 @@ describe("public (ATR_PUBLIC=true)", () => {
     expect(r.headers["cache-control"]).toBe("no-store");
   });
 });
+
+describe("photo and category lists are gated too (before launch)", () => {
+  const list = async (query, headers = {}) => {
+    const r = mockRes();
+    await handler({ method: "GET", headers, query }, r);
+    return r;
+  };
+  test.each([[{}], [{ species: "ackie-monitor" }], [{ categories: "1" }]])("%j with no pass: 401, nothing read", async (query) => {
+    const r = await list(query);
+    expect(r.statusCode).toBe(401);
+    expect(r.headers["cache-control"]).toBe("no-store");
+    expect(calls).toEqual([]);
+  });
+  test("a valid atr_gate cookie gets through, cached privately", async () => {
+    const r = await list({ species: "nope-not-a-species" }, { cookie: await cookieFor() });
+    expect(r.statusCode).toBe(404);
+    expect(r.headers["cache-control"]).toBe("private, max-age=60");
+  });
+});

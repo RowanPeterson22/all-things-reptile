@@ -1,5 +1,7 @@
 // ─── GET /api/species-photos ──────────────────────────────────────
-// Public and read-only. The photos Rowan chose for the species pages, with
+// Read-only. Before launch every request (photos, categories, content) needs a
+// valid atr_gate cookie or tester code, else 401: /api/* bypasses the
+// pre-launch gate, so this route applies it itself. Public after ATR_PUBLIC=true. The photos Rowan chose for the species pages, with
 // their credits. reference_photos stays closed to clients: this route reads it
 // with the secret key and returns only public rows and display fields.
 //   GET ?species=<app slug, D4>   one species page's gallery
@@ -12,7 +14,8 @@
 //                                 tester code (x-atr-beta), else 401: /api/*
 //                                 bypasses the pre-launch gate. Private cache
 //                                 while gated; edge-cached once public.
-// Photos are cached at Vercel's edge for 5 minutes, so page views don't reach Supabase.
+// Once public, photos are cached at Vercel's edge for 5 minutes; while gated
+// they're cached privately per visitor.
 
 const { supabaseConfig, SupabaseError } = require("../lib/supabase");
 const { listPublicPhotos } = require("../lib/speciesPhotos");
@@ -61,10 +64,16 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Use GET." });
   }
   if (req.query && req.query.content !== undefined) return content(req, res);
+  const access = await contentAccess(req);
+  if (!access.ok) {
+    res.setHeader("Cache-Control", "no-store");
+    return res.status(access.status).json({ error: access.error || "Not available.", photos: [], categories: [] });
+  }
+  const listCache = access.via === "public" ? "public, max-age=60, s-maxage=300, stale-while-revalidate=600" : "private, max-age=60";
   const raw = req.query && req.query.species;
   const species = typeof raw === "string" && raw !== "" ? raw : undefined;
   if (species !== undefined && (species.length > 100 || !SLUG_RE.test(species) || !APP_TO_INDEX[species])) {
-    res.setHeader("Cache-Control", "public, max-age=300, s-maxage=3600");
+    res.setHeader("Cache-Control", listCache);
     return res.status(404).json({ error: "No such species.", photos: [] });
   }
   const cfg = supabaseConfig();
@@ -76,11 +85,11 @@ module.exports = async (req, res) => {
   try {
     if (wantCategories && species === undefined) {
       const categories = await listPublicCategoryImages(cfg);
-      res.setHeader("Cache-Control", "public, max-age=60, s-maxage=300, stale-while-revalidate=600");
+      res.setHeader("Cache-Control", listCache);
       return res.status(200).json({ categories });
     }
     const photos = await listPublicPhotos(cfg, species);
-    res.setHeader("Cache-Control", "public, max-age=60, s-maxage=300, stale-while-revalidate=600");
+    res.setHeader("Cache-Control", listCache);
     return res.status(200).json({ photos });
   } catch (e) {
     res.setHeader("Cache-Control", "no-store");

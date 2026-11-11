@@ -16,6 +16,11 @@ import { clearPhotoCache } from "../components/SpeciesGallery";
 import HeroCropEditor, { HeroPreview } from "../admin/HeroCropEditor";
 import { PublicControls, heroFallbackId } from "../admin/SpeciesPhotosScreen";
 
+// These tests cover the public (post-launch) behaviour of /api/species-photos;
+// the pre-launch gate on it is tested in speciesContentApi.test.js.
+beforeAll(() => { process.env.ATR_PUBLIC = "true"; });
+afterAll(() => { delete process.env.ATR_PUBLIC; });
+
 // jsdom has no PointerEvent, so fireEvent.pointer* would drop clientX/pointerId.
 if (typeof window.PointerEvent !== "function") {
   class PointerEvent extends MouseEvent {

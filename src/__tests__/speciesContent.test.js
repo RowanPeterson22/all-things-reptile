@@ -51,11 +51,10 @@ describe("the snapshot", () => {
     }
   });
 
-  test("monitors lead with the 50–60°C basking banner (D8: Pygmy Mulga 45–60, Sand 50–65)", () => {
-    const want = { "pygmy-mulga-monitor": "45–60°C", "sand-monitor": "50–65°C" };
+  test("every monitor leads with the 50–60°C basking banner (D8 resolved)", () => {
     for (const d of SNAPSHOT.filter(x => x.type === "monitor")) {
       const banner = d.tabs[0].blocks.find(b => b.type === "basking");
-      expect(banner.range).toBe(want[d.slug] || "50–60°C");
+      expect(banner.range).toBe("50–60°C");
     }
   });
 
@@ -155,8 +154,8 @@ describe("the species page", () => {
   test("tab sets still differ by species", () => {
     const labels = (slug) => { const v = at(slug); const t = within(screen.getByTestId("species-tabs")).getAllByRole("button").map(b => b.textContent); v.unmount(); return t; };
     expect(labels("ackie-monitor")).toEqual(["Overview", "Feeding", "Health", "Handling", "Licence"]);
-    expect(labels("carpet-python")).toEqual(["Overview", "Feeding", "Health & shedding", "Handling & breeding", "Licence"]);
-    expect(labels("eastern-long-necked-turtle")).toEqual(["Overview", "Feeding", "Health & setup", "Handling", "Licence"]);
+    expect(labels("carpet-python")).toEqual(["Overview", "Feeding", "Health", "Handling", "Licence"]);
+    expect(labels("eastern-long-necked-turtle")).toEqual(["Overview", "Feeding", "Health", "Handling", "Licence"]);
     expect(labels("central-bearded-dragon")).toEqual(["Overview", "Feeding", "Health", "Licence"]);
   });
 

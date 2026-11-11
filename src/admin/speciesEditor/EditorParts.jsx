@@ -193,7 +193,7 @@ const FORMS = {
     render={pair("Label", "label", LIMITS.short, "Value", "value", LIMITS.short)} />,
   basking: (p) => (
     <>
-      <div style={{ ...hintStyle, marginTop: 0, marginBottom: 8 }}>Monitors need a 50–60°C basking surface; the Pygmy Mulga (45–60°C) and Sand Monitor (50–65°C) ranges are recorded exceptions (D8).</div>
+      <div style={{ ...hintStyle, marginTop: 0, marginBottom: 8 }}>Monitors need a 50–60°C basking surface (all six, D8). The Pygmy Mulga text also states a 45°C minimum.</div>
       <T path={[...p, "range"]} label="Range" max={LIMITS.range} />
       <T path={[...p, "title"]} label="Title" max={LIMITS.title} />
       <T path={[...p, "text"]} label="Text" multiline />

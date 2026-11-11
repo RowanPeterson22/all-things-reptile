@@ -457,7 +457,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -774,7 +774,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -1097,7 +1097,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -1114,7 +1114,7 @@
        },
        {
         "title": "Tick infestation",
-        "detail": "Wild-caught Shinglebacks often carry ticks. Inspect any newly acquired animal thoroughly. Never collect from the wild.",
+        "detail": "Shinglebacks can carry ticks. Inspect any newly acquired animal thoroughly. Never collect from the wild.",
         "good": false
        },
        {
@@ -1388,7 +1388,7 @@
           "type": "warn",
           "tone": "red",
           "title": "Avoid for juveniles",
-          "text": "No spinach, avocado, citrus, or fireflies. No wild-caught insects."
+          "text": "No spinach, avocado or citrus. Never feed wild-caught insects."
          }
         ]
        },
@@ -1720,7 +1720,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -2016,7 +2016,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -2300,7 +2300,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -2602,7 +2602,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -2890,7 +2890,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -3191,7 +3191,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -3504,7 +3504,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -3811,7 +3811,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -3833,7 +3833,7 @@
        },
        {
         "title": "Parasites",
-        "detail": "Annual faecal tests recommended. Common in wild-caught animals.",
+        "detail": "Annual faecal tests recommended, and test any new dragon before it joins your collection.",
         "good": false
        },
        {
@@ -4087,7 +4087,7 @@
         "freq": "Every 2 days"
        },
        {
-        "name": "Silkworms / hornworms",
+        "name": "Silkworms / Calci-worms (BSFL)",
         "detail": "High moisture, good supplement",
         "freq": "Weekly"
        },
@@ -4112,7 +4112,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -4413,7 +4413,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -4702,11 +4702,6 @@
         "name": "Superworms / mealworms",
         "detail": "Good variety item",
         "freq": "Weekly"
-       },
-       {
-        "name": "Small lizards (skinks)",
-        "detail": "Rare occasional treat for adults",
-        "freq": "Rarely"
        }
       ]
      },
@@ -4925,9 +4920,9 @@
      },
      {
       "type": "basking",
-      "range": "45–60°C",
+      "range": "50–60°C",
       "title": "Very hot basking spot essential",
-      "text": "Like all monitors, Pygmy Mulgas require a very hot basking spot — at least 45–60°C surface temperature. This is non-negotiable for their health and digestion."
+      "text": "Like all monitors, Pygmy Mulgas need a very hot basking spot — aim for a 50–60°C surface, and never let it fall below 45°C. Measure the surface with an infrared thermometer, not the air temperature."
      },
      {
       "type": "label",
@@ -4938,7 +4933,7 @@
       "bars": [
        {
         "label": "Basking surface temp",
-        "value": "45–60°C",
+        "value": "50–60°C",
         "width": "96%",
         "hot": true
        },
@@ -5838,16 +5833,16 @@
      },
      {
       "type": "basking",
-      "range": "50–65°C",
+      "range": "50–60°C",
       "title": "Very hot basking spot essential",
-      "text": "Like all monitors, Sand Monitors need a very hot basking spot — 50–65°C surface temperature. This is essential for digestion and health. Measure the surface with an infrared thermometer, not the air temperature."
+      "text": "Like all monitors, Sand Monitors need a very hot basking spot — a 50–60°C surface. A spot a little hotter does no harm if the rest of the enclosure gives a full gradient down to the cool end. Measure the surface with an infrared thermometer, not the air temperature."
      },
      {
       "type": "temps",
       "bars": [
        {
         "label": "Basking surface temp",
-        "value": "50–65°C",
+        "value": "50–60°C",
         "width": "100%",
         "hot": true
        },
@@ -6579,7 +6574,7 @@
     ]
    },
    {
-    "key": "health & setup",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -6862,7 +6857,7 @@
     ]
    },
    {
-    "key": "health & setup",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -7112,7 +7107,7 @@
        },
        {
         "name": "Aquatic plants",
-        "detail": "Water hyacinth, duckweed — eat naturally",
+        "detail": "Duckweed, native water ribbons or Vallisneria — eat naturally",
         "freq": "Can be left in tank"
        },
        {
@@ -7136,7 +7131,7 @@
     ]
    },
    {
-    "key": "health & setup",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -7407,7 +7402,7 @@
     ]
    },
    {
-    "key": "health & setup",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -7693,7 +7688,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -7754,7 +7749,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -8014,7 +8009,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -8075,7 +8070,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -8334,7 +8329,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -8395,7 +8390,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -8666,7 +8661,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -8683,7 +8678,7 @@
        },
        {
         "title": "Mites",
-        "detail": "Very common with carpets, especially from wild-caught or recently imported animals. Check skin folds and around eyes. Full enclosure strip-down required.",
+        "detail": "Very common with carpets, especially in newly acquired animals — quarantine every new snake. Check skin folds and around eyes. Full enclosure strip-down required.",
         "good": false
        },
        {
@@ -8732,7 +8727,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -8992,7 +8987,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -9053,7 +9048,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -9308,7 +9303,7 @@
       "type": "warn",
       "tone": "gold",
       "title": "Fussy feeders",
-      "text": "Diamonds can be reluctant feeders, particularly in summer. Try scenting prey with lizard or frog (avoid wild-caught). Some individuals only accept prey from a hide or in darkness. Patience and consistency pays off."
+      "text": "Diamonds can be reluctant feeders, particularly in summer. Try scenting prey with shed skin from a captive lizard — never use wild animals. Some individuals only accept prey from a hide or in darkness. Patience and consistency pays off."
      },
      {
       "type": "warn",
@@ -9319,7 +9314,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -9385,7 +9380,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -9639,7 +9634,7 @@
       "type": "warn",
       "tone": "gold",
       "title": "Scenting for fussy hatchlings",
-      "text": "Rub prey with a skink or gecko to add lizard scent if the hatchling refuses plain mice. Most Womas convert to unscented rodents within a few feeds."
+      "text": "Scent the prey with shed skin from a captive lizard (ask a keeper friend) if the hatchling refuses plain mice. Never use wild lizards. Most Womas convert to unscented rodents within a few feeds."
      },
      {
       "type": "warn",
@@ -9650,7 +9645,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -9711,7 +9706,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -9971,7 +9966,7 @@
       "type": "warn",
       "tone": "red",
       "title": "Hatchling feeding can be challenging",
-      "text": "Many Black-headed Python hatchlings are reluctant to take rodents. Scenting with lizard, offering live then pre-killed, or using assist-feeding techniques may be required. This is a species best purchased from an established, feeding captive-bred animal."
+      "text": "Many Black-headed Python hatchlings are reluctant to take rodents. Scenting with lizard shed skin, offering prey in a paper bag or at night, or vet-guided assist-feeding may be needed. Don't use live prey — it's banned under the NSW code, discouraged in other states, and rodents can badly injure a snake. If a hatchling still won't feed, get help from a reptile vet. This is a species best purchased as an established, feeding captive-bred animal."
      },
      {
       "type": "warn",
@@ -9982,7 +9977,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -10048,7 +10043,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -10318,7 +10313,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -10384,7 +10379,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -10655,7 +10650,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -10716,7 +10711,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -10992,7 +10987,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -11058,7 +11053,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -11329,7 +11324,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -11390,7 +11385,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -11665,7 +11660,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -11731,7 +11726,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -11997,7 +11992,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -12058,7 +12053,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",
@@ -12262,7 +12257,7 @@
       "type": "warn",
       "tone": "red",
       "title": "No chlorine or chloramine in water",
-      "text": "Frogs absorb water through their skin. Tap water must be dechlorinated before use — either let it sit for 24 hours or use a reptile-safe dechlorinator. Never use tap water directly."
+      "text": "Frogs absorb water through their skin. Always treat tap water with a water conditioner that neutralises both chlorine and chloramine. Letting water stand is not enough — many Australian supplies use chloramine, which doesn't evaporate. Never use tap water directly."
      },
      {
       "type": "label",
@@ -12338,7 +12333,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -12589,7 +12584,7 @@
         "freq": "Every 2–3 nights"
        },
        {
-        "name": "Silkworms / hornworms",
+        "name": "Silkworms / Calci-worms (BSFL)",
         "detail": "High moisture feeders",
         "freq": "Occasionally"
        },
@@ -12614,7 +12609,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -12903,7 +12898,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -13189,7 +13184,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -13474,7 +13469,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -13738,7 +13733,7 @@
         "freq": "Every 2–3 nights"
        },
        {
-        "name": "Silkworms / hornworms",
+        "name": "Silkworms / Calci-worms (BSFL)",
         "detail": "High moisture feeders",
         "freq": "Occasionally"
        },
@@ -13763,7 +13758,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -14061,7 +14056,7 @@
       "type": "warn",
       "tone": "red",
       "title": "Feeding can be very challenging",
-      "text": "Green Tree Python hatchlings are notoriously difficult feeders. Many require lizard scenting, live prey, or assist feeding to get started. Purchase only captive-bred animals with a confirmed established feeding record — this cannot be stressed enough."
+      "text": "Green Tree Python hatchlings are notoriously difficult feeders. Many need lizard-scented prey (use shed skin from a captive lizard), prey offered at night from the perch, or vet-guided assist-feeding to get started. Don't use live prey — it's banned under the NSW code and risks injury to the snake. Purchase only captive-bred animals with a confirmed established feeding record — this cannot be stressed enough."
      },
      {
       "type": "warn",
@@ -14083,7 +14078,7 @@
     ]
    },
    {
-    "key": "health & shedding",
+    "key": "health",
     "blocks": [
      {
       "type": "label",
@@ -14141,7 +14136,7 @@
     ]
    },
    {
-    "key": "handling & breeding",
+    "key": "handling",
     "blocks": [
      {
       "type": "snakeHandling",

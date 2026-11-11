@@ -17,52 +17,7 @@ import { useBetaAccess, usePublicLayout } from "./beta/betaAccess";
 import { useAdminAccess } from "./beta/adminAccess";
 import { accessFor } from "./constants/sections";
 import { SECTIONS as ALL_SECTIONS, shellFor } from "./constants/appLayout";
-import ChildrensPythonPage from "./pages/species/snakes/ChildrensPythonPage";
-import StimsonsPythonPage from "./pages/species/snakes/StimsonsPythonPage";
-import SpottedPythonPage from "./pages/species/snakes/SpottedPythonPage";
-import CarpetPythonPage from "./pages/species/snakes/CarpetPythonPage";
-import BredliPage from "./pages/species/snakes/BredliPage";
-import DiamondPythonPage from "./pages/species/snakes/DiamondPythonPage";
-import WomaPythonPage from "./pages/species/snakes/WomaPythonPage";
-import BlackHeadedPythonPage from "./pages/species/snakes/BlackHeadedPythonPage";
-import OlivePythonPage from "./pages/species/snakes/OlivePythonPage";
-import PygmyPythonPage from "./pages/species/snakes/PygmyPythonPage";
-import JungleCarpetPage from "./pages/species/snakes/JungleCarpetPage";
-import WaterPythonPage from "./pages/species/snakes/WaterPythonPage";
-import AmethystinePage from "./pages/species/snakes/AmethystinePage";
-import RoughScaledPythonPage from "./pages/species/snakes/RoughScaledPythonPage";
-import GreenTreePythonPage from "./pages/species/snakes/GreenTreePythonPage";
-import BlueTonguePage from "./pages/species/lizards/BlueTonguePage";
-import BeardiePage from "./pages/species/lizards/BeardiePage";
-import EasternBeardedDragonPage from "./pages/species/lizards/EasternBeardedDragonPage";
-import RankinsDragonPage from "./pages/species/lizards/RankinsDragonPage";
-import FrilledLizardPage from "./pages/species/lizards/FrilledLizardPage";
-import WaterDragonPage from "./pages/species/lizards/WaterDragonPage";
-import NorthernBlueTonguePage from "./pages/species/lizards/NorthernBlueTonguePage";
-import BlotchedBlueTonguePage from "./pages/species/lizards/BlotchedBlueTonguePage";
-import ShinglebackPage from "./pages/species/lizards/ShinglebackPage";
-import KnobTailedGeckoPage from "./pages/species/geckos/KnobTailedGeckoPage";
-import ThickTailedGeckoPage from "./pages/species/geckos/ThickTailedGeckoPage";
-import MarbledVelvetGeckoPage from "./pages/species/geckos/MarbledVelvetGeckoPage";
-import LeafTailGeckoPage from "./pages/species/geckos/LeafTailGeckoPage";
-import SpinyTailGeckoPage from "./pages/species/geckos/SpinyTailGeckoPage";
-import GoldenTailGeckoPage from "./pages/species/geckos/GoldenTailGeckoPage";
-import AckieMonitorPage from "./pages/species/monitors/AckieMonitorPage";
-import PygmyMulgaPage from "./pages/species/monitors/PygmyMulgaPage";
-import BlackHeadedMonitorPage from "./pages/species/monitors/BlackHeadedMonitorPage";
-import RidgeTailedMonitorPage from "./pages/species/monitors/RidgeTailedMonitorPage";
-import SandMonitorPage from "./pages/species/monitors/SandMonitorPage";
-import LaceMonitorPage from "./pages/species/monitors/LaceMonitorPage";
-import EasternLongNeckPage from "./pages/species/turtles/EasternLongNeckPage";
-import BroadShellTurtlePage from "./pages/species/turtles/BroadShellTurtlePage";
-import MurrayRiverTurtlePage from "./pages/species/turtles/MurrayRiverTurtlePage";
-import SawShellTurtlePage from "./pages/species/turtles/SawShellTurtlePage";
-import GreenTreeFrogPage from "./pages/species/frogs/GreenTreeFrogPage";
-import WhiteLippedFrogPage from "./pages/species/frogs/WhiteLippedFrogPage";
-import StripedMarshFrogPage from "./pages/species/frogs/StripedMarshFrogPage";
-import EasternDwarfFrogPage from "./pages/species/frogs/EasternDwarfFrogPage";
-import PeronsFrogPage from "./pages/species/frogs/PeronsFrogPage";
-import MagnificentFrogPage from "./pages/species/frogs/MagnificentFrogPage";
+import SpeciesScreen from "./screens/SpeciesScreen";
 import EnclosurePage from "./pages/care/EnclosurePage";
 import TempPage from "./pages/care/TempPage";
 import FeedingNutritionPage from "./pages/care/FeedingNutritionPage";
@@ -72,6 +27,7 @@ import SheddingPage from "./pages/care/SheddingPage";
 import FeederGuidePage from "./pages/care/FeederGuidePage";
 import { SPECIES } from "./data/species";
 import { CARE_GUIDES } from "./data/careGuides";
+import { BUNDLED } from "./data/speciesContent";
 
 // Closed beta (D9): the ID screen and feedback card load as a separate chunk,
 // fetched only once an invite code is verified, so the public bundle carries none of it.
@@ -83,54 +39,8 @@ const AdminApp = lazy(() => import("./admin/AdminApp"));
 const CreditsScreen = lazy(() => import("./screens/CreditsScreen"));
 
 
-// ─── Page router map ──────────────────────────────────────────────
+// ─── Page router map (care guides; species pages are data, D5) ────
 const PAGE_MAP = {
-  bluetongue:  BlueTonguePage,
-  beardie:     BeardiePage,
-  childrens:   ChildrensPythonPage,
-  stimsons:    StimsonsPythonPage,
-  spotted:     SpottedPythonPage,
-  carpet:      CarpetPythonPage,
-  bredli:      BredliPage,
-  diamond:     DiamondPythonPage,
-  woma:        WomaPythonPage,
-  blackheaded: BlackHeadedPythonPage,
-  olive:       OlivePythonPage,
-  pygmy:       PygmyPythonPage,
-  jungle:      JungleCarpetPage,
-  water:       WaterPythonPage,
-  amethystine: AmethystinePage,
-  roughscaled: RoughScaledPythonPage,
-  knobtail:    KnobTailedGeckoPage,
-  thicktail:   ThickTailedGeckoPage,
-  marbled:     MarbledVelvetGeckoPage,
-  eastbeardie: EasternBeardedDragonPage,
-  rankins:     RankinsDragonPage,
-  frilled:     FrilledLizardPage,
-  waterdragon: WaterDragonPage,
-  greentree:   GreenTreePythonPage,
-  turtle:      EasternLongNeckPage,
-  broadshell:  BroadShellTurtlePage,
-  murray:      MurrayRiverTurtlePage,
-  sawshell:    SawShellTurtlePage,
-  leaftail:    LeafTailGeckoPage,
-  spinytail:   SpinyTailGeckoPage,
-  goldentail:  GoldenTailGeckoPage,
-  northernbt:  NorthernBlueTonguePage,
-  blotchedbt:  BlotchedBlueTonguePage,
-  shingleback: ShinglebackPage,
-  greentreefrog: GreenTreeFrogPage,
-  whitelipped:  WhiteLippedFrogPage,
-  stripedmarsh: StripedMarshFrogPage,
-  dwarftree:    EasternDwarfFrogPage,
-  perons:       PeronsFrogPage,
-  magnificent:  MagnificentFrogPage,
-  ackie:            AckieMonitorPage,
-  pygmymulga:       PygmyMulgaPage,
-  blackheadedmonitor: BlackHeadedMonitorPage,
-  ridgetailed:      RidgeTailedMonitorPage,
-  sandmonitor:      SandMonitorPage,
-  lacemonitor:      LaceMonitorPage,
   enclosure:   EnclosurePage,
   temp:         TempPage,
   feedingnutrition: FeedingNutritionPage,
@@ -141,8 +51,9 @@ const PAGE_MAP = {
 };
 
 // ─── Route tables (D4: routes use slug only) ──────────────────────
-// Only entries with a built page are routable (keeps the Browse "has a page" guard).
-const SPECIES_BY_SLUG = Object.fromEntries(SPECIES.filter(s => s.page && PAGE_MAP[s.page]).map(s => [s.slug, s]));
+// Only entries with a page are routable (keeps the Browse "has a page" guard):
+// a care guide needs its component, a species its content document.
+const SPECIES_BY_SLUG = Object.fromEntries(SPECIES.filter(s => s.page && BUNDLED[s.slug]).map(s => [s.slug, s]));
 const GUIDES_BY_SLUG  = Object.fromEntries(CARE_GUIDES.filter(g => g.page && PAGE_MAP[g.page]).map(g => [g.slug, g]));
 // Old IDs and page keys (e.g. /species/blackheadedmonitor) → today's slug (D4),
 // so links made before the hyphenated slugs still land on the right page.
@@ -214,6 +125,7 @@ const DetailRoute = ({ table, legacy = {}, base, onBack, home = "/" }) => {
   const entry = table[slug];
   if (!entry && legacy[slug]) return <Navigate to={`${base}/${legacy[slug]}`} replace />;
   if (!entry) return <Navigate to={home} replace />;
+  if (base === "/species") return <SpeciesScreen key={slug} slug={slug} onBack={onBack} />;
   const PageComponent = PAGE_MAP[entry.page];
   return <PageComponent onBack={onBack} />;
 };

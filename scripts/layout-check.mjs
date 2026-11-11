@@ -60,6 +60,7 @@ if (!fs.existsSync(path.join(BUILD, "index.html"))) { console.error("No build/. 
 const read = (p) => fs.readFileSync(path.join(ROOT, p), "utf8");
 const SPECIES = [...read("src/data/species.js").matchAll(/name: "([^"]+)",[^\n]*?page: "([^"]+)", slug: "([^"]+)"/g)].map(m => ({ name: m[1], page: m[2], slug: m[3] }));
 const GUIDES = [...read("src/data/careGuides.js").matchAll(/title: "([^"]+)",[^\n]*?page: "([^"]+)", slug: "([^"]+)"/g)].map(m => ({ title: m[1], slug: m[3] }));
+const CONTENT = JSON.parse(read("src/data/speciesContent.json"));
 if (SPECIES.length !== 46) { console.error(`Expected 46 species, read ${SPECIES.length}`); process.exit(2); }
 
 // ── Mocks ──
@@ -104,6 +105,9 @@ async function route(r) {
   if (p.startsWith("/__mock/photo")) return r.fulfill({ status: 200, contentType: "image/jpeg", body: photoBytes[p.includes("photo2") ? 1 : 0] });
   if (p === "/api/beta-check") return json(BETA);
   if (p === "/api/species-photos") {
+    // Species content (D5): served from the bundled snapshot, as the server would.
+    const c = u.searchParams.get("content");
+    if (c) { const doc = CONTENT.find(d => d.slug === c); return doc ? json({ species: doc }) : r.fulfill({ status: 404, contentType: "application/json", body: "{}" }); }
     if (u.searchParams.get("categories")) return json({ categories: CATS });
     const sp = u.searchParams.get("species");
     if (sp) return json({ photos: [photo(sp, 1), photo(sp, 2)] });

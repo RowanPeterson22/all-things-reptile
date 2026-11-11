@@ -3,14 +3,15 @@ import SectionLabel from "./SectionLabel";
 import WarnBox from "./WarnBox";
 import StatGrid from "./StatGrid";
 
-const SnakeBreeding = ({ clutchSize, incubationTemp, incubationDays, maturityAge, notes }) => (
+// Text from the species document (`breeding` block).
+const SnakeBreeding = ({ label, stats = [], notes, warn }) => (
   <>
-    <SectionLabel>Breeding basics</SectionLabel>
-    <StatGrid stats={[["", "Clutch size", clutchSize], ["", "Incubation temp", incubationTemp], ["", "Incubation", incubationDays], ["", "Sexual maturity", maturityAge]]} />
+    <SectionLabel>{label}</SectionLabel>
+    <StatGrid stats={stats.map(s => ["", s.label, s.value])} />
     <div style={{ background: T.card, borderRadius: 18, padding: 16, marginBottom: 10, marginTop: 8, fontSize: 14, color: T.body, lineHeight: 1.6 }}>
       {notes}
     </div>
-    <WarnBox type="gold" title="Licence requirements for breeding">Breeding native reptiles requires a separate breeder licence in most states. Check with your local wildlife authority before attempting to breed.</WarnBox>
+    <WarnBox type="gold" title={warn.title}>{warn.text}</WarnBox>
   </>
 );
 

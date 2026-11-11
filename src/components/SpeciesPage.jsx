@@ -4,7 +4,8 @@ import { T } from "../constants/theme";
 import { usePublicPhotos } from "./SpeciesGallery";
 import { HeroSlideshow } from "./SpeciesSlideshow";
 import { pickHero, othersThan, TALL_H } from "./heroCrop";
-import Segmented, { sentence } from "./Segmented";
+import Segmented from "./Segmented";
+import { tabLabel } from "../data/speciesContentShape";
 import { RoundBack } from "./BackButton";
 
 // ─── Species page shell ───────────────────────────────────────────
@@ -23,8 +24,8 @@ const pill = (lead) => ({
   background: lead ? T.accent : T.glass, color: T.onAccent, borderRadius: 999, padding: "4px 10px",
 });
 
-// The design names the licence tab "Licence"; the pages' key stays "licencing".
-const tabLabel = (t) => (t === "licencing" ? "Licence" : sentence(t));
+// The design names the licence tab "Licence"; the key stays "licencing"
+// (tabLabel, shared with /admin, lives with the content shape).
 
 // Pills, name, latin (and other names when a page gives them) over the photo.
 const HeroText = ({ name, latin, aka, badges }) => (
@@ -41,10 +42,11 @@ const HeroText = ({ name, latin, aka, badges }) => (
 );
 
 const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabContent }) => {
-  const [tab, setTab] = useState(tabs[0]);
+  const [chosen, setTab] = useState(tabs[0]);
+  // Fresh content can arrive with a different tab set; fall back to the first.
+  const tab = tabs.includes(chosen) ? chosen : tabs[0];
   const backLabel = useBackLabel();
-  // The route is /species/:slug (D4), so the shell knows which gallery to load;
-  // the 46 page files don't change.
+  // The route is /species/:slug (D4), so the shell knows which gallery to load.
   const { slug } = useParams();
   // The hero starts on the photo Rowan ticked (else the first by his order)
   // and rolls through the rest. Photos that fail to load drop out; none left:

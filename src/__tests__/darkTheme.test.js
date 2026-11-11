@@ -6,12 +6,8 @@ import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { THEMES, T } from "../constants/theme";
 import TempBar, { TempCard } from "../components/TempBar";
 import { clearPhotoCache } from "../components/SpeciesGallery";
-import AckieMonitorPage from "../pages/species/monitors/AckieMonitorPage";
-import PygmyMulgaPage from "../pages/species/monitors/PygmyMulgaPage";
-import SandMonitorPage from "../pages/species/monitors/SandMonitorPage";
-import LaceMonitorPage from "../pages/species/monitors/LaceMonitorPage";
-import BlackHeadedMonitorPage from "../pages/species/monitors/BlackHeadedMonitorPage";
-import RidgeTailedMonitorPage from "../pages/species/monitors/RidgeTailedMonitorPage";
+import SpeciesScreen from "../screens/SpeciesScreen";
+import { clearSpeciesContentCache } from "../data/speciesContent";
 
 const lum = (hex) => {
   const [r, g, b] = [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16) / 255).map(c => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
@@ -44,19 +40,19 @@ describe("temperatures", () => {
 
 describe("monitor pages", () => {
   const saved = global.fetch;
-  beforeEach(() => { clearPhotoCache(); global.fetch = jest.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve({ photos: [] }) })); });
+  beforeEach(() => { clearPhotoCache(); clearSpeciesContentCache(); global.fetch = jest.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve({ photos: [] }) })); });
   afterEach(() => { global.fetch = saved; });
-  const at = (Page, slug) => render(<MemoryRouter initialEntries={[`/species/${slug}`]}><Routes><Route path="/species/:slug" element={<Page onBack={() => {}} />} /></Routes></MemoryRouter>);
+  const at = (slug) => render(<MemoryRouter initialEntries={[`/species/${slug}`]}><Routes><Route path="/species/:slug" element={<SpeciesScreen slug={slug} onBack={() => {}} />} /></Routes></MemoryRouter>);
 
   test.each([
-    [AckieMonitorPage, "ackie-monitor", "50–60°C"],
-    [BlackHeadedMonitorPage, "black-headed-monitor", "50–60°C"],
-    [LaceMonitorPage, "lace-monitor", "50–60°C"],
-    [RidgeTailedMonitorPage, "black-spotted-ridge-tailed-monitor", "50–60°C"],
-    [PygmyMulgaPage, "pygmy-mulga-monitor", "45–60°C"],   // D8, as recorded
-    [SandMonitorPage, "sand-monitor", "50–65°C"],         // D8, as recorded
-  ])("%#: the Overview leads with the basking banner", async (Page, slug, range) => {
-    at(Page, slug);
+    ["ackie-monitor", "50–60°C"],
+    ["black-headed-monitor", "50–60°C"],
+    ["lace-monitor", "50–60°C"],
+    ["black-spotted-ridge-tailed-monitor", "50–60°C"],
+    ["pygmy-mulga-monitor", "45–60°C"],   // D8, as recorded
+    ["sand-monitor", "50–65°C"],          // D8, as recorded
+  ])("%s: the Overview leads with the basking banner", async (slug, range) => {
+    at(slug);
     await waitFor(() => expect(global.fetch).toHaveBeenCalled());
     const banner = screen.getByTestId("basking-banner");
     expect(within(banner).getByText(range)).toBeInTheDocument();

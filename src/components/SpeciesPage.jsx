@@ -41,8 +41,11 @@ const HeroText = ({ name, latin, aka, badges }) => (
   </div>
 );
 
-const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabContent }) => {
-  const [chosen, setTab] = useState(tabs[0]);
+// tab / onTab: optional, for a parent that controls the tab (the /admin preview).
+const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabContent, tab: wanted, onTab }) => {
+  const [own, setOwn] = useState(tabs[0]);
+  const chosen = wanted !== undefined ? wanted : own;
+  const setTab = (k) => { setOwn(k); if (onTab) onTab(k); };
   // Fresh content can arrive with a different tab set; fall back to the first.
   const tab = tabs.includes(chosen) ? chosen : tabs[0];
   const backLabel = useBackLabel();

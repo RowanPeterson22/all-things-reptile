@@ -27,7 +27,7 @@ import SheddingPage from "./pages/care/SheddingPage";
 import FeederGuidePage from "./pages/care/FeederGuidePage";
 import { SPECIES } from "./data/species";
 import { CARE_GUIDES } from "./data/careGuides";
-import { BUNDLED } from "./data/speciesContent";
+import { BUNDLED, speciesBySlug, useSpeciesList } from "./data/speciesContent";
 
 // Closed beta (D9): the ID screen and feedback card load as a separate chunk,
 // fetched only once an invite code is verified, so the public bundle carries none of it.
@@ -140,7 +140,8 @@ const PATH_TITLES = {
 };
 export const titleFor = (path) => {
   const [, first, second] = path.split("/");
-  if (first === "species" && second) return SPECIES_BY_SLUG[second] ? `${SPECIES_BY_SLUG[second].name} · ${SITE}` : SITE;
+  // The published name when we have it (D5), else the bundled one.
+  if (first === "species" && second) return SPECIES_BY_SLUG[second] ? `${(speciesBySlug(second) || SPECIES_BY_SLUG[second]).name} · ${SITE}` : SITE;
   if (first === "care" && second) return GUIDES_BY_SLUG[second] ? `${GUIDES_BY_SLUG[second].title} · ${SITE}` : SITE;
   if (first === "admin") return `Admin · ${SITE}`;
   const name = PATH_TITLES[path];
@@ -156,7 +157,6 @@ export function AppShell() {
   const navigate = useNavigate();
   const pathname = location.pathname.replace(/\/+$/, "") || "/";
   const isAdminPath = pathname === "/admin" || pathname.startsWith("/admin/");
-  useEffect(() => { document.title = titleFor(pathname); }, [pathname]);
   // The admin tool skips the splash; the public app is unchanged.
   const [showSplash, setShowSplash] = useState(() => !isAdminPath);
   const [searchQuery, setSearchQuery] = useState("");
@@ -165,6 +165,9 @@ export function AppShell() {
   const betaOk = beta.status === "ok";
   // No code: the public layout (one cached GET), or the built-in defaults.
   const pub = usePublicLayout(beta.status === "none" && !isAdminPath);
+  // Published species names (D5) for testers, or for everyone once the site is public.
+  const liveContent = betaOk || (pub.status === "ok" && pub.live === true);
+  const speciesList = useSpeciesList(liveContent && !isAdminPath);
   // What this visitor can open and see. null while we don't know yet (checking,
   // a failed check, or a tester revoked mid-session while gated).
   const view = betaOk ? { sections: beta.sections, app: beta.app }
@@ -206,6 +209,9 @@ export function AppShell() {
   const adminElement = betaOk && admin.status === "ok"
     ? <Suspense fallback={<AdminWait />}><AdminApp inviteCode={beta.code} adminId={admin.id} adminName={admin.name} gate={admin.gate} onForbidden={leaveAdmin} /></Suspense>
     : beta.status === "checking" || (betaOk && (admin.status === "checking" || admin.status === "idle")) ? <AdminWait /> : <Navigate to="/" replace />;
+
+  // Re-titles when the published names arrive.
+  useEffect(() => { document.title = titleFor(pathname); }, [pathname, speciesList]);
 
   const isDetail = /^\/(species|care)\/[^/]+$/.test(pathname);
   // Tabs highlight from the URL. Detail pages keep the tab they were opened from
@@ -293,9 +299,9 @@ export function AppShell() {
               ? <HomeScreen shell={shell} canSearch={access.search} query={searchQuery} onQuery={onQuery} onClearQuery={clearQuery} onOpen={go} profileTab={tabByKey.profile} />
               : toHome} />
             <Route path="/search"        element={allow(access.search, searchQuery.length >= 2
-              ? <SearchResults query={searchQuery} show={{ species: access.speciesPages, care: access.careGuides, glossary: access.glossary }} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} />
+              ? <SearchResults query={searchQuery} live={liveContent} show={{ species: access.speciesPages, care: access.careGuides, glossary: access.glossary }} onNavigate={(p) => { if (!URL_FOR_PAGE[p]) return; openPage(p); setSearchQuery(""); }} />
               : <SearchPrompt />)} />
-            <Route path="/species"       element={section("species", access.browse, <BrowseScreen onSpecies={openPage} />)} />
+            <Route path="/species"       element={section("species", access.browse, <BrowseScreen onSpecies={openPage} live={liveContent} />)} />
             <Route path="/care"          element={section("care", access.careGuides, <CareScreen onGuide={openPage} />)} />
             <Route path="/licencing"     element={section("licensing", access.licensing, <LegalScreen />)} />
             <Route path="/id"            element={idElement} />

@@ -1,14 +1,16 @@
 import { T } from "../constants/theme";
 import Icon, { CARE_ICON } from "../components/Icon";
 import { IconBadge } from "../components/SectionTiles";
-import { SPECIES } from "../data/species";
+import { useSpeciesList } from "../data/speciesContent";
 import { CARE_GUIDES } from "../data/careGuides";
 import { GLOSSARY_TERMS } from "../data/glossary";
 
 // ─── Search Results screen ────────────────────────────────────────
 // show: which result groups this visitor may open (per-tester sections).
 const ALL_GROUPS = { species: true, care: true, glossary: true };
-const SearchResults = ({ query, onNavigate, show = ALL_GROUPS }) => {
+// live: species names and levels from the published documents (D5), else the snapshot.
+const SearchResults = ({ query, onNavigate, show = ALL_GROUPS, live = false }) => {
+  const SPECIES = useSpeciesList(live);
   const q = query.toLowerCase();
 
   const speciesResults = !show.species ? [] : SPECIES.filter(s =>

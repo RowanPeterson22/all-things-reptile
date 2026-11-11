@@ -138,7 +138,8 @@ describe("public (ATR_PUBLIC=true)", () => {
     const r = await get("ackie-monitor");
     expect(r.statusCode).toBe(200);
     expect(r.body.species.slug).toBe("ackie-monitor");
-    expect(r.headers["cache-control"]).toMatch(/^public, .*s-maxage=300/);
+    // 15 s at each layer, so a Publish shows within about a minute (D5 step 2).
+    expect(r.headers["cache-control"]).toBe("public, max-age=15, s-maxage=15, stale-while-revalidate=15");
   });
 
   test("bad slugs and unpublished species: 404", async () => {

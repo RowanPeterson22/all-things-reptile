@@ -155,7 +155,8 @@ export const fetchPublicLayout = async (fetchImpl) => {
     const data = await res.json().catch(() => null);
     const app = data && data.gated === false ? cleanApp(data.app) : null;
     if (!app || !Array.isArray(data.sections)) return fallback();
-    return { sections: normaliseSections(data.sections), app };
+    // live: the site is public (ATR_PUBLIC=true), so published content is open to all.
+    return { sections: normaliseSections(data.sections), app, live: true };
   } catch (e) {
     return fallback();
   }
@@ -168,7 +169,7 @@ export const usePublicLayout = (enabled) => {
     if (!enabled || state.status !== "idle") return undefined;
     let live = true;
     setState(s => ({ ...s, status: "loading" }));
-    fetchPublicLayout().then(r => { if (live) setState({ status: "ok", sections: r.sections, app: r.app }); });
+    fetchPublicLayout().then(r => { if (live) setState({ status: "ok", sections: r.sections, app: r.app, live: r.live === true }); });
     return () => { live = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enabled]);

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { T } from "../constants/theme";
 import Icon from "../components/Icon";
-import { SPECIES } from "../data/species";
+import { useSpeciesList } from "../data/speciesContent";
 import { CATEGORIES } from "../data/categories";
 import LevelBadge from "../components/LevelBadge";
 import BackButton from "../components/BackButton";
@@ -11,7 +11,10 @@ import { pickHero } from "../components/heroCrop";
 import SpeciesHero from "../components/SpeciesHero";
 import { useCategoryImages, CategoryCardImage, CategoryEmoji, useBrokenSet } from "../components/CategoryImage";
 
-const BrowseScreen = ({ onSpecies }) => {
+// live: names, levels and order come from the published documents (D5);
+// until they arrive (or for a visitor the server won't answer yet) the snapshot.
+const BrowseScreen = ({ onSpecies, live = false }) => {
+  const SPECIES = useSpeciesList(live);
   const [category, setCategory] = useState(null);
   // Opening a category (or going back) starts at the top, so the header and
   // its back button are in view even when the card tapped was low on the page.

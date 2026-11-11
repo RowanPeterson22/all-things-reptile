@@ -58,7 +58,8 @@ if (!fs.existsSync(path.join(BUILD, "index.html"))) { console.error("No build/. 
 
 // ── Data: slugs straight from the source, so new pages are checked too ──
 const read = (p) => fs.readFileSync(path.join(ROOT, p), "utf8");
-const SPECIES = [...read("src/data/species.js").matchAll(/name: "([^"]+)",[^\n]*?page: "([^"]+)", slug: "([^"]+)"/g)].map(m => ({ name: m[1], page: m[2], slug: m[3] }));
+// The 46 come from the bundled content snapshot (src/data/species.js derives from it, D5 step 2).
+const SPECIES = JSON.parse(read("src/data/speciesContent.json")).sort((x, y) => x.sortOrder - y.sortOrder).map(d => ({ name: d.name, page: d.id, slug: d.slug }));
 const GUIDES = [...read("src/data/careGuides.js").matchAll(/title: "([^"]+)",[^\n]*?page: "([^"]+)", slug: "([^"]+)"/g)].map(m => ({ title: m[1], slug: m[3] }));
 const CONTENT = JSON.parse(read("src/data/speciesContent.json"));
 if (SPECIES.length !== 46) { console.error(`Expected 46 species, read ${SPECIES.length}`); process.exit(2); }

@@ -42,7 +42,10 @@ const HeroText = ({ name, latin, aka, badges }) => (
 );
 
 // tab / onTab: optional, for a parent that controls the tab (the /admin preview).
-const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabContent, tab: wanted, onTab }) => {
+// photos: optional, the public photos to show instead of fetching them (the
+// /admin preview, fed from the Photos panel's current state; null while the
+// panel loads).
+const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabContent, tab: wanted, onTab, photos: given }) => {
   const [own, setOwn] = useState(tabs[0]);
   const chosen = wanted !== undefined ? wanted : own;
   const setTab = (k) => { setOwn(k); if (onTab) onTab(k); };
@@ -54,7 +57,8 @@ const SpeciesPage = ({ onBack, name, latin, aka, emoji, badges = [], tabs, tabCo
   // The hero starts on the photo Rowan ticked (else the first by his order)
   // and rolls through the rest. Photos that fail to load drop out; none left:
   // the emoji on a dark block.
-  const photos = usePublicPhotos(slug);
+  const fetched = usePublicPhotos(given !== undefined ? null : slug);
+  const photos = given !== undefined ? (given || []) : fetched;
   const [broken, setBroken] = useState({});
   const picked = pickHero(photos);
   const ordered = (picked ? [picked, ...othersThan(photos, picked)] : []).filter(p => !broken[p.id || p.url]);

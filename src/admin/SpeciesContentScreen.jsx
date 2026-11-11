@@ -5,6 +5,8 @@ import { T as TH } from "../constants/theme";
 import { CATEGORIES } from "../data/categories";
 import { validateDoc, tabLabel } from "../data/speciesContentShape";
 import SpeciesScreen from "../screens/SpeciesScreen";
+import { HeroFrameCtx } from "../components/SpeciesSlideshow";
+import PhotosPanel from "./speciesEditor/PhotosPanel";
 import { N, page, btn, smallBtn, chip, input, badge, card, sectionLabel, hint as hintStyle, errorText } from "./ui";
 import { EditorCtx, Confirm, Field, BlockList, IdentityForm, PreviewBoundary } from "./speciesEditor/EditorParts";
 import { setIn, tabPolicy, canAddTab, addTab, tabKeyFor, tabKeyProblem, moveItem, removeAt, textDiff, sameDoc, around, counterpart, ago } from "./speciesEditor/model";
@@ -168,18 +170,36 @@ const TabBar = ({ doc, ti, onPick, update }) => {
 };
 
 // ─── The phone-width preview ──────────────────────────────────────
-const Preview = ({ slug, doc, tabKey, onTab, tall }) => (
+// The hero's height comes from the preview's own width (container units), not
+// the admin window's, so it frames photos exactly as a phone that wide does.
+// photos: the Photos panel's public photos (null while it loads; undefined:
+// fetch the live ones).
+export const PREVIEW_HERO = { height: "min(103cqw, 440px)", minHeight: 300 };
+const Preview = ({ slug, doc, tabKey, onTab, tall, photos }) => (
   <div data-testid="species-preview" data-theme={TH.name}
-    style={{ width: 390, maxWidth: "100%", height: tall ? "calc(100vh - 210px)" : 720, minHeight: 480, overflowY: "auto", overflowX: "hidden", borderRadius: 30, border: "8px solid #1b1b1b", background: TH.bg, color: TH.text, fontFamily: TH.font, colorScheme: TH.scheme, margin: "0 auto", position: "relative", boxShadow: "0 8px 30px rgba(0,0,0,0.18)" }}>
+    style={{ width: 390, maxWidth: "100%", height: tall ? "calc(100vh - 210px)" : 720, minHeight: 480, overflowY: "auto", overflowX: "hidden", borderRadius: 30, border: "8px solid #1b1b1b", background: TH.bg, color: TH.text, fontFamily: TH.font, colorScheme: TH.scheme, margin: "0 auto", position: "relative", boxShadow: "0 8px 30px rgba(0,0,0,0.18)", containerType: "inline-size", scrollbarWidth: "none" }}>
     <PreviewBoundary doc={doc}>
-      <SpeciesScreen slug={slug} doc={doc} tab={tabKey} onTab={onTab} onBack={() => {}} />
+      <HeroFrameCtx.Provider value={PREVIEW_HERO}>
+        <SpeciesScreen slug={slug} doc={doc} tab={tabKey} onTab={onTab} onBack={() => {}} photos={photos} />
+      </HeroFrameCtx.Provider>
     </PreviewBoundary>
   </div>
 );
 
 // ─── The editor ───────────────────────────────────────────────────
-export const SpeciesContentEditor = ({ api }) => {
+// species / bySlug / counts / catalogue / refreshCounts: the photo library's
+// shared data (AdminApp), for the Photos panel. Without them the panel is left out.
+export const SpeciesContentEditor = ({ api, species, bySlug, counts, catalogue, refreshCounts }) => {
   const { slug } = useParams();
+  // With the photo library's data, the preview's photos come from the Photos
+  // panel (null while it loads); without, the preview fetches the live ones.
+  const [previewPhotos, setPreviewPhotos] = useState(species ? null : undefined);
+  // The library files photos under the index slug whose appSlug is this page (D4: usually the same).
+  const indexSlug = useMemo(() => {
+    if (!species) return null;
+    const hits = species.filter(r => r.appSlug === slug);
+    return (hits.find(r => r.slug === slug) || hits[0] || {}).slug || null;
+  }, [species, slug]);
   const navigate = useNavigate();
   const wide = useWide();
   const [server, setServer] = useState(null);   // the species as last read or saved
@@ -263,6 +283,13 @@ export const SpeciesContentEditor = ({ api }) => {
         <div style={sectionLabel}>Identity</div>
         <IdentityForm categoryLabel={CAT_LABEL[local.type] || local.type} />
       </div>
+      {species && (
+        <div style={{ ...card, padding: "4px 14px 12px", marginBottom: 16 }}>
+          <div style={sectionLabel}>Photos</div>
+          <PhotosPanel api={api} appSlug={slug} indexSlug={indexSlug} name={local.name} species={species} bySlug={bySlug} catalogue={catalogue}
+            counts={counts} refreshCounts={refreshCounts} onPreview={setPreviewPhotos} />
+        </div>
+      )}
       <div style={{ ...card, padding: "4px 14px 6px", marginBottom: 16, background: "#fafaf7" }}>
         <div style={sectionLabel}>Tabs and blocks</div>
         <TabBar doc={local} ti={tIndex} onPick={pickTab} update={update} />
@@ -272,7 +299,7 @@ export const SpeciesContentEditor = ({ api }) => {
     </EditorCtx.Provider>
   );
 
-  const preview = <Preview slug={slug} doc={local} tabKey={tab.key} tall={wide} onTab={(k) => pickTab(local.tabs.findIndex(t => t.key === k))} />;
+  const preview = <Preview slug={slug} doc={local} tabKey={tab.key} tall={wide} photos={previewPhotos} onTab={(k) => pickTab(local.tabs.findIndex(t => t.key === k))} />;
 
   return (
     <div style={{ ...page, maxWidth: wide ? 1360 : 960, paddingBottom: 0 }}>
@@ -293,7 +320,7 @@ export const SpeciesContentEditor = ({ api }) => {
         <div style={{ flex: 1, minWidth: 0, display: !wide && previewVisible ? "none" : "block" }}>{form}</div>
         {previewVisible && (
           <div style={{ width: wide ? 406 : "100%", flexShrink: 0, position: wide ? "sticky" : "static", top: 110 }}>
-            <div style={{ fontSize: 11, color: N.muted, textAlign: "center", marginBottom: 6 }}>Live preview · 390 px · unsaved draft</div>
+            <div style={{ fontSize: 11, color: N.muted, textAlign: "center", marginBottom: 6 }}>Live preview · 390 px · unsaved draft{species ? " · photos as they are now" : ""}</div>
             {preview}
           </div>
         )}

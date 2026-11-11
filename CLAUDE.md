@@ -64,7 +64,7 @@ The live app (app.allthingsreptile.com.au, `main`) is **not publicly viewable un
 - Licence facts in `data/states.js` were checked against official sources in November 2026; re-check before relying on them and update the date in each `verifyDisclaimer`.
 - Wood Roaches are the primary feeder roach. **Dubia roaches are illegal in Australia** (not on the federal Live Import List; DCCEEW seizure June 2026) — never recommend them as a feeder; the Feeder Guide carries a warning instead. BSFL are sold as Calci-worms in Australia.
 - Australian English throughout (colour, licence/license as noun/verb, enclosure, etc.).
-- **Australian market first (Rowan, 11 Nov 2026).** All research and content starts from what is legal and actually available in Australia. Never recommend or mention a product, feeder, plant, supplement or animal that isn't sold or legal here (e.g. Dubia roaches, hornworms, US-only brands, fireflies); prefer Australian sources (AFD/ALA, museums, state departments, Australian vets, herp societies and suppliers) over overseas care sheets.
+- **Australian market first (Rowan, 11 Nov 2026).** All research and content starts from what is legal and actually available in Australia. Never recommend or mention a product, feeder, plant, supplement or animal that isn't sold or legal here (e.g. Dubia roaches, hornworms, US-only brands, fireflies); prefer Australian sources (AFD/ALA, museums, state departments, Australian vets, herp societies and suppliers) over overseas care sheets. **Exception:** things keepers here may already have but that are now illegal (Dubia roaches) keep a clear warning, so people know to stop keeping them; warn, never recommend.
 
 ## Supabase
 

@@ -8,7 +8,7 @@ import ScrollRow from "./ScrollRow";
 // ScrollRow's fade and chevron. Each segment is a 44px tap target.
 // Labels are sentence case (first letter up) unless labelFor says otherwise.
 // 14 px text, 4 px side padding: the design's five species tabs fit in one
-// row from 375 px; longer sets (e.g. "Handling & breeding") scroll.
+// row from 375 px; longer sets scroll.
 
 export const sentence = (t) => (t ? t[0].toUpperCase() + t.slice(1) : t);
 

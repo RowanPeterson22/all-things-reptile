@@ -154,8 +154,8 @@ describe("the species page", () => {
   test("tab sets still differ by species", () => {
     const labels = (slug) => { const v = at(slug); const t = within(screen.getByTestId("species-tabs")).getAllByRole("button").map(b => b.textContent); v.unmount(); return t; };
     expect(labels("ackie-monitor")).toEqual(["Overview", "Feeding", "Health", "Handling", "Licence"]);
-    expect(labels("carpet-python")).toEqual(["Overview", "Feeding", "Health & shedding", "Handling & breeding", "Licence"]);
-    expect(labels("eastern-long-necked-turtle")).toEqual(["Overview", "Feeding", "Health & setup", "Handling", "Licence"]);
+    expect(labels("carpet-python")).toEqual(["Overview", "Feeding", "Health", "Handling", "Licence"]);
+    expect(labels("eastern-long-necked-turtle")).toEqual(["Overview", "Feeding", "Health", "Handling", "Licence"]);
     expect(labels("central-bearded-dragon")).toEqual(["Overview", "Feeding", "Health", "Licence"]);
   });
 

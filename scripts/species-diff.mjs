@@ -34,7 +34,8 @@ const [mode, a, b] = args;
 const WIDTH = 390, HEIGHT = 844;
 
 const read = (p) => fs.readFileSync(path.join(ROOT, p), "utf8");
-const SPECIES = [...read("src/data/species.js").matchAll(/name: "([^"]+)",[^\n]*?page: "([^"]+)", slug: "([^"]+)"/g)].map(m => ({ name: m[1], slug: m[3] }));
+// The 46 come from the bundled content snapshot (src/data/species.js derives from it, D5 step 2).
+const SPECIES = JSON.parse(read("src/data/speciesContent.json")).sort((x, y) => x.sortOrder - y.sortOrder).map(d => ({ name: d.name, slug: d.slug }));
 const CONTENT = JSON.parse(read("src/data/speciesContent.json"));
 
 const L = require(path.join(ROOT, "src/constants/appLayout.js"));

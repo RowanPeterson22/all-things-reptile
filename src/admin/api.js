@@ -5,10 +5,13 @@ import { BETA_HEADER } from "../beta/betaAccess";
 // is_admin on each one. A 403 means access was withdrawn: onForbidden() runs
 // so the app can leave /admin.
 
+// data: the server's JSON body, for routes that explain a refusal (the
+// species editor's problems list, or a 409 conflict's current state).
 export class ApiError extends Error {
-  constructor(status, message) {
+  constructor(status, message, data = null) {
     super(message);
     this.status = status;
+    this.data = data;
   }
 }
 
@@ -30,6 +33,6 @@ export const makeApi = (code, onForbidden, fetchImpl) => async (route, { method 
     if (onForbidden) onForbidden();
     throw new ApiError(403, "Admin access isn't available for this code.");
   }
-  if (!res.ok) throw new ApiError(res.status, (data && data.error) || `Request failed (${res.status}).`);
+  if (!res.ok) throw new ApiError(res.status, (data && data.error) || `Request failed (${res.status}).`, data);
   return data;
 };

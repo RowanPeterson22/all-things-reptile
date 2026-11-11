@@ -13,6 +13,7 @@ import SectionsScreen from "./SectionsScreen";
 import IndexScreen from "./IndexScreen";
 import MorphsScreen from "./MorphsScreen";
 import CategoriesScreen from "./CategoriesScreen";
+import { SpeciesContentList, SpeciesContentEditor } from "./SpeciesContentScreen";
 import ScrollRow from "../components/ScrollRow";
 
 // ─── ATR admin (interim access: an is_admin beta tester, until D7) ─
@@ -22,6 +23,7 @@ import ScrollRow from "../components/ScrollRow";
 
 const NAV = [
   { to: "/admin", label: "Photos", end: true },
+  { to: "/admin/content", label: "Species" },
   { to: "/admin/add", label: "Add photo" },
   { to: "/admin/categories", label: "Categories" },
   { to: "/admin/morphs", label: "Morphs" },
@@ -106,6 +108,8 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
         <Routes>
           <Route index element={<LibraryScreen {...shared} />} />
           <Route path="species/:slug" element={<SpeciesPhotosScreen {...shared} />} />
+          <Route path="content" element={<SpeciesContentList api={api} />} />
+          <Route path="content/:slug" element={<SpeciesContentEditor api={api} />} />
           <Route path="add" element={<AddPhotoScreen {...shared} />} />
           <Route path="categories" element={<CategoriesScreen api={api} />} />
           <Route path="morphs" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />

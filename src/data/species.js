@@ -1,49 +1,12 @@
-// ─── Species data ─────────────────────────────────────────────────
-export const SPECIES = [
-  { id: "bluetongue",  name: "Eastern Blue-tongue Skink",  latin: "Tiliqua scincoides",       type: "lizard", emoji: "🦎", bg: "#f5f0e8", level: "Beginner",     page: "bluetongue", slug: "eastern-blue-tongue-skink" },
-  { id: "northernbt",  name: "Northern Blue-tongue Skink",  latin: "Tiliqua scincoides intermedia", type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "northernbt", slug: "northern-blue-tongue-skink" },
-  { id: "blotchedbt",  name: "Blotched Blue-tongue Skink",  latin: "Tiliqua nigrolutea",           type: "lizard", emoji: "🦎", bg: "#f0eee8", level: "Beginner",     page: "blotchedbt", slug: "blotched-blue-tongue-skink" },
-  { id: "shingleback", name: "Shingleback Lizard",           latin: "Tiliqua rugosa",               type: "lizard", emoji: "🦎", bg: "#f5f0e0", level: "Intermediate", page: "shingleback", slug: "shingleback-lizard" },
-  { id: "beardie",     name: "Central Bearded Dragon",      latin: "Pogona vitticeps",          type: "lizard", emoji: "🦎", bg: "#f0ece0", level: "Beginner",     page: "beardie", slug: "central-bearded-dragon" },
-  { id: "knobtail",     name: "Knob-tailed Gecko",           latin: "Nephrurus spp.",            type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Intermediate", page: "knobtail", slug: "knob-tailed-gecko" },
-  { id: "thicktail",    name: "Thick-tailed Gecko",          latin: "Underwoodisaurus milii",    type: "gecko",  emoji: "🦎", bg: "#f0ece8", level: "Beginner",     page: "thicktail", slug: "thick-tailed-gecko" },
-  { id: "marbled",      name: "Marbled Velvet Gecko",        latin: "Oedura marmorata",          type: "gecko",  emoji: "🦎", bg: "#f5f0f8", level: "Beginner",     page: "marbled", slug: "marbled-velvet-gecko" },
-  { id: "leaftail",    name: "Southern Leaf-tailed Gecko",   latin: "Phyllurus platurus",        type: "gecko",  emoji: "🦎", bg: "#f0ece8", level: "Intermediate", page: "leaftail", slug: "southern-leaf-tailed-gecko" },
-  { id: "spinytail",   name: "Northern Spiny-tailed Gecko",  latin: "Strophurus ciliaris",       type: "gecko",  emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "spinytail", slug: "northern-spiny-tailed-gecko" },
-  { id: "goldentail",  name: "Golden-tailed Gecko",          latin: "Strophurus taenicauda",     type: "gecko",  emoji: "🦎", bg: "#fff8e0", level: "Beginner",     page: "goldentail", slug: "golden-tailed-gecko" },
-  { id: "eastbeardie",  name: "Eastern Bearded Dragon",      latin: "Pogona barbata",            type: "lizard", emoji: "🦎", bg: "#f5ece0", level: "Beginner",     page: "eastbeardie", slug: "eastern-bearded-dragon" },
-  { id: "rankins",      name: "Pygmy Bearded Dragon",         latin: "Pogona henrylawsoni",       type: "lizard", emoji: "🦎", bg: "#f0f5e8", level: "Beginner",     page: "rankins", slug: "pygmy-bearded-dragon" },
-  { id: "frilled",      name: "Frilled-neck Lizard",              latin: "Chlamydosaurus kingii",     type: "lizard", emoji: "🦎", bg: "#f5e8e0", level: "Intermediate", page: "frilled", slug: "frilled-neck-lizard" },
-  { id: "waterdragon",  name: "Eastern Water Dragon",        latin: "Intellagama lesueurii",     type: "lizard", emoji: "🦎", bg: "#e8f5f0", level: "Intermediate", page: "waterdragon", slug: "eastern-water-dragon" },
-  { id: "ackie",        name: "Ackie Monitor",                 latin: "Varanus acanthurus",           type: "monitor", emoji: "🦎", bg: "#f5ece0", level: "Intermediate", page: "ackie", slug: "ackie-monitor" },
-  { id: "pygmymulga",   name: "Pygmy Mulga Monitor",           latin: "Varanus gilleni",              type: "monitor", emoji: "🦎", bg: "#f0ece8", level: "Intermediate", page: "pygmymulga", slug: "pygmy-mulga-monitor" },
-  { id: "blackheadedmonitor", name: "Black-headed Monitor",          latin: "Varanus tristis",              type: "monitor", emoji: "🦎", bg: "#e8ecee", level: "Intermediate", page: "blackheadedmonitor", slug: "black-headed-monitor" },
-  { id: "ridgetailed",  name: "Black-spotted Ridge-tailed Monitor", latin: "Varanus baritji",              type: "monitor", emoji: "🦎", bg: "#f5eee8", level: "Intermediate", page: "ridgetailed", slug: "black-spotted-ridge-tailed-monitor" },
-  { id: "sandmonitor",  name: "Sand Monitor",                  latin: "Varanus gouldii",              type: "monitor", emoji: "🦎", bg: "#f5f0e0", level: "Advanced",     page: "sandmonitor", slug: "sand-monitor" },
-  { id: "lacemonitor",  name: "Lace Monitor",                  latin: "Varanus varius",               type: "monitor", emoji: "🦎", bg: "#eef0e8", level: "Advanced",     page: "lacemonitor", slug: "lace-monitor" },
-  { id: "turtle",      name: "Eastern Long-necked Turtle",  latin: "Chelodina longicollis",     type: "turtle", emoji: "🐢", bg: "#e8f0f5", level: "Intermediate", page: "turtle", slug: "eastern-long-necked-turtle" },
-  { id: "broadshell",   name: "Broad-shelled Turtle",          latin: "Chelodina expansa",          type: "turtle", emoji: "🐢", bg: "#e0ecf0", level: "Intermediate", page: "broadshell", slug: "broad-shelled-turtle" },
-  { id: "murray",       name: "Murray River Turtle",           latin: "Emydura macquarii",          type: "turtle", emoji: "🐢", bg: "#e8f5f0", level: "Intermediate", page: "murray", slug: "murray-river-turtle" },
-  { id: "sawshell",     name: "Saw-shelled Turtle",            latin: "Myuchelys latisternum",      type: "turtle", emoji: "🐢", bg: "#f0f5e8", level: "Intermediate", page: "sawshell", slug: "saw-shelled-turtle" },
-  { id: "childrens",   name: "Children's Python",           latin: "Antaresia childreni",       type: "snake",  emoji: "🐍", bg: "#f0e8f5", level: "Beginner",     page: "childrens", slug: "childrens-python" },
-  { id: "stimsons",    name: "Stimson's Python",            latin: "Antaresia stimsoni",        type: "snake",  emoji: "🐍", bg: "#ede8f5", level: "Beginner",     page: "stimsons", slug: "stimsons-python" },
-  { id: "spotted",     name: "Spotted Python",              latin: "Antaresia maculosa",        type: "snake",  emoji: "🐍", bg: "#f5edf0", level: "Beginner",     page: "spotted", slug: "spotted-python" },
-  { id: "carpet",      name: "Carpet Python",               latin: "Morelia spilota",           type: "snake",  emoji: "🐍", bg: "#ece8f5", level: "Intermediate", page: "carpet", slug: "carpet-python" },
-  { id: "bredli",      name: "Bredli Python",               latin: "Morelia bredli",            type: "snake",  emoji: "🐍", bg: "#e8ecf5", level: "Intermediate", page: "bredli", slug: "bredli-python" },
-  { id: "diamond",     name: "Diamond Python",              latin: "Morelia spilota spilota",   type: "snake",  emoji: "🐍", bg: "#e8f5f0", level: "Intermediate", page: "diamond", slug: "diamond-python" },
-  { id: "woma",        name: "Woma Python",                 latin: "Aspidites ramsayi",         type: "snake",  emoji: "🐍", bg: "#e8f5ec", level: "Intermediate", page: "woma", slug: "woma-python" },
-  { id: "blackheaded", name: "Black-headed Python",         latin: "Aspidites melanocephalus",  type: "snake",  emoji: "🐍", bg: "#e8eef0", level: "Intermediate", page: "blackheaded", slug: "black-headed-python" },
-  { id: "olive",       name: "Olive Python",                latin: "Liasis olivaceus",          type: "snake",  emoji: "🐍", bg: "#ecf0e8", level: "Advanced",     page: "olive", slug: "olive-python" },
-  { id: "pygmy",       name: "Pygmy Python",                latin: "Antaresia perthensis",      type: "snake",  emoji: "🐍", bg: "#f5ece8", level: "Beginner",     page: "pygmy", slug: "pygmy-python" },
-  { id: "jungle",      name: "Jungle Carpet Python",        latin: "Morelia spilota cheynei",   type: "snake",  emoji: "🐍", bg: "#f5f0e0", level: "Intermediate", page: "jungle", slug: "jungle-carpet-python" },
-  { id: "water",       name: "Water Python",                latin: "Liasis fuscus",             type: "snake",  emoji: "🐍", bg: "#e0ecf5", level: "Intermediate", page: "water", slug: "water-python" },
-  { id: "amethystine", name: "Amethystine Python",          latin: "Simalia amethistina",       type: "snake",  emoji: "🐍", bg: "#f0e8f8", level: "Advanced",     page: "amethystine", slug: "amethystine-python" },
-  { id: "roughscaled", name: "Rough-scaled Python",         latin: "Morelia carinata",          type: "snake",  emoji: "🐍", bg: "#f8f0e8", level: "Advanced",     page: "roughscaled", slug: "rough-scaled-python" },
-  { id: "greentreefrog",  name: "Green Tree Frog",             latin: "Litoria caerulea",             type: "frog",   emoji: "🐸", bg: "#e8f5e8", level: "Beginner",     page: "greentreefrog", slug: "green-tree-frog" },
-  { id: "whitelipped",    name: "White-lipped Tree Frog",      latin: "Litoria infrafrenata",         type: "frog",   emoji: "🐸", bg: "#e0f0e8", level: "Intermediate", page: "whitelipped", slug: "white-lipped-tree-frog" },
-  { id: "stripedmarsh",   name: "Striped Marsh Frog",          latin: "Limnodynastes peronii",        type: "frog",   emoji: "🐸", bg: "#f0f5e8", level: "Beginner",     page: "stripedmarsh", slug: "striped-marsh-frog" },
-  { id: "dwarftree",      name: "Eastern Dwarf Tree Frog",     latin: "Litoria fallax",               type: "frog",   emoji: "🐸", bg: "#e8f8e8", level: "Beginner",     page: "dwarftree", slug: "eastern-dwarf-tree-frog" },
-  { id: "perons",         name: "Peron's Tree Frog",           latin: "Litoria peronii",              type: "frog",   emoji: "🐸", bg: "#ecf5e8", level: "Beginner",     page: "perons", slug: "perons-tree-frog" },
-  { id: "magnificent",    name: "Magnificent Tree Frog",       latin: "Litoria splendida",            type: "frog",   emoji: "🐸", bg: "#e8f2e0", level: "Intermediate", page: "magnificent", slug: "magnificent-tree-frog" },
-  { id: "greentree",   name: "Green Tree Python",           latin: "Morelia viridis",           type: "snake",  emoji: "🐍", bg: "#e8f5ee", level: "Advanced",     page: "greentree", slug: "green-tree-python" },
-];
+// ─── Species list (the 46) ────────────────────────────────────────
+// Derived from the bundled species content snapshot (speciesContent.json, D5),
+// so names, latin, category, level, emoji and order are written once, in the
+// species documents mastered in Supabase and edited in /admin → Species. This
+// is the build-time list (routes, legacy redirects, category counts); screens
+// that show names use useSpeciesList() (./speciesContent), which swaps in the
+// published values. `page` is the legacy page key (= id), kept for old links.
+// Invariants (46 species, 15/9/6/6/4/6 by category, unique hyphenated slugs)
+// are tested in src/__tests__/speciesList.test.js.
+import { BUNDLED_SPECIES } from "./speciesContent";
+
+export const SPECIES = BUNDLED_SPECIES;

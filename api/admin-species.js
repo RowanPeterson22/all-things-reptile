@@ -6,10 +6,23 @@
 //   PATCH { id, changes }             edit, soft-delete or restore a morph
 //   PUT   { morphId, speciesSlug, assigned, cueOverride?, sort? }
 //                                     assign a morph to a species, or remove it
-// Morph writes live here rather than in a new function (Vercel Hobby cap).
+//   ?scope=content                    species page content (Admin → Species, D5):
+//     GET [&slug=]  the list, or one species with its revisions
+//     POST { action: save|publish|discard|revert, slug, expectedUpdatedAt, … }
+//     (lib/adminSpeciesContent.js)
+// Morph and content writes live here rather than in new functions (Vercel Hobby cap).
 
 const { adminRoute } = require("../lib/admin");
 const { getSpecies } = require("../lib/adminSpecies");
 const { createMorph, updateMorph, setAssignment } = require("../lib/adminMorphs");
+const { getContent, contentAction } = require("../lib/adminSpeciesContent");
 
-module.exports = adminRoute({ GET: getSpecies, POST: createMorph, PATCH: updateMorph, PUT: setAssignment });
+const isContent = (ctx) => ctx.query && ctx.query.scope === "content";
+const notHere = async () => ({ status: 405, body: { error: "Method not allowed." } });
+
+module.exports = adminRoute({
+  GET: (ctx) => (isContent(ctx) ? getContent(ctx) : getSpecies(ctx)),
+  POST: (ctx) => (isContent(ctx) ? contentAction(ctx) : createMorph(ctx)),
+  PATCH: (ctx) => (isContent(ctx) ? notHere() : updateMorph(ctx)),
+  PUT: (ctx) => (isContent(ctx) ? notHere() : setAssignment(ctx)),
+});

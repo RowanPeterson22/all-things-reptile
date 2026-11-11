@@ -9,9 +9,11 @@ import { useSpeciesContent } from "../data/speciesContent";
 // SpeciesBlocks inside the dark SpeciesPage shell (hero slideshow, credits,
 // tabs). Tab sets come from the document, so they still differ by species.
 // `slug` is required; the route has already checked it exists.
+// /admin → Species previews an unsaved draft with the same component: `doc`
+// replaces the fetched document, and `tab`/`onTab` let the editor follow along.
 
-const SpeciesScreen = ({ slug, onBack, fetchImpl }) => {
-  const doc = useSpeciesContent(slug, { fetchImpl });
+const SpeciesScreen = ({ slug, onBack, fetchImpl, doc: draft, tab, onTab }) => {
+  const doc = useSpeciesContent(slug, { fetchImpl, doc: draft });
   // Toggle choices (the Bearded Dragon's age switch) live here, so they survive
   // switching tabs, as they did when the state lived in the page component.
   const [toggleState, setToggleState] = useState({});
@@ -24,7 +26,7 @@ const SpeciesScreen = ({ slug, onBack, fetchImpl }) => {
   return (
     <SpeciesPage onBack={onBack} name={doc.name} latin={doc.latin} aka={doc.aka || undefined} emoji={doc.emoji}
       badges={doc.badges.map(label => [label])}
-      tabs={doc.tabs.map(t => t.key)}
+      tabs={doc.tabs.map(t => t.key)} tab={tab} onTab={onTab}
       tabContent={(key) => (byKey[key] ? <SpeciesBlocks blocks={byKey[key].blocks} toggles={toggles} path={`${key}:`} /> : null)} />
   );
 };

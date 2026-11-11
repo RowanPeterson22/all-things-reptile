@@ -46,6 +46,9 @@ const args = process.argv.slice(2);
 const arg = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
 
 // ── species.js identity (ESM; read with a tiny transform, no retyping) ──
+// One-time script, already run (11 Nov 2026). Since D5 step 2, species.js
+// derives from the snapshot this script wrote, so it no longer holds the
+// literal list; to re-run, read `git show d8678e3:src/data/species.js` instead.
 const loadSpeciesList = () => {
   const babel = require("@babel/core");
   const code = babel.transformSync(fs.readFileSync(path.join(ROOT, "src/data/species.js"), "utf8"), {

@@ -197,8 +197,9 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
 // Full width, about 400 px tall on a 390 px phone, a dark fade at the bottom.
 // photos: the hero-ticked photo (or the fallback) first, then the rest of the
 // public photos; it starts on the first and cycles with the same rules as the
-// card. Over the photo: the back button (children) top left, one ⓘ top right
-// for the current photo's credit, and at the bottom the dots (two or more
+// card. Over the photo: the top row (children: back left, search and ☰
+// right), one ⓘ for the current photo's credit just above the pills at the
+// right, and at the bottom the dots (two or more
 // photos) above the overlay (pills, name, latin). No arrows: on a 320 px
 // phone a three-line name reaches mid-height; swipe, dots and the arrow keys
 // step it. onBroken(photo) when an image fails to load.
@@ -251,11 +252,14 @@ export const HeroSlideshow = ({ photos, name, overlay, children, onBroken, autoM
         })}
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0) 28%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.92))", pointerEvents: "none" }} />
       </div>
-      <div style={{ position: "absolute", top: "calc(env(safe-area-inset-top, 0px) + 12px)", left: 14 }}>{children}</div>
-      <div style={{ position: "absolute", top: "calc(env(safe-area-inset-top, 0px) + 12px)", right: 14, width: "calc(100% - 28px)", height: 220, pointerEvents: "none" }}>
-        <PhotoCredit key={shown.id || current} credit={shown.credit} placement="below" />
-      </div>
+      <div style={{ position: "absolute", top: "calc(env(safe-area-inset-top, 0px) + 12px)", left: 14, right: 14 }}>{children}</div>
       <div style={{ position: "absolute", left: 20, right: 20, bottom: 34 }}>
+        {/* The credit ⓘ sits just above the pills at the right (Rowan, 12 Nov
+            2026: the top corners hold back, search and ☰). Its box reaches up
+            so the credit opens upwards over the photo. */}
+        <div style={{ position: "absolute", right: -10, bottom: "100%", width: "calc(100% + 10px)", height: 170, pointerEvents: "none" }}>
+          <PhotoCredit key={shown.id || current} credit={shown.credit} placement="above" />
+        </div>
         {multi && <div style={{ margin: "0 0 6px" }}><Dots list={list} current={current} goTo={goTo} reduced={reduced} onPhoto /></div>}
         {overlay}
       </div>

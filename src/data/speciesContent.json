@@ -4925,9 +4925,9 @@
      },
      {
       "type": "basking",
-      "range": "45–60°C",
+      "range": "50–60°C",
       "title": "Very hot basking spot essential",
-      "text": "Like all monitors, Pygmy Mulgas require a very hot basking spot — at least 45–60°C surface temperature. This is non-negotiable for their health and digestion."
+      "text": "Like all monitors, Pygmy Mulgas need a very hot basking spot — aim for a 50–60°C surface, and never let it fall below 45°C. Measure the surface with an infrared thermometer, not the air temperature."
      },
      {
       "type": "label",
@@ -4938,7 +4938,7 @@
       "bars": [
        {
         "label": "Basking surface temp",
-        "value": "45–60°C",
+        "value": "50–60°C",
         "width": "96%",
         "hot": true
        },
@@ -5838,16 +5838,16 @@
      },
      {
       "type": "basking",
-      "range": "50–65°C",
+      "range": "50–60°C",
       "title": "Very hot basking spot essential",
-      "text": "Like all monitors, Sand Monitors need a very hot basking spot — 50–65°C surface temperature. This is essential for digestion and health. Measure the surface with an infrared thermometer, not the air temperature."
+      "text": "Like all monitors, Sand Monitors need a very hot basking spot — a 50–60°C surface. A spot a little hotter does no harm if the rest of the enclosure gives a full gradient down to the cool end. Measure the surface with an infrared thermometer, not the air temperature."
      },
      {
       "type": "temps",
       "bars": [
        {
         "label": "Basking surface temp",
-        "value": "50–65°C",
+        "value": "50–60°C",
         "width": "100%",
         "hot": true
        },

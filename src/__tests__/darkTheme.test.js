@@ -1,5 +1,5 @@
 // The dark design pass: tokens meet contrast, monitor pages lead with the
-// basking banner (D8 ranges kept), temperatures rank hottest-first, and the
+// basking banner (all 50–60°C), temperatures rank hottest-first, and the
 // species page uses the tall hero with a labelled round back button.
 import { render, screen, waitFor, within } from "@testing-library/react";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
@@ -49,8 +49,8 @@ describe("monitor pages", () => {
     ["black-headed-monitor", "50–60°C"],
     ["lace-monitor", "50–60°C"],
     ["black-spotted-ridge-tailed-monitor", "50–60°C"],
-    ["pygmy-mulga-monitor", "45–60°C"],   // D8, as recorded
-    ["sand-monitor", "50–65°C"],          // D8, as recorded
+    ["pygmy-mulga-monitor", "50–60°C"],   // D8 resolved, 45°C minimum in the text
+    ["sand-monitor", "50–60°C"],          // D8 resolved
   ])("%s: the Overview leads with the basking banner", async (slug, range) => {
     at(slug);
     await waitFor(() => expect(global.fetch).toHaveBeenCalled());

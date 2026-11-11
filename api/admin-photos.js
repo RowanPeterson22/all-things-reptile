@@ -1,6 +1,8 @@
 // ─── /api/admin-photos ────────────────────────────────────────────
 // Admin only. Reference photo library (private reference-photos bucket).
-//   GET   ?species=<index slug>[&all=1]   photos with 10-minute signed URLs
+//   GET   ?species=<index slug>[&all=1]   photos with 10-minute signed URLs (up to 500)
+//   GET   ?species=<index slug>&filter=public|reference|hidden[&offset=n&limit=n]
+//         one page (limit 1–100, default 24) for the Species editor's Photos panel, with hasMore
 //   GET   ?download=<photo id>            2-minute signed URL that saves <slug>-<id>.jpg (master, else reference)
 //   POST  { speciesSlug, photo, master?, photographer, licence, sourceUrl | permissionNote, … }
 //   PUT   { id, photo, master? }          replace the image (also Rotate 90°); keeps credit/licence/source
@@ -8,7 +10,7 @@
 //           public_use | public_order | show_credit | display_credit | credit_by_name |
 //           focal_x | focal_y | is_hero | hero_crop } }
 //         is_hero true makes it the species' only hero (the old one is unticked atomically);
-//         hero_crop { x, y, w, h } (0–1, 2.4 : 1, w ≥ 0.3) or null.
+//         hero_crop { x, y, w, h } (0–1, 100 : 103 for the tall hero, w ≥ 0.3) or null.
 //         public_use true copies the photo into the public species-photos bucket
 //         (iNaturalist at the large size where it can); false removes that copy.
 // Category images (Browse cards and category headers, lib/categoryImages.js):

@@ -416,17 +416,18 @@ describe("admin hero checkbox", () => {
   });
 });
 
-describe("admin hero crop editor", () => {
+describe("admin hero crop editor (the tall hero, 100 : 103)", () => {
   const stage = () => screen.getByTestId("hero-crop-stage");
   const box = () => screen.getByTestId("hero-crop-box");
   const stub = () => { stage().getBoundingClientRect = () => ({ left: 0, top: 0, width: 400, height: 300, right: 400, bottom: 300 }); };
+  const TALL = 100 / 103;
 
-  test("starts from the focus-point crop and saves a dragged one", () => {
+  test("starts from the widest tall crop on the focus point and saves a dragged one", () => {
     const onSave = jest.fn();
     render(<HeroCropEditor photo={adminRow()} busy={false} onSave={onSave} onCancel={() => {}} />);
     stub();
-    expect(box().style).toMatchObject({ left: "0%", width: "100%" });
-    // Zoom in with the slider, then drag the box 40 px right and 30 px down (10% each way).
+    // 4:3 photo: the widest 100 : 103 crop is 0.7282 of its width, full height.
+    expect(box().style).toMatchObject({ left: "13.59%", width: "72.82%", top: "0%", height: "100%" });
     fireEvent.change(screen.getByRole("slider", { name: "Zoom" }), { target: { value: "1" } });
     expect(box().style.width).toBe("30%");
     const start = { x: Number(box().style.left.replace("%", "")) / 100, y: Number(box().style.top.replace("%", "")) / 100 };
@@ -438,33 +439,51 @@ describe("admin hero crop editor", () => {
     expect(saved.w).toBe(0.3);
     expect(saved.x).toBeCloseTo(start.x + 0.1, 3);
     expect(saved.y).toBeCloseTo(start.y + 0.1, 3);
-    expect((saved.w * (4 / 3)) / saved.h).toBeCloseTo(2.4, 2);
+    expect((saved.w * (4 / 3)) / saved.h).toBeCloseTo(TALL, 2);
   });
 
   test("pinch zooms in; never below 30% wide", () => {
-    const onSave = jest.fn();
-    render(<HeroCropEditor photo={adminRow()} busy={false} onSave={onSave} onCancel={() => {}} />);
+    render(<HeroCropEditor photo={adminRow()} busy={false} onSave={() => {}} onCancel={() => {}} />);
     stub();
     fireEvent.pointerDown(box(), { pointerId: 1, clientX: 150, clientY: 150 });
     fireEvent.pointerDown(box(), { pointerId: 2, clientX: 250, clientY: 150 });
     fireEvent.pointerMove(stage(), { pointerId: 2, clientX: 350, clientY: 150 }); // fingers twice as far apart
-    expect(box().style.width).toBe("50%");
+    expect(box().style.width).toBe("36.41%");
     fireEvent.pointerMove(stage(), { pointerId: 2, clientX: 2000, clientY: 150 });
     expect(box().style.width).toBe("30%");
   });
 
-  test("arrow keys move it; the preview shows the crop; Clear sends null", () => {
+  test("arrow keys move it; the preview is the app's own tall hero, framed exactly; Clear sends null", () => {
     const onSave = jest.fn();
-    render(<HeroCropEditor photo={adminRow({ hero_crop: { x: 0.2, y: 0.2, w: 0.5, h: 0.2778 } })} busy={false} onSave={onSave} onCancel={() => {}} />);
+    const onChange = jest.fn();
+    render(<HeroCropEditor photo={adminRow({ hero_crop: { x: 0.2, y: 0.1, w: 0.5, h: 0.6867 } })} busy={false} onSave={onSave} onChange={onChange} onCancel={() => {}} />);
+    expect(screen.queryByTestId("hero-crop-legacy")).toBeNull();
     fireEvent.keyDown(box(), { key: "ArrowRight" });
     expect(box().style.left).toBe("21%");
-    const preview = screen.getByRole("img", { name: "Preview of the species-page header" });
-    expect(preview.querySelector("img").style).toMatchObject({ width: "200%", left: "-42%" });
+    expect(onChange).toHaveBeenLastCalledWith({ x: 0.21, y: 0.1, w: 0.5, h: 0.6867 });
+    const preview = screen.getByTestId("tall-hero-preview");
+    expect(preview.style.maxWidth).toBe("390px");
+    const hero = within(preview).getByTestId("species-hero");
+    expect(hero.getAttribute("data-variant")).toBe("tall");
+    expect(hero.getAttribute("data-frame-height")).toBe("min(103cqw, 440px)"); // from its own width, not the window
+    // The crop fills the 100 : 103 frame: the image is 1/w wide, shifted by x/w.
+    expect(hero.querySelector("img").style).toMatchObject({ width: "200%", left: "-42%", height: "145.62%", top: "-14.56%" });
     fireEvent.click(screen.getByRole("button", { name: "Clear crop" }));
     expect(onSave).toHaveBeenCalledWith(null);
   });
 
-  test("HeroPreview is the 2.4 : 1 banner", () => {
+  test("an old 2.4 : 1 crop starts on its centre, as the app frames it, and says so", () => {
+    const onSave = jest.fn();
+    render(<HeroCropEditor photo={adminRow({ hero_crop: { x: 0, y: 0.2, w: 1, h: 0.5556 } })} busy={false} onSave={onSave} onCancel={() => {}} />);
+    expect(screen.getByTestId("hero-crop-legacy")).toHaveTextContent(/old wide banner/);
+    // Centre (0.5, 0.4778): the widest tall crop is full height, so y clamps to 0.
+    expect(box().style).toMatchObject({ left: "13.59%", width: "72.82%", top: "0%" });
+    fireEvent.click(screen.getByRole("button", { name: "Save hero crop" }));
+    const saved = onSave.mock.calls[0][0];
+    expect((saved.w * (4 / 3)) / saved.h).toBeCloseTo(TALL, 2);
+  });
+
+  test("HeroPreview is still the 2.4 : 1 banner (category headers)", () => {
     render(<HeroPreview url="https://x.test/a.jpg" crop={{ x: 0, y: 0, w: 1, h: 0.5556 }} />);
     expect(screen.getByRole("img", { name: /Preview/ }).style.aspectRatio).toBe("2.4 / 1");
   });

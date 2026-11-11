@@ -587,7 +587,7 @@ describe("focus point", () => {
 });
 
 // ─── Hero (main image) and hero crop ──────────────────────────────
-const { validateHeroCrop, minCropWidth, maxCropWidth } = require("../../lib/heroCrop");
+const { validateHeroCrop, minCropWidth, maxCropWidth, TALL_ASPECT } = require("../../lib/heroCrop");
 
 // These tests cover the public (post-launch) behaviour of /api/species-photos;
 // the pre-launch gate on it is tested in speciesContentApi.test.js.
@@ -658,7 +658,7 @@ describe("hero: one per species", () => {
   test("non-admins can't set the hero or the crop", async () => {
     const code = "N".repeat(43);
     const a = await call(photosHandler, { method: "PATCH", code, body: { id: PUBLIC_BY, changes: { is_hero: true } } });
-    const b = await call(photosHandler, { method: "PATCH", code, body: { id: PUBLIC_BY, changes: { hero_crop: { x: 0.2, y: 0.3, w: 0.6, h: 1 / 3 } } } });
+    const b = await call(photosHandler, { method: "PATCH", code, body: { id: PUBLIC_BY, changes: { hero_crop: { x: 0.2, y: 0.1, w: 0.6, h: 0.824 } } } });
     const c = await call(photosHandler, { method: "PATCH", code: null, body: { id: PUBLIC_BY, changes: { is_hero: true } } });
     expect([a.statusCode, b.statusCode, c.statusCode]).toEqual([403, 403, 403]);
     expect(photo(PUBLIC_BY)).toMatchObject({ is_hero: false, hero_crop: null });
@@ -666,15 +666,17 @@ describe("hero: one per species", () => {
 });
 
 describe("hero crop", () => {
-  // PUBLIC_BY is 1024 × 768 (4:3): a 2.4 : 1 crop 0.6 wide is 0.6 × (4/3) / 2.4 = 1/3 tall.
-  const good = { x: 0.2, y: 0.3, w: 0.6, h: 1 / 3 };
+  // The tall species-page hero is 100 : 103. PUBLIC_BY is 1024 × 768 (4:3):
+  // a crop 0.6 wide is 0.6 × (4/3) × 1.03 = 0.824 tall.
+  const H = (w, A = 4 / 3) => (w * A * 103) / 100;
+  const good = { x: 0.2, y: 0.1, w: 0.6, h: H(0.6) };
 
   test("saves a valid crop, normalised to the exact aspect", async () => {
-    const r = await patch(PUBLIC_BY, { hero_crop: { ...good, h: 0.335 } }); // within rounding
+    const r = await patch(PUBLIC_BY, { hero_crop: { ...good, h: 0.83 } }); // within rounding
     expect(r.statusCode).toBe(200);
-    expect(photo(PUBLIC_BY).hero_crop).toEqual({ x: 0.2, y: 0.3, w: 0.6, h: 0.3333 });
+    expect(photo(PUBLIC_BY).hero_crop).toEqual({ x: 0.2, y: 0.1, w: 0.6, h: 0.824 });
     const pub = await call(publicHandler, { code: null, query: { species: "central-bearded-dragon" } });
-    expect(pub.body.photos[0].heroCrop).toEqual({ x: 0.2, y: 0.3, w: 0.6, h: 0.3333 });
+    expect(pub.body.photos[0].heroCrop).toEqual({ x: 0.2, y: 0.1, w: 0.6, h: 0.824 });
     expect(pub.body.photos[1].heroCrop).toBeNull();
   });
 
@@ -685,12 +687,13 @@ describe("hero crop", () => {
   });
 
   test.each([
-    ["the wrong aspect", { x: 0, y: 0, w: 0.6, h: 0.6 }, /2\.4 : 1/],
-    ["under 30% wide", { x: 0, y: 0, w: 0.2, h: 0.2 * (4 / 3) / 2.4 }, /30%/],
-    ["outside the photo", { x: 0.6, y: 0, w: 0.6, h: 1 / 3 }, /outside/],
-    ["below the photo", { x: 0, y: 0.8, w: 0.6, h: 1 / 3 }, /outside/],
-    ["a negative value", { x: -0.1, y: 0, w: 0.6, h: 1 / 3 }, /between 0 and 1/],
-    ["a string", { x: "0", y: 0, w: 0.6, h: 1 / 3 }, /between 0 and 1/],
+    ["the old 2.4 : 1 banner shape", { x: 0.2, y: 0.3, w: 0.6, h: 1 / 3 }, /100 : 103/],
+    ["a square", { x: 0, y: 0, w: 0.6, h: 0.6 }, /100 : 103/],
+    ["under 30% wide", { x: 0, y: 0, w: 0.2, h: H(0.2) }, /30%/],
+    ["outside the photo", { x: 0.6, y: 0, w: 0.6, h: H(0.6) }, /outside/],
+    ["below the photo", { x: 0, y: 0.3, w: 0.6, h: H(0.6) }, /outside/],
+    ["a negative value", { x: -0.1, y: 0, w: 0.6, h: H(0.6) }, /between 0 and 1/],
+    ["a string", { x: "0", y: 0, w: 0.6, h: H(0.6) }, /between 0 and 1/],
     ["a missing key", { x: 0, y: 0, w: 0.6 }, /\{ x, y, w, h \}/],
     ["an extra key", { ...good, z: 1 }, /\{ x, y, w, h \}/],
     ["an array", [0, 0, 0.6, 0.3], /\{ x, y, w, h \}/],
@@ -702,9 +705,15 @@ describe("hero crop", () => {
     expect(photo(PUBLIC_BY).hero_crop).toBeNull();
   });
 
+  test("an old 2.4 : 1 crop already stored still reaches the app (it centres on it)", async () => {
+    photo(PUBLIC_BY).hero_crop = { x: 0, y: 0.1498, w: 1, h: 0.5556 };
+    const pub = await call(publicHandler, { code: null, query: { species: "central-bearded-dragon" } });
+    expect(pub.body.photos[0].heroCrop).toEqual({ x: 0, y: 0.1498, w: 1, h: 0.5556 });
+  });
+
   test("replacing the image clears the crop", async () => {
     Object.assign(photo(CC0), { width: 500, height: 375 });
-    await patch(CC0, { hero_crop: { x: 0, y: 0, w: 1, h: (4 / 3) / 2.4 } });
+    await patch(CC0, { hero_crop: { x: 0, y: 0, w: 0.7, h: H(0.7) } });
     expect(photo(CC0).hero_crop).not.toBeNull();
     const r = await call(photosHandler, { method: "PUT", body: { id: CC0, photo: dataUrl(MEDIUM) } });
     expect(r.statusCode).toBe(200);
@@ -712,14 +721,15 @@ describe("hero crop", () => {
   });
 
   test("validateHeroCrop: limits and clamping", () => {
-    expect(maxCropWidth(4 / 3)).toBe(1);
+    expect(maxCropWidth(4 / 3)).toBe(1);        // the 2.4 : 1 banner (category headers)
     expect(maxCropWidth(4)).toBeCloseTo(0.6);   // a panorama: full height is the limit
     expect(minCropWidth(4 / 3)).toBe(0.3);
     expect(minCropWidth(10)).toBeCloseTo(0.24); // never above the widest crop that fits
-    // A portrait photo (3:4): full width is 1 × 0.75 / 2.4 = 0.3125 tall.
-    expect(validateHeroCrop({ x: 0, y: 0.5, w: 1, h: 0.3125 }, { width: 750, height: 1000 })).toEqual({ x: 0, y: 0.5, w: 1, h: 0.3125 });
+    expect(maxCropWidth(4 / 3, TALL_ASPECT)).toBeCloseTo(0.7282, 4); // the tall hero on a 4:3 photo
+    // A portrait photo (3:4): full width is 1 × 0.75 × 1.03 = 0.7725 tall.
+    expect(validateHeroCrop({ x: 0, y: 0.2, w: 1, h: 0.7725 }, { width: 750, height: 1000 })).toEqual({ x: 0, y: 0.2, w: 1, h: 0.7725 });
     // Edge rounding is pulled back inside.
-    expect(validateHeroCrop({ x: 0.4005, y: 0, w: 0.6, h: 1 / 3 }, { width: 1024, height: 768 })).toEqual({ x: 0.4, y: 0, w: 0.6, h: 0.3333 });
+    expect(validateHeroCrop({ x: 0.4005, y: 0, w: 0.6, h: H(0.6) }, { width: 1024, height: 768 })).toEqual({ x: 0.4, y: 0, w: 0.6, h: 0.824 });
     expect(() => validateHeroCrop(good, null)).toThrow(/size isn't known/);
     expect(validateHeroCrop(null, { width: 1, height: 1 })).toBeNull();
   });

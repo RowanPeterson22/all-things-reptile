@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { T } from "../constants/theme";
 import { CreditedImage, PhotoCredit } from "./PhotoCredit";
-import { tallPosition, TALL_H } from "./heroCrop";
+import { tallImageStyle, TALL_H, TALL_MIN_H, TALL_ASPECT } from "./heroCrop";
 
 // ─── Species photo slideshow ──────────────────────────────────────
 // The species' public photos other than the hero, one at a time in a 4:3
@@ -202,16 +202,42 @@ const SpeciesSlideshow = ({ photos, autoMs = AUTO_MS, resumeMs = RESUME_MS }) =>
 // photos) above the overlay (pills, name, latin). No arrows: on a 320 px
 // phone a three-line name reaches mid-height; swipe, dots and the arrow keys
 // step it. onBroken(photo) when an image fails to load.
+// The hero's height. The app uses the phone's width (TALL_H); /admin's
+// previews provide a height from their own box (container units), so a
+// 390 px preview frames the photo exactly as a 390 px phone does.
+export const HeroFrameCtx = createContext({ height: TALL_H, minHeight: TALL_MIN_H });
+
+// The frame's width : height, measured (TALL_ASPECT until it is, and where
+// ResizeObserver is missing). Rounded so sub-pixel jitter doesn't re-render.
+const useFrameAspect = (el) => {
+  const [aspect, setAspect] = useState(TALL_ASPECT);
+  useLayoutEffect(() => {
+    if (!el || typeof ResizeObserver !== "function") return undefined;
+    const read = () => {
+      const { width, height } = el.getBoundingClientRect();
+      if (width > 0 && height > 0) setAspect(Math.round((width / height) * 10000) / 10000);
+    };
+    read();
+    const ro = new ResizeObserver(read);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [el]);
+  return aspect;
+};
+
 export const HeroSlideshow = ({ photos, name, overlay, children, onBroken, autoMs = AUTO_MS, resumeMs = RESUME_MS }) => {
   const list = photos || [];
   const count = list.length;
   const { current, manual, reduced, goTo, regionProps, frameProps } = useSlides(count, { autoMs, resumeMs });
+  const { height, minHeight } = useContext(HeroFrameCtx);
+  const [box, setBox] = useState(null); // a callback ref: the region mounts once photos arrive
+  const frameAspect = useFrameAspect(box);
   if (!count) return null;
   const shown = list[current];
   const multi = count > 1;
   return (
-    <div data-testid="species-hero" data-variant="tall" role="region" aria-roledescription={multi ? "carousel" : undefined} aria-label="Photos"
-      style={{ position: "relative", width: "100%", height: TALL_H, minHeight: 300, background: T.imgBg, overflow: "hidden" }} {...(multi ? regionProps : {})}>
+    <div ref={setBox} data-testid="species-hero" data-variant="tall" data-frame-height={height} role="region" aria-roledescription={multi ? "carousel" : undefined} aria-label="Photos"
+      style={{ position: "relative", width: "100%", height, minHeight, background: T.imgBg, overflow: "hidden" }} {...(multi ? regionProps : {})}>
       <div data-layout-decor="" style={{ position: "absolute", inset: 0, touchAction: "pan-y" }} {...(multi ? frameProps : {})}>
         {list.map((p, i) => {
           const on = i === current;
@@ -219,7 +245,7 @@ export const HeroSlideshow = ({ photos, name, overlay, children, onBroken, autoM
             <div key={p.id || i} {...(multi ? slideProps(on, i, count) : {})} style={slideStyle(on, reduced)}>
               <img src={p.url} alt={p.alt || name} width={p.width || undefined} height={p.height || undefined} decoding="async"
                 loading={on || i === (current + 1) % count ? "eager" : "lazy"} onError={() => onBroken && onBroken(p)}
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: tallPosition(p), display: "block" }} />
+                style={tallImageStyle(p, frameAspect)} />
             </div>
           );
         })}

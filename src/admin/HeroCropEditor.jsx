@@ -1,25 +1,50 @@
 import { useEffect, useRef, useState } from "react";
 import { C } from "../constants/colours";
-import { HERO_ASPECT, fitCrop, defaultCrop, moveCrop, zoomCrop, maxCropWidth, minCropWidth, heroImageStyle } from "../components/heroCrop";
+import { HERO_ASPECT, TALL_ASPECT, fitCrop, defaultCrop, moveCrop, zoomCrop, maxCropWidth, minCropWidth, heroImageStyle, isCropAt, cropCentre } from "../components/heroCrop";
+import { HeroSlideshow, HeroFrameCtx } from "../components/SpeciesSlideshow";
 import { N, smallBtn, hint } from "./ui";
 
 // ─── Crop editor (species hero, category card and banner) ────────
-// The whole photo with a fixed-aspect crop box over it (2.4 : 1 for the
-// species hero and category banners; the Browse card's aspect for category
-// cards). Drag (mouse, pen or
+// The whole photo with a fixed-aspect crop box over it (100 : 103 for the
+// species page's tall hero; 2.4 : 1 for category banners; the Browse card's
+// aspect for category cards). Drag (mouse, pen or
 // one finger) to position it; pinch, drag the corner handle or use the Zoom
 // slider to resize it (never under 30 % of the photo's width). Arrow keys
-// move it, + and − zoom. A live preview shows the species-page header.
+// move it, + and − zoom. A live preview shows the frame as the app draws it
+// (for the species hero, the app's own HeroSlideshow at 390 px).
 // Saves { x, y, w, h } (0–1); the server checks it again. The species-page
 // use (hero_crop) is the default; CropEditor takes aspect, stored crop, labels
-// and its own preview for other frames.
+// and its own preview for other frames. A stored crop of another shape (a
+// species crop saved for the old 2.4 : 1 banner) starts the editor on its
+// centre, which is where the app frames it until a new crop is saved.
 
 const STEP = 0.01;
 
-// Build a crop from a stored value (or the focus-point default).
-export const initialCrop = (photo, imgAspect, { stored = photo.hero_crop, aspect = HERO_ASPECT } = {}) => (stored
-  ? fitCrop(stored, imgAspect, aspect)
-  : defaultCrop(imgAspect, { x: photo.focal_x ?? 0.5, y: photo.focal_y ?? 0.5 }, aspect));
+// Build a crop from a stored value: as stored at this aspect; another shape
+// (legacy) → the widest crop on its centre; none → the focus-point default.
+export const initialCrop = (photo, imgAspect, { stored = photo.hero_crop, aspect = TALL_ASPECT } = {}) => {
+  if (stored && isCropAt(stored, imgAspect, aspect)) return fitCrop(stored, imgAspect, aspect);
+  const at = stored ? cropCentre(stored) : { x: photo.focal_x ?? 0.5, y: photo.focal_y ?? 0.5 };
+  return defaultCrop(imgAspect, at, aspect);
+};
+
+// The species page's tall hero exactly as the app draws it: the real
+// HeroSlideshow, 390 px wide at most, its height from its own width
+// (min(103cqw, 440px), the app's min(103vw, 440px) on a phone that wide).
+export const tallPreviewPhoto = (photo, crop, nat) => ({
+  id: photo.id, url: photo.url, width: nat.w, height: nat.h, heroCrop: crop,
+  focal: { x: photo.focal_x ?? 0.5, y: photo.focal_y ?? 0.5 }, credit: photo.credit || { show: false }, alt: "",
+});
+export const TallHeroPreview = ({ photo, crop, nat, title = "Species name", label = "Preview of the species-page hero" }) => (
+  <div data-testid="tall-hero-preview" aria-label={label} style={{ width: "100%", maxWidth: 390, margin: "0 auto", containerType: "inline-size", borderRadius: 8, overflow: "hidden" }}>
+    <HeroFrameCtx.Provider value={{ height: "min(103cqw, 440px)", minHeight: 0 }}>
+      <HeroSlideshow photos={[tallPreviewPhoto(photo, crop, nat)]} name={title}
+        overlay={<div style={{ color: "white", fontSize: 24, fontWeight: 700, lineHeight: 1.1 }}>{title}</div>}>
+        <span aria-hidden="true" style={{ display: "inline-flex", width: 40, height: 40, borderRadius: 20, background: "rgba(0,0,0,0.45)", color: "white", alignItems: "center", justifyContent: "center", fontSize: 20 }}>‹</span>
+      </HeroSlideshow>
+    </HeroFrameCtx.Provider>
+  </div>
+);
 
 const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
 
@@ -35,9 +60,9 @@ export const HeroPreview = ({ url, crop, label = "Preview of the species-page he
 );
 
 export const CropEditor = ({
-  photo, busy, onSave, onCancel,
-  frame = HERO_ASPECT, stored = photo.hero_crop, title = "Hero crop", saveLabel = "Save hero crop",
-  testId = "hero-crop", boxLabel = "Hero crop box", renderPreview, defaultHint,
+  photo, busy, onSave, onCancel, onChange,
+  frame = TALL_ASPECT, stored = photo.hero_crop, title = "Hero crop (tall hero, 100 : 103)", saveLabel = "Save hero crop",
+  testId = "hero-crop", boxLabel = "Hero crop box", renderPreview, defaultHint, previewTitle,
 }) => {
   const [nat, setNat] = useState({ w: photo.public_width || photo.width || 4, h: photo.public_height || photo.height || 3 });
   const aspect = nat.w / nat.h; // the image's
@@ -50,6 +75,11 @@ export const CropEditor = ({
 
   // The real image shape can differ from the stored numbers (e.g. before load).
   useEffect(() => { setCrop(c => fitCrop(c, aspect, frame)); }, [aspect, frame]);
+  // Tell the parent (the Species editor's live preview) as the box moves.
+  const tell = useRef(onChange);
+  tell.current = onChange;
+  useEffect(() => { if (tell.current) tell.current(crop); }, [crop]);
+  const legacy = Boolean(stored && !isCropAt(stored, aspect, frame));
 
   const stageBox = () => (stageRef.current ? stageRef.current.getBoundingClientRect() : { width: 1, height: 1, left: 0, top: 0 });
 
@@ -134,7 +164,7 @@ export const CropEditor = ({
       <div style={{ fontSize: 11, color: N.muted, marginBottom: 8 }}>Crop is {Math.round(crop.w * 100)}% of the photo's width (minimum {Math.round(minW * 100)}%).</div>
 
       <div style={{ fontSize: 11, fontWeight: 700, color: N.muted, marginBottom: 4 }}>Preview</div>
-      {renderPreview ? renderPreview(crop) : <HeroPreview url={photo.url} crop={crop} />}
+      {renderPreview ? renderPreview(crop) : <TallHeroPreview photo={photo} crop={crop} nat={nat} title={previewTitle} />}
 
       <div style={{ display: "flex", gap: 6, marginTop: 10, flexWrap: "wrap" }}>
         <button type="button" disabled={busy} onClick={() => onSave(crop)} style={smallBtn("primary", busy)}>{saveLabel}</button>
@@ -142,12 +172,13 @@ export const CropEditor = ({
         {stored && <button type="button" disabled={busy} onClick={() => onSave(null)} style={smallBtn("ghost", busy)}>Clear crop</button>}
         <button type="button" disabled={busy} onClick={onCancel} style={smallBtn("ghost", busy)}>Cancel</button>
       </div>
-      <div style={hint}>{defaultHint || "No crop saved: the header uses the widest 2.4 : 1 crop centred on the focus point."}</div>
+      {legacy && <div data-testid={`${testId}-legacy`} style={hint}>The saved crop was made for the old wide banner, so the app centres the photo on it. Save to frame the tall hero exactly.</div>}
+      {!stored && <div style={hint}>{defaultHint || "No crop saved: the app fills the tall hero from the photo's focus point."}</div>}
     </div>
   );
 };
 
-// The species-page hero (hero_crop, 2.4 : 1).
+// The species-page hero (hero_crop, 100 : 103: the dark design's tall photo).
 const HeroCropEditor = (props) => <CropEditor {...props} />;
 
 export default HeroCropEditor;

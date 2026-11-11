@@ -32,19 +32,22 @@ export const validateAddForm = (f) => {
 
 const EMPTY = { photographer: "", licence: "", sourceUrl: "", permissionNote: "", notes: "", traits: [], stockLibrary: "", stockAssetId: "", creditRequired: false, showCredit: true, displayCredit: "" };
 
-// ─── Add a photo to a species ─────────────────────────────────────
-const AddPhotoScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
-  const [params] = useSearchParams();
-  const navigate = useNavigate();
-  const initial = params.get("species");
-  const [speciesSlug, setSpeciesSlug] = useState(initial && bySlug[initial] ? initial : null);
+// ─── The add-photo form (shared) ──────────────────────────────────
+// The library's Add photo screen and the Species editor's Photos panel. The
+// browser makes the 500 px reference copy and the up-to-1,600 px private
+// copy (./image); POST /api/admin-photos re-checks every licence rule.
+// lockedSpecies: an index slug to file it under, with no species picker.
+// onSaved(row) after a successful save; the form then resets, keeping the
+// photographer and licence for the next one. onCancel shows a Cancel button.
+export const AddPhotoForm = ({ api, species, bySlug, catalogue, lockedSpecies, initialSpecies, onSaved, onCancel, submitLabel = "Save to library" }) => {
+  const [speciesSlug, setSpeciesSlug] = useState(lockedSpecies || (initialSpecies && bySlug[initialSpecies] ? initialSpecies : null));
   const [form, setForm] = useState(EMPTY);
   const [photo, setPhoto] = useState(null); // reference copy { dataUrl, width, height, bytes, master }
   const [prepErr, setPrepErr] = useState("");
   const [tried, setTried] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveErr, setSaveErr] = useState("");
-  const [saved, setSaved] = useState(null);
+  const [fileKey, setFileKey] = useState(0);
 
   const set = (patch) => setForm(f => ({ ...f, ...patch }));
   const sp = speciesSlug && bySlug[speciesSlug];
@@ -64,41 +67,33 @@ const AddPhotoScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
     setTried(true); setSaveErr("");
     if (!ok) return;
     setSaving(true);
+    let row = null;
     try {
-      const { photo: row } = await api("admin-photos", { method: "POST", body: {
+      ({ photo: row } = await api("admin-photos", { method: "POST", body: {
         speciesSlug, photo: photo.dataUrl, ...(photo.master ? { master: photo.master.dataUrl } : {}), photographer: form.photographer, licence: form.licence,
         sourceUrl: form.sourceUrl, permissionNote: form.permissionNote, notes: form.notes, traits: form.traits,
         ...(isStock ? { stockLibrary: form.stockLibrary, stockAssetId: form.stockAssetId, creditRequired: form.creditRequired, showCredit: form.creditRequired || form.showCredit, displayCredit: form.displayCredit } : {}),
-      } });
-      setSaved(row); refreshCounts();
+      } }));
     } catch (e) { setSaveErr(e.message); } finally { setSaving(false); }
+    if (!row) return;
+    setPhoto(null); setTried(false); setFileKey(k => k + 1);
+    setForm(f => ({ ...EMPTY, photographer: f.photographer, licence: f.licence }));
+    if (onSaved) onSaved(row);
   };
 
-  if (saved) {
-    return (
-      <div style={page}>
-        <WarnBox light type="green" title="Saved to the library">{bySlug[saved.species_slug] ? bySlug[saved.species_slug].common : saved.species_slug} · {saved.credit ? saved.credit.name : saved.photographer} · {LICENCE_LABEL[saved.licence]}</WarnBox>
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <button type="button" onClick={() => { setSaved(null); setPhoto(null); setForm(f => ({ ...EMPTY, photographer: f.photographer, licence: f.licence })); setTried(false); }} style={btn("primary")}>Add another</button>
-          <button type="button" onClick={() => navigate(`/admin/species/${saved.species_slug}`)} style={btn("ghost")}>View species</button>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div style={{ ...page, maxWidth: 560 }}>
-      <div style={{ fontSize: 18, fontWeight: 700, color: N.ink, marginBottom: 12 }}>Add a photo</div>
-
-      <div style={{ marginBottom: 14 }}>
-        <span style={label}>Species</span>
-        <SpeciesPicker species={species} value={speciesSlug} onChange={setSpeciesSlug} />
-        {show("speciesSlug")}
-      </div>
+    <div data-testid="add-photo-form">
+      {!lockedSpecies && (
+        <div style={{ marginBottom: 14 }}>
+          <span style={label}>Species</span>
+          <SpeciesPicker species={species} value={speciesSlug} onChange={setSpeciesSlug} />
+          {show("speciesSlug")}
+        </div>
+      )}
 
       <div style={{ marginBottom: 14 }}>
         <span style={label}>Photo</span>
-        <input type="file" accept="image/jpeg,image/*" onChange={e => pick(e.target.files && e.target.files[0])} aria-label="Photo file" style={{ fontSize: 14 }} />
+        <input key={fileKey} type="file" accept="image/jpeg,image/*" onChange={e => pick(e.target.files && e.target.files[0])} aria-label="Photo file" style={{ fontSize: 14 }} />
         <div style={hint}>Saved as a {MAX_EDGE} px reference copy plus a private copy up to {MASTER_EDGE} px for species pages, both JPEG with the location and camera data removed.</div>
         {prepErr && <div style={errorText}>{prepErr}</div>}
         {photo && (
@@ -187,12 +182,43 @@ const AddPhotoScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
         <textarea id="adm-notes" value={form.notes} onChange={e => set({ notes: e.target.value })} rows={2} maxLength={1500} style={{ ...input, resize: "vertical" }} />
       </div>
 
-      {saveErr && <div style={{ ...errorText, marginBottom: 8 }}>{saveErr}</div>}
-      <button type="button" onClick={save} disabled={saving} style={{ ...btn("primary", saving || (tried && !ok)), width: "100%", minHeight: 44 }}>
-        {saving ? "Saving…" : "Save to library"}
-      </button>
+      {saveErr && <div role="alert" style={{ ...errorText, marginBottom: 8 }}>{saveErr}</div>}
+      <div style={{ display: "flex", gap: 8 }}>
+        <button type="button" onClick={save} disabled={saving} style={{ ...btn("primary", saving || (tried && !ok)), flex: 1, minHeight: 44 }}>
+          {saving ? "Saving…" : submitLabel}
+        </button>
+        {onCancel && <button type="button" onClick={onCancel} disabled={saving} style={{ ...btn("ghost", saving), minHeight: 44 }}>Cancel</button>}
+      </div>
       {!tried && !ok && <div style={{ ...hint, textAlign: "center" }}>{isStock ? "The stock library and asset ID are required." : "Photographer, licence and a source URL or permission note are required."}</div>}
     </div>
+  );
+};
+
+// ─── Add a photo to a species ─────────────────────────────────────
+const AddPhotoScreen = ({ api, species, bySlug, catalogue, refreshCounts }) => {
+  const [params] = useSearchParams();
+  const navigate = useNavigate();
+  const [saved, setSaved] = useState(null);
+
+  // The form stays mounted (hidden) while the confirmation shows, so “Add
+  // another” keeps the photographer and licence, as before.
+  return (
+    <>
+      {saved && (
+        <div style={page}>
+          <WarnBox light type="green" title="Saved to the library">{bySlug[saved.species_slug] ? bySlug[saved.species_slug].common : saved.species_slug} · {saved.credit ? saved.credit.name : saved.photographer} · {LICENCE_LABEL[saved.licence]}</WarnBox>
+          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <button type="button" onClick={() => setSaved(null)} style={btn("primary")}>Add another</button>
+            <button type="button" onClick={() => navigate(`/admin/species/${saved.species_slug}`)} style={btn("ghost")}>View species</button>
+          </div>
+        </div>
+      )}
+      <div style={{ ...page, maxWidth: 560, display: saved ? "none" : "block" }}>
+        <div style={{ fontSize: 18, fontWeight: 700, color: N.ink, marginBottom: 12 }}>Add a photo</div>
+        <AddPhotoForm api={api} species={species} bySlug={bySlug} catalogue={catalogue} initialSpecies={params.get("species")}
+          onSaved={(row) => { setSaved(row); refreshCounts(); }} />
+      </div>
+    </>
   );
 };
 

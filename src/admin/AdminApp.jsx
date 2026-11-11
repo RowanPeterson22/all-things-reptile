@@ -109,7 +109,7 @@ const AdminApp = ({ inviteCode, adminId, adminName, gate, onForbidden }) => {
           <Route index element={<LibraryScreen {...shared} />} />
           <Route path="species/:slug" element={<SpeciesPhotosScreen {...shared} />} />
           <Route path="content" element={<SpeciesContentList api={api} />} />
-          <Route path="content/:slug" element={<SpeciesContentEditor api={api} />} />
+          <Route path="content/:slug" element={<SpeciesContentEditor {...shared} />} />
           <Route path="add" element={<AddPhotoScreen {...shared} />} />
           <Route path="categories" element={<CategoriesScreen api={api} />} />
           <Route path="morphs" element={<MorphsScreen {...shared} readOnly={shared.morphsReadOnly} />} />

@@ -6,14 +6,17 @@
 // compares two captures pixel for pixel (in Chromium, no extra packages) and
 // text for text.
 //
-//   node scripts/species-diff.mjs capture <outDir> [--build <dir>] [--content snapshot|none]
+//   node scripts/species-diff.mjs capture <outDir> [--build <dir>] [--content snapshot|none] [--crops none|real|tall]
 //   node scripts/species-diff.mjs compare <beforeDir> <afterDir> [--report <file>]
 //
 // /api/* is mocked like scripts/layout-check.mjs: one hero photo per species
 // (a single photo doesn't auto-advance, so shots are deterministic), and
 // /api/species-photos?content=<slug> answers from src/data/speciesContent.json
 // (--content snapshot, the default) or 404s (--content none, i.e. the app's
-// bundled fallback). Needs Playwright, like layout-check.
+// bundled fallback). --crops gives the mocked hero photos stored crops:
+// none (the default), real (the crops in the atr database on 11 Nov 2026,
+// all saved for the old 2.4 : 1 banner) or tall (a 100 : 103 crop on every
+// hero, the shape /admin saves now). Needs Playwright, like layout-check.
 
 import { createRequire } from "module";
 import fs from "fs";
@@ -53,7 +56,19 @@ const PHOTO = (() => {
   return jpeg.encode({ data, width, height }, 80).data;
 })();
 const credit = { show: true, name: "A. Photographer", licence: "CC BY 4.0", licenceUrl: "https://creativecommons.org/licenses/by/4.0/", source: "iNaturalist", sourceUrl: "https://www.inaturalist.org/", edited: false };
-const photo = (sp) => ({ id: `${sp}-1`, species: sp, speciesName: sp, url: "/__mock/photo.jpg", width: 1024, height: 700, focal: { x: 0.5, y: 0.5 }, hero: true, heroCrop: null, alt: sp, credit });
+// The mock image is 640 × 480 (4:3); the "real" rows keep their own sizes, as the app is told them.
+const REAL_CROPS = {
+  "ackie-monitor": { width: 1024, height: 585, heroCrop: { x: 0, y: 0.1498, w: 1, h: 0.7293 } },
+  "black-headed-python": { width: 1024, height: 683, heroCrop: { x: 0, y: 0.3044, w: 1, h: 0.6256 } },
+};
+const TALL_CROP = { width: 1024, height: 768, heroCrop: { x: 0.3, y: 0.05, w: 0.6, h: 0.824 } }; // 0.6 × (4/3) × 1.03
+const cropsFor = (sp) => {
+  const mode = arg("--crops", "none");
+  if (mode === "real") return REAL_CROPS[sp] || {};
+  if (mode === "tall") return TALL_CROP;
+  return {};
+};
+const photo = (sp) => ({ id: `${sp}-1`, species: sp, speciesName: sp, url: "/__mock/photo.jpg", width: 1024, height: 700, focal: { x: 0.5, y: 0.5 }, hero: true, heroCrop: null, alt: sp, credit, ...cropsFor(sp) });
 
 const types = { ".js": "application/javascript", ".css": "text/css", ".png": "image/png", ".html": "text/html", ".json": "application/json", ".webp": "image/webp", ".svg": "image/svg+xml", ".ico": "image/x-icon", ".jpg": "image/jpeg" };
 const router = (BUILD, contentMode, log) => async (r) => {
